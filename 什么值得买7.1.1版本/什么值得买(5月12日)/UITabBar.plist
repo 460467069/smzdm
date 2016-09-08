@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>首页</string>
+		<key>nibName</key>
+		<string>HMHomeViewController</string>
+		<key>normalImage</key>
+		<string>mainNormal</string>
+		<key>selectedImage</key>
+		<string>mainSeleted</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>发现</string>
+		<key>normalImage</key>
+		<string>goodsNormal</string>
+		<key>nibName</key>
+		<string>ZZHomeViewController</string>
+		<key>selectedImage</key>
+		<string>goodsseleted</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>好物</string>
+		<key>normalImage</key>
+		<string>dingyueItemNormal</string>
+		<key>nibName</key>
+		<string>HMFantasticGoodsController</string>
+		<key>selectedImage</key>
+		<string>dingyueItemSelected</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>我的</string>
+		<key>nibName</key>
+		<string>HMMineViewController</string>
+		<key>normalImage</key>
+		<string>personNormal</string>
+		<key>selectedImage</key>
+		<string>personSeleted</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>荟萃</string>
+		<key>nibName</key>
+		<string>HMJingXuanViewController</string>
+		<key>normalImage</key>
+		<string>personNormal</string>
+		<key>selectedImage</key>
+		<string>personSeleted</string>
+	</dict>
+</array>
+</plist>

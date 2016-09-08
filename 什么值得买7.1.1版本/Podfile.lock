@@ -1,0 +1,76 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Masonry (1.0.1)
+  - MBProgressHUD (1.0.0)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
+  - RongCloudIMKit (2.6.7)
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - SVProgressHUD (2.0.3)
+  - UITableView+FDTemplateLayoutCell (1.4)
+  - WeiboSDK (3.1.4)
+  - YYKit (1.0.7):
+    - YYKit/no-arc (= 1.0.7)
+  - YYKit/no-arc (1.0.7)
+  - ZYCornerRadius (0.9.4)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Masonry
+  - MBProgressHUD
+  - MJExtension
+  - MJRefresh
+  - RongCloudIMKit (= 2.6.7)
+  - SDCycleScrollView (~> 1.65)
+  - SDWebImage
+  - SVProgressHUD (~> 2.0.3)
+  - UITableView+FDTemplateLayoutCell
+  - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
+  - YYKit
+  - ZYCornerRadius (= 0.9.4)
+
+EXTERNAL SOURCES:
+  WeiboSDK:
+    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
+
+CHECKOUT OPTIONS:
+  WeiboSDK:
+    :commit: 6031a8da4ce17867ff5887b8dfc59ea45930274e
+    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  RongCloudIMKit: bf5e835bd9a2ecd7c12a64919a0dbf0bb4038755
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
+  WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
+  YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
+  ZYCornerRadius: 6e257f2925ab96cc39356507f7a7323504ee0e01
+
+PODFILE CHECKSUM: 3e5aa989f3581a7cae031196108808b90650010c
+
+COCOAPODS: 1.0.1

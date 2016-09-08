@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tW7-JX-z04">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Content View Controller-->
+        <scene sceneID="jv6-y6-nqH">
+            <objects>
+                <tableViewController id="tW7-JX-z04" customClass="HMContentViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="226" sectionHeaderHeight="28" sectionFooterHeight="28" id="BO0-a9-9uf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="LyE-2K-LNc">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="294"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageVSOne" translatesAutoresizingMaskIntoConstraints="NO" id="MAr-6a-HO3" userLabel="大图">
+                                    <rect key="frame" x="0.0" y="168.5" width="137" height="122.5"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageHorizontalFour" translatesAutoresizingMaskIntoConstraints="NO" id="1nG-k3-czi" userLabel="小图">
+                                    <rect key="frame" x="139" y="232" width="136.5" height="59"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageHorizontalFour" translatesAutoresizingMaskIntoConstraints="NO" id="mg7-aP-dtd" userLabel="小图">
+                                    <rect key="frame" x="277.5" y="232" width="136.5" height="59"/>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6E-gP-bUR" userLabel="line">
+                                    <rect key="frame" x="0.0" y="291" width="414" height="3"/>
+                                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="3" id="a8v-lp-Kgy"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZF-99-WUH" customClass="HMCycleScrollView">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="168.5"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="FZF-99-WUH" secondAttribute="height" multiplier="538:219" id="dSX-jC-JDv"/>
+                                        <constraint firstAttribute="width" constant="375" id="gKu-qh-j1t"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="gKu-qh-j1t"/>
+                                        </mask>
+                                    </variation>
+                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageVSTwo" translatesAutoresizingMaskIntoConstraints="NO" id="KCZ-KU-2L9" userLabel="小图">
+                                    <rect key="frame" x="139" y="168.5" width="275" height="61.5"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="1nG-k3-czi" firstAttribute="bottom" secondItem="MAr-6a-HO3" secondAttribute="bottom" id="2gI-XB-35g"/>
+                                <constraint firstAttribute="bottom" secondItem="Z6E-gP-bUR" secondAttribute="bottom" id="6d6-6n-Qre"/>
+                                <constraint firstAttribute="trailing" secondItem="mg7-aP-dtd" secondAttribute="trailing" id="9aD-8r-8Ez"/>
+                                <constraint firstItem="1nG-k3-czi" firstAttribute="leading" secondItem="MAr-6a-HO3" secondAttribute="trailing" constant="2" id="Ba4-71-SXe"/>
+                                <constraint firstAttribute="trailing" secondItem="FZF-99-WUH" secondAttribute="trailing" id="D8A-3C-6kQ"/>
+                                <constraint firstItem="1nG-k3-czi" firstAttribute="width" secondItem="mg7-aP-dtd" secondAttribute="width" id="D9I-EA-EwW"/>
+                                <constraint firstAttribute="trailing" secondItem="KCZ-KU-2L9" secondAttribute="trailing" id="FkD-4V-jbD"/>
+                                <constraint firstItem="FZF-99-WUH" firstAttribute="top" secondItem="LyE-2K-LNc" secondAttribute="top" id="GN3-uh-E9J"/>
+                                <constraint firstItem="KCZ-KU-2L9" firstAttribute="leading" secondItem="MAr-6a-HO3" secondAttribute="trailing" constant="2" id="IY6-5Q-kl5"/>
+                                <constraint firstItem="1nG-k3-czi" firstAttribute="top" secondItem="KCZ-KU-2L9" secondAttribute="bottom" constant="2" id="JDl-vO-4lv"/>
+                                <constraint firstItem="mg7-aP-dtd" firstAttribute="leading" secondItem="1nG-k3-czi" secondAttribute="trailing" constant="2" id="Lcz-0b-fHZ"/>
+                                <constraint firstItem="Z6E-gP-bUR" firstAttribute="leading" secondItem="LyE-2K-LNc" secondAttribute="leading" id="MYB-zP-JQU"/>
+                                <constraint firstItem="1nG-k3-czi" firstAttribute="top" secondItem="mg7-aP-dtd" secondAttribute="top" id="Mne-L4-peX"/>
+                                <constraint firstItem="1nG-k3-czi" firstAttribute="height" secondItem="mg7-aP-dtd" secondAttribute="height" id="Nfw-St-Tge"/>
+                                <constraint firstItem="MAr-6a-HO3" firstAttribute="leading" secondItem="LyE-2K-LNc" secondAttribute="leading" id="QSL-P2-qYi"/>
+                                <constraint firstItem="MAr-6a-HO3" firstAttribute="height" secondItem="KCZ-KU-2L9" secondAttribute="height" multiplier="2" id="Wiy-ZA-6Or"/>
+                                <constraint firstItem="KCZ-KU-2L9" firstAttribute="top" secondItem="MAr-6a-HO3" secondAttribute="top" id="gNd-KD-p6D"/>
+                                <constraint firstAttribute="trailing" secondItem="Z6E-gP-bUR" secondAttribute="trailing" id="hOY-dI-Nqd"/>
+                                <constraint firstItem="MAr-6a-HO3" firstAttribute="top" secondItem="FZF-99-WUH" secondAttribute="bottom" id="jmq-qj-tU3"/>
+                                <constraint firstItem="MAr-6a-HO3" firstAttribute="width" secondItem="KCZ-KU-2L9" secondAttribute="width" multiplier="0.5" id="oS8-kS-RUx"/>
+                                <constraint firstItem="FZF-99-WUH" firstAttribute="leading" secondItem="LyE-2K-LNc" secondAttribute="leading" id="se2-Zu-kTY"/>
+                                <constraint firstAttribute="bottom" secondItem="MAr-6a-HO3" secondAttribute="bottom" constant="3" id="vB4-Yi-dz3"/>
+                            </constraints>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="tW7-JX-z04" id="N9O-Fw-9wy"/>
+                            <outlet property="delegate" destination="tW7-JX-z04" id="n03-4a-Yac"/>
+                        </connections>
+                    </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="cycleScrollView" destination="FZF-99-WUH" id="4f0-TY-laZ"/>
+                        <outletCollection property="imageViews" destination="MAr-6a-HO3" id="XDH-4C-REb"/>
+                        <outletCollection property="imageViews" destination="KCZ-KU-2L9" id="0yL-O4-TEc"/>
+                        <outletCollection property="imageViews" destination="1nG-k3-czi" id="gI1-yb-EmA"/>
+                        <outletCollection property="imageViews" destination="mg7-aP-dtd" id="Yhu-0W-41w"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KHh-B8-KpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="231" y="270"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="default_homePageHorizontalFour" width="93" height="117"/>
+        <image name="default_homePageVSOne" width="142" height="163"/>
+        <image name="default_homePageVSTwo" width="232" height="77"/>
+    </resources>
+</document>

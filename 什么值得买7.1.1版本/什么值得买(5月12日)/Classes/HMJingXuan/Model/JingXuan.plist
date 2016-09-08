@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>内购</string>
+		<key>destinationVC</key>
+		<string>HMInPurchaseViewController</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>微信</string>
+		<key>destinationVC</key>
+		<string>HMInPurchaseViewController</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>支付宝</string>
+		<key>destinationVC</key>
+		<string>HMInPurchaseViewController</string>
+	</dict>
+</array>
+</plist>

@@ -1,0 +1,73 @@
+//
+//  PrefixHeader.pch
+//  什么值得买(5月12日)
+//
+//  Created by Wang_ruzhou on 16/5/12.
+//  Copyright © 2016年 Wang_ruzhou. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+
+
+/** 新浪微博 */
+    #import "WeiboSDK.h"
+    #define kAppKey         @"4079614173"
+    #define kRedirectURI    @"http://www.smzdm.com"
+
+
+
+/** 第三方头文件 */
+    #import "AFNetworking.h"
+    #import "MJExtension.h"
+    #import "UIImageView+WebCache.h"
+    #import "MJRefresh.h"
+    #import "Masonry.h"
+    #import "YYKit.h"
+    #import "SVProgressHUD.h"
+
+    #import "LxDBAnything.h"
+//    #import "UINavigationBar+Awesome.h"
+
+
+
+
+
+/** 通用宏 */
+    #define kScreenW [UIScreen mainScreen].bounds.size.width
+    #define kScreenH [UIScreen mainScreen].bounds.size.height
+    #define ZZColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+
+    #define kGlobalRedColor [UIColor colorWithHexString:@"#F04848"]
+
+    #define kHaojiaJingXuan @"haojia_jingxuan"
+    #define kZhiYouFuLi @"值友福利"
+
+/** 用户账号信息保存路径 */
+#define kAccountPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"account.archive"]
+
+
+
+/** 分类头文件 */
+    #import "UIColor+HEX.h"
+    #import "NSString+HMNumberFormatter.h"
+    #import "UIView+MJExtension.h"
+    #import "UIView+YYAdd.h"
+
+/** 网络请求头文件 */
+    #import "HMNetworking.h"
+
+#endif
+
+
+
+#endif /* PrefixHeader_pch */

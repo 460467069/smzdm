@@ -1,0 +1,24 @@
+project '什么值得买.xcodeproj'
+
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
+
+target '什么值得买' do
+  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for 什么值得买
+  pod 'SDWebImage'
+  pod 'MBProgressHUD'
+  pod "AFNetworking"
+  pod 'MJRefresh'
+  pod 'MJExtension'
+  pod 'Masonry'
+  pod 'SDCycleScrollView', '~> 1.65'
+  pod 'UITableView+FDTemplateLayoutCell'
+  pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git" 
+  pod 'ZYCornerRadius', '0.9.4'
+  pod 'YYKit'
+  pod 'RongCloudIMKit', '2.6.7'
+  pod 'SVProgressHUD', '~> 2.0.3'
+end
