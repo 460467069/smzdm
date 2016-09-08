@@ -41,11 +41,7 @@
         [vc.tabBarItem setTitleTextAttributes:textNormalAttributes forState:UIControlStateNormal];
         
         [self addChildViewController:vc];
-        
-        
-        
-        
-        
+
     }];
     
 }

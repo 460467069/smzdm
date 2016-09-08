@@ -9,6 +9,7 @@
 #import "HMNetworking.h"
 #import "AFNetworking.h"
 #import "ZZNetworkHandler.h"
+#import "AFNetworkActivityIndicatorManager.h"
 #define HMBaseURL @"http://api.smzdm.com"
 
 @implementation HMNetworking
@@ -16,17 +17,11 @@
 
 + (void)Get:(NSString *)URLString parameters:(NSMutableDictionary *)parameters complectionBlock:(HttpComplectionBlcok)complectionBlock{
     
-    UIApplication *app = [UIApplication sharedApplication];
-    app.networkActivityIndicatorVisible = YES;
-    
     ZZNetworkHandler *handler = [ZZNetworkHandler sharedInstance];
     if (handler.networkError) {
-        app.networkActivityIndicatorVisible = NO;
         [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
         return;
     }
-    
-    
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:HMBaseURL]];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
@@ -35,13 +30,10 @@
     [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         LxDBAnyVar(task.response.URL.absoluteString);
         complectionBlock(responseObject, nil);
-        app.networkActivityIndicatorVisible = NO;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         complectionBlock(nil, error);
         LxDBAnyVar(task.response.URL.absoluteString);
-        app.networkActivityIndicatorVisible = NO;
-        
     }];
     
 }

@@ -7,6 +7,7 @@
 //
 
 #import "HMGlobalApperance.h"
+#import "AFNetworkActivityIndicatorManager.h"
 
 @implementation HMGlobalApperance
 /** 全局定制 */
@@ -27,6 +28,7 @@
     UIScrollView *scrollView = [UIScrollView appearance];
     scrollView.scrollsToTop = NO;
     
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 }
 
 @end
