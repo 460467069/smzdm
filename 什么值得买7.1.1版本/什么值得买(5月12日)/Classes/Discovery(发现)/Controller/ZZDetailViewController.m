@@ -28,6 +28,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = ZZColor(214, 214, 214);
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem alloc] initWithImage:<#(nullable UIImage *)#> landscapeImagePhone:<#(nullable UIImage *)#> style:<#(UIBarButtonItemStyle)#> target:<#(nullable id)#> action:<#(nullable SEL)#>;
+    
     //初始化底部工具栏
     [self initialBottomToolBar];
     //初始化webView
@@ -58,16 +61,6 @@
     self.bottomToolBar = bottomToolBar;
 }
 
-- (void)initialCustomIndicatorView{
-    ZZCircleView *circleView = [[ZZCircleView alloc] init];
-    circleView.center = self.view.center;
-    circleView.width = 30;
-    circleView.height = 30;
-    [circleView startAnimating];
-    [self.view addSubview:circleView];
-    self.circleView = circleView;
-}
-
 - (void)initialWebView{
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     configuration.preferences = [[WKPreferences alloc] init];
@@ -84,6 +77,16 @@
         make.left.right.top.offset(0);
         make.bottom.mas_equalTo(self.bottomToolBar.mas_top).offset(0);
     }];
+}
+
+- (void)initialCustomIndicatorView{
+    ZZCircleView *circleView = [[ZZCircleView alloc] init];
+    circleView.center = self.view.center;
+    circleView.width = 30;
+    circleView.height = 30;
+    [circleView startAnimating];
+    [self.view addSubview:circleView];
+    self.circleView = circleView;
 }
 
 #pragma mark - loadData

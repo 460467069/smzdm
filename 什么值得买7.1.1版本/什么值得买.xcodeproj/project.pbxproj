@@ -97,6 +97,7 @@
 		A9EE8D6E1D74A54900A72C29 /* ZZDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EE8D6D1D74A54900A72C29 /* ZZDetailViewController.m */; };
 		A9F4F1741D395D7900191336 /* HMDouYuTitileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F4F1731D395D7900191336 /* HMDouYuTitileView.xib */; };
 		A9F4F1771D39683B00191336 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F4F1761D39683B00191336 /* UINavigationBar+Awesome.m */; };
+		A9FC17A91D825E3200F16D1E /* HMDetailBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC17A81D825E3200F16D1E /* HMDetailBottomBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -255,6 +256,8 @@
 		A9F4F1731D395D7900191336 /* HMDouYuTitileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMDouYuTitileView.xib; sourceTree = "<group>"; };
 		A9F4F1751D39683B00191336 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		A9F4F1761D39683B00191336 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		A9FC17A71D825E3200F16D1E /* HMDetailBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailBottomBar.h; sourceTree = "<group>"; };
+		A9FC17A81D825E3200F16D1E /* HMDetailBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailBottomBar.m; sourceTree = "<group>"; };
 		F1B762794EBD4E6C806C9BD4 /* Pods-什么值得买.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.debug.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -570,6 +573,8 @@
 				A9A67B941D622C00000F46BE /* HMYuanChuangCell.h */,
 				A9A67B951D622C00000F46BE /* HMYuanChuangCell.m */,
 				A9A67B961D622C00000F46BE /* HMYuanChuangCell.xib */,
+				A9FC17A71D825E3200F16D1E /* HMDetailBottomBar.h */,
+				A9FC17A81D825E3200F16D1E /* HMDetailBottomBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -934,6 +939,7 @@
 				A927160B1D44571B006EEECA /* HMGlobalApperance.m in Sources */,
 				A9D9D2511CE40B7C00A83101 /* UIColor+HEX.m in Sources */,
 				A9B783581D58FB90003C464D /* ZZCircleView.m in Sources */,
+				A9FC17A91D825E3200F16D1E /* HMDetailBottomBar.m in Sources */,
 				A980A4091CE412E8006E0037 /* HMTabBarViewController.m in Sources */,
 				A9B783551D58FB5F003C464D /* HMDIYHeader.m in Sources */,
 				A9ADB8511D64DF5D00330D23 /* ZZNetworkHandler.m in Sources */,
