@@ -67,7 +67,6 @@
 
 - (void)stopAnimating {
     self.circleView.hidden = YES;
-//    [self.link removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     [self.link invalidate];
     self.link = nil;
 }

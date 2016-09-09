@@ -11,10 +11,13 @@
 #import "HMChannelID.h"
 #import "ZZCircleView.h"
 
+#define kBottomBarHeight 44
+
 @interface ZZDetailViewController ()<WKUIDelegate, WKNavigationDelegate>
 @property (nonatomic, strong) HMChannelID *channel;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) ZZCircleView *circleView;
+@property (nonatomic, strong) UIView *bottomToolBar;
 @end
 
 @implementation ZZDetailViewController
@@ -25,14 +28,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    //初始化底部工具栏
+    [self initialBottomToolBar];
     //初始化webView
     [self initialWebView];
     //加载数据
     [self loadWebViewData];
     //初始化预加载动画, 有顺序要求
     [self initialCustomIndicatorView];
-    //初始化底部工具栏
-    [self initialBottomToolBar];
+
 }
 
 
@@ -43,14 +47,15 @@
 
 #pragma mark - 初始化控件
 - (void)initialBottomToolBar{
-    
-    UIView *containerView = [[UIView alloc] init];
-    containerView.backgroundColor = [UIColor randomColor];
-    [self.view addSubview:containerView];
-    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+
+    UIView *bottomToolBar = [[UIView alloc] init];
+    bottomToolBar.backgroundColor = [UIColor randomColor];
+    [self.view addSubview:bottomToolBar];
+    [bottomToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.offset(0);
-        make.height.mas_equalTo(44);
+        make.height.mas_equalTo(kBottomBarHeight);
     }];
+    self.bottomToolBar = bottomToolBar;
 }
 
 - (void)initialCustomIndicatorView{
@@ -68,13 +73,17 @@
     configuration.preferences = [[WKPreferences alloc] init];
     configuration.preferences.javaScriptCanOpenWindowsAutomatically = YES;
     
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:configuration];
     webView.scrollView.scrollsToTop = YES;
     webView.UIDelegate = self;
     webView.navigationDelegate = self;
     [webView addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:nil];
     self.webView = webView;
     [self.view addSubview:webView];
+    [webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.offset(0);
+        make.bottom.mas_equalTo(self.bottomToolBar.mas_top).offset(0);
+    }];
 }
 
 #pragma mark - loadData
@@ -152,7 +161,7 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     
     if ([keyPath isEqualToString:@"loading"]) {
-        LxDBAnyVar(@"正在加载");
+//        LxDBAnyVar(@"正在加载");
     }
     
 }
