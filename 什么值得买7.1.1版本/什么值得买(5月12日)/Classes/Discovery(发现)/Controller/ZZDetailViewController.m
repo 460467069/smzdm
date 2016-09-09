@@ -19,10 +19,51 @@
 
 @implementation ZZDetailViewController
 
+#pragma mark - life cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    //初始化webView
+    [self initialWebView];
+    //加载数据
+    [self loadWebViewData];
+    //初始化预加载动画, 有顺序要求
+    [self initialCustomIndicatorView];
+    //初始化底部工具栏
+    [self initialBottomToolBar];
+}
+
+
+- (void)dealloc{
+    [self.webView removeObserver:self forKeyPath:@"loading"];
+}
+
+
+#pragma mark - 初始化控件
+- (void)initialBottomToolBar{
+    
+    UIView *containerView = [[UIView alloc] init];
+    containerView.backgroundColor = [UIColor randomColor];
+    [self.view addSubview:containerView];
+    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.offset(0);
+        make.height.mas_equalTo(44);
+    }];
+}
+
+- (void)initialCustomIndicatorView{
+    ZZCircleView *circleView = [[ZZCircleView alloc] init];
+    circleView.center = self.view.center;
+    circleView.width = 30;
+    circleView.height = 30;
+    [circleView startAnimating];
+    [self.view addSubview:circleView];
+    self.circleView = circleView;
+}
+
+- (void)initialWebView{
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     configuration.preferences = [[WKPreferences alloc] init];
     configuration.preferences.javaScriptCanOpenWindowsAutomatically = YES;
@@ -34,11 +75,10 @@
     [webView addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:nil];
     self.webView = webView;
     [self.view addSubview:webView];
-    
-    [self setupBottomToolBar];
-    
-    
-    self.view.backgroundColor = [UIColor whiteColor];
+}
+
+#pragma mark - loadData
+- (void)loadWebViewData{
     NSInteger channelID = [self.article.article_channel_id integerValue];
     
     HMChannelID *channel = [HMChannelID channelWithID:channelID];
@@ -57,16 +97,19 @@
         }
         if (html5Content.length > 0) {
             
+            
+            [self.circleView stopAnimating];
+            
+            [self.circleView removeFromSuperview];
+            
             WKWebView *webView = self.webView;
             
             [webView loadHTMLString:html5Content baseURL:nil];
         }
         
     }];
-
-    [self setupCustomIndicatorView];
-    
 }
+
 
 - (NSMutableDictionary *)configureParameters{
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
@@ -78,7 +121,7 @@
         [parameters setValue:@"1" forKey:@"filtervideo"];
         [parameters setValue:@"1" forKey:@"show_dingyue"];
         [parameters setValue:@"1" forKey:@"show_wiki"];
-
+        
     }
     
     switch (channelID) {
@@ -100,32 +143,12 @@
         default:
             break;
     }
-
+    
     return parameters;
 }
 
 
-- (void)setupBottomToolBar{
-    
-    UIView *containerView = [[UIView alloc] init];
-    [self.view addSubview:containerView];
-    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.offset(0);
-        make.height.mas_equalTo(44);
-    }];
-}
-
-- (void)setupCustomIndicatorView{
-    ZZCircleView *circleView = [[ZZCircleView alloc] init];
-    circleView.center = self.view.center;
-    circleView.width = 30;
-    circleView.height = 30;
-    [circleView startAnimating];
-    [self.view addSubview:circleView];
-    self.circleView = circleView;
-}
-
-
+#pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     
     if ([keyPath isEqualToString:@"loading"]) {
@@ -154,10 +177,7 @@
 /** 页面加载完成时调用 */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
 //    LxDBAnyVar(@"页面加载完成时调用");
-    
-    [self.circleView stopAnimating];
-    
-    [self.circleView removeFromSuperview];
+
     
 }
 
@@ -206,10 +226,6 @@
         [webView loadRequest:navigationAction.request];
     }
     return nil;
-}
-
-- (void)dealloc{
-    [self.webView removeObserver:self forKeyPath:@"loading"];
 }
 
 @end

@@ -26,4 +26,5 @@
 + (UIColor *)colorWithWholeRed:(CGFloat)red
                          green:(CGFloat)green
                           blue:(CGFloat)blue;
++ (UIColor *)randomColor;
 @end
