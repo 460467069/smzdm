@@ -9,10 +9,12 @@
 #import "ZZDetailViewController.h"
 #import <WebKit/WebKit.h>
 #import "HMChannelID.h"
+#import "ZZCircleView.h"
 
 @interface ZZDetailViewController ()<WKUIDelegate, WKNavigationDelegate>
 @property (nonatomic, strong) HMChannelID *channel;
 @property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, strong) ZZCircleView *circleView;
 @end
 
 @implementation ZZDetailViewController
@@ -21,8 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     configuration.preferences = [[WKPreferences alloc] init];
     configuration.preferences.javaScriptCanOpenWindowsAutomatically = YES;
@@ -35,9 +35,10 @@
     self.webView = webView;
     [self.view addSubview:webView];
     
+    [self setupBottomToolBar];
+    
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
     NSInteger channelID = [self.article.article_channel_id integerValue];
     
     HMChannelID *channel = [HMChannelID channelWithID:channelID];
@@ -62,6 +63,8 @@
         }
         
     }];
+
+    [self setupCustomIndicatorView];
     
 }
 
@@ -101,6 +104,28 @@
     return parameters;
 }
 
+
+- (void)setupBottomToolBar{
+    
+    UIView *containerView = [[UIView alloc] init];
+    [self.view addSubview:containerView];
+    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.offset(0);
+        make.height.mas_equalTo(44);
+    }];
+}
+
+- (void)setupCustomIndicatorView{
+    ZZCircleView *circleView = [[ZZCircleView alloc] init];
+    circleView.center = self.view.center;
+    circleView.width = 30;
+    circleView.height = 30;
+    [circleView startAnimating];
+    [self.view addSubview:circleView];
+    self.circleView = circleView;
+}
+
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     
     if ([keyPath isEqualToString:@"loading"]) {
@@ -129,6 +154,10 @@
 /** 页面加载完成时调用 */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
 //    LxDBAnyVar(@"页面加载完成时调用");
+    
+    [self.circleView stopAnimating];
+    
+    [self.circleView removeFromSuperview];
     
 }
 

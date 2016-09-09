@@ -95,7 +95,6 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
     littleBannerView.contentInset = UIEdgeInsetsMake(inset, 0, inset, 0);
     self.littleBannerView = littleBannerView;
     [littleBannerView registerNib:[UINib nibWithNibName:kLittleBannerViewReuseIdentifier bundle:nil] forCellWithReuseIdentifier:kLittleBannerViewReuseIdentifier];
-    LxDBAnyVar(littleBannerView.frame);
     
     NSString *urlStr = @"http://api.smzdm.com/v2/util/banner?f=iphone&is_login=1&type=menhu&v=7.1&weixin=1";
     

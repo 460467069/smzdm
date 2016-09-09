@@ -8,6 +8,8 @@
 
 #import "ZZCircleView.h"
 
+#define kCircleViewWH 24
+
 @interface ZZCircleView ()
 @property (nonatomic, strong)  CADisplayLink *link;
 @property (nonatomic, strong) UIImageView *circleView;
@@ -45,6 +47,12 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
+    if (frame.size.width == 0 && frame.size.height == 0) {
+        frame.size.width = kCircleViewWH;
+        frame.size.height = kCircleViewWH;
+        
+    }
+    
     self = [super initWithFrame:frame];
     if (self) {
         

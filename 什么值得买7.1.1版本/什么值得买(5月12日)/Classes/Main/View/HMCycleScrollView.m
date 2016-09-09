@@ -24,10 +24,6 @@
     [super awakeFromNib];
     
     [self setup];
-    
-
-
-
 }
 
 - (void)setup{

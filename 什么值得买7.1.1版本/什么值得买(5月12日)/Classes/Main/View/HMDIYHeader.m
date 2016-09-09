@@ -48,16 +48,14 @@
 {
     [super placeSubviews];
     
-    CGFloat circleViewWH = 24;
-    
-    self.circleView.mj_size = CGSizeMake(circleViewWH, circleViewWH);
+
     self.circleView.mj_y = self.mj_h - self.circleView.mj_h - 3;
     self.circleView.mj_x = (self.mj_w - self.circleView.mj_w) * 0.5;
 
     CGFloat labelX = 0;
     CGFloat labelY = 0;
     CGFloat labelW = kScreenW;
-    CGFloat labelH = self.mj_h - circleViewWH;
+    CGFloat labelH = self.mj_h - self.circleView.mj_h;
     self.label.frame = CGRectMake(labelX, labelY, labelW, labelH);
 
 

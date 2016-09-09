@@ -28,6 +28,7 @@
     UIScrollView *scrollView = [UIScrollView appearance];
     scrollView.scrollsToTop = NO;
     
+    //启用网络加载菊花, 网路差时能看到效果(可用networkLinkConditioner模拟)
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 }
 
