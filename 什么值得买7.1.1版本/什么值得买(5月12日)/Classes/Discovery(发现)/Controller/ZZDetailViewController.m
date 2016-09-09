@@ -28,15 +28,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"优惠详情";
+
+    
     self.view.backgroundColor = [UIColor whiteColor];
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    
-//    self.navigationController.navigationBar.barTintColor = ZZColor(214, 214, 214);
-//    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
-
-
     
     //初始化底部工具栏
     [self initialBottomToolBar];
@@ -117,9 +115,12 @@
     return UIStatusBarStyleDefault;
 }
 
-- (void)configureLeftBarButtonItemWithImage:(UIImage *)leftImage rightBarButtonItemWithImage:(UIImage *)rightImage{
+- (void)configureLeftBarButtonItemWithImage:(UIImage *)leftImage rightBarButtonItemWithImage:(UIImage *)rightImage titleColor:(UIColor *)titleColor{
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[leftImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[rightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailRightBtnDidClick)];
+
+    NSDictionary *attributes = @{NSForegroundColorAttributeName : titleColor};
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
 }
 
 #pragma mark - loadData
@@ -149,7 +150,7 @@
             WKWebView *webView = self.webView;
             
             [webView loadHTMLString:html5Content baseURL:nil];
-//            [self scrollViewDidScroll:webView.scrollView];
+            [self scrollViewDidScroll:webView.scrollView];
         }
         
     }];
@@ -215,18 +216,19 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Back"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Right"]];
+        UIColor *color = ZZColor(234, 234, 234);
+    [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Back"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Right"] titleColor:[UIColor clearColor]];
     
     CGFloat offsetY = scrollView.contentOffset.y;
     
-    UIColor *color = ZZColor(214, 214, 214);
+
     if (offsetY > NAVBAR_CHANGE_POINT) {
         CGFloat alpha = MIN(1, 1 - (NAVBAR_CHANGE_POINT + 64 - offsetY) / 64);
         
         [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
         
         if (alpha == 1) {
-            [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_BackSecond"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_RightSecond"]];
+            [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_BackSecond"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_RightSecond"] titleColor:[UIColor blackColor]];
         }
 
     }else{
