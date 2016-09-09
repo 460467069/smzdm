@@ -56,7 +56,7 @@
 		A980A4081CE412E8006E0037 /* HMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A4031CE412E8006E0037 /* HMNavigationController.m */; };
 		A980A4091CE412E8006E0037 /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A4051CE412E8006E0037 /* HMTabBarViewController.m */; };
 		A980A40C1CE4130A006E0037 /* HMTabBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A40B1CE4130A006E0037 /* HMTabBarModel.m */; };
-		A980A40F1CE41827006E0037 /* HMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A40E1CE41827006E0037 /* HMBaseViewController.m */; };
+		A980A40F1CE41827006E0037 /* HMMainBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A40E1CE41827006E0037 /* HMMainBaseViewController.m */; };
 		A99605151CE469D700C71A29 /* HMTagLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A99605141CE469D700C71A29 /* HMTagLabel.m */; };
 		A99A4BDD1D37E36B001DDE47 /* HMDouYUBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A99A4BDC1D37E36B001DDE47 /* HMDouYUBannerModel.m */; };
 		A99A4BE01D37F3BA001DDE47 /* HMDouYuHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A99A4BDF1D37F3BA001DDE47 /* HMDouYuHomeModel.m */; };
@@ -98,6 +98,7 @@
 		A9F4F1741D395D7900191336 /* HMDouYuTitileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F4F1731D395D7900191336 /* HMDouYuTitileView.xib */; };
 		A9F4F1771D39683B00191336 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F4F1761D39683B00191336 /* UINavigationBar+Awesome.m */; };
 		A9FC17A91D825E3200F16D1E /* HMDetailBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC17A81D825E3200F16D1E /* HMDetailBottomBar.m */; };
+		A9FC17AC1D826BB800F16D1E /* HMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC17AB1D826BB800F16D1E /* HMBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,8 +186,8 @@
 		A980A4051CE412E8006E0037 /* HMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBarViewController.m; sourceTree = "<group>"; };
 		A980A40A1CE4130A006E0037 /* HMTabBarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarModel.h; sourceTree = "<group>"; };
 		A980A40B1CE4130A006E0037 /* HMTabBarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBarModel.m; sourceTree = "<group>"; };
-		A980A40D1CE41827006E0037 /* HMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMBaseViewController.h; sourceTree = "<group>"; };
-		A980A40E1CE41827006E0037 /* HMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBaseViewController.m; sourceTree = "<group>"; };
+		A980A40D1CE41827006E0037 /* HMMainBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMainBaseViewController.h; sourceTree = "<group>"; };
+		A980A40E1CE41827006E0037 /* HMMainBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMainBaseViewController.m; sourceTree = "<group>"; };
 		A99605131CE469D700C71A29 /* HMTagLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTagLabel.h; sourceTree = "<group>"; };
 		A99605141CE469D700C71A29 /* HMTagLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTagLabel.m; sourceTree = "<group>"; };
 		A99A4BDB1D37E36B001DDE47 /* HMDouYUBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDouYUBannerModel.h; sourceTree = "<group>"; };
@@ -258,6 +259,8 @@
 		A9F4F1761D39683B00191336 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		A9FC17A71D825E3200F16D1E /* HMDetailBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailBottomBar.h; sourceTree = "<group>"; };
 		A9FC17A81D825E3200F16D1E /* HMDetailBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailBottomBar.m; sourceTree = "<group>"; };
+		A9FC17AA1D826BB800F16D1E /* HMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMBaseViewController.h; sourceTree = "<group>"; };
+		A9FC17AB1D826BB800F16D1E /* HMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBaseViewController.m; sourceTree = "<group>"; };
 		F1B762794EBD4E6C806C9BD4 /* Pods-什么值得买.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.debug.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -375,8 +378,10 @@
 				A980A4031CE412E8006E0037 /* HMNavigationController.m */,
 				A980A4041CE412E8006E0037 /* HMTabBarViewController.h */,
 				A980A4051CE412E8006E0037 /* HMTabBarViewController.m */,
-				A980A40D1CE41827006E0037 /* HMBaseViewController.h */,
-				A980A40E1CE41827006E0037 /* HMBaseViewController.m */,
+				A9FC17AA1D826BB800F16D1E /* HMBaseViewController.h */,
+				A9FC17AB1D826BB800F16D1E /* HMBaseViewController.m */,
+				A980A40D1CE41827006E0037 /* HMMainBaseViewController.h */,
+				A980A40E1CE41827006E0037 /* HMMainBaseViewController.m */,
 				A91E0BE01D5D9640007BD117 /* HMTableViewController.h */,
 				A91E0BE11D5D9640007BD117 /* HMTableViewController.m */,
 			);
@@ -914,7 +919,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9275A0B1CE420AA0017BA82 /* HMHomeChannel.m in Sources */,
-				A980A40F1CE41827006E0037 /* HMBaseViewController.m in Sources */,
+				A980A40F1CE41827006E0037 /* HMMainBaseViewController.m in Sources */,
 				A9275A1C1CE459A90017BA82 /* HMWorthyArticle.m in Sources */,
 				A980A3F41CE40F76006E0037 /* HMMineViewController.m in Sources */,
 				A963A51C1D5EBD68007B5D6D /* HMHomeFirstCell.m in Sources */,
@@ -969,6 +974,7 @@
 				A9A67B971D622C00000F46BE /* HMYuanChuangCell.m in Sources */,
 				A97EC6C31D794E06006AABAB /* HMInPurchaseViewController.m in Sources */,
 				A99A4BE01D37F3BA001DDE47 /* HMDouYuHomeModel.m in Sources */,
+				A9FC17AC1D826BB800F16D1E /* HMBaseViewController.m in Sources */,
 				A9AC889B1D6374CF006C840D /* HMTuiGuangCell.m in Sources */,
 				A9A512051D77B07E00E41407 /* HMChannelID.m in Sources */,
 				A97229971D5D7F18001415A8 /* ZZHomeViewController.m in Sources */,

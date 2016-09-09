@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HMBaseViewController.h"
+#import "HMMainBaseViewController.h"
 
-@interface HMTableViewController : HMBaseViewController<UITableViewDelegate, UITableViewDataSource>
+@interface HMTableViewController : HMMainBaseViewController<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 
 @property(nonatomic, strong)NSMutableArray *dataSource;

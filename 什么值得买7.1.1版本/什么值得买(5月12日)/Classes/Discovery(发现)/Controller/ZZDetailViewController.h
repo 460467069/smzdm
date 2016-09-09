@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "HMWorthyArticle.h"
+#import "HMBaseViewController.h"
 
-@interface ZZDetailViewController : UIViewController
+@interface ZZDetailViewController : HMBaseViewController
 @property (nonatomic, strong) HMWorthyArticle *article;
 @end

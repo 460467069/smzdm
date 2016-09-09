@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HMBaseViewController.h"
+#import "HMMainBaseViewController.h"
 
-@interface ZZHomeHeaderViewController : HMBaseViewController
+@interface ZZHomeHeaderViewController : HMMainBaseViewController
 
 @end

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import "HMBaseViewController.h"
+#import "HMMainBaseViewController.h"
 
-@interface HMJingXuanViewController : HMBaseViewController
+@interface HMJingXuanViewController : HMMainBaseViewController
 
 @end

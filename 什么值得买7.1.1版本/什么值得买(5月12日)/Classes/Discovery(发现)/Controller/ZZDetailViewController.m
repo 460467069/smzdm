@@ -12,8 +12,9 @@
 #import "ZZCircleView.h"
 
 #define kBottomBarHeight 44
+#define NAVBAR_CHANGE_POINT 50
 
-@interface ZZDetailViewController ()<WKUIDelegate, WKNavigationDelegate>
+@interface ZZDetailViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) HMChannelID *channel;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) ZZCircleView *circleView;
@@ -28,13 +29,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = ZZColor(214, 214, 214);
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem alloc] initWithImage:<#(nullable UIImage *)#> landscapeImagePhone:<#(nullable UIImage *)#> style:<#(UIBarButtonItemStyle)#> target:<#(nullable id)#> action:<#(nullable SEL)#>;
+    if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]) {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
+//    self.navigationController.navigationBar.barTintColor = ZZColor(214, 214, 214);
+//    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
+
+
     
     //初始化底部工具栏
     [self initialBottomToolBar];
     //初始化webView
     [self initialWebView];
+
     //加载数据
     [self loadWebViewData];
     //初始化预加载动画, 有顺序要求
@@ -43,8 +51,21 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar lt_reset];
+    
+}
+
 - (void)dealloc{
     [self.webView removeObserver:self forKeyPath:@"loading"];
+    self.webView.scrollView.delegate = nil;
 }
 
 
@@ -74,9 +95,11 @@
     self.webView = webView;
     [self.view addSubview:webView];
     [webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.offset(0);
+        make.left.right.offset(0);
+        make.top.offset(20);
         make.bottom.mas_equalTo(self.bottomToolBar.mas_top).offset(0);
     }];
+    webView.scrollView.delegate = self;
 }
 
 - (void)initialCustomIndicatorView{
@@ -87,6 +110,16 @@
     [circleView startAnimating];
     [self.view addSubview:circleView];
     self.circleView = circleView;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    
+    return UIStatusBarStyleDefault;
+}
+
+- (void)configureLeftBarButtonItemWithImage:(UIImage *)leftImage rightBarButtonItemWithImage:(UIImage *)rightImage{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[leftImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[rightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailRightBtnDidClick)];
 }
 
 #pragma mark - loadData
@@ -111,12 +144,12 @@
             
             
             [self.circleView stopAnimating];
-            
             [self.circleView removeFromSuperview];
             
             WKWebView *webView = self.webView;
             
             [webView loadHTMLString:html5Content baseURL:nil];
+//            [self scrollViewDidScroll:webView.scrollView];
         }
         
     }];
@@ -169,6 +202,39 @@
     
 }
 
+#pragma mark - 事件监听
+- (void)detailLeftBtnDidClick {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)detailRightBtnDidClick {
+    
+}
+
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Back"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Right"]];
+    
+    CGFloat offsetY = scrollView.contentOffset.y;
+    
+    UIColor *color = ZZColor(214, 214, 214);
+    if (offsetY > NAVBAR_CHANGE_POINT) {
+        CGFloat alpha = MIN(1, 1 - (NAVBAR_CHANGE_POINT + 64 - offsetY) / 64);
+        
+        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+        
+        if (alpha == 1) {
+            [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_BackSecond"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_RightSecond"]];
+        }
+
+    }else{
+        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
+    }
+    
+}
+
 
 #pragma mark - WKNavigationDelegate
 
@@ -190,7 +256,6 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
 //    LxDBAnyVar(@"页面加载完成时调用");
 
-    
 }
 
 /** 页面加载失败时调用 */
