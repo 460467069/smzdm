@@ -11,6 +11,7 @@
 #import "HMChannelID.h"
 #import "ZZCircleView.h"
 #import "HMDetailBottomBar.h"
+#import "YYTextExampleHelper.h"
 
 #define kBottomBarHeight 44
 #define NAVBAR_CHANGE_POINT 50
@@ -28,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"优惠详情";
     self.view.backgroundColor = [UIColor whiteColor];
     
