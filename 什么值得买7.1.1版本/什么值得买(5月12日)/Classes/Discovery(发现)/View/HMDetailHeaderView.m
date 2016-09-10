@@ -42,7 +42,7 @@
         
         _bottomLineLayer = [CALayer layer];
         [self.layer addSublayer:_bottomLineLayer];
-        _bottomLineLayer.backgroundColor = [UIColor lightGrayColor].CGColor;
+        _bottomLineLayer.backgroundColor = ZZColor(234, 234, 234).CGColor;
         _bottomLineLayer.height = kSeparatorLineHeight;
         _bottomLineLayer.left = kDetailContentOffset;
         _bottomLineLayer.width = self.width - kDetailContentOffset * 2;

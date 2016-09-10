@@ -21,4 +21,5 @@ target '什么值得买' do
   pod 'YYKit'
   pod 'RongCloudIMKit', '2.6.7'
   pod 'SVProgressHUD', '~> 2.0.3'
+  pod 'FDFullscreenPopGesture', '~> 1.1'
 end

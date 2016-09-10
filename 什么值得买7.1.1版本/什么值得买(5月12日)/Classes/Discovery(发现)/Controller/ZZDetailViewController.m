@@ -56,7 +56,8 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
     [self initialWebView];
     //加载数据
     [self loadWebViewData];
-
+    //初始化预加载动画, 有顺序要求
+    [self initialCustomIndicatorView];
 
 }
 
@@ -66,8 +67,7 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     [self scrollViewDidScroll:_containerScrollView];
     
-    //初始化预加载动画, 有顺序要求
-    [self initialCustomIndicatorView];
+
     
 }
 
