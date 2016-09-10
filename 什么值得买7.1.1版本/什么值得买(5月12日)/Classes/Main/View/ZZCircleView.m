@@ -19,12 +19,6 @@
 
 @implementation ZZCircleView
 
-- (CADisplayLink *)link{
-    if (!_link) {
-        _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(rotateCirclView)];
-    }
-    return _link;
-}
 
 - (UIImageView *)zhiView{
     if (!_zhiView) {
@@ -60,6 +54,7 @@
         [self addSubview:self.zhiView];
         [self addSubview:self.circleView];
         
+        _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(rotateCirclView)];
 
     }
     return self;
@@ -80,12 +75,13 @@
 
 - (void)dealloc{
     
-    [self.link invalidate];
-    self.link = nil;
+    [self stopAnimating];
+//    [self.link invalidate];
+//    self.link = nil;
 }
 
 - (void)rotateCirclView {
-	self.circleView.transform = CGAffineTransformRotate(self.circleView.transform, M_PI_4 / 8);
+	self.circleView.transform = CGAffineTransformRotate(self.circleView.transform, M_PI_4 / 5);
 }
 
 

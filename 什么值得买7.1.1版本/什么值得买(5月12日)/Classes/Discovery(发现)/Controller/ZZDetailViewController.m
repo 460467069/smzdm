@@ -56,8 +56,7 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
     [self initialWebView];
     //加载数据
     [self loadWebViewData];
-    //初始化预加载动画, 有顺序要求
-    [self initialCustomIndicatorView];
+
 
 }
 
@@ -65,6 +64,10 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    [self scrollViewDidScroll:_containerScrollView];
+    
+    //初始化预加载动画, 有顺序要求
+    [self initialCustomIndicatorView];
     
 }
 
@@ -77,6 +80,7 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
 - (void)dealloc{
     
     [self.webView removeObserver:self forKeyPath:WKWebViewKeyPathLoading];
+    self.containerScrollView.delegate = nil;
 }
 
 
@@ -102,8 +106,8 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
     [_webView addObserver:self forKeyPath:WKWebViewKeyPathLoading options:NSKeyValueObservingOptionNew context:nil];
-    [_containerScrollView addSubview:_webView];
     _webView.frame = _containerScrollView.bounds;
+//    [_containerScrollView addSubview:_webView];
 }
 
 - (void)initialCustomIndicatorView{
@@ -153,12 +157,7 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
         }
         if (html5Content.length > 0) {
             
-            
-            [self.circleView stopAnimating];
-            [self.circleView removeFromSuperview];
-            
             [_webView loadHTMLString:html5Content baseURL:nil];
-            [self scrollViewDidScroll:_containerScrollView];
         }
         
     }];
@@ -264,16 +263,22 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
 
 /** 页面加载完成时调用 */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    LxDBAnyVar(webView.frame);
-
+    
     [webView evaluateJavaScript:@"document.body.offsetHeight;" completionHandler:^(NSNumber *_Nullable result,NSError *_Nullable error) {
+        
+        
+        [self.circleView stopAnimating];
+        [self.circleView removeFromSuperview];
         
         HMDetailHeaderView *headerView = [[HMDetailHeaderView alloc] init];
         [self.containerScrollView addSubview:headerView];
         headerView.headerLayout = _headerLayout;
         
+        LxDBAnyVar(result);
+        [_containerScrollView addSubview:_webView];
         webView.top = headerView.bottom;
-        webView.height = [result floatValue];
+        webView.size = CGSizeMake(_containerScrollView.width, [result floatValue]);
+        
         self.containerScrollView.contentSize = CGSizeMake(self.view.width, [result floatValue] + _headerLayout.height);
         
     }];
