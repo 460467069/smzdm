@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 typedef NS_ENUM(NSUInteger, DetailBottomBarStyle) {
     DetailBottomBarStyleHaoWu,
     DetailBottomBarStyleYuanChuang,
@@ -17,6 +19,14 @@ typedef NS_ENUM(NSUInteger, DetailBottomBarStyle) {
     DetailBottomBarStyleZiXun,
     DetailBottomBarStylePingCe = DetailBottomBarStyleZiXun,
 };
+
+@interface HMFirstContainerView : UIView
+
+@end
+
+@interface HMSecondContainerView : UIView
+
+@end
 
 @interface HMDetailBottomBar : UIView
 

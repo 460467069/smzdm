@@ -45,6 +45,7 @@
 		A97229941D5D7C2D001415A8 /* HMHomeFirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A97229931D5D7C2D001415A8 /* HMHomeFirstModel.m */; };
 		A97229971D5D7F18001415A8 /* ZZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A97229961D5D7F18001415A8 /* ZZHomeViewController.m */; };
 		A97229991D5D7F2A001415A8 /* ZZHomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A97229981D5D7F2A001415A8 /* ZZHomeViewController.storyboard */; };
+		A97B05C31D83DE650002CC31 /* HMDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A97B05C21D83DE650002CC31 /* HMDetailModel.m */; };
 		A97EC6C31D794E06006AABAB /* HMInPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A97EC6C21D794E06006AABAB /* HMInPurchaseViewController.m */; };
 		A980A3E51CE40E85006E0037 /* HMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A3E41CE40E85006E0037 /* HMHomeViewController.m */; };
 		A980A3EA1CE40EFD006E0037 /* HMDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A3E91CE40EFD006E0037 /* HMDiscoveryViewController.m */; };
@@ -167,6 +168,8 @@
 		A97229951D5D7F18001415A8 /* ZZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeViewController.h; sourceTree = "<group>"; };
 		A97229961D5D7F18001415A8 /* ZZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeViewController.m; sourceTree = "<group>"; };
 		A97229981D5D7F2A001415A8 /* ZZHomeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZHomeViewController.storyboard; sourceTree = "<group>"; };
+		A97B05C11D83DE650002CC31 /* HMDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailModel.h; sourceTree = "<group>"; };
+		A97B05C21D83DE650002CC31 /* HMDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailModel.m; sourceTree = "<group>"; };
 		A97EC6C11D794E06006AABAB /* HMInPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMInPurchaseViewController.h; sourceTree = "<group>"; };
 		A97EC6C21D794E06006AABAB /* HMInPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMInPurchaseViewController.m; sourceTree = "<group>"; };
 		A980A3E11CE40C4A006E0037 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -564,6 +567,8 @@
 				A97229931D5D7C2D001415A8 /* HMHomeFirstModel.m */,
 				A972298F1D5D6FD9001415A8 /* HMHomeFirstLayout.h */,
 				A97229901D5D6FD9001415A8 /* HMHomeFirstLayout.m */,
+				A97B05C11D83DE650002CC31 /* HMDetailModel.h */,
+				A97B05C21D83DE650002CC31 /* HMDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -930,6 +935,7 @@
 				A963A51C1D5EBD68007B5D6D /* HMHomeFirstCell.m in Sources */,
 				A97229941D5D7C2D001415A8 /* HMHomeFirstModel.m in Sources */,
 				A9B0506B1D5AB5C5000BB865 /* HMLittleBannerCell.m in Sources */,
+				A97B05C31D83DE650002CC31 /* HMDetailModel.m in Sources */,
 				A9D9D21B1CE40B3E00A83101 /* AppDelegate.m in Sources */,
 				A927160E1D44C126006EEECA /* WBStatusLayout.m in Sources */,
 				A9275A1F1CE4600F0017BA82 /* NSString+HMNumberFormatter.m in Sources */,

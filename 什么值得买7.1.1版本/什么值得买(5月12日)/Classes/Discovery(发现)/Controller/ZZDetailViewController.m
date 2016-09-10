@@ -12,6 +12,7 @@
 #import "ZZCircleView.h"
 #import "HMDetailBottomBar.h"
 #import "YYTextExampleHelper.h"
+#import "HMDetailModel.h"
 
 #define kBottomBarHeight 44
 #define NAVBAR_CHANGE_POINT 50
@@ -134,11 +135,13 @@
         if (error) {
             return;
         }
+        HMDetailModel *detailModel = [HMDetailModel modelWithDictionary:responseObject[@"data"]];
+        
         NSString *html5Content = nil;
         if (channelID == 6) {
-            html5Content = responseObject[@"data"][@"article_filter_content"];
+            html5Content = detailModel.article_filter_content;
         }else{
-            html5Content = responseObject[@"data"][@"html5_content"];
+            html5Content = detailModel.html5_content;
         }
         if (html5Content.length > 0) {
             

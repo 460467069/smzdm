@@ -128,8 +128,7 @@ static NSString * const kListCell = @"HMListCell";
     
     [HMNetworking Get:self.homeChannel.URLString parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
         [self.tableView.mj_footer endRefreshing];
-        if (error)
-        {
+        if (error){
             return;
         }
         
