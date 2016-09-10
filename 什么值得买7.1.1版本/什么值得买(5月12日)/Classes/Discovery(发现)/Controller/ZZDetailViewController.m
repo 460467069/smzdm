@@ -13,15 +13,20 @@
 #import "HMDetailBottomBar.h"
 #import "YYTextExampleHelper.h"
 #import "HMDetailModel.h"
+#import "HMDetailHeaderView.h"
 
 #define kBottomBarHeight 44
 #define NAVBAR_CHANGE_POINT 50
+
+NSString *const WKWebViewKeyPathLoading = @"loading";
 
 @interface ZZDetailViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) HMChannelID *channel;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) ZZCircleView *circleView;
 @property (nonatomic, strong) UIView *bottomToolBar;
+@property (nonatomic, strong) UIScrollView *containerScrollView;
+@property (nonatomic, strong) HMDetailHeaderLayout *headerLayout;
 @end
 
 @implementation ZZDetailViewController
@@ -38,8 +43,15 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
+    
     //初始化底部工具栏
     [self initialBottomToolBar];
+    
+    _containerScrollView = [[UIScrollView alloc] init];
+    _containerScrollView.delegate = self;
+    [self.view addSubview:_containerScrollView];
+    _containerScrollView.frame = CGRectMake(0, kStatusH, self.view.width, self.view.height - kStatusH - kTabBarH);
+    
     //初始化webView
     [self initialWebView];
     //加载数据
@@ -63,8 +75,8 @@
 }
 
 - (void)dealloc{
-    [self.webView removeObserver:self forKeyPath:@"loading"];
-    self.webView.scrollView.delegate = nil;
+    
+    [self.webView removeObserver:self forKeyPath:WKWebViewKeyPathLoading];
 }
 
 
@@ -75,7 +87,7 @@
     [self.view addSubview:bottomToolBar];
     [bottomToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.offset(0);
-        make.height.mas_equalTo(kBottomBarHeight);
+        make.height.mas_equalTo(kTabBarH);
     }];
     self.bottomToolBar = bottomToolBar;
 }
@@ -85,19 +97,13 @@
     configuration.preferences = [[WKPreferences alloc] init];
     configuration.preferences.javaScriptCanOpenWindowsAutomatically = YES;
     
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:configuration];
-    webView.scrollView.scrollsToTop = YES;
-    webView.UIDelegate = self;
-    webView.navigationDelegate = self;
-    [webView addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:nil];
-    self.webView = webView;
-    [self.view addSubview:webView];
-    [webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.offset(0);
-        make.top.offset(20);
-        make.bottom.mas_equalTo(self.bottomToolBar.mas_top).offset(0);
-    }];
-    webView.scrollView.delegate = self;
+    _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:configuration];
+    _webView.scrollView.scrollsToTop = YES;
+    _webView.UIDelegate = self;
+    _webView.navigationDelegate = self;
+    [_webView addObserver:self forKeyPath:WKWebViewKeyPathLoading options:NSKeyValueObservingOptionNew context:nil];
+    [_containerScrollView addSubview:_webView];
+    _webView.frame = _containerScrollView.bounds;
 }
 
 - (void)initialCustomIndicatorView{
@@ -137,6 +143,8 @@
         }
         HMDetailModel *detailModel = [HMDetailModel modelWithDictionary:responseObject[@"data"]];
         
+        _headerLayout = [[HMDetailHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
+        
         NSString *html5Content = nil;
         if (channelID == 6) {
             html5Content = detailModel.article_filter_content;
@@ -149,10 +157,8 @@
             [self.circleView stopAnimating];
             [self.circleView removeFromSuperview];
             
-            WKWebView *webView = self.webView;
-            
-            [webView loadHTMLString:html5Content baseURL:nil];
-            [self scrollViewDidScroll:webView.scrollView];
+            [_webView loadHTMLString:html5Content baseURL:nil];
+            [self scrollViewDidScroll:_containerScrollView];
         }
         
     }];
@@ -199,7 +205,7 @@
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     
-    if ([keyPath isEqualToString:@"loading"]) {
+    if ([keyPath isEqualToString:WKWebViewKeyPathLoading]){
 //        LxDBAnyVar(@"正在加载");
     }
     
@@ -218,7 +224,7 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-        UIColor *color = ZZColor(234, 234, 234);
+    UIColor *color = ZZColor(234, 234, 234);
     [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Back"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Right"] titleColor:[UIColor clearColor]];
     
     CGFloat offsetY = scrollView.contentOffset.y;
@@ -258,7 +264,19 @@
 
 /** 页面加载完成时调用 */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-//    LxDBAnyVar(@"页面加载完成时调用");
+    LxDBAnyVar(webView.frame);
+
+    [webView evaluateJavaScript:@"document.body.offsetHeight;" completionHandler:^(NSNumber *_Nullable result,NSError *_Nullable error) {
+        
+        HMDetailHeaderView *headerView = [[HMDetailHeaderView alloc] init];
+        [self.containerScrollView addSubview:headerView];
+        headerView.headerLayout = _headerLayout;
+        
+        webView.top = headerView.bottom;
+        webView.height = [result floatValue];
+        self.containerScrollView.contentSize = CGSizeMake(self.view.width, [result floatValue] + _headerLayout.height);
+        
+    }];
 
 }
 

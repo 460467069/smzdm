@@ -19,10 +19,14 @@
 @property (nonatomic, copy) NSString *article_favorite;
 @property (nonatomic, copy) NSString *article_worthy;
 @property (nonatomic, copy) NSString *article_unworthy;
+/** 京东全球购 */
 @property (nonatomic, copy) NSString *article_mall;
 @property (nonatomic, copy) NSString *article_format_date;
 @property (nonatomic, copy) NSString *html5_content;
 @property (nonatomic, copy) NSString *article_filter_content;
+@property (nonatomic, copy) NSString *article_title;
+@property (nonatomic, copy) NSString *article_link_name;
+@property (nonatomic, copy) NSString *article_price;
 @end
 
 

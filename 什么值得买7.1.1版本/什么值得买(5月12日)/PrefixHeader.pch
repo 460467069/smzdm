@@ -46,6 +46,9 @@
     #define kScreenW [UIScreen mainScreen].bounds.size.width
     #define kScreenH [UIScreen mainScreen].bounds.size.height
     #define ZZColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+    #define kStatusH                    20                      //  状态栏高度
+    #define kNavBarH                    44                      //  导航栏高度
+    #define kTabBarH                    49                      //  标签栏高度
 
     #define kGlobalRedColor [UIColor colorWithHexString:@"#F04848"]
 
