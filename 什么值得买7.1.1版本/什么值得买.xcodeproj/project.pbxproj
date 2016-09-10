@@ -21,6 +21,7 @@
 		A91A83551D420A87008D229E /* weibo_7.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A834D1D420A87008D229E /* weibo_7.json */; };
 		A91A83581D420CFD008D229E /* WBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A83571D420CFD008D229E /* WBModel.m */; };
 		A91E0BE21D5D9640007BD117 /* HMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91E0BE11D5D9640007BD117 /* HMTableViewController.m */; };
+		A92151D41D838A6F00749413 /* HMDetailButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A92151D31D838A6F00749413 /* HMDetailButton.m */; };
 		A925E6DB1D60BE2D009A9E6F /* HMCyclePicHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A925E6DA1D60BE2D009A9E6F /* HMCyclePicHelper.m */; };
 		A9262A7E1D76B3530037B1CF /* HMJingXuanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9262A7D1D76B3530037B1CF /* HMJingXuanViewController.m */; };
 		A9262A801D76B35B0037B1CF /* HMJingXuanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9262A7F1D76B35B0037B1CF /* HMJingXuanViewController.storyboard */; };
@@ -122,6 +123,8 @@
 		A91A83571D420CFD008D229E /* WBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBModel.m; sourceTree = "<group>"; };
 		A91E0BE01D5D9640007BD117 /* HMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTableViewController.h; sourceTree = "<group>"; };
 		A91E0BE11D5D9640007BD117 /* HMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTableViewController.m; sourceTree = "<group>"; };
+		A92151D21D838A6E00749413 /* HMDetailButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailButton.h; sourceTree = "<group>"; };
+		A92151D31D838A6F00749413 /* HMDetailButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailButton.m; sourceTree = "<group>"; };
 		A925E6D91D60BE2D009A9E6F /* HMCyclePicHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCyclePicHelper.h; sourceTree = "<group>"; };
 		A925E6DA1D60BE2D009A9E6F /* HMCyclePicHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCyclePicHelper.m; sourceTree = "<group>"; };
 		A9262A7C1D76B3530037B1CF /* HMJingXuanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMJingXuanViewController.h; sourceTree = "<group>"; };
@@ -580,6 +583,8 @@
 				A9A67B961D622C00000F46BE /* HMYuanChuangCell.xib */,
 				A9FC17A71D825E3200F16D1E /* HMDetailBottomBar.h */,
 				A9FC17A81D825E3200F16D1E /* HMDetailBottomBar.m */,
+				A92151D21D838A6E00749413 /* HMDetailButton.h */,
+				A92151D31D838A6F00749413 /* HMDetailButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -933,6 +938,7 @@
 				A9ADB8501D64DF5D00330D23 /* HMNetworking.m in Sources */,
 				A9EE8D6E1D74A54900A72C29 /* ZZDetailViewController.m in Sources */,
 				A980A40C1CE4130A006E0037 /* HMTabBarModel.m in Sources */,
+				A92151D41D838A6F00749413 /* HMDetailButton.m in Sources */,
 				A9B7835B1D59019D003C464D /* HMRefreshTip.m in Sources */,
 				A93B6A7C1D6169780001F777 /* HMDIYBackFooter.m in Sources */,
 				A9275A0E1CE422B70017BA82 /* HMHomeCell.m in Sources */,

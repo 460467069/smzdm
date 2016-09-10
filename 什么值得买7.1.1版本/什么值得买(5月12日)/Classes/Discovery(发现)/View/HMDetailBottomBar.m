@@ -8,7 +8,20 @@
 
 #import "HMDetailBottomBar.h"
 
+@interface HMDetailBottomBar ()
+@property (nonatomic, assign) DetailBottomBarStyle style;
+@property (nonatomic, weak) CALayer *topLineLayer;
+@end
+
 @implementation HMDetailBottomBar
+
++ (instancetype)barWithStyle:(DetailBottomBarStyle)style{
+    
+    HMDetailBottomBar *bottomBar = [[HMDetailBottomBar alloc] init];
+    bottomBar.style = style;
+    return bottomBar;
+    
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -19,7 +32,17 @@
     self = [super initWithFrame:frame];
     if (self) {
         
+        self.backgroundColor = [UIColor whiteColor];
+        
+        CALayer *topLineLayer = [CALayer layer];
+        topLineLayer.backgroundColor = [UIColor lightGrayColor].CGColor;
+        [self.layer addSublayer:topLineLayer];
+        topLineLayer.height = 0.5;
+        topLineLayer.width = self.width;
+        
     }
     return self;
 }
+
+
 @end

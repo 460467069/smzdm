@@ -20,4 +20,6 @@ typedef NS_ENUM(NSUInteger, DetailBottomBarStyle) {
 
 @interface HMDetailBottomBar : UIView
 
++ (instancetype)barWithStyle:(DetailBottomBarStyle)style;
+
 @end

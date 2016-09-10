@@ -10,6 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "HMChannelID.h"
 #import "ZZCircleView.h"
+#import "HMDetailBottomBar.h"
 
 #define kBottomBarHeight 44
 #define NAVBAR_CHANGE_POINT 50
@@ -27,11 +28,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.title = @"优惠详情";
-
-    
     self.view.backgroundColor = [UIColor whiteColor];
+    
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
@@ -40,7 +39,6 @@
     [self initialBottomToolBar];
     //初始化webView
     [self initialWebView];
-
     //加载数据
     [self loadWebViewData];
     //初始化预加载动画, 有顺序要求
@@ -70,8 +68,7 @@
 #pragma mark - 初始化控件
 - (void)initialBottomToolBar{
 
-    UIView *bottomToolBar = [[UIView alloc] init];
-    bottomToolBar.backgroundColor = [UIColor randomColor];
+    HMDetailBottomBar *bottomToolBar = [HMDetailBottomBar barWithStyle:DetailBottomBarStyleHaiTao];
     [self.view addSubview:bottomToolBar];
     [bottomToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.offset(0);
