@@ -11,6 +11,8 @@
 @interface HMDetailBottomBar ()
 @property (nonatomic, assign) DetailBottomBarStyle style;
 @property (nonatomic, weak) CALayer *topLineLayer;
+@property (nonatomic, strong) UIView *firstContainerView;
+@property (nonatomic, strong) UIView *secondContainerView;
 @end
 
 @implementation HMDetailBottomBar
@@ -43,7 +45,15 @@
         NSInteger items = 4;
         CGFloat rightBtnW = 120;
         
-        CGFloat labelW = (kScreenW - rightBtnW) / items;
+        CGFloat itemLabelW = (kScreenW - rightBtnW) / items;
+        
+        _firstContainerView = [[UIView alloc] init];
+        [self addSubview:_firstContainerView];
+        _firstContainerView.frame = CGRectMake(0, 0, self.width - rightBtnW, self.height);
+        
+        _secondContainerView = [[UIView alloc] init];
+        [self addSubview:_secondContainerView];
+        _secondContainerView.frame = CGRectMake(0, self.height, self.width - rightBtnW, self.height);
         
         for (NSInteger i = 0; i < items; i++) {
             NSMutableAttributedString *text = [NSMutableAttributedString new];
@@ -54,30 +64,40 @@
             [text appendAttributedString:attachText];
             
             NSString *title = @" 76%";
-            [text appendString:title];
+            [text appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName : [UIColor lightGrayColor]}]];
             
-            YYLabel *label = [YYLabel new];
-            label.attributedText = text;
-            label.textVerticalAlignment = YYTextVerticalAlignmentCenter;
-            label.textAlignment = NSTextAlignmentCenter;
-            label.left = labelW * i;
-            label.height = self.height;
-            label.centerY = self.height * 0.5;
-            label.width = labelW;
-            [self addSubview:label];
+            YYLabel *itemLabel = [YYLabel new];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemLabelDidClick)];
+            [itemLabel addGestureRecognizer:tap];
+            itemLabel.attributedText = text;
+            itemLabel.textVerticalAlignment = YYTextVerticalAlignmentCenter;
+            itemLabel.textAlignment = NSTextAlignmentCenter;
+            itemLabel.left = itemLabelW * i;
+            itemLabel.height = self.height;
+            itemLabel.centerY = self.height * 0.5;
+            itemLabel.width = itemLabelW;
+            [_firstContainerView addSubview:itemLabel];
         }
         
         
         UIButton *rightBtn = [[UIButton alloc] init];
+        rightBtn.adjustsImageWhenHighlighted = NO;
         rightBtn.width = rightBtnW;
+        rightBtn.top = topLineLayer.height;
         rightBtn.right = self.right;
         rightBtn.height = self.height;
-        [rightBtn setBackgroundImage:[UIImage imageNamed:@"IMG_YHDetail_zdlj"] forState:UIControlStateNormal];
+        [rightBtn setImage:[UIImage imageNamed:@"IMG_YHDetail_zdlj"] forState:UIControlStateNormal];
         [self addSubview:rightBtn];
         
         
     }
     return self;
+}
+
+- (void)itemLabelDidClick {
+    
+    
+	
 }
 
 @end
