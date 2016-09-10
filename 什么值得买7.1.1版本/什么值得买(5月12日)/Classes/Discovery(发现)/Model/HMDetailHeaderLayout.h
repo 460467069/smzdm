@@ -12,6 +12,7 @@
 #define kDetailContentOffset 20     //文字内容偏移(分割线左间距)
 #define kTitleLineSpacing 15        //文字行间距
 #define kTopImageHeight 200         //图片高度(若有)
+#define kTopImageWidth 200         //图片高度(若有)
 #define kSeparatorLineTop 15        //分割线顶部留白
 #define kSeparatorLineBottom 20     //分割线底部留白
 #define kSeparatorLineHeight 0.5    //分割线高度

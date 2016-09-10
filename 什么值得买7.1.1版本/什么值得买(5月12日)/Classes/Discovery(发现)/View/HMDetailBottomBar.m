@@ -83,7 +83,7 @@
         UIButton *rightBtn = [[UIButton alloc] init];
         rightBtn.adjustsImageWhenHighlighted = NO;
         rightBtn.width = rightBtnW;
-        rightBtn.top = topLineLayer.height;
+//        rightBtn.top = topLineLayer.height;
         rightBtn.right = self.right;
         rightBtn.height = self.height;
         [rightBtn setImage:[UIImage imageNamed:@"IMG_YHDetail_zdlj"] forState:UIControlStateNormal];

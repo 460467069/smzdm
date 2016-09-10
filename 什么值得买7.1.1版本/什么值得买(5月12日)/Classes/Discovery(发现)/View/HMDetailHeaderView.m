@@ -10,7 +10,7 @@
 #import "HMCycleScrollView.h"
 
 @interface HMDetailHeaderView ()
-@property (nonatomic, strong) HMCycleScrollView *scrollView;
+@property (nonatomic, strong) SDCycleScrollView *scrollView;
 @property (nonatomic, strong) YYLabel *headTitleLabel;
 @property (nonatomic, strong) CALayer *bottomLineLayer;
 @end
@@ -25,8 +25,15 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        _scrollView = [[HMCycleScrollView alloc] init];
-        _scrollView.width = self.width;
+        _scrollView = [[SDCycleScrollView alloc] init];
+        _scrollView.backgroundColor = [UIColor whiteColor];
+        _scrollView.width = kTopImageWidth;
+        _scrollView.autoScroll = NO;
+        _scrollView.pageDotColor = kGlobalGrayColor;
+        _scrollView.pageDotColor = ZZColor(234, 234, 234);
+        _scrollView.centerX = self.centerX;
+        _scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+        _scrollView.bannerImageViewContentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:_scrollView];
         
         _headTitleLabel = [[YYLabel alloc] init];
@@ -46,6 +53,14 @@
 - (void)setHeaderLayout:(HMDetailHeaderLayout *)headerLayout{
     _headerLayout = headerLayout;
     
+    NSMutableArray *iconArray = [NSMutableArray array];
+    for (HMProductFocusPicUrl *picUrl in headerLayout.detailModel.article_product_focus_pic_url) {
+//        if ([picUrl.width floatValue] > kTopImageWidth) {
+//            _scrollView.contentMode = UIViewContentModeCenter;
+//        }
+        [iconArray addObject:picUrl.pic];
+    }
+    _scrollView.imageURLStringsGroup = [iconArray copy];
     self.height = headerLayout.height;
     _scrollView.height = headerLayout.imageHeight;
     

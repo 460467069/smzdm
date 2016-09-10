@@ -105,7 +105,7 @@
     }
     
     NSMutableAttributedString *text = [NSMutableAttributedString new];
-    UIFont *font = [UIFont systemFontOfSize:20];
+    UIFont *font = [UIFont boldSystemFontOfSize:20];
     {
         NSString *title = [NSString stringWithFormat:@"%@ | %@ |  爆料人: %@", _detailModel.article_mall, _detailModel.article_format_date, _detailModel.article_bl_author_info[0].nick_name ];
         NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
@@ -137,7 +137,7 @@
     modifier.paddingTop = kWBCellPaddingText;
     modifier.paddingBottom = kWBCellPaddingText;
     
-    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenW, HUGE) insets:UIEdgeInsetsMake(0, kDetailContentOffset, 0, kDetailContentOffset)];
+    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenW, HUGE) insets:UIEdgeInsetsMake(kDetailContentOffset, kDetailContentOffset, 0, kDetailContentOffset)];
     
     _titleTextLayout = [YYTextLayout layoutWithContainer:container text:text];
     if (!_titleTextLayout) return;

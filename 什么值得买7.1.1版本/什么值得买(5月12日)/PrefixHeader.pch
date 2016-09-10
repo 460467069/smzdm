@@ -51,6 +51,7 @@
     #define kTabBarH                    49                      //  标签栏高度
 
     #define kGlobalRedColor [UIColor colorWithHexString:@"#F04848"]
+    #define kGlobalGrayColor [UIColor colorWithHexString:@"#666666"]
 
     #define kHaojiaJingXuan @"haojia_jingxuan"
     #define kZhiYouFuLi @"值友福利"
