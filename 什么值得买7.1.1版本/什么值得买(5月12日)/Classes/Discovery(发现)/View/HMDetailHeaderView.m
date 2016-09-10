@@ -27,11 +27,11 @@
     if (self) {
         _scrollView = [[SDCycleScrollView alloc] init];
         _scrollView.backgroundColor = [UIColor whiteColor];
-        _scrollView.width = kTopImageWidth;
+        _scrollView.width = self.width;
         _scrollView.autoScroll = NO;
         _scrollView.pageDotColor = kGlobalGrayColor;
         _scrollView.pageDotColor = ZZColor(234, 234, 234);
-        _scrollView.centerX = self.centerX;
+//        _scrollView.centerX = self.centerX;
         _scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
         _scrollView.bannerImageViewContentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:_scrollView];
