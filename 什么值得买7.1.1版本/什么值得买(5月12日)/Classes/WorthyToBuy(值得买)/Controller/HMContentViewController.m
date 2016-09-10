@@ -14,6 +14,7 @@
 #import "HMDIYHeader.h"
 #import "HMDIYBackFooter.h"
 #import "HMTuiGuangCell.h"
+#import "ZZDetailViewController.h"
 
 
 static NSString * const kTuiGuangCell = @"HMTuiGuangCell";
@@ -181,13 +182,13 @@ static NSString * const kListCell = @"HMListCell";
     return cell;
 }
 
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-    UITouch *touch = [touches anyObject];
-    
-    CGPoint currentPoint = [touch locationInView:touch.view];
-    
-    LxDBAnyVar(currentPoint);
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    HMWorthyArticle *article = self.dataArrayM[indexPath.row];
+    ZZDetailViewController *vc = [ZZDetailViewController new];
+    vc.article = article;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -209,10 +210,6 @@ static NSString * const kListCell = @"HMListCell";
     if (self.offsetBlock) {
         self.offsetBlock(progress);
     }
-    
-//    [self.navigationController.navigationBar lt_setTranslationY:(-44 * progress)];
-//    
-//    [self.navigationController.navigationBar lt_setElementsAlpha:(1-progress)];
 }
 
 
