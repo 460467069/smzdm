@@ -139,11 +139,10 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 
 #pragma mark - loadData
 - (void)loadWebViewData{
-    NSInteger channelID = [self.article.article_channel_id integerValue];
     
-    HMChannelID *channel = [HMChannelID channelWithID:channelID];
+    HMChannelID *channel = [HMChannelID channelWithID:_channelID];
     self.channel = channel;
-    NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, self.article.article_id];
+    NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
     [HMNetworking Get:URLStr parameters:[self configureParameters] complectionBlock:^(NSDictionary *responseObject, NSError *error) {
         
         if (error) {
@@ -154,7 +153,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
         _headerLayout = [[HMDetailHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
         
         NSString *html5Content = nil;
-        if (channelID == 6 || channelID == 11) {
+        if (_channelID == 6 || _channelID == 11) {
             html5Content = detailModel.article_filter_content;
         }else{
             html5Content = detailModel.html5_content;
@@ -182,7 +181,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 - (NSMutableDictionary *)configureParameters{
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     
-    NSInteger channelID = [self.article.article_channel_id integerValue];
+    NSInteger channelID = self.channelID;
     
     if (channelID != 14) {
         [parameters setValue:@"0" forKey:@"imgmode"];
@@ -194,8 +193,9 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     
     switch (channelID) {
         case 1:
+        case 2:
         case 5:
-            [parameters setValue:self.article.article_channel_id forKey:@"channel_id"];
+            [parameters setValue:[NSString stringWithFormat:@"%@",@(_channelID)] forKey:@"channel_id"];
             break;
         case 6:
         case 8:
@@ -224,9 +224,8 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     }else if ([keyPath isEqualToString:WKWebViewKeyPathContentSize]){
         
         CGSize scrollViewContentSize = [change[@"new"] CGSizeValue];
-        LxDBAnyVar(change);
+
         self.webView.height = scrollViewContentSize.height;
-        
         self.containerScrollView.contentSize = CGSizeMake(self.view.width, scrollViewContentSize.height + _headerLayout.height);
     }
     
@@ -287,10 +286,6 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     
     [webView evaluateJavaScript:@"document.body.offsetHeight;" completionHandler:^(NSNumber *_Nullable result,NSError *_Nullable error) {
-        
-        
-
-
         
     }];
 

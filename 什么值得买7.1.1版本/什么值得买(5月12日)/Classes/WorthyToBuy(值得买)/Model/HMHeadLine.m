@@ -10,4 +10,8 @@
 
 @implementation HMHeadLine
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"redirectdata"  : @"redirect_data"};
+}
+
 @end

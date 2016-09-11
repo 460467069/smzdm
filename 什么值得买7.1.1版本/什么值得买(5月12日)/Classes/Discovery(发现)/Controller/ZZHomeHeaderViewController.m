@@ -7,19 +7,21 @@
 //
 
 #import "ZZHomeHeaderViewController.h"
-#import "SDCycleScrollView.h"
 #import "HMHeadLine.h"
 #import "HMHomeHeadModel.h"
 #import "HMLittleBannerCell.h"
+#import "HMCycleScrollView.h"
+#import "ZZDetailViewController.h"
 
 #define kCycleTextContentViewColor [UIColor colorWithWhite:1.0 alpha:0.8]
 NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
 
 @interface ZZHomeHeaderViewController ()<SDCycleScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, weak) SDCycleScrollView *cycleImageView;
+@property (nonatomic, weak) HMCycleScrollView *cycleImageView;
 @property (nonatomic, weak) SDCycleScrollView *cycleTextView;
 @property (nonatomic, strong) NSArray *litterBannerArray;
 @property (nonatomic, strong) UICollectionView *littleBannerView;
+@property (nonatomic, strong) HMHomeHeadModel *headModel;
 @end
 
 @implementation ZZHomeHeaderViewController
@@ -30,11 +32,9 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
     
     CGFloat imageHeight = 180;
     CGRect cycleScrollViewF = CGRectMake(0, 0, kScreenW, imageHeight);
-    SDCycleScrollView *cycleImageView = [SDCycleScrollView cycleScrollViewWithFrame:cycleScrollViewF delegate:self placeholderImage:nil];
+    HMCycleScrollView *cycleImageView = [HMCycleScrollView cycleScrollViewWithFrame:cycleScrollViewF delegate:self placeholderImage:nil];
+    cycleImageView.delegate = self;
     cycleImageView.autoScrollTimeInterval = 5.0;
-    cycleImageView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
-    cycleImageView.pageDotColor = [UIColor whiteColor];
-    cycleImageView.currentPageDotColor = [UIColor redColor];
     [self.view addSubview:cycleImageView];
     self.cycleImageView = cycleImageView;
     
@@ -98,6 +98,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
     
     NSString *urlStr = @"http://api.smzdm.com/v2/util/banner?f=iphone&is_login=1&type=menhu&v=7.1&weixin=1";
     
+
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 //    manager.securityPolicy.validatesDomainName = NO;
@@ -105,7 +106,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
     [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable responseObject) {
         
         HMHomeHeadModel *headModel = [HMHomeHeadModel modelWithDictionary:responseObject[@"data"]];
-        
+        self.headModel = headModel;
         NSMutableArray *imageArrayM = [NSMutableArray array];
         NSMutableArray *textArrayM = [NSMutableArray array];
         [headModel.rows enumerateObjectsUsingBlock:^(HMHeadLine * _Nonnull headline, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -162,6 +163,74 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
 }
 
 
+- (NSMutableDictionary *)configureParameters{
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+//    NSInteger channelID = [self.article.article_channel_id integerValue];
+//    
+//    if (channelID != 14) {
+//        [parameters setValue:@"0" forKey:@"imgmode"];
+//        [parameters setValue:@"1" forKey:@"filtervideo"];
+//        [parameters setValue:@"1" forKey:@"show_dingyue"];
+//        [parameters setValue:@"1" forKey:@"show_wiki"];
+//        
+//    }
+//    
+//    switch (channelID) {
+//        case 1:
+//        case 5:
+//            [parameters setValue:self.article.article_channel_id forKey:@"channel_id"];
+//            break;
+//        case 6:
+//        case 8:
+//            break;
+//        case 11:
+//            [parameters setValue:@"1" forKey:@"no_html_series"];
+//            [parameters setValue:@"1" forKey:@"show_share"];
+//            break;
+//        case 14:
+//            
+//            break;
+//            
+//        default:
+//            break;
+//    }
+    
+    return parameters;
+}
+
+
+#pragma mark - SDCycleScrollViewDelegate
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    
+    
+    
+    HMRedirectData *redirectdata = self.headModel.rows[index].redirectdata;
+    NSInteger channelID;
+    /**
+     https://api.smzdm.com/v2/youhui/articles/6402575?channel_id=2&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2.1&weixin=1
+     https://api.smzdm.com/v2/youhui/articles/6401528?channel_id=2&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2.1&weixin=1
+     https://api.smzdm.com/v2/yuanchuang/articles/487996?f=iphone&filtervideo=1&imgmode=0&no_html_series=1&show_dingyue=1&show_share=1&show_wiki=1&v=7.2.1&weixin=1
+     https://api.smzdm.com/v2/youhui/articles/6402955?channel_id=2&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2.1&weixin=1
+     https://api.smzdm.com/v2/youhui/articles/6405899?channel_id=2&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2.1&weixin=1
+     
+//     http://api.smzdm.com/v2/youhui/articles/6402575?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.1.1&weixin=1
+     */
+    
+    if ([redirectdata.link_type isEqualToString:@"faxian"]) {
+        channelID = 2;
+    }else if ([redirectdata.link_type isEqualToString:@"yuanchuang"]){
+        channelID = 11;
+    }
+    
+    ZZDetailViewController *vc = [ZZDetailViewController new];
+    vc.channelID = channelID;
+    vc.article_id = redirectdata.link_val;
+    [self.navigationController pushViewController:vc animated:YES];
+
+    
+    
+}
 
 
 

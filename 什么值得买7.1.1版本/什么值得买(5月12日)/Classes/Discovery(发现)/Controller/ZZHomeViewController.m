@@ -243,7 +243,9 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
         //资讯 v2/news/articles
 //        https://api.smzdm.com/v2/news/articles/28552?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
         ZZDetailViewController *vc = [ZZDetailViewController new];
-        vc.article = article;
+//        vc.article = article;
+        vc.channelID = [article.article_channel_id integerValue];
+        vc.article_id = article.article_id;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
