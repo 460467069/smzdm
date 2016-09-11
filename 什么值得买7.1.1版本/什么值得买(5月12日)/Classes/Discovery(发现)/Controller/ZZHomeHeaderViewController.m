@@ -67,12 +67,12 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
     SDCycleScrollView *cycleTextView = [SDCycleScrollView cycleScrollViewWithFrame:cycleTextF delegate:nil placeholderImage:nil];
     cycleTextView.frame = CGRectMake(cycleTextViewX, cycleTextViewY, cycleTextViewW, cycleTextViewH);
     cycleTextView.scrollDirection = UICollectionViewScrollDirectionVertical;    //设置垂直滚动放向
-    cycleTextView.userInteractionEnabled = NO;
     cycleTextView.onlyDisplayText = YES;    //仅显示文字
     cycleTextView.autoScrollTimeInterval = 3.0;
     cycleTextView.titleLabelTextColor = [UIColor darkGrayColor];
     cycleTextView.backgroundColor = kCycleTextContentViewColor;
     cycleTextView.titleLabelBackgroundColor = [UIColor clearColor];
+    cycleTextView.delegate = self;
     [cycleTextContentView addSubview:cycleTextView];
     self.cycleTextView = cycleTextView;
 
@@ -162,51 +162,9 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
 	return _litterBannerArray;
 }
 
-
-- (NSMutableDictionary *)configureParameters{
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    
-//    NSInteger channelID = [self.article.article_channel_id integerValue];
-//    
-//    if (channelID != 14) {
-//        [parameters setValue:@"0" forKey:@"imgmode"];
-//        [parameters setValue:@"1" forKey:@"filtervideo"];
-//        [parameters setValue:@"1" forKey:@"show_dingyue"];
-//        [parameters setValue:@"1" forKey:@"show_wiki"];
-//        
-//    }
-//    
-//    switch (channelID) {
-//        case 1:
-//        case 5:
-//            [parameters setValue:self.article.article_channel_id forKey:@"channel_id"];
-//            break;
-//        case 6:
-//        case 8:
-//            break;
-//        case 11:
-//            [parameters setValue:@"1" forKey:@"no_html_series"];
-//            [parameters setValue:@"1" forKey:@"show_share"];
-//            break;
-//        case 14:
-//            
-//            break;
-//            
-//        default:
-//            break;
-//    }
-    
-    return parameters;
-}
-
-
 #pragma mark - SDCycleScrollViewDelegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
     
-    
-    
-    HMRedirectData *redirectdata = self.headModel.rows[index].redirectdata;
-    NSInteger channelID;
     /**
      https://api.smzdm.com/v2/youhui/articles/6402575?channel_id=2&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2.1&weixin=1
      https://api.smzdm.com/v2/youhui/articles/6401528?channel_id=2&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2.1&weixin=1
@@ -214,13 +172,29 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
      https://api.smzdm.com/v2/youhui/articles/6402955?channel_id=2&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2.1&weixin=1
      https://api.smzdm.com/v2/youhui/articles/6405899?channel_id=2&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2.1&weixin=1
      
-//     http://api.smzdm.com/v2/youhui/articles/6402575?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.1.1&weixin=1
+     https://api.smzdm.com/v2/youhui/articles/6403486?channel_id=2&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2.1&weixin=1
+     
+     
+    https://api.smzdm.com/v2/news/articles/28655?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2.1&weixin=1
+
      */
     
-    if ([redirectdata.link_type isEqualToString:@"faxian"]) {
+    HMRedirectData *redirectdata = nil;
+    if ([cycleScrollView isEqual:self.cycleImageView]) {
+        redirectdata = self.headModel.rows[index].redirectdata;
+
+    }else if ([cycleScrollView isEqual:self.cycleTextView]){
+        redirectdata = self.headModel.headlines[index].redirectdata;
+    }
+    
+    NSString *linkType = redirectdata.link_type;
+    NSInteger channelID;
+    if ([linkType isEqualToString:@"faxian"]) {
         channelID = 2;
-    }else if ([redirectdata.link_type isEqualToString:@"yuanchuang"]){
+    }else if ([linkType isEqualToString:@"yuanchuang"]){
         channelID = 11;
+    }else if ([linkType isEqualToString:@"news"]){
+        channelID = 6;
     }
     
     ZZDetailViewController *vc = [ZZDetailViewController new];
