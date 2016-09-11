@@ -97,8 +97,8 @@
 - (void)layout{
 
     NSArray <HMProductFocusPicUrl *> *article_product_focus_pic_url = _detailModel.article_product_focus_pic_url;
-    
-    if (article_product_focus_pic_url.count != 0) {
+
+    if (article_product_focus_pic_url.count != 0 || _detailModel.article_pic) {
         _imageHeight = kTopImageHeight;
     }else{
         _imageHeight = 0;
@@ -107,7 +107,10 @@
     NSMutableAttributedString *text = [NSMutableAttributedString new];
     UIFont *font = [UIFont boldSystemFontOfSize:20];
     {
-        NSString *title = [NSString stringWithFormat:@"%@ | %@ |  爆料人: %@", _detailModel.article_mall, _detailModel.article_format_date, _detailModel.article_bl_author_info[0].nick_name ];
+        NSString *title = [NSString stringWithFormat:@"%@ | %@", _detailModel.article_mall, _detailModel.article_format_date];
+        if (_detailModel.article_bl_author_info[0]) {
+            title = [NSString stringWithFormat:@"%@ | 爆料人: %@", title, _detailModel.article_bl_author_info[0].nick_name];
+        }
         NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
         [attributes setObject:[UIColor lightGrayColor] forKey:NSForegroundColorAttributeName];
         [attributes setObject:[UIFont systemFontOfSize:12] forKey:NSFontAttributeName];
@@ -142,8 +145,6 @@
     _titleTextLayout = [YYTextLayout layoutWithContainer:container text:text];
     if (!_titleTextLayout) return;
     
-    LxDBAnyVar(_titleTextLayout.textBoundingRect);
-    LxDBAnyVar(_titleTextLayout.textBoundingSize);
     _textHeight = _titleTextLayout.textBoundingSize.height;
     
 }

@@ -274,7 +274,6 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
         [self.containerScrollView addSubview:headerView];
         headerView.headerLayout = _headerLayout;
         
-        LxDBAnyVar(result);
         [_containerScrollView addSubview:_webView];
         webView.top = headerView.bottom;
         webView.size = CGSizeMake(_containerScrollView.width, [result floatValue]);

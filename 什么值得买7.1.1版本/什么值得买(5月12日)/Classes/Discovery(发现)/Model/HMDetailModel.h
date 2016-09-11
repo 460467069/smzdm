@@ -27,6 +27,7 @@
 @property (nonatomic, copy) NSString *article_title;
 @property (nonatomic, copy) NSString *article_link_name;
 @property (nonatomic, copy) NSString *article_price;
+@property (nonatomic, copy) NSString *article_pic;
 @end
 
 

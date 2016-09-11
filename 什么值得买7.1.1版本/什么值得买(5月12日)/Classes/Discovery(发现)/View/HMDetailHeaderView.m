@@ -54,13 +54,17 @@
     _headerLayout = headerLayout;
     
     NSMutableArray *iconArray = [NSMutableArray array];
-    for (HMProductFocusPicUrl *picUrl in headerLayout.detailModel.article_product_focus_pic_url) {
-//        if ([picUrl.width floatValue] > kTopImageWidth) {
-//            _scrollView.contentMode = UIViewContentModeCenter;
-//        }
-        [iconArray addObject:picUrl.pic];
+    
+    if (headerLayout.detailModel.article_product_focus_pic_url.count) {
+        for (HMProductFocusPicUrl *picUrl in headerLayout.detailModel.article_product_focus_pic_url) {
+            [iconArray addObject:picUrl.pic];
+        }
+        _scrollView.imageURLStringsGroup = [iconArray copy];
+    }else if (headerLayout.detailModel.article_pic){
+        _scrollView.imageURLStringsGroup = @[headerLayout.detailModel.article_pic];
     }
-    _scrollView.imageURLStringsGroup = [iconArray copy];
+
+
     self.height = headerLayout.height;
     _scrollView.height = headerLayout.imageHeight;
     
