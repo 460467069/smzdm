@@ -23,6 +23,10 @@
 		A91A83581D420CFD008D229E /* WBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A83571D420CFD008D229E /* WBModel.m */; };
 		A91D5C981D83F50500C2B690 /* HMDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A91D5C971D83F50500C2B690 /* HMDetailHeaderView.m */; };
 		A91D5C9B1D83F75800C2B690 /* HMDetailHeaderLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A91D5C9A1D83F75800C2B690 /* HMDetailHeaderLayout.m */; };
+		A91D9B451D8546B30073DEB7 /* HMDetailTopicHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A91D9B441D8546B30073DEB7 /* HMDetailTopicHeaderView.m */; };
+		A91D9B481D8548420073DEB7 /* HMDetailTopicHeaderLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A91D9B471D8548420073DEB7 /* HMDetailTopicHeaderLayout.m */; };
+		A91D9B4B1D8548740073DEB7 /* HMDetailTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A91D9B4A1D8548740073DEB7 /* HMDetailTopicModel.m */; };
+		A91D9B4E1D855E090073DEB7 /* HMTextLinePositionModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A91D9B4D1D855E090073DEB7 /* HMTextLinePositionModifier.m */; };
 		A91E0BE21D5D9640007BD117 /* HMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91E0BE11D5D9640007BD117 /* HMTableViewController.m */; };
 		A92151D71D83A1D800749413 /* YYTextExampleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A92151D61D83A1D800749413 /* YYTextExampleHelper.m */; };
 		A925E6DB1D60BE2D009A9E6F /* HMCyclePicHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A925E6DA1D60BE2D009A9E6F /* HMCyclePicHelper.m */; };
@@ -131,6 +135,14 @@
 		A91D5C971D83F50500C2B690 /* HMDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailHeaderView.m; sourceTree = "<group>"; };
 		A91D5C991D83F75800C2B690 /* HMDetailHeaderLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailHeaderLayout.h; sourceTree = "<group>"; };
 		A91D5C9A1D83F75800C2B690 /* HMDetailHeaderLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailHeaderLayout.m; sourceTree = "<group>"; };
+		A91D9B431D8546B30073DEB7 /* HMDetailTopicHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailTopicHeaderView.h; sourceTree = "<group>"; };
+		A91D9B441D8546B30073DEB7 /* HMDetailTopicHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailTopicHeaderView.m; sourceTree = "<group>"; };
+		A91D9B461D8548420073DEB7 /* HMDetailTopicHeaderLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailTopicHeaderLayout.h; sourceTree = "<group>"; };
+		A91D9B471D8548420073DEB7 /* HMDetailTopicHeaderLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailTopicHeaderLayout.m; sourceTree = "<group>"; };
+		A91D9B491D8548740073DEB7 /* HMDetailTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailTopicModel.h; sourceTree = "<group>"; };
+		A91D9B4A1D8548740073DEB7 /* HMDetailTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailTopicModel.m; sourceTree = "<group>"; };
+		A91D9B4C1D855E090073DEB7 /* HMTextLinePositionModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTextLinePositionModifier.h; sourceTree = "<group>"; };
+		A91D9B4D1D855E090073DEB7 /* HMTextLinePositionModifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTextLinePositionModifier.m; sourceTree = "<group>"; };
 		A91E0BE01D5D9640007BD117 /* HMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTableViewController.h; sourceTree = "<group>"; };
 		A91E0BE11D5D9640007BD117 /* HMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTableViewController.m; sourceTree = "<group>"; };
 		A92151D51D83A1D800749413 /* YYTextExampleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextExampleHelper.h; sourceTree = "<group>"; };
@@ -413,6 +425,8 @@
 				A9B7835C1D5901DF003C464D /* RefreshTips.geojson */,
 				A9A512031D77B07E00E41407 /* HMChannelID.h */,
 				A9A512041D77B07E00E41407 /* HMChannelID.m */,
+				A91D9B4C1D855E090073DEB7 /* HMTextLinePositionModifier.h */,
+				A91D9B4D1D855E090073DEB7 /* HMTextLinePositionModifier.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -582,6 +596,10 @@
 				A97B05C21D83DE650002CC31 /* HMDetailModel.m */,
 				A91D5C991D83F75800C2B690 /* HMDetailHeaderLayout.h */,
 				A91D5C9A1D83F75800C2B690 /* HMDetailHeaderLayout.m */,
+				A91D9B491D8548740073DEB7 /* HMDetailTopicModel.h */,
+				A91D9B4A1D8548740073DEB7 /* HMDetailTopicModel.m */,
+				A91D9B461D8548420073DEB7 /* HMDetailTopicHeaderLayout.h */,
+				A91D9B471D8548420073DEB7 /* HMDetailTopicHeaderLayout.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -601,6 +619,8 @@
 				A9A67B961D622C00000F46BE /* HMYuanChuangCell.xib */,
 				A91D5C961D83F50500C2B690 /* HMDetailHeaderView.h */,
 				A91D5C971D83F50500C2B690 /* HMDetailHeaderView.m */,
+				A91D9B431D8546B30073DEB7 /* HMDetailTopicHeaderView.h */,
+				A91D9B441D8546B30073DEB7 /* HMDetailTopicHeaderView.m */,
 				A9FC17A71D825E3200F16D1E /* HMDetailBottomBar.h */,
 				A9FC17A81D825E3200F16D1E /* HMDetailBottomBar.m */,
 			);
@@ -953,6 +973,7 @@
 				A97B05C31D83DE650002CC31 /* HMDetailModel.m in Sources */,
 				A9D9D21B1CE40B3E00A83101 /* AppDelegate.m in Sources */,
 				A927160E1D44C126006EEECA /* WBStatusLayout.m in Sources */,
+				A91D9B451D8546B30073DEB7 /* HMDetailTopicHeaderView.m in Sources */,
 				A90DFD3E1D852E6B00B52D5C /* HMDetailTopicViewController.m in Sources */,
 				A9275A1F1CE4600F0017BA82 /* NSString+HMNumberFormatter.m in Sources */,
 				A9262A851D76B7180037B1CF /* HMJingXuanModel.m in Sources */,
@@ -976,6 +997,7 @@
 				A9FC17A91D825E3200F16D1E /* HMDetailBottomBar.m in Sources */,
 				A91D5C981D83F50500C2B690 /* HMDetailHeaderView.m in Sources */,
 				A980A4091CE412E8006E0037 /* HMTabBarViewController.m in Sources */,
+				A91D9B481D8548420073DEB7 /* HMDetailTopicHeaderLayout.m in Sources */,
 				A9B783551D58FB5F003C464D /* HMDIYHeader.m in Sources */,
 				A9ADB8511D64DF5D00330D23 /* ZZNetworkHandler.m in Sources */,
 				A925E6DB1D60BE2D009A9E6F /* HMCyclePicHelper.m in Sources */,
@@ -994,6 +1016,7 @@
 				A9E236CA1D57A34C00B1A6C3 /* HMTitleBannelOption.m in Sources */,
 				A9D9D24F1CE40B7C00A83101 /* NSString+HMBound.m in Sources */,
 				A97229911D5D6FD9001415A8 /* HMHomeFirstLayout.m in Sources */,
+				A91D9B4B1D8548740073DEB7 /* HMDetailTopicModel.m in Sources */,
 				A9A005411D572B990073F22F /* ZZHomeHeaderViewController.m in Sources */,
 				A9D9D2181CE40B3E00A83101 /* main.m in Sources */,
 				A9A03FDE1D1A726200675FA9 /* HMWeiboTableView.m in Sources */,
@@ -1001,6 +1024,7 @@
 				A9E236C11D579C9600B1A6C3 /* HMHeadLine.m in Sources */,
 				A9A7B3361CEAD775002EC0FA /* HMRedirectData.m in Sources */,
 				A91A83581D420CFD008D229E /* WBModel.m in Sources */,
+				A91D9B4E1D855E090073DEB7 /* HMTextLinePositionModifier.m in Sources */,
 				A9A67B971D622C00000F46BE /* HMYuanChuangCell.m in Sources */,
 				A97EC6C31D794E06006AABAB /* HMInPurchaseViewController.m in Sources */,
 				A99A4BE01D37F3BA001DDE47 /* HMDouYuHomeModel.m in Sources */,

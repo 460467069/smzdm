@@ -244,7 +244,6 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    UIColor *color = kGlobalLightGrayColor;
     [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Back"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Right"] titleColor:[UIColor clearColor]];
     
     CGFloat offsetY = scrollView.contentOffset.y;
@@ -253,14 +252,14 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     if (offsetY > NAVBAR_CHANGE_POINT) {
         CGFloat alpha = MIN(1, 1 - (NAVBAR_CHANGE_POINT + 64 - offsetY) / 64);
         
-        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+        [self.navigationController.navigationBar lt_setBackgroundColor:[kGlobalLightGrayColor colorWithAlphaComponent:alpha]];
         
         if (alpha == 1) {
             [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_BackSecond"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_RightSecond"] titleColor:[UIColor blackColor]];
         }
 
     }else{
-        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
+        [self.navigationController.navigationBar lt_setBackgroundColor:[kGlobalLightGrayColor colorWithAlphaComponent:0]];
     }
     
 }

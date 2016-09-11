@@ -15,6 +15,7 @@
 #import "HMDIYBackFooter.h"
 #import "HMTuiGuangCell.h"
 #import "ZZDetailViewController.h"
+#import "HMDetailTopicViewController.h"
 
 
 static NSString * const kTuiGuangCell = @"HMTuiGuangCell";
@@ -185,8 +186,18 @@ static NSString * const kListCell = @"HMListCell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     HMWorthyArticle *article = self.dataArrayM[indexPath.row];
-    ZZDetailViewController *vc = [ZZDetailViewController new];
-    vc.article = article;
+    NSInteger channelID = [article.article_channel_id integerValue];
+    
+    if (channelID == 14) {
+        HMDetailTopicViewController *detailTopicVc = [[HMDetailTopicViewController alloc] init];
+        detailTopicVc.channelID = channelID;
+        [self.navigationController pushViewController:detailTopicVc animated:YES];
+        return;
+    }
+    
+    ZZDetailViewController *vc = [[ZZDetailViewController alloc] init];
+    vc.channelID = channelID;
+    vc.article_id = article.article_id;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

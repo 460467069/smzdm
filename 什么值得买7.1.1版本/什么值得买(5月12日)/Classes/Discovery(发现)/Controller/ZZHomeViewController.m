@@ -15,6 +15,7 @@
 #import "HMListCell.h"
 #import "HMYuanChuangCell.h"
 #import "ZZDetailViewController.h"
+#import "HMDetailTopicViewController.h"
 
 static NSString * const kReuseIdentifierYuanChuangCell = @"HMYuanChuangCell";
 static NSString * const kReuseIdentifieFirstCell = @"HMHomeFirstCell";
@@ -239,15 +240,33 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
         
         
         //话题 v2/wiki/topic_detail(如果为话题, 就不是跳转网页了, 要自己写控制器跳转)
-//        http://api.smzdm.com/v2/wiki/topic_detail/687?f=iphone&v=7.2&weixin=1
+//        http://api.smzdm.com/v2/wiki/topic_detail/698?f=iphone&v=7.2&weixin=1
 //        http://api.smzdm.com/v2/wiki/comments?f=iphone&limit=20&offset=0&order=bytime&topic_id=698&v=7.2.1&weixin=1
         
         //资讯 v2/news/articles
 //        https://api.smzdm.com/v2/news/articles/28552?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
-        ZZDetailViewController *vc = [ZZDetailViewController new];
+        
+        NSInteger channelID = [article.article_channel_id integerValue];
+        
+        NSString *articleId = article.article_id;
+        
+#if 0   //测试话题
+        channelID = 14;
+        articleId = @"698";
+#endif
+        
+        if (channelID == 14) {
+            HMDetailTopicViewController *detailTopicVc = [[HMDetailTopicViewController alloc] init];
+            detailTopicVc.channelID = channelID;
+            detailTopicVc.article_id = articleId;
+            [self.navigationController pushViewController:detailTopicVc animated:YES];
+            return;
+        }
+        
+        ZZDetailViewController *vc = [[ZZDetailViewController alloc] init];
 //        vc.article = article;
-        vc.channelID = [article.article_channel_id integerValue];
-        vc.article_id = article.article_id;
+        vc.channelID = channelID;
+        vc.article_id = articleId;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
@@ -280,11 +299,11 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
     
 }
 /** 点击了原创Item */
-- (void)cellDidClickYuanChuangItem:(HMHomeFirstCell *)cell{
+- (void)cellDidClickYuanChuangItem:(HMHomeFirstCell *)cell atIndex:(NSInteger)index{
     
 }
 /** 点击了福利Item */
-- (void)cellDidClickFuliItem:(HMHomeFirstCell *)cell{
+- (void)cellDidClickFuliItem:(HMHomeFirstCell *)cell atIndex:(NSInteger)index{
     
 }
 

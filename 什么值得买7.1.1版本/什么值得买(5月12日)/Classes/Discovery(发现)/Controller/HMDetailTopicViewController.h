@@ -8,6 +8,8 @@
 
 #import "HMTableViewController.h"
 
-@interface HMDetailTopicViewController : HMTableViewController
 
+@interface HMDetailTopicViewController : HMTableViewController
+@property (nonatomic, assign) NSInteger channelID;
+@property (nonatomic, copy) NSString *article_id;
 @end
