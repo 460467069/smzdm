@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		39DAF230709E481D6FB8C695 /* libPods-什么值得买.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B4DA99068CDCE56BE0CB3 /* libPods-什么值得买.a */; };
+		A90DFD3E1D852E6B00B52D5C /* HMDetailTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A90DFD3D1D852E6B00B52D5C /* HMDetailTopicViewController.m */; };
 		A90E5BCE1D0AB2C40054CDC9 /* HMDiscoveryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E5BCD1D0AB2C40054CDC9 /* HMDiscoveryView.m */; };
 		A90E6E3B1D39345B00C213C5 /* HMDouYuFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E6E3A1D39345B00C213C5 /* HMDouYuFlowLayout.m */; };
 		A90E6E3E1D39406B00C213C5 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E6E3D1D39406B00C213C5 /* YYFPSLabel.m */; };
@@ -108,6 +109,8 @@
 /* Begin PBXFileReference section */
 		788B4DA99068CDCE56BE0CB3 /* libPods-什么值得买.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-什么值得买.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A221ED76D299EA45C20125 /* Pods-什么值得买.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.release.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.release.xcconfig"; sourceTree = "<group>"; };
+		A90DFD3C1D852E6B00B52D5C /* HMDetailTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailTopicViewController.h; sourceTree = "<group>"; };
+		A90DFD3D1D852E6B00B52D5C /* HMDetailTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailTopicViewController.m; sourceTree = "<group>"; };
 		A90E5BCC1D0AB2C40054CDC9 /* HMDiscoveryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDiscoveryView.h; sourceTree = "<group>"; };
 		A90E5BCD1D0AB2C40054CDC9 /* HMDiscoveryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDiscoveryView.m; sourceTree = "<group>"; };
 		A90E6E391D39345B00C213C5 /* HMDouYuFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDouYuFlowLayout.h; sourceTree = "<group>"; };
@@ -560,6 +563,8 @@
 				A97229981D5D7F2A001415A8 /* ZZHomeViewController.storyboard */,
 				A9EE8D6C1D74A54900A72C29 /* ZZDetailViewController.h */,
 				A9EE8D6D1D74A54900A72C29 /* ZZDetailViewController.m */,
+				A90DFD3C1D852E6B00B52D5C /* HMDetailTopicViewController.h */,
+				A90DFD3D1D852E6B00B52D5C /* HMDetailTopicViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -948,6 +953,7 @@
 				A97B05C31D83DE650002CC31 /* HMDetailModel.m in Sources */,
 				A9D9D21B1CE40B3E00A83101 /* AppDelegate.m in Sources */,
 				A927160E1D44C126006EEECA /* WBStatusLayout.m in Sources */,
+				A90DFD3E1D852E6B00B52D5C /* HMDetailTopicViewController.m in Sources */,
 				A9275A1F1CE4600F0017BA82 /* NSString+HMNumberFormatter.m in Sources */,
 				A9262A851D76B7180037B1CF /* HMJingXuanModel.m in Sources */,
 				A91D5C9B1D83F75800C2B690 /* HMDetailHeaderLayout.m in Sources */,

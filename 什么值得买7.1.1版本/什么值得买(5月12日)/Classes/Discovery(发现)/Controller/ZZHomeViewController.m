@@ -20,7 +20,7 @@ static NSString * const kReuseIdentifierYuanChuangCell = @"HMYuanChuangCell";
 static NSString * const kReuseIdentifieFirstCell = @"HMHomeFirstCell";
 static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
 
-@interface ZZHomeViewController ()
+@interface ZZHomeViewController ()<HMHomeFirstCellDelegete>
 
 @property (nonatomic, strong) NSMutableArray<HMWorthyArticle *> *listArrayM;
 
@@ -182,6 +182,7 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
         firstCell.selectionStyle = UITableViewCellSelectionStyleNone;   //解决cell选中后内容消失的问题
         HMHomeFirstLayout *layout = self.dataSource[indexPath.row];
         firstCell.layout = layout;
+        firstCell.delegate = self;
         return firstCell;
     }else{
         
@@ -237,8 +238,9 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
 //        https://api.smzdm.com/v2/yuanchuang/articles/484134?f=iphone&filtervideo=1&imgmode=0&no_html_series=1&show_dingyue=1&show_share=1&show_wiki=1&v=7.2&weixin=1
         
         
-        //话题 v2/wiki/topic_detail(如果为话题, 就不是跳转网页了, 要自己写)
+        //话题 v2/wiki/topic_detail(如果为话题, 就不是跳转网页了, 要自己写控制器跳转)
 //        http://api.smzdm.com/v2/wiki/topic_detail/687?f=iphone&v=7.2&weixin=1
+//        http://api.smzdm.com/v2/wiki/comments?f=iphone&limit=20&offset=0&order=bytime&topic_id=698&v=7.2.1&weixin=1
         
         //资讯 v2/news/articles
 //        https://api.smzdm.com/v2/news/articles/28552?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
@@ -249,6 +251,43 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
+
+#pragma mark - HMHomeFirstCellDelegete
+
+/** 点击了轮播图片 */
+- (void)cellDidClickCycleScrollView:(HMHomeFirstCell *)cell atIndex:(NSInteger)index{
+    
+    HMRedirectData *redirectdata = cell.layout.firstModel.floor_multi[index].redirect_data;
+    
+    NSString *linkType = redirectdata.link_type;
+    NSInteger channelID;
+    if ([linkType isEqualToString:@"faxian"]) {
+        channelID = 2;
+    }else if ([linkType isEqualToString:@"yuanchuang"]){
+        channelID = 11;
+    }else if ([linkType isEqualToString:@"news"]){
+        channelID = 6;
+    }
+    
+    ZZDetailViewController *vc = [ZZDetailViewController new];
+    vc.channelID = channelID;
+    vc.article_id = redirectdata.link_val;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+/** 点击了四张图片中的一张 */
+- (void)cellDidClickOneOfFourPic:(HMHomeFirstCell *)cell{
+    
+}
+/** 点击了原创Item */
+- (void)cellDidClickYuanChuangItem:(HMHomeFirstCell *)cell{
+    
+}
+/** 点击了福利Item */
+- (void)cellDidClickFuliItem:(HMHomeFirstCell *)cell{
+    
+}
+
 
 
 #pragma mark - getter && setter

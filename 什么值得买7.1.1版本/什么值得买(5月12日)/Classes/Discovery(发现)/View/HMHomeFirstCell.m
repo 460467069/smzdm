@@ -9,6 +9,10 @@
 #import "HMHomeFirstCell.h"
 #import "HMCyclePicHelper.h"
 
+@interface HMHomeFirstCell ()<SDCycleScrollViewDelegate>
+
+@end
+
 @implementation HMHomeFirstCell
 
 
@@ -20,6 +24,7 @@
         _cycleScrollView = [HMCycleScrollView new];
         _cycleScrollView.width = kScreenW;
         _cycleScrollView.left = 0;
+        _cycleScrollView.delegate = self;
         [self.contentView addSubview:_cycleScrollView];
         
         _fourPicView = [HMFourPicView new];
@@ -172,6 +177,13 @@
     
 }
 
+#pragma mark - SDCycleScrollViewDelegate
+/** 点击图片回调 */
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    if ([self.delegate respondsToSelector:@selector(cellDidClickCycleScrollView:atIndex:)]) {
+        [self.delegate cellDidClickCycleScrollView:self atIndex:index];
+    }
+}
 
 @end
 
@@ -214,23 +226,12 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-//        self.backgroundColor = [UIColor redColor];
-        _firstImageView = [UIImageView new];
-        _secondImageView = [UIImageView new];
-        _thirdImageView = [UIImageView new];
-        _fourthImageView = [UIImageView new];
-        
-        [self addSubview:_firstImageView];
-        [self addSubview:_secondImageView];
-        [self addSubview:_thirdImageView];
-        [self addSubview:_fourthImageView];
-        
         NSMutableArray *tempArray = [NSMutableArray array];
-        [tempArray addObject:_firstImageView];
-        [tempArray addObject:_secondImageView];
-        [tempArray addObject:_thirdImageView];
-        [tempArray addObject:_fourthImageView];
-        
+        for (NSInteger i = 0; i < 4; i++) {
+            UIImageView *imageView = [[UIImageView alloc] init];
+            [self addSubview:imageView];
+            [tempArray addObject:imageView];
+        }
         _fourPics = [tempArray copy];
     }
     return self;

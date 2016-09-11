@@ -22,10 +22,6 @@
 @end
 
 @interface HMFourPicView : UIView
-@property (nonatomic, strong) UIImageView *firstImageView;
-@property (nonatomic, strong) UIImageView *secondImageView;
-@property (nonatomic, strong) UIImageView *thirdImageView;
-@property (nonatomic, strong) UIImageView *fourthImageView;
 @property (nonatomic, strong) NSArray<UIImageView *> *fourPics;
 @end
 
@@ -45,6 +41,9 @@
 
 @end
 
+
+
+@protocol HMHomeFirstCellDelegete;
 @interface HMHomeFirstCell : UITableViewCell
 
 @property (nonatomic, strong) HMHomeFirstLayout *layout;
@@ -54,4 +53,21 @@
 @property (nonatomic, strong) HMFourPicView *fourPicView;
 @property (nonatomic, strong) HMHorizontalScrollView *horizontalScrollView;
 @property (nonatomic, strong) HMSeparatorView *separatorView;
+@property (nonatomic, weak) id<HMHomeFirstCellDelegete > delegate;
+
 @end
+
+@protocol HMHomeFirstCellDelegete <NSObject>
+
+@optional
+/** 点击了轮播图片 */
+- (void)cellDidClickCycleScrollView:(HMHomeFirstCell *)cell atIndex:(NSInteger)index;
+/** 点击了四张图片中的一张 */
+- (void)cellDidClickOneOfFourPic:(HMHomeFirstCell *)cell;
+/** 点击了原创Item */
+- (void)cellDidClickYuanChuangItem:(HMHomeFirstCell *)cell atIndex:(NSInteger)index;
+/** 点击了福利Item */
+- (void)cellDidClickFuliItem:(HMHomeFirstCell *)cell atIndex:(NSInteger)index;
+@end
+
+

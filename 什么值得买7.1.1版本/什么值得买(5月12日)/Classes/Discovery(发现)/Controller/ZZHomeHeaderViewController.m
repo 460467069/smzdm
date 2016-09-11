@@ -211,8 +211,6 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
     vc.article_id = redirectdata.link_val;
     [self.navigationController pushViewController:vc animated:YES];
 
-    
-    
 }
 
 
