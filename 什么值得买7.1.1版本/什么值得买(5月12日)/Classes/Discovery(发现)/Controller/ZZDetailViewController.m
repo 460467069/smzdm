@@ -19,6 +19,7 @@
 #define NAVBAR_CHANGE_POINT 50
 
 NSString *const WKWebViewKeyPathLoading = @"loading";
+NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 
 @interface ZZDetailViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) HMChannelID *channel;
@@ -27,6 +28,7 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
 @property (nonatomic, strong) UIView *bottomToolBar;
 @property (nonatomic, strong) UIScrollView *containerScrollView;
 @property (nonatomic, strong) HMDetailHeaderLayout *headerLayout;
+@property (nonatomic, strong) HMDetailHeaderView *headerView;
 @end
 
 @implementation ZZDetailViewController
@@ -49,6 +51,7 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
     
     _containerScrollView = [[UIScrollView alloc] init];
     _containerScrollView.delegate = self;
+    _containerScrollView.scrollsToTop = YES;
     [self.view addSubview:_containerScrollView];
     _containerScrollView.frame = CGRectMake(0, kStatusH, self.view.width, self.view.height - kStatusH - kTabBarH);
     
@@ -80,6 +83,7 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
 - (void)dealloc{
     
     [self.webView removeObserver:self forKeyPath:WKWebViewKeyPathLoading];
+    [self.webView.scrollView removeObserver:self forKeyPath:WKWebViewKeyPathContentSize];
     self.containerScrollView.delegate = nil;
 }
 
@@ -102,10 +106,10 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
     configuration.preferences.javaScriptCanOpenWindowsAutomatically = YES;
     
     _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:configuration];
-    _webView.scrollView.scrollsToTop = YES;
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
     [_webView addObserver:self forKeyPath:WKWebViewKeyPathLoading options:NSKeyValueObservingOptionNew context:nil];
+    [_webView.scrollView addObserver:self forKeyPath:WKWebViewKeyPathContentSize options:NSKeyValueObservingOptionNew context:nil];
     _webView.frame = _containerScrollView.bounds;
 //    [_containerScrollView addSubview:_webView];
 }
@@ -158,6 +162,17 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
         if (html5Content.length > 0) {
             
             [_webView loadHTMLString:html5Content baseURL:nil];
+            
+            [self.circleView stopAnimating];
+            [self.circleView removeFromSuperview];
+            
+            HMDetailHeaderView *headerView = [[HMDetailHeaderView alloc] init];
+            [self.containerScrollView addSubview:headerView];
+            headerView.headerLayout = _headerLayout;
+            self.headerView = headerView;
+            
+            [_containerScrollView addSubview:_webView];
+            _webView.top = headerView.bottom;
         }
         
     }];
@@ -206,6 +221,13 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
     
     if ([keyPath isEqualToString:WKWebViewKeyPathLoading]){
 //        LxDBAnyVar(@"正在加载");
+    }else if ([keyPath isEqualToString:WKWebViewKeyPathContentSize]){
+        
+        CGSize scrollViewContentSize = [change[@"new"] CGSizeValue];
+        LxDBAnyVar(change);
+        self.webView.height = scrollViewContentSize.height;
+        
+        self.containerScrollView.contentSize = CGSizeMake(self.view.width, scrollViewContentSize.height + _headerLayout.height);
     }
     
 }
@@ -267,18 +289,8 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
     [webView evaluateJavaScript:@"document.body.offsetHeight;" completionHandler:^(NSNumber *_Nullable result,NSError *_Nullable error) {
         
         
-        [self.circleView stopAnimating];
-        [self.circleView removeFromSuperview];
-        
-        HMDetailHeaderView *headerView = [[HMDetailHeaderView alloc] init];
-        [self.containerScrollView addSubview:headerView];
-        headerView.headerLayout = _headerLayout;
-        
-        [_containerScrollView addSubview:_webView];
-        webView.top = headerView.bottom;
-        webView.size = CGSizeMake(_containerScrollView.width, [result floatValue]);
-        
-        self.containerScrollView.contentSize = CGSizeMake(self.view.width, [result floatValue] + _headerLayout.height);
+
+
         
     }];
 
