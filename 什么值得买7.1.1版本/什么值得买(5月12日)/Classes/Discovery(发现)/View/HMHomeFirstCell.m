@@ -273,7 +273,7 @@
         line2.backgroundColor = line1.backgroundColor;
     }
     
-    self.backgroundColor = kHomeSeparatorColor;
+    self.backgroundColor = kGlobalLightGrayColor;
     return self;
 }
 

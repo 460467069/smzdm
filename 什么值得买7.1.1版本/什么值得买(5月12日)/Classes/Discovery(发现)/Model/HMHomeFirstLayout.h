@@ -39,7 +39,6 @@
 
 #define kHomeTitleFont 13
 #define kHomeFirstCellLineColor ZZColor(225, 225, 225)
-#define kHomeSeparatorColor ZZColor(234, 234, 234)
 
 
 @interface HMHomeFirstLayout : NSObject

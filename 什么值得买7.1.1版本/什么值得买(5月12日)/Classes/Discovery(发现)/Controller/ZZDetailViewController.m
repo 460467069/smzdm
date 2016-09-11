@@ -150,7 +150,7 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
         _headerLayout = [[HMDetailHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
         
         NSString *html5Content = nil;
-        if (channelID == 6) {
+        if (channelID == 6 || channelID == 11) {
             html5Content = detailModel.article_filter_content;
         }else{
             html5Content = detailModel.html5_content;
@@ -223,7 +223,7 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    UIColor *color = ZZColor(234, 234, 234);
+    UIColor *color = kGlobalLightGrayColor;
     [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Back"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Right"] titleColor:[UIColor clearColor]];
     
     CGFloat offsetY = scrollView.contentOffset.y;

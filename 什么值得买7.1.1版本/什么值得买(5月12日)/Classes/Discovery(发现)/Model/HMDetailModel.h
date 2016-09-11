@@ -28,6 +28,11 @@
 @property (nonatomic, copy) NSString *article_link_name;
 @property (nonatomic, copy) NSString *article_price;
 @property (nonatomic, copy) NSString *article_pic;
+
+/** 文章为原创时, 显示的作者昵称 */
+@property (nonatomic, copy) NSString *article_referrals;
+/** 文章为原创时, 显示的作者头像 */
+@property (nonatomic, copy) NSString *article_avatar;
 @end
 
 

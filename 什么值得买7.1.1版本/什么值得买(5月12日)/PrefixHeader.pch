@@ -52,6 +52,7 @@
 
     #define kGlobalRedColor [UIColor colorWithHexString:@"#F04848"]
     #define kGlobalGrayColor [UIColor colorWithHexString:@"#666666"]
+    #define kGlobalLightGrayColor ZZColor(234, 234, 234)
 
     #define kHaojiaJingXuan @"haojia_jingxuan"
     #define kZhiYouFuLi @"值友福利"

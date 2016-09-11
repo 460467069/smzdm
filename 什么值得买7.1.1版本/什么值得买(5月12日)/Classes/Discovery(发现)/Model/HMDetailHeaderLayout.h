@@ -16,10 +16,14 @@
 #define kSeparatorLineTop 15        //分割线顶部留白
 #define kSeparatorLineBottom 20     //分割线底部留白
 #define kSeparatorLineHeight 0.5    //分割线高度
+#define kDetailAvartarHeight 40
+#define kDetailReferralLabelHeight 30
+#define kDetailReferralLabelWidth 100
 
 @interface HMDetailHeaderLayout : NSObject
 
 @property (nonatomic, strong) YYTextLayout *titleTextLayout; // 标题栏
+@property (nonatomic, strong) YYTextLayout *referralTextLayout;
 @property (nonatomic, strong) HMDetailModel *detailModel;
 @property (nonatomic, assign) CGFloat imageHeight;
 @property (nonatomic, assign) CGFloat textHeight;

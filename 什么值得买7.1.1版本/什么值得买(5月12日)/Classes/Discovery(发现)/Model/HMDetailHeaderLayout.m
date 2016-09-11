@@ -86,10 +86,15 @@
     _height = 0;
     _height += _imageHeight;
     _height += _textHeight;
+    if (detailModel.article_avatar.length) {   //暂根据是否有头像字段来判断
+        _height += kTitleLineSpacing;
+        _height += kDetailAvartarHeight;
+    }else{  //若为原创, 要除去分割线高度和分割线以下留白高度
+        _height += kSeparatorLineHeight;
+        _height += kSeparatorLineBottom;
+    }
     _height += kSeparatorLineTop;
-    _height += kSeparatorLineHeight;
-    _height += kSeparatorLineBottom;
-    
+
     return self;
  
 }
@@ -120,17 +125,17 @@
     {
         NSString *title = [NSString stringWithFormat:@"%@", _detailModel.article_title];
         NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-        [attributes setObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
+        [attributes setObject:kGlobalGrayColor forKey:NSForegroundColorAttributeName];
         [attributes setObject:font forKey:NSFontAttributeName];
         [text appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
         [text appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:nil]];
     }
     
-    {
+    if (_detailModel.article_price.length) {
         NSString *title = [NSString stringWithFormat:@"%@", _detailModel.article_price];
         NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
         [attributes setObject:kGlobalRedColor forKey:NSForegroundColorAttributeName];
-        [attributes setObject:font forKey:NSFontAttributeName];
+        [attributes setObject:[UIFont systemFontOfSize:20] forKey:NSFontAttributeName];
         [text appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
     }
     
@@ -146,6 +151,18 @@
     if (!_titleTextLayout) return;
     
     _textHeight = _titleTextLayout.textBoundingSize.height;
+    
+    //原创作者
+    if (_detailModel.article_avatar.length){
+        
+        NSString *title = [NSString stringWithFormat:@"%@", _detailModel.article_referrals];
+        NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+        [attributes setObject:kGlobalGrayColor forKey:NSForegroundColorAttributeName];
+        [attributes setObject:[UIFont systemFontOfSize:12] forKey:NSFontAttributeName];
+        NSAttributedString *text = [[NSAttributedString alloc] initWithString:title attributes:attributes];
+        YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenW, 50)];
+        _referralTextLayout = [YYTextLayout layoutWithContainer:container text:text];
+    }
     
 }
 
