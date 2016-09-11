@@ -68,6 +68,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
     cycleTextView.frame = CGRectMake(cycleTextViewX, cycleTextViewY, cycleTextViewW, cycleTextViewH);
     cycleTextView.scrollDirection = UICollectionViewScrollDirectionVertical;    //设置垂直滚动放向
     cycleTextView.onlyDisplayText = YES;    //仅显示文字
+    cycleTextView.autoScroll = YES;
     cycleTextView.autoScrollTimeInterval = 3.0;
     cycleTextView.titleLabelTextColor = [UIColor darkGrayColor];
     cycleTextView.backgroundColor = kCycleTextContentViewColor;
@@ -75,6 +76,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
     cycleTextView.delegate = self;
     [cycleTextContentView addSubview:cycleTextView];
     self.cycleTextView = cycleTextView;
+
 
     //littleBanner
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -124,6 +126,13 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
         cycleTextView.titlesGroup = [textArrayM copy];
         cycleImageView.imageURLStringsGroup = [imageArrayM copy];
         [cycleImageView layoutIfNeeded];    //强制更新布局
+        for (UIView *subView in cycleTextView.subviews) {
+            if ([subView isKindOfClass:[UICollectionView class]]) {
+                UICollectionView *collectionView = (UICollectionView *)subView;
+                collectionView.scrollEnabled = NO;
+                break;
+            }
+        }
         //轮播视图的pageControl是设置完图片数组后创建的,所以只有在这里才能拿到pageControl 才能更改其frame
         for (UIView *subView in cycleImageView.subviews) {
             if ([subView isKindOfClass:NSClassFromString(@"UIPageControl")]) {
