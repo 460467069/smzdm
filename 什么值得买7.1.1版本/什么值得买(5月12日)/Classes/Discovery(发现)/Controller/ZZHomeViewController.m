@@ -67,15 +67,14 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
     NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
     [dictM setValue:@"18" forKey:@"channel_id"];
     [HMNetworking Get:@"v1/util/floor" parameters:dictM complectionBlock:^(id responseObject, NSError *error) {
-        if (error) {
+        
+        NSArray *dataArray = responseObject[@"rows"];
+        if (error || dataArray.count == 0) {
             //出错
             [self.tableView.mj_header endRefreshing];
             return;
         }
-        NSArray *dataArray = responseObject[@"data"][@"rows"];
-        if (dataArray.count == 0) {
-            [self.tableView.mj_header endRefreshing];
-        }
+
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSMutableArray *temArray = [NSMutableArray array];
             
@@ -106,18 +105,14 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
     NSMutableDictionary *parameters = [self configureParameters];
     
     [HMNetworking Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
-        
-        if (error) {
+        NSArray *dataArray = responseObject[@"rows"];
+        if (error || dataArray.count == 0) {
             //出错
             [self.tableView.mj_header endRefreshing];
             return;
         }
-        NSArray *dataArray = [NSArray modelArrayWithClass:[HMWorthyArticle class] json:responseObject[@"data"][@"rows"]];
-        if (dataArray.count == 0) {
-            [self.tableView.mj_header endRefreshing];
-        }
-        
-        self.listArrayM = [NSMutableArray arrayWithArray:dataArray];
+        NSArray *temArray = [NSArray modelArrayWithClass:[HMWorthyArticle class] json:dataArray];
+        self.listArrayM = [NSMutableArray arrayWithArray:temArray];
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
         
@@ -135,19 +130,20 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
     [parameters setValue:timeSort forKey:@"time_sort"];
     
     [HMNetworking Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
-        NSArray *dataArray = [NSArray modelArrayWithClass:[HMWorthyArticle class] json:responseObject[@"data"][@"rows"]];
-        
+
+        NSArray *dataArray = responseObject[@"rows"];
         if (error) {
             [self.tableView.mj_footer endRefreshing];
             return;
         }
         
+        NSArray *temArray = [NSArray modelArrayWithClass:[HMWorthyArticle class] json:dataArray];
         if (dataArray.count == 0) {
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
             return;
         }
         
-        [self.listArrayM addObjectsFromArray:dataArray];
+        [self.listArrayM addObjectsFromArray:temArray];
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
     }];
@@ -241,7 +237,7 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
         
         //话题 v2/wiki/topic_detail(如果为话题, 就不是跳转网页了, 要自己写控制器跳转)
 //        http://api.smzdm.com/v2/wiki/topic_detail/698?f=iphone&v=7.2&weixin=1
-//        http://api.smzdm.com/v2/wiki/comments?f=iphone&limit=20&offset=0&order=bytime&topic_id=698&v=7.2.1&weixin=1
+//        http://api.smzdm.com/v2/wiki/comments?f=iphone&limit=20&offset=0&order=byhot&topic_id=698&v=7.2.1&weixin=1
         
         //资讯 v2/news/articles
 //        https://api.smzdm.com/v2/news/articles/28552?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1

@@ -91,7 +91,7 @@
     _hotBtn.top = _timeBtn.top;
     
     //默认选中"热度"按钮
-    [self btnDidClick:_hotBtn];
+    _hotBtn.selected = YES;
     
 }
 
@@ -103,6 +103,12 @@
     self.markBtn.selected = NO;
     sender.selected = YES;
     self.markBtn = sender;
+    
+    if ([self.delegate respondsToSelector:@selector(headerViewDidClickOrderBtn:)]) {
+        
+        [self.delegate headerViewDidClickOrderBtn:self];
+    }
+    
 }
 
 @end

@@ -145,11 +145,9 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
     [HMNetworking Get:URLStr parameters:[self configureParameters] complectionBlock:^(NSDictionary *responseObject, NSError *error) {
         
-        if (error) {
-            return;
-        }
-        HMDetailModel *detailModel = [HMDetailModel modelWithDictionary:responseObject[@"data"]];
+        if (error) { return;}
         
+        HMDetailModel *detailModel = [HMDetailModel modelWithDictionary:responseObject];
         _headerLayout = [[HMDetailHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
         
         NSString *html5Content = nil;

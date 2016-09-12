@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HMDetailTopicModel.h"
+#import "HMDetailTopicHeaderModel.h"
 
 #define kDetailTopicBtnTop 15
 #define kDetailTopicBtnBottom 15
@@ -19,7 +19,7 @@
 
 @interface HMDetailTopicHeaderLayout : NSObject
 
-@property (nonatomic, strong) HMDetailTopicModel *detailTopicModel;
+@property (nonatomic, strong) HMDetailTopicHeaderModel *detailTopicModel;
 
 @property (nonatomic, strong) YYTextLayout *articleLayout;
 @property (nonatomic, assign) CGFloat imageHeight;
@@ -27,7 +27,7 @@
 @property (nonatomic, assign) CGFloat height;
 
 
-- (instancetype)initWithHeaderDetailModel:(HMDetailTopicModel *)detailTopicModel;
+- (instancetype)initWithHeaderDetailModel:(HMDetailTopicHeaderModel *)detailTopicModel;
 //计算布局
 - (void)layout;
 @end

@@ -9,8 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "HMDetailTopicHeaderLayout.h"
 
+@class HMDetailTopicHeaderView;
+@protocol HMDetailTopicHeaderViewDelegate <NSObject>
+
+@optional
+
+- (void)headerViewDidClickOrderBtn:(HMDetailTopicHeaderView *)headerView;
+
+@end
+
 @interface HMDetailTopicHeaderView : UIView
 
 @property (nonatomic, strong) HMDetailTopicHeaderLayout *topicHeaderLayout;
+
+@property (nonatomic, weak) id<HMDetailTopicHeaderViewDelegate> delegate;
 
 @end

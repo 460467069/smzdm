@@ -9,38 +9,28 @@
 #import "HMDetailTopicViewController.h"
 #import "HMChannelID.h"
 #import "HMDetailTopicHeaderView.h"
+#import "HMDetailTopicModel.h"
 
 
 @interface HMDetailTopicViewController ()
 
 @property (nonatomic, strong) HMDetailTopicHeaderLayout *topicHeaderLayout;
 
+@property (nonatomic, assign) NSInteger offset;
+@property (nonatomic, copy) NSString *order;
+
 @end
 
 @implementation HMDetailTopicViewController
 
+#pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"SM_Detail_BackSecond"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
     self.navigationItem.rightBarButtonItem = nil;
     
-    HMChannelID *channel = [HMChannelID channelWithID:_channelID];
-    
-    NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
-    [HMNetworking Get:URLStr parameters:[NSMutableDictionary dictionary] complectionBlock:^(id responseObject, NSError *error) {
-        if (error) {
-            return;
-        }
-        HMDetailTopicModel *detailModel = [HMDetailTopicModel modelWithDictionary:responseObject[@"data"]];
-        _topicHeaderLayout = [[HMDetailTopicHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
-        
-        HMDetailTopicHeaderView *headerView = [[HMDetailTopicHeaderView alloc] init];
-        headerView.topicHeaderLayout = _topicHeaderLayout;
-        
-        self.tableView.tableHeaderView = headerView;
-        
-    }];
+    self.order = @"按热度";
     
 }
 
@@ -55,6 +45,53 @@
     [self.navigationController.navigationBar lt_reset];
     
 }
+
+#pragma mark - 请求数据
+
+- (void)loadData{
+    HMChannelID *channel = [HMChannelID channelWithID:_channelID];
+    
+    NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
+    [HMNetworking Get:URLStr parameters:[NSMutableDictionary dictionary] complectionBlock:^(id responseObject, NSError *error) {
+        if (error) { return;}
+        
+        HMDetailTopicHeaderModel *detailModel = [HMDetailTopicHeaderModel modelWithDictionary:responseObject];
+        _topicHeaderLayout = [[HMDetailTopicHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
+        
+        HMDetailTopicHeaderView *headerView = [[HMDetailTopicHeaderView alloc] init];
+        headerView.topicHeaderLayout = _topicHeaderLayout;
+        self.tableView.tableHeaderView = headerView;
+        
+    }];
+    // v2/wiki/comments
+    
+    [HMNetworking Get:@"v2/wiki/comments" parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
+        
+        NSArray *dataArray = responseObject[@"comment_list"];
+        if (error || dataArray.count == 0) {
+            [self.tableView.mj_header endRefreshing];
+            return;
+        }
+        NSArray *temArray = [NSArray modelArrayWithClass:[HMDetailTopicModel class] json:dataArray];
+        self.dataSource = [NSMutableArray arrayWithArray:temArray];
+        
+        [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
+    }];
+    
+    
+}
+
+- (NSMutableDictionary *)configureParameters{
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+    [parameters setValue:[NSString stringWithFormat:@"%@", @(self.offset)] forKey:@"offset"];
+    [parameters setValue:_article_id forKey:@"topic_id"];
+    [parameters setValue:_article_id forKey:@"order"];
+    return parameters;
+}
+
+
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
     

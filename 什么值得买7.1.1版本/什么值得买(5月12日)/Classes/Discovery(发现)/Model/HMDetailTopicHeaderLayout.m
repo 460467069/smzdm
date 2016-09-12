@@ -12,7 +12,7 @@
 @implementation HMDetailTopicHeaderLayout
 
 
-- (instancetype)initWithHeaderDetailModel:(HMDetailTopicModel *)detailTopicModel {
+- (instancetype)initWithHeaderDetailModel:(HMDetailTopicHeaderModel *)detailTopicModel {
     if (!detailTopicModel) {
         return nil;
     }

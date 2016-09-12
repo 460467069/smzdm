@@ -70,8 +70,7 @@ static NSString * const kListCell = @"HMListCell";
         }
         
         //设置轮播图片
-        NSDictionary *dataDict = responseObject[@"data"];
-        HMContentHeader *headerModel = [HMContentHeader mj_objectWithKeyValues:dataDict];
+        HMContentHeader *headerModel = [HMContentHeader mj_objectWithKeyValues:responseObject];
         NSMutableArray *picArray = [NSMutableArray array];
         [headerModel.rows enumerateObjectsUsingBlock:^(HMHeadLine *_Nonnull headLine, NSUInteger idx, BOOL *_Nonnull stop) {
             [picArray addObject:headLine.img];
@@ -100,15 +99,11 @@ static NSString * const kListCell = @"HMListCell";
     [HMNetworking Get:self.homeChannel.URLString parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
         
         [self.tableView.mj_header endRefreshing];
-        if (error)
-        {
-            return;
-        }
         
-        NSArray *rows = responseObject[@"data"][@"rows"];
+        if (error) { return;}
         
+        NSArray *rows = responseObject[@"rows"];
         self.dataArrayM = [HMWorthyArticle mj_objectArrayWithKeyValuesArray:rows];
-        
         [self.tableView reloadData];
         
     }];
@@ -129,16 +124,12 @@ static NSString * const kListCell = @"HMListCell";
     
     [HMNetworking Get:self.homeChannel.URLString parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
         [self.tableView.mj_footer endRefreshing];
-        if (error){
-            return;
-        }
         
-        NSArray *rows = responseObject[@"data"][@"rows"];
+        if (error) { return;}
         
+        NSArray *rows = responseObject[@"rows"];
         NSArray *temArray = [HMWorthyArticle mj_objectArrayWithKeyValuesArray:rows];
-        
         [self.dataArrayM addObjectsFromArray:temArray];
-        
         [self.tableView reloadData];
     }];
 }
@@ -150,8 +141,7 @@ static NSString * const kListCell = @"HMListCell";
     if ([self.homeChannel.type isEqualToString:kHaojiaJingXuan]) {
         [parameters setValue:@"have_zhuanti"  forKey:@"1"];
     }
-    [parameters setValue:[NSString stringWithFormat:@"%@", @(self.page)]
-                  forKey:@"page"];
+    [parameters setValue:[NSString stringWithFormat:@"%@", @(self.page)]  forKey:@"page"];
     [parameters setObject:@"20" forKey:@"limit"];
     return parameters;
 }

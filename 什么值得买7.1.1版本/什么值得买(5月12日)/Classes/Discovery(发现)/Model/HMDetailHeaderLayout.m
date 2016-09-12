@@ -53,7 +53,9 @@
     NSMutableAttributedString *text = [NSMutableAttributedString new];
     UIFont *font = [UIFont boldSystemFontOfSize:20];
     {
-        NSString *title = [NSString stringWithFormat:@"%@ | %@", _detailModel.article_mall, _detailModel.article_format_date];
+        NSString *firstTitle = _detailModel.article_rzlx.length ? _detailModel.article_rzlx : _detailModel.article_mall;
+        
+        NSString *title = [NSString stringWithFormat:@"%@ | %@", firstTitle, _detailModel.article_format_date];
         if (_detailModel.article_bl_author_info[0]) {
             title = [NSString stringWithFormat:@"%@ | 爆料人: %@", title, _detailModel.article_bl_author_info[0].nick_name];
         }
@@ -81,17 +83,12 @@
     }
     
     text.lineSpacing = kTitleLineSpacing;
-    HMTextLinePositionModifier *modifier = [HMTextLinePositionModifier new];
-    modifier.font = font;
-    modifier.paddingTop = kDetailContentOffset;
-    modifier.paddingBottom = kDetailContentOffset;
     
     YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenW, HUGE) insets:UIEdgeInsetsMake(kDetailContentOffset, kDetailContentOffset, 0, kDetailContentOffset)];
     
     _titleTextLayout = [YYTextLayout layoutWithContainer:container text:text];
     if (!_titleTextLayout) return;
-    
-    _textHeight = [modifier heightForLineCount:_titleTextLayout.lines.count];;
+    _textHeight = _titleTextLayout.textBoundingSize.height;
     
     //原创作者
     if (_detailModel.article_avatar.length){

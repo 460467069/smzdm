@@ -27,10 +27,17 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
     
     [self configurePublicParameters:parameters];
-    [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        LxDBAnyVar(task.response.URL.absoluteString);
-        complectionBlock(responseObject, nil);
+    [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
         
+        LxDBAnyVar(task.response.URL.absoluteString);
+        
+        if ([responseObject[@"error_code"] isEqualToString:@"0"]) {
+            complectionBlock(responseObject[@"data"], nil);
+            
+            return;
+        }
+        [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
+
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         complectionBlock(nil, error);
         LxDBAnyVar(task.response.URL.absoluteString);
