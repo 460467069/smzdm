@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HMMainBaseViewController.h"
+#import "HMFirstBaseViewController.h"
 
-@interface HMDiscoveryViewController : HMMainBaseViewController
+@interface HMDiscoveryViewController : HMFirstBaseViewController
 
 @end

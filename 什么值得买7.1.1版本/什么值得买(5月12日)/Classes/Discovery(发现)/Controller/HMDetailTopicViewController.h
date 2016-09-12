@@ -6,10 +6,11 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import "HMTableViewController.h"
+
+#import "HMSecondTableViewController.h"
 
 
-@interface HMDetailTopicViewController : HMTableViewController
+@interface HMDetailTopicViewController : HMSecondTableViewController
 @property (nonatomic, assign) NSInteger channelID;
 @property (nonatomic, copy) NSString *article_id;
 @end

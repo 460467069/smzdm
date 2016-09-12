@@ -6,16 +6,16 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import "HMTableViewController.h"
+#import "HMFirstTableViewController.h"
 #import "HMDIYHeader.h"
 #import "HMDIYBackFooter.h"
 
 
-@interface HMTableViewController ()
+@interface HMFirstTableViewController ()
 
 @end
 
-@implementation HMTableViewController
+@implementation HMFirstTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

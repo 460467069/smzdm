@@ -11,7 +11,7 @@
 #import "HMHomeHeadModel.h"
 #import "HMLittleBannerCell.h"
 #import "HMCycleScrollView.h"
-#import "ZZDetailViewController.h"
+#import "ZZDetailArticleViewController.h"
 
 #define kCycleTextContentViewColor [UIColor colorWithWhite:1.0 alpha:0.8]
 NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
@@ -206,7 +206,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
         channelID = 6;
     }
     
-    ZZDetailViewController *vc = [ZZDetailViewController new];
+    ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];
     vc.channelID = channelID;
     vc.article_id = redirectdata.link_val;
     [self.navigationController pushViewController:vc animated:YES];

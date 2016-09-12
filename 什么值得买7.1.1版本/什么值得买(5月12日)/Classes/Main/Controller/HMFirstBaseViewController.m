@@ -6,14 +6,14 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import "HMMainBaseViewController.h"
+#import "HMFirstBaseViewController.h"
 #import <RongIMKit/RongIMKit.h>
 
-@interface HMMainBaseViewController ()
+@interface HMFirstBaseViewController ()
 
 @end
 
-@implementation HMMainBaseViewController
+@implementation HMFirstBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

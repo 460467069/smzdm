@@ -14,7 +14,7 @@
 #import "HMDIYHeader.h"
 #import "HMDIYBackFooter.h"
 #import "HMTuiGuangCell.h"
-#import "ZZDetailViewController.h"
+#import "ZZDetailArticleViewController.h"
 #import "HMDetailTopicViewController.h"
 
 
@@ -185,7 +185,7 @@ static NSString * const kListCell = @"HMListCell";
         return;
     }
     
-    ZZDetailViewController *vc = [[ZZDetailViewController alloc] init];
+    ZZDetailArticleViewController *vc = [[ZZDetailArticleViewController alloc] init];
     vc.channelID = channelID;
     vc.article_id = article.article_id;
     [self.navigationController pushViewController:vc animated:YES];

@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import "ZZDetailViewController.h"
+#import "ZZDetailArticleViewController.h"
 #import <WebKit/WebKit.h>
 #import "HMChannelID.h"
 #import "ZZCircleView.h"
@@ -21,7 +21,7 @@
 NSString *const WKWebViewKeyPathLoading = @"loading";
 NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 
-@interface ZZDetailViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate>
+@interface ZZDetailArticleViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) HMChannelID *channel;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) ZZCircleView *circleView;
@@ -31,7 +31,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 @property (nonatomic, strong) HMDetailHeaderView *headerView;
 @end
 
-@implementation ZZDetailViewController
+@implementation ZZDetailArticleViewController
 
 #pragma mark - life cycle
 
@@ -130,9 +130,17 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 }
 
 - (void)configureLeftBarButtonItemWithImage:(UIImage *)leftImage rightBarButtonItemWithImage:(UIImage *)rightImage titleColor:(UIColor *)titleColor{
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[leftImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[rightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailRightBtnDidClick)];
-
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[leftImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
+    // 后退按钮距离图片距离左边边距
+    UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedItem.width = -20;
+    self.navigationItem.leftBarButtonItems = @[fixedItem,backItem];
+    
+    UIBarButtonItem *fixedItem1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedItem1.width = -20;
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[rightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailRightBtnDidClick)];
+    self.navigationItem.rightBarButtonItems = @[fixedItem1, rightBarButtonItem];
+    
     NSDictionary *attributes = @{NSForegroundColorAttributeName : titleColor};
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
 }

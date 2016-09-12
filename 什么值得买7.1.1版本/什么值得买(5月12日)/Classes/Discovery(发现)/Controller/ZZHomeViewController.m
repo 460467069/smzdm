@@ -14,7 +14,7 @@
 #import "HMWorthyArticle.h"
 #import "HMListCell.h"
 #import "HMYuanChuangCell.h"
-#import "ZZDetailViewController.h"
+#import "ZZDetailArticleViewController.h"
 #import "HMDetailTopicViewController.h"
 
 static NSString * const kReuseIdentifierYuanChuangCell = @"HMYuanChuangCell";
@@ -246,7 +246,7 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
         
         NSString *articleId = article.article_id;
         
-#if 0   //测试话题
+#if 1   //测试话题
         channelID = 14;
         articleId = @"698";
 #endif
@@ -259,7 +259,7 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
             return;
         }
         
-        ZZDetailViewController *vc = [[ZZDetailViewController alloc] init];
+        ZZDetailArticleViewController *vc = [[ZZDetailArticleViewController alloc] init];
 //        vc.article = article;
         vc.channelID = channelID;
         vc.article_id = articleId;
@@ -284,7 +284,7 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
         channelID = 6;
     }
     
-    ZZDetailViewController *vc = [ZZDetailViewController new];
+    ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];
     vc.channelID = channelID;
     vc.article_id = redirectdata.link_val;
     [self.navigationController pushViewController:vc animated:YES];

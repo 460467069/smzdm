@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HMTableViewController.h"
+#import "HMFirstTableViewController.h"
 
-@interface ZZHomeViewController : HMTableViewController
+@interface ZZHomeViewController : HMFirstTableViewController
 
 @end

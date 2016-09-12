@@ -6,13 +6,13 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import "HMBaseViewController.h"
+#import "HMSecondBaseViewController.h"
 
-@interface HMBaseViewController ()
+@interface HMSecondBaseViewController ()
 
 @end
 
-@implementation HMBaseViewController
+@implementation HMSecondBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

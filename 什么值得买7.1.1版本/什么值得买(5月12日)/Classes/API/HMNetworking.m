@@ -17,12 +17,12 @@
 
 + (void)Get:(NSString *)URLString parameters:(NSMutableDictionary *)parameters complectionBlock:(HttpComplectionBlcok)complectionBlock{
     
-    ZZNetworkHandler *handler = [ZZNetworkHandler sharedInstance];
-    if (handler.networkError) {
-        [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
-        return;
-    }
-    
+//    ZZNetworkHandler *handler = [ZZNetworkHandler sharedInstance];
+//    if (handler.networkError) {
+//        [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
+//        return;
+//    }
+//    
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:HMBaseURL]];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
     
@@ -39,6 +39,7 @@
         [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
         complectionBlock(nil, error);
         LxDBAnyVar(task.response.URL.absoluteString);
     }];

@@ -78,6 +78,7 @@
     
     self.height = topicHeaderLayout.height;
     
+    _focusPicView.height = topicHeaderLayout.imageHeight;
     if (topicHeaderLayout.imageHeight) {
         _focusPicView.hidden = NO;
         [_focusPicView sd_setImageWithURL:[NSURL URLWithString:topicHeaderLayout.detailTopicModel.focus_pic] placeholderImage:[UIImage imageNamed:@"placeholder_dropbox"]];

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HMMainBaseViewController.h"
+#import "HMFirstBaseViewController.h"
 
 @interface HMFantasticGoodsController : UITableViewController
 

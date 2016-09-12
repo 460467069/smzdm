@@ -27,9 +27,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"SM_Detail_BackSecond"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
-    self.navigationItem.rightBarButtonItem = nil;
+    self.title = @"话题详情";
     
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"SM_Detail_BackSecond"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
+    
+    // 后退按钮距离图片距离左边边距
+    UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedItem.width = -20;
+    self.navigationItem.leftBarButtonItems = @[fixedItem,backItem];
+
+    
+    
+    
+
+
+    self.navigationItem.rightBarButtonItem = nil;
+    NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     self.order = @"按热度";
     
 }

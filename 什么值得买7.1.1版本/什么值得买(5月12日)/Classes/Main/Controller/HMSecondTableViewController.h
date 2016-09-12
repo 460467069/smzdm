@@ -1,15 +1,14 @@
 //
-//  HMTableViewController.h
+//  HMSecondTableViewController.h
 //  什么值得买
 //
-//  Created by Wang_ruzhou on 16/8/12.
+//  Created by Wang_ruzhou on 16/9/13.
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "HMMainBaseViewController.h"
+#import "HMSecondBaseViewController.h"
 
-@interface HMTableViewController : HMMainBaseViewController<UITableViewDelegate, UITableViewDataSource>
+@interface HMSecondTableViewController : HMSecondBaseViewController<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 
 @property(nonatomic, strong)NSMutableArray *dataSource;

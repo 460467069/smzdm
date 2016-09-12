@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMBaseViewController : UIViewController
+@interface HMSecondBaseViewController : UIViewController
 
 @end
