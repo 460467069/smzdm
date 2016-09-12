@@ -75,7 +75,7 @@
         NSArray *temArray = [NSArray modelArrayWithClass:[HMDetailTopicModel class] json:dataArray];
         self.dataSource = [NSMutableArray arrayWithArray:temArray];
         
-        [self.tableView reloadData];
+//        [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
     }];
     
