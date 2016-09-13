@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "HMTabBarViewController.h"
-#import "HMUserAccount.h"
+#import "ZZTabBarViewController.h"
+#import "ZZUserAccount.h"
 #import<libkern/OSAtomic.h>
 #import <RongIMKit/RongIMKit.h>
-#import "HMGlobalApperance.h"
+#import "ZZGlobalApperance.h"
 #import "ZZNetworkHandler.h"
 
 
@@ -33,13 +33,13 @@
     //初始化融云
     [self configureRongYun];
     //全局定制
-    [HMGlobalApperance configureGlobalApperance];
+    [ZZGlobalApperance configureGlobalApperance];
     
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    HMTabBarViewController *tab = [[HMTabBarViewController alloc] init];
+    ZZTabBarViewController *tab = [[ZZTabBarViewController alloc] init];
     
     self.window.rootViewController = tab;
     
@@ -91,11 +91,11 @@
         
         NSDictionary *dict = authorizeResponse.mj_keyValues;
         
-        HMUserAccount *userAccount = [HMUserAccount mj_objectWithKeyValues:dict];
+        ZZUserAccount *userAccount = [ZZUserAccount mj_objectWithKeyValues:dict];
         
         [NSKeyedArchiver archiveRootObject:userAccount toFile:kAccountPath];
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:HMUserAccountDidHandleUserDataNotification object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ZZUserAccountDidHandleUserDataNotification object:nil];
     }
     
 }

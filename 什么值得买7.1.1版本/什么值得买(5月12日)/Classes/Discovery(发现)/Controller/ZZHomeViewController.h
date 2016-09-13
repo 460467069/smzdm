@@ -1,5 +1,5 @@
 //
-//  HMHomeViewController.h
+//  ZZHomeViewController.h
 //  什么值得买
 //
 //  Created by Wang_ruzhou on 16/8/12.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HMFirstTableViewController.h"
+#import "ZZFirstTableViewController.h"
 
-@interface ZZHomeViewController : HMFirstTableViewController
+@interface ZZHomeViewController : ZZFirstTableViewController
 
 @end

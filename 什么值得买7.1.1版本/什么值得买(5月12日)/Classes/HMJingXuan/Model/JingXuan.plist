@@ -6,19 +6,19 @@
 		<key>title</key>
 		<string>内购</string>
 		<key>destinationVC</key>
-		<string>HMInPurchaseViewController</string>
+		<string>ZZInPurchaseViewController</string>
 	</dict>
 	<dict>
 		<key>title</key>
 		<string>微信</string>
 		<key>destinationVC</key>
-		<string>HMInPurchaseViewController</string>
+		<string>ZZInPurchaseViewController</string>
 	</dict>
 	<dict>
 		<key>title</key>
 		<string>支付宝</string>
 		<key>destinationVC</key>
-		<string>HMInPurchaseViewController</string>
+		<string>ZZInPurchaseViewController</string>
 	</dict>
 </array>
 </plist>

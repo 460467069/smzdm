@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HMWorthyArticle.h"
-#import "HMSecondBaseViewController.h"
+#import "ZZWorthyArticle.h"
+#import "ZZSecondBaseViewController.h"
 
-@interface ZZDetailArticleViewController : HMSecondBaseViewController
-@property (nonatomic, strong) HMWorthyArticle *article;
+@interface ZZDetailArticleViewController : ZZSecondBaseViewController
+@property (nonatomic, strong) ZZWorthyArticle *article;
 @property (nonatomic, assign) NSInteger channelID;
 @property (nonatomic, copy) NSString *article_id;
 @end

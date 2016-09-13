@@ -8,12 +8,12 @@
 
 #import "ZZDetailArticleViewController.h"
 #import <WebKit/WebKit.h>
-#import "HMChannelID.h"
+#import "ZZChannelID.h"
 #import "ZZCircleView.h"
-#import "HMDetailBottomBar.h"
+#import "ZZDetailBottomBar.h"
 #import "YYTextExampleHelper.h"
-#import "HMDetailModel.h"
-#import "HMDetailHeaderView.h"
+#import "ZZDetailModel.h"
+#import "ZZDetailHeaderView.h"
 
 #define kBottomBarHeight 44
 #define NAVBAR_CHANGE_POINT 50
@@ -22,13 +22,13 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
 NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 
 @interface ZZDetailArticleViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate>
-@property (nonatomic, strong) HMChannelID *channel;
+@property (nonatomic, strong) ZZChannelID *channel;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) ZZCircleView *circleView;
 @property (nonatomic, strong) UIView *bottomToolBar;
 @property (nonatomic, strong) UIScrollView *containerScrollView;
-@property (nonatomic, strong) HMDetailHeaderLayout *headerLayout;
-@property (nonatomic, strong) HMDetailHeaderView *headerView;
+@property (nonatomic, strong) ZZDetailHeaderLayout *headerLayout;
+@property (nonatomic, strong) ZZDetailHeaderView *headerView;
 @end
 
 @implementation ZZDetailArticleViewController
@@ -91,7 +91,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 #pragma mark - 初始化控件
 - (void)initialBottomToolBar{
 
-    HMDetailBottomBar *bottomToolBar = [HMDetailBottomBar barWithStyle:DetailBottomBarStyleHaiTao];
+    ZZDetailBottomBar *bottomToolBar = [ZZDetailBottomBar barWithStyle:DetailBottomBarStyleHaiTao];
     [self.view addSubview:bottomToolBar];
     [bottomToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.offset(0);
@@ -148,15 +148,15 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 #pragma mark - loadData
 - (void)loadWebViewData{
     
-    HMChannelID *channel = [HMChannelID channelWithID:_channelID];
+    ZZChannelID *channel = [ZZChannelID channelWithID:_channelID];
     self.channel = channel;
     NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
-    [HMNetworking Get:URLStr parameters:[self configureParameters] complectionBlock:^(NSDictionary *responseObject, NSError *error) {
+    [ZZNetworking Get:URLStr parameters:[self configureParameters] complectionBlock:^(NSDictionary *responseObject, NSError *error) {
         
         if (error) { return;}
         
-        HMDetailModel *detailModel = [HMDetailModel modelWithDictionary:responseObject];
-        _headerLayout = [[HMDetailHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
+        ZZDetailModel *detailModel = [ZZDetailModel modelWithDictionary:responseObject];
+        _headerLayout = [[ZZDetailHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
         
         NSString *html5Content = nil;
         if (_channelID == 6 || _channelID == 11) {
@@ -171,7 +171,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
             [self.circleView stopAnimating];
             [self.circleView removeFromSuperview];
             
-            HMDetailHeaderView *headerView = [[HMDetailHeaderView alloc] init];
+            ZZDetailHeaderView *headerView = [[ZZDetailHeaderView alloc] init];
             [self.containerScrollView addSubview:headerView];
             headerView.headerLayout = _headerLayout;
             self.headerView = headerView;

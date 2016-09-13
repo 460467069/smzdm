@@ -1,5 +1,5 @@
 //
-//  HMHomeViewController.m
+//  ZZHomeViewController.m
 //  什么值得买
 //
 //  Created by Wang_ruzhou on 16/8/12.
@@ -8,22 +8,22 @@
 
 #import "ZZHomeViewController.h"
 #import "ZZHomeHeaderViewController.h"
-#import "HMHomeFirstModel.h"
-#import "HMHomeFirstLayout.h"
-#import "HMHomeFirstCell.h"
-#import "HMWorthyArticle.h"
-#import "HMListCell.h"
-#import "HMYuanChuangCell.h"
+#import "ZZHomeFirstModel.h"
+#import "ZZHomeFirstLayout.h"
+#import "ZZHomeFirstCell.h"
+#import "ZZWorthyArticle.h"
+#import "ZZListCell.h"
+#import "ZZYuanChuangCell.h"
 #import "ZZDetailArticleViewController.h"
-#import "HMDetailTopicViewController.h"
+#import "ZZDetailTopicViewController.h"
 
-static NSString * const kReuseIdentifierYuanChuangCell = @"HMYuanChuangCell";
-static NSString * const kReuseIdentifieFirstCell = @"HMHomeFirstCell";
-static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
+static NSString * const kReuseIdentifierYuanChuangCell = @"ZZYuanChuangCell";
+static NSString * const kReuseIdentifieFirstCell = @"ZZHomeFirstCell";
+static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 
-@interface ZZHomeViewController ()<HMHomeFirstCellDelegete>
+@interface ZZHomeViewController ()<ZZHomeFirstCellDelegete>
 
-@property (nonatomic, strong) NSMutableArray<HMWorthyArticle *> *listArrayM;
+@property (nonatomic, strong) NSMutableArray<ZZWorthyArticle *> *listArrayM;
 
 @end
 
@@ -40,9 +40,9 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
     [self addChildViewController:headerVC];
     self.tableView.tableHeaderView = headerVC.view;
     
-    [self.tableView registerClass:[HMHomeFirstCell class] forCellReuseIdentifier:kReuseIdentifieFirstCell];
-    [self.tableView registerNib:[UINib nibWithNibName:@"HMYuanChuangCell" bundle:nil] forCellReuseIdentifier:kReuseIdentifierYuanChuangCell];
-    [self.tableView registerNib:[UINib nibWithNibName:@"HMListCell" bundle:nil] forCellReuseIdentifier:kReuseIdentiHomeListCell];
+    [self.tableView registerClass:[ZZHomeFirstCell class] forCellReuseIdentifier:kReuseIdentifieFirstCell];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ZZYuanChuangCell" bundle:nil] forCellReuseIdentifier:kReuseIdentifierYuanChuangCell];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ZZListCell" bundle:nil] forCellReuseIdentifier:kReuseIdentiHomeListCell];
 
 }
 
@@ -66,7 +66,7 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
     self.page = 1;
     NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
     [dictM setValue:@"18" forKey:@"channel_id"];
-    [HMNetworking Get:@"v1/util/floor" parameters:dictM complectionBlock:^(id responseObject, NSError *error) {
+    [ZZNetworking Get:@"v1/util/floor" parameters:dictM complectionBlock:^(id responseObject, NSError *error) {
         
         NSArray *dataArray = responseObject[@"rows"];
         if (error || dataArray.count == 0) {
@@ -79,12 +79,12 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
             NSMutableArray *temArray = [NSMutableArray array];
             
             [dataArray enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull dict, NSUInteger idx, BOOL * _Nonnull stop) {
-                HMHomeFirstModel *firstModel = [HMHomeFirstModel modelWithDictionary:dict];
-                HMHomeFirstLayout *firstLayout = nil;
+                ZZHomeFirstModel *firstModel = [ZZHomeFirstModel modelWithDictionary:dict];
+                ZZHomeFirstLayout *firstLayout = nil;
                 if (idx == dataArray.count - 1) {
-                    firstLayout = [[HMHomeFirstLayout alloc] initWithFirstModel:firstModel isLastOne:YES];
+                    firstLayout = [[ZZHomeFirstLayout alloc] initWithFirstModel:firstModel isLastOne:YES];
                 }else{
-                    firstLayout = [[HMHomeFirstLayout alloc] initWithFirstModel:firstModel isLastOne:NO];
+                    firstLayout = [[ZZHomeFirstLayout alloc] initWithFirstModel:firstModel isLastOne:NO];
                 }
                 
                 [temArray addObject:firstLayout];
@@ -104,14 +104,14 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
     
     NSMutableDictionary *parameters = [self configureParameters];
     
-    [HMNetworking Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
+    [ZZNetworking Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
         NSArray *dataArray = responseObject[@"rows"];
         if (error || dataArray.count == 0) {
             //出错
             [self.tableView.mj_header endRefreshing];
             return;
         }
-        NSArray *temArray = [NSArray modelArrayWithClass:[HMWorthyArticle class] json:dataArray];
+        NSArray *temArray = [NSArray modelArrayWithClass:[ZZWorthyArticle class] json:dataArray];
         self.listArrayM = [NSMutableArray arrayWithArray:temArray];
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
@@ -129,7 +129,7 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
     NSString *timeSort = self.listArrayM.lastObject.time_sort;
     [parameters setValue:timeSort forKey:@"time_sort"];
     
-    [HMNetworking Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
+    [ZZNetworking Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
 
         NSArray *dataArray = responseObject[@"rows"];
         if (error) {
@@ -137,7 +137,7 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
             return;
         }
         
-        NSArray *temArray = [NSArray modelArrayWithClass:[HMWorthyArticle class] json:dataArray];
+        NSArray *temArray = [NSArray modelArrayWithClass:[ZZWorthyArticle class] json:dataArray];
         if (dataArray.count == 0) {
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
             return;
@@ -175,27 +175,27 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        HMHomeFirstCell *firstCell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentifieFirstCell forIndexPath:indexPath];
+        ZZHomeFirstCell *firstCell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentifieFirstCell forIndexPath:indexPath];
         firstCell.selectionStyle = UITableViewCellSelectionStyleNone;   //解决cell选中后内容消失的问题
-        HMHomeFirstLayout *layout = self.dataSource[indexPath.row];
+        ZZHomeFirstLayout *layout = self.dataSource[indexPath.row];
         firstCell.layout = layout;
         firstCell.delegate = self;
         return firstCell;
     }else{
         
-        HMWorthyArticle *article = self.listArrayM[indexPath.row];
+        ZZWorthyArticle *article = self.listArrayM[indexPath.row];
         NSInteger channelID = [article.article_channel_id integerValue];
         
         if (channelID == 8 || channelID == 11 || channelID == 14) {
             
-            HMYuanChuangCell *cell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentifierYuanChuangCell forIndexPath:indexPath];
+            ZZYuanChuangCell *cell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentifierYuanChuangCell forIndexPath:indexPath];
             
             cell.article = article;
             return cell;
             
         }
         
-        HMListCell *listCell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentiHomeListCell forIndexPath:indexPath];
+        ZZListCell *listCell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentiHomeListCell forIndexPath:indexPath];
         listCell.type = kHaojiaJingXuan;
         listCell.article = self.listArrayM[indexPath.row];
         return listCell;
@@ -206,10 +206,10 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.section == 0) {
-        HMHomeFirstLayout *layout = self.dataSource[indexPath.row];
+        ZZHomeFirstLayout *layout = self.dataSource[indexPath.row];
         return layout.height;
     }else{
-        HMWorthyArticle *article = self.listArrayM[indexPath.row];
+        ZZWorthyArticle *article = self.listArrayM[indexPath.row];
         NSInteger channelID = [article.article_channel_id integerValue];
         if (channelID == 8 || channelID == 11 || channelID == 14) {
             return 284;
@@ -223,7 +223,7 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section == 1) {
-        HMWorthyArticle *article = self.listArrayM[indexPath.row];
+        ZZWorthyArticle *article = self.listArrayM[indexPath.row];
         
 //        https://api.smzdm.com/v2/youhui/articles/6380214?channel_id=1&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
         //国内 v2/youhui/articles
@@ -252,7 +252,7 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
 #endif
         
         if (channelID == 14) {
-            HMDetailTopicViewController *detailTopicVc = [[HMDetailTopicViewController alloc] init];
+            ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
             detailTopicVc.channelID = channelID;
             detailTopicVc.article_id = articleId;
             [self.navigationController pushViewController:detailTopicVc animated:YES];
@@ -267,12 +267,12 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
     }
 }
 
-#pragma mark - HMHomeFirstCellDelegete
+#pragma mark - ZZHomeFirstCellDelegete
 
 /** 点击了轮播图片 */
-- (void)cellDidClickCycleScrollView:(HMHomeFirstCell *)cell atIndex:(NSInteger)index{
+- (void)cellDidClickCycleScrollView:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index{
     
-    HMRedirectData *redirectdata = cell.layout.firstModel.floor_multi[index].redirect_data;
+    ZZRedirectData *redirectdata = cell.layout.firstModel.floor_multi[index].redirect_data;
     
     NSString *linkType = redirectdata.link_type;
     NSInteger channelID;
@@ -291,15 +291,15 @@ static NSString * const kReuseIdentiHomeListCell = @"HMListCell";
     
 }
 /** 点击了四张图片中的一张 */
-- (void)cellDidClickOneOfFourPic:(HMHomeFirstCell *)cell{
+- (void)cellDidClickOneOfFourPic:(ZZHomeFirstCell *)cell{
     
 }
 /** 点击了原创Item */
-- (void)cellDidClickYuanChuangItem:(HMHomeFirstCell *)cell atIndex:(NSInteger)index{
+- (void)cellDidClickYuanChuangItem:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index{
     
 }
 /** 点击了福利Item */
-- (void)cellDidClickFuliItem:(HMHomeFirstCell *)cell atIndex:(NSInteger)index{
+- (void)cellDidClickFuliItem:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index{
     
 }
 

@@ -64,12 +64,12 @@
 
 /** 分类头文件 */
     #import "UIColor+HEX.h"
-    #import "NSString+HMNumberFormatter.h"
+    #import "NSString+ZZNumberFormatter.h"
     #import "UIView+MJExtension.h"
     #import "UIView+YYAdd.h"
 
 /** 网络请求头文件 */
-    #import "HMNetworking.h"
+    #import "ZZNetworking.h"
 
 #endif
 

@@ -6,7 +6,7 @@
 		<key>title</key>
 		<string>首页</string>
 		<key>nibName</key>
-		<string>HMHomeViewController</string>
+		<string>ZZHomeViewController</string>
 		<key>normalImage</key>
 		<string>mainNormal</string>
 		<key>selectedImage</key>
@@ -18,7 +18,7 @@
 		<key>normalImage</key>
 		<string>goodsNormal</string>
 		<key>nibName</key>
-		<string>ZZHomeViewController</string>
+		<string>ZZDiscoveryViewController</string>
 		<key>selectedImage</key>
 		<string>goodsseleted</string>
 	</dict>
@@ -28,7 +28,7 @@
 		<key>normalImage</key>
 		<string>dingyueItemNormal</string>
 		<key>nibName</key>
-		<string>HMFantasticGoodsController</string>
+		<string>ZZFantasticGoodsController</string>
 		<key>selectedImage</key>
 		<string>dingyueItemSelected</string>
 	</dict>
@@ -36,7 +36,7 @@
 		<key>title</key>
 		<string>我的</string>
 		<key>nibName</key>
-		<string>HMMineViewController</string>
+		<string>ZZMineViewController</string>
 		<key>normalImage</key>
 		<string>personNormal</string>
 		<key>selectedImage</key>
@@ -46,7 +46,7 @@
 		<key>title</key>
 		<string>荟萃</string>
 		<key>nibName</key>
-		<string>HMJingXuanViewController</string>
+		<string>ZZJingXuanViewController</string>
 		<key>normalImage</key>
 		<string>personNormal</string>
 		<key>selectedImage</key>

@@ -7,21 +7,21 @@
 //
 
 #import "ZZHomeHeaderViewController.h"
-#import "HMHeadLine.h"
-#import "HMHomeHeadModel.h"
-#import "HMLittleBannerCell.h"
-#import "HMCycleScrollView.h"
+#import "ZZHeadLine.h"
+#import "ZZHomeHeadModel.h"
+#import "ZZLittleBannerCell.h"
+#import "ZZCycleScrollView.h"
 #import "ZZDetailArticleViewController.h"
 
 #define kCycleTextContentViewColor [UIColor colorWithWhite:1.0 alpha:0.8]
-NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
+NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 
 @interface ZZHomeHeaderViewController ()<SDCycleScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, weak) HMCycleScrollView *cycleImageView;
+@property (nonatomic, weak) ZZCycleScrollView *cycleImageView;
 @property (nonatomic, weak) SDCycleScrollView *cycleTextView;
 @property (nonatomic, strong) NSArray *litterBannerArray;
 @property (nonatomic, strong) UICollectionView *littleBannerView;
-@property (nonatomic, strong) HMHomeHeadModel *headModel;
+@property (nonatomic, strong) ZZHomeHeadModel *headModel;
 @end
 
 @implementation ZZHomeHeaderViewController
@@ -32,7 +32,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
     
     CGFloat imageHeight = 180;
     CGRect cycleScrollViewF = CGRectMake(0, 0, kScreenW, imageHeight);
-    HMCycleScrollView *cycleImageView = [HMCycleScrollView cycleScrollViewWithFrame:cycleScrollViewF delegate:self placeholderImage:nil];
+    ZZCycleScrollView *cycleImageView = [ZZCycleScrollView cycleScrollViewWithFrame:cycleScrollViewF delegate:self placeholderImage:nil];
     cycleImageView.delegate = self;
     cycleImageView.autoScrollTimeInterval = 5.0;
     [self.view addSubview:cycleImageView];
@@ -107,15 +107,15 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
     
     [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable responseObject) {
         
-        HMHomeHeadModel *headModel = [HMHomeHeadModel modelWithDictionary:responseObject[@"data"]];
+        ZZHomeHeadModel *headModel = [ZZHomeHeadModel modelWithDictionary:responseObject[@"data"]];
         self.headModel = headModel;
         NSMutableArray *imageArrayM = [NSMutableArray array];
         NSMutableArray *textArrayM = [NSMutableArray array];
-        [headModel.rows enumerateObjectsUsingBlock:^(HMHeadLine * _Nonnull headline, NSUInteger idx, BOOL * _Nonnull stop) {
+        [headModel.rows enumerateObjectsUsingBlock:^(ZZHeadLine * _Nonnull headline, NSUInteger idx, BOOL * _Nonnull stop) {
             
             [imageArrayM addObject:headline.img];
         }];
-        [headModel.headlines enumerateObjectsUsingBlock:^(HMHeadLine * _Nonnull headline, NSUInteger idx, BOOL * _Nonnull stop) {
+        [headModel.headlines enumerateObjectsUsingBlock:^(ZZHeadLine * _Nonnull headline, NSUInteger idx, BOOL * _Nonnull stop) {
             
             [textArrayM addObject:headline.title];
         }];
@@ -155,8 +155,8 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    HMLittleBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kLittleBannerViewReuseIdentifier forIndexPath:indexPath];
-    HMLittleBanner *littleBanner = self.litterBannerArray[indexPath.item];
+    ZZLittleBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kLittleBannerViewReuseIdentifier forIndexPath:indexPath];
+    ZZLittleBanner *littleBanner = self.litterBannerArray[indexPath.item];
     cell.littleBanner = littleBanner;
     return cell;
 }
@@ -188,7 +188,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"HMLittleBannerCell";
 
      */
     
-    HMRedirectData *redirectdata = nil;
+    ZZRedirectData *redirectdata = nil;
     if ([cycleScrollView isEqual:self.cycleImageView]) {
         redirectdata = self.headModel.rows[index].redirectdata;
 
