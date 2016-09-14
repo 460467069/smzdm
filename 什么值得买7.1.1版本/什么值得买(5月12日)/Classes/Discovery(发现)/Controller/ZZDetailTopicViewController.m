@@ -9,8 +9,9 @@
 #import "ZZDetailTopicViewController.h"
 #import "ZZChannelID.h"
 #import "ZZDetailTopicHeaderView.h"
-#import "ZZDetailTopicContentLayout.h"
+#import "ZZDetailTopicCell.h"
 
+static NSString *const kDetailTopicCell = @"detailTopicCell";
 
 @interface ZZDetailTopicViewController ()<ZZDetailTopicHeaderViewDelegate>
 
@@ -42,6 +43,7 @@
     self.order = kOrderByHot;
     
 
+    [self.tableView registerClass:[ZZDetailTopicCell class] forCellReuseIdentifier:kDetailTopicCell];
     
 }
 
@@ -75,6 +77,12 @@
         self.tableView.tableHeaderView = headerView;
         
     }];
+
+    [self loadContentData];
+    
+}
+
+- (void)loadContentData{
     // v2/wiki/comments
     
     [ZZNetworking Get:@"v2/wiki/comments" parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
@@ -84,14 +92,23 @@
             [self.tableView.mj_header endRefreshing];
             return;
         }
-        NSArray *temArray = [NSArray modelArrayWithClass:[ZZDetailTopicModel class] json:dataArray];
-        self.dataSource = [NSMutableArray arrayWithArray:temArray];
         
-//        [self.tableView reloadData];
-        [self.tableView.mj_header endRefreshing];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSArray *datas = [NSArray modelArrayWithClass:[ZZDetailTopicModel class] json:dataArray];
+            NSMutableArray *temArray = [NSMutableArray array];
+            for (ZZDetailTopicModel *detailTopicModel in datas) {
+                ZZDetailTopicContentLayout *layout = [[ZZDetailTopicContentLayout alloc] initWithContentDetailModel:detailTopicModel];
+                [temArray addObject:layout];
+            }
+            self.dataSource = temArray;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+                [self.tableView.mj_header endRefreshing];
+            });
+        });
+        
     }];
-    
-    
 }
 
 - (NSMutableDictionary *)configureParameters{
@@ -109,6 +126,32 @@
     return UIStatusBarStyleDefault;
 }
 
+#pragma mark - Table view data source
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.dataSource.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ZZDetailTopicCell *topicCell = [tableView dequeueReusableCellWithIdentifier:kDetailTopicCell forIndexPath:indexPath];
+    
+    ZZDetailTopicContentLayout *layout = self.dataSource[indexPath.row];
+    
+    topicCell.layout = layout;
+    
+    return topicCell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    ZZDetailTopicContentLayout *layout = self.dataSource[indexPath.row];
+    
+    return layout.height;
+}
+
 #pragma mark - 事件监听
 - (void)detailLeftBtnDidClick {
     [self.navigationController popViewControllerAnimated:YES];
@@ -117,7 +160,7 @@
 - (void)headerViewDidClickOrderBtn:(ZZDetailTopicHeaderView *)headerView orderStr:(NSString *)orderStr{
     self.order = orderStr;
     
-    [self loadData];
+    [self loadContentData];
 }
 
 

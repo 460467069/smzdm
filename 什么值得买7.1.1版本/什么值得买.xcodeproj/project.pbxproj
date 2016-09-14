@@ -102,6 +102,7 @@
 		A9D9D2231CE40B3E00A83101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D9D2221CE40B3E00A83101 /* Assets.xcassets */; };
 		A9D9D24F1CE40B7C00A83101 /* NSString+ZZBound.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D2351CE40B7C00A83101 /* NSString+ZZBound.m */; };
 		A9D9D2511CE40B7C00A83101 /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D2391CE40B7C00A83101 /* UIColor+HEX.m */; };
+		A9DC2BF11D87F05F0066FADF /* ZZDetailTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DC2BF01D87F05F0066FADF /* ZZDetailTopicCell.m */; };
 		A9E236C11D579C9600B1A6C3 /* ZZHeadLine.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E236C01D579C9600B1A6C3 /* ZZHeadLine.m */; };
 		A9E236C41D579D7F00B1A6C3 /* ZZLittleBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E236C31D579D7F00B1A6C3 /* ZZLittleBanner.m */; };
 		A9E236C71D57A2C900B1A6C3 /* ZZHomeHeadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E236C61D57A2C900B1A6C3 /* ZZHomeHeadModel.m */; };
@@ -281,6 +282,8 @@
 		A9D9D2351CE40B7C00A83101 /* NSString+ZZBound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZZBound.m"; sourceTree = "<group>"; };
 		A9D9D2381CE40B7C00A83101 /* UIColor+HEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HEX.h"; sourceTree = "<group>"; };
 		A9D9D2391CE40B7C00A83101 /* UIColor+HEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HEX.m"; sourceTree = "<group>"; };
+		A9DC2BEF1D87F05F0066FADF /* ZZDetailTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicCell.h; sourceTree = "<group>"; };
+		A9DC2BF01D87F05F0066FADF /* ZZDetailTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicCell.m; sourceTree = "<group>"; };
 		A9E236BF1D579C9600B1A6C3 /* ZZHeadLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHeadLine.h; sourceTree = "<group>"; };
 		A9E236C01D579C9600B1A6C3 /* ZZHeadLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHeadLine.m; sourceTree = "<group>"; };
 		A9E236C21D579D7F00B1A6C3 /* ZZLittleBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZLittleBanner.h; sourceTree = "<group>"; };
@@ -640,6 +643,8 @@
 				A91D9B441D8546B30073DEB7 /* ZZDetailTopicHeaderView.m */,
 				A9FC17A71D825E3200F16D1E /* ZZDetailBottomBar.h */,
 				A9FC17A81D825E3200F16D1E /* ZZDetailBottomBar.m */,
+				A9DC2BEF1D87F05F0066FADF /* ZZDetailTopicCell.h */,
+				A9DC2BF01D87F05F0066FADF /* ZZDetailTopicCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -861,7 +866,7 @@
 		A9D9D20B1CE40B3E00A83101 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = HM;
+				CLASSPREFIX = ZZ;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Wang_ruzhou;
 				TargetAttributes = {
@@ -1024,6 +1029,7 @@
 				A980A3E51CE40E85006E0037 /* ZZHomeViewController.m in Sources */,
 				A9275A191CE4556A0017BA82 /* ZZListCell.m in Sources */,
 				A99605151CE469D700C71A29 /* ZZTagLabel.m in Sources */,
+				A9DC2BF11D87F05F0066FADF /* ZZDetailTopicCell.m in Sources */,
 				A99A4BE31D380AD0001DDE47 /* ZZDouYuBannerCell.m in Sources */,
 				A91E0BE21D5D9640007BD117 /* ZZFirstTableViewController.m in Sources */,
 				A90E6E3E1D39406B00C213C5 /* YYFPSLabel.m in Sources */,

@@ -50,6 +50,8 @@
     #define kNavBarH                    44                      //  导航栏高度
     #define kTabBarH                    49                      //  标签栏高度
 
+    #define kDetailContentOffset 15
+
     #define kGlobalRedColor [UIColor colorWithHexString:@"#F04848"]
     #define kGlobalGrayColor [UIColor colorWithHexString:@"#666666"]
     #define kGlobalLightGrayColor ZZColor(234, 234, 234)

@@ -14,7 +14,6 @@
 #define kDetailTopicBtnHeight 25
 #define kDetailTopicBtnWidth 60
 #define kDetailTopicBtnMargin 15
-#define kDetailContentOffset 10
 #define kDetailTopicImageHeight (kScreenW / 750.0 * 281)
 
 

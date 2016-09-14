@@ -49,6 +49,10 @@
         _hotBtn = [self initialBtnTitle:@"按热度"];
         _hotBtn.right = _timeBtn.left - kDetailTopicBtnMargin;
         
+        //默认选中热度按钮
+        self.markBtn = _hotBtn;
+        _hotBtn.selected = YES;
+        
     }
     return self;
 }
@@ -64,6 +68,7 @@
     btn.size = CGSizeMake(kDetailTopicBtnWidth, kDetailTopicBtnHeight);
     btn.layer.cornerRadius = kDetailTopicBtnHeight * 0.5;
     btn.layer.masksToBounds = YES;
+    btn.adjustsImageWhenHighlighted = NO;
     [btn setBackgroundImage:[UIImage imageNamed:@"tagBgNormal"] forState:UIControlStateNormal];
     [btn setBackgroundImage:[UIImage imageNamed:@"originalBtnTagBG"] forState:UIControlStateSelected];
     [btn addTarget:self action:@selector(btnDidClick:) forControlEvents:UIControlEventTouchDown];
@@ -89,9 +94,6 @@
     
     _timeBtn.top = _headTitleLabel.bottom + kDetailTopicBtnTop;
     _hotBtn.top = _timeBtn.top;
-    
-    //默认选中"热度"按钮
-    _hotBtn.selected = YES;
     
 }
 
