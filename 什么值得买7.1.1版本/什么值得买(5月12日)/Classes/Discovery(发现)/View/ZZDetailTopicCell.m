@@ -36,7 +36,7 @@
         self.backgroundColor = kGlobalLightGrayColor;
         
         _userInfoLabel = [[YYLabel alloc] init];
-        _userInfoLabel.backgroundColor = [UIColor randomColor];
+//        _userInfoLabel.backgroundColor = [UIColor randomColor];
         [self addSubview:_userInfoLabel];
         _useTimeLabel.numberOfLines = 1;
         _userInfoLabel.size = CGSizeMake(kDetailTopicUserInfoWidth, kDetailTopicUserInfoHeight);
@@ -77,7 +77,7 @@
         [self addSubview:_supportLabel];
         _supportLabel.size = CGSizeMake(60, kDetailTopicUseTimeHeight);
         _supportLabel.right = self.width - kDetailTopicContentOffsetX;
-        _supportLabel.backgroundColor = [UIColor randomColor];
+//        _supportLabel.backgroundColor = [UIColor randomColor];
 
         
         _supportBtn = [[UIButton alloc] init];
@@ -97,8 +97,8 @@
 - (void)setLayout:(ZZDetailTopicContentLayout *)layout{
     _layout = layout;
     
-//    _userInfoLabel.textLayout = layout.userInfoLayout;
-    _userInfoLabel.attributedText = layout.userInfoLayout.text;
+    _userInfoLabel.textLayout = layout.userInfoLayout;
+
     
     _figureView.top = _userInfoLabel.bottom;
     [_figureView sd_setImageWithURL:[NSURL URLWithString:layout.detailTopicModel.pro_pic] placeholderImage:[UIImage imageNamed:@"061"]];

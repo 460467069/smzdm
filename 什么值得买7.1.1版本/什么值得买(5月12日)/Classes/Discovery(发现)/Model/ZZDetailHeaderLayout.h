@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ZZDetailModel.h"
 
-#define kDetailContentOffset 20     //文字内容偏移(分割线左间距)
+#define kDetailHeaderContentOffset 20     //文字内容偏移(分割线左间距)
 #define kTitleLineSpacing 15        //文字行间距
 #define kTopImageHeight 200         //图片高度(若有)
 #define kTopImageWidth 200         //图片高度(若有)

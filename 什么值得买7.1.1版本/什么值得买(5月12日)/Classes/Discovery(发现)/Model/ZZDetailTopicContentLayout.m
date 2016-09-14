@@ -44,8 +44,9 @@
         [userInfo appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
     }
     YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kDetailTopicUserInfoWidth, 30) insets:UIEdgeInsetsMake(kDetailTopicUserInfoMarginY, kDetailTopicUserInfoMarginX, kDetailTopicUserInfoMarginY, kDetailTopicUserInfoMarginX)];
+    container.truncationType = YYTextTruncationTypeEnd;
     _userInfoLayout = [YYTextLayout layoutWithContainer:container text:userInfo];
-
+    
     
     NSMutableAttributedString *articleTitle = [NSMutableAttributedString new];
     {
