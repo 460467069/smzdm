@@ -60,7 +60,7 @@
      3. 3个月-1年
  */
 @property (nonatomic, copy) NSString *use_time;
-
+/** 用户头像 */
 @property (nonatomic, copy) NSString *user_pic;
 /** 推荐原因 */
 @property (nonatomic, copy) NSString *reason_content;

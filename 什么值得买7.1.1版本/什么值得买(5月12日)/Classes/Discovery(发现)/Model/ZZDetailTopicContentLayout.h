@@ -14,18 +14,21 @@
 #define kDetailTopicContentOffsetX 15           /**< 内容偏移, 左右 */
 #define kDetailTopicContentOffsetY 15           /**< 内容偏移, 上下 */
 #define kDetailTopicContentTopMargin 15         /**< 内容顶部留白 */
-#define kDetailTopicContentAvartarWH 70         /**< 头像宽高 */
-#define kDetailTopicUserInfoWidth 150             /**< 用户信息宽 */
+#define kDetailTopicContentAvartarWH 48         /**< 头像宽高 */
+#define kDetailTopicUserInfoWidth 130           /**< 用户信息宽 */
+#define kDetailTopicUserInfoHeight 50           /**< 用户信息高 */
 #define kDetailTopicUserInfoMarginX 8           /**< 用户信息左右留白 */
 #define kDetailTopicUserInfoMarginY 8           /**< 用户信息上下留白 */
-#define kDetailTopicProPicWH 100                /**< 配图大小 */
+#define kDetailTopicProPicWH (kScreenW / 750.0 * 200)                /**< 配图大小 */
 #define kDetailTopicTitleLeftMargin  30         /**< 标题左间距 */
 #define kDetailTopicDescTopMargin 15            /**< 文字描述顶部留白 */
 #define kDetailTopicDescHeight 120              /**< 文字描述高度 */
 #define kDetailTopicDescWidth (kScreenW - 2 * kDetailContentOffset) /**< 文字描述宽 */
+#define kDetailTopicUseTimeHeight 50            /**< 使用时长那栏高度 */
+#define kDetailTopicUseTimeWidth 120            /**< 使用时长那栏高度 */
 #define kDetailTopicUseTimeY 15                 /**< 使用时长上下留白 */
-#define kDetailTopicSmallBtnWidth   30          /**< 小按钮宽 */
-#define kDetailTopicSmallBtnMargin   30          /**< 按钮间间距 */
+#define kDetailTopicSmallBtnWidth   50          /**< 小按钮宽 */
+#define kDetailTopicSmallBtnMargin   15          /**< 按钮间间距 */
 
 @interface ZZDetailTopicContentLayout : NSObject
 /** 头像高度 */
@@ -46,6 +49,8 @@
 /** 使用时长 */
 @property (nonatomic, strong) YYTextLayout *useTimeLayout;
 @property (nonatomic, assign) CGFloat useTimeHeight;
+
+@property (nonatomic, strong) YYTextLayout *supportLayout;
 
 @property (nonatomic, strong) ZZDetailTopicModel *detailTopicModel;
 @property (nonatomic, assign) CGFloat height;

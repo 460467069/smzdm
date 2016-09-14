@@ -94,13 +94,8 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
         }
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSArray *datas = [NSArray modelArrayWithClass:[ZZDetailTopicModel class] json:dataArray];
-            NSMutableArray *temArray = [NSMutableArray array];
-            for (ZZDetailTopicModel *detailTopicModel in datas) {
-                ZZDetailTopicContentLayout *layout = [[ZZDetailTopicContentLayout alloc] initWithContentDetailModel:detailTopicModel];
-                [temArray addObject:layout];
-            }
-            self.dataSource = temArray;
+            
+            self.dataSource = [self generateDataWithArray:dataArray];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
@@ -109,6 +104,43 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
         });
         
     }];
+}
+
+- (void)loadMoreData{
+    [ZZNetworking Get:@"v2/wiki/comments" parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
+        NSArray *dataArray = responseObject[@"comment_list"];
+        if (error) {
+            [self.tableView.mj_footer endRefreshing];
+            return ;
+        }
+        
+        if (dataArray.count == 0) {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            [self.dataSource addObjectsFromArray:[self generateDataWithArray:dataArray]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+                [self.tableView.mj_footer endRefreshing];
+            });
+            
+        });
+        
+    }];
+}
+
+/** 处理数据 */
+- (NSMutableArray *)generateDataWithArray:(NSArray *)dataArray{
+    NSArray *datas = [NSArray modelArrayWithClass:[ZZDetailTopicModel class] json:dataArray];
+    NSMutableArray *temArray = [NSMutableArray array];
+    for (ZZDetailTopicModel *detailTopicModel in datas) {
+        ZZDetailTopicContentLayout *layout = [[ZZDetailTopicContentLayout alloc] initWithContentDetailModel:detailTopicModel];
+        [temArray addObject:layout];
+    }
+    return temArray;
 }
 
 - (NSMutableDictionary *)configureParameters{

@@ -45,7 +45,7 @@
     }
     YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kDetailTopicUserInfoWidth, 30) insets:UIEdgeInsetsMake(kDetailTopicUserInfoMarginY, kDetailTopicUserInfoMarginX, kDetailTopicUserInfoMarginY, kDetailTopicUserInfoMarginX)];
     _userInfoLayout = [YYTextLayout layoutWithContainer:container text:userInfo];
-    _userInfoHeight = _userInfoLayout.textBoundingSize.height;
+
     
     NSMutableAttributedString *articleTitle = [NSMutableAttributedString new];
     {
@@ -69,7 +69,7 @@
         NSString *title = [NSString stringWithFormat:@"%@", _detailTopicModel.pro_price];
         NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
         [attributes setObject:kGlobalRedColor forKey:NSForegroundColorAttributeName];
-        [attributes setObject:[UIFont systemFontOfSize:16] forKey:NSFontAttributeName];
+        [attributes setObject:[UIFont systemFontOfSize:20] forKey:NSFontAttributeName];
         [articleTitle appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
     }
     
@@ -81,7 +81,8 @@
         [articleTitle appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
     }
     articleTitle.lineSpacing = 5;
-    container = [YYTextContainer containerWithSize:CGSizeMake(kDetailTopicProPicWH, kDetailTopicProPicWH) insets:UIEdgeInsetsMake(0, kDetailTopicTitleLeftMargin, 0, kDetailTopicContentOffsetX)];
+    CGFloat titleWidth = kScreenW - kDetailTopicProPicWH - kDetailTopicMarginX * 2 - kDetailTopicContentOffsetX;
+    container = [YYTextContainer containerWithSize:CGSizeMake(titleWidth, kDetailTopicProPicWH) insets:UIEdgeInsetsMake(0, kDetailTopicTitleLeftMargin, 0, kDetailTopicContentOffsetX)];
     _titleLayout = [YYTextLayout layoutWithContainer:container text:articleTitle];
     
     NSMutableAttributedString *descText = [NSMutableAttributedString new];
@@ -104,15 +105,20 @@
     descText.lineSpacing = 10;
     container = [YYTextContainer containerWithSize:CGSizeMake(kDetailTopicDescWidth, kDetailTopicDescHeight) insets:UIEdgeInsetsMake(kDetailTopicDescTopMargin, kDetailTopicContentOffsetX, 0, kDetailTopicContentOffsetX)];
     _descriptionLayout = [YYTextLayout layoutWithContainer:container text:descText];
-    _descriptionHeight = _titleLayout.textBoundingSize.height;
+    
+    if (_descriptionLayout.textBoundingSize.height > kDetailTopicDescHeight) {
+        _descriptionHeight = _descriptionLayout.textBoundingSize.height;
+    }else{
+        _descriptionHeight = kDetailTopicDescHeight;
+    }
     
     //用户上传图片数
     NSInteger picListCount = _detailTopicModel.comment_pic_list.count;
     if (picListCount) {
-        _commentCountLayout = [self layoutWithImage:[UIImage imageNamed:@"my_article_pinglun"] title:[NSString stringWithFormat:@"%@", @(picListCount)]];
+        _picCountLayout = [self layoutWithImage:[UIImage imageNamed:@"my_article_pinglun"] title:[NSString stringWithFormat:@" %@", @(picListCount)] alignment:YYTextVerticalAlignmentCenter];
     }
     //评论数
-    _picCountLayout = [self layoutWithImage:[UIImage imageNamed:@"my_article_pinglun"] title:_detailTopicModel.review_num];
+    _commentCountLayout = [self layoutWithImage:[UIImage imageNamed:@"my_article_pinglun"] title:[NSString stringWithFormat:@" %@", _detailTopicModel.review_num] alignment:YYTextVerticalAlignmentCenter];
     
 
     NSMutableAttributedString *useTime = [NSMutableAttributedString new];
@@ -125,38 +131,40 @@
     }
     
     useTime.font = font;
-    container = [YYTextContainer containerWithSize:CGSizeMake(120, 100)];
+    container = [YYTextContainer containerWithSize:CGSizeMake(kDetailTopicUseTimeWidth, kDetailTopicUseTimeHeight) insets:UIEdgeInsetsMake(kDetailTopicUseTimeY, 0, kDetailTopicUseTimeY, 0)];
     _useTimeLayout = [YYTextLayout layoutWithContainer:container text:useTime];
-    _useTimeHeight = _useTimeLayout.textBoundingRect.size.height;
     
+    _supportLayout = [self layoutWithImage:[UIImage imageNamed:@"ico_zan"] title:[NSString stringWithFormat:@" %@", _detailTopicModel.support_num] alignment:YYTextVerticalAlignmentBottom];
 }
 
 - (void)caculateHeight{
     
     _height = 0;
     _height += kDetailTopicContentOffsetY;
-    _height += _userInfoHeight;
+    _height += kDetailTopicUserInfoHeight;
     _height += kDetailTopicProPicWH;
-    _height += kDetailTopicDescTopMargin;
     _height += _descriptionHeight;
-    _height += kDetailTopicUseTimeY;
-    _height += _useTimeHeight;
-    _height += kDetailTopicUseTimeY;
+    _height += kDetailTopicUseTimeHeight;
+    _height += kDetailTopicMarginY;
     
 }
 
--(YYTextLayout *)layoutWithImage:(UIImage *)image title:(NSString *)title{
-    NSMutableAttributedString *extraInfo = [NSMutableAttributedString new];
+-(YYTextLayout *)layoutWithImage:(UIImage *)image title:(NSString *)title alignment:(YYTextVerticalAlignment)alignment{
+    NSMutableAttributedString *text = [NSMutableAttributedString new];
     UIFont *font = [UIFont systemFontOfSize:12];
-    NSMutableAttributedString *attachText = [NSMutableAttributedString attachmentStringWithContent:image contentMode:UIViewContentModeCenter attachmentSize:image.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
-    [extraInfo appendAttributedString:attachText];
+    {
+        NSMutableAttributedString *attachText = [NSMutableAttributedString attachmentStringWithContent:image contentMode:UIViewContentModeCenter attachmentSize:image.size alignToFont:font alignment:alignment];
+        [text appendAttributedString:attachText];
+    }
     
-    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-    [attributes setObject:kGlobalGrayColor forKey:NSForegroundColorAttributeName];
-    [extraInfo appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
-    
-    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(50, 30)];
-    YYTextLayout *textLayout = [YYTextLayout layoutWithContainer:container text:extraInfo];
+    {
+        NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+        [attributes setObject:kGlobalGrayColor forKey:NSForegroundColorAttributeName];
+        [text appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
+    }
+
+    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kDetailTopicSmallBtnWidth, kDetailTopicUseTimeHeight)];
+    YYTextLayout *textLayout = [YYTextLayout layoutWithContainer:container text:text];
     
     return textLayout;
 }
