@@ -126,7 +126,7 @@
     switch (orderStyle) {
         case ZZDetailTopicHeaderViewOrderStyleByHot: {
             _hotBtn.selected = YES;
-            self.markBtn = _timeBtn;
+            self.markBtn = _hotBtn;
             break;
         }
         case ZZDetailTopicHeaderViewOrderStyleByTime: {
