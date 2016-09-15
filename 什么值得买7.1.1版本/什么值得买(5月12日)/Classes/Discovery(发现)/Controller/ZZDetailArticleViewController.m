@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "ZZChannelID.h"
 #import "ZZCircleView.h"
-#import "ZZDetailBottomBar.h"
+#import "ZZDetailBaseBottomBar.h"
 #import "YYTextExampleHelper.h"
 #import "ZZDetailModel.h"
 #import "ZZDetailHeaderView.h"
@@ -29,6 +29,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 @property (nonatomic, strong) UIScrollView *containerScrollView;
 @property (nonatomic, strong) ZZDetailHeaderLayout *headerLayout;
 @property (nonatomic, strong) ZZDetailHeaderView *headerView;
+@property (nonatomic, strong) ZZDetailModel *detailModel;
 @end
 
 @implementation ZZDetailArticleViewController
@@ -91,7 +92,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 #pragma mark - 初始化控件
 - (void)initialBottomToolBar{
 
-    ZZDetailBottomBar *bottomToolBar = [ZZDetailBottomBar barWithStyle:DetailBottomBarStyleHaiTao];
+    ZZDetailBaseBottomBar *bottomToolBar = [ZZDetailBaseBottomBar barWithStyle:DetailBottomBarStyleHaiTao];
     [self.view addSubview:bottomToolBar];
     [bottomToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.offset(0);
@@ -155,14 +156,14 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
         
         if (error) { return;}
         
-        ZZDetailModel *detailModel = [ZZDetailModel modelWithDictionary:responseObject];
-        _headerLayout = [[ZZDetailHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
+        _detailModel = [ZZDetailModel modelWithDictionary:responseObject];
+        _headerLayout = [[ZZDetailHeaderLayout alloc] initWithHeaderDetailModel:_detailModel];
         
         NSString *html5Content = nil;
         if (_channelID == 6 || _channelID == 11) {
-            html5Content = detailModel.article_filter_content;
+            html5Content = _detailModel.article_filter_content;
         }else{
-            html5Content = detailModel.html5_content;
+            html5Content = _detailModel.html5_content;
         }
         if (html5Content.length > 0) {
             

@@ -19,6 +19,16 @@
 
 @implementation ZZDetailTopicHeaderView
 
+- (instancetype)initWithOrderStyle:(ZZDetailTopicHeaderViewOrderStyle)orderStyle{
+    
+    if (self = [super init]) {
+        self.orderStyle = orderStyle;
+    }
+    
+    return self;
+    
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (frame.size.width == 0 && frame.size.height == 0) {
@@ -48,10 +58,6 @@
         
         _hotBtn = [self initialBtnTitle:@"按热度"];
         _hotBtn.right = _timeBtn.left - kDetailTopicBtnMargin;
-        
-        //默认选中热度按钮
-        self.markBtn = _hotBtn;
-        _hotBtn.selected = YES;
         
     }
     return self;
@@ -106,10 +112,28 @@
     sender.selected = YES;
     self.markBtn = sender;
     
-    NSString *order = _timeBtn.selected ? kOrderByHot : kOrderByTime;
+    NSString *order = _timeBtn.selected ? kOrderByTime : kOrderByHot;
     if ([self.delegate respondsToSelector:@selector(headerViewDidClickOrderBtn:orderStr:)]) {
         
         [self.delegate headerViewDidClickOrderBtn:self orderStr:order];
+    }
+    
+}
+
+- (void)setOrderStyle:(ZZDetailTopicHeaderViewOrderStyle)orderStyle{
+    _orderStyle = orderStyle;
+    
+    switch (orderStyle) {
+        case ZZDetailTopicHeaderViewOrderStyleByHot: {
+            _hotBtn.selected = YES;
+            self.markBtn = _timeBtn;
+            break;
+        }
+        case ZZDetailTopicHeaderViewOrderStyleByTime: {
+            _timeBtn.selected = YES;
+            self.markBtn = _timeBtn;
+            break;
+        }
     }
     
 }

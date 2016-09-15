@@ -16,8 +16,10 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 @interface ZZDetailTopicViewController ()<ZZDetailTopicHeaderViewDelegate>
 
 @property (nonatomic, strong) ZZDetailTopicHeaderLayout *detailTopicHeaderLayout;
+@property (nonatomic, strong) ZZDetailTopicHeaderView *headerView;
 
 @property (nonatomic, copy) NSString *order;
+@property (nonatomic, assign) NSInteger offset;
 
 @end
 
@@ -29,21 +31,15 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     // Do any additional setup after loading the view.
     self.title = @"话题详情";
     
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"SM_Detail_BackSecond"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
-    
-    // 后退按钮距离图片距离左边边距
-    UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    fixedItem.width = -20;
-    self.navigationItem.leftBarButtonItems = @[fixedItem,backItem];
+    [self setupNavigation];
 
-    
-    self.navigationItem.rightBarButtonItem = nil;
-    NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
-    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     self.order = kOrderByHot;
-    
 
+    
     [self.tableView registerClass:[ZZDetailTopicCell class] forCellReuseIdentifier:kDetailTopicCell];
+    
+    _headerView = [[ZZDetailTopicHeaderView alloc] initWithOrderStyle:ZZDetailTopicHeaderViewOrderStyleByHot];
+    _headerView.delegate = self;
     
 }
 
@@ -59,22 +55,41 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     
 }
 
+- (void)setupNavigation{
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"SM_Detail_BackSecond"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
+    
+    // 后退按钮距离图片距离左边边距
+    UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedItem.width = -20;
+    self.navigationItem.leftBarButtonItems = @[fixedItem,backItem];
+    
+    self.navigationItem.rightBarButtonItem = nil;
+    NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
+}
+
 #pragma mark - 请求数据
 
 - (void)loadData{
+    self.offset = 0;
+    
     ZZChannelID *channel = [ZZChannelID channelWithID:_channelID];
     
     NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
     [ZZNetworking Get:URLStr parameters:[NSMutableDictionary dictionary] complectionBlock:^(id responseObject, NSError *error) {
         if (error) { return;}
         
-        ZZDetailTopicHeaderModel *detailModel = [ZZDetailTopicHeaderModel modelWithDictionary:responseObject];
-        _detailTopicHeaderLayout = [[ZZDetailTopicHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
-        
-        ZZDetailTopicHeaderView *headerView = [[ZZDetailTopicHeaderView alloc] init];
-        headerView.detailTopicHeaderLayout = _detailTopicHeaderLayout;
-        headerView.delegate = self;
-        self.tableView.tableHeaderView = headerView;
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            ZZDetailTopicHeaderModel *detailModel = [ZZDetailTopicHeaderModel modelWithDictionary:responseObject];
+            _detailTopicHeaderLayout = [[ZZDetailTopicHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _headerView.detailTopicHeaderLayout = _detailTopicHeaderLayout;
+                self.tableView.tableHeaderView = _headerView;
+            });
+        });
+
+
         
     }];
 
@@ -94,9 +109,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
         }
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
             self.dataSource = [self generateDataWithArray:dataArray];
-            
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
                 [self.tableView.mj_header endRefreshing];
@@ -107,6 +120,8 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 }
 
 - (void)loadMoreData{
+    self.offset = self.dataSource.count;
+    
     [ZZNetworking Get:@"v2/wiki/comments" parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
         NSArray *dataArray = responseObject[@"comment_list"];
         if (error) {
@@ -145,7 +160,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 
 - (NSMutableDictionary *)configureParameters{
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    [parameters setValue:[NSString stringWithFormat:@"%@", @(self.dataSource.count)] forKey:@"offset"];
+    [parameters setValue:[NSString stringWithFormat:@"%@", @(self.offset)] forKey:@"offset"];
     [parameters setValue:_article_id forKey:@"topic_id"];
     [parameters setValue:self.order forKey:@"order"];
     return parameters;

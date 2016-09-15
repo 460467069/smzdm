@@ -17,15 +17,6 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-
-
-/** 新浪微博 */
-    #import "WeiboSDK.h"
-    #define kAppKey         @"4079614173"
-    #define kRedirectURI    @"http://www.smzdm.com"
-
-
-
 /** 第三方头文件 */
     #import "AFNetworking.h"
     #import "MJExtension.h"
@@ -38,31 +29,15 @@
     #import "LxDBAnything.h"
     #import "UINavigationBar+Awesome.h"
 
-
-
-
-
 /** 通用宏 */
-    #define kScreenW [UIScreen mainScreen].bounds.size.width
-    #define kScreenH [UIScreen mainScreen].bounds.size.height
-    #define ZZColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
-    #define kStatusH                    20                      //  状态栏高度
-    #define kNavBarH                    44                      //  导航栏高度
-    #define kTabBarH                    49                      //  标签栏高度
+    #import "ZZConstants.h"
 
-    #define kDetailContentOffset 15
+/** 枚举 */
+#import "ZZEnums.h"
 
-    #define kGlobalRedColor [UIColor colorWithHexString:@"#F04848"]
-    #define kGlobalGrayColor [UIColor colorWithHexString:@"#666666"]
-    #define kGlobalLightGrayColor ZZColor(234, 234, 234)
-
-    #define kHaojiaJingXuan @"haojia_jingxuan"
-    #define kZhiYouFuLi @"值友福利"
 
 /** 用户账号信息保存路径 */
 #define kAccountPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:@"account.archive"]
-
-
 
 /** 分类头文件 */
     #import "UIColor+HEX.h"
@@ -74,7 +49,6 @@
     #import "ZZNetworking.h"
 
 #endif
-
 
 
 #endif /* PrefixHeader_pch */

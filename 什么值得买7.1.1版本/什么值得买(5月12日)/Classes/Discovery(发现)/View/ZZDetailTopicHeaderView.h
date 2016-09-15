@@ -12,6 +12,11 @@
 static NSString *const kOrderByHot = @"byhot";
 static NSString *const kOrderByTime = @"bytime";
 
+typedef NS_ENUM(NSUInteger, ZZDetailTopicHeaderViewOrderStyle) {
+    ZZDetailTopicHeaderViewOrderStyleByHot,
+    ZZDetailTopicHeaderViewOrderStyleByTime,
+};
+
 @class ZZDetailTopicHeaderView;
 @protocol ZZDetailTopicHeaderViewDelegate <NSObject>
 
@@ -26,5 +31,9 @@ static NSString *const kOrderByTime = @"bytime";
 @property (nonatomic, strong) ZZDetailTopicHeaderLayout *detailTopicHeaderLayout;
 
 @property (nonatomic, weak) id<ZZDetailTopicHeaderViewDelegate> delegate;
+
+@property (nonatomic, assign) ZZDetailTopicHeaderViewOrderStyle orderStyle;
+
+- (instancetype)initWithOrderStyle:(ZZDetailTopicHeaderViewOrderStyle)orderStyle;
 
 @end

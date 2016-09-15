@@ -1,13 +1,13 @@
 //
-//  ZZDetailBottomBar.h
+//  ZZEnums.h
 //  什么值得买
 //
-//  Created by Wang_ruzhou on 16/9/9.
+//  Created by Wang_ruzhou on 16/9/15.
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+#ifndef ZZEnums_h
+#define ZZEnums_h
 
 
 typedef NS_ENUM(NSUInteger, DetailBottomBarStyle) {
@@ -20,16 +20,5 @@ typedef NS_ENUM(NSUInteger, DetailBottomBarStyle) {
     DetailBottomBarStylePingCe = DetailBottomBarStyleZiXun,
 };
 
-@interface ZZFirstContainerView : UIView
 
-@end
-
-@interface ZZSecondContainerView : UIView
-
-@end
-
-@interface ZZDetailBottomBar : UIView
-
-+ (instancetype)barWithStyle:(DetailBottomBarStyle)style;
-
-@end
+#endif /* ZZEnums_h */

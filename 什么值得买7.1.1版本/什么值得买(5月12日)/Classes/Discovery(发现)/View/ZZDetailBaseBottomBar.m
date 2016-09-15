@@ -6,24 +6,31 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import "ZZDetailBottomBar.h"
+#import "ZZDetailBaseBottomBar.h"
 
-@interface ZZDetailBottomBar ()
-@property (nonatomic, assign) DetailBottomBarStyle style;
+@interface ZZDetailBaseBottomBar ()
 @property (nonatomic, weak) CALayer *topLineLayer;
 @property (nonatomic, strong) UIView *firstContainerView;
 @property (nonatomic, strong) UIView *secondContainerView;
 @end
 
-@implementation ZZDetailBottomBar
+@implementation ZZDetailBaseBottomBar
 
 + (instancetype)barWithStyle:(DetailBottomBarStyle)style{
     
-    ZZDetailBottomBar *bottomBar = [[ZZDetailBottomBar alloc] init];
-    bottomBar.style = style;
+    ZZDetailBaseBottomBar *bottomBar = [[ZZDetailBaseBottomBar alloc] init];
+    bottomBar->_style = style;
     return bottomBar;
 
 }
+
++ (instancetype)barWithDetailModel:(id )detailModel{
+    
+    ZZDetailBaseBottomBar *bottomBar = [[ZZDetailBaseBottomBar alloc] init];
+    bottomBar.detailModel = detailModel;
+    return bottomBar;
+}
+
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

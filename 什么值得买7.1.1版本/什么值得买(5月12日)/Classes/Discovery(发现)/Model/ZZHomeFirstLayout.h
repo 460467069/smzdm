@@ -15,12 +15,7 @@
 
 #define kHomeFirstCellTitleLabelLeft 20
 
-#define kHomeFirstCellPicHeight1 (kScreenW / 750.0 * 326)
-#define kHomeFirstCellPicWidth1 (kScreenW / 750.0 * 284)
-#define kHomeFirstCellPicHeight2 (kScreenW / 750.0 * 154)
-#define kHomeFirstCellPicWidth2 (kScreenW / 750.0 * 464)
-#define kHomeFirstCellPicHeight3 (kScreenW / 750.0 * 170)
-#define kHomeFirstCellPicWidth3 (kScreenW / 750.0 * 231)
+
 
 #define kHomeFirstCellScrollItemHeight 200
 #define kHomeFirstCellScrollItemWidth 120
