@@ -35,7 +35,7 @@
 /** 副标题 */
 @property (nonatomic, copy) NSString *summary_content;
 /** 星星数 ★ */
-@property (nonatomic, copy) NSString *pro_score;
+@property (nonatomic, assign) NSInteger pro_score;
 
 @property (nonatomic, copy) NSString *is_pro_creator;
 

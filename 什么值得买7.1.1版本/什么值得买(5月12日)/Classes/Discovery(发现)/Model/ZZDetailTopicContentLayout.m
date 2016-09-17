@@ -47,6 +47,8 @@
     container.truncationType = YYTextTruncationTypeEnd;
     _userInfoLayout = [YYTextLayout layoutWithContainer:container text:userInfo];
     
+    _starLayout = [self starLayoutWithCount:_detailTopicModel.pro_score];
+
     
     NSMutableAttributedString *articleTitle = [NSMutableAttributedString new];
     {
@@ -170,4 +172,40 @@
     return textLayout;
 }
 
+
+- (YYTextLayout *)starLayoutWithCount:(NSInteger)count{
+    
+    if (count == 0) {
+        return nil;
+    }
+    
+    NSMutableAttributedString *text = [NSMutableAttributedString new];
+    
+    [self attributedString:text appendStarImage:[UIImage imageNamed:@"star_red"] starCount:count];
+    [self attributedString:text appendStarImage:[UIImage imageNamed:@"star_gray"] starCount:kDetailTopicTotalStars - count];
+    
+    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kDetailTopicStarLabelWidth, kDetailTopicUserInfoHeight)];
+    YYTextLayout *textLayout = [YYTextLayout layoutWithContainer:container text:text];
+    
+    return textLayout;
+}
+
+- (void)attributedString:(NSMutableAttributedString *)text appendStarImage:(UIImage *)starImage starCount:(NSInteger)starcount{
+
+    UIFont *font = [UIFont systemFontOfSize:12];
+    for (NSInteger i = 0; i < starcount; i++) {
+        {
+            NSMutableAttributedString *attachText = [NSMutableAttributedString attachmentStringWithContent:starImage contentMode:UIViewContentModeCenter attachmentSize:starImage.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
+            [text appendAttributedString:attachText];
+        }
+        {
+            CALayer *whiteLayer = [CALayer layer];
+            whiteLayer.backgroundColor = [UIColor whiteColor].CGColor;
+//            whiteLayer.frame = CGRectMake(0, 0, kDetailTopicStarMargin, starImageHeight);
+            NSMutableAttributedString *marginText = [NSMutableAttributedString attachmentStringWithContent:whiteLayer contentMode:UIViewContentModeCenter attachmentSize:CGSizeMake(kDetailTopicStarMargin, kDetailTopicStarHeight) alignToFont:font alignment:YYTextVerticalAlignmentCenter];
+            [text appendAttributedString:marginText];
+        }
+    }
+    
+}
 @end

@@ -86,6 +86,7 @@
 		A9A67B971D622C00000F46BE /* ZZYuanChuangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A67B951D622C00000F46BE /* ZZYuanChuangCell.m */; };
 		A9A67B981D622C00000F46BE /* ZZYuanChuangCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A67B961D622C00000F46BE /* ZZYuanChuangCell.xib */; };
 		A9A67B9A1D623323000F46BE /* ZZListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A67B991D623323000F46BE /* ZZListCell.xib */; };
+		A9A7AC3B1D8BF1B400814CDD /* LEOStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A7AC3A1D8BF1B400814CDD /* LEOStarView.m */; };
 		A9A7B3361CEAD775002EC0FA /* ZZRedirectData.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A7B3351CEAD775002EC0FA /* ZZRedirectData.m */; };
 		A9AC889B1D6374CF006C840D /* ZZTuiGuangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AC88991D6374CF006C840D /* ZZTuiGuangCell.m */; };
 		A9AC889C1D6374CF006C840D /* ZZTuiGuangCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AC889A1D6374CF006C840D /* ZZTuiGuangCell.xib */; };
@@ -264,6 +265,8 @@
 		A9A67B951D622C00000F46BE /* ZZYuanChuangCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZYuanChuangCell.m; sourceTree = "<group>"; };
 		A9A67B961D622C00000F46BE /* ZZYuanChuangCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZYuanChuangCell.xib; sourceTree = "<group>"; };
 		A9A67B991D623323000F46BE /* ZZListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZListCell.xib; sourceTree = "<group>"; };
+		A9A7AC391D8BF1B400814CDD /* LEOStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEOStarView.h; sourceTree = "<group>"; };
+		A9A7AC3A1D8BF1B400814CDD /* LEOStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEOStarView.m; sourceTree = "<group>"; };
 		A9A7B3341CEAD775002EC0FA /* ZZRedirectData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZRedirectData.h; sourceTree = "<group>"; };
 		A9A7B3351CEAD775002EC0FA /* ZZRedirectData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZRedirectData.m; sourceTree = "<group>"; };
 		A9AC88981D6374CF006C840D /* ZZTuiGuangCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTuiGuangCell.h; sourceTree = "<group>"; };
@@ -479,6 +482,8 @@
 				A9AEA3251D5F6F17003B8264 /* ZZCycleScrollView.m */,
 				A925E6D91D60BE2D009A9E6F /* ZZCyclePicHelper.h */,
 				A925E6DA1D60BE2D009A9E6F /* ZZCyclePicHelper.m */,
+				A9A7AC391D8BF1B400814CDD /* LEOStarView.h */,
+				A9A7AC3A1D8BF1B400814CDD /* LEOStarView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1067,6 +1072,7 @@
 				A90E6E3B1D39345B00C213C5 /* ZZDouYuFlowLayout.m in Sources */,
 				A99A4BDD1D37E36B001DDE47 /* ZZDouYUBannerModel.m in Sources */,
 				A980A3E51CE40E85006E0037 /* ZZHomeViewController.m in Sources */,
+				A9A7AC3B1D8BF1B400814CDD /* LEOStarView.m in Sources */,
 				A9275A191CE4556A0017BA82 /* ZZListCell.m in Sources */,
 				A99605151CE469D700C71A29 /* ZZTagLabel.m in Sources */,
 				A9DC2BF11D87F05F0066FADF /* ZZDetailTopicCell.m in Sources */,

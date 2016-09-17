@@ -8,6 +8,7 @@
 
 #import "ZZDetailTopicCell.h"
 #import "ZZCyclePicHelper.h"
+#import "LEOStarView.h"
 
 @interface ZZDetailContentView ()
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) YYLabel *useTimeLabel;
 @property (nonatomic, strong) YYLabel *supportLabel;
 @property (nonatomic, strong) UIButton *supportBtn;
+@property (nonatomic, strong) YYLabel *starLabel;
 @end
 
 @implementation ZZDetailContentView
@@ -40,6 +42,15 @@
         [self addSubview:_userInfoLabel];
         _useTimeLabel.numberOfLines = 1;
         _userInfoLabel.size = CGSizeMake(kDetailTopicUserInfoWidth, kDetailTopicUserInfoHeight);
+        
+
+        _starLabel = [[YYLabel alloc] init];
+        [self addSubview:_starLabel];
+        _starLabel.size = CGSizeMake(kDetailTopicStarLabelWidth, kDetailTopicUserInfoHeight);
+        _starLabel.right = self.width - kDetailTopicContentOffsetX;;
+        _starLabel.centerY = _userInfoLabel.centerY;
+        _starLabel.hidden = YES;
+        
         
         _figureView = [[UIImageView alloc] init];
         [self addSubview:_figureView];
@@ -98,7 +109,9 @@
     _layout = layout;
     
     _userInfoLabel.textLayout = layout.userInfoLayout;
-
+    
+    _starLabel.hidden = layout.starLayout ? NO : YES;
+    _starLabel.textLayout = layout.starLayout;
     
     _figureView.top = _userInfoLabel.bottom;
     [_figureView sd_setImageWithURL:[NSURL URLWithString:layout.detailTopicModel.pro_pic] placeholderImage:[UIImage imageNamed:@"061"]];
@@ -167,7 +180,6 @@
         [self.contentView addSubview:_detailContentView];
         _detailContentView.detailTopicCell = self;
         _detailContentView.userInfoLabel.left = _avatarView.right - kDetailTopicMarginX + kDetailTopicUserInfoMarginX; //注意这里需要-kDetailTopicMarginX
-        
         [self.contentView bringSubviewToFront:_avatarView];
         
     }

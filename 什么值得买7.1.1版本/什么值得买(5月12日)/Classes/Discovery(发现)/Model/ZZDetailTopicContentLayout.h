@@ -15,7 +15,7 @@
 #define kDetailTopicContentOffsetY 15           /**< 内容偏移, 上下 */
 #define kDetailTopicContentTopMargin 15         /**< 内容顶部留白 */
 #define kDetailTopicContentAvartarWH 48         /**< 头像宽高 */
-#define kDetailTopicUserInfoWidth 130           /**< 用户信息宽 */
+#define kDetailTopicUserInfoWidth 150           /**< 用户信息宽 */
 #define kDetailTopicUserInfoHeight 50           /**< 用户信息高 */
 #define kDetailTopicUserInfoMarginX 8           /**< 用户信息左右留白 */
 #define kDetailTopicUserInfoMarginY 8           /**< 用户信息上下留白 */
@@ -29,6 +29,11 @@
 #define kDetailTopicUseTimeY 15                 /**< 使用时长上下留白 */
 #define kDetailTopicSmallBtnWidth   50          /**< 小按钮宽 */
 #define kDetailTopicSmallBtnMargin   15          /**< 按钮间间距 */
+#define kDetailTopicStarMargin 3
+#define kDetailTopicStarWidth 20
+#define kDetailTopicStarHeight 20
+#define kDetailTopicTotalStars 5
+#define kDetailTopicStarLabelWidth (kDetailTopicStarWidth + kDetailTopicStarMargin) * kDetailTopicTotalStars
 
 @interface ZZDetailTopicContentLayout : NSObject
 /** 头像高度 */
@@ -36,6 +41,8 @@
 
 @property (nonatomic, strong) YYTextLayout *userInfoLayout;
 @property (nonatomic, assign) CGFloat userInfoHeight;
+
+@property (nonatomic, strong) YYTextLayout *starLayout;
 /** 标题 和 价格 */
 @property (nonatomic, strong) YYTextLayout *titleLayout;
 

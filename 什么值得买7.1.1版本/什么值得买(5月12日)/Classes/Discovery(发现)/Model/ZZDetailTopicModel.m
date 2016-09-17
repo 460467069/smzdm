@@ -34,6 +34,12 @@
         case 3:
             temStr = @"3个月-1年";
             break;
+        case 4:
+            temStr = @"1年-5年";
+            break;
+        case 5:
+            temStr = @"5年以上";
+            break;
             
         default:
             break;
