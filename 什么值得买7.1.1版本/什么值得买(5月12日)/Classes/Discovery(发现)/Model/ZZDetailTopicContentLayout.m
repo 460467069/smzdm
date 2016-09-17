@@ -106,7 +106,9 @@
         [descText appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
     }
     descText.lineSpacing = 10;
+    [descText setLineSpacing:15 range:NSMakeRange(0, 1)];
     container = [YYTextContainer containerWithSize:CGSizeMake(kDetailTopicDescWidth, kDetailTopicDescHeight) insets:UIEdgeInsetsMake(kDetailTopicDescTopMargin, kDetailTopicContentOffsetX, 0, kDetailTopicContentOffsetX)];
+    container.truncationType = YYTextTruncationTypeEnd;
     _descriptionLayout = [YYTextLayout layoutWithContainer:container text:descText];
     
     if (_descriptionLayout.textBoundingSize.height > kDetailTopicDescHeight) {
