@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import "ZZFantasticGoodsController.h"
+#import "ZZDouYuController.h"
 #import "SDCycleScrollView.h"
 #import "ZZDouYUBannerModel.h"
 #import "ZZDouYuHomeModel.h"
@@ -24,7 +24,7 @@
 
 #define KHMDouYUHomeDataFilePath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"KHMDouYUHomeDataFilePath.plist"]
 
-@interface ZZFantasticGoodsController ()<SDCycleScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ZZDouYuController ()<SDCycleScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *bannerLayout;
 @property (weak, nonatomic) IBOutlet UICollectionView *bannerCollectionView;
@@ -38,7 +38,7 @@
 @property (nonatomic, assign)CGFloat height;
 @end
 
-@implementation ZZFantasticGoodsController
+@implementation ZZDouYuController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

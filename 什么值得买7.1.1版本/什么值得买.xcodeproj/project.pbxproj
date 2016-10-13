@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39DAF230709E481D6FB8C695 /* libPods-什么值得买.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B4DA99068CDCE56BE0CB3 /* libPods-什么值得买.a */; };
+		A90B12E01DAA38990051B237 /* ZZGoodsHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */; };
 		A90DFD3E1D852E6B00B52D5C /* ZZDetailTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A90DFD3D1D852E6B00B52D5C /* ZZDetailTopicViewController.m */; };
 		A90E5BCE1D0AB2C40054CDC9 /* ZZDiscoveryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E5BCD1D0AB2C40054CDC9 /* ZZDiscoveryView.m */; };
 		A90E6E3B1D39345B00C213C5 /* ZZDouYuFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E6E3A1D39345B00C213C5 /* ZZDouYuFlowLayout.m */; };
@@ -44,6 +44,7 @@
 		A9275A1C1CE459A90017BA82 /* ZZWorthyArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = A9275A1B1CE459A90017BA82 /* ZZWorthyArticle.m */; };
 		A9275A1F1CE4600F0017BA82 /* NSString+ZZNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9275A1E1CE4600F0017BA82 /* NSString+ZZNumberFormatter.m */; };
 		A93B6A7C1D6169780001F777 /* ZZDIYBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B6A7B1D6169780001F777 /* ZZDIYBackFooter.m */; };
+		A95605F61DA87E4C00473B46 /* ZZSwiftCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95605F51DA87E4C00473B46 /* ZZSwiftCommon.swift */; };
 		A958E4EF1D388D6100BFA791 /* ZZDouYuHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A958E4ED1D388D6100BFA791 /* ZZDouYuHomeCollectionViewCell.m */; };
 		A958E4F01D388D6100BFA791 /* ZZDouYuHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A958E4EE1D388D6100BFA791 /* ZZDouYuHomeCollectionViewCell.xib */; };
 		A958E4F31D3894BC00BFA791 /* ZZDouYuHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A958E4F21D3894BC00BFA791 /* ZZDouYuHomeTableViewCell.m */; };
@@ -58,8 +59,8 @@
 		A97B05C31D83DE650002CC31 /* ZZDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A97B05C21D83DE650002CC31 /* ZZDetailModel.m */; };
 		A97EC6C31D794E06006AABAB /* ZZInPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A97EC6C21D794E06006AABAB /* ZZInPurchaseViewController.m */; };
 		A980A3E51CE40E85006E0037 /* ZZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A3E41CE40E85006E0037 /* ZZHomeViewController.m */; };
-		A980A3EF1CE40F4A006E0037 /* ZZFantasticGoodsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A3EE1CE40F4A006E0037 /* ZZFantasticGoodsController.m */; };
-		A980A3F11CE40F56006E0037 /* ZZFantasticGoodsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A980A3F01CE40F56006E0037 /* ZZFantasticGoodsController.storyboard */; };
+		A980A3EF1CE40F4A006E0037 /* ZZDouYuController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A3EE1CE40F4A006E0037 /* ZZDouYuController.m */; };
+		A980A3F11CE40F56006E0037 /* ZZDouYuController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A980A3F01CE40F56006E0037 /* ZZDouYuController.storyboard */; };
 		A980A3F41CE40F76006E0037 /* ZZMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A3F31CE40F76006E0037 /* ZZMineViewController.m */; };
 		A980A3FE1CE41250006E0037 /* UITabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = A980A3FD1CE41250006E0037 /* UITabBar.plist */; };
 		A980A4001CE41286006E0037 /* ZDMHome.plist in Resources */ = {isa = PBXBuildFile; fileRef = A980A3FF1CE41286006E0037 /* ZDMHome.plist */; };
@@ -88,6 +89,7 @@
 		A9A67B9A1D623323000F46BE /* ZZListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A67B991D623323000F46BE /* ZZListCell.xib */; };
 		A9A7AC3B1D8BF1B400814CDD /* LEOStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A7AC3A1D8BF1B400814CDD /* LEOStarView.m */; };
 		A9A7B3361CEAD775002EC0FA /* ZZRedirectData.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A7B3351CEAD775002EC0FA /* ZZRedirectData.m */; };
+		A9ABE9E61DA936FB00A15912 /* ZZGoodsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ABE9E51DA936FB00A15912 /* ZZGoodsHeaderCell.swift */; };
 		A9AC889B1D6374CF006C840D /* ZZTuiGuangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AC88991D6374CF006C840D /* ZZTuiGuangCell.m */; };
 		A9AC889C1D6374CF006C840D /* ZZTuiGuangCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AC889A1D6374CF006C840D /* ZZTuiGuangCell.xib */; };
 		A9ADB8501D64DF5D00330D23 /* ZZNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ADB84D1D64DF5D00330D23 /* ZZNetworking.m */; };
@@ -104,6 +106,9 @@
 		A9C3569D1D227581006EE7EC /* ZZHomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C3569C1D227581006EE7EC /* ZZHomeViewController.storyboard */; };
 		A9C3569F1D227586006EE7EC /* ZZContentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C3569E1D227586006EE7EC /* ZZContentViewController.storyboard */; };
 		A9C356A11D2275BC006EE7EC /* ZZMineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C356A01D2275BC006EE7EC /* ZZMineViewController.storyboard */; };
+		A9C8C4E61D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8C4E51D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift */; };
+		A9C8C4E81D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8C4E71D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift */; };
+		A9C8C4EA1D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C8C4E91D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard */; };
 		A9D9D2181CE40B3E00A83101 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D2171CE40B3E00A83101 /* main.m */; };
 		A9D9D21B1CE40B3E00A83101 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D21A1CE40B3E00A83101 /* AppDelegate.m */; };
 		A9D9D2231CE40B3E00A83101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D9D2221CE40B3E00A83101 /* Assets.xcassets */; };
@@ -119,11 +124,12 @@
 		A9F4F1771D39683B00191336 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F4F1761D39683B00191336 /* UINavigationBar+Awesome.m */; };
 		A9FC17A91D825E3200F16D1E /* ZZDetailBaseBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC17A81D825E3200F16D1E /* ZZDetailBaseBottomBar.m */; };
 		A9FC17AC1D826BB800F16D1E /* ZZSecondBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC17AB1D826BB800F16D1E /* ZZSecondBaseViewController.m */; };
+		CECD5256DC4CC3E02810228F /* libPods-什么值得买.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA94AC24398409643F76168 /* libPods-什么值得买.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		788B4DA99068CDCE56BE0CB3 /* libPods-什么值得买.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-什么值得买.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A221ED76D299EA45C20125 /* Pods-什么值得买.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.release.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.release.xcconfig"; sourceTree = "<group>"; };
+		A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZGoodsHeaderModel.swift; sourceTree = "<group>"; };
 		A90DFD3C1D852E6B00B52D5C /* ZZDetailTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicViewController.h; sourceTree = "<group>"; };
 		A90DFD3D1D852E6B00B52D5C /* ZZDetailTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicViewController.m; sourceTree = "<group>"; };
 		A90E5BCC1D0AB2C40054CDC9 /* ZZDiscoveryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDiscoveryView.h; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 		A9275A1E1CE4600F0017BA82 /* NSString+ZZNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZZNumberFormatter.m"; sourceTree = "<group>"; };
 		A93B6A7A1D6169780001F777 /* ZZDIYBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDIYBackFooter.h; sourceTree = "<group>"; };
 		A93B6A7B1D6169780001F777 /* ZZDIYBackFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDIYBackFooter.m; sourceTree = "<group>"; };
+		A95605F51DA87E4C00473B46 /* ZZSwiftCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZSwiftCommon.swift; sourceTree = "<group>"; };
 		A958E4EC1D388D6100BFA791 /* ZZDouYuHomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDouYuHomeCollectionViewCell.h; sourceTree = "<group>"; };
 		A958E4ED1D388D6100BFA791 /* ZZDouYuHomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDouYuHomeCollectionViewCell.m; sourceTree = "<group>"; };
 		A958E4EE1D388D6100BFA791 /* ZZDouYuHomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZDouYuHomeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -214,9 +221,9 @@
 		A980A3E21CE40C94006E0037 /* LxDBAnything.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LxDBAnything.h; sourceTree = "<group>"; };
 		A980A3E31CE40E85006E0037 /* ZZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeViewController.h; sourceTree = "<group>"; };
 		A980A3E41CE40E85006E0037 /* ZZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeViewController.m; sourceTree = "<group>"; };
-		A980A3ED1CE40F4A006E0037 /* ZZFantasticGoodsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZFantasticGoodsController.h; sourceTree = "<group>"; };
-		A980A3EE1CE40F4A006E0037 /* ZZFantasticGoodsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZFantasticGoodsController.m; sourceTree = "<group>"; };
-		A980A3F01CE40F56006E0037 /* ZZFantasticGoodsController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZFantasticGoodsController.storyboard; sourceTree = "<group>"; };
+		A980A3ED1CE40F4A006E0037 /* ZZDouYuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDouYuController.h; sourceTree = "<group>"; };
+		A980A3EE1CE40F4A006E0037 /* ZZDouYuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDouYuController.m; sourceTree = "<group>"; };
+		A980A3F01CE40F56006E0037 /* ZZDouYuController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZDouYuController.storyboard; sourceTree = "<group>"; };
 		A980A3F21CE40F76006E0037 /* ZZMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMineViewController.h; sourceTree = "<group>"; };
 		A980A3F31CE40F76006E0037 /* ZZMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMineViewController.m; sourceTree = "<group>"; };
 		A980A3FD1CE41250006E0037 /* UITabBar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UITabBar.plist; sourceTree = "<group>"; };
@@ -269,6 +276,7 @@
 		A9A7AC3A1D8BF1B400814CDD /* LEOStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEOStarView.m; sourceTree = "<group>"; };
 		A9A7B3341CEAD775002EC0FA /* ZZRedirectData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZRedirectData.h; sourceTree = "<group>"; };
 		A9A7B3351CEAD775002EC0FA /* ZZRedirectData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZRedirectData.m; sourceTree = "<group>"; };
+		A9ABE9E51DA936FB00A15912 /* ZZGoodsHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZGoodsHeaderCell.swift; sourceTree = "<group>"; };
 		A9AC88981D6374CF006C840D /* ZZTuiGuangCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTuiGuangCell.h; sourceTree = "<group>"; };
 		A9AC88991D6374CF006C840D /* ZZTuiGuangCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZTuiGuangCell.m; sourceTree = "<group>"; };
 		A9AC889A1D6374CF006C840D /* ZZTuiGuangCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZTuiGuangCell.xib; sourceTree = "<group>"; };
@@ -295,6 +303,10 @@
 		A9C3569C1D227581006EE7EC /* ZZHomeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZHomeViewController.storyboard; sourceTree = "<group>"; };
 		A9C3569E1D227586006EE7EC /* ZZContentViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZContentViewController.storyboard; sourceTree = "<group>"; };
 		A9C356A01D2275BC006EE7EC /* ZZMineViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZMineViewController.storyboard; sourceTree = "<group>"; };
+		A9C8C4E41D8F58EB00B8BFA7 /* 什么值得买-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "什么值得买-Bridging-Header.h"; sourceTree = "<group>"; };
+		A9C8C4E51D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZFantasticGoodsModel.swift; sourceTree = "<group>"; };
+		A9C8C4E71D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZFantasticGoodsController.swift; sourceTree = "<group>"; };
+		A9C8C4E91D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZFantasticGoodsController.storyboard; sourceTree = "<group>"; };
 		A9D9D2131CE40B3E00A83101 /* 什么值得买.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "什么值得买.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D9D2171CE40B3E00A83101 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9D9D2191CE40B3E00A83101 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -324,6 +336,7 @@
 		A9FC17A81D825E3200F16D1E /* ZZDetailBaseBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailBaseBottomBar.m; sourceTree = "<group>"; };
 		A9FC17AA1D826BB800F16D1E /* ZZSecondBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSecondBaseViewController.h; sourceTree = "<group>"; };
 		A9FC17AB1D826BB800F16D1E /* ZZSecondBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSecondBaseViewController.m; sourceTree = "<group>"; };
+		EEA94AC24398409643F76168 /* libPods-什么值得买.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-什么值得买.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B762794EBD4E6C806C9BD4 /* Pods-什么值得买.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.debug.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -332,7 +345,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39DAF230709E481D6FB8C695 /* libPods-什么值得买.a in Frameworks */,
+				CECD5256DC4CC3E02810228F /* libPods-什么值得买.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +560,7 @@
 				A9D9D2171CE40B3E00A83101 /* main.m */,
 				A9D9D2271CE40B3E00A83101 /* Info.plist */,
 				A980A3E11CE40C4A006E0037 /* PrefixHeader.pch */,
+				A95605F51DA87E4C00473B46 /* ZZSwiftCommon.swift */,
 				A989043B1D8A0AF000D55FF4 /* ZZConstants.h */,
 				A989043D1D8A0EED00D55FF4 /* ZZEnums.h */,
 			);
@@ -699,9 +713,12 @@
 		A9D9D23F1CE40B7C00A83101 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A980A3ED1CE40F4A006E0037 /* ZZFantasticGoodsController.h */,
-				A980A3EE1CE40F4A006E0037 /* ZZFantasticGoodsController.m */,
-				A980A3F01CE40F56006E0037 /* ZZFantasticGoodsController.storyboard */,
+				A980A3ED1CE40F4A006E0037 /* ZZDouYuController.h */,
+				A980A3EE1CE40F4A006E0037 /* ZZDouYuController.m */,
+				A980A3F01CE40F56006E0037 /* ZZDouYuController.storyboard */,
+				A9C8C4E71D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift */,
+				A9C8C4E91D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard */,
+				A9ABE9E51DA936FB00A15912 /* ZZGoodsHeaderCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -713,6 +730,9 @@
 				A99A4BDC1D37E36B001DDE47 /* ZZDouYUBannerModel.m */,
 				A99A4BDE1D37F3BA001DDE47 /* ZZDouYuHomeModel.h */,
 				A99A4BDF1D37F3BA001DDE47 /* ZZDouYuHomeModel.m */,
+				A9C8C4E51D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift */,
+				A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */,
+				A9C8C4E41D8F58EB00B8BFA7 /* 什么值得买-Bridging-Header.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -871,7 +891,7 @@
 		BBF84AC801C23E3FA5D0F8BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				788B4DA99068CDCE56BE0CB3 /* libPods-什么值得买.a */,
+				EEA94AC24398409643F76168 /* libPods-什么值得买.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -912,6 +932,7 @@
 					A9D9D2121CE40B3E00A83101 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = W34ZLPQLA6;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -953,12 +974,13 @@
 				A9A512021D775A5D00E41407 /* ZZCHannelID.plist in Resources */,
 				A9262A801D76B35B0037B1CF /* ZZJingXuanViewController.storyboard in Resources */,
 				A9A67B9A1D623323000F46BE /* ZZListCell.xib in Resources */,
-				A980A3F11CE40F56006E0037 /* ZZFantasticGoodsController.storyboard in Resources */,
+				A980A3F11CE40F56006E0037 /* ZZDouYuController.storyboard in Resources */,
 				A980A3FE1CE41250006E0037 /* UITabBar.plist in Resources */,
 				A980A4001CE41286006E0037 /* ZDMHome.plist in Resources */,
 				A91A83521D420A87008D229E /* weibo_4.json in Resources */,
 				A91A83511D420A87008D229E /* weibo_3.json in Resources */,
 				A958E4F01D388D6100BFA791 /* ZZDouYuHomeCollectionViewCell.xib in Resources */,
+				A9C8C4EA1D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard in Resources */,
 				A91A834F1D420A87008D229E /* weibo_1.json in Resources */,
 				A91A83531D420A87008D229E /* weibo_5.json in Resources */,
 				A9262A821D76B63F0037B1CF /* JingXuan.plist in Resources */,
@@ -998,7 +1020,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FCD7C8BBA938F9CB3A721E1B /* [CP] Copy Pods Resources */ = {
@@ -1032,7 +1054,9 @@
 				A97229941D5D7C2D001415A8 /* ZZHomeFirstModel.m in Sources */,
 				A9B0506B1D5AB5C5000BB865 /* ZZLittleBannerCell.m in Sources */,
 				A98904461D8A105400D55FF4 /* ZZDetailYouHuiBottomBar.m in Sources */,
+				A90B12E01DAA38990051B237 /* ZZGoodsHeaderModel.swift in Sources */,
 				A97B05C31D83DE650002CC31 /* ZZDetailModel.m in Sources */,
+				A9C8C4E61D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift in Sources */,
 				A9D9D21B1CE40B3E00A83101 /* AppDelegate.m in Sources */,
 				A927160E1D44C126006EEECA /* WBStatusLayout.m in Sources */,
 				A91D9B451D8546B30073DEB7 /* ZZDetailTopicHeaderView.m in Sources */,
@@ -1049,7 +1073,7 @@
 				A9B7835B1D59019D003C464D /* ZZRefreshTip.m in Sources */,
 				A93B6A7C1D6169780001F777 /* ZZDIYBackFooter.m in Sources */,
 				A9275A0E1CE422B70017BA82 /* ZZHomeCell.m in Sources */,
-				A980A3EF1CE40F4A006E0037 /* ZZFantasticGoodsController.m in Sources */,
+				A980A3EF1CE40F4A006E0037 /* ZZDouYuController.m in Sources */,
 				A958E4F31D3894BC00BFA791 /* ZZDouYuHomeTableViewCell.m in Sources */,
 				A980A4081CE412E8006E0037 /* ZZNavigationController.m in Sources */,
 				A9275A111CE4230B0017BA82 /* ZZContentViewController.m in Sources */,
@@ -1065,6 +1089,7 @@
 				A980A4091CE412E8006E0037 /* ZZTabBarViewController.m in Sources */,
 				A98904401D8A0F7300D55FF4 /* ZZDetailHaowuBottomBar.m in Sources */,
 				A91D9B481D8548420073DEB7 /* ZZDetailTopicHeaderLayout.m in Sources */,
+				A9C8C4E81D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift in Sources */,
 				A9B783551D58FB5F003C464D /* ZZDIYHeader.m in Sources */,
 				A9ADB8511D64DF5D00330D23 /* ZZNetworkHandler.m in Sources */,
 				A925E6DB1D60BE2D009A9E6F /* ZZCyclePicHelper.m in Sources */,
@@ -1088,6 +1113,7 @@
 				A91D9B4B1D8548740073DEB7 /* ZZDetailTopicHeaderModel.m in Sources */,
 				A9758D751D877F3E00FC4B89 /* ZZDetailTopicContentLayout.m in Sources */,
 				A9A005411D572B990073F22F /* ZZHomeHeaderViewController.m in Sources */,
+				A9ABE9E61DA936FB00A15912 /* ZZGoodsHeaderCell.swift in Sources */,
 				A9758D7C1D8792E200FC4B89 /* ZZDiscoveryViewController.m in Sources */,
 				A9D9D2181CE40B3E00A83101 /* main.m in Sources */,
 				A9B56CB51D875AEA00BE193A /* ZZDetailBaseViewController.m in Sources */,
@@ -1096,6 +1122,7 @@
 				A9E236C11D579C9600B1A6C3 /* ZZHeadLine.m in Sources */,
 				A9A7B3361CEAD775002EC0FA /* ZZRedirectData.m in Sources */,
 				A91A83581D420CFD008D229E /* WBModel.m in Sources */,
+				A95605F61DA87E4C00473B46 /* ZZSwiftCommon.swift in Sources */,
 				A91D9B4E1D855E090073DEB7 /* ZZTextLinePositionModifier.m in Sources */,
 				A9A67B971D622C00000F46BE /* ZZYuanChuangCell.m in Sources */,
 				A97EC6C31D794E06006AABAB /* ZZInPurchaseViewController.m in Sources */,
@@ -1201,6 +1228,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhongliang zhongliang (ABQ55P3NGF)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
@@ -1210,6 +1238,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = smzdm20160715;
 				PRODUCT_NAME = "什么值得买";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "什么值得买(5月12日)/Classes/FantasyGoods(好物)/Model/什么值得买-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1219,6 +1250,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1229,6 +1261,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = smzdm20160715;
 				PRODUCT_NAME = "什么值得买";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "什么值得买(5月12日)/Classes/FantasyGoods(好物)/Model/什么值得买-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

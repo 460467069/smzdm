@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZZFirstBaseViewController.h"
-
-@interface ZZFantasticGoodsController : UITableViewController
+//ZZFantasticGoodsController
+@interface ZZDouYuController : UITableViewController
 
 @end

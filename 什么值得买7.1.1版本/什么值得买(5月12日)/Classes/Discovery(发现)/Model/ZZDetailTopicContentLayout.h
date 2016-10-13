@@ -15,7 +15,7 @@
 #define kDetailTopicContentOffsetY 15           /**< 内容偏移, 上下 */
 #define kDetailTopicContentTopMargin 15         /**< 内容顶部留白 */
 #define kDetailTopicContentAvartarWH 48         /**< 头像宽高 */
-#define kDetailTopicUserInfoWidth 150           /**< 用户信息宽 */
+#define kDetailTopicUserInfoWidth 180           /**< 用户信息宽 */
 #define kDetailTopicUserInfoHeight 50           /**< 用户信息高 */
 #define kDetailTopicUserInfoMarginX 8           /**< 用户信息左右留白 */
 #define kDetailTopicUserInfoMarginY 8           /**< 用户信息上下留白 */
@@ -29,10 +29,10 @@
 #define kDetailTopicUseTimeY 15                 /**< 使用时长上下留白 */
 #define kDetailTopicSmallBtnWidth   50          /**< 小按钮宽 */
 #define kDetailTopicSmallBtnMargin   15          /**< 按钮间间距 */
-#define kDetailTopicStarMargin 3
-#define kDetailTopicStarWidth 20
-#define kDetailTopicStarHeight 20
-#define kDetailTopicTotalStars 5
+#define kDetailTopicStarMargin 5                /** 星星之间的间距 */
+#define kDetailTopicStarWidth ([UIImage imageNamed:@"star_red"].size.width)                /** 星星宽 */
+#define kDetailTopicStarHeight ([UIImage imageNamed:@"star_red"].size.height)               /** 星星高 */
+#define kDetailTopicTotalStars 5                /** 星星总数 */
 #define kDetailTopicStarLabelWidth (kDetailTopicStarWidth + kDetailTopicStarMargin) * kDetailTopicTotalStars
 
 @interface ZZDetailTopicContentLayout : NSObject

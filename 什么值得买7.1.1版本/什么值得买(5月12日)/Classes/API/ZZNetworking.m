@@ -32,8 +32,8 @@
         LxDBAnyVar(task.response.URL.absoluteString);
         
         if ([responseObject[@"error_code"] isEqualToString:@"0"]) {
+        
             complectionBlock(responseObject[@"data"], nil);
-            
             return;
         }
         [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];

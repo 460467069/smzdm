@@ -117,6 +117,7 @@
         _descriptionHeight = kDetailTopicDescHeight;
     }
     
+    
     //用户上传图片数
     NSInteger picListCount = _detailTopicModel.comment_pic_list.count;
     if (picListCount) {
@@ -181,6 +182,7 @@
         return nil;
     }
     
+
     NSMutableAttributedString *text = [NSMutableAttributedString new];
     
     [self attributedString:text appendStarImage:[UIImage imageNamed:@"star_red"] starCount:count];
@@ -203,7 +205,6 @@
         {
             CALayer *whiteLayer = [CALayer layer];
             whiteLayer.backgroundColor = [UIColor whiteColor].CGColor;
-//            whiteLayer.frame = CGRectMake(0, 0, kDetailTopicStarMargin, starImageHeight);
             NSMutableAttributedString *marginText = [NSMutableAttributedString attachmentStringWithContent:whiteLayer contentMode:UIViewContentModeCenter attachmentSize:CGSizeMake(kDetailTopicStarMargin, kDetailTopicStarHeight) alignToFont:font alignment:YYTextVerticalAlignmentCenter];
             [text appendAttributedString:marginText];
         }

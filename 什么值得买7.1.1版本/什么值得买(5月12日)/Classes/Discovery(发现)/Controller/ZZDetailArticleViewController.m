@@ -70,9 +70,6 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     [self scrollViewDidScroll:_containerScrollView];
-    
-
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -111,6 +108,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     _webView.navigationDelegate = self;
     [_webView addObserver:self forKeyPath:WKWebViewKeyPathLoading options:NSKeyValueObservingOptionNew context:nil];
     [_webView.scrollView addObserver:self forKeyPath:WKWebViewKeyPathContentSize options:NSKeyValueObservingOptionNew context:nil];
+    _webView.scrollView.delegate = self;
     _webView.frame = _containerScrollView.bounds;
 //    [_containerScrollView addSubview:_webView];
 }
@@ -124,6 +122,10 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [self.view addSubview:circleView];
     self.circleView = circleView;
 }
+
+//- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+//    return nil;
+//}
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
     

@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, ZZDetailTopicHeaderViewOrderStyle) {
 
 @property (nonatomic, weak) id<ZZDetailTopicHeaderViewDelegate> delegate;
 
-@property (nonatomic, assign) ZZDetailTopicHeaderViewOrderStyle orderStyle;
+@property (nonatomic, assign)ZZDetailTopicHeaderViewOrderStyle orderStyle;
 
 - (instancetype)initWithOrderStyle:(ZZDetailTopicHeaderViewOrderStyle)orderStyle;
 

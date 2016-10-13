@@ -34,6 +34,7 @@ static CGFloat kMargin = 2.0;
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self setup];
 }
 

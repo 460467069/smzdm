@@ -37,7 +37,6 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 
     
     [self.tableView registerClass:[ZZDetailTopicCell class] forCellReuseIdentifier:kDetailTopicCell];
-    
     _headerView = [[ZZDetailTopicHeaderView alloc] initWithOrderStyle:ZZDetailTopicHeaderViewOrderStyleByHot];
     _headerView.delegate = self;
     
@@ -107,6 +106,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
             [self.tableView.mj_header endRefreshing];
             return;
         }
+        
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             self.dataSource = [self generateDataWithArray:dataArray];

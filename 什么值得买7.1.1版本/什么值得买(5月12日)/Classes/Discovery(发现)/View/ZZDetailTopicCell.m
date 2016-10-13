@@ -40,16 +40,16 @@
         _userInfoLabel = [[YYLabel alloc] init];
 //        _userInfoLabel.backgroundColor = [UIColor randomColor];
         [self addSubview:_userInfoLabel];
-        _useTimeLabel.numberOfLines = 1;
-        _userInfoLabel.size = CGSizeMake(kDetailTopicUserInfoWidth, kDetailTopicUserInfoHeight);
+        _userInfoLabel.height = kDetailTopicUserInfoHeight;
         
-
         _starLabel = [[YYLabel alloc] init];
         [self addSubview:_starLabel];
         _starLabel.size = CGSizeMake(kDetailTopicStarLabelWidth, kDetailTopicUserInfoHeight);
         _starLabel.right = self.width - kDetailTopicContentOffsetX;;
         _starLabel.centerY = _userInfoLabel.centerY;
         _starLabel.hidden = YES;
+//        _starLabel.backgroundColor = [UIColor randomColor];
+        
         
         
         _figureView = [[UIImageView alloc] init];
@@ -180,6 +180,7 @@
         [self.contentView addSubview:_detailContentView];
         _detailContentView.detailTopicCell = self;
         _detailContentView.userInfoLabel.left = _avatarView.right - kDetailTopicMarginX + kDetailTopicUserInfoMarginX; //注意这里需要-kDetailTopicMarginX
+        _detailContentView.userInfoLabel.width = _detailContentView.starLabel.left - _detailContentView.userInfoLabel.left;
         [self.contentView bringSubviewToFront:_avatarView];
         
     }

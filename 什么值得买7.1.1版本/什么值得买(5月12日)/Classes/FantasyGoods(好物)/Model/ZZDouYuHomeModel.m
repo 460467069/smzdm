@@ -15,6 +15,7 @@
     return @{@"room_list" : [ZZDouYURoom_List class]};
 }
 @end
+
 @implementation ZZDouYURoom_List
 
 @end

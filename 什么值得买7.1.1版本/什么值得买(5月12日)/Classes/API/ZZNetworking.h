@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^HttpComplectionBlcok)(id responseObject, NSError *error);
+typedef void(^HttpComplectionBlcok)(id responseObj, NSError *error);
 @interface ZZNetworking : NSObject
 
 + (void)Get:(NSString *)URLString parameters:(NSMutableDictionary *)parameters complectionBlock:(HttpComplectionBlcok)complectionBlock;
