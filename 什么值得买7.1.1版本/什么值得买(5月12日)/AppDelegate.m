@@ -26,8 +26,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [ZZNetworkHandler startMonitoring];
-    
     // 向微博客户端程序注册第三方应用
     [WeiboSDK registerApp:kAppKey];
     //初始化融云
