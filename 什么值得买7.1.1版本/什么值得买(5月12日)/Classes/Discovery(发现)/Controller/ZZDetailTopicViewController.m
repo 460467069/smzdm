@@ -54,6 +54,10 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     
 }
 
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+}
+
 - (void)setupNavigation{
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"SM_Detail_BackSecond"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
     

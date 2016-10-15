@@ -19,4 +19,5 @@ class ZZGoodsHeaderModel: NSObject {
     var wiki_category: String?
     var sort: String?
     var url: String?
+    
 }

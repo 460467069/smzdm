@@ -705,7 +705,6 @@
 			children = (
 				A9D9D23F1CE40B7C00A83101 /* Controller */,
 				A9D9D2401CE40B7C00A83101 /* Model */,
-				A9D9D2411CE40B7C00A83101 /* View */,
 			);
 			path = "FantasyGoods(好物)";
 			sourceTree = "<group>";
@@ -733,6 +732,7 @@
 				A9C8C4E51D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift */,
 				A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */,
 				A9C8C4E41D8F58EB00B8BFA7 /* 什么值得买-Bridging-Header.h */,
+				A9D9D2411CE40B7C00A83101 /* View */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -751,7 +751,8 @@
 				A90E6E3A1D39345B00C213C5 /* ZZDouYuFlowLayout.m */,
 				A9F4F1731D395D7900191336 /* ZZDouYuTitileView.xib */,
 			);
-			path = View;
+			name = View;
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		A9D9D2421CE40B7C00A83101 /* Main */ = {

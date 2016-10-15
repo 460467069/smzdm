@@ -15,6 +15,9 @@ class ZZFantasticGoodsModel: NSObject {
 
     var data: [ZZGoodsSubItemModel]?
 
+    override func perform(_ aSelector: Selector!) -> Unmanaged<AnyObject>! {
+        <#code#>
+    }
     var name: String?
 
     var type: String?
