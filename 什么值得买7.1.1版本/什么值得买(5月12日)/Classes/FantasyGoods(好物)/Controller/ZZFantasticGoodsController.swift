@@ -22,7 +22,6 @@ class ZZGoodsHeaderLayout: UICollectionViewFlowLayout {
         minimumLineSpacing = 0
         minimumInteritemSpacing = collectionViewMargin2
         let itemWidth = ((collectionView?.width)! - (collectionView?.contentInset.left)! - (collectionView?.contentInset.right)! - (goodsHeaderItemCount - 1) * minimumInteritemSpacing ) / goodsHeaderItemCount
-//
         
         let itemHeight = (collectionView?.height)! - (collectionView?.contentInset.top)! - (collectionView?.contentInset.bottom)!
         
@@ -35,13 +34,12 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
     
     var headerDataArray: [ZZGoodsHeaderModel] = []
     
+    
     lazy var collectionView: UICollectionView = {
-        
-        
-        
+    
         let collectionView = UICollectionView.init(frame: CGRect(x: 0, y: 0, width: self.view.width, height: collectionViewHeight), collectionViewLayout: ZZGoodsHeaderLayout())
         
-        collectionView.backgroundColor = UIColor.red
+        collectionView.backgroundColor = UIColor.white
 //        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ZZGoodsHeaderCell.self, forCellWithReuseIdentifier: collectionViewHeaderReuseID)
@@ -67,8 +65,7 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
     
     override  func loadData() {
         
-        
-    
+//        http://api.smzdm.com/v1/haowu/haowu_category?f=iphone&v=7.3&weixin=1
         ZZNetworking.get("v1/haowu/haowu_category", parameters: NSMutableDictionary()) { (responseObj, error) in
             
             if let response = responseObj{
@@ -79,6 +76,27 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
             
             self.tableView.mj_header.endRefreshing()
         }
+        
+
+        
+//        http://api.smzdm.com/v1/haowu/haowu_topic_list/?f=iphone&limit=20&offset=0&v=7.3&weixin=1
+        
+        let parameters = NSMutableDictionary()
+        parameters.setObject("0", forKey: "offset" as NSCopying)
+        parameters.setObject("20", forKey: "limit" as NSCopying)
+        
+        ZZNetworking.get("v1/haowu/haowu_topic_list/", parameters: parameters) { (responseObj, error) in
+        
+            if let response = responseObj {
+                
+                let dataArray = NSArray.modelArray(with: ZZFantasticGoodsModel.self, json: response)
+                
+                
+                self.dataSource = NSMutableArray.init(array: dataArray!)
+                
+            }
+        }
+        
     }
 }
 

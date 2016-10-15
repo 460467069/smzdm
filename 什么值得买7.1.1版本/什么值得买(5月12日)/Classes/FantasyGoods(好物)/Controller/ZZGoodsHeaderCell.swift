@@ -11,8 +11,8 @@ import UIKit
 
 class ZZGoodsHeaderCell: UICollectionViewCell {
     
-    let iconView = UIImageView()
-    let titleLabel = UILabel()
+    lazy var iconView = UIImageView()
+    lazy var titleLabel = UILabel()
     
     override init(frame: CGRect) {
         
@@ -30,11 +30,8 @@ class ZZGoodsHeaderCell: UICollectionViewCell {
     var goodsHeaderModel: ZZGoodsHeaderModel?{
         
         didSet {
-            
             titleLabel.text = goodsHeaderModel?.name
-            
-            iconView.setImageWith(NSURL.init(string: (goodsHeaderModel?.picture)!) as URL?, placeholder: UIImage.init(named: "icon_profile_avatar_around"))
-            
+            iconView.zdm_setImage(urlStr: (goodsHeaderModel?.picture)!, placeHolder: nil)
         }
     }
     
@@ -47,6 +44,7 @@ extension ZZGoodsHeaderCell{
         addSubview(iconView)
         addSubview(titleLabel)
         
+        iconView.contentMode = .scaleAspectFit
         titleLabel.textColor = UIColor.black
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 13)

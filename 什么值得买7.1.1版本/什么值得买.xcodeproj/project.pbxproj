@@ -114,6 +114,7 @@
 		A9D9D2231CE40B3E00A83101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D9D2221CE40B3E00A83101 /* Assets.xcassets */; };
 		A9D9D24F1CE40B7C00A83101 /* NSString+ZZBound.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D2351CE40B7C00A83101 /* NSString+ZZBound.m */; };
 		A9D9D2511CE40B7C00A83101 /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D2391CE40B7C00A83101 /* UIColor+HEX.m */; };
+		A9DBBAF21DB2183E00089A73 /* UIImageView+ZDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBBAF11DB2183E00089A73 /* UIImageView+ZDM.swift */; };
 		A9DC2BF11D87F05F0066FADF /* ZZDetailTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DC2BF01D87F05F0066FADF /* ZZDetailTopicCell.m */; };
 		A9E236C11D579C9600B1A6C3 /* ZZHeadLine.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E236C01D579C9600B1A6C3 /* ZZHeadLine.m */; };
 		A9E236C41D579D7F00B1A6C3 /* ZZLittleBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E236C31D579D7F00B1A6C3 /* ZZLittleBanner.m */; };
@@ -317,6 +318,7 @@
 		A9D9D2351CE40B7C00A83101 /* NSString+ZZBound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZZBound.m"; sourceTree = "<group>"; };
 		A9D9D2381CE40B7C00A83101 /* UIColor+HEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HEX.h"; sourceTree = "<group>"; };
 		A9D9D2391CE40B7C00A83101 /* UIColor+HEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HEX.m"; sourceTree = "<group>"; };
+		A9DBBAF11DB2183E00089A73 /* UIImageView+ZDM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ZDM.swift"; sourceTree = "<group>"; };
 		A9DC2BEF1D87F05F0066FADF /* ZZDetailTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicCell.h; sourceTree = "<group>"; };
 		A9DC2BF01D87F05F0066FADF /* ZZDetailTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicCell.m; sourceTree = "<group>"; };
 		A9E236BF1D579C9600B1A6C3 /* ZZHeadLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHeadLine.h; sourceTree = "<group>"; };
@@ -703,8 +705,10 @@
 		A9D9D23E1CE40B7C00A83101 /* FantasyGoods(好物) */ = {
 			isa = PBXGroup;
 			children = (
-				A9D9D23F1CE40B7C00A83101 /* Controller */,
+				A9DBBAF31DB227A000089A73 /* Layout */,
 				A9D9D2401CE40B7C00A83101 /* Model */,
+				A9D9D2411CE40B7C00A83101 /* View */,
+				A9D9D23F1CE40B7C00A83101 /* Controller */,
 			);
 			path = "FantasyGoods(好物)";
 			sourceTree = "<group>";
@@ -732,7 +736,6 @@
 				A9C8C4E51D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift */,
 				A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */,
 				A9C8C4E41D8F58EB00B8BFA7 /* 什么值得买-Bridging-Header.h */,
-				A9D9D2411CE40B7C00A83101 /* View */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -751,13 +754,13 @@
 				A90E6E3A1D39345B00C213C5 /* ZZDouYuFlowLayout.m */,
 				A9F4F1731D395D7900191336 /* ZZDouYuTitileView.xib */,
 			);
-			name = View;
-			path = ../View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		A9D9D2421CE40B7C00A83101 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A9DBBAEC1DB215EC00089A73 /* Extension */,
 				A9A03FD51D1A699E00675FA9 /* Tool */,
 				A980A4011CE412E8006E0037 /* Controller */,
 				A980A4061CE412E8006E0037 /* Model */,
@@ -887,6 +890,21 @@
 				A9AC889A1D6374CF006C840D /* ZZTuiGuangCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A9DBBAEC1DB215EC00089A73 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A9DBBAF11DB2183E00089A73 /* UIImageView+ZDM.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A9DBBAF31DB227A000089A73 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		BBF84AC801C23E3FA5D0F8BD /* Frameworks */ = {
@@ -1126,6 +1144,7 @@
 				A95605F61DA87E4C00473B46 /* ZZSwiftCommon.swift in Sources */,
 				A91D9B4E1D855E090073DEB7 /* ZZTextLinePositionModifier.m in Sources */,
 				A9A67B971D622C00000F46BE /* ZZYuanChuangCell.m in Sources */,
+				A9DBBAF21DB2183E00089A73 /* UIImageView+ZDM.swift in Sources */,
 				A97EC6C31D794E06006AABAB /* ZZInPurchaseViewController.m in Sources */,
 				A99A4BE01D37F3BA001DDE47 /* ZZDouYuHomeModel.m in Sources */,
 				A9FC17AC1D826BB800F16D1E /* ZZSecondBaseViewController.m in Sources */,

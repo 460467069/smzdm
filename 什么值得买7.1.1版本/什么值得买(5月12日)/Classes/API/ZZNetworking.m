@@ -14,7 +14,6 @@
 
 @implementation ZZNetworking
 
-
 + (void)Get:(NSString *)URLString parameters:(NSMutableDictionary *)parameters complectionBlock:(HttpComplectionBlcok)complectionBlock{
     
 //    ZZNetworkHandler *handler = [ZZNetworkHandler sharedInstance];
