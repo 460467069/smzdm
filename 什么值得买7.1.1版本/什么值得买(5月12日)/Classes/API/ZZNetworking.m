@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "ZZNetworkHandler.h"
 #import "AFNetworkActivityIndicatorManager.h"
-#define ZZBaseURL @"http://api.smzdm.com"
+#define ZZBaseURL @"https://api.smzdm.com"
 
 @implementation ZZNetworking
 

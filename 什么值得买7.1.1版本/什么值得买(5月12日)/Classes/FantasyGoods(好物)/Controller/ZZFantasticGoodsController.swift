@@ -15,6 +15,9 @@ private let goodsHeaderItemCount: CGFloat = 4
 private let collectionViewMargin1: CGFloat = 30
 private let collectionViewMargin2: CGFloat = 20
 
+private let haowuCellOne = "ZZHaoWuCellOne"
+private let haowuCellThree = "ZZHaoWuCellThree"
+
 class ZZGoodsHeaderLayout: UICollectionViewFlowLayout {
     
     override func prepare() {
@@ -55,6 +58,8 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
         
         tableView.tableHeaderView = collectionView
         
+        tableView.register(ZZHaoWuCellOne.self, forCellReuseIdentifier: haowuCellOne)
+        tableView.register(ZZHaoWuCellThree.self, forCellReuseIdentifier: haowuCellThree)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -63,7 +68,7 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
 
     
     
-    override  func loadData() {
+    override func loadData() {
         
 //        http://api.smzdm.com/v1/haowu/haowu_category?f=iphone&v=7.3&weixin=1
         ZZNetworking.get("v1/haowu/haowu_category", parameters: NSMutableDictionary()) { (responseObj, error) in
@@ -87,22 +92,68 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
         
         ZZNetworking.get("v1/haowu/haowu_topic_list/", parameters: parameters) { (responseObj, error) in
         
-            if let response = responseObj {
+            if let response = responseObj as? [[AnyHashable: Any]]{
                 
-                let dataArray = NSArray.modelArray(with: ZZFantasticGoodsModel.self, json: response)
+                let haowyLayoutArray: NSMutableArray = NSMutableArray()
+                for goodsDict in response {
+                    if let fantasicGoodsModel = ZZFantasticGoodsModel.model(with: goodsDict) {
+                        let haowuLayout = ZZHaoWuLayout.init(fantasicGoodsModel: fantasicGoodsModel)
+                        
+                        haowyLayoutArray.add(haowuLayout)
+                    }
                 
+                }
                 
-                self.dataSource = NSMutableArray.init(array: dataArray!)
+                if haowyLayoutArray.count > 0 {
+                    
+                    self.dataSource = haowyLayoutArray
+                    
+                    self.tableView.reloadData()
+                }
                 
             }
         }
         
     }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataSource.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let haowuLayout = self.dataSource[indexPath.row] as! ZZHaoWuLayout
+        
+        var reuseIdentifier: String
+        
+        switch haowuLayout.itemType!
+        {
+            case .one:
+                reuseIdentifier = haowuCellOne
+            
+            case .three:
+                reuseIdentifier = haowuCellThree
+        }
+        
+        let haowuCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ZZHaoWuBaseCell
+        
+        haowuCell.haowuLayout = haowuLayout
+        return haowuCell
+
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let haowuLayout = self.dataSource[indexPath.row] as! ZZHaoWuLayout
+        
+        return haowuLayout.rowHeight!
+    }
 }
 
 extension ZZFantasticGoodsController:UICollectionViewDataSource{
-
-
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         

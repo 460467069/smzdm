@@ -102,8 +102,6 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         });
 
     }];
-
-
     
     NSMutableDictionary *parameters = [self configureParameters];
     
@@ -118,12 +116,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         self.listArrayM = [NSMutableArray arrayWithArray:temArray];
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
-        
-        
     }];
-
-    
-    
 }
 
 - (void)loadMoreData{

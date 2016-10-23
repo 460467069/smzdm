@@ -34,10 +34,21 @@ class ZZGoodsSubItemModel: NSObject {
     var pro_pic: String?
 
     var url: String?
-
+    
     var type: String?
 
     var redirect_data: ZZRedirectData?
+    
+    //type == 1
+    var name: String?
+    
+    var pro_subtitle: String?
+    
+    var is_spu: String?
+    
+    var pro_price: String?
+    
+    var tag_info: [AnyObject]?
 
 }
 
