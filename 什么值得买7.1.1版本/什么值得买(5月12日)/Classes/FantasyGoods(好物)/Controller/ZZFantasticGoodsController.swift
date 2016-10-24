@@ -251,10 +251,11 @@ extension ZZFantasticGoodsController: ZZHaoWuItemDelegate{
         switch haowuLayout!.itemType!
         {
         case .one:
-            let detailTopicVc = ZZDetailTopicViewController()
-            detailTopicVc.channelID = 14
-            detailTopicVc.article_id = subItemModel.redirect_data?.link_val
-            navigationController?.pushViewController(detailTopicVc, animated: true)
+//            let detailTopicVc = ZZDetailTopicViewController()
+//            detailTopicVc.channelID = 14
+//            detailTopicVc.article_id = subItemModel.redirect_data?.link_val
+//            navigationController?.pushViewController(detailTopicVc, animated: true)
+            break
         case .three:
             let detailTopicVc = ZZDetailTopicViewController()
             detailTopicVc.channelID = 14

@@ -20,7 +20,10 @@
     
     [navigationBar setTitleTextAttributes:attributes];
     [navigationBar setTintColor:[UIColor whiteColor]];
-    [navigationBar setBarTintColor:kGlobalRedColor];
+    [navigationBar setBarTintColor:ZZColor(234, 48, 57)];
+    
+//    [navigationBar setBackgroundImage:[UIImage imageNamed:@""] forBarMetrics:UIBarMetricsDefault];
+    
     //1  自定义后退按钮
 //    UIImage *backButtonImage = [[[UIImage imageNamed:@"SM_Detail_BackSecond"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 30, 0, 0)];
 //    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];

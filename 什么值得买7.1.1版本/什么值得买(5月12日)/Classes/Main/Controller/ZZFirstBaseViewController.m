@@ -22,6 +22,41 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关注" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemDidClick)];
     
+    [self configureSearchBar];
+}
+
+- (void)configureSearchBar{
+    
+    
+    UIImageView *customSearchBar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homePage_searchBG"]];
+    customSearchBar.size = CGSizeMake(kScreenW - 80 * 2, 32);
+    customSearchBar.userInteractionEnabled = YES;
+    
+    
+    UIImageView *scopeView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homePage_searchIcon"]];
+    [customSearchBar addSubview:scopeView];
+    scopeView.left = 15.0;
+    scopeView.centerY = customSearchBar.centerY;
+    
+    UILabel *placeHolder = [[UILabel alloc] init];
+    placeHolder.text = @"一样花钱 怎样更值";
+    placeHolder.font = [UIFont systemFontOfSize:15];
+    placeHolder.textColor = [UIColor lightGrayColor];
+    [placeHolder sizeToFit];
+    [customSearchBar addSubview:placeHolder];
+    placeHolder.centerY = customSearchBar.centerY;
+    placeHolder.left = scopeView.right + 15.0;
+    
+    UIButton *scanBtn = [[UIButton alloc] init];
+    [scanBtn setImage:[UIImage imageNamed:@"homePage_scan"] forState:UIControlStateNormal];
+    [scanBtn sizeToFit];
+    scanBtn.right = customSearchBar.width - 10.0;
+    scanBtn.centerY = customSearchBar.centerY;
+    [customSearchBar addSubview:scanBtn];
+    
+    
+    self.navigationItem.titleView = customSearchBar;
+    
 }
 
 - (void)leftBarButtonItemDidClick {
