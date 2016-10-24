@@ -8,6 +8,11 @@
 
 import UIKit
 
+@objc protocol ZZHaoWuItemDelegate: NSObjectProtocol{
+    @objc optional func haoWuItemDidClick(in haoWuCell: ZZHaoWuBaseCell, subItemModel: ZZGoodsSubItemModel)
+}
+
+
 class ZZHaoWuScrollView: UIScrollView {
     
     let maxCount = 15
@@ -29,6 +34,8 @@ class ZZHaoWuScrollView: UIScrollView {
 
 class ZZHaoWuBaseCell: UITableViewCell {
 
+    weak var delegate: ZZHaoWuItemDelegate?
+    
     var haowuLayout: ZZHaoWuLayout? {
         
         didSet {

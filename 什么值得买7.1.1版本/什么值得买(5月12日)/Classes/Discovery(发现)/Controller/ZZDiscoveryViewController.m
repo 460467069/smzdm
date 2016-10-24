@@ -47,7 +47,9 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"ZZYuanChuangCell" bundle:nil] forCellReuseIdentifier:kReuseIdentifierYuanChuangCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"ZZListCell" bundle:nil] forCellReuseIdentifier:kReuseIdentiHomeListCell];
 
+
 }
+
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
@@ -242,7 +244,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         
         NSString *articleId = article.article_id;
         
-#if 1   //测试话题
+#if 0   //测试话题
         channelID = 14;
         articleId = @"698";
 #endif

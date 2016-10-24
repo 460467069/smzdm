@@ -24,9 +24,7 @@ struct ZZHaoWuConstant {
     let headTitleBottom: CGFloat = 18.0
     let headTitleLeft: CGFloat = 15.0
     
-    
     let allBtnRight: CGFloat = 15.0
-    
     
     let imageWidth: CGFloat = 140.0
     var imageHeight3: CGFloat
@@ -47,7 +45,7 @@ struct ZZHaoWuConstant {
     
     
     let priceLabelTop: CGFloat = 25.0
-    let priceLabelBottom: CGFloat = 3.0
+    let priceLabelBottom: CGFloat = 8.0
     let priceLabelLeft: CGFloat = 12.0
     var priceLabelHeight: CGFloat
     let priceLabelColor = UIColor.red

@@ -8,9 +8,10 @@
 
 import UIKit
 
+
 class ZZHaoWuItemThree: UIView {
     
-    var subItemModel: ZZGoodsSubItemModel? {
+ var subItemModel: ZZGoodsSubItemModel? {
         didSet {
             if let subItemModel = subItemModel {
                 iconView.zdm_setImage(urlStr: subItemModel.pro_pic!, placeHolder: nil)
@@ -40,6 +41,7 @@ class ZZHaoWuItemThree: UIView {
 
 class ZZHaoWuCellThree: ZZHaoWuBaseCell {
 
+    
     override var haowuLayout: ZZHaoWuLayout? {
         
         didSet{
@@ -102,6 +104,21 @@ extension ZZHaoWuCellThree {
             scrollView.addSubview(haoWuItemThree)
             scrollView.haowuItems.append(haoWuItemThree)
             
+            let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(haowuItemDidClick(tap:)))
+            
+            haoWuItemThree.addGestureRecognizer(tapGestureRecognizer)
+            
         }
     }
 }
+
+extension ZZHaoWuCellThree{
+    @objc fileprivate func haowuItemDidClick(tap: UITapGestureRecognizer){
+        
+        let haoWuItemThree = tap.view as! ZZHaoWuItemThree
+        
+        delegate?.haoWuItemDidClick!(in: self, subItemModel: haoWuItemThree.subItemModel!)
+        
+    }
+}
+

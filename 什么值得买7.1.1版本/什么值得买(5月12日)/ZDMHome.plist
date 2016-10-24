@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>首页</string>
+		<string>精选</string>
 		<key>URLString</key>
 		<string>v1/home/articles</string>
 		<key>type</key>

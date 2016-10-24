@@ -52,7 +52,6 @@ static NSString * const kListCell = @"ZZListCell";
     self.tableView.mj_footer = [ZZDIYBackFooter footerWithRefreshingTarget:self
                                                                     refreshingAction:@selector(loadMoreData)];
     [self.tableView.mj_header beginRefreshing];
-    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     

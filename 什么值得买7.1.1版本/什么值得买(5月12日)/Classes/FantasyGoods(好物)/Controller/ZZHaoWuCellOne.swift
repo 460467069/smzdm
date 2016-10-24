@@ -130,10 +130,7 @@ extension ZZHaoWuCellOne {
     override func setupUI() {
         super.setupUI()
         contentView.addSubview(allBtn)
-        
         scrollView.height = haoWuConstant.itemHeight1
-        
-    
         for index in 0..<haoWuConstant.maxCount {
             
             let haoWuItemOne = ZZHaoWuItemOne()
@@ -145,11 +142,22 @@ extension ZZHaoWuCellOne {
             haoWuItemOne.height = haoWuConstant.itemHeight1
             haoWuItemOne.left = CGFloat(index) * (haoWuConstant.itemWidth + haoWuConstant.itemMargin) + haoWuConstant.itemMargin
             
+            let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(haowuItemDidClick(tap:)))
+            
+            haoWuItemOne.addGestureRecognizer(tapGestureRecognizer)
+            
         }
+    }
+}
+
+
+extension ZZHaoWuCellOne{
+    @objc fileprivate func haowuItemDidClick(tap: UITapGestureRecognizer){
         
+        let haoWuItemOne = tap.view as! ZZHaoWuItemOne
+        
+        delegate?.haoWuItemDidClick!(in: self, subItemModel: haoWuItemOne.subItemModel!)
         
     }
-    
-    
 }
 

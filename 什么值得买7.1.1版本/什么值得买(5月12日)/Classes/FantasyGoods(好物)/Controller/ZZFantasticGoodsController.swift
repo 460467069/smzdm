@@ -43,7 +43,7 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
         let collectionView = UICollectionView.init(frame: CGRect(x: 0, y: 0, width: self.view.width, height: collectionViewHeight), collectionViewLayout: ZZGoodsHeaderLayout())
         
         collectionView.backgroundColor = UIColor.white
-//        collectionView.delegate = self
+        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ZZGoodsHeaderCell.self, forCellWithReuseIdentifier: collectionViewHeaderReuseID)
         collectionView.contentInset = UIEdgeInsets.init(top: collectionViewMargin1, left: collectionViewMargin1, bottom: collectionViewMargin2, right: collectionViewMargin1)
@@ -72,17 +72,12 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
         
 //        http://api.smzdm.com/v1/haowu/haowu_category?f=iphone&v=7.3&weixin=1
         ZZNetworking.get("v1/haowu/haowu_category", parameters: NSMutableDictionary()) { (responseObj, error) in
-            
+            if let _ = error {}
             if let response = responseObj{
                 self.headerDataArray = NSArray.modelArray(with: ZZGoodsHeaderModel.self, json: response)! as! [ZZGoodsHeaderModel]
+                self.collectionView.reloadData()
             }
-
-            self.collectionView.reloadData()
-            
-            self.tableView.mj_header.endRefreshing()
         }
-        
-
         
 //        http://api.smzdm.com/v1/haowu/haowu_topic_list/?f=iphone&limit=20&offset=0&v=7.3&weixin=1
         
@@ -92,6 +87,13 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
         
         ZZNetworking.get("v1/haowu/haowu_topic_list/", parameters: parameters) { (responseObj, error) in
         
+            
+            if let _ = error {
+                
+                self.tableView.mj_header.endRefreshing()
+                return
+            }
+       
             if let response = responseObj as? [[AnyHashable: Any]]{
                 
                 let haowyLayoutArray: NSMutableArray = NSMutableArray()
@@ -110,6 +112,8 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
                     
                     self.tableView.reloadData()
                 }
+                self.tableView.mj_header.endRefreshing()
+                
                 
             }
         }
@@ -142,6 +146,7 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
         let haowuCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ZZHaoWuBaseCell
         
         haowuCell.haowuLayout = haowuLayout
+        haowuCell.delegate = self
         return haowuCell
 
     }
@@ -169,3 +174,33 @@ extension ZZFantasticGoodsController:UICollectionViewDataSource{
     }
     
 }
+
+extension ZZFantasticGoodsController: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+}
+
+extension ZZFantasticGoodsController: ZZHaoWuItemDelegate{
+    
+    func haoWuItemDidClick(in haoWuCell: ZZHaoWuBaseCell, subItemModel: ZZGoodsSubItemModel) {
+        let haowuLayout = haoWuCell.haowuLayout
+        
+        switch haowuLayout!.itemType!
+        {
+        case .one:
+            let detailTopicVc = ZZDetailTopicViewController()
+            detailTopicVc.channelID = 14
+            detailTopicVc.article_id = subItemModel.redirect_data?.link_val
+            navigationController?.pushViewController(detailTopicVc, animated: true)
+        case .three:
+            let detailTopicVc = ZZDetailTopicViewController()
+            detailTopicVc.channelID = 14
+            detailTopicVc.article_id = subItemModel.redirect_data?.link_val
+            navigationController?.pushViewController(detailTopicVc, animated: true)
+        }
+    }
+
+}
+
