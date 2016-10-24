@@ -30,6 +30,8 @@
 //    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
 
 
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setMinimumDismissTimeInterval:2.0];
     
     UITableViewCell *cell = [UITableViewCell appearance];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

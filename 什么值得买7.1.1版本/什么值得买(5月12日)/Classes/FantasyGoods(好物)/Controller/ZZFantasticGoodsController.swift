@@ -57,7 +57,7 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        placeHolderLabel.text = "相机"
         tableView.tableHeaderView = collectionView
         
         tableView.register(ZZHaoWuCellOne.self, forCellReuseIdentifier: haowuCellOne)

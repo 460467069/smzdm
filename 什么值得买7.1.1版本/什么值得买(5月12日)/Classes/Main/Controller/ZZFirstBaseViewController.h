@@ -10,5 +10,6 @@
 
 @interface ZZFirstBaseViewController : UIViewController
 
+@property (nonatomic, strong) UILabel *placeHolderLabel;
 
 @end

@@ -33,8 +33,6 @@
     //全局定制
     [ZZGlobalApperance configureGlobalApperance];
     
-    [application setStatusBarStyle:UIStatusBarStyleLightContent];
-    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     ZZTabBarViewController *tab = [[ZZTabBarViewController alloc] init];

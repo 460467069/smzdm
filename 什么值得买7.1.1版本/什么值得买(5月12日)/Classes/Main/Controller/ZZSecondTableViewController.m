@@ -20,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     [self tableViewInitial];
     
     [self refreshHeaderAndFooterInitial];

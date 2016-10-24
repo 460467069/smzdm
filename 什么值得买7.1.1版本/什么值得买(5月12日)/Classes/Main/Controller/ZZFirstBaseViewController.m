@@ -38,31 +38,58 @@
     scopeView.left = 15.0;
     scopeView.centerY = customSearchBar.centerY;
     
-    UILabel *placeHolder = [[UILabel alloc] init];
-    placeHolder.text = @"一样花钱 怎样更值";
-    placeHolder.font = [UIFont systemFontOfSize:15];
-    placeHolder.textColor = [UIColor lightGrayColor];
-    [placeHolder sizeToFit];
-    [customSearchBar addSubview:placeHolder];
-    placeHolder.centerY = customSearchBar.centerY;
-    placeHolder.left = scopeView.right + 15.0;
+    UILabel *placeHolderLabel = [[UILabel alloc] init];
+    placeHolderLabel.text = @"一样花钱 怎样更值";
+    placeHolderLabel.font = [UIFont systemFontOfSize:15];
+    placeHolderLabel.textColor = [UIColor lightGrayColor];
+    [placeHolderLabel sizeToFit];
+    [customSearchBar addSubview:placeHolderLabel];
+    placeHolderLabel.centerY = customSearchBar.centerY;
+    placeHolderLabel.left = scopeView.right + 15.0;
+    self.placeHolderLabel = placeHolderLabel;
     
     UIButton *scanBtn = [[UIButton alloc] init];
-    [scanBtn setImage:[UIImage imageNamed:@"homePage_scan"] forState:UIControlStateNormal];
-    [scanBtn sizeToFit];
+    [scanBtn setBackgroundImage:[UIImage imageNamed:@"homePage_scan"] forState:UIControlStateNormal];
+    scanBtn.height = 16.0;
+    scanBtn.width = 15.0;
     scanBtn.right = customSearchBar.width - 10.0;
+    scanBtn.showsTouchWhenHighlighted = NO;
+    scanBtn.adjustsImageWhenHighlighted = NO;
     scanBtn.centerY = customSearchBar.centerY;
     [customSearchBar addSubview:scanBtn];
-    
+    [scanBtn addTarget:self action:@selector(scanBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.titleView = customSearchBar;
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchBarDidClick)];
+    [customSearchBar addGestureRecognizer:tap];
+    
+    
 }
 
+
+#pragma - mark 事件监听
+
+/** 搜索框点击 */
+- (void)searchBarDidClick{
+    
+}
+
+/** 二维码扫描按钮点击 */
+- (void)scanBtnDidClick{
+    if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
+        
+    }else{
+        [SVProgressHUD showErrorWithStatus:@"相机不可用"];
+    }
+}
+
+/** 筛选按钮点击 */
 - (void)leftBarButtonItemDidClick {
 	
 }
 
+/** 关注按钮点击 */
 - (void)rightBarButtonItemDidClick {
 //    //新建一个聊天会话View Controller对象
 //    RCConversationViewController *chat = [[RCConversationViewController alloc]init];
