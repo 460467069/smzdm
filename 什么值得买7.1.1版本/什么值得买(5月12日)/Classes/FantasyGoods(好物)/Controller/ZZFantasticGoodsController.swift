@@ -37,6 +37,8 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
     
     var headerDataArray: [ZZGoodsHeaderModel] = []
     
+    var offset: Int = 0
+    
     
     lazy var collectionView: UICollectionView = {
     
@@ -65,60 +67,10 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
-    
-    
-    override func loadData() {
-        
-//        http://api.smzdm.com/v1/haowu/haowu_category?f=iphone&v=7.3&weixin=1
-        ZZNetworking.get("v1/haowu/haowu_category", parameters: NSMutableDictionary()) { (responseObj, error) in
-            if let _ = error {}
-            if let response = responseObj{
-                self.headerDataArray = NSArray.modelArray(with: ZZGoodsHeaderModel.self, json: response)! as! [ZZGoodsHeaderModel]
-                self.collectionView.reloadData()
-            }
-        }
-        
-//        http://api.smzdm.com/v1/haowu/haowu_topic_list/?f=iphone&limit=20&offset=0&v=7.3&weixin=1
-        
-        let parameters = NSMutableDictionary()
-        parameters.setObject("0", forKey: "offset" as NSCopying)
-        parameters.setObject("20", forKey: "limit" as NSCopying)
-        
-        ZZNetworking.get("v1/haowu/haowu_topic_list/", parameters: parameters) { (responseObj, error) in
-        
-            
-            if let _ = error {
-                
-                self.tableView.mj_header.endRefreshing()
-                return
-            }
-       
-            if let response = responseObj as? [[AnyHashable: Any]]{
-                
-                let haowyLayoutArray: NSMutableArray = NSMutableArray()
-                for goodsDict in response {
-                    if let fantasicGoodsModel = ZZFantasticGoodsModel.model(with: goodsDict) {
-                        let haowuLayout = ZZHaoWuLayout.init(fantasicGoodsModel: fantasicGoodsModel)
-                        
-                        haowyLayoutArray.add(haowuLayout)
-                    }
-                
-                }
-                
-                if haowyLayoutArray.count > 0 {
-                    
-                    self.dataSource = haowyLayoutArray
-                    
-                    self.tableView.reloadData()
-                }
-                self.tableView.mj_header.endRefreshing()
-                
-                
-            }
-        }
-        
-    }
+//MARK: - tableView数据源
+extension ZZFantasticGoodsController{
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -138,7 +90,7 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
         {
             case .one:
                 reuseIdentifier = haowuCellOne
-            
+                
             case .three:
                 reuseIdentifier = haowuCellThree
         }
@@ -148,7 +100,7 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
         haowuCell.haowuLayout = haowuLayout
         haowuCell.delegate = self
         return haowuCell
-
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -158,6 +110,7 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
     }
 }
 
+//MARK: - collectionView数据源
 extension ZZFantasticGoodsController:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -175,6 +128,113 @@ extension ZZFantasticGoodsController:UICollectionViewDataSource{
     
 }
 
+
+
+//MARK: - 上下拉
+extension ZZFantasticGoodsController{
+    override func loadData() {
+        
+        offset = 0
+        
+        //        http://api.smzdm.com/v1/haowu/haowu_category?f=iphone&v=7.3&weixin=1
+        ZZNetworking.get("v1/haowu/haowu_category", parameters: NSMutableDictionary()) { (responseObj, error) in
+            if let _ = error {}
+            if let response = responseObj{
+                self.headerDataArray = NSArray.modelArray(with: ZZGoodsHeaderModel.self, json: response)! as! [ZZGoodsHeaderModel]
+                self.collectionView.reloadData()
+            }
+        }
+        
+        //        http://api.smzdm.com/v1/haowu/haowu_topic_list/?f=iphone&limit=20&offset=0&v=7.3&weixin=1
+        
+        
+        ZZNetworking.get("v1/haowu/haowu_topic_list/", parameters: configureParameters()) { (responseObj, error) in
+            
+            if let _ = error {
+                
+                self.tableView.mj_header.endRefreshing()
+                return
+            }
+            if let response = responseObj as? [[AnyHashable: Any]]{
+                
+                let haoWuLayoutArray: NSMutableArray = NSMutableArray()
+                for goodsDict in response {
+                    if let fantasicGoodsModel = ZZFantasticGoodsModel.model(with: goodsDict) {
+                        let haowuLayout = ZZHaoWuLayout.init(fantasicGoodsModel: fantasicGoodsModel)
+                        
+                        haoWuLayoutArray.add(haowuLayout)
+                    }
+                    
+                }
+                
+                if haoWuLayoutArray.count > 0 {
+                    
+                    self.dataSource = haoWuLayoutArray
+                    
+                    self.tableView.reloadData()
+                    
+                    self.offset += 20
+                }
+                self.tableView.mj_header.endRefreshing()
+
+            }
+        }
+        
+    }
+    
+    
+    override func loadMoreData() {
+        
+        
+        ZZNetworking.get("v1/haowu/haowu_topic_list/", parameters: configureParameters()) { (responseObj, error) in
+            
+            if let _ = error {
+                
+                self.tableView.mj_footer.endRefreshing()
+                return
+            }
+            if let response = responseObj as? [[AnyHashable: Any]]{
+                let haoWuLayoutArray: NSMutableArray = NSMutableArray()
+                for goodsDict in response {
+                    if let fantasicGoodsModel = ZZFantasticGoodsModel.model(with: goodsDict) {
+                        let haowuLayout = ZZHaoWuLayout.init(fantasicGoodsModel: fantasicGoodsModel)
+                        
+                        haoWuLayoutArray.add(haowuLayout)
+                    }
+                    
+                    
+                    
+                    
+                }
+                if haoWuLayoutArray.count > 0 {
+                    
+                    let haoWuLayouts = haoWuLayoutArray.copy() as! [Any]
+                    
+                    self.dataSource.addObjects(from: haoWuLayouts)
+                    
+                    self.tableView.reloadData()
+                    self.tableView.mj_footer.endRefreshing()
+                }else{
+                    self.tableView.mj_footer.endRefreshing()
+                }
+                
+            }
+            
+        }
+    }
+    
+    
+    func configureParameters() -> NSMutableDictionary{
+        let parameters = NSMutableDictionary()
+        parameters.setObject("20", forKey: "limit" as NSCopying)
+        parameters.setObject(String(offset), forKey: "offset" as NSCopying)
+        return parameters
+        
+    }
+}
+
+
+//MARK: - collectionView代理方法
 extension ZZFantasticGoodsController: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -182,6 +242,7 @@ extension ZZFantasticGoodsController: UICollectionViewDelegate{
     }
 }
 
+//MARK: - ZZHaoWuItemDelegate代理方法
 extension ZZFantasticGoodsController: ZZHaoWuItemDelegate{
     
     func haoWuItemDidClick(in haoWuCell: ZZHaoWuBaseCell, subItemModel: ZZGoodsSubItemModel) {

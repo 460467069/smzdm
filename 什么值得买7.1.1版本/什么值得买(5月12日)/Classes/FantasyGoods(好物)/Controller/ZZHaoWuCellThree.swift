@@ -16,7 +16,6 @@ class ZZHaoWuItemThree: UIView {
             if let subItemModel = subItemModel {
                 iconView.zdm_setImage(urlStr: subItemModel.pro_pic!, placeHolder: nil)
             }
-            
         }
     }
     

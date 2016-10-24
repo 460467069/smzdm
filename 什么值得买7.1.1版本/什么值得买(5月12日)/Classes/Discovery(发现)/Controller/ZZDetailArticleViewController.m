@@ -123,10 +123,6 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     self.circleView = circleView;
 }
 
-//- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-//    return nil;
-//}
-
 - (UIStatusBarStyle)preferredStatusBarStyle{
     
     return UIStatusBarStyleDefault;
@@ -169,7 +165,14 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
         }
         if (html5Content.length > 0) {
             
-            [_webView loadHTMLString:html5Content baseURL:nil];
+
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"app_details.css" ofType:nil];
+//            NSString *path = [[NSBundle mainBundle] bundlePath];
+            NSURL *baseURL = [NSURL fileURLWithPath:path];
+            [_webView loadHTMLString:html5Content baseURL:baseURL];
+            
+            
+//            [_webView loadHTMLString:html5Content baseURL:nil];
             
             [self.circleView stopAnimating];
             [self.circleView removeFromSuperview];
@@ -185,6 +188,8 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
         
     }];
 }
+
+
 
 
 - (NSMutableDictionary *)configureParameters{

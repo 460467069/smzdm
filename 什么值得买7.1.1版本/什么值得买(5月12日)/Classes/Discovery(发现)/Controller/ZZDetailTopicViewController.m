@@ -30,12 +30,8 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"话题详情";
-    
-    [self setupNavigation];
-
     self.order = kOrderByHot;
 
-    
     [self.tableView registerClass:[ZZDetailTopicCell class] forCellReuseIdentifier:kDetailTopicCell];
     _headerView = [[ZZDetailTopicHeaderView alloc] initWithOrderStyle:ZZDetailTopicHeaderViewOrderStyleByHot];
     _headerView.delegate = self;
@@ -45,7 +41,12 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self.navigationController.navigationBar lt_setBackgroundColor:kGlobalLightGrayColor];
+    //解决, 自定义返回箭头无法正常显示的bug
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.navigationController.navigationBar lt_setBackgroundColor:kGlobalLightGrayColor];
+        [self setupNavigation];
+    });
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -54,13 +55,8 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-}
-
 - (void)setupNavigation{
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"SM_Detail_BackSecond"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
-    
     // 后退按钮距离图片距离左边边距
     UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     fixedItem.width = -20;

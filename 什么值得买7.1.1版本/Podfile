@@ -14,12 +14,12 @@ target '什么值得买' do
   pod 'MJRefresh'
   pod 'MJExtension'
   pod 'Masonry'
-  pod 'SDCycleScrollView', '~> 1.65'
+  pod 'SDCycleScrollView'
   pod 'UITableView+FDTemplateLayoutCell'
   pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git" 
-  pod 'ZYCornerRadius', '0.9.4'
+  pod 'ZYCornerRadius'
   pod 'YYKit'
-  pod 'RongCloudIMKit', '2.6.7'
-  pod 'SVProgressHUD', '~> 2.0.3'
-  pod 'FDFullscreenPopGesture', '~> 1.1'
+  pod 'RongCloudIMKit'
+  pod 'SVProgressHUD'
+  pod 'FDFullscreenPopGesture'
 end
