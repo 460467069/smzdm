@@ -8,6 +8,8 @@
 
 #import "ZZFirstBaseViewController.h"
 #import <RongIMKit/RongIMKit.h>
+#import "什么值得买-Swift.h"
+#import "UINavigationItem+Margin.h"
 
 @interface ZZFirstBaseViewController ()
 
@@ -22,6 +24,9 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关注" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemDidClick)];
     
+    self.navigationItem.leftMargin = 0;
+    self.navigationItem.rightMargin = 0;
+    
     [self configureSearchBar];
 }
 
@@ -29,7 +34,12 @@
     
     
     UIImageView *customSearchBar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homePage_searchBG"]];
-    customSearchBar.size = CGSizeMake(kScreenW - 80 * 2, 32);
+    
+    CGFloat offset = 50.0;
+    if (kScreenW > 320) {
+        offset = 80.0;
+    }
+    customSearchBar.size = CGSizeMake(kScreenW - offset * 2, 32);
     customSearchBar.userInteractionEnabled = YES;
     
     
@@ -78,6 +88,10 @@
 /** 二维码扫描按钮点击 */
 - (void)scanBtnDidClick{
     if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
+        
+        ZZQRcodeController *QRcodeController = [[ZZQRcodeController alloc] init];
+        
+        [self.navigationController pushViewController:QRcodeController animated:YES];
         
     }else{
         [SVProgressHUD showErrorWithStatus:@"相机不可用"];

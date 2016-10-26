@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90618E51DBF064A002239CF /* ZZQRcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90618E41DBF064A002239CF /* ZZQRcodeController.swift */; };
 		A90B12E01DAA38990051B237 /* ZZGoodsHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */; };
+		A90DBF141DBF740900D857A9 /* UINavigationItem+Margin.m in Sources */ = {isa = PBXBuildFile; fileRef = A90DBF131DBF740900D857A9 /* UINavigationItem+Margin.m */; };
 		A90DFD3E1D852E6B00B52D5C /* ZZDetailTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A90DFD3D1D852E6B00B52D5C /* ZZDetailTopicViewController.m */; };
 		A90E5BCE1D0AB2C40054CDC9 /* ZZDiscoveryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E5BCD1D0AB2C40054CDC9 /* ZZDiscoveryView.m */; };
 		A90E6E3B1D39345B00C213C5 /* ZZDouYuFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E6E3A1D39345B00C213C5 /* ZZDouYuFlowLayout.m */; };
@@ -135,7 +137,10 @@
 
 /* Begin PBXFileReference section */
 		A0A221ED76D299EA45C20125 /* Pods-什么值得买.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.release.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.release.xcconfig"; sourceTree = "<group>"; };
+		A90618E41DBF064A002239CF /* ZZQRcodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZQRcodeController.swift; sourceTree = "<group>"; };
 		A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZGoodsHeaderModel.swift; sourceTree = "<group>"; };
+		A90DBF121DBF740900D857A9 /* UINavigationItem+Margin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+Margin.h"; sourceTree = "<group>"; };
+		A90DBF131DBF740900D857A9 /* UINavigationItem+Margin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+Margin.m"; sourceTree = "<group>"; };
 		A90DFD3C1D852E6B00B52D5C /* ZZDetailTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicViewController.h; sourceTree = "<group>"; };
 		A90DFD3D1D852E6B00B52D5C /* ZZDetailTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicViewController.m; sourceTree = "<group>"; };
 		A90E5BCC1D0AB2C40054CDC9 /* ZZDiscoveryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDiscoveryView.h; sourceTree = "<group>"; };
@@ -373,6 +378,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A90618E31DBF05B6002239CF /* Scan(二维码) */ = {
+			isa = PBXGroup;
+			children = (
+				A90618E41DBF064A002239CF /* ZZQRcodeController.swift */,
+			);
+			path = "Scan(二维码)";
+			sourceTree = "<group>";
+		};
 		A91A83451D420A87008D229E /* API Dump */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +600,7 @@
 				A9D9D2421CE40B7C00A83101 /* Main */,
 				A9D9D22E1CE40B7C00A83101 /* API */,
 				A9D9D2331CE40B7C00A83101 /* Catagory */,
+				A90618E31DBF05B6002239CF /* Scan(二维码) */,
 				A9D9D2491CE40B7C00A83101 /* WorthyToBuy(值得买) */,
 				A9D9D23A1CE40B7C00A83101 /* Discovery(发现) */,
 				A9D9D23E1CE40B7C00A83101 /* FantasyGoods(好物) */,
@@ -620,6 +634,8 @@
 				A9D9D2391CE40B7C00A83101 /* UIColor+HEX.m */,
 				A9758D761D878DA800FC4B89 /* NSObject+ZZStarImage.h */,
 				A9758D771D878DA800FC4B89 /* NSObject+ZZStarImage.m */,
+				A90DBF121DBF740900D857A9 /* UINavigationItem+Margin.h */,
+				A90DBF131DBF740900D857A9 /* UINavigationItem+Margin.m */,
 			);
 			path = Catagory;
 			sourceTree = "<group>";
@@ -1106,6 +1122,7 @@
 				A9ADB8501D64DF5D00330D23 /* ZZNetworking.m in Sources */,
 				A9EE8D6E1D74A54900A72C29 /* ZZDetailArticleViewController.m in Sources */,
 				A980A40C1CE4130A006E0037 /* ZZTabBarModel.m in Sources */,
+				A90DBF141DBF740900D857A9 /* UINavigationItem+Margin.m in Sources */,
 				A9B7835B1D59019D003C464D /* ZZRefreshTip.m in Sources */,
 				A93B6A7C1D6169780001F777 /* ZZDIYBackFooter.m in Sources */,
 				A9275A0E1CE422B70017BA82 /* ZZHomeCell.m in Sources */,
@@ -1115,6 +1132,7 @@
 				A9388BB51DBC4DB50091969B /* ZZHaoWuCellThree.swift in Sources */,
 				A9275A111CE4230B0017BA82 /* ZZContentViewController.m in Sources */,
 				A927160B1D44571B006EEECA /* ZZGlobalApperance.m in Sources */,
+				A90618E51DBF064A002239CF /* ZZQRcodeController.swift in Sources */,
 				A98904491D8A10B800D55FF4 /* ZZDetailHuaTiBottomBar.m in Sources */,
 				A9D9D2511CE40B7C00A83101 /* UIColor+HEX.m in Sources */,
 				A9B783581D58FB90003C464D /* ZZCircleView.m in Sources */,

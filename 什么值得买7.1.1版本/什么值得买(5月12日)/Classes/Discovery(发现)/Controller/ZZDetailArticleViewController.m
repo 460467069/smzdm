@@ -14,6 +14,7 @@
 #import "YYTextExampleHelper.h"
 #import "ZZDetailModel.h"
 #import "ZZDetailHeaderView.h"
+#import "UINavigationItem+Margin.h"
 
 #define kBottomBarHeight 44
 #define NAVBAR_CHANGE_POINT 50
@@ -56,6 +57,10 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [self.view addSubview:_containerScrollView];
     _containerScrollView.frame = CGRectMake(0, kStatusH, self.view.width, self.view.height - kStatusH - kTabBarH);
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+       [self scrollViewDidScroll:_containerScrollView];
+    });
+    
     //初始化webView
     [self initialWebView];
     //加载数据
@@ -69,7 +74,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-    [self scrollViewDidScroll:_containerScrollView];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -131,14 +136,13 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 - (void)configureLeftBarButtonItemWithImage:(UIImage *)leftImage rightBarButtonItemWithImage:(UIImage *)rightImage titleColor:(UIColor *)titleColor{
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[leftImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
     // 后退按钮距离图片距离左边边距
-    UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    fixedItem.width = -20;
-    self.navigationItem.leftBarButtonItems = @[fixedItem,backItem];
+    self.navigationItem.leftBarButtonItem = backItem;
+    self.navigationItem.leftMargin = -12;
     
-    UIBarButtonItem *fixedItem1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    fixedItem1.width = -20;
+
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[rightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailRightBtnDidClick)];
-    self.navigationItem.rightBarButtonItems = @[fixedItem1, rightBarButtonItem];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    self.navigationItem.rightMargin = -12;
     
     NSDictionary *attributes = @{NSForegroundColorAttributeName : titleColor};
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];

@@ -16,11 +16,19 @@
     UINavigationBar *navigationBar = [UINavigationBar appearance];
     
     
-    NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor],
+                                 NSFontAttributeName: [UIFont systemFontOfSize:15.0]};
     
     [navigationBar setTitleTextAttributes:attributes];
     [navigationBar setTintColor:[UIColor whiteColor]];
     [navigationBar setBarTintColor:ZZColor(234, 48, 57)];
+    
+    
+    UIBarButtonItem *barButtonItem = [UIBarButtonItem appearance];
+    
+    [barButtonItem setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    
     
 //    [navigationBar setBackgroundImage:[UIImage imageNamed:@""] forBarMetrics:UIBarMetricsDefault];
     
@@ -41,6 +49,15 @@
     
     //启用网络加载菊花, 网路差时能看到效果(可用networkLinkConditioner模拟)
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+}
+
+- (void)setupNavigation{
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"SM_Detail_BackSecond"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
+    // 后退按钮距离图片距离左边边距
+    UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedItem.width = -20;
+//    self.navigationItem.leftBarButtonItems = @[fixedItem,backItem];
+
 }
 
 @end

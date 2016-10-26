@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5s9-u7-EYo">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5s9-u7-EYo">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="AHG-5j-Czr">
             <objects>
-                <navigationController id="5s9-u7-EYo" customClass="ZZNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5s9-u7-EYo" customClass="ZZNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="auR-Nl-av4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -19,12 +20,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qt3-AS-1zI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7" y="46"/>
+            <point key="canvasLocation" x="-266" y="139"/>
         </scene>
         <!--什么值得买-->
         <scene sceneID="FeK-I1-Rdh">
             <objects>
-                <viewController id="oHW-do-lqg" customClass="ZZHomeViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="oHW-do-lqg" customClass="ZZHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ELj-wy-SVX"/>
                         <viewControllerLayoutGuide type="bottom" id="9MG-so-8CR"/>
@@ -33,14 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6j-gL-ZHu">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="YMm-JM-jyb"/>
-                                </constraints>
-                            </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bNs-B2-7Gh">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9ja-4T-DTE">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -54,7 +48,6 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
                                 </cells>
@@ -64,28 +57,23 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bNs-B2-7Gh" firstAttribute="top" secondItem="J6j-gL-ZHu" secondAttribute="bottom" id="Ams-du-DAL"/>
-                            <constraint firstAttribute="trailing" secondItem="J6j-gL-ZHu" secondAttribute="trailing" id="Bt7-0A-LBx"/>
-                            <constraint firstItem="J6j-gL-ZHu" firstAttribute="top" secondItem="ELj-wy-SVX" secondAttribute="bottom" id="CES-Xo-QFF"/>
                             <constraint firstItem="9MG-so-8CR" firstAttribute="top" secondItem="bNs-B2-7Gh" secondAttribute="bottom" id="FGg-fs-aSa"/>
-                            <constraint firstItem="J6j-gL-ZHu" firstAttribute="leading" secondItem="Dai-5a-nLD" secondAttribute="leading" id="Mea-NN-vVf"/>
                             <constraint firstItem="bNs-B2-7Gh" firstAttribute="leading" secondItem="Dai-5a-nLD" secondAttribute="leading" id="iBC-yf-PCp"/>
+                            <constraint firstItem="bNs-B2-7Gh" firstAttribute="top" secondItem="ELj-wy-SVX" secondAttribute="bottom" constant="40" id="p4U-OD-ZoN"/>
                             <constraint firstAttribute="trailing" secondItem="bNs-B2-7Gh" secondAttribute="trailing" id="zeh-RM-M3M"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="什么值得买" id="gXZ-O7-tE0"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="collectionView" destination="bNs-B2-7Gh" id="J3b-fK-StI"/>
                         <outlet property="flowLayout" destination="9ja-4T-DTE" id="fcz-R0-DU1"/>
-                        <outlet property="topScrollView" destination="J6j-gL-ZHu" id="VG7-CA-eoD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1JF-Su-oaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606.5" y="61.5"/>
+            <point key="canvasLocation" x="758" y="110"/>
         </scene>
     </scenes>
 </document>

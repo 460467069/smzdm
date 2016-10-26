@@ -29,7 +29,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         _scrollView = [[SDCycleScrollView alloc] init];
-        _scrollView.backgroundColor = [UIColor randomColor];
+        _scrollView.backgroundColor = [UIColor whiteColor];
         _scrollView.width = self.width;
         _scrollView.autoScroll = NO;
         _scrollView.pageDotColor = kGlobalGrayColor;

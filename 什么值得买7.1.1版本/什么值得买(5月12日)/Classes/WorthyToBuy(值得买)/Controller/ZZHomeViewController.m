@@ -15,7 +15,7 @@
 @interface ZZHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 /** 头部的ScrollView */
-@property (weak, nonatomic) IBOutlet UIScrollView *topScrollView;
+@property (strong, nonatomic) IBOutlet UIScrollView *topScrollView;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
@@ -58,7 +58,11 @@
 
 - (void)setUpScrollView{
     
-    self.topScrollView.contentSize = CGSizeMake(kScreenW, 0);
+    _topScrollView = [[UIScrollView alloc] init];
+    _topScrollView.frame = CGRectMake(0, 64, kScreenW, 40);
+    _topScrollView.contentSize = CGSizeMake(kScreenW, 0);
+    [self.view addSubview:_topScrollView];
+    
     //创建顶部Label
     CGFloat tagLabelY = 0;
     CGFloat tagLabelW = kScreenW / self.dataArray.count;
@@ -71,8 +75,8 @@
         [titleBtn addTarget:self action:@selector(titleBtnDidClick:) forControlEvents:UIControlEventTouchUpInside];
         [titleBtn setTitle:channel.title forState:UIControlStateNormal];
         [titleBtn setTitleColor:kGlobalRedColor forState:UIControlStateSelected];
-        [titleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        
+        [titleBtn setTitleColor:kGlobalGrayColor forState:UIControlStateNormal];
+        titleBtn.titleLabel.font = [UIFont systemFontOfSize:15];
         CGFloat tagLabelX = idx * tagLabelW;
         titleBtn.frame = CGRectMake(tagLabelX, tagLabelY, tagLabelW, tagLabelH);
         titleBtn.tag = idx;
@@ -81,6 +85,8 @@
         }
     
         [self.topScrollView addSubview:titleBtn];
+        
+        NSLog(@"%@", titleBtn);
         
         [temArray addObject:titleBtn];
     }];
