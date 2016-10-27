@@ -57,10 +57,9 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [self.view addSubview:_containerScrollView];
     _containerScrollView.frame = CGRectMake(0, kStatusH, self.view.width, self.view.height - kStatusH - kTabBarH);
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-       [self scrollViewDidScroll:_containerScrollView];
-    });
+
     
+
     //初始化webView
     [self initialWebView];
     //加载数据
@@ -74,11 +73,12 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-    
+    [self scrollViewDidScroll:_containerScrollView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    self.containerScrollView.delegate = nil;
     [self.navigationController.navigationBar lt_reset];
     
 }
@@ -144,8 +144,11 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     self.navigationItem.rightMargin = -12;
     
-    NSDictionary *attributes = @{NSForegroundColorAttributeName : titleColor};
-    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSDictionary *attributes = @{NSForegroundColorAttributeName : titleColor};
+        [self.navigationController.navigationBar setTitleTextAttributes:attributes];
+    });
 }
 
 #pragma mark - loadData

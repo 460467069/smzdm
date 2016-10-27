@@ -32,6 +32,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     self.title = @"话题详情";
     self.order = kOrderByHot;
 
+    
     [self.tableView registerClass:[ZZDetailTopicCell class] forCellReuseIdentifier:kDetailTopicCell];
     _headerView = [[ZZDetailTopicHeaderView alloc] initWithOrderStyle:ZZDetailTopicHeaderViewOrderStyleByHot];
     _headerView.delegate = self;
@@ -41,11 +42,9 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    //解决, 自定义返回箭头无法正常显示的bug
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.navigationController.navigationBar lt_setBackgroundColor:kGlobalLightGrayColor];
-        [self setupNavigation];
-    });
+    [self.navigationController.navigationBar lt_setBackgroundColor:kGlobalLightGrayColor];
+    [self setupNavigation];
+    
 
 }
 

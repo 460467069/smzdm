@@ -14,6 +14,7 @@
 		A90E5BCE1D0AB2C40054CDC9 /* ZZDiscoveryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E5BCD1D0AB2C40054CDC9 /* ZZDiscoveryView.m */; };
 		A90E6E3B1D39345B00C213C5 /* ZZDouYuFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E6E3A1D39345B00C213C5 /* ZZDouYuFlowLayout.m */; };
 		A90E6E3E1D39406B00C213C5 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E6E3D1D39406B00C213C5 /* YYFPSLabel.m */; };
+		A91655661DC1EB2400A713A4 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A91655651DC1EB2400A713A4 /* UINavigationBar+Awesome.m */; };
 		A91A834E1D420A87008D229E /* weibo_0.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83461D420A87008D229E /* weibo_0.json */; };
 		A91A834F1D420A87008D229E /* weibo_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83471D420A87008D229E /* weibo_1.json */; };
 		A91A83501D420A87008D229E /* weibo_2.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83481D420A87008D229E /* weibo_2.json */; };
@@ -129,7 +130,6 @@
 		A9E236CA1D57A34C00B1A6C3 /* ZZTitleBannelOption.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E236C91D57A34C00B1A6C3 /* ZZTitleBannelOption.m */; };
 		A9EE8D6E1D74A54900A72C29 /* ZZDetailArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EE8D6D1D74A54900A72C29 /* ZZDetailArticleViewController.m */; };
 		A9F4F1741D395D7900191336 /* ZZDouYuTitileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F4F1731D395D7900191336 /* ZZDouYuTitileView.xib */; };
-		A9F4F1771D39683B00191336 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F4F1761D39683B00191336 /* UINavigationBar+Awesome.m */; };
 		A9FC17A91D825E3200F16D1E /* ZZDetailBaseBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC17A81D825E3200F16D1E /* ZZDetailBaseBottomBar.m */; };
 		A9FC17AC1D826BB800F16D1E /* ZZSecondBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC17AB1D826BB800F16D1E /* ZZSecondBaseViewController.m */; };
 		CECD5256DC4CC3E02810228F /* libPods-什么值得买.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA94AC24398409643F76168 /* libPods-什么值得买.a */; };
@@ -149,6 +149,8 @@
 		A90E6E3A1D39345B00C213C5 /* ZZDouYuFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDouYuFlowLayout.m; sourceTree = "<group>"; };
 		A90E6E3C1D39406B00C213C5 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		A90E6E3D1D39406B00C213C5 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		A91655641DC1EB2400A713A4 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		A91655651DC1EB2400A713A4 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		A91A83461D420A87008D229E /* weibo_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_0.json; sourceTree = "<group>"; };
 		A91A83471D420A87008D229E /* weibo_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_1.json; sourceTree = "<group>"; };
 		A91A83481D420A87008D229E /* weibo_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_2.json; sourceTree = "<group>"; };
@@ -347,8 +349,6 @@
 		A9EE8D6C1D74A54900A72C29 /* ZZDetailArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailArticleViewController.h; sourceTree = "<group>"; };
 		A9EE8D6D1D74A54900A72C29 /* ZZDetailArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailArticleViewController.m; sourceTree = "<group>"; };
 		A9F4F1731D395D7900191336 /* ZZDouYuTitileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZDouYuTitileView.xib; sourceTree = "<group>"; };
-		A9F4F1751D39683B00191336 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
-		A9F4F1761D39683B00191336 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		A9FC17A71D825E3200F16D1E /* ZZDetailBaseBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailBaseBottomBar.h; sourceTree = "<group>"; };
 		A9FC17A81D825E3200F16D1E /* ZZDetailBaseBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailBaseBottomBar.m; sourceTree = "<group>"; };
 		A9FC17AA1D826BB800F16D1E /* ZZSecondBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSecondBaseViewController.h; sourceTree = "<group>"; };
@@ -540,8 +540,8 @@
 		A9AC1A2F1CEC007500F56C42 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				A9F4F1751D39683B00191336 /* UINavigationBar+Awesome.h */,
-				A9F4F1761D39683B00191336 /* UINavigationBar+Awesome.m */,
+				A91655641DC1EB2400A713A4 /* UINavigationBar+Awesome.h */,
+				A91655651DC1EB2400A713A4 /* UINavigationBar+Awesome.m */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -1115,6 +1115,7 @@
 				A98904431D8A0FD300D55FF4 /* ZZDetailYuanChuangBottomBar.m in Sources */,
 				A90DFD3E1D852E6B00B52D5C /* ZZDetailTopicViewController.m in Sources */,
 				A9275A1F1CE4600F0017BA82 /* NSString+ZZNumberFormatter.m in Sources */,
+				A91655661DC1EB2400A713A4 /* UINavigationBar+Awesome.m in Sources */,
 				A9B1D6451D86C4590067FB06 /* ZZDetailTopicModel.m in Sources */,
 				A9262A851D76B7180037B1CF /* ZZJingXuanModel.m in Sources */,
 				A91D5C9B1D83F75800C2B690 /* ZZDetailHeaderLayout.m in Sources */,
@@ -1148,7 +1149,6 @@
 				A9B783551D58FB5F003C464D /* ZZDIYHeader.m in Sources */,
 				A9ADB8511D64DF5D00330D23 /* ZZNetworkHandler.m in Sources */,
 				A925E6DB1D60BE2D009A9E6F /* ZZCyclePicHelper.m in Sources */,
-				A9F4F1771D39683B00191336 /* UINavigationBar+Awesome.m in Sources */,
 				A90E6E3B1D39345B00C213C5 /* ZZDouYuFlowLayout.m in Sources */,
 				A99A4BDD1D37E36B001DDE47 /* ZZDouYUBannerModel.m in Sources */,
 				A980A3E51CE40E85006E0037 /* ZZHomeViewController.m in Sources */,
