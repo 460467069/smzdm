@@ -130,4 +130,9 @@
 @property (nonatomic, copy) NSString *article_brief;
 /** 总共篇数 */
 @property (nonatomic, copy) NSString *article_product_count;
+
+//promotion_type为3的字段
+@property (nonatomic, copy) NSString *vice_title;
+@property (nonatomic, copy) NSString *position;
+@property (nonatomic, assign) BOOL is_show_tag;
 @end

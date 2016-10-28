@@ -26,13 +26,13 @@ class ZZQRcodeController: UIViewController {
     lazy var output: AVCaptureMetadataOutput = {
         let output = AVCaptureMetadataOutput()
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        output.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
         return output
     }()
     lazy var qrCodeSession: AVCaptureSession = {
         let qrCodeSession = AVCaptureSession()
         return qrCodeSession
     }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +51,21 @@ class ZZQRcodeController: UIViewController {
             qrCodeSession.addInput(input)
         }
 
-        output = AVCaptureMetadataOutput()
-
+        for type in output.availableMetadataObjectTypes {
+            print(type)
+        }
         
+        if qrCodeSession.canAddOutput(output) {
+            qrCodeSession.addOutput(output)
+        }
+        output.metadataObjectTypes = ["org.iso.QRCode"]
+
+        let previewLayer = AVCaptureVideoPreviewLayer.init(session: qrCodeSession)
+        
+        previewLayer?.frame = view.bounds
+        view.layer.addSublayer(previewLayer!)
+        
+        qrCodeSession.startRunning()
         
         
         // Do any additional setup after loading the view.
@@ -68,5 +80,9 @@ class ZZQRcodeController: UIViewController {
 
 
 extension ZZQRcodeController: AVCaptureMetadataOutputObjectsDelegate{
+    
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+        
+    }
     
 }

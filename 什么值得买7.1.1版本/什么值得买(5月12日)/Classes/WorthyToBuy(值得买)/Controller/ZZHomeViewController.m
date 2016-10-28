@@ -159,7 +159,6 @@
 
 - (ZZContentViewController *)controllerWithChannel:(ZZHomeChannel *)channel{
     
-    
     //先判断缓存中有没有, 没有的话就自己创建
     ZZContentViewController *contentController = [self.controllerCache objectForKey:channel.title];
     

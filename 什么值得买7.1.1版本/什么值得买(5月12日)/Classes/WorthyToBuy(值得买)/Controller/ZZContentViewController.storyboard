@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tW7-JX-z04">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tW7-JX-z04">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Content View Controller-->
@@ -12,47 +13,31 @@
             <objects>
                 <tableViewController id="tW7-JX-z04" customClass="ZZContentViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="226" sectionHeaderHeight="28" sectionFooterHeight="28" id="BO0-a9-9uf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="LyE-2K-LNc">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="331"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="331"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageHorizontalFour" translatesAutoresizingMaskIntoConstraints="NO" id="1nG-k3-czi" userLabel="小图">
-                                    <rect key="frame" x="158" y="249" width="127" height="79"/>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageHorizontalFour" translatesAutoresizingMaskIntoConstraints="NO" id="mg7-aP-dtd" userLabel="小图">
-                                    <rect key="frame" x="287" y="249" width="127" height="79"/>
-                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageHorizontalFour" translatesAutoresizingMaskIntoConstraints="NO" id="1nG-k3-czi" userLabel="小图"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageHorizontalFour" translatesAutoresizingMaskIntoConstraints="NO" id="mg7-aP-dtd" userLabel="小图"/>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6E-gP-bUR" userLabel="line">
-                                    <rect key="frame" x="0.0" y="328" width="414" height="3"/>
-                                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="3" id="a8v-lp-Kgy"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZF-99-WUH" customClass="ZZCycleScrollView">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="169"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="FZF-99-WUH" secondAttribute="height" multiplier="538:219" id="dSX-jC-JDv"/>
-                                        <constraint firstAttribute="width" constant="375" id="gKu-qh-j1t"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="gKu-qh-j1t"/>
-                                        </mask>
-                                    </variation>
                                 </view>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageVSTwo" translatesAutoresizingMaskIntoConstraints="NO" id="KCZ-KU-2L9" userLabel="小图">
-                                    <rect key="frame" x="158" y="169" width="256" height="79"/>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageVSOne" translatesAutoresizingMaskIntoConstraints="NO" id="MAr-6a-HO3" userLabel="大图">
-                                    <rect key="frame" x="0.0" y="169" width="157" height="159"/>
-                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageVSTwo" translatesAutoresizingMaskIntoConstraints="NO" id="KCZ-KU-2L9" userLabel="小图"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageVSOne" translatesAutoresizingMaskIntoConstraints="NO" id="MAr-6a-HO3" userLabel="大图"/>
                             </subviews>
-                            <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="1nG-k3-czi" firstAttribute="bottom" secondItem="MAr-6a-HO3" secondAttribute="bottom" id="2gI-XB-35g"/>
                                 <constraint firstAttribute="bottom" secondItem="Z6E-gP-bUR" secondAttribute="bottom" id="6d6-6n-Qre"/>
@@ -84,7 +69,6 @@
                         </connections>
                     </tableView>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="cycleScrollView" destination="FZF-99-WUH" id="4f0-TY-laZ"/>
                         <outletCollection property="imageViews" destination="MAr-6a-HO3" id="XDH-4C-REb"/>
@@ -95,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHh-B8-KpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="231" y="270"/>
+            <point key="canvasLocation" x="114" y="242"/>
         </scene>
     </scenes>
     <resources>

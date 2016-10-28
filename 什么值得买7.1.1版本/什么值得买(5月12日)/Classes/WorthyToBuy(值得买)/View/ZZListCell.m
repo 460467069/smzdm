@@ -34,14 +34,34 @@
     
     _article = article;
     
+
+    
+    NSString *imageUrlStr = nil;
+    NSString *title = nil;
+    NSString *priceStr = nil;
+    
+    BOOL isNeedHidden = [article.promotion_type isEqualToString:@"3"];
+    if ([article.promotion_type isEqualToString:@"3"]) {
+        imageUrlStr = article.img;
+        title = article.title;
+        priceStr = article.vice_title;
+    }else{
+        imageUrlStr = article.article_pic;
+        title = article.article_title;
+        priceStr = article.article_price;
+    }
+    
+    self.mallAndTimeLabel.hidden = isNeedHidden;
+    self.commentBtn.hidden = isNeedHidden;
+    self.zhiBtn.hidden = isNeedHidden;
     
     //    第二种样式cell字段选取
     //    图片  article_pic
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:article.article_pic]];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:imageUrlStr]];
     //    标题  article_title
-    self.titleLabel.text = article.article_title;
+    self.titleLabel.text = title;
     //    价格  article_price
-    self.priceLabel.text = article.article_price;
+    self.priceLabel.text = priceStr;
     //
     //    1. 平台和时间
     //    平台显示:

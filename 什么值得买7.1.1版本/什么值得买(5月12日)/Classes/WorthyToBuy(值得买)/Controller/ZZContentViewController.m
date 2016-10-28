@@ -102,7 +102,9 @@ static NSString * const kListCell = @"ZZListCell";
         if (error) { return;}
         
         NSArray *rows = responseObject[@"rows"];
-        self.dataArrayM = [ZZWorthyArticle mj_objectArrayWithKeyValuesArray:rows];
+        
+        NSArray *temArray = [NSArray modelArrayWithClass:[ZZWorthyArticle class] json:rows];
+        self.dataArrayM = [NSMutableArray arrayWithArray:temArray];
         [self.tableView reloadData];
         
     }];
@@ -127,7 +129,7 @@ static NSString * const kListCell = @"ZZListCell";
         if (error) { return;}
         
         NSArray *rows = responseObject[@"rows"];
-        NSArray *temArray = [ZZWorthyArticle mj_objectArrayWithKeyValuesArray:rows];
+        NSArray *temArray = [NSArray modelArrayWithClass:[ZZWorthyArticle class] json:rows];
         [self.dataArrayM addObjectsFromArray:temArray];
         [self.tableView reloadData];
     }];

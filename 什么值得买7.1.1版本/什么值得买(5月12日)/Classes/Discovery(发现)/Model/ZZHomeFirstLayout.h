@@ -15,8 +15,6 @@
 
 #define kHomeFirstCellTitleLabelLeft 20
 
-
-
 #define kHomeFirstCellScrollItemHeight 200
 #define kHomeFirstCellScrollItemWidth 120
 #define kHomeFirstCellScrollItemPicWH 70

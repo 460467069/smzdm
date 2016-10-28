@@ -34,8 +34,8 @@
     
     // 添加label
     UILabel *label = [[UILabel alloc] init];
-    label.textColor = [UIColor darkGrayColor];
-    label.font = [UIFont systemFontOfSize:16];
+    label.textColor = kGlobalGrayColor;
+    label.font = [UIFont systemFontOfSize:15];
     label.textAlignment = NSTextAlignmentCenter;
     [self addSubview:label];
     self.label = label;
