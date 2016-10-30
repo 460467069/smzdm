@@ -99,6 +99,7 @@ extension ZZFantasticGoodsController{
         
         haowuCell.haowuLayout = haowuLayout
         haowuCell.delegate = self
+        haowuCell.indexPathRow = indexPath.row
         return haowuCell
         
     }
@@ -123,6 +124,7 @@ extension ZZFantasticGoodsController:UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewHeaderReuseID, for: indexPath) as! ZZGoodsHeaderCell
         
         cell.goodsHeaderModel = headerDataArray[indexPath.item]
+        
         return cell
     }
     

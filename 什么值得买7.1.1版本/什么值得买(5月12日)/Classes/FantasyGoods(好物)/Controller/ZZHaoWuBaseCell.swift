@@ -36,6 +36,9 @@ class ZZHaoWuBaseCell: UITableViewCell {
 
     weak var delegate: ZZHaoWuItemDelegate?
     
+    var indexPathRow: NSInteger?
+    
+    
     var haowuLayout: ZZHaoWuLayout? {
         
         didSet {

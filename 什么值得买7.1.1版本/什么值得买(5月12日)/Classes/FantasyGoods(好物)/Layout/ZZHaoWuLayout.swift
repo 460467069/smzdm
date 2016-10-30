@@ -115,7 +115,7 @@ class ZZHaoWuLayout: NSObject {
                 rowHeight = haoWuConstant.cellHeight3
                 itemheight = haoWuConstant.itemHeight3
                 
-            }else if type == "1" {
+            }else if type == "1" || type == "2" {
                 itemType = .one
                 rowHeight = haoWuConstant.cellHeight1
                 itemheight = haoWuConstant.itemHeight1
