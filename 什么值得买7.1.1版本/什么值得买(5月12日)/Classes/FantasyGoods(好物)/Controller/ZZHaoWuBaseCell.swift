@@ -44,7 +44,7 @@ class ZZHaoWuBaseCell: UITableViewCell {
         didSet {
             
             scrollView.contentSize = (haowuLayout?.scrollViewContentSize)!
-            
+            scrollView.contentOffset = CGPoint.zero
             if let fantasicGoodsModel = haowuLayout?.fantasicGoodsModel {
                 
                 headLabel.text = fantasicGoodsModel.name

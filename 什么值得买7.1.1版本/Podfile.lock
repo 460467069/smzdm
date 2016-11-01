@@ -19,15 +19,22 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
+  - MOBFoundation (2.2.1)
   - RongCloudIMKit (2.7.3)
   - SDCycleScrollView (1.65):
     - SDWebImage (~> 3.7)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - ShareSDK3 (3.5.1):
+    - ShareSDK3/ShareSDK (= 3.5.1)
+  - ShareSDK3/ShareSDK (3.5.1)
+  - ShareSDK3/ShareSDKPlatforms/QQ (3.5.1)
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.5.1)
+  - ShareSDK3/ShareSDKPlatforms/WeChat (3.5.1)
+  - ShareSDK3/ShareSDKUI (3.5.1)
   - SVProgressHUD (2.0.3)
   - UITableView+FDTemplateLayoutCell (1.4)
-  - WeiboSDK (3.1.4)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -40,23 +47,19 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJExtension
   - MJRefresh
+  - MOBFoundation
   - RongCloudIMKit
   - SDCycleScrollView
   - SDWebImage
+  - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/WeChat
+  - ShareSDK3/ShareSDKUI
   - SVProgressHUD
   - UITableView+FDTemplateLayoutCell
-  - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
   - YYKit
   - ZYCornerRadius
-
-EXTERNAL SOURCES:
-  WeiboSDK:
-    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
-
-CHECKOUT OPTIONS:
-  WeiboSDK:
-    :commit: 3daf7147ddd0fde3b04a61d8d94327d41d0c239c
-    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -65,15 +68,16 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MOBFoundation: 8ceb44ce7840441f42f73fa6fbda5b0c19ba7d43
   RongCloudIMKit: 0b93700b17d224c7c213815b8a23a9c356fe20e2
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  ShareSDK3: dc051268317cd144acbd7d48d6bc7867ff58bc04
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
-  WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 9cbdb1c27da2b8658c205634b9cc9a8c0a77b692
+PODFILE CHECKSUM: a4a01267b5a3e3b131a1fcd691788dff4b59699c
 
 COCOAPODS: 1.1.1

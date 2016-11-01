@@ -46,6 +46,7 @@
 		A9275A191CE4556A0017BA82 /* ZZListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9275A181CE4556A0017BA82 /* ZZListCell.m */; };
 		A9275A1C1CE459A90017BA82 /* ZZWorthyArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = A9275A1B1CE459A90017BA82 /* ZZWorthyArticle.m */; };
 		A9275A1F1CE4600F0017BA82 /* NSString+ZZNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9275A1E1CE4600F0017BA82 /* NSString+ZZNumberFormatter.m */; };
+		A93698491DC7A9A000D4B643 /* AppDelegate+SDKInit.m in Sources */ = {isa = PBXBuildFile; fileRef = A93698481DC7A9A000D4B643 /* AppDelegate+SDKInit.m */; };
 		A9388BB51DBC4DB50091969B /* ZZHaoWuCellThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9388BB41DBC4DB50091969B /* ZZHaoWuCellThree.swift */; };
 		A9388BB71DBC50680091969B /* ZZHaoWuBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9388BB61DBC50680091969B /* ZZHaoWuBaseCell.swift */; };
 		A93B6A7C1D6169780001F777 /* ZZDIYBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B6A7B1D6169780001F777 /* ZZDIYBackFooter.m */; };
@@ -203,6 +204,8 @@
 		A9275A1B1CE459A90017BA82 /* ZZWorthyArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZWorthyArticle.m; sourceTree = "<group>"; };
 		A9275A1D1CE4600F0017BA82 /* NSString+ZZNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZZNumberFormatter.h"; sourceTree = "<group>"; };
 		A9275A1E1CE4600F0017BA82 /* NSString+ZZNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZZNumberFormatter.m"; sourceTree = "<group>"; };
+		A93698471DC7A9A000D4B643 /* AppDelegate+SDKInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+SDKInit.h"; sourceTree = "<group>"; };
+		A93698481DC7A9A000D4B643 /* AppDelegate+SDKInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+SDKInit.m"; sourceTree = "<group>"; };
 		A9388BB41DBC4DB50091969B /* ZZHaoWuCellThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHaoWuCellThree.swift; sourceTree = "<group>"; };
 		A9388BB61DBC50680091969B /* ZZHaoWuBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHaoWuBaseCell.swift; sourceTree = "<group>"; };
 		A93B6A7A1D6169780001F777 /* ZZDIYBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDIYBackFooter.h; sourceTree = "<group>"; };
@@ -569,6 +572,8 @@
 			children = (
 				A9D9D2191CE40B3E00A83101 /* AppDelegate.h */,
 				A9D9D21A1CE40B3E00A83101 /* AppDelegate.m */,
+				A93698471DC7A9A000D4B643 /* AppDelegate+SDKInit.h */,
+				A93698481DC7A9A000D4B643 /* AppDelegate+SDKInit.m */,
 				A9D9D22D1CE40B7C00A83101 /* Classes */,
 				A9D9D2161CE40B3E00A83101 /* Supporting Files */,
 			);
@@ -983,6 +988,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = W34ZLPQLA6;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1125,6 +1131,7 @@
 				A980A40C1CE4130A006E0037 /* ZZTabBarModel.m in Sources */,
 				A90DBF141DBF740900D857A9 /* UINavigationItem+Margin.m in Sources */,
 				A9B7835B1D59019D003C464D /* ZZRefreshTip.m in Sources */,
+				A93698491DC7A9A000D4B643 /* AppDelegate+SDKInit.m in Sources */,
 				A93B6A7C1D6169780001F777 /* ZZDIYBackFooter.m in Sources */,
 				A9275A0E1CE422B70017BA82 /* ZZHomeCell.m in Sources */,
 				A980A3EF1CE40F4A006E0037 /* ZZDouYuController.m in Sources */,
@@ -1293,16 +1300,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhongliang zhongliang (ABQ55P3NGF)";
-				DEVELOPMENT_TEAM = W34ZLPQLA6;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = smzdm20160715;
 				PRODUCT_NAME = "什么值得买";
-				PROVISIONING_PROFILE = "a6af701e-0517-4fb5-9928-f5de0cee3d91";
-				PROVISIONING_PROFILE_SPECIFIER = zhangdama_dev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "什么值得买(5月12日)/Classes/FantasyGoods(好物)/Model/什么值得买-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1320,15 +1327,15 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = W34ZLPQLA6;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = smzdm20160715;
 				PRODUCT_NAME = "什么值得买";
-				PROVISIONING_PROFILE = "a6af701e-0517-4fb5-9928-f5de0cee3d91";
-				PROVISIONING_PROFILE_SPECIFIER = zhangdama_dev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "什么值得买(5月12日)/Classes/FantasyGoods(好物)/Model/什么值得买-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
