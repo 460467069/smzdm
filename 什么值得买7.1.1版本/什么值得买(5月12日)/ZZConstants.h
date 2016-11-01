@@ -35,10 +35,22 @@
 #define kZhiYouFuLi @"值友福利"
 
 
-/** 新浪微博 */
-#import "WeiboSDK.h"
-#define kAppKey         @"4079614173"
-#define kRedirectURI    @"http://www.smzdm.com"
 
+
+//Share SDK
+#define kShareSDKKey                @"18879f9cde450"
+
+//新浪微博
+#define kShareSinaWeiboKey          @"4079614173"
+#define kShareSinaWeiboSecret       @"cc6bf86d35dc387c1c2fea27a66eff7e"
+#define kShareSinaWeiboRedirectUri  @"http://www.smzdm.com"
+
+//微信
+#define kShareWeChatKey             @"wx428cb93c44cf6e7f"
+#define kShareWeChatSecret          @"9a060eff2d92b3f1b0fbc180fa334957"
+
+//微信
+#define kShareTencentKey             @"fEiiO0nLREbY1Hop"
+#define kShareTencentSecret          @"9a060eff2d92b3f1b0fbc180fa334957"
 
 #endif /* ZZConstants_h */

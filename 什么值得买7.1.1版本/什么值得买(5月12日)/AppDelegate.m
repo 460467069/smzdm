@@ -13,7 +13,8 @@
 #import <RongIMKit/RongIMKit.h>
 #import "ZZGlobalApperance.h"
 #import "ZZNetworkHandler.h"
-
+#import <WeiboSDK.h>
+#import "AppDelegate+SDKInit.h"
 
 
 
@@ -27,7 +28,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // 向微博客户端程序注册第三方应用
-    [WeiboSDK registerApp:kAppKey];
+    [WeiboSDK registerApp:kShareSinaWeiboKey];
+    
+    [self SDKInit];
+    
     //初始化融云
     [self configureRongYun];
     //全局定制

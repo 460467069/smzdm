@@ -16,6 +16,9 @@
 #import "ZZDetailHeaderView.h"
 #import "UINavigationItem+Margin.h"
 
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
+
 #define kBottomBarHeight 44
 #define NAVBAR_CHANGE_POINT 50
 
@@ -258,7 +261,44 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 }
 
 - (void)detailRightBtnDidClick {
+    //1、创建分享参数
+
+    //（注意：图片必须要在Xcode左边目录里面，名称必须要传正确 (Bundle中的图片)
+    // 如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]）(网络图片直接给URL地址)
+    NSArray* imageArray = @[_detailModel.share_pic];
     
+    NSURL *url = [NSURL URLWithString:_detailModel.article_url];
+    NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+    //1、创建分享参数
+    [shareParams SSDKSetupShareParamsByText:nil images:imageArray url:url title:_detailModel.share_title_other type:SSDKContentTypeAuto];
+    
+    // 分享结果的回调方法
+    SSUIShareStateChangedHandler handler = ^ (SSDKResponseState state,SSDKPlatformType platformType, NSDictionary *userData,SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
+        
+        // SSDKResponseState 分享结果的状态
+        switch (state) {
+            case SSDKResponseStateSuccess:
+                NSLog(@"分享成功");
+                break;
+            case SSDKResponseStateFail:
+                NSLog(@"分享失败");
+                break;
+            default:
+                break;
+        }
+    };
+    
+    /**
+     *  显示分享菜单
+     *
+     *  @param view                     要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图, iPhone可以传nil不会影响
+     *  @param items                    菜单项，如果传入nil，则显示已集成的平台列表
+     *  @param shareParams              分享内容参数
+     *  @param shareStateChangedHandler 分享状态变更事件
+     *
+     *  @return 分享菜单控制器
+     */
+    [ShareSDK showShareActionSheet:nil items:nil shareParams:shareParams onShareStateChanged:handler];
 }
 
 

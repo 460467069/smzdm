@@ -28,6 +28,18 @@
 @property (nonatomic, copy) NSString *article_link_name;
 @property (nonatomic, copy) NSString *article_price;
 @property (nonatomic, copy) NSString *article_pic;
+@property (nonatomic, copy) NSString *article_url;
+
+/** 分享 */
+@property (nonatomic, copy) NSString *share_title;
+@property (nonatomic, copy) NSString *share_title_other;
+@property (nonatomic, copy) NSString *share_pic_title;
+@property (nonatomic, copy) NSString *share_pic;
+@property (nonatomic, copy) NSString *b_share_title;
+@property (nonatomic, copy) NSString *share_title_separate;
+@property (nonatomic, copy) NSString *share_long_pic_title;
+@property (nonatomic, copy) NSString *share_reward;
+
 /** 公告 */
 @property (nonatomic, copy) NSString *article_rzlx;
 

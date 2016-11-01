@@ -10,7 +10,7 @@
 #import "ZZUserAccount.h"
 #import "ZZWeiboTableView.h"
 #import "YYKit.h"
-
+#import <WeiboSDK.h>
 
 @interface ZZMineViewController ()<UITabBarDelegate, UITableViewDataSource, UITableViewDelegate>
 /** tableView */
@@ -76,7 +76,7 @@
 - (void)SendSSOAuthorize
 {
     WBAuthorizeRequest *request = [WBAuthorizeRequest request];
-    request.redirectURI = kRedirectURI;
+    request.redirectURI = kShareSinaWeiboRedirectUri;
     request.scope = @"all";
     request.userInfo = @{@"SSO_From": @"SendMessageToWeiboViewController"};
     [WeiboSDK sendRequest:request];
