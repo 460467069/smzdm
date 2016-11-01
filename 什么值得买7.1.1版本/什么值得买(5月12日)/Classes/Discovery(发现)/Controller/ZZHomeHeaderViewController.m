@@ -81,22 +81,24 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     //littleBanner
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     NSInteger count = 5;
-    CGFloat itemWidth = kScreenW / count;
     CGFloat littleBannerViewH = 180;
-     CGFloat inset = 15;
-    CGFloat itemHeight = (littleBannerViewH - inset * 2) * 0.5;
-   
-    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
-    layout.minimumLineSpacing = 0;
-    layout.minimumInteritemSpacing = 0;
+    CGFloat inset = 15;
+
+    layout.minimumLineSpacing = inset;
+    layout.minimumInteritemSpacing = inset;
+
     UICollectionView *littleBannerView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(cycleScrollViewF), kScreenW, littleBannerViewH) collectionViewLayout:layout];
     [self.view addSubview:littleBannerView];
     littleBannerView.delegate = self;
     littleBannerView.dataSource = self;
     littleBannerView.backgroundColor = [UIColor whiteColor];
-    littleBannerView.contentInset = UIEdgeInsetsMake(inset, 0, inset, 0);
+    littleBannerView.contentInset = UIEdgeInsetsMake(inset, inset, inset, inset);
     self.littleBannerView = littleBannerView;
     [littleBannerView registerNib:[UINib nibWithNibName:kLittleBannerViewReuseIdentifier bundle:nil] forCellWithReuseIdentifier:kLittleBannerViewReuseIdentifier];
+    
+    CGFloat itemWidth = (kScreenW -  littleBannerView.contentInset.left - littleBannerView.contentInset.right - (count - 1) * inset) / count;
+    CGFloat itemHeight = (littleBannerViewH - littleBannerView.contentInset.bottom - littleBannerView.contentInset.top - inset) * 0.5;
+    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
     
     NSString *urlStr = @"http://api.smzdm.com/v2/util/banner?f=iphone&is_login=1&type=menhu&v=7.1&weixin=1";
     
