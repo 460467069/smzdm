@@ -260,6 +260,8 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+/** 分享 */
 - (void)detailRightBtnDidClick {
     //1、创建分享参数
 

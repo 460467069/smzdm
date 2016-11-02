@@ -16,6 +16,7 @@
 #import "ZZYuanChuangCell.h"
 #import "ZZDetailArticleViewController.h"
 #import "ZZDetailTopicViewController.h"
+#import "ZZPureWebViewController.h"
 
 static NSString * const kReuseIdentifierYuanChuangCell = @"ZZYuanChuangCell";
 static NSString * const kReuseIdentifieFirstCell = @"ZZHomeFirstCell";
@@ -238,13 +239,14 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 //        https://api.smzdm.com/v2/news/articles/28552?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
         
         NSInteger channelID = [article.article_channel_id integerValue];
-        
         NSString *articleId = article.article_id;
         
 #if 0   //测试话题
         channelID = 14;
         articleId = @"698";
 #endif
+        
+        ZZRedirectData *redirectdata = article.redirect_data;
         
         if (channelID == 14) {
             ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
@@ -254,11 +256,12 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
             return;
         }
         
-        ZZDetailArticleViewController *vc = [[ZZDetailArticleViewController alloc] init];
-//        vc.article = article;
-        vc.channelID = channelID;
-        vc.article_id = articleId;
-        [self.navigationController pushViewController:vc animated:YES];
+//        ZZDetailArticleViewController *vc = [[ZZDetailArticleViewController alloc] init];
+//        vc.channelID = channelID;
+//        vc.article_id = articleId;
+//        [self.navigationController pushViewController:vc animated:YES];
+        
+        [self jumpToDetailArticleViewControllerWithRedirectdata:redirectdata];
     }
 }
 
@@ -269,22 +272,34 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     
     ZZRedirectData *redirectdata = cell.layout.firstModel.floor_multi[index].redirect_data;
     
+    [self jumpToDetailArticleViewControllerWithRedirectdata:redirectdata];
+    
+}
+
+- (void)jumpToDetailArticleViewControllerWithRedirectdata:(ZZRedirectData *)redirectdata{
     NSString *linkType = redirectdata.link_type;
     NSInteger channelID;
-    if ([linkType isEqualToString:@"faxian"]) {
+    if ([linkType isEqualToString:@"faxian"] || [linkType isEqualToString:@"youhui"]) {
         channelID = 2;
     }else if ([linkType isEqualToString:@"yuanchuang"]){
         channelID = 11;
     }else if ([linkType isEqualToString:@"news"]){
         channelID = 6;
+    }else if ([linkType isEqualToString:@"other"]){
+        ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
+        webViewController.redirectdata = redirectdata;
+        [self.navigationController pushViewController:webViewController animated:YES];
+        
+        return;
+    }else if ([linkType isEqualToString:@"pingce"]){
+        channelID = 8;
     }
-    
     ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];
     vc.channelID = channelID;
     vc.article_id = redirectdata.link_val;
     [self.navigationController pushViewController:vc animated:YES];
-    
 }
+
 /** 点击了四张图片中的一张 */
 - (void)cellDidClickOneOfFourPic:(ZZHomeFirstCell *)cell{
     

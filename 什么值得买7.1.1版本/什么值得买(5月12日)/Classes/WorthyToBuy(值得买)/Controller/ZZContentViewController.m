@@ -16,6 +16,7 @@
 #import "ZZTuiGuangCell.h"
 #import "ZZDetailArticleViewController.h"
 #import "ZZDetailTopicViewController.h"
+#import "ZZPureWebViewController.h"
 
 
 static NSString * const kTuiGuangCell = @"ZZTuiGuangCell";
@@ -183,6 +184,14 @@ static NSString * const kListCell = @"ZZListCell";
         ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
         detailTopicVc.channelID = channelID;
         [self.navigationController pushViewController:detailTopicVc animated:YES];
+        return;
+    }
+    
+    if ([article.tag isEqualToString:@"广告"]) {
+        ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
+        webViewController.redirectdata = article.redirect_data;
+        [self.navigationController pushViewController:webViewController animated:YES];
+        
         return;
     }
     
