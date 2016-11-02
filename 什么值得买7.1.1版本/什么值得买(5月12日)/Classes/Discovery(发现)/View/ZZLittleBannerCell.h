@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ZZLittleBanner.h"
+#import "ZZTitleBannelOption.h"
 
 @interface ZZLittleBannerCell : UICollectionViewCell
 @property (nonatomic, strong) ZZLittleBanner *littleBanner;
+@property (nonatomic, strong) ZZTitleBannelOption *littleBannerOptions;
 @end

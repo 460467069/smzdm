@@ -47,7 +47,7 @@
 @interface ZZHomeFirstCell : UITableViewCell
 
 @property (nonatomic, strong) ZZHomeFirstLayout *layout;
-
+//@property (nonatomic, strong) <#type#> *<#name#>;
 @property (nonatomic, strong) ZZTitleView *titleView;
 @property (nonatomic, strong) ZZCycleScrollView *cycleScrollView;
 @property (nonatomic, strong) ZZFourPicView *fourPicView;

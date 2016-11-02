@@ -29,10 +29,8 @@
     
     self.nameLabel.text = littleBanner.title;
     
-}
-
-- (void)layoutSubviews{
-    [super layoutSubviews];
+    self.nameLabel.textColor = [UIColor colorWithHexString:self.littleBannerOptions.color_card];
+    
 }
 
 @end

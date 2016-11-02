@@ -12,6 +12,7 @@
 #import "ZZLittleBannerCell.h"
 #import "ZZCycleScrollView.h"
 #import "ZZDetailArticleViewController.h"
+#import "ZZLittleBannerLayout.h"
 
 #define kCycleTextContentViewColor [UIColor colorWithWhite:1.0 alpha:0.8]
 NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
@@ -21,7 +22,10 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 @property (nonatomic, weak) SDCycleScrollView *cycleTextView;
 @property (nonatomic, strong) NSArray *litterBannerArray;
 @property (nonatomic, strong) UICollectionView *littleBannerView;
+@property (nonatomic, strong) UIImageView *litterBackgroundView;
 @property (nonatomic, strong) ZZHomeHeadModel *headModel;
+@property (nonatomic, strong) UIView *cycleTextContentView;
+
 @end
 
 @implementation ZZHomeHeaderViewController
@@ -50,7 +54,8 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     cycleTextContentView.frame = CGRectMake(cycleTextContentViewX, cycleTextContentViewY, cycleTextContentViewW, cycleTextContentViewH);
     cycleTextContentView.backgroundColor = kCycleTextContentViewColor;
     [self.view addSubview:cycleTextContentView];
-
+    cycleTextContentView.hidden = YES;
+    self.cycleTextContentView = cycleTextContentView;
     
     CGFloat headlineViewX = 0;
     CGFloat headlineViewY = 0;
@@ -79,26 +84,21 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 
 
     //littleBanner
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    NSInteger count = 5;
-    CGFloat littleBannerViewH = 180;
-    CGFloat inset = 15;
+    ZZLittleBannerLayout *layout = [[ZZLittleBannerLayout alloc] init];
 
-    layout.minimumLineSpacing = inset;
-    layout.minimumInteritemSpacing = inset;
+    CGFloat littleBannerViewH = 180;
 
     UICollectionView *littleBannerView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(cycleScrollViewF), kScreenW, littleBannerViewH) collectionViewLayout:layout];
     [self.view addSubview:littleBannerView];
     littleBannerView.delegate = self;
     littleBannerView.dataSource = self;
-    littleBannerView.backgroundColor = [UIColor whiteColor];
-    littleBannerView.contentInset = UIEdgeInsetsMake(inset, inset, inset, inset);
+    littleBannerView.backgroundColor = [UIColor clearColor];
+    littleBannerView.contentInset = UIEdgeInsetsMake(kLitterBannerViewInset, kLitterBannerViewInset, kLitterBannerViewInset, kLitterBannerViewInset);
     self.littleBannerView = littleBannerView;
     [littleBannerView registerNib:[UINib nibWithNibName:kLittleBannerViewReuseIdentifier bundle:nil] forCellWithReuseIdentifier:kLittleBannerViewReuseIdentifier];
     
-    CGFloat itemWidth = (kScreenW -  littleBannerView.contentInset.left - littleBannerView.contentInset.right - (count - 1) * inset) / count;
-    CGFloat itemHeight = (littleBannerViewH - littleBannerView.contentInset.bottom - littleBannerView.contentInset.top - inset) * 0.5;
-    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    _litterBackgroundView = [[UIImageView alloc] initWithFrame:littleBannerView.bounds];
+    littleBannerView.backgroundView = _litterBackgroundView;
     
     NSString *urlStr = @"http://api.smzdm.com/v2/util/banner?f=iphone&is_login=1&type=menhu&v=7.1&weixin=1";
     
@@ -117,16 +117,28 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
             
             [imageArrayM addObject:headline.img];
         }];
+        
+        cycleImageView.imageURLStringsGroup = [imageArrayM copy];
+        
+        self.litterBannerArray = headModel.littleBanner;
+        [self.littleBannerView reloadData];
+        //设置背景
+        [_litterBackgroundView setImageWithURL:[NSURL URLWithString:headModel.littleBannerOptions.img] placeholder:nil];
+        
+        
+        if (headModel.headlines.count == 0) {
+            
+            cycleTextContentView.hidden = YES;
+            return;
+        }
+        cycleTextContentView.hidden = NO;
         [headModel.headlines enumerateObjectsUsingBlock:^(ZZHeadLine * _Nonnull headline, NSUInteger idx, BOOL * _Nonnull stop) {
             
             [textArrayM addObject:headline.title];
         }];
         
-        self.litterBannerArray = headModel.littleBanner;
-        [self.littleBannerView reloadData];
-        
         cycleTextView.titlesGroup = [textArrayM copy];
-        cycleImageView.imageURLStringsGroup = [imageArrayM copy];
+        
         [cycleImageView layoutIfNeeded];    //强制更新布局
         for (UIView *subView in cycleTextView.subviews) {
             if ([subView isKindOfClass:[UICollectionView class]]) {
@@ -159,6 +171,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ZZLittleBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kLittleBannerViewReuseIdentifier forIndexPath:indexPath];
     ZZLittleBanner *littleBanner = self.litterBannerArray[indexPath.item];
+    cell.littleBannerOptions = self.headModel.littleBannerOptions;
     cell.littleBanner = littleBanner;
     return cell;
 }

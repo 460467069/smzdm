@@ -56,6 +56,7 @@
 		A958E4F01D388D6100BFA791 /* ZZDouYuHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A958E4EE1D388D6100BFA791 /* ZZDouYuHomeCollectionViewCell.xib */; };
 		A958E4F31D3894BC00BFA791 /* ZZDouYuHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A958E4F21D3894BC00BFA791 /* ZZDouYuHomeTableViewCell.m */; };
 		A963A51C1D5EBD68007B5D6D /* ZZHomeFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A963A51B1D5EBD68007B5D6D /* ZZHomeFirstCell.m */; };
+		A96C4C7D1DC9691B00196341 /* ZZLittleBannerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A96C4C7C1DC9691B00196341 /* ZZLittleBannerLayout.m */; };
 		A97229911D5D6FD9001415A8 /* ZZHomeFirstLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A97229901D5D6FD9001415A8 /* ZZHomeFirstLayout.m */; };
 		A97229941D5D7C2D001415A8 /* ZZHomeFirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A97229931D5D7C2D001415A8 /* ZZHomeFirstModel.m */; };
 		A9758D721D8766EF00FC4B89 /* ZZSecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9758D711D8766EF00FC4B89 /* ZZSecondTableViewController.m */; };
@@ -219,6 +220,8 @@
 		A958E4F21D3894BC00BFA791 /* ZZDouYuHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDouYuHomeTableViewCell.m; sourceTree = "<group>"; };
 		A963A51A1D5EBD68007B5D6D /* ZZHomeFirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeFirstCell.h; sourceTree = "<group>"; };
 		A963A51B1D5EBD68007B5D6D /* ZZHomeFirstCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeFirstCell.m; sourceTree = "<group>"; };
+		A96C4C7B1DC9691B00196341 /* ZZLittleBannerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZLittleBannerLayout.h; sourceTree = "<group>"; };
+		A96C4C7C1DC9691B00196341 /* ZZLittleBannerLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZLittleBannerLayout.m; sourceTree = "<group>"; };
 		A972298F1D5D6FD9001415A8 /* ZZHomeFirstLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeFirstLayout.h; sourceTree = "<group>"; };
 		A97229901D5D6FD9001415A8 /* ZZHomeFirstLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeFirstLayout.m; sourceTree = "<group>"; };
 		A97229921D5D7C2D001415A8 /* ZZHomeFirstModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeFirstModel.h; sourceTree = "<group>"; };
@@ -442,6 +445,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A96C4C7A1DC968CB00196341 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				A96C4C7B1DC9691B00196341 /* ZZLittleBannerLayout.h */,
+				A96C4C7C1DC9691B00196341 /* ZZLittleBannerLayout.m */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		A97EC6BD1D794DD7006AABAB /* 内购 */ = {
 			isa = PBXGroup;
 			children = (
@@ -648,6 +660,7 @@
 		A9D9D23A1CE40B7C00A83101 /* Discovery(发现) */ = {
 			isa = PBXGroup;
 			children = (
+				A96C4C7A1DC968CB00196341 /* Layout */,
 				A9D9D23B1CE40B7C00A83101 /* Controller */,
 				A9D9D23C1CE40B7C00A83101 /* Model */,
 				A9D9D23D1CE40B7C00A83101 /* View */,
@@ -1129,6 +1142,7 @@
 				A9ADB8501D64DF5D00330D23 /* ZZNetworking.m in Sources */,
 				A9EE8D6E1D74A54900A72C29 /* ZZDetailArticleViewController.m in Sources */,
 				A980A40C1CE4130A006E0037 /* ZZTabBarModel.m in Sources */,
+				A96C4C7D1DC9691B00196341 /* ZZLittleBannerLayout.m in Sources */,
 				A90DBF141DBF740900D857A9 /* UINavigationItem+Margin.m in Sources */,
 				A9B7835B1D59019D003C464D /* ZZRefreshTip.m in Sources */,
 				A93698491DC7A9A000D4B643 /* AppDelegate+SDKInit.m in Sources */,
