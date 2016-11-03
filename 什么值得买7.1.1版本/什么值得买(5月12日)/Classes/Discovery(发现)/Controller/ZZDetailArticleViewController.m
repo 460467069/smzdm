@@ -107,17 +107,27 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 }
 
 - (void)initialWebView{
-    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-    configuration.preferences = [[WKPreferences alloc] init];
-    configuration.preferences.javaScriptCanOpenWindowsAutomatically = YES;
     
-    _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:configuration];
+    
+    //解决wkwebView 加载的网页存在缩放的问题666
+    NSString *jScript = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
+    
+    WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+    WKUserContentController *wkUController = [[WKUserContentController alloc] init];
+    [wkUController addUserScript:wkUScript];
+    
+    WKWebViewConfiguration *wkWebConfig = [[WKWebViewConfiguration alloc] init];
+    wkWebConfig.userContentController = wkUController;
+    
+    _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:wkWebConfig];
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
     [_webView addObserver:self forKeyPath:WKWebViewKeyPathLoading options:NSKeyValueObservingOptionNew context:nil];
     [_webView.scrollView addObserver:self forKeyPath:WKWebViewKeyPathContentSize options:NSKeyValueObservingOptionNew context:nil];
     _webView.scrollView.delegate = self;
     _webView.frame = _containerScrollView.bounds;
+    
+
 //    [_containerScrollView addSubview:_webView];
 }
 
@@ -325,8 +335,13 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
         [self.navigationController.navigationBar lt_setBackgroundColor:[kGlobalLightGrayColor colorWithAlphaComponent:0]];
     }
     
+
 }
 
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return nil;
+}
 
 #pragma mark - WKNavigationDelegate
 
