@@ -15,6 +15,9 @@
 		A90E6E3B1D39345B00C213C5 /* ZZDouYuFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E6E3A1D39345B00C213C5 /* ZZDouYuFlowLayout.m */; };
 		A90E6E3E1D39406B00C213C5 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E6E3D1D39406B00C213C5 /* YYFPSLabel.m */; };
 		A91655661DC1EB2400A713A4 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A91655651DC1EB2400A713A4 /* UINavigationBar+Awesome.m */; };
+		A918D4EA1DCB189400B08C93 /* ZZHaoJiaHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918D4E91DCB189400B08C93 /* ZZHaoJiaHeaderLayout.swift */; };
+		A918D4EE1DCB1C5A00B08C93 /* ZZHaoJiaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918D4ED1DCB1C5A00B08C93 /* ZZHaoJiaHeaderView.swift */; };
+		A918D4F01DCB1C6500B08C93 /* ZZHaoJiaHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A918D4EF1DCB1C6400B08C93 /* ZZHaoJiaHeaderView.xib */; };
 		A91A834E1D420A87008D229E /* weibo_0.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83461D420A87008D229E /* weibo_0.json */; };
 		A91A834F1D420A87008D229E /* weibo_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83471D420A87008D229E /* weibo_1.json */; };
 		A91A83501D420A87008D229E /* weibo_2.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83481D420A87008D229E /* weibo_2.json */; };
@@ -154,6 +157,9 @@
 		A90E6E3D1D39406B00C213C5 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		A91655641DC1EB2400A713A4 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		A91655651DC1EB2400A713A4 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		A918D4E91DCB189400B08C93 /* ZZHaoJiaHeaderLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHaoJiaHeaderLayout.swift; sourceTree = "<group>"; };
+		A918D4ED1DCB1C5A00B08C93 /* ZZHaoJiaHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHaoJiaHeaderView.swift; sourceTree = "<group>"; };
+		A918D4EF1DCB1C6400B08C93 /* ZZHaoJiaHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZHaoJiaHeaderView.xib; sourceTree = "<group>"; };
 		A91A83461D420A87008D229E /* weibo_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_0.json; sourceTree = "<group>"; };
 		A91A83471D420A87008D229E /* weibo_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_1.json; sourceTree = "<group>"; };
 		A91A83481D420A87008D229E /* weibo_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_2.json; sourceTree = "<group>"; };
@@ -393,6 +399,14 @@
 				A90618E41DBF064A002239CF /* ZZQRcodeController.swift */,
 			);
 			path = "Scan(二维码)";
+			sourceTree = "<group>";
+		};
+		A918D4E81DCB186500B08C93 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				A918D4E91DCB189400B08C93 /* ZZHaoJiaHeaderLayout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		A91A83451D420A87008D229E /* API Dump */ = {
@@ -893,6 +907,7 @@
 		A9D9D2491CE40B7C00A83101 /* WorthyToBuy(值得买) */ = {
 			isa = PBXGroup;
 			children = (
+				A918D4E81DCB186500B08C93 /* Layout */,
 				A9D9D24A1CE40B7C00A83101 /* Controller */,
 				A9D9D24B1CE40B7C00A83101 /* Model */,
 				A9D9D24C1CE40B7C00A83101 /* View */,
@@ -949,6 +964,8 @@
 				A9AC88981D6374CF006C840D /* ZZTuiGuangCell.h */,
 				A9AC88991D6374CF006C840D /* ZZTuiGuangCell.m */,
 				A9AC889A1D6374CF006C840D /* ZZTuiGuangCell.xib */,
+				A918D4ED1DCB1C5A00B08C93 /* ZZHaoJiaHeaderView.swift */,
+				A918D4EF1DCB1C6400B08C93 /* ZZHaoJiaHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1042,6 +1059,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A91A83501D420A87008D229E /* weibo_2.json in Resources */,
+				A918D4F01DCB1C6500B08C93 /* ZZHaoJiaHeaderView.xib in Resources */,
 				A9758D7D1D8792E200FC4B89 /* ZZDiscoveryViewController.storyboard in Resources */,
 				A9B0506C1D5AB5C5000BB865 /* ZZLittleBannerCell.xib in Resources */,
 				A9B7835D1D5901DF003C464D /* RefreshTips.geojson in Resources */,
@@ -1187,6 +1205,7 @@
 				A90E6E3B1D39345B00C213C5 /* ZZDouYuFlowLayout.m in Sources */,
 				A99A4BDD1D37E36B001DDE47 /* ZZDouYUBannerModel.m in Sources */,
 				A980A3E51CE40E85006E0037 /* ZZHomeViewController.m in Sources */,
+				A918D4EE1DCB1C5A00B08C93 /* ZZHaoJiaHeaderView.swift in Sources */,
 				A9A7AC3B1D8BF1B400814CDD /* LEOStarView.m in Sources */,
 				A9275A191CE4556A0017BA82 /* ZZListCell.m in Sources */,
 				A99605151CE469D700C71A29 /* ZZTagLabel.m in Sources */,
@@ -1208,6 +1227,7 @@
 				A9758D7C1D8792E200FC4B89 /* ZZDiscoveryViewController.m in Sources */,
 				A9D9D2181CE40B3E00A83101 /* main.m in Sources */,
 				A9B56CB51D875AEA00BE193A /* ZZDetailBaseViewController.m in Sources */,
+				A918D4EA1DCB189400B08C93 /* ZZHaoJiaHeaderLayout.swift in Sources */,
 				A9388BB71DBC50680091969B /* ZZHaoWuBaseCell.swift in Sources */,
 				A9A03FDE1D1A726200675FA9 /* ZZWeiboTableView.m in Sources */,
 				A9E236C71D57A2C900B1A6C3 /* ZZHomeHeadModel.m in Sources */,

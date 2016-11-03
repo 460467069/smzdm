@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="eZB-ph-TYl" customClass="ZZHaoJiaHeaderView" customModule="什么值得买" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageHorizontalFour" translatesAutoresizingMaskIntoConstraints="NO" id="cTY-9I-tmJ" userLabel="小图">
+                    <rect key="frame" x="122.5" y="223" width="98" height="69"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageHorizontalFour" translatesAutoresizingMaskIntoConstraints="NO" id="OvK-7A-E6x" userLabel="小图">
+                    <rect key="frame" x="221.5" y="223" width="98.5" height="69"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePq-aQ-Mah" userLabel="line">
+                    <rect key="frame" x="0.0" y="292" width="320" height="3"/>
+                    <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="13E-TI-8H1"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Tp-LU-1MZ" customClass="ZZCycleScrollView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="152.5"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageVSTwo" translatesAutoresizingMaskIntoConstraints="NO" id="L0J-t3-LHS" userLabel="小图">
+                    <rect key="frame" x="122.5" y="152.5" width="197.5" height="69.5"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageVSOne" translatesAutoresizingMaskIntoConstraints="NO" id="Msm-wF-6VK" userLabel="大图">
+                    <rect key="frame" x="0.0" y="152.5" width="121.5" height="139.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Msm-wF-6VK" secondAttribute="height" multiplier="284:326" id="Y4E-H4-jeK"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cTY-9I-tmJ" firstAttribute="top" secondItem="OvK-7A-E6x" secondAttribute="top" id="0bO-zt-MZT"/>
+                <constraint firstAttribute="trailing" secondItem="ePq-aQ-Mah" secondAttribute="trailing" id="0k8-pR-0wm"/>
+                <constraint firstItem="Msm-wF-6VK" firstAttribute="height" secondItem="L0J-t3-LHS" secondAttribute="height" multiplier="2" id="1k0-uN-8TI"/>
+                <constraint firstItem="cTY-9I-tmJ" firstAttribute="bottom" secondItem="Msm-wF-6VK" secondAttribute="bottom" id="9G7-UG-Iow"/>
+                <constraint firstAttribute="bottom" secondItem="Msm-wF-6VK" secondAttribute="bottom" constant="3" id="9hL-C7-yNR"/>
+                <constraint firstItem="Msm-wF-6VK" firstAttribute="width" secondItem="L0J-t3-LHS" secondAttribute="width" multiplier="284:464" id="Bwp-qZ-X45"/>
+                <constraint firstItem="OvK-7A-E6x" firstAttribute="leading" secondItem="cTY-9I-tmJ" secondAttribute="trailing" constant="1" id="CCe-bM-h6U"/>
+                <constraint firstAttribute="trailing" secondItem="L0J-t3-LHS" secondAttribute="trailing" id="DMz-6V-Spc"/>
+                <constraint firstItem="Msm-wF-6VK" firstAttribute="top" secondItem="5Tp-LU-1MZ" secondAttribute="bottom" id="EcZ-TG-Kz8"/>
+                <constraint firstItem="5Tp-LU-1MZ" firstAttribute="leading" secondItem="eZB-ph-TYl" secondAttribute="leading" id="IL9-Ax-P7R"/>
+                <constraint firstAttribute="trailing" secondItem="5Tp-LU-1MZ" secondAttribute="trailing" id="Mms-aa-pSo"/>
+                <constraint firstItem="cTY-9I-tmJ" firstAttribute="top" secondItem="L0J-t3-LHS" secondAttribute="bottom" constant="1" id="WV7-K7-5Ov"/>
+                <constraint firstItem="cTY-9I-tmJ" firstAttribute="height" secondItem="OvK-7A-E6x" secondAttribute="height" id="Z4V-ny-zpr"/>
+                <constraint firstItem="Msm-wF-6VK" firstAttribute="leading" secondItem="eZB-ph-TYl" secondAttribute="leading" id="a2U-f8-hrt"/>
+                <constraint firstItem="cTY-9I-tmJ" firstAttribute="leading" secondItem="Msm-wF-6VK" secondAttribute="trailing" constant="1" id="agG-ZJ-wMd"/>
+                <constraint firstAttribute="bottom" secondItem="ePq-aQ-Mah" secondAttribute="bottom" id="bif-gB-kUk"/>
+                <constraint firstItem="ePq-aQ-Mah" firstAttribute="leading" secondItem="eZB-ph-TYl" secondAttribute="leading" id="bkg-E7-2D6"/>
+                <constraint firstAttribute="trailing" secondItem="OvK-7A-E6x" secondAttribute="trailing" id="bpY-N6-STC"/>
+                <constraint firstItem="L0J-t3-LHS" firstAttribute="leading" secondItem="Msm-wF-6VK" secondAttribute="trailing" constant="1" id="gOA-VD-sAa"/>
+                <constraint firstItem="L0J-t3-LHS" firstAttribute="top" secondItem="Msm-wF-6VK" secondAttribute="top" id="hpw-Z8-c7S"/>
+                <constraint firstItem="cTY-9I-tmJ" firstAttribute="width" secondItem="OvK-7A-E6x" secondAttribute="width" id="lNf-5n-4zH"/>
+                <constraint firstItem="5Tp-LU-1MZ" firstAttribute="top" secondItem="eZB-ph-TYl" secondAttribute="top" id="nG6-Sw-JwN"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cycleScrollView" destination="5Tp-LU-1MZ" id="MQe-ze-hnJ"/>
+                <outletCollection property="imageViews" destination="Msm-wF-6VK" collectionClass="NSMutableArray" id="yD7-sI-JA7"/>
+                <outletCollection property="imageViews" destination="L0J-t3-LHS" collectionClass="NSMutableArray" id="r59-b2-EVZ"/>
+                <outletCollection property="imageViews" destination="cTY-9I-tmJ" collectionClass="NSMutableArray" id="eqs-jA-rub"/>
+                <outletCollection property="imageViews" destination="OvK-7A-E6x" collectionClass="NSMutableArray" id="tx3-Vd-9UI"/>
+            </connections>
+            <point key="canvasLocation" x="-29" y="477"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="default_homePageHorizontalFour" width="93" height="117"/>
+        <image name="default_homePageVSOne" width="142" height="163"/>
+        <image name="default_homePageVSTwo" width="232" height="77"/>
+    </resources>
+</document>

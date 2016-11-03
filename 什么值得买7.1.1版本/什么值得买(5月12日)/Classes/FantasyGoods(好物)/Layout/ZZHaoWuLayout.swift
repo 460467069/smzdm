@@ -41,9 +41,6 @@ struct ZZHaoWuConstant {
     let subtitleBottom: CGFloat = 3.0
     let subTitleLeft: CGFloat = 15.0
     
-    
-    
-    
     let priceLabelTop: CGFloat = 25.0
     let priceLabelBottom: CGFloat = 8.0
     let priceLabelLeft: CGFloat = 12.0

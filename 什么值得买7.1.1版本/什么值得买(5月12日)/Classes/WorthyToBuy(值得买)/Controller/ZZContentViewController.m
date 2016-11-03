@@ -17,7 +17,7 @@
 #import "ZZDetailArticleViewController.h"
 #import "ZZDetailTopicViewController.h"
 #import "ZZPureWebViewController.h"
-
+#import "什么值得买-Swift.h"
 
 static NSString * const kTuiGuangCell = @"ZZTuiGuangCell";
 static NSString * const kListCell = @"ZZListCell";
@@ -27,6 +27,8 @@ static NSString * const kListCell = @"ZZListCell";
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray<UIImageView *> *imageViews;
 /** 数据源 */
 @property (nonatomic, strong) NSMutableArray <ZZWorthyArticle *> *dataArrayM;
+//@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (nonatomic, strong) ZZHaoJiaHeaderView *headerView;
 
 /** 请求参数页码 */
 @property (nonatomic, assign) NSInteger page;
@@ -56,6 +58,22 @@ static NSString * const kListCell = @"ZZListCell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     
+
+    
+    ZZHaoJiaHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:@"ZZHaoJiaHeaderView" owner:nil options:nil].lastObject;
+//    headerView.height = kScreenW / 414.0 * headerView.height;
+    self.headerView = headerView;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        LxDBAnyVar(self.headerView.height);
+        self.headerView.height = kScreenW / 320.0 * self.headerView.height;
+
+        self.tableView.tableHeaderView = headerView;
+        
+        LxDBAnyVar(headerView);
+    });
+
+//    self.tableView.tableHeaderView = headerView;
 }
 
 /** 请求头部数据 */
@@ -68,26 +86,10 @@ static NSString * const kListCell = @"ZZListCell";
         if (error){
             return;
         }
-        
         //设置轮播图片
         ZZContentHeader *headerModel = [ZZContentHeader mj_objectWithKeyValues:responseObject];
-        NSMutableArray *picArray = [NSMutableArray array];
-        [headerModel.rows enumerateObjectsUsingBlock:^(ZZHeadLine *_Nonnull headLine, NSUInteger idx, BOOL *_Nonnull stop) {
-            [picArray addObject:headLine.img];
-        }];
-        self.cycleScrollView.imageURLStringsGroup = picArray;
+        self.headerView.contentHeader = headerModel;
         
-        //轮播下面的4张小图片
-        
-        [headerModel.little_banner enumerateObjectsUsingBlock:^(ZZLittleBanner *_Nonnull littleBanner, NSUInteger idx1, BOOL *_Nonnull stop) {
-            [self.imageViews
-             enumerateObjectsUsingBlock:^(UIImageView *_Nonnull imageView, NSUInteger idx2, BOOL *_Nonnull stop) {
-                 if (idx1 == idx2)
-                 {
-                     [imageView sd_setImageWithURL:[NSURL URLWithString:littleBanner.img]];
-                 }
-             }];
-        }];
     }];
 }
 

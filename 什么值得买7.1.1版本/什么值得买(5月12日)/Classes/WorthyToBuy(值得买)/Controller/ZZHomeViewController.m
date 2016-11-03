@@ -85,9 +85,6 @@
         }
     
         [self.topScrollView addSubview:titleBtn];
-        
-        NSLog(@"%@", titleBtn);
-        
         [temArray addObject:titleBtn];
     }];
     

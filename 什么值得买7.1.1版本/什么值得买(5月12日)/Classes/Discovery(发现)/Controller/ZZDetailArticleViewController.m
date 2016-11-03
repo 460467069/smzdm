@@ -24,8 +24,9 @@
 
 NSString *const WKWebViewKeyPathLoading = @"loading";
 NSString *const WKWebViewKeyPathContentSize = @"contentSize";
+NSString *const WKEstimatedProgress = @"estimatedProgress";
 
-@interface ZZDetailArticleViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate>
+@interface ZZDetailArticleViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate, WKScriptMessageHandler>
 @property (nonatomic, strong) ZZChannelID *channel;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) ZZCircleView *circleView;
@@ -34,6 +35,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 @property (nonatomic, strong) ZZDetailHeaderLayout *headerLayout;
 @property (nonatomic, strong) ZZDetailHeaderView *headerView;
 @property (nonatomic, strong) ZZDetailModel *detailModel;
+@property (nonatomic, assign) CGSize contentSize;
 @end
 
 @implementation ZZDetailArticleViewController
@@ -59,7 +61,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     _containerScrollView.scrollsToTop = YES;
     [self.view addSubview:_containerScrollView];
     _containerScrollView.frame = CGRectMake(0, kStatusH, self.view.width, self.view.height - kStatusH - kTabBarH);
-    
+    _containerScrollView.decelerationRate = UIScrollViewDecelerationRateFast;
 
     
 
@@ -115,6 +117,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
     WKUserContentController *wkUController = [[WKUserContentController alloc] init];
     [wkUController addUserScript:wkUScript];
+    [wkUController addScriptMessageHandler:self name:@"sizeNotification"];
     
     WKWebViewConfiguration *wkWebConfig = [[WKWebViewConfiguration alloc] init];
     wkWebConfig.userContentController = wkUController;
@@ -123,11 +126,12 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
     [_webView addObserver:self forKeyPath:WKWebViewKeyPathLoading options:NSKeyValueObservingOptionNew context:nil];
+    [_webView addObserver:self forKeyPath:WKEstimatedProgress options:NSKeyValueObservingOptionNew context:nil];
     [_webView.scrollView addObserver:self forKeyPath:WKWebViewKeyPathContentSize options:NSKeyValueObservingOptionNew context:nil];
     _webView.scrollView.delegate = self;
     _webView.frame = _containerScrollView.bounds;
     
-
+    _webView.scrollView.scrollEnabled = NO;
 //    [_containerScrollView addSubview:_webView];
 }
 
@@ -253,16 +257,46 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     
+    CGFloat height = self.webView.scrollView.contentSize.height;
+    
     if ([keyPath isEqualToString:WKWebViewKeyPathLoading]){
+        
+        BOOL isLoading = [change[@"new"] boolValue];
+        
+        if (!isLoading) {
+            
+            
+        }
+        
 //        LxDBAnyVar(@"正在加载");
     }else if ([keyPath isEqualToString:WKWebViewKeyPathContentSize]){
         
-        CGSize scrollViewContentSize = [change[@"new"] CGSizeValue];
+//        CGSize scrollViewContentSize = [change[@"new"] CGSizeValue];
 
-        self.webView.height = scrollViewContentSize.height;
-        self.containerScrollView.contentSize = CGSizeMake(self.view.width, scrollViewContentSize.height + _headerLayout.height);
+//        self.webView.height = scrollViewContentSize.height;
+//        self.containerScrollView.contentSize = CGSizeMake(self.view.width, scrollViewContentSize.height + _headerLayout.height);
+//        UIScrollView *scrollView = self.webView.scrollView;
+        
+        
+        
+        [self configureWebViewContentSizeWithScrollViewHeight:height];
+        
+//        NSLog(@"New contentSize: %f x %f", scrollView.contentSize.width, scrollView.contentSize.height);
+    }else if ([keyPath isEqualToString:WKEstimatedProgress]){
+         CGFloat newprogress = [[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
+//        if (newprogress == 1) {
+        
+        LxDBAnyVar(newprogress);
+        LxDBAnyVar(height);
+            [self configureWebViewContentSizeWithScrollViewHeight:height];
+//        }
     }
     
+}
+
+- (void)configureWebViewContentSizeWithScrollViewHeight:(CGFloat)height{
+    self.webView.height = height;
+    self.containerScrollView.contentSize = CGSizeMake(self.view.width, height + _headerLayout.height);
 }
 
 #pragma mark - 事件监听
@@ -311,6 +345,27 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
      *  @return 分享菜单控制器
      */
     [ShareSDK showShareActionSheet:nil items:nil shareParams:shareParams onShareStateChanged:handler];
+}
+
+
+
+
+
+
+- (void)checkIfWKWebViewReallyDidFinishLoading{
+    _contentSize = _webView.scrollView.contentSize;
+    if (_contentSize.height == 0){
+        [self performSelector:@selector(webView:didFinishNavigation:) withObject:nil afterDelay:0.01];
+    }
+}
+
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    
+    CGFloat height = [[message.body valueForKey:@"height"] floatValue];
+    
+    [self configureWebViewContentSizeWithScrollViewHeight:height];
+    
 }
 
 
@@ -364,6 +419,11 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     
     [webView evaluateJavaScript:@"document.body.offsetHeight;" completionHandler:^(NSNumber *_Nullable result,NSError *_Nullable error) {
         
+        CGFloat height = [result floatValue];
+        
+//        LxDBAnyVar(height);
+//        self.webView.height = height;
+//        self.containerScrollView.contentSize = CGSizeMake(self.view.width, height + _headerLayout.height);
     }];
 
 }
@@ -387,7 +447,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     
     //详情: "about"
     
-    LxDBAnyVar(scheme);
+//    LxDBAnyVar(scheme);
     
     decisionHandler(WKNavigationActionPolicyAllow);
 }

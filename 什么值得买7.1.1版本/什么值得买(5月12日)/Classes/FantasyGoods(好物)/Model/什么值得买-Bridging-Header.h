@@ -10,4 +10,6 @@
 #import "MJRefresh.h"
 #import "NSString+YYAdd.h"
 #import "ZZDetailTopicViewController.h"
+#import "ZZContentHeader.h"
+#import "ZZCycleScrollView.h"
 
