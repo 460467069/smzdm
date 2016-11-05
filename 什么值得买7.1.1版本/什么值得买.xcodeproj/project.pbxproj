@@ -18,6 +18,7 @@
 		A918D4EA1DCB189400B08C93 /* ZZHaoJiaHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918D4E91DCB189400B08C93 /* ZZHaoJiaHeaderLayout.swift */; };
 		A918D4EE1DCB1C5A00B08C93 /* ZZHaoJiaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918D4ED1DCB1C5A00B08C93 /* ZZHaoJiaHeaderView.swift */; };
 		A918D4F01DCB1C6500B08C93 /* ZZHaoJiaHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A918D4EF1DCB1C6400B08C93 /* ZZHaoJiaHeaderView.xib */; };
+		A918D4F31DCB3CD300B08C93 /* ZZAllCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918D4F21DCB3CD300B08C93 /* ZZAllCommentController.swift */; };
 		A91A834E1D420A87008D229E /* weibo_0.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83461D420A87008D229E /* weibo_0.json */; };
 		A91A834F1D420A87008D229E /* weibo_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83471D420A87008D229E /* weibo_1.json */; };
 		A91A83501D420A87008D229E /* weibo_2.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83481D420A87008D229E /* weibo_2.json */; };
@@ -160,6 +161,7 @@
 		A918D4E91DCB189400B08C93 /* ZZHaoJiaHeaderLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHaoJiaHeaderLayout.swift; sourceTree = "<group>"; };
 		A918D4ED1DCB1C5A00B08C93 /* ZZHaoJiaHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHaoJiaHeaderView.swift; sourceTree = "<group>"; };
 		A918D4EF1DCB1C6400B08C93 /* ZZHaoJiaHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZHaoJiaHeaderView.xib; sourceTree = "<group>"; };
+		A918D4F21DCB3CD300B08C93 /* ZZAllCommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAllCommentController.swift; sourceTree = "<group>"; };
 		A91A83461D420A87008D229E /* weibo_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_0.json; sourceTree = "<group>"; };
 		A91A83471D420A87008D229E /* weibo_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_1.json; sourceTree = "<group>"; };
 		A91A83481D420A87008D229E /* weibo_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_2.json; sourceTree = "<group>"; };
@@ -409,6 +411,14 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
+		A918D4F11DCB3C9700B08C93 /* AllCommentController */ = {
+			isa = PBXGroup;
+			children = (
+				A918D4F21DCB3CD300B08C93 /* ZZAllCommentController.swift */,
+			);
+			path = AllCommentController;
+			sourceTree = "<group>";
+		};
 		A91A83451D420A87008D229E /* API Dump */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +655,7 @@
 				A9D9D2331CE40B7C00A83101 /* Catagory */,
 				A90618E31DBF05B6002239CF /* Scan(二维码) */,
 				A96C4C811DC98FDE00196341 /* PureWebViewController */,
+				A918D4F11DCB3C9700B08C93 /* AllCommentController */,
 				A9D9D2491CE40B7C00A83101 /* WorthyToBuy(值得买) */,
 				A9D9D23A1CE40B7C00A83101 /* Discovery(发现) */,
 				A9D9D23E1CE40B7C00A83101 /* FantasyGoods(好物) */,
@@ -1231,6 +1242,7 @@
 				A9388BB71DBC50680091969B /* ZZHaoWuBaseCell.swift in Sources */,
 				A9A03FDE1D1A726200675FA9 /* ZZWeiboTableView.m in Sources */,
 				A9E236C71D57A2C900B1A6C3 /* ZZHomeHeadModel.m in Sources */,
+				A918D4F31DCB3CD300B08C93 /* ZZAllCommentController.swift in Sources */,
 				A9E236C11D579C9600B1A6C3 /* ZZHeadLine.m in Sources */,
 				A9A7B3361CEAD775002EC0FA /* ZZRedirectData.m in Sources */,
 				A91A83581D420CFD008D229E /* WBModel.m in Sources */,

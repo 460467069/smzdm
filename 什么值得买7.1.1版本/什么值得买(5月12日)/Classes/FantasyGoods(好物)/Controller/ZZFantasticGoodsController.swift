@@ -150,6 +150,8 @@ extension ZZFantasticGoodsController{
         //        http://api.smzdm.com/v1/haowu/haowu_topic_list/?f=iphone&limit=20&offset=0&v=7.3&weixin=1
         
         
+        
+        
         ZZNetworking.get("v1/haowu/haowu_topic_list/", parameters: configureParameters()) { (responseObj, error) in
             
             if let _ = error {
