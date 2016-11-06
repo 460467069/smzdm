@@ -14,8 +14,7 @@ import UIKit
 
 
 class ZZHaoWuScrollView: UIScrollView {
-    
-    let maxCount = 15
+
     var haowuItems: [AnyObject] = []
     
     

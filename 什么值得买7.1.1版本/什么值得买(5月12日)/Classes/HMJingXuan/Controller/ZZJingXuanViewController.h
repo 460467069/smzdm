@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import "ZZFirstBaseViewController.h"
+#import "ZZFirstTableViewController.h"
 
-@interface ZZJingXuanViewController : ZZFirstBaseViewController
+@interface ZZJingXuanViewController : ZZFirstTableViewController
 
 @end

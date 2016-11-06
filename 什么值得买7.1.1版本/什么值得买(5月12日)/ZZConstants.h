@@ -34,9 +34,6 @@
 #define kHaojiaJingXuan @"haojia_jingxuan"
 #define kZhiYouFuLi @"值友福利"
 
-
-
-
 //Share SDK
 #define kShareSDKKey                @"18879f9cde450"
 
@@ -50,7 +47,12 @@
 #define kShareWeChatSecret          @"9a060eff2d92b3f1b0fbc180fa334957"
 
 //微信
-#define kShareTencentKey             @"fEiiO0nLREbY1Hop"
-#define kShareTencentSecret          @"9a060eff2d92b3f1b0fbc180fa334957"
+#define kShareTencentKey            @"fEiiO0nLREbY1Hop"
+#define kShareTencentSecret         @"9a060eff2d92b3f1b0fbc180fa334957"
+
+// JSPatch
+#define kJSPatchKey                 @"c9cdea7d8f31f8e6"
+
+
 
 #endif /* ZZConstants_h */

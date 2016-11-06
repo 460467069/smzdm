@@ -13,13 +13,13 @@
 //腾讯开放平台（对应QQ和QQ空间）SDK头文件
 #import <TencentOpenAPI/TencentOAuth.h>
 #import <TencentOpenAPI/QQApiInterface.h>
-
 //微信SDK头文件
 #import "WXApi.h"
-
 //新浪微博SDK头文件
 #import "WeiboSDK.h"
 //新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"
+
+#import <JSPatchPlatform/JSPatch.h>
 
 @implementation AppDelegate (SDKInit)
 
@@ -84,6 +84,22 @@
      *  @param configurationHandler     配置回调处理，在此方法中根据设置的platformType来填充应用配置信息
      */
     [ShareSDK registerApp:kShareSDKKey activePlatforms:platforms onImport:importHandler onConfiguration:configurationHandler];
+    
+    
+    
+    // JSPatch
+    [JSPatch startWithAppKey:kJSPatchKey];
+    
+    //用来检测回调的状态，是更新或者是执行脚本之类的，相关信息，会打印在你的控制台
+    [JSPatch setupCallback:^(JPCallbackType type, NSDictionary *data, NSError *error) {
+        
+    }];
+    
+    [JSPatch setupDevelopment];
+    [JSPatch sync];
+    
+    
+    
 }
 
 @end

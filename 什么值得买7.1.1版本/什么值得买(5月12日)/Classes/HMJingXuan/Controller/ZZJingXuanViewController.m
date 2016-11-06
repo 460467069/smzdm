@@ -12,8 +12,7 @@
 static NSString *const kHMJingXuanTableViewCell = @"ZZJingXuanTableViewCell";
 
 @interface ZZJingXuanViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray *dataArray;
+
 @end
 
 @implementation ZZJingXuanViewController
@@ -22,52 +21,44 @@ static NSString *const kHMJingXuanTableViewCell = @"ZZJingXuanTableViewCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self tableViewInitial];
-    
-    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kHMJingXuanTableViewCell];
+    
 }
 
-/** 初始化tableView */
-- (void)tableViewInitial {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    tableView.backgroundColor = [UIColor whiteColor];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    tableView.scrollsToTop = YES;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:tableView];
-    self.tableView = tableView;
+- (void)loadData{
+    self.dataSource = [NSMutableArray arrayWithArray:[ZZJingXuanModel models]];
+//    [self addElement];
+    [self.tableView reloadData];
+    [self.tableView.mj_header endRefreshing];
 }
 
+//- (void)addElement{
+//    ZZJingXuanModel *model = [[ZZJingXuanModel alloc] init];
+//    model.title = @"JSPtach热修复";
+//    [self.dataSource addObject:model];
+//}
+
+- (void)loadMoreData{
+    [self.tableView.mj_footer endRefreshing];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataArray.count;
+    return self.dataSource.count;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHMJingXuanTableViewCell forIndexPath:indexPath];
     
-    ZZJingXuanModel *model = self.dataArray[indexPath.row];
+    ZZJingXuanModel *model = self.dataSource[indexPath.row];
     
     cell.textLabel.text = model.title;
     
     return cell;
-}
-
-
-#pragma mark - getter && setter
-
-- (NSArray *)dataArray {
-	if(_dataArray == nil) {
-		_dataArray = [ZZJingXuanModel models];
-	}
-	return _dataArray;
 }
 
 @end
