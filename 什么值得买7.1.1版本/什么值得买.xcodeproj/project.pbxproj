@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86C690561DCF21E6003D84A7 /* ZZCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C690551DCF21E6003D84A7 /* ZZCommentModel.swift */; };
+		86EA74FA1DCF19A100CD9261 /* ZZAllCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA74F61DCF19A100CD9261 /* ZZAllCommentController.swift */; };
 		A90618E51DBF064A002239CF /* ZZQRcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90618E41DBF064A002239CF /* ZZQRcodeController.swift */; };
 		A90B12E01DAA38990051B237 /* ZZGoodsHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */; };
 		A90DBF141DBF740900D857A9 /* UINavigationItem+Margin.m in Sources */ = {isa = PBXBuildFile; fileRef = A90DBF131DBF740900D857A9 /* UINavigationItem+Margin.m */; };
@@ -18,7 +20,6 @@
 		A918D4EA1DCB189400B08C93 /* ZZHaoJiaHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918D4E91DCB189400B08C93 /* ZZHaoJiaHeaderLayout.swift */; };
 		A918D4EE1DCB1C5A00B08C93 /* ZZHaoJiaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918D4ED1DCB1C5A00B08C93 /* ZZHaoJiaHeaderView.swift */; };
 		A918D4F01DCB1C6500B08C93 /* ZZHaoJiaHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A918D4EF1DCB1C6400B08C93 /* ZZHaoJiaHeaderView.xib */; };
-		A918D4F31DCB3CD300B08C93 /* ZZAllCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A918D4F21DCB3CD300B08C93 /* ZZAllCommentController.swift */; };
 		A91A834E1D420A87008D229E /* weibo_0.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83461D420A87008D229E /* weibo_0.json */; };
 		A91A834F1D420A87008D229E /* weibo_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83471D420A87008D229E /* weibo_1.json */; };
 		A91A83501D420A87008D229E /* weibo_2.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83481D420A87008D229E /* weibo_2.json */; };
@@ -143,6 +144,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86C690551DCF21E6003D84A7 /* ZZCommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentModel.swift; sourceTree = "<group>"; };
+		86EA74F61DCF19A100CD9261 /* ZZAllCommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAllCommentController.swift; sourceTree = "<group>"; };
 		A0A221ED76D299EA45C20125 /* Pods-什么值得买.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.release.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.release.xcconfig"; sourceTree = "<group>"; };
 		A90618E41DBF064A002239CF /* ZZQRcodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZQRcodeController.swift; sourceTree = "<group>"; };
 		A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZGoodsHeaderModel.swift; sourceTree = "<group>"; };
@@ -161,7 +164,6 @@
 		A918D4E91DCB189400B08C93 /* ZZHaoJiaHeaderLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHaoJiaHeaderLayout.swift; sourceTree = "<group>"; };
 		A918D4ED1DCB1C5A00B08C93 /* ZZHaoJiaHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHaoJiaHeaderView.swift; sourceTree = "<group>"; };
 		A918D4EF1DCB1C6400B08C93 /* ZZHaoJiaHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZHaoJiaHeaderView.xib; sourceTree = "<group>"; };
-		A918D4F21DCB3CD300B08C93 /* ZZAllCommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAllCommentController.swift; sourceTree = "<group>"; };
 		A91A83461D420A87008D229E /* weibo_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_0.json; sourceTree = "<group>"; };
 		A91A83471D420A87008D229E /* weibo_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_1.json; sourceTree = "<group>"; };
 		A91A83481D420A87008D229E /* weibo_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_2.json; sourceTree = "<group>"; };
@@ -396,6 +398,36 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		86EA74F51DCF19A100CD9261 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				86EA74F61DCF19A100CD9261 /* ZZAllCommentController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		86EA74F71DCF19A100CD9261 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		86EA74F81DCF19A100CD9261 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86C690551DCF21E6003D84A7 /* ZZCommentModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		86EA74F91DCF19A100CD9261 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A90618E31DBF05B6002239CF /* Scan(二维码) */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,7 +447,10 @@
 		A918D4F11DCB3C9700B08C93 /* AllCommentController */ = {
 			isa = PBXGroup;
 			children = (
-				A918D4F21DCB3CD300B08C93 /* ZZAllCommentController.swift */,
+				86EA74F51DCF19A100CD9261 /* Controller */,
+				86EA74F71DCF19A100CD9261 /* Layout */,
+				86EA74F81DCF19A100CD9261 /* Model */,
+				86EA74F91DCF19A100CD9261 /* View */,
 			);
 			path = AllCommentController;
 			sourceTree = "<group>";
@@ -1236,6 +1271,7 @@
 				A90E5BCE1D0AB2C40054CDC9 /* ZZDiscoveryView.m in Sources */,
 				A9AEA3261D5F6F17003B8264 /* ZZCycleScrollView.m in Sources */,
 				A9E236CA1D57A34C00B1A6C3 /* ZZTitleBannelOption.m in Sources */,
+				86C690561DCF21E6003D84A7 /* ZZCommentModel.swift in Sources */,
 				A9D9D24F1CE40B7C00A83101 /* NSString+ZZBound.m in Sources */,
 				A97229911D5D6FD9001415A8 /* ZZHomeFirstLayout.m in Sources */,
 				A91D9B4B1D8548740073DEB7 /* ZZDetailTopicHeaderModel.m in Sources */,
@@ -1249,7 +1285,7 @@
 				A9388BB71DBC50680091969B /* ZZHaoWuBaseCell.swift in Sources */,
 				A9A03FDE1D1A726200675FA9 /* ZZWeiboTableView.m in Sources */,
 				A9E236C71D57A2C900B1A6C3 /* ZZHomeHeadModel.m in Sources */,
-				A918D4F31DCB3CD300B08C93 /* ZZAllCommentController.swift in Sources */,
+				86EA74FA1DCF19A100CD9261 /* ZZAllCommentController.swift in Sources */,
 				A9E236C11D579C9600B1A6C3 /* ZZHeadLine.m in Sources */,
 				A9A7B3361CEAD775002EC0FA /* ZZRedirectData.m in Sources */,
 				A91A83581D420CFD008D229E /* WBModel.m in Sources */,

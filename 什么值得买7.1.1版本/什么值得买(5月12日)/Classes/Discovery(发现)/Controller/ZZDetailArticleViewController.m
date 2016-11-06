@@ -15,6 +15,7 @@
 #import "ZZDetailModel.h"
 #import "ZZDetailHeaderView.h"
 #import "UINavigationItem+Margin.h"
+#import "什么值得买-Swift.h"
 
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
@@ -26,7 +27,7 @@ NSString *const WKWebViewKeyPathLoading = @"loading";
 NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 NSString *const WKEstimatedProgress = @"estimatedProgress";
 
-@interface ZZDetailArticleViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate, WKScriptMessageHandler>
+@interface ZZDetailArticleViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate, WKScriptMessageHandler, ZZDetailBaseBottomBarDelegate>
 @property (nonatomic, strong) ZZChannelID *channel;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) ZZCircleView *circleView;
@@ -64,7 +65,6 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
     _containerScrollView.decelerationRate = UIScrollViewDecelerationRateFast;
 
     
-
     //初始化webView
     [self initialWebView];
     //加载数据
@@ -100,6 +100,7 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
 - (void)initialBottomToolBar{
 
     ZZDetailBaseBottomBar *bottomToolBar = [ZZDetailBaseBottomBar barWithStyle:DetailBottomBarStyleHaiTao];
+    bottomToolBar.delegate = self;
     [self.view addSubview:bottomToolBar];
     [bottomToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.offset(0);
@@ -286,8 +287,8 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
          CGFloat newprogress = [[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
 //        if (newprogress == 1) {
         
-        LxDBAnyVar(newprogress);
-        LxDBAnyVar(height);
+//        LxDBAnyVar(newprogress);
+//        LxDBAnyVar(height);
             [self configureWebViewContentSizeWithScrollViewHeight:height];
 //        }
     }
@@ -347,16 +348,13 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
     [ShareSDK showShareActionSheet:nil items:nil shareParams:shareParams onShareStateChanged:handler];
 }
 
-
-
-
-
-
-- (void)checkIfWKWebViewReallyDidFinishLoading{
-    _contentSize = _webView.scrollView.contentSize;
-    if (_contentSize.height == 0){
-        [self performSelector:@selector(webView:didFinishNavigation:) withObject:nil afterDelay:0.01];
-    }
+#pragma mark - ZZDetailBaseBottomBarDelegate
+- (void)bottomBarLinkBtnDidClick:(ZZDetailBaseBottomBar *)bottomBar{
+    
+    ZZAllCommentController *commentController = [[ZZAllCommentController alloc] init];
+    
+    commentController.articleID = self.article_id;
+    [self.navigationController pushViewController:commentController animated:YES];
 }
 
 
@@ -419,7 +417,7 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
     
     [webView evaluateJavaScript:@"document.body.offsetHeight;" completionHandler:^(NSNumber *_Nullable result,NSError *_Nullable error) {
         
-        CGFloat height = [result floatValue];
+//        CGFloat height = [result floatValue];
         
 //        LxDBAnyVar(height);
 //        self.webView.height = height;

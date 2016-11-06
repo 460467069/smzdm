@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZZAllCommentController: ZZFirstTableViewController {
+class ZZAllCommentController: ZZSecondTableViewController {
 
     var offset: Int = 0
     var articleID: String?
@@ -17,12 +17,7 @@ class ZZAllCommentController: ZZFirstTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "所有评论"
-//        https://api.smzdm.com/v1/comments?article_id=6520669&atta=0&cate=new&f=iphone&get_total=1&ishot=1&limit=20&offset=0&smiles=0&type=faxian&v=7.3.3&weixin=1
-        
 
-        ZZNetworking.get("v1/comments", parameters: configureParameters()) { (responseObj, error) in
-            
-        }
         
     }
     
@@ -42,3 +37,16 @@ class ZZAllCommentController: ZZFirstTableViewController {
     }
 
 }
+
+extension ZZAllCommentController{
+    
+    override func loadData() {
+        
+        //        https://api.smzdm.com/v1/comments?article_id=6520669&atta=0&cate=new&f=iphone&get_total=1&ishot=1&limit=20&offset=0&smiles=0&type=faxian&v=7.3.3&weixin=1
+        ZZNetworking.get("v1/comments", parameters: configureParameters()) { (responseObj, error) in
+            
+        }
+    }
+    
+}
+

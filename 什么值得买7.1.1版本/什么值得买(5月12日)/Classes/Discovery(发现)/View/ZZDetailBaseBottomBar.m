@@ -95,6 +95,7 @@
         [rightBtn setImage:[UIImage imageNamed:@"IMG_YHDetail_zdlj"] forState:UIControlStateNormal];
         [self addSubview:rightBtn];
         
+        [rightBtn addTarget:self action:@selector(rightBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return self;
@@ -102,8 +103,14 @@
 
 - (void)itemLabelDidClick {
     
-    
 	
+}
+
+- (void)rightBtnDidClick{
+    if ([self.delegate respondsToSelector:@selector(bottomBarLinkBtnDidClick:)]) {
+        
+        [self.delegate bottomBarLinkBtnDidClick:self];
+    }
 }
 
 @end
