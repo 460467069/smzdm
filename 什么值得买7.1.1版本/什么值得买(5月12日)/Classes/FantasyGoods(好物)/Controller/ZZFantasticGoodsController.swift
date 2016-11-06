@@ -174,10 +174,7 @@ extension ZZFantasticGoodsController{
                 if haoWuLayoutArray.count > 0 {
                     
                     self.dataSource = haoWuLayoutArray
-                    
                     self.tableView.reloadData()
-                    
-                    self.offset += 20
                 }
                 self.tableView.mj_header.endRefreshing()
 
@@ -189,6 +186,7 @@ extension ZZFantasticGoodsController{
     
     override func loadMoreData() {
         
+        self.offset = self.dataSource.count;
         
         ZZNetworking.get("v1/haowu/haowu_topic_list/", parameters: configureParameters()) { (responseObj, error) in
             
@@ -205,10 +203,7 @@ extension ZZFantasticGoodsController{
                         
                         haoWuLayoutArray.add(haowuLayout)
                     }
-                    
-                    
-                    
-                    
+
                 }
                 if haoWuLayoutArray.count > 0 {
                     
@@ -218,6 +213,7 @@ extension ZZFantasticGoodsController{
                     
                     self.tableView.reloadData()
                     self.tableView.mj_footer.endRefreshing()
+                    
                 }else{
                     self.tableView.mj_footer.endRefreshing()
                 }

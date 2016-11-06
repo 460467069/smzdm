@@ -106,12 +106,13 @@ static NSString * const kListCell = @"ZZListCell";
         self.dataArrayM = [NSMutableArray arrayWithArray:temArray];
         [self.tableView reloadData];
         
+        self.page++;
     }];
 }
 
 - (void)loadMoreData
 {
-    self.page++;
+    
     NSMutableDictionary *parameters = [self configureParameters];
     ZZWorthyArticle *artcle = self.dataArrayM.lastObject;
     if (![self.homeChannel.type isEqualToString:kHaojiaJingXuan]) {
@@ -131,6 +132,8 @@ static NSString * const kListCell = @"ZZListCell";
         NSArray *temArray = [NSArray modelArrayWithClass:[ZZWorthyArticle class] json:rows];
         [self.dataArrayM addObjectsFromArray:temArray];
         [self.tableView reloadData];
+        
+        self.page++;
     }];
 }
 

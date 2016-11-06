@@ -116,11 +116,13 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         self.listArrayM = [NSMutableArray arrayWithArray:temArray];
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
+        
+        self.page++;
     }];
 }
 
 - (void)loadMoreData{
-    self.page++;
+    
     NSMutableDictionary *parameters = [self configureParameters];
     NSString *timeSort = self.listArrayM.lastObject.time_sort;
     [parameters setValue:timeSort forKey:@"time_sort"];
@@ -142,6 +144,8 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         [self.listArrayM addObjectsFromArray:temArray];
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
+        
+        self.page++;
     }];
 }
 
