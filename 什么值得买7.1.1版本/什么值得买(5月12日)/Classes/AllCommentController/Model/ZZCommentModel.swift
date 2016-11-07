@@ -66,6 +66,12 @@ class ZZCommentModel: NSObject {
 
     var user_smzdm_id: String?
     
+    
+    class func modelContainerPropertyGenericClass()->[String : AnyObject]{
+        return ["parent_data" : ZZCommentModel.self,
+                "medals" : ZZMedals.self]
+    }
+    
 }
 
 class ZZMedals: NSObject {
@@ -75,4 +81,6 @@ class ZZMedals: NSObject {
     var desc: String?
 
 }
+
+
 

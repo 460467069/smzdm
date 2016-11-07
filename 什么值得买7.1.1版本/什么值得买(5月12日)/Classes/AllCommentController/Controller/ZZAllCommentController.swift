@@ -19,6 +19,7 @@ class ZZAllCommentController: ZZSecondTableViewController {
         title = "所有评论"
 
         
+        tableView.mj_header.beginRefreshing()
     }
     
     
@@ -40,12 +41,64 @@ class ZZAllCommentController: ZZSecondTableViewController {
 
 extension ZZAllCommentController{
     
-    override func loadData() {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.dataSource.count
+    }
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//        return nil
+//    }
+}
+
+extension ZZAllCommentController{
+    
+    override func loadData() {
+
         //        https://api.smzdm.com/v1/comments?article_id=6520669&atta=0&cate=new&f=iphone&get_total=1&ishot=1&limit=20&offset=0&smiles=0&type=faxian&v=7.3.3&weixin=1
         ZZNetworking.get("v1/comments", parameters: configureParameters()) { (responseObj, error) in
             
+            if let _ = error{
+                self.tableView.mj_header.endRefreshing()
+                return
+            }
+            
+            if let responseObj = responseObj as? [AnyHashable : Any]{
+    
+                if let hotComments = responseObj["hot_comments"] as? [[AnyHashable : Any]]{
+                    
+                    self.handleCommentLayouts(commentDicts: hotComments)
+                }
+                
+                if let rows = responseObj["rows"] as? [[AnyHashable : Any]]{
+            
+                    self.handleCommentLayouts(commentDicts: rows)
+                }
+            }
+            
         }
+    }
+    
+    func handleCommentLayouts(commentDicts: [[AnyHashable : Any]]) {
+        
+        for commentDict in commentDicts {
+            
+            if let commentModel = ZZCommentModel.model(with: commentDict) {
+                
+                let commentLayout = ZZAllCommentLayout.init(commentModel: commentModel)
+                
+                self.dataSource.add(commentLayout)
+                
+            }
+            
+        }
+        
     }
     
 }

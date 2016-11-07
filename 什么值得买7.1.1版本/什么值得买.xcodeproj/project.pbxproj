@@ -136,6 +136,7 @@
 		A9E236C41D579D7F00B1A6C3 /* ZZLittleBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E236C31D579D7F00B1A6C3 /* ZZLittleBanner.m */; };
 		A9E236C71D57A2C900B1A6C3 /* ZZHomeHeadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E236C61D57A2C900B1A6C3 /* ZZHomeHeadModel.m */; };
 		A9E236CA1D57A34C00B1A6C3 /* ZZTitleBannelOption.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E236C91D57A34C00B1A6C3 /* ZZTitleBannelOption.m */; };
+		A9E440AF1DD078B7005D17DB /* ZZAllCommentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E440AE1DD078B7005D17DB /* ZZAllCommentLayout.swift */; };
 		A9EE8D6E1D74A54900A72C29 /* ZZDetailArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EE8D6D1D74A54900A72C29 /* ZZDetailArticleViewController.m */; };
 		A9F4F1741D395D7900191336 /* ZZDouYuTitileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F4F1731D395D7900191336 /* ZZDouYuTitileView.xib */; };
 		A9FC17A91D825E3200F16D1E /* ZZDetailBaseBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC17A81D825E3200F16D1E /* ZZDetailBaseBottomBar.m */; };
@@ -366,6 +367,7 @@
 		A9E236C61D57A2C900B1A6C3 /* ZZHomeHeadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeHeadModel.m; sourceTree = "<group>"; };
 		A9E236C81D57A34C00B1A6C3 /* ZZTitleBannelOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTitleBannelOption.h; sourceTree = "<group>"; };
 		A9E236C91D57A34C00B1A6C3 /* ZZTitleBannelOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZTitleBannelOption.m; sourceTree = "<group>"; };
+		A9E440AE1DD078B7005D17DB /* ZZAllCommentLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAllCommentLayout.swift; sourceTree = "<group>"; };
 		A9EE8D6C1D74A54900A72C29 /* ZZDetailArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailArticleViewController.h; sourceTree = "<group>"; };
 		A9EE8D6D1D74A54900A72C29 /* ZZDetailArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailArticleViewController.m; sourceTree = "<group>"; };
 		A9F4F1731D395D7900191336 /* ZZDouYuTitileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZDouYuTitileView.xib; sourceTree = "<group>"; };
@@ -406,26 +408,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		86EA74F71DCF19A100CD9261 /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Layout;
-			sourceTree = "<group>";
-		};
 		86EA74F81DCF19A100CD9261 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				86C690551DCF21E6003D84A7 /* ZZCommentModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		86EA74F91DCF19A100CD9261 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		A90618E31DBF05B6002239CF /* Scan(二维码) */ = {
@@ -447,10 +435,10 @@
 		A918D4F11DCB3C9700B08C93 /* AllCommentController */ = {
 			isa = PBXGroup;
 			children = (
+				A9E440AC1DD0788B005D17DB /* Layout */,
+				A9E440AD1DD0788B005D17DB /* View */,
 				86EA74F51DCF19A100CD9261 /* Controller */,
-				86EA74F71DCF19A100CD9261 /* Layout */,
 				86EA74F81DCF19A100CD9261 /* Model */,
-				86EA74F91DCF19A100CD9261 /* View */,
 			);
 			path = AllCommentController;
 			sourceTree = "<group>";
@@ -1034,6 +1022,21 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
+		A9E440AC1DD0788B005D17DB /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				A9E440AE1DD078B7005D17DB /* ZZAllCommentLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		A9E440AD1DD0788B005D17DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BBF84AC801C23E3FA5D0F8BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1208,6 +1211,7 @@
 				A97229941D5D7C2D001415A8 /* ZZHomeFirstModel.m in Sources */,
 				A9B0506B1D5AB5C5000BB865 /* ZZLittleBannerCell.m in Sources */,
 				A98904461D8A105400D55FF4 /* ZZDetailYouHuiBottomBar.m in Sources */,
+				A9E440AF1DD078B7005D17DB /* ZZAllCommentLayout.swift in Sources */,
 				A90B12E01DAA38990051B237 /* ZZGoodsHeaderModel.swift in Sources */,
 				A97B05C31D83DE650002CC31 /* ZZDetailModel.m in Sources */,
 				A9DBBAF51DB2282900089A73 /* ZZHaoWuLayout.swift in Sources */,

@@ -178,9 +178,6 @@
     
     [self titleBtnDidClick:self.titleBtnArray[index]];
     
-    
-    
-    
 }
 
 #pragma mark - getter / setter

@@ -76,4 +76,12 @@
     return nil;
 }
 
+#pragma mark - getter && setter
+- (NSMutableArray *)dataSource{
+    if (_dataSource == nil) {
+        _dataSource = [NSMutableArray array];
+    }
+    return _dataSource;
+}
+
 @end
