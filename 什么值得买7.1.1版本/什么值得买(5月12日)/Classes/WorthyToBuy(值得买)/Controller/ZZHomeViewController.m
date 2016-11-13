@@ -149,6 +149,8 @@
     ZZContentViewController *contentVc = [self controllerWithChannel:channel];
     cell.contentController = contentVc;
     
+    LxDBAnyVar(indexPath.item);
+    
     return cell;
 }
 

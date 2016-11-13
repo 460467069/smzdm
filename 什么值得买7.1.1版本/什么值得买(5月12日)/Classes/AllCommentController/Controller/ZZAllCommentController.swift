@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let kTableViewHeaderReuseID = "tableViewHeaderReuseID"
+
 class ZZAllCommentController: ZZSecondTableViewController {
 
     var offset: Int = 0
@@ -18,8 +20,15 @@ class ZZAllCommentController: ZZSecondTableViewController {
         super.viewDidLoad()
         title = "所有评论"
 
+        tableView.register(ZZCommentCell.self, forCellReuseIdentifier: kTableViewHeaderReuseID)
         
         tableView.mj_header.beginRefreshing()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        print(tableView)
     }
     
     
@@ -51,10 +60,25 @@ extension ZZAllCommentController{
         return self.dataSource.count
     }
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        return nil
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: kTableViewHeaderReuseID, for: indexPath) as! ZZCommentCell
+        
+        let commentLayout = self.dataSource[indexPath.row] as! ZZAllCommentLayout
+
+//        cell.backgroundColor = UIColor.random()
+        cell.commentLayout = commentLayout
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let commentLayout = self.dataSource[indexPath.row] as! ZZAllCommentLayout
+        
+        
+        return commentLayout.rowHeight
+        
+    }
 }
 
 extension ZZAllCommentController{
@@ -73,30 +97,32 @@ extension ZZAllCommentController{
     
                 if let hotComments = responseObj["hot_comments"] as? [[AnyHashable : Any]]{
                     
-                    self.handleCommentLayouts(commentDicts: hotComments)
+                    self.handleCommentLayouts(commentDicts: hotComments, isHotComment: true)
                 }
                 
                 if let rows = responseObj["rows"] as? [[AnyHashable : Any]]{
             
-                    self.handleCommentLayouts(commentDicts: rows)
+                    self.handleCommentLayouts(commentDicts: rows, isHotComment: false)
                 }
+                
+                self.tableView.reloadData()
+                
+                self.tableView.mj_header.endRefreshing()
             }
             
         }
     }
     
-    func handleCommentLayouts(commentDicts: [[AnyHashable : Any]]) {
+    func handleCommentLayouts(commentDicts: [[AnyHashable : Any]], isHotComment: Bool) {
         
         for commentDict in commentDicts {
             
             if let commentModel = ZZCommentModel.model(with: commentDict) {
                 
-                let commentLayout = ZZAllCommentLayout.init(commentModel: commentModel)
-                
+                let commentLayout = ZZAllCommentLayout.init(commentModel: commentModel, isHotComment: isHotComment)
                 self.dataSource.add(commentLayout)
                 
             }
-            
         }
         
     }

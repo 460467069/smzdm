@@ -40,7 +40,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
         complectionBlock(nil, error);
-        LxDBAnyVar(task.response.URL.absoluteString);
+//        LxDBAnyVar(task.response.URL.absoluteString);
     }];
     
 }

@@ -34,7 +34,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     [super viewDidLoad];
 //     {{0, 244}, {414, 180}}
     ZZHomeHeaderViewController *headerVC = [[ZZHomeHeaderViewController alloc] init];
-    headerVC.view.backgroundColor = [UIColor redColor];
+//    headerVC.view.backgroundColor = [UIColor redColor];
     headerVC.view.bounds = CGRectMake(0, 0, kScreenW, 360);
     [self addChildViewController:headerVC];
     [headerVC didMoveToParentViewController:self];

@@ -4,7 +4,7 @@
 //
 //  Created by Wang_ruzhou on 16/5/12.
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
-//  几个主界面的父控制器
+//  (一级界面) 几个主界面的父控制器
 
 #import <UIKit/UIKit.h>
 

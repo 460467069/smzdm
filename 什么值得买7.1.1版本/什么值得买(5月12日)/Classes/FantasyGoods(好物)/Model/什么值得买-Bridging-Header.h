@@ -12,4 +12,5 @@
 #import "ZZDetailTopicViewController.h"
 #import "ZZContentHeader.h"
 #import "ZZCycleScrollView.h"
-
+#import "UIColor+HEX.h"
+#import "ZZCyclePicHelper.h"

@@ -117,6 +117,7 @@
 		A9B783581D58FB90003C464D /* ZZCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B783571D58FB90003C464D /* ZZCircleView.m */; };
 		A9B7835B1D59019D003C464D /* ZZRefreshTip.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7835A1D59019D003C464D /* ZZRefreshTip.m */; };
 		A9B7835D1D5901DF003C464D /* RefreshTips.geojson in Resources */ = {isa = PBXBuildFile; fileRef = A9B7835C1D5901DF003C464D /* RefreshTips.geojson */; };
+		A9C108B81DD15C6D00068A7D /* ZZCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C108B71DD15C6D00068A7D /* ZZCommentCell.swift */; };
 		A9C3569D1D227581006EE7EC /* ZZHomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C3569C1D227581006EE7EC /* ZZHomeViewController.storyboard */; };
 		A9C3569F1D227586006EE7EC /* ZZContentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C3569E1D227586006EE7EC /* ZZContentViewController.storyboard */; };
 		A9C356A11D2275BC006EE7EC /* ZZMineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C356A01D2275BC006EE7EC /* ZZMineViewController.storyboard */; };
@@ -337,10 +338,11 @@
 		A9B783591D59019D003C464D /* ZZRefreshTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZRefreshTip.h; sourceTree = "<group>"; };
 		A9B7835A1D59019D003C464D /* ZZRefreshTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZRefreshTip.m; sourceTree = "<group>"; };
 		A9B7835C1D5901DF003C464D /* RefreshTips.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RefreshTips.geojson; sourceTree = "<group>"; };
+		A9C108B71DD15C6D00068A7D /* ZZCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentCell.swift; sourceTree = "<group>"; };
 		A9C3569C1D227581006EE7EC /* ZZHomeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZHomeViewController.storyboard; sourceTree = "<group>"; };
 		A9C3569E1D227586006EE7EC /* ZZContentViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZContentViewController.storyboard; sourceTree = "<group>"; };
 		A9C356A01D2275BC006EE7EC /* ZZMineViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZMineViewController.storyboard; sourceTree = "<group>"; };
-		A9C8C4E41D8F58EB00B8BFA7 /* 什么值得买-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "什么值得买-Bridging-Header.h"; sourceTree = "<group>"; };
+		A9C8C4E41D8F58EB00B8BFA7 /* 什么值得买-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "什么值得买-Bridging-Header.h"; path = "Classes/FantasyGoods(好物)/Model/什么值得买-Bridging-Header.h"; sourceTree = "<group>"; };
 		A9C8C4E51D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZFantasticGoodsModel.swift; sourceTree = "<group>"; };
 		A9C8C4E71D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZFantasticGoodsController.swift; sourceTree = "<group>"; };
 		A9C8C4E91D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZFantasticGoodsController.storyboard; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 				A9D9D2271CE40B3E00A83101 /* Info.plist */,
 				A980A3E11CE40C4A006E0037 /* PrefixHeader.pch */,
 				A95605F51DA87E4C00473B46 /* ZZSwiftCommon.swift */,
+				A9C8C4E41D8F58EB00B8BFA7 /* 什么值得买-Bridging-Header.h */,
 				A989043B1D8A0AF000D55FF4 /* ZZConstants.h */,
 				A989043D1D8A0EED00D55FF4 /* ZZEnums.h */,
 			);
@@ -846,7 +849,6 @@
 				A99A4BDF1D37F3BA001DDE47 /* ZZDouYuHomeModel.m */,
 				A9C8C4E51D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift */,
 				A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */,
-				A9C8C4E41D8F58EB00B8BFA7 /* 什么值得买-Bridging-Header.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1033,6 +1035,7 @@
 		A9E440AD1DD0788B005D17DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A9C108B71DD15C6D00068A7D /* ZZCommentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1251,6 +1254,7 @@
 				A92151D71D83A1D800749413 /* YYTextExampleHelper.m in Sources */,
 				A98904381D8A09DD00D55FF4 /* ZZHaoJiaHeaderViewController.m in Sources */,
 				A9FC17A91D825E3200F16D1E /* ZZDetailBaseBottomBar.m in Sources */,
+				A9C108B81DD15C6D00068A7D /* ZZCommentCell.swift in Sources */,
 				A91D5C981D83F50500C2B690 /* ZZDetailHeaderView.m in Sources */,
 				A980A4091CE412E8006E0037 /* ZZTabBarViewController.m in Sources */,
 				A98904401D8A0F7300D55FF4 /* ZZDetailHaowuBottomBar.m in Sources */,

@@ -37,7 +37,6 @@ class ZZHaoWuBaseCell: UITableViewCell {
     
     var indexPathRow: NSInteger?
     
-    
     var haowuLayout: ZZHaoWuLayout? {
         
         didSet {
@@ -53,7 +52,7 @@ class ZZHaoWuBaseCell: UITableViewCell {
     
     lazy var scrollView: ZZHaoWuScrollView = {
         let scrollView = ZZHaoWuScrollView()
-        scrollView.width = screenWidth
+        scrollView.width = kScreenWidth
         
         return scrollView
     }()
@@ -62,7 +61,7 @@ class ZZHaoWuBaseCell: UITableViewCell {
         let headLabel = YYLabel()
         headLabel.textColor = haoWuConstant.headTitleColor
         headLabel.font = haoWuConstant.headTitleFont
-        headLabel.width = screenWidth - 100
+        headLabel.width = kScreenWidth - 100
         headLabel.height = haoWuConstant.headTitleHeight
         headLabel.left = haoWuConstant.headTitleLeft
         headLabel.top = haoWuConstant.headTitleTop

@@ -16,7 +16,7 @@ class ZZCommentModel: NSObject {
 
     var oppose_count: String?
 
-    var medals: [ZZMedals]?
+    var medals: [ZZMedal]?
     
     var parent_data: [ZZCommentModel]?
 
@@ -69,12 +69,12 @@ class ZZCommentModel: NSObject {
     
     class func modelContainerPropertyGenericClass()->[String : AnyObject]{
         return ["parent_data" : ZZCommentModel.self,
-                "medals" : ZZMedals.self]
+                "medals" : ZZMedal.self]
     }
     
 }
 
-class ZZMedals: NSObject {
+class ZZMedal: NSObject {
 
     var img: String?
 

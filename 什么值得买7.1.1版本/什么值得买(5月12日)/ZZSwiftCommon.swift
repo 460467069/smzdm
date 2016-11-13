@@ -8,13 +8,20 @@
 
 import Foundation
 
-let screenBounds = UIScreen.main.bounds
-let screenWidth = UIScreen.main.bounds.width
-let screenHeight = UIScreen.main.bounds.height
-let screenScale = UIScreen.main.scale
+let kScreenBounds = UIScreen.main.bounds
+let kScreenWidth = UIScreen.main.bounds.width
+let kScreenHeight = UIScreen.main.bounds.height
+let kScreenScale = UIScreen.main.scale
 
-let navHeight = 44.0
-let tabBarHeight = 49.0
+let kNavHeight = 44.0
+let kNabBarHeight = 49.0
+
+let kGlobalGrayColor = UIColor.init(hexString: "#666666")
+let kGlobalRedColor = UIColor.init(hexString: "#F04848")
+let kGlobalLightGrayColor = UIColor.init(red: 234.0/255.0, green: 234.0/255.0, blue: 234.0/255.0, alpha: 1.0)
+
+
+
 
 
 

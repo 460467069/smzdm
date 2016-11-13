@@ -107,7 +107,7 @@ class ZZHaoWuCellOne: ZZHaoWuBaseCell {
         allBtn.titleLabel?.font = haoWuConstant.allBtnFont
         allBtn.height = haoWuConstant.headTitleHeight + haoWuConstant.headTitleTop + haoWuConstant.headTitleBottom
         allBtn.width = haoWuConstant.allBtnWidth
-        allBtn.right = screenWidth - haoWuConstant.allBtnRight
+        allBtn.right = kScreenWidth - haoWuConstant.allBtnRight
         allBtn.contentHorizontalAlignment = .right
         return allBtn
     }()

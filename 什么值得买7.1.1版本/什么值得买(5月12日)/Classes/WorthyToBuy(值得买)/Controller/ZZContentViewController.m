@@ -64,7 +64,6 @@ static NSString * const kListCell = @"ZZListCell";
     self.headerView = headerView;
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        LxDBAnyVar(self.headerView.height);
         self.headerView.height = kScreenW / 320.0 * self.headerView.height;
 
         self.tableView.tableHeaderView = headerView;

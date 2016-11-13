@@ -36,6 +36,7 @@
                            @(SSDKPlatformTypeMail),
                            ];
     
+    
     // 需要在此方法中对原平台SDK进行导入操作 (ShareSDK要调用原平台)
     SSDKImportHandler importHandler = ^ (SSDKPlatformType platformType) {
         // 配置第三方平台的参数
