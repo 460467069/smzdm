@@ -18,8 +18,8 @@ struct ZZCommentConstant {
     let nickNameTop: CGFloat = 15
     let nickNameLeft: CGFloat = 15
     
-    var commentViewLeft: CGFloat
-    let commentViewTop: CGFloat = 12
+    var parentCommentViewLeft: CGFloat
+    let parentCommentViewTop: CGFloat = 12
     
     //头像左上间距, 包括昵称等顶部间距
     let avatarWH: CGFloat = 38
@@ -66,8 +66,8 @@ struct ZZCommentConstant {
     let mainCommentInset = UIEdgeInsets.init(top: 12, left: 0, bottom: 0, right: 0)
     
     //父评论
-    let parentLabelTop: CGFloat = 12
-    let parentLabelRight: CGFloat = 10
+    let parentCommentViewlTop: CGFloat = 12
+    let parentCommentViewRight: CGFloat = 10
     let parentLabelTextColor = kGlobalGrayColor
     
     
@@ -99,11 +99,11 @@ struct ZZCommentConstant {
         meadlContentWidth = (medalViewWidth + medalMargin) * CGFloat(maxMedals)
         
         //父评论部分
-        commentViewLeft = avatarLeft + avatarWH + nickNameLeft
-        commentViewWidth = kScreenWidth - commentViewLeft - commentViewRight
+        parentCommentViewLeft = avatarLeft + avatarWH + nickNameLeft
+        commentViewWidth = kScreenWidth - parentCommentViewLeft - commentViewRight
         
         //主评论内容宽
-        mainCommentLableWidth = kScreenWidth - commentViewLeft - mainCommentLabelRight
+        mainCommentLableWidth = kScreenWidth - parentCommentViewLeft - mainCommentLabelRight
     }
 }
 
@@ -118,16 +118,15 @@ class ZZAllCommentLayout: NSObject {
     var floorAttributeStr: NSAttributedString?
     var timeLabelLayout: YYTextLayout?
     
-    var rowHeight: CGFloat = 0
-    var rowHeight1: CGFloat = 0         //评论有隐藏下的高
-    var rowHeight2: CGFloat = 0         //评论无隐藏下的高
+
     var isShouldHidden: Bool = false    //默认情况下, "展开隐藏评论的"隐藏状态
     var isHotComent:Bool = false        //标记为是否是热门评论(如果是热门评论, 楼层文字属性不一样, 背景图片也有差别)
     
     var parentCommentLayouts:[YYTextLayout]?  //父评论单条评论布局数组
     var mainCommentLayout: YYTextLayout?        //主评论
     var mainCommentHeight: CGFloat = 0
-    var parentCommentViewHeight: CGFloat = 0
+    
+    var limitCommentLayouts:[YYTextLayout]?  //父评论单条评论布局数组
     
     
     init(commentModel: ZZCommentModel, isHotComment: Bool) {
@@ -142,14 +141,6 @@ class ZZAllCommentLayout: NSObject {
     
     func layout(){
         
-        
-        rowHeight += commentConstant.nickNameTop
-        rowHeight += commentConstant.nickNameHeight
-        rowHeight += commentConstant.floorTop
-        rowHeight += commentConstant.floorHeight
-        
-        rowHeight2 = rowHeight
-        rowHeight1 = rowHeight
         
         //父评论逻辑: 如果大于三条, 第二条和第三条之间嵌入一个"展开隐藏"的按钮, 小于等于三条完整显示
         
@@ -210,22 +201,33 @@ class ZZAllCommentLayout: NSObject {
                 for (key, value) in parentData.enumerated()
                 {
                     let textLayout = configureParentTextLayout(comment: value)
-                    let height = textLayout.textBoundingSize.height
+//                    let height = textLayout.textBoundingSize.height
                     layouts.append(textLayout)
-                    
-                    rowHeight2 += height
 
                     if parentDataCount > 3 && key < 3
                     {     //计算总条数大于3时, 前3条的高度
                         isShouldHidden = false
-                        rowHeight1 = rowHeight2
-                        rowHeight1 += commentConstant.hideCommentHeight
                         
+                        if key < 2 {
+                            
+                            limitCommentLayouts?.append(textLayout)
+                        }else{
+                            var attributes = [String: Any]()
+                            attributes[NSFontAttributeName] = UIFont.boldSystemFont(ofSize: 16)
+                            attributes[NSForegroundColorAttributeName] = UIColor.blue
+                            let text = (NSAttributedString.init(string: "展开隐藏评论", attributes: attributes))
+                            
+                            let container = YYTextContainer.init(size: CGSize.init(width: commentConstant.mainCommentLableWidth, height: 40), insets: UIEdgeInsets.zero)
+                            
+                            
+                            let stretchLayout = YYTextLayout.init(container: container, text: text)
                         
-                        parentCommentViewHeight += height
-                        parentCommentViewHeight += commentConstant.hideCommentHeight
+                            limitCommentLayouts?.append(stretchLayout!)
+                            limitCommentLayouts?.append(textLayout)
+                        }
+                        
                     }else{
-                        parentCommentViewHeight += height
+                        
                     }
                 }
                 
@@ -234,9 +236,7 @@ class ZZAllCommentLayout: NSObject {
                 isShouldHidden = parentDataCount <= 3
                 
             }
-            
-            rowHeight += parentCommentViewHeight
-            
+        
             // 主评论
             if let commentContent = commentModel.comment_content
             {
@@ -254,14 +254,6 @@ class ZZAllCommentLayout: NSObject {
                 
             }
             
-            
-            rowHeight1 += mainCommentHeight
-            rowHeight2 += mainCommentHeight
-            rowHeight += mainCommentHeight
-            
-            rowHeight2 += commentConstant.cellBottomHeight
-            rowHeight1 += commentConstant.cellBottomHeight
-            rowHeight += commentConstant.cellBottomHeight
 
         }
 

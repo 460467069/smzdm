@@ -9,6 +9,8 @@
 import UIKit
 
 private let kTableViewHeaderReuseID = "tableViewHeaderReuseID"
+private let kCommentHeaderView = "kCommentHeaderView"
+private let kCommentFooterView = "kCommentFooterView"
 
 class ZZAllCommentController: ZZSecondTableViewController {
 
@@ -19,8 +21,10 @@ class ZZAllCommentController: ZZSecondTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "所有评论"
-
+        
         tableView.register(ZZCommentCell.self, forCellReuseIdentifier: kTableViewHeaderReuseID)
+        tableView.register(ZZCommentHeaderView.self, forHeaderFooterViewReuseIdentifier: kCommentHeaderView)
+        tableView.register(ZZCommentFooterView.self, forHeaderFooterViewReuseIdentifier: kCommentFooterView)
         
         tableView.mj_header.beginRefreshing()
     }
@@ -52,33 +56,73 @@ extension ZZAllCommentController{
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 1
+        return self.dataSource.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.dataSource.count
+        let commentLayout = self.dataSource[section] as! ZZAllCommentLayout
+        
+        if let parenComentCount = commentLayout.parentCommentLayouts?.count {
+            
+            return parenComentCount
+        }
+        
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: kTableViewHeaderReuseID, for: indexPath) as! ZZCommentCell
         
-        let commentLayout = self.dataSource[indexPath.row] as! ZZAllCommentLayout
+        let commentLayout = self.dataSource[indexPath.section] as! ZZAllCommentLayout
 
-//        cell.backgroundColor = UIColor.random()
-        cell.commentLayout = commentLayout
+        let parentCommentLayouts = commentLayout.parentCommentLayouts
+    
+        cell.commentLayout = parentCommentLayouts?[indexPath.row]
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: kCommentHeaderView) as! ZZCommentHeaderView
+        let commentLayout = self.dataSource[section] as! ZZAllCommentLayout
+        headerView.commentLayout = commentLayout
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: kCommentFooterView) as! ZZCommentFooterView
+        let commentLayout = self.dataSource[section] as! ZZAllCommentLayout
+        footerView.commentLayout = commentLayout
+        return footerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        let commentLayout = self.dataSource[section] as! ZZAllCommentLayout
+        
+        return commentLayout.mainCommentHeight
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let commentLayout = self.dataSource[indexPath.row] as! ZZAllCommentLayout
         
+        let commentLayout = self.dataSource[indexPath.section] as! ZZAllCommentLayout
+        let textLayout = commentLayout.parentCommentLayouts?[indexPath.row]
+        if let height = textLayout?.textBoundingSize.height {
+            
+            return height
+        }
         
-        return commentLayout.rowHeight
+        return 0
         
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 63
+    }
+    
 }
 
 extension ZZAllCommentController{
