@@ -101,8 +101,8 @@ class ZZParentCommentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        
         width = commentConstant.commentViewWidth
-        backgroundColor = kGlobalGrayColor
         
         let horizonalLine = UIImageView.init(image: #imageLiteral(resourceName: "line_640x1"))
         horizonalLine.width = width
@@ -270,6 +270,11 @@ class ZZCommentCell: UITableViewCell {
             
                 parentCommentView.isHidden = false
                 parentCommentView.top = floorLabel.bottom
+                parentCommentView.height = (commentLayout?.parentCommentViewHeight)!
+                
+                for verticalLine in parentCommentView.verticalLines {
+                    verticalLine.height = parentCommentView.height
+                }
                 
                 let singleContentLabels = parentCommentView.singleContentLabels
                 let labelCount = singleContentLabels.count

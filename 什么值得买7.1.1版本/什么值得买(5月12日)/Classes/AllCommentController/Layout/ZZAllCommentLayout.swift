@@ -127,6 +127,7 @@ class ZZAllCommentLayout: NSObject {
     var parentCommentLayouts:[YYTextLayout]?  //父评论单条评论布局数组
     var mainCommentLayout: YYTextLayout?        //主评论
     var mainCommentHeight: CGFloat = 0
+    var parentCommentViewHeight: CGFloat = 0
     
     
     init(commentModel: ZZCommentModel, isHotComment: Bool) {
@@ -220,10 +221,11 @@ class ZZAllCommentLayout: NSObject {
                         rowHeight1 = rowHeight2
                         rowHeight1 += commentConstant.hideCommentHeight
                         
-                        rowHeight += height
-                        rowHeight += commentConstant.hideCommentHeight
+                        
+                        parentCommentViewHeight += height
+                        parentCommentViewHeight += commentConstant.hideCommentHeight
                     }else{
-                        rowHeight += height
+                        parentCommentViewHeight += height
                     }
                 }
                 
@@ -233,6 +235,7 @@ class ZZAllCommentLayout: NSObject {
                 
             }
             
+            rowHeight += parentCommentViewHeight
             
             // 主评论
             if let commentContent = commentModel.comment_content
@@ -249,17 +252,15 @@ class ZZAllCommentLayout: NSObject {
                 
 //                print(mainCommentHeight)
                 
-                rowHeight1 += mainCommentHeight
-                rowHeight2 += mainCommentHeight
-                
-                rowHeight += mainCommentHeight
- 
             }
             
             
+            rowHeight1 += mainCommentHeight
+            rowHeight2 += mainCommentHeight
+            rowHeight += mainCommentHeight
+            
             rowHeight2 += commentConstant.cellBottomHeight
             rowHeight1 += commentConstant.cellBottomHeight
-            
             rowHeight += commentConstant.cellBottomHeight
 
         }
