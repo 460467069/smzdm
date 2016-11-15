@@ -69,7 +69,7 @@ class ZZMedalContentView: UIView {
             medals.append(medal)
             
             addSubview(medal)
-            medal.left = (commentConstant.medalViewWidth + commentConstant.medalMargin) * CGFloat(i)
+            
             medal.size = CGSize.init(width: commentConstant.medalViewWidth, height: commentConstant.nickNameHeight)
         }
         
@@ -103,7 +103,7 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
     lazy var medalContentView: ZZMedalContentView = {
         
         let medalContentView = ZZMedalContentView()
-        medalContentView.backgroundColor = UIColor.random()
+//        medalContentView.backgroundColor = UIColor.random()
         medalContentView.top = commentConstant.nickNameTop
         return medalContentView
     }()
@@ -120,12 +120,13 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
     
     lazy var floorView: UIImageView = {
         
-        let imageView = UIImageView()
-        imageView.height = commentConstant.floorHeight
-        imageView.width = commentConstant.floorWidth
-        imageView.left = commentConstant.parentCommentViewLeft
-        imageView.image = #imageLiteral(resourceName: "level_bg_view")
-        return imageView
+        let floorView = UIImageView()
+        floorView.contentMode = .scaleToFill
+        floorView.height = commentConstant.floorHeight
+        floorView.width = commentConstant.floorWidth
+        floorView.left = commentConstant.parentCommentViewLeft
+        floorView.image = #imageLiteral(resourceName: "level_bg_view")
+        return floorView
     }()
     lazy var floorLabel: YYLabel = {
         let floorLabel = YYLabel()
@@ -205,7 +206,8 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
                 for (key, medal) in medals.enumerated() {
                     
                     let imageView = medalContentView.medals[key]
-                    imageView.isHidden = true
+                    imageView.isHidden = false
+                    imageView.left = (commentConstant.medalViewWidth + commentConstant.medalMargin) * CGFloat(key)
                     imageView.setImageWith(URL.init(string: medal.img!), options: .showNetworkActivity)
                 }
                 
@@ -218,6 +220,12 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
             floorLabel.textAlignment = .center
             //时间
             timeLabel.textLayout = commentLayout?.timeLabelLayout
+            
+            if (commentLayout?.isHotComent)! {
+                floorView.image = #imageLiteral(resourceName: "level_bg_view")
+            }else{
+                floorView.image = #imageLiteral(resourceName: "bg_grey_press")
+            }
             
             
         }

@@ -49,7 +49,7 @@ struct ZZCommentConstant {
     let supportViewRight: CGFloat = 25
     let supportTextColor = UIColor.lightGray
     let supportLabelFont = UIFont.systemFont(ofSize: 13)
-    let supportLabelWidth: CGFloat = 20
+    let supportLabelWidth: CGFloat = 30
     
     
     //楼层
