@@ -181,6 +181,7 @@ static NSString * const kListCell = @"ZZListCell";
     NSInteger channelID = [article.article_channel_id integerValue];
     
     if (channelID == 14) {
+//        https://api.smzdm.com/v2/youhui/articles/6641758?channel_id=1&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.1.1&weixin=1
         ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
         detailTopicVc.channelID = channelID;
         [self.navigationController pushViewController:detailTopicVc animated:YES];
@@ -194,6 +195,11 @@ static NSString * const kListCell = @"ZZListCell";
         
         return;
     }
+    
+#if 1
+    channelID = 1;
+    article.article_id = @"6641758";
+#endif
     
     ZZDetailArticleViewController *vc = [[ZZDetailArticleViewController alloc] init];
     vc.channelID = channelID;

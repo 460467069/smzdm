@@ -10,7 +10,7 @@ import UIKit
 
 struct ZZCommentConstant {
     
-    let cellBottomHeight: CGFloat = 12
+    let footerBottomHeight: CGFloat = 15
     
     
     //昵称一行相同属性
@@ -21,7 +21,12 @@ struct ZZCommentConstant {
     var parentCommentViewLeft: CGFloat
     let parentCommentViewTop: CGFloat = 12
     
+    var headerViewHeight: CGFloat = 0
+    
+    
     //头像左上间距, 包括昵称等顶部间距
+    let avatarTop: CGFloat = 15
+    let avatarBottom: CGFloat = 15
     let avatarWH: CGFloat = 38
     let avatarLeft: CGFloat = 15
     
@@ -48,14 +53,14 @@ struct ZZCommentConstant {
     
     
     //楼层
-    let floorWidth: CGFloat = 37
+    let floorWidth: CGFloat = 45
     let floorHeight: CGFloat = 16
     let floorTop: CGFloat = 4
     
     //时间
     let timeLabelLeft: CGFloat = 10
     let timeLabelWidth: CGFloat = 80
-    let timeLabelFont = UIFont.systemFont(ofSize: 13)
+    let timeLabelFont = UIFont.systemFont(ofSize: 11)
     
     
     //主评论内容
@@ -63,11 +68,12 @@ struct ZZCommentConstant {
     let mainCommentLabelRight: CGFloat = 12
     var mainCommentLableWidth: CGFloat = 0
     let mainCommentLabelTextColor = kGlobalGrayColor
-    let mainCommentInset = UIEdgeInsets.init(top: 12, left: 0, bottom: 0, right: 0)
+    let mainCommentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
     
     //父评论
     let parentCommentViewlTop: CGFloat = 12
     let parentCommentViewRight: CGFloat = 10
+    var parentCommentViewWidth: CGFloat = 0
     let parentLabelTextColor = kGlobalGrayColor
     
     
@@ -83,11 +89,7 @@ struct ZZCommentConstant {
     let hideLabelFont = UIFont.systemFont(ofSize: 17)
     
     
-    let parentLabelInset = UIEdgeInsets.init(top: 12, left: 10, bottom: 0, right: 15)
-    
-    //整个commentView(包括所有评论内容, 和下划线)
-    let commentViewRight: CGFloat = 16
-    var commentViewWidth: CGFloat = 0
+    let parentLabelInset = UIEdgeInsets.init(top: 12, left: 10, bottom: 15, right: 15)
     
     //线宽/高
     let lineImageWH: CGFloat = 1
@@ -95,12 +97,13 @@ struct ZZCommentConstant {
     
     init() {
         
+        headerViewHeight = avatarTop + avatarWH + avatarBottom
         // 用户所获取的勋章
         meadlContentWidth = (medalViewWidth + medalMargin) * CGFloat(maxMedals)
         
         //父评论部分
         parentCommentViewLeft = avatarLeft + avatarWH + nickNameLeft
-        commentViewWidth = kScreenWidth - parentCommentViewLeft - commentViewRight
+        parentCommentViewWidth = kScreenWidth - parentCommentViewLeft - parentCommentViewRight
         
         //主评论内容宽
         mainCommentLableWidth = kScreenWidth - parentCommentViewLeft - mainCommentLabelRight
@@ -124,7 +127,9 @@ class ZZAllCommentLayout: NSObject {
     
     var parentCommentLayouts:[YYTextLayout]?  //父评论单条评论布局数组
     var mainCommentLayout: YYTextLayout?        //主评论
-    var mainCommentHeight: CGFloat = 0
+    var mainCommentViewHeight: CGFloat = 0
+    var mainCommentLabelHeight: CGFloat = 0
+    var mainCommentLabelTop: CGFloat = 0
     
     var limitCommentLayouts:[YYTextLayout]?  //父评论单条评论布局数组
     
@@ -169,7 +174,7 @@ class ZZAllCommentLayout: NSObject {
                 if isHotComent
                 {
                     color = UIColor.white
-                    font = UIFont.systemFont(ofSize: 16)
+                    font = UIFont.systemFont(ofSize: 15)
                 }
                 attributes[NSForegroundColorAttributeName] = color
                 attributes[NSFontAttributeName] = font
@@ -234,23 +239,25 @@ class ZZAllCommentLayout: NSObject {
                 parentCommentLayouts = layouts
                 
                 isShouldHidden = parentDataCount <= 3
+
+                mainCommentViewHeight += commentConstant.mainCommentLabelTop
                 
+                mainCommentLabelTop = commentConstant.mainCommentLabelTop
             }
         
             // 主评论
             if let commentContent = commentModel.comment_content
             {
-                
+                let text = NSMutableAttributedString()
                 let attributeStr = configureTextAttributes(content: commentContent)
+                text.append(attributeStr)
+                text.lineSpacing = kLineSpacing
                 
                 let container = YYTextContainer.init(size: CGSize.init(width: commentConstant.mainCommentLableWidth, height: 999.0), insets: commentConstant.mainCommentInset)
                 
-                mainCommentLayout = YYTextLayout.init(container: container, text: attributeStr)
-                
-                
-                mainCommentHeight = (mainCommentLayout?.textBoundingSize.height)!
-                
-//                print(mainCommentHeight)
+                mainCommentLayout = YYTextLayout.init(container: container, text: text)
+                mainCommentLabelHeight = (mainCommentLayout?.textBoundingSize.height)!
+                mainCommentViewHeight += (mainCommentLabelHeight + commentConstant.footerBottomHeight)
                 
             }
             
@@ -265,9 +272,6 @@ class ZZAllCommentLayout: NSObject {
         
         let text = NSMutableAttributedString()
         
-        let font = UIFont.systemFont(ofSize: 16)
-        
-        
         if var userName = comment.comment_author  {
             
             userName = "\(userName): "
@@ -281,19 +285,12 @@ class ZZAllCommentLayout: NSObject {
         if let commentContent = comment.comment_content {
             
             text.append(configureTextAttributes(content: commentContent))
-            text.append(NSAttributedString.init(string: "\n", attributes: nil))
+
         }
-        
-        let horizonalLineImage = #imageLiteral(resourceName: "line_640x1")
-        let horizonalLineAttachText = NSMutableAttributedString.attachmentString(withContent: horizonalLineImage, contentMode: .scaleToFill, attachmentSize: CGSize.init(width: commentConstant.commentViewWidth, height: 1), alignTo: font, alignment: .bottom)
-        
-        text.append(horizonalLineAttachText)
-        
-        text.setParagraphSpacing(14.0, range: NSMakeRange(1, 1))
-   
-        let container = YYTextContainer.init(size: CGSize.init(width: commentConstant.commentViewWidth, height: 999), insets: commentConstant.parentLabelInset)
-        
-    
+  
+        text.lineSpacing = kLineSpacing
+        let container = YYTextContainer.init(size: CGSize.init(width: commentConstant.parentCommentViewWidth, height: 999), insets: commentConstant.parentLabelInset)
+
         let layout = YYTextLayout.init(container: container, text: text)
         
         return layout!

@@ -20,6 +20,7 @@ let kGlobalGrayColor = UIColor.init(hexString: "#666666")
 let kGlobalRedColor = UIColor.init(hexString: "#F04848")
 let kGlobalLightGrayColor = UIColor.init(red: 234.0/255.0, green: 234.0/255.0, blue: 234.0/255.0, alpha: 1.0)
 
+let kLineSpacing: CGFloat = 5
 
 
 

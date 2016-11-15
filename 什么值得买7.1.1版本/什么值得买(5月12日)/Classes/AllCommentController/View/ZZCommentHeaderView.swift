@@ -117,11 +117,21 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
         return praiseView
     }()
     
+    
+    lazy var floorView: UIImageView = {
+        
+        let imageView = UIImageView()
+        imageView.height = commentConstant.floorHeight
+        imageView.width = commentConstant.floorWidth
+        imageView.left = commentConstant.parentCommentViewLeft
+        imageView.image = #imageLiteral(resourceName: "level_bg_view")
+        return imageView
+    }()
     lazy var floorLabel: YYLabel = {
         let floorLabel = YYLabel()
         floorLabel.height = commentConstant.floorHeight
         floorLabel.width = commentConstant.floorWidth
-        floorLabel.left = commentConstant.parentCommentViewLeft
+        
         return floorLabel
     }()
     
@@ -148,18 +158,21 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
     
     
     func setupUI(){
-        addSubview(avatarView)
-        addSubview(nickNameLabel)
-        addSubview(medalContentView)
-        addSubview(praiseView)
-        addSubview(floorLabel)
-        addSubview(timeLabel)
+        
+        floorView.addSubview(floorLabel)
+        
+        contentView.addSubview(avatarView)
+        contentView.addSubview(nickNameLabel)
+        contentView.addSubview(medalContentView)
+        contentView.addSubview(praiseView)
+        contentView.addSubview(floorView)
+        contentView.addSubview(timeLabel)
 
         
-        floorLabel.top = nickNameLabel.bottom + commentConstant.floorTop
+        floorView.top = nickNameLabel.bottom + commentConstant.floorTop
         
-        timeLabel.left = floorLabel.right + commentConstant.timeLabelLeft
-        timeLabel.top = floorLabel.top
+        timeLabel.left = floorView.right + commentConstant.timeLabelLeft
+        timeLabel.top = floorView.top
 
     }
 
@@ -202,7 +215,7 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
             
             //楼层
             floorLabel.attributedText = commentLayout?.floorAttributeStr
-            
+            floorLabel.textAlignment = .center
             //时间
             timeLabel.textLayout = commentLayout?.timeLabelLayout
             

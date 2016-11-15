@@ -103,7 +103,7 @@ extension ZZAllCommentController{
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let commentLayout = self.dataSource[section] as! ZZAllCommentLayout
         
-        return commentLayout.mainCommentHeight
+        return commentLayout.mainCommentViewHeight
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -120,7 +120,9 @@ extension ZZAllCommentController{
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 63
+        
+        
+        return commentConstant.headerViewHeight
     }
     
 }

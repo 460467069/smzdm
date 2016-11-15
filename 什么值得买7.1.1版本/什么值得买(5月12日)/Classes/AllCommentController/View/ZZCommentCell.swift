@@ -14,9 +14,25 @@ class ZZCommentCell: UITableViewCell {
 
     lazy var parentCommentLabel: YYLabel = {
         let parentCommentLabel = YYLabel()
-        parentCommentLabel.width = commentConstant.mainCommentLableWidth
-        parentCommentLabel.left = commentConstant.parentCommentViewLeft
+        parentCommentLabel.width = commentConstant.parentCommentViewWidth
         return parentCommentLabel
+    }()
+    
+    lazy var parentCommentView: UIImageView = {
+        
+        let parentCommentView = UIImageView()
+        parentCommentView.width = commentConstant.parentCommentViewWidth
+        parentCommentView.left = commentConstant.parentCommentViewLeft
+        parentCommentView.image = #imageLiteral(resourceName: "bg_grey_press")
+        return parentCommentView
+    }()
+    
+    lazy var separatorLine: UIImageView = {
+        
+        let separatorLine = UIImageView.init(image: #imageLiteral(resourceName: "line_640x1"))
+        separatorLine.width = commentConstant.parentCommentViewWidth
+        separatorLine.alpha = 0.3
+        return separatorLine
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -36,11 +52,15 @@ class ZZCommentCell: UITableViewCell {
         didSet{
             
             if let commentLayout = commentLayout {
+                
+                parentCommentView.height = commentLayout.textBoundingSize.height
                 parentCommentLabel.textLayout = commentLayout
                 parentCommentLabel.height = commentLayout.textBoundingSize.height
+                
+                separatorLine.bottom = parentCommentLabel.bottom
             }
 
-
+            
         }
         
     }
@@ -54,7 +74,14 @@ extension ZZCommentCell{
 
     func setupUI(){
         
-        contentView.addSubview(parentCommentLabel)
+        parentCommentView.addSubview(parentCommentLabel)
+        
+        parentCommentView.addSubview(separatorLine)
+        
+        contentView.addSubview(parentCommentView)
+        
+        
+        
     }
     
 
