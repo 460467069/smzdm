@@ -224,7 +224,7 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
             if (commentLayout?.isHotComent)! {
                 floorView.image = #imageLiteral(resourceName: "level_bg_view")
             }else{
-                floorView.image = #imageLiteral(resourceName: "bg_grey_press")
+                floorView.image = nil
             }
             
             

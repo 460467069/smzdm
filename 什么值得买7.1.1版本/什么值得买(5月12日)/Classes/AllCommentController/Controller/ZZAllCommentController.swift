@@ -62,10 +62,15 @@ extension ZZAllCommentController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let commentLayout = self.dataSource[section] as! ZZAllCommentLayout
+        var commentLayouts = commentLayout.limitCommentLayouts
         
-        if let parenComentCount = commentLayout.parentCommentLayouts?.count {
+        if commentLayout.isUserClickHide {
+            commentLayouts = commentLayout.allCommentLayouts
+        }
+        
+        if let commentLayouts = commentLayouts {
             
-            return parenComentCount
+            return commentLayouts.count
         }
         
         return 0
@@ -77,9 +82,13 @@ extension ZZAllCommentController{
         
         let commentLayout = self.dataSource[indexPath.section] as! ZZAllCommentLayout
 
-        let parentCommentLayouts = commentLayout.parentCommentLayouts
+        var commentLayouts = commentLayout.limitCommentLayouts
+        
+        if commentLayout.isUserClickHide {
+            commentLayouts = commentLayout.allCommentLayouts
+        }
     
-        cell.commentLayout = parentCommentLayouts?[indexPath.row]
+        cell.commentLayout = commentLayouts?[indexPath.row]
         
         return cell
     }
@@ -109,7 +118,15 @@ extension ZZAllCommentController{
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let commentLayout = self.dataSource[indexPath.section] as! ZZAllCommentLayout
-        let textLayout = commentLayout.parentCommentLayouts?[indexPath.row]
+        
+        var commentLayouts = commentLayout.limitCommentLayouts
+        
+        if commentLayout.isUserClickHide {
+            commentLayouts = commentLayout.allCommentLayouts
+        }
+        
+        let textLayout = commentLayouts?[indexPath.row]
+
         if let height = textLayout?.textBoundingSize.height {
             
             return height
@@ -123,6 +140,18 @@ extension ZZAllCommentController{
         
         
         return commentConstant.headerViewHeight
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let commentLayout = self.dataSource[indexPath.section] as! ZZAllCommentLayout
+        
+        if !commentLayout.isShouldHidden && indexPath.row == 2 {
+            
+            commentLayout.isUserClickHide = true
+//            tableView.reloadSection(UInt(indexPath.section), with: .none)
+            tableView.reloadData()
+
+        }
     }
     
 }

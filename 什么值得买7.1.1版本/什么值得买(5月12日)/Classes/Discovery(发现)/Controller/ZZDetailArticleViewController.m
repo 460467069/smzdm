@@ -133,7 +133,7 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
     _webView.frame = _containerScrollView.bounds;
     
     _webView.scrollView.scrollEnabled = NO;
-//    [_containerScrollView addSubview:_webView];
+    [_containerScrollView addSubview:_webView];
 }
 
 - (void)initialCustomIndicatorView{
@@ -161,12 +161,10 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[rightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailRightBtnDidClick)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     self.navigationItem.rightMargin = -12;
-    
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSDictionary *attributes = @{NSForegroundColorAttributeName : titleColor};
-        [self.navigationController.navigationBar setTitleTextAttributes:attributes];
-    });
+
+    NSDictionary *attributes = @{NSForegroundColorAttributeName : titleColor};
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
+
 }
 
 #pragma mark - loadData
@@ -190,14 +188,7 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
         }
         if (html5Content.length > 0) {
             
-
-            NSString *path = [[NSBundle mainBundle] pathForResource:@"app_details.css" ofType:nil];
-//            NSString *path = [[NSBundle mainBundle] bundlePath];
-            NSURL *baseURL = [NSURL fileURLWithPath:path];
-            [_webView loadHTMLString:html5Content baseURL:baseURL];
-            
-            
-//            [_webView loadHTMLString:html5Content baseURL:nil];
+            [_webView loadHTMLString:html5Content baseURL:nil];
             
             [self.circleView stopAnimating];
             [self.circleView removeFromSuperview];
@@ -207,7 +198,7 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
             headerView.headerLayout = _headerLayout;
             self.headerView = headerView;
             
-            [_containerScrollView addSubview:_webView];
+//            [_containerScrollView addSubview:_webView];
             _webView.top = headerView.bottom;
         }
         

@@ -84,9 +84,14 @@ struct ZZCommentConstant {
     
     
     //展开隐藏评论
-    let hideCommentHeight: CGFloat = 40
-    let hideLabelTextColor = UIColor.blue
+    let hideStr = "展开隐藏评论"
+    let hideCommentH: CGFloat = 40
+    var hideCommentHeight: CGFloat = 0
+    var hideCommentWidth: CGFloat = 0
+    let hideLabelTextColor = kGlobalRedColor
     let hideLabelFont = UIFont.systemFont(ofSize: 17)
+    var hideLabelInset = UIEdgeInsets.zero
+    var hideLabelLayout: YYTextLayout?
     
     
     let parentLabelInset = UIEdgeInsets.init(top: 12, left: 10, bottom: 15, right: 15)
@@ -96,6 +101,7 @@ struct ZZCommentConstant {
     
     
     init() {
+
         
         headerViewHeight = avatarTop + avatarWH + avatarBottom
         // 用户所获取的勋章
@@ -107,6 +113,21 @@ struct ZZCommentConstant {
         
         //主评论内容宽
         mainCommentLableWidth = kScreenWidth - parentCommentViewLeft - mainCommentLabelRight
+        
+        //隐藏栏
+        hideCommentHeight = hideStr.height(for: hideLabelFont, width: CGFloat(MAXFLOAT))
+        hideCommentWidth = hideStr.width(for: hideLabelFont)
+        let topInset = (hideCommentH - hideCommentHeight) * 0.5
+        let leftInset = (parentCommentViewWidth - hideCommentWidth) * 0.5
+        hideLabelInset = UIEdgeInsets.init(top: topInset, left: leftInset, bottom: topInset, right: leftInset)
+        
+        var attributes = [String: Any]()
+        attributes[NSFontAttributeName] = hideLabelFont
+        attributes[NSForegroundColorAttributeName] = hideLabelTextColor
+        let text = (NSAttributedString.init(string: hideStr, attributes: attributes))
+        let container = YYTextContainer.init(size: CGSize.init(width: mainCommentLableWidth, height: hideCommentH), insets: hideLabelInset)
+        
+        hideLabelLayout = YYTextLayout.init(container: container, text: text)
     }
 }
 
@@ -125,7 +146,7 @@ class ZZAllCommentLayout: NSObject {
     var isShouldHidden: Bool = false    //默认情况下, "展开隐藏评论的"隐藏状态
     var isHotComent:Bool = false        //标记为是否是热门评论(如果是热门评论, 楼层文字属性不一样, 背景图片也有差别)
     
-    var parentCommentLayouts:[YYTextLayout]?  //父评论单条评论布局数组
+    var allCommentLayouts:[YYTextLayout]?  //父评论单条评论布局数组
     var mainCommentLayout: YYTextLayout?        //主评论
     var mainCommentViewHeight: CGFloat = 0
     var mainCommentLabelHeight: CGFloat = 0
@@ -133,7 +154,8 @@ class ZZAllCommentLayout: NSObject {
     
     var limitCommentLayouts:[YYTextLayout]?  //父评论单条评论布局数组
     
-    
+    var isUserClickHide: Bool = false
+
     init(commentModel: ZZCommentModel, isHotComment: Bool) {
         
         self.commentModel = commentModel
@@ -197,47 +219,36 @@ class ZZAllCommentLayout: NSObject {
             //父评论
             if let parentData = commentModel.parent_data
             {
-                
-//                rowHeight += commentConstant.commentViewTop
                 let parentDataCount = parentData.count
                 
                 var layouts = [YYTextLayout]()
                 
+                var limitLayouts = [YYTextLayout]()
+         
                 for (key, value) in parentData.enumerated()
                 {
                     let textLayout = configureParentTextLayout(comment: value)
-//                    let height = textLayout.textBoundingSize.height
                     layouts.append(textLayout)
-
-                    if parentDataCount > 3 && key < 3
-                    {     //计算总条数大于3时, 前3条的高度
+                    //计算总条数大于3时, 取3条的高度
+                    if parentDataCount > 3
+                    {
                         isShouldHidden = false
-                        
-                        if key < 2 {
-                            
-                            limitCommentLayouts?.append(textLayout)
-                        }else{
-                            var attributes = [String: Any]()
-                            attributes[NSFontAttributeName] = UIFont.boldSystemFont(ofSize: 16)
-                            attributes[NSForegroundColorAttributeName] = UIColor.blue
-                            let text = (NSAttributedString.init(string: "展开隐藏评论", attributes: attributes))
-                            
-                            let container = YYTextContainer.init(size: CGSize.init(width: commentConstant.mainCommentLableWidth, height: 40), insets: UIEdgeInsets.zero)
-                            
-                            
-                            let stretchLayout = YYTextLayout.init(container: container, text: text)
-                        
-                            limitCommentLayouts?.append(stretchLayout!)
-                            limitCommentLayouts?.append(textLayout)
+                        if key < 2
+                        {//前两条
+                            limitLayouts.append(textLayout)
+                        }else if key == parentDataCount - 1
+                        {//最后一条
+                            limitLayouts.append(commentConstant.hideLabelLayout!)
+                            limitLayouts.append(textLayout)
                         }
-                        
                     }else{
-                        
+                        limitLayouts.append(textLayout)
                     }
                 }
                 
-                parentCommentLayouts = layouts
-                
+                allCommentLayouts = layouts
+                limitCommentLayouts = limitLayouts
+               
                 isShouldHidden = parentDataCount <= 3
 
                 mainCommentViewHeight += commentConstant.mainCommentLabelTop

@@ -58,6 +58,9 @@ class ZZCommentCell: UITableViewCell {
                 parentCommentLabel.height = commentLayout.textBoundingSize.height
                 
                 separatorLine.bottom = parentCommentLabel.bottom
+                
+                
+                
             }
 
             

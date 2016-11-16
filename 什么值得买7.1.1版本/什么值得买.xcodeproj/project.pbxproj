@@ -112,6 +112,8 @@
 		A9B0506B1D5AB5C5000BB865 /* ZZLittleBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B050691D5AB5C5000BB865 /* ZZLittleBannerCell.m */; };
 		A9B0506C1D5AB5C5000BB865 /* ZZLittleBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B0506A1D5AB5C5000BB865 /* ZZLittleBannerCell.xib */; };
 		A9B1D6451D86C4590067FB06 /* ZZDetailTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B1D6441D86C4590067FB06 /* ZZDetailTopicModel.m */; };
+		A9B2ACA11DDB6EDD00D8F296 /* ZZKeyboardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2ACA01DDB6EDD00D8F296 /* ZZKeyboardToolBar.m */; };
+		A9B2ACA41DDB728200D8F296 /* ZZEmoticonInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2ACA31DDB728200D8F296 /* ZZEmoticonInputView.m */; };
 		A9B56CB51D875AEA00BE193A /* ZZDetailBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B56CB41D875AEA00BE193A /* ZZDetailBaseViewController.m */; };
 		A9B783551D58FB5F003C464D /* ZZDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B783541D58FB5F003C464D /* ZZDIYHeader.m */; };
 		A9B783581D58FB90003C464D /* ZZCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B783571D58FB90003C464D /* ZZCircleView.m */; };
@@ -331,6 +333,10 @@
 		A9B0506A1D5AB5C5000BB865 /* ZZLittleBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZLittleBannerCell.xib; sourceTree = "<group>"; };
 		A9B1D6431D86C4590067FB06 /* ZZDetailTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicModel.h; sourceTree = "<group>"; };
 		A9B1D6441D86C4590067FB06 /* ZZDetailTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicModel.m; sourceTree = "<group>"; };
+		A9B2AC9F1DDB6EDD00D8F296 /* ZZKeyboardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZKeyboardToolBar.h; sourceTree = "<group>"; };
+		A9B2ACA01DDB6EDD00D8F296 /* ZZKeyboardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZKeyboardToolBar.m; sourceTree = "<group>"; };
+		A9B2ACA21DDB728200D8F296 /* ZZEmoticonInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZEmoticonInputView.h; sourceTree = "<group>"; };
+		A9B2ACA31DDB728200D8F296 /* ZZEmoticonInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZEmoticonInputView.m; sourceTree = "<group>"; };
 		A9B56CB31D875AEA00BE193A /* ZZDetailBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailBaseViewController.h; sourceTree = "<group>"; };
 		A9B56CB41D875AEA00BE193A /* ZZDetailBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailBaseViewController.m; sourceTree = "<group>"; };
 		A9B783531D58FB5F003C464D /* ZZDIYHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDIYHeader.h; sourceTree = "<group>"; };
@@ -603,6 +609,10 @@
 				A925E6DA1D60BE2D009A9E6F /* ZZCyclePicHelper.m */,
 				A9A7AC391D8BF1B400814CDD /* LEOStarView.h */,
 				A9A7AC3A1D8BF1B400814CDD /* LEOStarView.m */,
+				A9B2AC9F1DDB6EDD00D8F296 /* ZZKeyboardToolBar.h */,
+				A9B2ACA01DDB6EDD00D8F296 /* ZZKeyboardToolBar.m */,
+				A9B2ACA21DDB728200D8F296 /* ZZEmoticonInputView.h */,
+				A9B2ACA31DDB728200D8F296 /* ZZEmoticonInputView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1221,6 +1231,7 @@
 				A9B0506B1D5AB5C5000BB865 /* ZZLittleBannerCell.m in Sources */,
 				A98904461D8A105400D55FF4 /* ZZDetailYouHuiBottomBar.m in Sources */,
 				A9E440AF1DD078B7005D17DB /* ZZAllCommentLayout.swift in Sources */,
+				A9B2ACA11DDB6EDD00D8F296 /* ZZKeyboardToolBar.m in Sources */,
 				A90B12E01DAA38990051B237 /* ZZGoodsHeaderModel.swift in Sources */,
 				A97B05C31D83DE650002CC31 /* ZZDetailModel.m in Sources */,
 				A9DBBAF51DB2282900089A73 /* ZZHaoWuLayout.swift in Sources */,
@@ -1307,6 +1318,7 @@
 				A95605F61DA87E4C00473B46 /* ZZSwiftCommon.swift in Sources */,
 				A91D9B4E1D855E090073DEB7 /* ZZTextLinePositionModifier.m in Sources */,
 				A9A67B971D622C00000F46BE /* ZZYuanChuangCell.m in Sources */,
+				A9B2ACA41DDB728200D8F296 /* ZZEmoticonInputView.m in Sources */,
 				A9DBBAF21DB2183E00089A73 /* UIImageView+ZDM.swift in Sources */,
 				A97EC6C31D794E06006AABAB /* ZZInPurchaseViewController.m in Sources */,
 				A9F964831DDA2C1700D41EC5 /* ZZCommentFooterView.swift in Sources */,

@@ -24,6 +24,8 @@
 
 @implementation AppDelegate
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     // 向微博客户端程序注册第三方应用
