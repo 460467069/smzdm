@@ -17,7 +17,7 @@
 #define kCycleTextContentViewColor [UIColor colorWithWhite:1.0 alpha:0.8]
 NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 
-@interface ZZHomeHeaderViewController ()<SDCycleScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ZZHomeHeaderViewController ()<SDCycleScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, weak) ZZCycleScrollView *cycleImageView;
 @property (nonatomic, weak) SDCycleScrollView *cycleTextView;
 @property (nonatomic, strong) NSArray *litterBannerArray;
@@ -175,7 +175,6 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     cell.littleBanner = littleBanner;
     return cell;
 }
-
 
 #pragma mark - getter && setter
 - (NSArray *)litterBannerArray

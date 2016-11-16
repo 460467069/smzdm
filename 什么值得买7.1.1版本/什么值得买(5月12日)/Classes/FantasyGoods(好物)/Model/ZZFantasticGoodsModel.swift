@@ -48,8 +48,18 @@ class ZZGoodsSubItemModel: NSObject {
     
     var pro_price: String?
     
-    var tag_info: [AnyObject]?
+    var tag_info: [ZZTagInfo]?
+    
+    class func modelContainerPropertyGenericClass()->[String : AnyObject]{
+        return ["tag_info" : ZZTagInfo.self]
+    }
 
+}
+
+class ZZTagInfo: NSObject {
+    
+    var tag_name: String?
+    
 }
 
 

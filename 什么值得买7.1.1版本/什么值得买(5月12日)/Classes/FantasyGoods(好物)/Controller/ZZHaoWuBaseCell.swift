@@ -64,7 +64,7 @@ class ZZHaoWuBaseCell: UITableViewCell {
         headLabel.width = kScreenWidth - 100
         headLabel.height = haoWuConstant.headTitleHeight
         headLabel.left = haoWuConstant.headTitleLeft
-        headLabel.top = haoWuConstant.headTitleTop
+
         return headLabel
     }()
     
@@ -97,7 +97,7 @@ extension ZZHaoWuBaseCell {
     func setupUI() {
         contentView.addSubview(headLabel)
         contentView.addSubview(scrollView)
-        scrollView.top = headLabel.bottom + haoWuConstant.headTitleBottom
+        scrollView.top = headLabel.bottom
     }
     
     

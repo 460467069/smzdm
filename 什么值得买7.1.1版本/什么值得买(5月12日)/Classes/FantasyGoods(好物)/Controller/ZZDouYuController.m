@@ -224,8 +224,7 @@
         ZZDouYuHomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCollectionViewCellIdentifier forIndexPath:indexPath];
         
         ZZDouYuHomeModel *bannelModel = self.roomListArrayM[[(AFIndexedCollectionView *)collectionView indexPath].row];
-        
-        
+
         ZZDouYURoom_List *listModel = bannelModel.room_list[indexPath.item];
         
         cell.listModel = listModel;

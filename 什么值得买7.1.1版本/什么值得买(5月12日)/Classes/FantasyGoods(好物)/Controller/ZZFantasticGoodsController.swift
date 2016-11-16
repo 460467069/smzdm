@@ -10,10 +10,13 @@ import UIKit
 
 
 private let collectionViewHeaderReuseID = "collectionViewHeaderReuseID"
-private let collectionViewHeight: CGFloat = 120
+private let collectionViewHeight: CGFloat = 100
 private let goodsHeaderItemCount: CGFloat = 4
-private let collectionViewMargin1: CGFloat = 30
-private let collectionViewMargin2: CGFloat = 20
+private let collectionViewTop: CGFloat = 19
+private let collectionViewLeft: CGFloat = 10
+private let collectionViewRight: CGFloat = 10
+private let collectionViewBottom: CGFloat = 15
+
 
 private let haowuCellOne = "ZZHaoWuCellOne"
 private let haowuCellThree = "ZZHaoWuCellThree"
@@ -23,7 +26,7 @@ class ZZGoodsHeaderLayout: UICollectionViewFlowLayout {
     override func prepare() {
         super.prepare()
         minimumLineSpacing = 0
-        minimumInteritemSpacing = collectionViewMargin2
+        minimumInteritemSpacing = 15
         let itemWidth = ((collectionView?.width)! - (collectionView?.contentInset.left)! - (collectionView?.contentInset.right)! - (goodsHeaderItemCount - 1) * minimumInteritemSpacing ) / goodsHeaderItemCount
         
         let itemHeight = (collectionView?.height)! - (collectionView?.contentInset.top)! - (collectionView?.contentInset.bottom)!
@@ -48,7 +51,7 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ZZGoodsHeaderCell.self, forCellWithReuseIdentifier: collectionViewHeaderReuseID)
-        collectionView.contentInset = UIEdgeInsets.init(top: collectionViewMargin1, left: collectionViewMargin1, bottom: collectionViewMargin2, right: collectionViewMargin1)
+        collectionView.contentInset = UIEdgeInsets.init(top: collectionViewTop, left: collectionViewLeft, bottom: collectionViewBottom, right: collectionViewRight)
         return collectionView
     }()
     

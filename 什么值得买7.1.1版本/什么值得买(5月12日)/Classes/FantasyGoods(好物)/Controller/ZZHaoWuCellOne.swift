@@ -19,6 +19,16 @@ class ZZHaoWuItemOne: UIView {
         return iconView
     }()
     
+    lazy var tagLabel: YYLabel = {
+        let tagLabel = YYLabel()
+        tagLabel.font = haoWuConstant.tagLabelFont
+        tagLabel.textColor = haoWuConstant.tagLabelColor
+        tagLabel.width = haoWuConstant.imageWidth
+        tagLabel.left = haoWuConstant.tagLabelLeft
+        tagLabel.height = haoWuConstant.tagLabelHeight
+        return tagLabel
+    }()
+    
     lazy var titleLabel: YYLabel = {
         let titleLabel = YYLabel()
         titleLabel.font = haoWuConstant.subTitleFont
@@ -46,9 +56,11 @@ class ZZHaoWuItemOne: UIView {
         addSubview(iconView)
         addSubview(titleLabel)
         addSubview(priceLabel)
+        addSubview(tagLabel)
         
-        titleLabel.top = iconView.bottom + haoWuConstant.imageBottomMargin + haoWuConstant.subtitleTop
-        priceLabel.top = titleLabel.bottom + haoWuConstant.subtitleBottom + haoWuConstant.priceLabelTop
+        titleLabel.top = iconView.bottom + haoWuConstant.subtitleTop
+        tagLabel.top = titleLabel.bottom + haoWuConstant.tagLabelTop
+        priceLabel.top = tagLabel.bottom + haoWuConstant.priceLabelTop
         
     }
     
@@ -61,6 +73,17 @@ class ZZHaoWuItemOne: UIView {
             if let subItemModel = subItemModel {
                 iconView.zdm_setImage(urlStr: subItemModel.pro_pic!, placeHolder: nil)
                 titleLabel.text = subItemModel.name!
+                
+                if let tag_infos = subItemModel.tag_info{
+                    
+                    if tag_infos.count > 0 {
+                        tagLabel.isHidden = false
+                        tagLabel.text = tag_infos[0].tag_name
+                    }else{
+                        tagLabel.isHidden = true
+                    }
+
+                }
                 priceLabel.text = "¥ \(subItemModel.pro_price!)起"
             }
             
@@ -93,6 +116,7 @@ class ZZHaoWuCellOne: ZZHaoWuBaseCell {
                     }
                     
                 }
+
             }
             
         }
@@ -105,7 +129,7 @@ class ZZHaoWuCellOne: ZZHaoWuBaseCell {
         allBtn.setTitleColor(haoWuConstant.allBtnColor, for: .normal)
         allBtn.setTitle("全部", for: .normal)
         allBtn.titleLabel?.font = haoWuConstant.allBtnFont
-        allBtn.height = haoWuConstant.headTitleHeight + haoWuConstant.headTitleTop + haoWuConstant.headTitleBottom
+        allBtn.height = haoWuConstant.headTitleHeight
         allBtn.width = haoWuConstant.allBtnWidth
         allBtn.right = kScreenWidth - haoWuConstant.allBtnRight
         allBtn.contentHorizontalAlignment = .right
