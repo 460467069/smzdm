@@ -193,7 +193,7 @@ extension ZZAllCommentController{
                 self.tableView.reloadData()
                 self.tableView.mj_header.endRefreshing()
                 
-                self.offset += self.dataSource.count
+                self.offset = self.dataSource.count
             }
             
         }
@@ -211,14 +211,8 @@ extension ZZAllCommentController{
             if let responseObj = responseObj as? [AnyHashable : Any]
             {
                 
+                // 上拉加载更多, 只需处理rows数据
                 let allComments = NSMutableArray()
-                
-                if let hotComments = responseObj["hot_comments"] as? [[AnyHashable : Any]]{
-                    
-                    let commentLayouts = self.handleCommentLayouts(commentDicts: hotComments, isHotComment: true)
-                    
-                    allComments.addObjects(from: commentLayouts as! [Any])
-                }
                 
                 if let rows = responseObj["rows"] as? [[AnyHashable : Any]]{
                     
@@ -226,13 +220,12 @@ extension ZZAllCommentController{
                     
                     allComments.addObjects(from: commentLayouts as! [Any])
                 }
-                
-                
+ 
                 self.dataSource.addObjects(from: allComments.copy() as! [Any])
                 self.tableView.reloadData()
                 self.tableView.mj_footer.endRefreshing()
                 
-                self.offset += self.dataSource.count
+                self.offset = self.dataSource.count
             }
         }
         
