@@ -4,6 +4,16 @@
 <array>
 	<dict>
 		<key>title</key>
+		<string>发现</string>
+		<key>URLString</key>
+		<string>v1/faxian/articles</string>
+		<key>type</key>
+		<string>faxian</string>
+		<key>headerURLString</key>
+		<string>v2/util/banner</string>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>精选</string>
 		<key>URLString</key>
 		<string>v1/home/articles</string>

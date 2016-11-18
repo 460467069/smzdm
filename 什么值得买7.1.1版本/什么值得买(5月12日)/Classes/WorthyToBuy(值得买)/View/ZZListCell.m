@@ -68,7 +68,7 @@
     //
     //    根据article_channel_id来取key
     //
-    //    1或5  取article_mall
+    //    1或2或5  取article_mall
     //    11    取article_type_name
     //    其他   取article_rzlx
     //
@@ -77,7 +77,7 @@
     NSInteger channelID = [article.article_channel_id integerValue];
     
     NSString *mallStr;
-    if (channelID == 1 || channelID == 5) {
+    if (channelID == 1 || channelID == 5 || channelID == 2) {
         mallStr = article.article_mall;
     }else if (channelID == 11){
         mallStr = article.article_type_name;
