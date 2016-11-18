@@ -75,7 +75,7 @@ struct ZZCommentConstant {
     let parentCommentViewRight: CGFloat = 10
     var parentCommentViewWidth: CGFloat = 0
     let parentLabelTextColor = kGlobalGrayColor
-    
+    let parentLabelBgColor = UIColor.init(hexString: "#FAFAFA")
     
     let maxParentCommentCount = 20
     
@@ -88,8 +88,10 @@ struct ZZCommentConstant {
     let hideCommentH: CGFloat = 40
     var hideCommentHeight: CGFloat = 0
     var hideCommentWidth: CGFloat = 0
-    let hideLabelTextColor = kGlobalRedColor
-    let hideLabelFont = UIFont.systemFont(ofSize: 17)
+    let hideLabelTextColor = kGlobalBlueColor
+    let hideLabelFont = UIFont.systemFont(ofSize: 15)
+    let hideLabelBgColor = UIColor.init(hexString: "#F4F4F4")
+    
     var hideLabelInset = UIEdgeInsets.zero
     var hideLabelLayout: YYTextLayout?
     
@@ -134,6 +136,13 @@ struct ZZCommentConstant {
 let commentConstant = ZZCommentConstant()
 
 
+class ZZParentCommentLayout: NSObject { //父评论布局
+    
+    var textLayout: YYTextLayout?
+    var height: CGFloat?
+    var bgColor: UIColor?
+}
+
 class ZZAllCommentLayout: NSObject {
     
     var commentModel: ZZCommentModel?
@@ -146,13 +155,13 @@ class ZZAllCommentLayout: NSObject {
     var isShouldHidden: Bool = false    //默认情况下, "展开隐藏评论的"隐藏状态
     var isHotComent:Bool = false        //标记为是否是热门评论(如果是热门评论, 楼层文字属性不一样, 背景图片也有差别)
     
-    var allCommentLayouts:[YYTextLayout]?  //父评论单条评论布局数组
+    var allCommentLayouts:[ZZParentCommentLayout]?  //父评论单条评论布局数组
     var mainCommentLayout: YYTextLayout?        //主评论
     var mainCommentViewHeight: CGFloat = 0
     var mainCommentLabelHeight: CGFloat = 0
     var mainCommentLabelTop: CGFloat = 0
     
-    var limitCommentLayouts:[YYTextLayout]?  //父评论单条评论布局数组
+    var limitCommentLayouts:[ZZParentCommentLayout]?  //父评论单条评论布局数组
     
     var isUserClickHide: Bool = false
 
@@ -178,7 +187,7 @@ class ZZAllCommentLayout: NSObject {
             {
                 var attributes = [String: Any]()
                 attributes[NSForegroundColorAttributeName] = UIColor.black
-                attributes[NSFontAttributeName] = UIFont.systemFont(ofSize: 16)
+                attributes[NSFontAttributeName] = UIFont.systemFont(ofSize: 14)
                 let text = NSAttributedString.init(string: commentAuthor, attributes: attributes)
                 
                 let container = YYTextContainer.init(size: CGSize.init(width: commentConstant.nameLabelMaxWidth, height: commentConstant.nickNameHeight), insets: UIEdgeInsets.zero)
@@ -221,28 +230,31 @@ class ZZAllCommentLayout: NSObject {
             {
                 let parentDataCount = parentData.count
                 
-                var layouts = [YYTextLayout]()
+                var layouts = [ZZParentCommentLayout]()
                 
-                var limitLayouts = [YYTextLayout]()
+                var limitLayouts = [ZZParentCommentLayout]()
          
                 for (key, value) in parentData.enumerated()
                 {
                     let textLayout = configureParentTextLayout(comment: value)
-                    layouts.append(textLayout)
+                    let parentCommentLayout = configureParentCommentTextlayout(textLayout: textLayout, bgColor: commentConstant.parentLabelBgColor!)
+                    layouts.append(parentCommentLayout)
                     //计算总条数大于3时, 取3条的高度
                     if parentDataCount > 3
                     {
                         isShouldHidden = false
                         if key < 2
                         {//前两条
-                            limitLayouts.append(textLayout)
+                            limitLayouts.append(parentCommentLayout)
                         }else if key == parentDataCount - 1
                         {//最后一条
-                            limitLayouts.append(commentConstant.hideLabelLayout!)
-                            limitLayouts.append(textLayout)
+                            let hideLabelLayout = configureParentCommentTextlayout(textLayout: commentConstant.hideLabelLayout!, bgColor: commentConstant.hideLabelBgColor!)
+                            
+                            limitLayouts.append(hideLabelLayout)
+                            limitLayouts.append(parentCommentLayout)
                         }
                     }else{
-                        limitLayouts.append(textLayout)
+                        limitLayouts.append(parentCommentLayout)
                     }
                 }
                 
@@ -277,6 +289,17 @@ class ZZAllCommentLayout: NSObject {
 
     }
     
+    func configureParentCommentTextlayout(textLayout: YYTextLayout, bgColor: UIColor) ->ZZParentCommentLayout{
+        
+        let parentComment = ZZParentCommentLayout()
+        parentComment.textLayout = textLayout
+        parentComment.height = textLayout.textBoundingSize.height
+        parentComment.bgColor = bgColor
+        
+        return parentComment
+        
+    }
+    
     
     func configureParentTextLayout(comment: ZZCommentModel) ->(YYTextLayout)
     {
@@ -288,8 +311,8 @@ class ZZAllCommentLayout: NSObject {
             userName = "\(userName): "
             
             var attributes = [String: Any]()
-            attributes[NSFontAttributeName] = UIFont.boldSystemFont(ofSize: 16)
-            attributes[NSForegroundColorAttributeName] = UIColor.black
+            attributes[NSFontAttributeName] = UIFont.boldSystemFont(ofSize: 14)
+            attributes[NSForegroundColorAttributeName] = UIColor.darkGray
             text.append(NSAttributedString.init(string: userName, attributes: attributes))
         }
        
@@ -315,7 +338,7 @@ class ZZAllCommentLayout: NSObject {
         
         attributes[NSForegroundColorAttributeName] = kGlobalGrayColor
         
-        attributes[NSFontAttributeName] = UIFont.systemFont(ofSize: 16)
+        attributes[NSFontAttributeName] = UIFont.systemFont(ofSize: 14)
         
         return  NSAttributedString.init(string: content, attributes: attributes)
         

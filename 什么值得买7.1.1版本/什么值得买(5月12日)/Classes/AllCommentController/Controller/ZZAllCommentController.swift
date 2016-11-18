@@ -125,9 +125,9 @@ extension ZZAllCommentController{
             commentLayouts = commentLayout.allCommentLayouts
         }
         
-        let textLayout = commentLayouts?[indexPath.row]
+        let parentCommentLayout = commentLayouts?[indexPath.row]
 
-        if let height = textLayout?.textBoundingSize.height {
+        if let height = parentCommentLayout?.height {
             
             return height
         }

@@ -22,7 +22,7 @@
 static NSString * const kTuiGuangCell = @"ZZTuiGuangCell";
 static NSString * const kListCell = @"ZZListCell";
 
-@interface ZZContentViewController ()
+@interface ZZContentViewController ()<SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray<UIImageView *> *imageViews;
 /** 数据源 */
@@ -61,6 +61,7 @@ static NSString * const kListCell = @"ZZListCell";
 
     
     ZZHaoJiaHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:@"ZZHaoJiaHeaderView" owner:nil options:nil].lastObject;
+    headerView.cycleScrollView.delegate = self;
     self.headerView = headerView;
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -82,7 +83,7 @@ static NSString * const kListCell = @"ZZListCell";
             return;
         }
         //设置轮播图片
-        ZZContentHeader *headerModel = [ZZContentHeader mj_objectWithKeyValues:responseObject];
+        ZZContentHeader *headerModel = [ZZContentHeader modelWithJSON:responseObject];
         self.headerView.contentHeader = headerModel;
         
     }];
@@ -178,33 +179,8 @@ static NSString * const kListCell = @"ZZListCell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     ZZWorthyArticle *article = self.dataArrayM[indexPath.row];
-    NSInteger channelID = [article.article_channel_id integerValue];
-    
-    if (channelID == 14) {
-//        https://api.smzdm.com/v2/youhui/articles/6641758?channel_id=1&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.1.1&weixin=1
-        ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
-        detailTopicVc.channelID = channelID;
-        [self.navigationController pushViewController:detailTopicVc animated:YES];
-        return;
-    }
-    
-    if ([article.tag isEqualToString:@"广告"]) {
-        ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
-        webViewController.redirectdata = article.redirect_data;
-        [self.navigationController pushViewController:webViewController animated:YES];
-        
-        return;
-    }
-    
-#if 1
-    channelID = 1;
-    article.article_id = @"6641758";
-#endif
-    
-    ZZDetailArticleViewController *vc = [[ZZDetailArticleViewController alloc] init];
-    vc.channelID = channelID;
-    vc.article_id = article.article_id;
-    [self.navigationController pushViewController:vc animated:YES];
+
+    [self jumpToDestinationViewController:article];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -228,7 +204,68 @@ static NSString * const kListCell = @"ZZListCell";
     }
 }
 
+#pragma mark - SDCycleScrollViewDelegate
+/** 点击图片回调 */
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    ZZRedirectData *redirectdata = self.headerView.contentHeader.rows[index].redirectdata;
+//    [self jumpToDestinationViewController:article];
+    NSString *linkType = redirectdata.link_type;
+    NSInteger channelID;
+    if ([linkType isEqualToString:@"faxian"]) {
+        channelID = 2;
+    }else if ([linkType isEqualToString:@"yuanchuang"]){
+        channelID = 11;
+    }else if ([linkType isEqualToString:@"news"]){
+        channelID = 6;
+    }else if ([linkType isEqualToString:@"other"]){
+//        https://api.smzdm.com/v2/youhui/articles/6637437?channel_id=5&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.3.3&weixin=1
+        
+        //暂时不确定
+//        channelID = 5;
+        
+        ZZPureWebViewController *pureWebViewController = [[ZZPureWebViewController alloc] init];
+        pureWebViewController.redirectdata = redirectdata;
+        [self.navigationController pushViewController:pureWebViewController animated:YES];
+        
+        return;
+    }
+    ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];
+    vc.channelID = channelID;
+    vc.article_id = redirectdata.link_val;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
+
+- (void)jumpToDestinationViewController:(ZZWorthyArticle *)article{
+    
+    NSInteger channelID = [article.article_channel_id integerValue];
+    
+    if (channelID == 14) {
+        ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
+        detailTopicVc.channelID = channelID;
+        [self.navigationController pushViewController:detailTopicVc animated:YES];
+        return;
+    }
+    
+    if ([article.tag isEqualToString:@"广告"]) {
+        ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
+        webViewController.redirectdata = article.redirect_data;
+        [self.navigationController pushViewController:webViewController animated:YES];
+        
+        return;
+    }
+    
+#if 1
+    channelID = 1;
+    article.article_id = @"6641758";
+#endif
+    
+    ZZDetailArticleViewController *vc = [[ZZDetailArticleViewController alloc] init];
+    vc.channelID = channelID;
+    vc.article_id = article.article_id;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 #pragma mark - getter / setter
 - (NSMutableArray *)dataArrayM

@@ -200,9 +200,6 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     }];
 }
 
-
-
-
 - (NSMutableDictionary *)configureParameters{
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     

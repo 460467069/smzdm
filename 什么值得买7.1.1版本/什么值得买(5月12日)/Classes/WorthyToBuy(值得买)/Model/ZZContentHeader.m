@@ -10,8 +10,9 @@
 
 @implementation ZZContentHeader
 
-+ (NSDictionary *)objectClassInArray{
-    return @{@"rows" : [ZZHeadLine class], @"little_banner" : [ZZLittleBanner class]};
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"rows" : [ZZHeadLine class],
+             @"little_banner" : ZZLittleBanner.class};
 }
 
 @end

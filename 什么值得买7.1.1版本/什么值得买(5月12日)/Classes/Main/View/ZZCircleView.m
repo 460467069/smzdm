@@ -81,7 +81,7 @@
 }
 
 - (void)rotateCirclView {
-	self.circleView.transform = CGAffineTransformRotate(self.circleView.transform, M_PI_4 / 5);
+	self.circleView.transform = CGAffineTransformRotate(self.circleView.transform, M_PI_4 / 8);
 }
 
 

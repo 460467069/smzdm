@@ -218,6 +218,9 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
         channelID = 11;
     }else if ([linkType isEqualToString:@"news"]){
         channelID = 6;
+    }else if ([linkType isEqualToString:@"other"]){
+        //暂时不确定                
+        channelID = 6;
     }
     
     ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];

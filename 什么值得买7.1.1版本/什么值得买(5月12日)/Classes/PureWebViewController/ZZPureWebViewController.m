@@ -26,13 +26,15 @@
     self.title = self.redirectdata.link_title;
     self.view.backgroundColor = [UIColor whiteColor];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.redirectdata.link]];
-    
+    NSURL *url = [NSURL URLWithString:self.redirectdata.link];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
     
 }
 
 
+
+#pragma mark - getter && setter
 - (WKWebView *)webView{
     if (!_webView) {
         _webView = [[WKWebView alloc] init];

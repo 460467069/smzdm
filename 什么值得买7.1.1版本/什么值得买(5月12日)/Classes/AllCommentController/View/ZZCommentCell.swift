@@ -15,22 +15,15 @@ class ZZCommentCell: UITableViewCell {
     lazy var parentCommentLabel: YYLabel = {
         let parentCommentLabel = YYLabel()
         parentCommentLabel.width = commentConstant.parentCommentViewWidth
+        parentCommentLabel.left = commentConstant.parentCommentViewLeft
         return parentCommentLabel
-    }()
-    
-    lazy var parentCommentView: UIImageView = {
-        
-        let parentCommentView = UIImageView()
-        parentCommentView.width = commentConstant.parentCommentViewWidth
-        parentCommentView.left = commentConstant.parentCommentViewLeft
-        parentCommentView.image = #imageLiteral(resourceName: "bg_grey_press")
-        return parentCommentView
     }()
     
     lazy var separatorLine: UIImageView = {
         
         let separatorLine = UIImageView.init(image: #imageLiteral(resourceName: "line_640x1"))
         separatorLine.width = commentConstant.parentCommentViewWidth
+        separatorLine.left = commentConstant.parentCommentViewLeft
         separatorLine.alpha = 0.3
         return separatorLine
     }()
@@ -47,23 +40,18 @@ class ZZCommentCell: UITableViewCell {
     }
 
     
-    var commentLayout: YYTextLayout? {
+    var commentLayout: ZZParentCommentLayout? {
         
         didSet{
-            
-            if let commentLayout = commentLayout {
-                
-                parentCommentView.height = commentLayout.textBoundingSize.height
-                parentCommentLabel.textLayout = commentLayout
-                parentCommentLabel.height = commentLayout.textBoundingSize.height
-                
-                separatorLine.bottom = parentCommentLabel.bottom
-                
-                
-                
-            }
 
-            
+            if let commentLayout = commentLayout {
+                parentCommentLabel.textLayout = commentLayout.textLayout
+                parentCommentLabel.height = commentLayout.height!
+                separatorLine.bottom = parentCommentLabel.bottom
+ 
+                parentCommentLabel.backgroundColor = commentLayout.bgColor
+            }
+ 
         }
         
     }
@@ -77,13 +65,8 @@ extension ZZCommentCell{
 
     func setupUI(){
         
-        parentCommentView.addSubview(parentCommentLabel)
-        
-        parentCommentView.addSubview(separatorLine)
-        
-        contentView.addSubview(parentCommentView)
-        
-        
+        contentView.addSubview(parentCommentLabel)
+        contentView.addSubview(separatorLine)
         
     }
     
