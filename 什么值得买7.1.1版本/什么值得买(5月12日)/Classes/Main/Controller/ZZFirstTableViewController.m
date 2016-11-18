@@ -21,8 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+
     [self tableViewInitial];
     
     [self refreshHeaderAndFooterInitial];
@@ -86,6 +85,15 @@
         _dataSource = [NSMutableArray array];
     }
     return _dataSource;
+}
+
+- (void)setTableViewColor:(UIColor *)tableViewColor{
+    
+    _tableViewColor = tableViewColor;
+    
+    self.tableView.backgroundColor = tableViewColor;
+    self.tableView.mj_footer.backgroundColor = tableViewColor;
+    self.tableView.mj_header.backgroundColor = tableViewColor;
 }
 
 

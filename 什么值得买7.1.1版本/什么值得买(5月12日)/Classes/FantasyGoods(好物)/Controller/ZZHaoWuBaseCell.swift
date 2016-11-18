@@ -72,7 +72,7 @@ class ZZHaoWuBaseCell: UITableViewCell {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.backgroundColor = UIColor.init(colorLiteralRed: 234.0/255.0, green: 234.0/255.0, blue: 234.0/255.0, alpha: 1.0)
+        contentView.backgroundColor = kGlobalLightGrayColor
         
         setupUI()
     }

@@ -18,7 +18,7 @@ struct ZZHaoWuConstant {
 
     let rightTitleMargin: CGFloat = 15.0
     let headTitleHeight:CGFloat = 48.0
-    let headTitleFont = UIFont.systemFont(ofSize: 17)
+    let headTitleFont = UIFont.systemFont(ofSize: 15)
     let headTitleColor = UIColor.black
     let headTitleLeft: CGFloat = 20.0
     
@@ -54,14 +54,14 @@ struct ZZHaoWuConstant {
     let priceLabelFont = UIFont.systemFont(ofSize: 14)
 
     let allBtnColor = UIColor.red
-    let allBtnFont = UIFont.systemFont(ofSize: 15)
+    let allBtnFont = UIFont.systemFont(ofSize: 13)
     let allBtnWidth:CGFloat = 100.0
     
     
     let itemMargin: CGFloat = 13.0
     let itemWidth: CGFloat = 130.0
     let itemHeight1: CGFloat = 205.0
-    let cellHeight1: CGFloat = 252.0
+    let cellHeight1: CGFloat = 252.0 + 5.0
     let maxCount = 20
     
     

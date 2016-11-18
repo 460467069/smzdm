@@ -61,10 +61,16 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         placeHolderLabel.text = "相机"
+//        tableView.backgroundColor = kGlobalLightGrayColor
+//        
+//        view.backgroundColor = kGlobalLightGrayColor
+        
+        self.tableViewColor = kGlobalLightGrayColor
         tableView.tableHeaderView = collectionView
         
         tableView.register(ZZHaoWuCellOne.self, forCellReuseIdentifier: haowuCellOne)
         tableView.register(ZZHaoWuCellThree.self, forCellReuseIdentifier: haowuCellThree)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

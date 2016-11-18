@@ -172,4 +172,11 @@
 //    self.label.textColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
 
+#pragma mark - getter && setter
+- (void)setBackgroundColor:(UIColor *)backgroundColor{
+    [super setBackgroundColor:backgroundColor];
+    
+    self.circleView.backgroundColor = backgroundColor;
+}
+
 @end

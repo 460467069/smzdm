@@ -15,6 +15,8 @@
 @property(nonatomic, strong)NSMutableArray *dataSource;
 
 @property (nonatomic, assign) NSInteger page;
+
+@property (nonatomic, strong) UIColor *tableViewColor;
 /** 下拉 */
 - (void)loadData;
 /** 上拉 */

@@ -23,9 +23,8 @@
 #define kBottomBarHeight 44
 #define NAVBAR_CHANGE_POINT 50
 
-NSString *const WKWebViewKeyPathLoading = @"loading";
+
 NSString *const WKWebViewKeyPathContentSize = @"contentSize";
-NSString *const WKEstimatedProgress = @"estimatedProgress";
 
 @interface ZZDetailArticleViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate, WKScriptMessageHandler, ZZDetailBaseBottomBarDelegate>
 @property (nonatomic, strong) ZZChannelID *channel;
@@ -65,6 +64,10 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
     _containerScrollView.decelerationRate = UIScrollViewDecelerationRateFast;
 
     
+    ZZDetailHeaderView *headerView = [[ZZDetailHeaderView alloc] init];
+    [self.containerScrollView addSubview:headerView];
+    self.headerView = headerView;
+    
     //初始化webView
     [self initialWebView];
     //加载数据
@@ -90,7 +93,6 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
 
 - (void)dealloc{
     
-    [self.webView removeObserver:self forKeyPath:WKWebViewKeyPathLoading];
     [self.webView.scrollView removeObserver:self forKeyPath:WKWebViewKeyPathContentSize];
     self.containerScrollView.delegate = nil;
 }
@@ -110,29 +112,27 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
 }
 
 - (void)initialWebView{
-    
-    
     //解决wkwebView 加载的网页存在缩放的问题666
-    NSString *jScript = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
+//    NSString *jScript = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
+//    
+//    WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+//    WKUserContentController *wkUController = [[WKUserContentController alloc] init];
+//    [wkUController addUserScript:wkUScript];
+////    [wkUController addScriptMessageHandler:self name:@"sizeNotification"];
+//    
+//    WKWebViewConfiguration *wkWebConfig = [[WKWebViewConfiguration alloc] init];
+//    wkWebConfig.userContentController = wkUController;
     
-    WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
-    WKUserContentController *wkUController = [[WKUserContentController alloc] init];
-    [wkUController addUserScript:wkUScript];
-    [wkUController addScriptMessageHandler:self name:@"sizeNotification"];
-    
-    WKWebViewConfiguration *wkWebConfig = [[WKWebViewConfiguration alloc] init];
-    wkWebConfig.userContentController = wkUController;
-    
-    _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:wkWebConfig];
+    _webView = [[WKWebView alloc] init];
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
-    [_webView addObserver:self forKeyPath:WKWebViewKeyPathLoading options:NSKeyValueObservingOptionNew context:nil];
-    [_webView addObserver:self forKeyPath:WKEstimatedProgress options:NSKeyValueObservingOptionNew context:nil];
+
     [_webView.scrollView addObserver:self forKeyPath:WKWebViewKeyPathContentSize options:NSKeyValueObservingOptionNew context:nil];
     _webView.scrollView.delegate = self;
     _webView.frame = _containerScrollView.bounds;
     
     _webView.scrollView.scrollEnabled = NO;
+    _webView.backgroundColor = [UIColor randomColor];
     [_containerScrollView addSubview:_webView];
 }
 
@@ -193,13 +193,8 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
             [self.circleView stopAnimating];
             [self.circleView removeFromSuperview];
             
-            ZZDetailHeaderView *headerView = [[ZZDetailHeaderView alloc] init];
-            [self.containerScrollView addSubview:headerView];
-            headerView.headerLayout = _headerLayout;
-            self.headerView = headerView;
-            
-//            [_containerScrollView addSubview:_webView];
-            _webView.top = headerView.bottom;
+            self.headerView.headerLayout = _headerLayout;
+            _webView.top = self.headerView.bottom;
         }
         
     }];
@@ -250,39 +245,7 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     
     CGFloat height = self.webView.scrollView.contentSize.height;
-    
-    if ([keyPath isEqualToString:WKWebViewKeyPathLoading]){
-        
-        BOOL isLoading = [change[@"new"] boolValue];
-        
-        if (!isLoading) {
-            
-            
-        }
-        
-//        LxDBAnyVar(@"正在加载");
-    }else if ([keyPath isEqualToString:WKWebViewKeyPathContentSize]){
-        
-//        CGSize scrollViewContentSize = [change[@"new"] CGSizeValue];
-
-//        self.webView.height = scrollViewContentSize.height;
-//        self.containerScrollView.contentSize = CGSizeMake(self.view.width, scrollViewContentSize.height + _headerLayout.height);
-//        UIScrollView *scrollView = self.webView.scrollView;
-        
-        
-        
-        [self configureWebViewContentSizeWithScrollViewHeight:height];
-        
-//        NSLog(@"New contentSize: %f x %f", scrollView.contentSize.width, scrollView.contentSize.height);
-    }else if ([keyPath isEqualToString:WKEstimatedProgress]){
-         CGFloat newprogress = [[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
-//        if (newprogress == 1) {
-        
-//        LxDBAnyVar(newprogress);
-//        LxDBAnyVar(height);
-            [self configureWebViewContentSizeWithScrollViewHeight:height];
-//        }
-    }
+    [self configureWebViewContentSizeWithScrollViewHeight:height];
     
 }
 
@@ -348,16 +311,6 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
     [self.navigationController pushViewController:commentController animated:YES];
 }
 
-
-- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
-    
-    CGFloat height = [[message.body valueForKey:@"height"] floatValue];
-    
-    [self configureWebViewContentSizeWithScrollViewHeight:height];
-    
-}
-
-
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
@@ -406,15 +359,6 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
 /** 页面加载完成时调用 */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     
-    [webView evaluateJavaScript:@"document.body.offsetHeight;" completionHandler:^(NSNumber *_Nullable result,NSError *_Nullable error) {
-        
-//        CGFloat height = [result floatValue];
-        
-//        LxDBAnyVar(height);
-//        self.webView.height = height;
-//        self.containerScrollView.contentSize = CGSizeMake(self.view.width, height + _headerLayout.height);
-    }];
-
 }
 
 /** 页面加载失败时调用 */
@@ -436,7 +380,7 @@ NSString *const WKEstimatedProgress = @"estimatedProgress";
     
     //详情: "about"
     
-//    LxDBAnyVar(scheme);
+    LxDBAnyVar(scheme);
     
     decisionHandler(WKNavigationActionPolicyAllow);
 }

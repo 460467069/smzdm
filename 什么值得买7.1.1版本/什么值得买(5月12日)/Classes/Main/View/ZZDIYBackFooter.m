@@ -16,12 +16,14 @@
 @implementation ZZDIYBackFooter
 #pragma mark - 重写方法
 #pragma mark 在这里做一些初始化配置（比如添加子控件）
+
 - (void)prepare
 {
     [super prepare];
     self.backgroundColor = [UIColor whiteColor];
     
     ZZCircleView *cirleView = [[ZZCircleView alloc] init];
+    cirleView.backgroundColor = self.backgroundColor;
     [self addSubview:cirleView];
     self.circleView = cirleView;
     
@@ -148,6 +150,14 @@
     //    CGFloat blue = 0.5 * pullingPercent;
     //    self.label.textColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
+
+#pragma mark - getter && setter
+- (void)setBackgroundColor:(UIColor *)backgroundColor{
+    [super setBackgroundColor:backgroundColor];
+    
+    self.circleView.backgroundColor = backgroundColor;
+}
+
 
 
 @end
