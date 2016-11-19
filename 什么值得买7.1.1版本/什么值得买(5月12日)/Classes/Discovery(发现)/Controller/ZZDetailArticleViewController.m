@@ -31,11 +31,11 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) ZZCircleView *circleView;
 @property (nonatomic, strong) UIView *bottomToolBar;
-@property (nonatomic, strong) UIScrollView *containerScrollView;
+@property (nonatomic, strong) UIScrollView *containerScrollView;        /**< 放置headerView +  WKWebView*/
 @property (nonatomic, strong) ZZDetailHeaderLayout *headerLayout;
 @property (nonatomic, strong) ZZDetailHeaderView *headerView;
 @property (nonatomic, strong) ZZDetailModel *detailModel;
-@property (nonatomic, assign) CGSize contentSize;
+
 @end
 
 @implementation ZZDetailArticleViewController
@@ -241,17 +241,10 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    
+    // object为WKScrollView
     CGSize size = [object contentSize];
-    
-    CGFloat height = self.webView.scrollView.contentSize.height;
-    
-    
-    height = size.height;
-    
-    
-    LxDBAnyVar(height);
-    [self configureWebViewContentSizeWithScrollViewHeight:height];
+
+    [self configureWebViewContentSizeWithScrollViewHeight:size.height];
     
 }
 

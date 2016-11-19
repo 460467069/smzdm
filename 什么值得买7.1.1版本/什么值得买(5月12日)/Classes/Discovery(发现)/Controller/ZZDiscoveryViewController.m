@@ -285,18 +285,20 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     NSInteger channelID;
     if ([linkType isEqualToString:@"faxian"] || [linkType isEqualToString:@"youhui"]) {
         channelID = 2;
-    }else if ([linkType isEqualToString:@"yuanchuang"]){
-        channelID = 11;
+    }else if ([linkType isEqualToString:@"haitao"]){
+        channelID = 5;
     }else if ([linkType isEqualToString:@"news"]){
         channelID = 6;
+    }else if ([linkType isEqualToString:@"pingce"]){
+        channelID = 8;
+    }else if ([linkType isEqualToString:@"yuanchuang"]){
+        channelID = 11;
     }else if ([linkType isEqualToString:@"other"]){
         ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
         webViewController.redirectdata = redirectdata;
         [self.navigationController pushViewController:webViewController animated:YES];
         
         return;
-    }else if ([linkType isEqualToString:@"pingce"]){
-        channelID = 8;
     }
     ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];
     vc.channelID = channelID;
