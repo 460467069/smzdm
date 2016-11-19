@@ -60,30 +60,40 @@
         [articleTitle appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:nil]];
     }
     
-    {
-        NSString *title = @"￥";
-        NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-        [attributes setObject:kGlobalRedColor forKey:NSForegroundColorAttributeName];
-        [attributes setObject:[UIFont systemFontOfSize:13] forKey:NSFontAttributeName];
-        [articleTitle appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
-    }
-    
-    {
-        NSString *title = [NSString stringWithFormat:@"%@", _detailTopicModel.pro_price];
+    if ([_detailTopicModel.pro_price isEqualToString:@"0"]) {   //暂无报价
+        
+        NSString *title = @"暂无报价";
         NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
         [attributes setObject:kGlobalRedColor forKey:NSForegroundColorAttributeName];
         [attributes setObject:[UIFont systemFontOfSize:20] forKey:NSFontAttributeName];
         [articleTitle appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
+    }else{
+        {
+            NSString *title = @"￥";
+            NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+            [attributes setObject:kGlobalRedColor forKey:NSForegroundColorAttributeName];
+            [attributes setObject:[UIFont systemFontOfSize:13] forKey:NSFontAttributeName];
+            [articleTitle appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
+        }
+        
+        {
+            NSString *title = [NSString stringWithFormat:@"%@", _detailTopicModel.pro_price];
+            NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+            [attributes setObject:kGlobalRedColor forKey:NSForegroundColorAttributeName];
+            [attributes setObject:[UIFont systemFontOfSize:20] forKey:NSFontAttributeName];
+            [articleTitle appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
+        }
+        
+        {
+            NSString *title = @"起";
+            NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+            [attributes setObject:kGlobalRedColor forKey:NSForegroundColorAttributeName];
+            [attributes setObject:[UIFont systemFontOfSize:13] forKey:NSFontAttributeName];
+            [articleTitle appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
+        }
     }
-    
-    {
-        NSString *title = @"起";
-        NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-        [attributes setObject:kGlobalRedColor forKey:NSForegroundColorAttributeName];
-        [attributes setObject:[UIFont systemFontOfSize:13] forKey:NSFontAttributeName];
-        [articleTitle appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
-    }
-    articleTitle.lineSpacing = 5;
+
+    articleTitle.lineSpacing = 10;
     CGFloat titleWidth = kScreenW - kDetailTopicProPicWH - kDetailTopicMarginX * 2 - kDetailTopicContentOffsetX;
     container = [YYTextContainer containerWithSize:CGSizeMake(titleWidth, kDetailTopicProPicWH) insets:UIEdgeInsetsMake(0, kDetailTopicTitleLeftMargin, 0, kDetailTopicContentOffsetX)];
     _titleLayout = [YYTextLayout layoutWithContainer:container text:articleTitle];

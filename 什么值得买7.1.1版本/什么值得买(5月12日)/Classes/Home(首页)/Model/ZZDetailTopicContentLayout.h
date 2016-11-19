@@ -4,7 +4,7 @@
 //
 //  Created by Wang_ruzhou on 16/9/13.
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
-//
+//  话题详情cell详细布局
 
 #import <Foundation/Foundation.h>
 #import "ZZDetailTopicModel.h"

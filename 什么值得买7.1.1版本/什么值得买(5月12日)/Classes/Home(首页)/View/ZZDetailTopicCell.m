@@ -21,7 +21,7 @@
 @property (nonatomic, strong) YYLabel *useTimeLabel;
 @property (nonatomic, strong) YYLabel *supportLabel;
 @property (nonatomic, strong) UIButton *supportBtn;
-@property (nonatomic, strong) YYLabel *starLabel;
+@property (nonatomic, strong) YYLabel *starLabel;       /**< 星星 */
 @end
 
 @implementation ZZDetailContentView

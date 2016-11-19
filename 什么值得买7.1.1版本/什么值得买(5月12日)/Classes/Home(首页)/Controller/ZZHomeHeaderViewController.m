@@ -14,6 +14,7 @@
 #import "ZZDetailArticleViewController.h"
 #import "ZZLittleBannerLayout.h"
 #import "ZZPureWebViewController.h"
+#import "ZZDetailTopicViewController.h"
 
 #define kCycleTextContentViewColor [UIColor colorWithWhite:1.0 alpha:0.8]
 NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
@@ -231,7 +232,12 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     }else if ([linkType isEqualToString:@"yuanchuang"]){
         channelID = 11;
     }else if ([linkType isEqualToString:@"wiki"]){
-        channelID = 11;
+        ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
+        detailTopicVc.channelID = 14;
+        detailTopicVc.article_id = redirectdata.link_val;
+        [self.navigationController pushViewController:detailTopicVc animated:YES];
+        return;
+        
     }else if ([linkType isEqualToString:@"other"]){
         ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
         webViewController.redirectdata = redirectdata;

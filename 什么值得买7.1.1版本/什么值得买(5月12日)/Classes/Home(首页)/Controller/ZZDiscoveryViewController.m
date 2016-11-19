@@ -259,12 +259,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
             [self.navigationController pushViewController:detailTopicVc animated:YES];
             return;
         }
-        
-//        ZZDetailArticleViewController *vc = [[ZZDetailArticleViewController alloc] init];
-//        vc.channelID = channelID;
-//        vc.article_id = articleId;
-//        [self.navigationController pushViewController:vc animated:YES];
-        
+                
         [self jumpToDetailArticleViewControllerWithRedirectdata:redirectdata];
     }
 }

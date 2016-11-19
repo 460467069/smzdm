@@ -16,6 +16,7 @@
 #import "ZZYuanChuangCell.h"
 #import "ZZDetailArticleViewController.h"
 #import "ZZDetailTopicViewController.h"
+#import "ZZPureWebViewController.h"
 
 static NSString * const kReuseIdentifierYuanChuangCell = @"ZZYuanChuangCell";
 static NSString * const kReuseIdentifieFirstCell = @"ZZHomeFirstCell";
@@ -33,9 +34,9 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     [super viewDidLoad];
 //     {{0, 244}, {414, 180}}
     
-    self.title = @"发现";
+    self.title = @"首页";
     ZZHomeHeaderViewController *headerVC = [[ZZHomeHeaderViewController alloc] init];
-    headerVC.view.backgroundColor = [UIColor redColor];
+    headerVC.view.backgroundColor = [UIColor whiteColor];
     headerVC.view.bounds = CGRectMake(0, 0, kScreenW, 360);
     [self addChildViewController:headerVC];
     self.tableView.tableHeaderView = headerVC.view;
@@ -276,12 +277,24 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     
     NSString *linkType = redirectdata.link_type;
     NSInteger channelID;
-    if ([linkType isEqualToString:@"faxian"]) {
+    if ([linkType isEqualToString:@"faxian"] || [linkType isEqualToString:@"youhui"]) {
         channelID = 2;
-    }else if ([linkType isEqualToString:@"yuanchuang"]){
-        channelID = 11;
+    }else if ([linkType isEqualToString:@"haitao"]){
+        channelID = 5;
     }else if ([linkType isEqualToString:@"news"]){
         channelID = 6;
+    }else if ([linkType isEqualToString:@"pingce"]){
+        channelID = 8;
+    }else if ([linkType isEqualToString:@"yuanchuang"]){
+        channelID = 11;
+    }else if ([linkType isEqualToString:@"wiki"]){
+        channelID = 11;
+    }else if ([linkType isEqualToString:@"other"]){
+        ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
+        webViewController.redirectdata = redirectdata;
+        [self.navigationController pushViewController:webViewController animated:YES];
+        
+        return;
     }
     
     ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];

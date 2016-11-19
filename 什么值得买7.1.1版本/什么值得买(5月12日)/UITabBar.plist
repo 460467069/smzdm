@@ -8,7 +8,7 @@
 		<key>normalImage</key>
 		<string>goodsNormal</string>
 		<key>nibName</key>
-		<string>ZZDiscoveryViewController</string>
+		<string>ZZHomeViewController</string>
 		<key>selectedImage</key>
 		<string>goodsseleted</string>
 	</dict>

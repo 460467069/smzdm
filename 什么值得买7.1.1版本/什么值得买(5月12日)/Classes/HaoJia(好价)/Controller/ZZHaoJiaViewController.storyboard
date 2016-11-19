@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-266" y="139"/>
         </scene>
-        <!--什么值得买-->
+        <!--Hao Jia View Controller-->
         <scene sceneID="FeK-I1-Rdh">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="oHW-do-lqg" customClass="ZZHaoJiaViewController" sceneMemberID="viewController">
@@ -69,7 +69,7 @@
                             <constraint firstAttribute="trailing" secondItem="bNs-B2-7Gh" secondAttribute="trailing" id="zeh-RM-M3M"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="什么值得买" id="gXZ-O7-tE0"/>
+                    <navigationItem key="navigationItem" id="gXZ-O7-tE0"/>
                     <connections>
                         <outlet property="collectionView" destination="bNs-B2-7Gh" id="J3b-fK-StI"/>
                         <outlet property="flowLayout" destination="9ja-4T-DTE" id="fcz-R0-DU1"/>

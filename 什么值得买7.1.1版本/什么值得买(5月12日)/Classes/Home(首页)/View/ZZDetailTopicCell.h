@@ -4,7 +4,7 @@
 //
 //  Created by Wang_ruzhou on 16/9/13.
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
-//
+//  话题详情 cell
 
 #import <UIKit/UIKit.h>
 #import "ZZDetailTopicContentLayout.h"

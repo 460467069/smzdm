@@ -519,21 +519,21 @@
 		A947CC7B1DE02FA30047B58F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A947CC7C1DE02FA30047B58F /* ZZDetailArticleViewController.h */,
-				A947CC7D1DE02FA30047B58F /* ZZDetailArticleViewController.m */,
-				A947CC7E1DE02FA30047B58F /* ZZDetailBaseViewController.h */,
-				A947CC7F1DE02FA30047B58F /* ZZDetailBaseViewController.m */,
-				A947CC801DE02FA30047B58F /* ZZDetailTopicViewController.h */,
-				A947CC811DE02FA30047B58F /* ZZDetailTopicViewController.m */,
+				A947CC881DE02FA30047B58F /* ZZHomeViewController.h */,
+				A947CC891DE02FA30047B58F /* ZZHomeViewController.m */,
+				A947CC8A1DE02FA30047B58F /* ZZHomeViewController.storyboard */,
 				A947CC821DE02FA30047B58F /* ZZDiscoveryViewController.h */,
 				A947CC831DE02FA30047B58F /* ZZDiscoveryViewController.m */,
 				A947CC841DE02FA30047B58F /* ZZDiscoveryViewController.storyboard */,
 				A947CC851DE02FA30047B58F /* ZZHomeHeaderViewController.h */,
 				A947CC861DE02FA30047B58F /* ZZHomeHeaderViewController.m */,
 				A947CC871DE02FA30047B58F /* ZZHomeHeaderViewController.storyboard */,
-				A947CC881DE02FA30047B58F /* ZZHomeViewController.h */,
-				A947CC891DE02FA30047B58F /* ZZHomeViewController.m */,
-				A947CC8A1DE02FA30047B58F /* ZZHomeViewController.storyboard */,
+				A947CC7C1DE02FA30047B58F /* ZZDetailArticleViewController.h */,
+				A947CC7D1DE02FA30047B58F /* ZZDetailArticleViewController.m */,
+				A947CC7E1DE02FA30047B58F /* ZZDetailBaseViewController.h */,
+				A947CC7F1DE02FA30047B58F /* ZZDetailBaseViewController.m */,
+				A947CC801DE02FA30047B58F /* ZZDetailTopicViewController.h */,
+				A947CC811DE02FA30047B58F /* ZZDetailTopicViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
