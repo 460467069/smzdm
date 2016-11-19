@@ -186,7 +186,7 @@ static NSString * const kListCell = @"ZZListCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
+//https://api.smzdm.com/v2/youhui/articles/6643905?channel_id=5&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.3.3&weixin=1
     ZZWorthyArticle *article = self.dataArrayM[indexPath.row];
     NSInteger channelID = [article.article_channel_id integerValue];
     NSString *articleId = article.article_id;
@@ -205,8 +205,10 @@ static NSString * const kListCell = @"ZZListCell";
         return;
     }
     
-    ZZRedirectData *redirectdata = article.redirect_data;
-    [self jumpToDetailArticleViewControllerWithRedirectdata:redirectdata];
+    ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];
+    vc.channelID = channelID;
+    vc.article_id = articleId;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
