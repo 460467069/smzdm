@@ -304,7 +304,10 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     
 }
 /** 点击了四张图片中的一张 */
-- (void)cellDidClickOneOfFourPic:(ZZHomeFirstCell *)cell{
+- (void)cellDidClickOneOfFourPic:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index{
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
     
 }
 /** 点击了原创Item */

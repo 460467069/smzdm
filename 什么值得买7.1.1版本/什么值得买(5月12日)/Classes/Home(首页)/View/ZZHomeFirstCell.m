@@ -9,7 +9,7 @@
 #import "ZZHomeFirstCell.h"
 #import "ZZCyclePicHelper.h"
 
-@interface ZZHomeFirstCell ()<SDCycleScrollViewDelegate>
+@interface ZZHomeFirstCell ()<SDCycleScrollViewDelegate, ZZFourPicViewDelegate>
 
 @end
 
@@ -28,6 +28,7 @@
         [self.contentView addSubview:_cycleScrollView];
         
         _fourPicView = [ZZFourPicView new];
+        _fourPicView.delegate = self;
         [self.contentView addSubview:_fourPicView];
     
         _horizontalScrollView = [ZZHorizontalScrollView new];
@@ -62,8 +63,8 @@
     [self _setSeparatorBottomViewWithTop:top];
     top += layout.bottomSeparatorHeight;
 
-    self.height = layout.height;
-    self.contentView.height = layout.height;
+//    self.height = layout.height;
+//    self.contentView.height = layout.height;
 }
 
 - (void)_setTitleViewWithTop:(CGFloat)top{
@@ -101,15 +102,22 @@
 //    _fourPicView.backgroundColor = [UIColor greenColor];
     
     if (_layout.picFragmentHeight > 0) {
-        
         _fourPicView.hidden = NO;
-        [_fourPicView.fourPics  enumerateObjectsUsingBlock:^(__kindof UIImageView * _Nonnull imageView, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSInteger actualFragmentCount = _layout.firstModel.floor_single.count;
+        for (NSInteger i = 0; i < kHomeFragmentMaxCount ; i++) {
             
-            imageView.frame = [_layout.fourRectArray[idx] CGRectValue];
-            imageView.contentMode = UIViewContentModeScaleToFill;
-            ZZFloorSingle *floorSingle = _layout.firstModel.floor_single[idx];
-            [imageView.layer setImageWithURL:[NSURL URLWithString:floorSingle.pic_url] placeholder:nil];
-        }];
+            UIImageView *imageView = _fourPicView.fourPics[i];
+            if (i < actualFragmentCount) {
+                imageView.hidden = NO;
+                ZZFloorSingle *floorSingle = _layout.firstModel.floor_single[i];
+                [imageView.layer setImageWithURL:[NSURL URLWithString:floorSingle.pic_url] placeholder:nil];
+                imageView.frame = [_layout.fourRectArray[i] CGRectValue];
+            }else{
+                imageView.hidden = YES;
+            }
+            
+        }
+
     }else{
         _fourPicView.hidden = YES;
     }
@@ -185,6 +193,16 @@
     }
 }
 
+#pragma mark - ZZFourPicViewDelegate
+
+- (void)fourPicView:(ZZFourPicView *)fourPicView didSelectItemAtIndex:(NSInteger)index{
+    
+    if ([self.delegate respondsToSelector:@selector(cellDidClickFuliItem:atIndex:)]) {
+        
+        [self.delegate cellDidClickOneOfFourPic:self atIndex:index];
+    }
+}
+
 @end
 
 
@@ -227,14 +245,31 @@
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         NSMutableArray *tempArray = [NSMutableArray array];
-        for (NSInteger i = 0; i < 4; i++) {
+        //11月19日更改, 原app出现有8张图片的情况
+        for (NSInteger i = 0; i < kHomeFragmentMaxCount; i++) {
             UIImageView *imageView = [[UIImageView alloc] init];
             [self addSubview:imageView];
             [tempArray addObject:imageView];
+            
+            imageView.userInteractionEnabled = YES;
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewDidTap:)];
+            [imageView addGestureRecognizer:tap];
         }
         _fourPics = [tempArray copy];
     }
     return self;
+}
+
+- (void)imageViewDidTap:(UITapGestureRecognizer *)tap{
+    
+    UIImageView *imageView = (UIImageView *)tap.view;
+
+    NSInteger index = [_fourPics indexOfObject:imageView];
+    
+    if ([self.delegate respondsToSelector:@selector(fourPicView:didSelectItemAtIndex:)]) {
+        
+        [self.delegate fourPicView:self didSelectItemAtIndex:index];
+    }
 }
 
 @end

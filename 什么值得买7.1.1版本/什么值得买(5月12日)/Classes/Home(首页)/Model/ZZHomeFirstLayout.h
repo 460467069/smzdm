@@ -4,7 +4,7 @@
 //
 //  Created by Wang_ruzhou on 16/8/12.
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
-//
+//  首页第一组cell详细布局
 
 #import <Foundation/Foundation.h>
 #import "ZZHomeFirstModel.h"
@@ -33,6 +33,7 @@
 #define kHomeTitleFont 13
 #define kHomeFirstCellLineColor ZZColor(225, 225, 225)
 
+#define kHomeFragmentMaxCount 8
 
 @interface ZZHomeFirstLayout : NSObject
 

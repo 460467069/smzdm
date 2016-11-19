@@ -21,8 +21,17 @@
 @interface ZZSeparatorView : UIView
 @end
 
+@class ZZFourPicView;
+@protocol ZZFourPicViewDelegate <NSObject>
+
+@optional
+- (void)fourPicView:(ZZFourPicView *)fourPicView didSelectItemAtIndex:(NSInteger)index;
+
+@end
+/** 值友福利 / 值精选 */
 @interface ZZFourPicView : UIView
 @property (nonatomic, strong) NSArray<UIImageView *> *fourPics;
+@property (nonatomic, weak) id <ZZFourPicViewDelegate>delegate;
 @end
 
 
@@ -63,7 +72,7 @@
 /** 点击了轮播图片 */
 - (void)cellDidClickCycleScrollView:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index;
 /** 点击了四张图片中的一张 */
-- (void)cellDidClickOneOfFourPic:(ZZHomeFirstCell *)cell;
+- (void)cellDidClickOneOfFourPic:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index;
 /** 点击了原创Item */
 - (void)cellDidClickYuanChuangItem:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index;
 /** 点击了福利Item */

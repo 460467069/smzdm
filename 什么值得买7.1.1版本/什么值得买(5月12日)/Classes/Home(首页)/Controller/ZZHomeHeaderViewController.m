@@ -102,10 +102,8 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     _litterBackgroundView = [[UIImageView alloc] initWithFrame:littleBannerView.bounds];
     littleBannerView.backgroundView = _litterBackgroundView;
     
-    NSString *urlStr = @"http://api.smzdm.com/v2/util/banner?f=iphone&is_login=1&type=menhu&v=7.1&weixin=1";
-    
+    NSString *urlStr = @"http://api.smzdm.com/v2/util/banner?f=iphone&is_login=1&type=menhu&v=7.3.3&weixin=1";
 
-    
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 //    manager.securityPolicy.validatesDomainName = NO;
     
@@ -155,11 +153,8 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
                 subView.bottom = cycleImageView.height - cycleTextContentView.height;
                 break;
             }
-            
-            
+
         }
-        
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
@@ -178,13 +173,14 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     return cell;
 }
 
-#pragma mark - getter && setter
-- (NSArray *)litterBannerArray
-{
-	if (!_litterBannerArray){
-        _litterBannerArray = [NSArray array];
-	}
-	return _litterBannerArray;
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    
+    
+    ZZLittleBanner *littleBanner = self.litterBannerArray[indexPath.item];
+    
+    
 }
 
 #pragma mark - SDCycleScrollViewDelegate
@@ -249,6 +245,15 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     vc.channelID = channelID;
     vc.article_id = redirectdata.link_val;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - getter && setter
+- (NSArray *)litterBannerArray
+{
+    if (!_litterBannerArray){
+        _litterBannerArray = [NSArray array];
+    }
+    return _litterBannerArray;
 }
 
 
