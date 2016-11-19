@@ -6,13 +6,13 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import "ZZHomeViewController.h"
+#import "ZZHaoJiaViewController.h"
 #import "ZZHomeChannel.h"
 #import "ZZHomeCell.h"
 #import "ZZContentViewController.h"
 #import "ZZTagLabel.h"
 
-@interface ZZHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ZZHaoJiaViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 /** 头部的ScrollView */
 @property (strong, nonatomic) IBOutlet UIScrollView *topScrollView;
@@ -37,7 +37,7 @@
 
 @end
 
-@implementation ZZHomeViewController
+@implementation ZZHaoJiaViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

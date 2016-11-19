@@ -5,22 +5,22 @@
 	<dict>
 		<key>title</key>
 		<string>首页</string>
-		<key>nibName</key>
-		<string>ZZHomeViewController</string>
-		<key>normalImage</key>
-		<string>mainNormal</string>
-		<key>selectedImage</key>
-		<string>mainSeleted</string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>发现</string>
 		<key>normalImage</key>
 		<string>goodsNormal</string>
 		<key>nibName</key>
 		<string>ZZDiscoveryViewController</string>
 		<key>selectedImage</key>
 		<string>goodsseleted</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>好价</string>
+		<key>nibName</key>
+		<string>ZZHaoJiaViewController</string>
+		<key>normalImage</key>
+		<string>mainNormal</string>
+		<key>selectedImage</key>
+		<string>mainSeleted</string>
 	</dict>
 	<dict>
 		<key>title</key>

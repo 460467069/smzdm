@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ZZFirstBaseViewController.h"
 
-@interface ZZHomeViewController : ZZFirstBaseViewController
+@interface ZZHaoJiaViewController : ZZFirstBaseViewController
 
 @end
