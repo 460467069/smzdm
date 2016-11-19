@@ -56,8 +56,9 @@
         NSString *firstTitle = _detailModel.article_rzlx.length ? _detailModel.article_rzlx : _detailModel.article_mall;
         
         NSString *title = [NSString stringWithFormat:@"%@ | %@", firstTitle, _detailModel.article_format_date];
-        if (_detailModel.article_bl_author_info[0]) {
-            title = [NSString stringWithFormat:@"%@ | 爆料人: %@", title, _detailModel.article_bl_author_info[0].nick_name];
+        NSArray <ZZArticleAuthorInfo *> *authorInfo = _detailModel.article_bl_author_info;
+        if (authorInfo.count) {
+            title = [NSString stringWithFormat:@"%@ | 爆料人: %@", title, authorInfo[0].nick_name];
         }
         NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
         [attributes setObject:[UIColor lightGrayColor] forKey:NSForegroundColorAttributeName];

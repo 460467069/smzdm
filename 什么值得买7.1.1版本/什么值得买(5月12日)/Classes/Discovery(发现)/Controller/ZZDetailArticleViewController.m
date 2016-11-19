@@ -26,7 +26,7 @@
 
 NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 
-@interface ZZDetailArticleViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate, WKScriptMessageHandler, ZZDetailBaseBottomBarDelegate>
+@interface ZZDetailArticleViewController ()<WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate, ZZDetailBaseBottomBarDelegate>
 @property (nonatomic, strong) ZZChannelID *channel;
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) ZZCircleView *circleView;
@@ -124,12 +124,13 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 //    wkWebConfig.userContentController = wkUController;
     
     _webView = [[WKWebView alloc] init];
+    _webView.frame = _containerScrollView.bounds;
+    
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
 
     [_webView.scrollView addObserver:self forKeyPath:WKWebViewKeyPathContentSize options:NSKeyValueObservingOptionNew context:nil];
-    _webView.scrollView.delegate = self;
-    _webView.frame = _containerScrollView.bounds;
+//    _webView.scrollView.delegate = self;
     
     _webView.scrollView.scrollEnabled = NO;
     _webView.backgroundColor = [UIColor randomColor];
@@ -241,7 +242,15 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     
+    CGSize size = [object contentSize];
+    
     CGFloat height = self.webView.scrollView.contentSize.height;
+    
+    
+    height = size.height;
+    
+    
+    LxDBAnyVar(height);
     [self configureWebViewContentSizeWithScrollViewHeight:height];
     
 }
@@ -311,11 +320,12 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
+    
     [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Back"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Right"] titleColor:[UIColor clearColor]];
     
     CGFloat offsetY = scrollView.contentOffset.y;
     
-
+    
     if (offsetY > NAVBAR_CHANGE_POINT) {
         CGFloat alpha = MIN(1, 1 - (NAVBAR_CHANGE_POINT + 64 - offsetY) / 64);
         
@@ -324,12 +334,11 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
         if (alpha == 1) {
             [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_BackSecond"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_RightSecond"] titleColor:[UIColor blackColor]];
         }
-
+        
     }else{
         [self.navigationController.navigationBar lt_setBackgroundColor:[kGlobalLightGrayColor colorWithAlphaComponent:0]];
     }
     
-
 }
 
 
