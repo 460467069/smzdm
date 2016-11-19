@@ -33,6 +33,9 @@ static NSString * const kListCell = @"ZZListCell";
 /** 请求参数页码 */
 @property (nonatomic, assign) NSInteger page;
 
+/** 请求参数offset */
+@property (nonatomic, assign) NSInteger offset;
+
 @end
 
 @implementation ZZContentViewController
@@ -93,7 +96,7 @@ static NSString * const kListCell = @"ZZListCell";
 - (void)loadData
 {
     self.page = 1;
-
+    self.offset = 0;
     [ZZNetworking Get:self.homeChannel.URLString parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
         
         [self.tableView.mj_header endRefreshing];
@@ -107,18 +110,22 @@ static NSString * const kListCell = @"ZZListCell";
         [self.tableView reloadData];
         
         self.page++;
+        self.offset = self.dataArrayM.count;
     }];
 }
 
 - (void)loadMoreData
 {
+//    https://api.smzdm.com/v1/faxian/articles?article_date=2016-11-19%2012%3A01%3A18&f=iphone&imgmode=0&limit=20&offset=20&page=2&v=7.3.3&weixin=1
+
+//    https://api.smzdm.com/v1/faxian/articles?article_date=2016-11-19%2011%3A52%3A41&f=iphone&imgmode=0&limit=20&offset=40&page=3&v=7.3.3&weixin=1
     
+//    https://api.smzdm.com/v1/home/articles?f=iphone&have_zhuanti=1&imgmode=0&limit=20&page=2&time_sort=147952645142&v=7.3.3&weixin=1
     NSMutableDictionary *parameters = [self configureParameters];
     ZZWorthyArticle *artcle = self.dataArrayM.lastObject;
     if (![self.homeChannel.type isEqualToString:kHaojiaJingXuan]) {
-        //需百分号转义
-        NSString *article_date = [artcle.article_date stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        [parameters setValue:article_date forKey:@"article_date"];
+        [parameters setValue:artcle.article_date forKey:@"article_date"];
+        [parameters setValue:[NSString stringWithFormat:@"%@", @(self.offset)] forKey:@"offset"];
     }else{
         [parameters setValue:artcle.time_sort forKey:@"time_sort"];
     }
@@ -134,6 +141,7 @@ static NSString * const kListCell = @"ZZListCell";
         [self.tableView reloadData];
         
         self.page++;
+        self.offset = self.dataArrayM.count;
     }];
 }
 
@@ -144,6 +152,7 @@ static NSString * const kListCell = @"ZZListCell";
     if ([self.homeChannel.type isEqualToString:kHaojiaJingXuan]) {
         [parameters setValue:@"have_zhuanti"  forKey:@"1"];
     }
+    [parameters setValue:@"0"  forKey:@"imgmode"];
     [parameters setValue:[NSString stringWithFormat:@"%@", @(self.page)]  forKey:@"page"];
     [parameters setObject:@"20" forKey:@"limit"];
     return parameters;
@@ -230,6 +239,7 @@ static NSString * const kListCell = @"ZZListCell";
 }
 
 
+#pragma mark - 控制器跳转逻辑
 - (void)jumpToDetailArticleViewControllerWithRedirectdata:(ZZRedirectData *)redirectdata{
     NSString *linkType = redirectdata.link_type;
     NSInteger channelID;

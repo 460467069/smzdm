@@ -46,6 +46,11 @@
     [self.navigationController addObserver:self forKeyPath:@"navigationBar.frame" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
     [self configureCollectionView];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{ //默认选中"精选"
+       
+        [self titleBtnDidClick:self.titleBtnArray[1]];
+    });
 }
 
 - (void)configureCollectionView{
