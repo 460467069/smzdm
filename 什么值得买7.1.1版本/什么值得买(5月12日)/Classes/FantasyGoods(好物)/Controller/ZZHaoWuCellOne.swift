@@ -26,6 +26,7 @@ class ZZHaoWuItemOne: UIView {
         tagLabel.width = haoWuConstant.imageWidth
         tagLabel.left = haoWuConstant.tagLabelLeft
         tagLabel.height = haoWuConstant.tagLabelHeight
+//        tagLabel.layer.contents = 
         return tagLabel
     }()
     

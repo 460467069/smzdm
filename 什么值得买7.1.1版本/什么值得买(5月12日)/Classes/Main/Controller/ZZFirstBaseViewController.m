@@ -10,6 +10,9 @@
 #import <RongIMKit/RongIMKit.h>
 #import "什么值得买-Swift.h"
 #import "UINavigationItem+Margin.h"
+#import "ZZJumpToNextModel.h"
+#import "ZZDetailArticleViewController.h"
+#import "ZZPureWebViewController.h"
 
 @interface ZZFirstBaseViewController ()
 
@@ -129,7 +132,43 @@
     return UIStatusBarStyleLightContent;
 }
 
-
+#pragma mark - 控制器跳转逻辑
+- (void)jumpToDetailArticleViewControllerWithRedirectdata:(ZZRedirectData *)redirectdata{
+    
+    NSString *linkType = redirectdata.link_type;
+    
+    ZZJumpToNextModel *model = [ZZJumpToNextModel modelWithLinkType:linkType];
+    
+    if (model) {
+        
+        Class class = NSClassFromString(model.destionationController);
+        
+        UIViewController *vc = class.new;
+        if ([vc isKindOfClass:[ZZDetailArticleViewController class]]) {
+            
+            ZZDetailArticleViewController *detailArticleVc = (ZZDetailArticleViewController *)vc;
+            detailArticleVc.channelID = model.channelID;
+            detailArticleVc.article_id = redirectdata.link_val;
+            [self.navigationController pushViewController:detailArticleVc animated:YES];
+            
+            return;
+        }else if ([vc isKindOfClass:[ZZDetailTopicViewController class]]){
+            ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
+            detailTopicVc.channelID = model.channelID;
+            detailTopicVc.article_id = redirectdata.link_val;
+            [self.navigationController pushViewController:detailTopicVc animated:YES];
+            return;
+        }
+        else if ([vc isKindOfClass:[ZZPureWebViewController class]]){
+            ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
+            webViewController.redirectdata = redirectdata;
+            [self.navigationController pushViewController:webViewController animated:YES];
+            
+            return;
+        }
+    }
+    
+}
 
 
 

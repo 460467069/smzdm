@@ -21,4 +21,6 @@
 
 @property (nonatomic, copy) NSString *isv_code_second;
 
+@property (nonatomic, copy) NSString *channelID;
+
 @end

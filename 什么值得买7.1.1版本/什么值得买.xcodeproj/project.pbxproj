@@ -39,6 +39,8 @@
 		A9388BB51DBC4DB50091969B /* ZZHaoWuCellThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9388BB41DBC4DB50091969B /* ZZHaoWuCellThree.swift */; };
 		A9388BB71DBC50680091969B /* ZZHaoWuBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9388BB61DBC50680091969B /* ZZHaoWuBaseCell.swift */; };
 		A93B6A7C1D6169780001F777 /* ZZDIYBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B6A7B1D6169780001F777 /* ZZDIYBackFooter.m */; };
+		A93DE7B91DE14D1C004C8332 /* ZZJumpToNextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DE7B81DE14D1C004C8332 /* ZZJumpToNextModel.m */; };
+		A93DE7BB1DE14D5B004C8332 /* JumpToNext.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93DE7BA1DE14D5B004C8332 /* JumpToNext.plist */; };
 		A93FA9CE1DBDE71F00E3007F /* app_details.css in Resources */ = {isa = PBXBuildFile; fileRef = A93FA9CD1DBDE71F00E3007F /* app_details.css */; };
 		A947CCBE1DE02FA30047B58F /* ZZDetailArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC7D1DE02FA30047B58F /* ZZDetailArticleViewController.m */; };
 		A947CCBF1DE02FA30047B58F /* ZZDetailBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC7F1DE02FA30047B58F /* ZZDetailBaseViewController.m */; };
@@ -202,6 +204,9 @@
 		A93B6A7A1D6169780001F777 /* ZZDIYBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDIYBackFooter.h; sourceTree = "<group>"; };
 		A93B6A7B1D6169780001F777 /* ZZDIYBackFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDIYBackFooter.m; sourceTree = "<group>"; };
 		A93BE1601DCEB67D0043A5E2 /* 什么值得买.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "什么值得买.entitlements"; path = "什么值得买/什么值得买.entitlements"; sourceTree = "<group>"; };
+		A93DE7B71DE14D1C004C8332 /* ZZJumpToNextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZJumpToNextModel.h; sourceTree = "<group>"; };
+		A93DE7B81DE14D1C004C8332 /* ZZJumpToNextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZJumpToNextModel.m; sourceTree = "<group>"; };
+		A93DE7BA1DE14D5B004C8332 /* JumpToNext.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = JumpToNext.plist; sourceTree = "<group>"; };
 		A93FA9CD1DBDE71F00E3007F /* app_details.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = app_details.css; sourceTree = "<group>"; };
 		A947CC7C1DE02FA30047B58F /* ZZDetailArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailArticleViewController.h; sourceTree = "<group>"; };
 		A947CC7D1DE02FA30047B58F /* ZZDetailArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailArticleViewController.m; sourceTree = "<group>"; };
@@ -754,6 +759,8 @@
 				A9A512041D77B07E00E41407 /* ZZChannelID.m */,
 				A91D9B4C1D855E090073DEB7 /* ZZTextLinePositionModifier.h */,
 				A91D9B4D1D855E090073DEB7 /* ZZTextLinePositionModifier.m */,
+				A93DE7B71DE14D1C004C8332 /* ZZJumpToNextModel.h */,
+				A93DE7B81DE14D1C004C8332 /* ZZJumpToNextModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -840,6 +847,7 @@
 				A980A3FF1CE41286006E0037 /* ZDMHome.plist */,
 				A980A3FD1CE41250006E0037 /* UITabBar.plist */,
 				A9A512011D775A5D00E41407 /* ZZCHannelID.plist */,
+				A93DE7BA1DE14D5B004C8332 /* JumpToNext.plist */,
 				A9D9D2221CE40B3E00A83101 /* Assets.xcassets */,
 				A9D9D2171CE40B3E00A83101 /* main.m */,
 				A9D9D2271CE40B3E00A83101 /* Info.plist */,
@@ -1149,6 +1157,7 @@
 				A91A83541D420A87008D229E /* weibo_6.json in Resources */,
 				A9D9D2231CE40B3E00A83101 /* Assets.xcassets in Resources */,
 				A9C356A11D2275BC006EE7EC /* ZZMineViewController.storyboard in Resources */,
+				A93DE7BB1DE14D5B004C8332 /* JumpToNext.plist in Resources */,
 				A9A512021D775A5D00E41407 /* ZZCHannelID.plist in Resources */,
 				A9262A801D76B35B0037B1CF /* ZZJingXuanViewController.storyboard in Resources */,
 				A947CCC41DE02FA30047B58F /* ZZHomeHeaderViewController.storyboard in Resources */,
@@ -1298,6 +1307,7 @@
 				A99A4BDD1D37E36B001DDE47 /* ZZDouYUBannerModel.m in Sources */,
 				A947CCD41DE02FA30047B58F /* ZZDetailHuaTiBottomBar.m in Sources */,
 				A947CCC51DE02FA30047B58F /* ZZHomeViewController.m in Sources */,
+				A93DE7B91DE14D1C004C8332 /* ZZJumpToNextModel.m in Sources */,
 				A9A7AC3B1D8BF1B400814CDD /* LEOStarView.m in Sources */,
 				A99A4BE31D380AD0001DDE47 /* ZZDouYuBannerCell.m in Sources */,
 				A91E0BE21D5D9640007BD117 /* ZZFirstTableViewController.m in Sources */,

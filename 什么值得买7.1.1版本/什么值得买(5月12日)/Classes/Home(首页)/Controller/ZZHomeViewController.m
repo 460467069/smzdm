@@ -247,7 +247,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         
         NSString *articleId = article.article_id;
         
-#if 1   //测试话题
+#if 0   //测试话题
         channelID = 14;
         articleId = @"698";
 #endif
@@ -275,39 +275,15 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     
     ZZRedirectData *redirectdata = cell.layout.firstModel.floor_multi[index].redirect_data;
     
-    NSString *linkType = redirectdata.link_type;
-    NSInteger channelID;
-    if ([linkType isEqualToString:@"faxian"] || [linkType isEqualToString:@"youhui"]) {
-        channelID = 2;
-    }else if ([linkType isEqualToString:@"haitao"]){
-        channelID = 5;
-    }else if ([linkType isEqualToString:@"news"]){
-        channelID = 6;
-    }else if ([linkType isEqualToString:@"pingce"]){
-        channelID = 8;
-    }else if ([linkType isEqualToString:@"yuanchuang"]){
-        channelID = 11;
-    }else if ([linkType isEqualToString:@"wiki"]){
-        channelID = 11;
-    }else if ([linkType isEqualToString:@"other"]){
-        ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
-        webViewController.redirectdata = redirectdata;
-        [self.navigationController pushViewController:webViewController animated:YES];
-        
-        return;
-    }
-    
-    ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];
-    vc.channelID = channelID;
-    vc.article_id = redirectdata.link_val;
-    [self.navigationController pushViewController:vc animated:YES];
+    [self jumpToDetailArticleViewControllerWithRedirectdata:redirectdata];
     
 }
 /** 点击了四张图片中的一张 */
 - (void)cellDidClickOneOfFourPic:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index{
     
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    ZZRedirectData *redirectdata = cell.layout.firstModel.floor_single[index].redirect_data;
     
+    [self jumpToDetailArticleViewControllerWithRedirectdata:redirectdata];
     
 }
 /** 点击了原创Item */
@@ -318,8 +294,6 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 - (void)cellDidClickFuliItem:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index{
     
 }
-
-
 
 #pragma mark - getter && setter
 - (NSMutableArray *)listArrayM

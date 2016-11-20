@@ -15,6 +15,9 @@
 #import "ZZLittleBannerLayout.h"
 #import "ZZPureWebViewController.h"
 #import "ZZDetailTopicViewController.h"
+#import "ZZJumpToNextModel.h"
+
+
 
 #define kCycleTextContentViewColor [UIColor colorWithWhite:1.0 alpha:0.8]
 NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
@@ -211,40 +214,6 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     
     [self jumpToDetailArticleViewControllerWithRedirectdata:redirectdata];
 
-}
-
-#pragma mark - 控制器跳转逻辑
-- (void)jumpToDetailArticleViewControllerWithRedirectdata:(ZZRedirectData *)redirectdata{
-    NSString *linkType = redirectdata.link_type;
-    NSInteger channelID;
-    if ([linkType isEqualToString:@"faxian"] || [linkType isEqualToString:@"youhui"]) {
-        channelID = 2;
-    }else if ([linkType isEqualToString:@"haitao"]){
-        channelID = 5;
-    }else if ([linkType isEqualToString:@"news"]){
-        channelID = 6;
-    }else if ([linkType isEqualToString:@"pingce"]){
-        channelID = 8;
-    }else if ([linkType isEqualToString:@"yuanchuang"]){
-        channelID = 11;
-    }else if ([linkType isEqualToString:@"wiki"]){
-        ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
-        detailTopicVc.channelID = 14;
-        detailTopicVc.article_id = redirectdata.link_val;
-        [self.navigationController pushViewController:detailTopicVc animated:YES];
-        return;
-        
-    }else if ([linkType isEqualToString:@"other"]){
-        ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
-        webViewController.redirectdata = redirectdata;
-        [self.navigationController pushViewController:webViewController animated:YES];
-        
-        return;
-    }
-    ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];
-    vc.channelID = channelID;
-    vc.article_id = redirectdata.link_val;
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - getter && setter
