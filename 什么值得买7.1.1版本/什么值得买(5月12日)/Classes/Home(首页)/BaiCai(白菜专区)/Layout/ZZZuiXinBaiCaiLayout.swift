@@ -1,0 +1,146 @@
+//
+//  ZZZuiXinBaiCaiLayout.swift
+//  什么值得买
+//
+//  Created by Wang_ruzhou on 2016/11/22.
+//  Copyright © 2016年 Wang_ruzhou. All rights reserved.
+//
+
+import UIKit
+
+struct ZZBaiCaiConstant {
+
+    let itemMargin: CGFloat = 6
+    let itemBottom: CGFloat = 14
+    let itemMaxCount = 10
+    let bannerViewheight: CGFloat = 35
+    
+/**-------------------------白菜头条/每日精选--------------------------------------*/
+    var rowHeight1: CGFloat = 0
+    
+    let itemWidth1: CGFloat = 130
+    var itemHeight1: CGFloat = 0
+
+    var imageWH1: CGFloat = 0     //图片宽高
+    let imageInset1: CGFloat = 5   //图片
+    
+    var titleLabelTop1: CGFloat = 5
+    let titleLabelColor1 = kGlobalGrayColor     //标题
+    var titleLabelHeight1: CGFloat = 0
+    let titleLabelFont1 = UIFont.systemFont(ofSize: 14)
+    
+
+    let priceLabelTop1: CGFloat = 15            //价格
+    let priceLabelColor1 = kGlobalRedColor
+    let priceLabelFont1 = UIFont.systemFont(ofSize: 14)
+    var priceLabelHeight1: CGFloat = 0
+
+    
+/**-------------------------最新白菜--------------------------------------*/
+    let rowCount: NSInteger = 2
+    var itemWidth2: CGFloat = 0
+    var itemHeight2: CGFloat = 0
+    let itemMaxCount2 = 10
+    
+    var imageWH2: CGFloat = 0     //图片宽高
+    let imageInset2: CGFloat = 10   //图片
+    
+    var titleLabelTop2: CGFloat = 15
+    let titleLabelColor2 = UIColor.black     //标题
+    var titleLabelHeight2: CGFloat = 0
+    let titleLabelFont2 = UIFont.systemFont(ofSize: 16)
+    
+    let priceLabelTop2: CGFloat = 5            //价格
+    let priceLabelColor2 = kGlobalRedColor
+    let priceLabelFont2 = UIFont.systemFont(ofSize: 16)
+    var priceLabelHeight2: CGFloat = 0
+    
+    let mallLabelTop2: CGFloat = 6            //门店
+    let mallLabelColor2 = kGlobalGrayColor
+    let mallLabelFont2 = UIFont.systemFont(ofSize: 13)
+    var mallLabelWidth2: CGFloat = 140
+    var mallLabelHeight2: CGFloat = 0
+    
+    
+    init() {
+        
+        imageWH1 = itemWidth1 - 2 * imageInset1
+        
+        let titleLabelStr1: NSString = "白菜党: XD海氏海诺医用酒精消毒棉球"
+        titleLabelHeight1 = titleLabelStr1.height(for: titleLabelFont1, width: imageWH1)
+        
+        let priceLabelStr1: NSString = "5元包邮"
+        priceLabelHeight1 = priceLabelStr1.height(for: priceLabelFont1, width: imageWH1)
+        
+        itemHeight1 = imageInset1 + imageWH1 + titleLabelTop1 + titleLabelHeight1 + priceLabelTop1 + priceLabelHeight1 + itemBottom
+        
+        
+        rowHeight1 = bannerViewheight + itemHeight1
+        
+        /**-------------------------华丽的分割线--------------------------------------*/
+        itemWidth2 = kScreenWidth - CGFloat(rowCount + 1) * itemMargin
+        imageWH2 = itemWidth2 - 2 * imageInset2
+        
+        titleLabelHeight2 = titleLabelStr1.height(for: titleLabelFont2, width: imageWH2)
+        priceLabelHeight2 = priceLabelStr1.height(for: priceLabelFont2, width: imageWH1)
+        
+        let mallStr = "天猫精选"
+        priceLabelHeight2 = mallStr.height(for: mallLabelFont2, width: mallLabelWidth2)
+        
+        itemHeight2 = imageInset2 + imageWH2 + titleLabelTop2 + titleLabelHeight2 + priceLabelTop2 + priceLabelHeight2 + mallLabelTop2 + mallLabelHeight2 + itemBottom
+        
+    }
+}
+
+let baiCaiConstant = ZZBaiCaiConstant()
+
+
+class ZZZuiXinBaiCaiLayout: NSObject {
+    
+    var rowHeight: CGFloat?
+    var jingXuanScrollViewContentSize: CGSize?
+    var touTiaoScrollViewContentSize: CGSize?
+    var scrollViewContentSize: CGSize?
+    var baiCaiModel: ZZBaiCaiJingXuanModel?
+    
+    
+    init(jingXuanModel: ZZBaiCaiJingXuanModel) {
+        
+        self.baiCaiModel = jingXuanModel
+        
+        super.init()
+        
+        layout()
+        
+    }
+    
+    
+    func layout() {
+        
+        
+        var count: Int = 0
+        
+        if let baiCaiModel = baiCaiModel {
+            
+            if let jingXuans = baiCaiModel.jingxuan {
+                
+                count += 1
+                let jingXuanWidth = CGFloat(jingXuans.count) * (baiCaiConstant.itemWidth1 + baiCaiConstant.itemMargin) + baiCaiConstant.itemMargin
+                jingXuanScrollViewContentSize = CGSize.init(width: jingXuanWidth, height: baiCaiConstant.itemHeight1)
+            }
+            
+            
+            if let topList = baiCaiModel.top_list {
+                count += 1
+                
+                let touTiaoWidth = CGFloat(topList.count) * (baiCaiConstant.itemWidth1 + baiCaiConstant.itemMargin) + baiCaiConstant.itemMargin
+                touTiaoScrollViewContentSize = CGSize.init(width: touTiaoWidth, height: baiCaiConstant.itemHeight1)
+            }
+            
+            
+            rowHeight = baiCaiConstant.rowHeight1 * CGFloat(count)
+        }
+        
+    }
+
+}

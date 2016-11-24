@@ -128,7 +128,7 @@
         [temArray addObject:value3];
         [temArray addObject:value4];
     
-        
+        _picFragmentHeight = kHomeFirstCellPicHeight1;
         
         if (totalCount == kHomeFragmentMaxCount) {  //额外处理8张图片的布局
             for (NSInteger i = 0; i < 4; i++) {
@@ -140,10 +140,10 @@
                 NSValue *rectValue = [NSValue valueWithCGRect:imageViewF];
                 [temArray addObject:rectValue];
             }
+            
+            _picFragmentHeight = kHomeFirstCellPicHeight1 + kHomeFirstCellBottomPicH + 1;
         }
         
-        _picFragmentHeight = kHomeFirstCellPicHeight1 + kHomeFirstCellBottomPicH + 1;
-  
     }else{
         for (NSInteger i = 0; i < totalCount; i++) {
             CGFloat imageViewX = (kHomeFirstCellPicPadding + kHomeFirstCellBottomPicW) * i;

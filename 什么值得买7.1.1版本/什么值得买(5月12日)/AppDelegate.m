@@ -28,6 +28,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    
+    
     // 向微博客户端程序注册第三方应用
     [WeiboSDK registerApp:kShareSinaWeiboKey];
     
@@ -49,7 +51,6 @@
     
     return YES;
 }
-
 
 /** 初始化融云 */
 - (void)configureRongYun{

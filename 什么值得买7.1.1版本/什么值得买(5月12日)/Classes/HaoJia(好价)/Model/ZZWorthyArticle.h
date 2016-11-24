@@ -62,8 +62,15 @@
 /** 为"资讯" 等 的时候取这个字段 */
 @property (nonatomic, copy) NSString *article_rzlx;
 
+/** ---------------------暂时返现白菜特有的3个字段--------------------- */
+@property (nonatomic, copy) NSString *article_status_name;
+@property (nonatomic, copy) NSString *sync_home;
+/** 子标题 */
+@property (nonatomic, copy) NSString *subtitle;
+
 /** time_sort 上拉加载更多时需要此参数 */
 @property (nonatomic, copy) NSString *time_sort;
+
 
 @property (nonatomic, strong) ZZRedirectData *redirect_data;
 

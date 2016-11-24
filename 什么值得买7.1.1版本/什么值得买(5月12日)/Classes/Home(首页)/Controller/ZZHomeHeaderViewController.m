@@ -16,7 +16,7 @@
 #import "ZZPureWebViewController.h"
 #import "ZZDetailTopicViewController.h"
 #import "ZZJumpToNextModel.h"
-
+#import "什么值得买-Swift.h"
 
 
 #define kCycleTextContentViewColor [UIColor colorWithWhite:1.0 alpha:0.8]
@@ -25,7 +25,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 @interface ZZHomeHeaderViewController ()<SDCycleScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, weak) ZZCycleScrollView *cycleImageView;
 @property (nonatomic, weak) SDCycleScrollView *cycleTextView;
-@property (nonatomic, strong) NSArray *litterBannerArray;
+@property (nonatomic, strong) NSArray<ZZLittleBanner *> *litterBannerArray;
 @property (nonatomic, strong) UICollectionView *littleBannerView;
 @property (nonatomic, strong) UIImageView *litterBackgroundView;
 @property (nonatomic, strong) ZZHomeHeadModel *headModel;
@@ -106,6 +106,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     littleBannerView.backgroundView = _litterBackgroundView;
     
     NSString *urlStr = @"http://api.smzdm.com/v2/util/banner?f=iphone&is_login=1&type=menhu&v=7.3.3&weixin=1";
+    
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 //    manager.securityPolicy.validatesDomainName = NO;
@@ -181,8 +182,14 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
     
-    ZZLittleBanner *littleBanner = self.litterBannerArray[indexPath.item];
+    ZZRedirectData *redirectdata = self.litterBannerArray[indexPath.item].redirectData;
     
+    if ([redirectdata.link_type isEqualToString:@"baicai"]) {
+        
+        ZZBaiCaiController *baiCaiController = [[ZZBaiCaiController alloc] init];
+        
+        [self.navigationController pushViewController:baiCaiController animated:YES];
+    }
     
 }
 
@@ -216,14 +223,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 
 }
 
-#pragma mark - getter && setter
-- (NSArray *)litterBannerArray
-{
-    if (!_litterBannerArray){
-        _litterBannerArray = [NSArray array];
-    }
-    return _litterBannerArray;
-}
+
 
 
 

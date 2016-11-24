@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZZBaiCaiBannerView" customModule="什么值得买" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="352" height="35"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kcq-n2-ejU">
+                    <rect key="frame" x="5" y="0.0" width="337" height="35"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WK4-D3-Nfe">
+                            <rect key="frame" x="0.0" y="5" width="2.5" height="25"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="2.5" id="kC1-ST-ssp"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新白菜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w2-Av-zeX">
+                            <rect key="frame" x="12.5" y="8.5" width="61.5" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Jw-8z-IPy">
+                            <rect key="frame" x="275" y="2.5" width="62" height="30"/>
+                            <state key="normal" title="筛选排序">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="2w2-Av-zeX" firstAttribute="leading" secondItem="WK4-D3-Nfe" secondAttribute="trailing" constant="10" id="7Mc-AU-Xhm"/>
+                        <constraint firstAttribute="bottom" secondItem="WK4-D3-Nfe" secondAttribute="bottom" constant="5" id="9DR-bs-Vq3"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Kcq-n2-ejU" secondAttribute="trailing" constant="10" id="3Rc-7R-PVV"/>
+                <constraint firstItem="Kcq-n2-ejU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="54W-OU-1df"/>
+                <constraint firstItem="Kcq-n2-ejU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FSV-85-jjV"/>
+                <constraint firstAttribute="bottom" secondItem="Kcq-n2-ejU" secondAttribute="bottom" id="X8q-sQ-ffJ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="accessoryBtn" destination="1Jw-8z-IPy" id="Qee-hA-1I3"/>
+                <outlet property="titleLabel" destination="2w2-Av-zeX" id="8Fi-B0-s0B"/>
+            </connections>
+            <point key="canvasLocation" x="-139" y="7"/>
+        </view>
+    </objects>
+</document>

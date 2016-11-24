@@ -40,9 +40,6 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
     
     var headerDataArray: [ZZGoodsHeaderModel] = []
     
-    var offset: Int = 0
-    
-    
     lazy var collectionView: UICollectionView = {
     
         let collectionView = UICollectionView.init(frame: CGRect(x: 0, y: 0, width: self.view.width, height: collectionViewHeight), collectionViewLayout: ZZGoodsHeaderLayout())
@@ -118,6 +115,8 @@ extension ZZFantasticGoodsController{
         
         return haowuLayout.rowHeight!
     }
+    
+    
 }
 
 //MARK: - collectionView数据源

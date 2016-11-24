@@ -34,7 +34,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>我的</string>
+		<string>好文</string>
 		<key>nibName</key>
 		<string>ZZMineViewController</string>
 		<key>normalImage</key>
@@ -44,7 +44,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>荟萃</string>
+		<string>我的</string>
 		<key>nibName</key>
 		<string>ZZJingXuanViewController</string>
 		<key>normalImage</key>

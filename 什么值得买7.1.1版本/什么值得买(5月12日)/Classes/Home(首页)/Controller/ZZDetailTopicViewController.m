@@ -19,7 +19,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 @property (nonatomic, strong) ZZDetailTopicHeaderView *headerView;
 
 @property (nonatomic, copy) NSString *order;
-@property (nonatomic, assign) NSInteger offset;
+
 
 @end
 

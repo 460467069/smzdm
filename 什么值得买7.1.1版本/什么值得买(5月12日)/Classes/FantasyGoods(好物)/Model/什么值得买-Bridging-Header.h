@@ -14,3 +14,5 @@
 #import "ZZCycleScrollView.h"
 #import "UIColor+HEX.h"
 #import "ZZCyclePicHelper.h"
+#import "ZZSecondCollectionViewController.h"
+#import "ZZWorthyArticle.h"

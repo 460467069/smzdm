@@ -14,7 +14,7 @@ private let kCommentFooterView = "kCommentFooterView"
 
 class ZZAllCommentController: ZZSecondTableViewController {
 
-    var offset: Int = 0
+    
     var articleID: String?
     
     
@@ -36,7 +36,7 @@ class ZZAllCommentController: ZZSecondTableViewController {
     }
     
     
-    func configureParameters() -> NSMutableDictionary{
+    override func configureParameters() -> NSMutableDictionary{
         let parameters = NSMutableDictionary()
         parameters.setObject("20", forKey: "limit" as NSCopying)
         parameters.setObject(String(offset), forKey: "offset" as NSCopying)
