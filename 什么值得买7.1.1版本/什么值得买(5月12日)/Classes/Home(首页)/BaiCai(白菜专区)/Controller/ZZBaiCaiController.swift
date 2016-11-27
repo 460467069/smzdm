@@ -24,6 +24,8 @@ class ZZBaiCaiController: ZZSecondTableViewController {
         
         tableView.tableHeaderView = headerView
         tableView.sectionHeaderHeight = 35
+        tableView.rowHeight = kScreenWidth / 3.0 + 20 + 2;
+        tableView.register(UINib.init(nibName: "ZZListCell", bundle: nil), forCellReuseIdentifier: "ZZListCell")
     }
     
 
@@ -62,6 +64,33 @@ class ZZBaiCaiController: ZZSecondTableViewController {
         
     }
     
+    override func loadMoreData() {//https://api.smzdm.com/v1/baicai/list?f=iphone&limit=20&offset=20&tag_name=%E6%AF%8F%E6%97%A5%E7%99%BD%E8%8F%9C&v=7.3.3&weixin=1
+        
+        ZZNetworking.get("v1/baicai/list", parameters: configureParameters()) {(responseObj, error) in
+            if let _ = error {
+                self.tableView.mj_footer.endRefreshing()
+                return
+            }
+            
+            if let resopnseObj = responseObj as? [AnyHashable: Any]{
+                
+                if let rows = resopnseObj["rows"] as? [[AnyHashable: Any]]{
+                    
+                    let baiCaiRows = NSArray.modelArray(with: ZZWorthyArticle.self, json: rows)
+                    
+                    self.dataSource.addObjects(from: baiCaiRows!)
+                    self.offset = rows.count
+                }
+                
+                self.tableView.reloadData()
+                self.tableView.mj_footer.endRefreshing()
+                
+                self.offset = self.dataSource.count
+            }
+            
+        }
+    }
+    
     
     func requestNewestBaiCaiList(){ //最新白菜数据
         ZZNetworking.get("v1/baicai/list", parameters: configureParameters()) {(responseObj, error) in
@@ -75,14 +104,15 @@ class ZZBaiCaiController: ZZSecondTableViewController {
                 if let rows = resopnseObj["rows"] as? [[AnyHashable: Any]]{
 
                     let baiCaiRows = NSArray.modelArray(with: ZZWorthyArticle.self, json: rows)
-                    
-                    self.dataSource.addObjects(from: baiCaiRows!)
+           
+                    self.dataSource = NSMutableArray.init(array: baiCaiRows!)
                     self.offset = rows.count
                 }
                 
-                //self.tableView.reloadData()
+                self.tableView.reloadData()
                 self.tableView.mj_header.endRefreshing()
                 
+                self.offset = self.dataSource.count
             }
             
         }
@@ -107,12 +137,20 @@ extension ZZBaiCaiController{
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.dataSource.count
     }
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let listCell = tableView.dequeueReusableCell(withIdentifier: "ZZListCell", for: indexPath) as! ZZListCell
+        
+        let worthyArticle = self.dataSource[indexPath.row] as! ZZWorthyArticle
+        
+        listCell.article = worthyArticle
+        
+        return listCell
+        
+    }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
@@ -122,5 +160,11 @@ extension ZZBaiCaiController{
         return bannerView
         
     }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    
+    
 }
     

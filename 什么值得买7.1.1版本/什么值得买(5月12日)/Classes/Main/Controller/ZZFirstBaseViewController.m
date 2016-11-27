@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemDidClick)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关注" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemDidClick)];
@@ -112,19 +113,19 @@
 /** 关注按钮点击 */
 - (void)rightBarButtonItemDidClick {
 //    //新建一个聊天会话View Controller对象
-//    RCConversationViewController *chat = [[RCConversationViewController alloc]init];
-//    //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
-//    chat.conversationType = ConversationType_CUSTOMERSERVICE;
-//    //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
-//    chat.targetId = @"targetIdYouWillChatIn";
-//    //设置聊天会话界面要显示的标题
-//    chat.title = @"色魔张大妈";
-//    //显示聊天会话界面
-//    [self.navigationController pushViewController:chat animated:YES];
-    RCPublicServiceChatViewController *conversationVC = [[RCPublicServiceChatViewController alloc] initWithConversationType:ConversationType_CUSTOMERSERVICE targetId:@"KEFU146920780830124"];
-    conversationVC.title = @"色魔张大妈";
-    
-    [self.navigationController pushViewController:conversationVC animated:YES];
+    RCConversationViewController *chat = [[RCConversationViewController alloc]init];
+    //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
+    chat.conversationType = ConversationType_PRIVATE;
+    //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
+    chat.targetId = @"targetIdYouWillChatIn";
+    //设置聊天会话界面要显示的标题
+    chat.title = @"色魔张大妈";
+    //显示聊天会话界面
+    [self.navigationController pushViewController:chat animated:YES];
+//    RCPublicServiceChatViewController *conversationVC = [[RCPublicServiceChatViewController alloc] initWithConversationType:ConversationType_CUSTOMERSERVICE targetId:@"KEFU146920780830124"];
+//    conversationVC.title = @"色魔张大妈";
+//    
+//    [self.navigationController pushViewController:conversationVC animated:YES];
 }
 
 

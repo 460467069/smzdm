@@ -25,7 +25,9 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - MOBFoundation (2.2.1)
-  - RongCloudIMKit (2.7.3)
+  - RongCloudIM/IMKit (2.8.0):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMLib (2.8.0)
   - SDCycleScrollView (1.65):
     - SDWebImage (~> 3.7)
   - SDWebImage (3.8.2):
@@ -57,7 +59,8 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - MOBFoundation
-  - RongCloudIMKit
+  - RongCloudIM/IMKit (= 2.8.0)
+  - RongCloudIM/IMLib (= 2.8.0)
   - SDCycleScrollView
   - SDWebImage
   - ShareSDK3
@@ -82,7 +85,7 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MOBFoundation: 8ceb44ce7840441f42f73fa6fbda5b0c19ba7d43
-  RongCloudIMKit: 0b93700b17d224c7c213815b8a23a9c356fe20e2
+  RongCloudIM: 82a5fcf93027ef2845063e6d5ba77f9f42eb87a5
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   ShareSDK3: dc051268317cd144acbd7d48d6bc7867ff58bc04
@@ -91,6 +94,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 22ec4c44fbcb3d40a7fa4df8a52e4c4ba7496a63
+PODFILE CHECKSUM: 2026edc8d652e06554f0741b1f934b802f5541ad
 
 COCOAPODS: 1.1.1

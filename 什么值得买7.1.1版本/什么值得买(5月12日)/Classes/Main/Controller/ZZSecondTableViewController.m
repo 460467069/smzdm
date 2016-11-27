@@ -27,7 +27,7 @@
 
 /** 初始化tableView */
 - (void)tableViewInitial {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.dataSource = self;
     tableView.delegate = self;

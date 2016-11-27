@@ -17,7 +17,6 @@
 #import "AppDelegate+SDKInit.h"
 
 
-
 @interface AppDelegate ()<WeiboSDKDelegate>
 
 @end
