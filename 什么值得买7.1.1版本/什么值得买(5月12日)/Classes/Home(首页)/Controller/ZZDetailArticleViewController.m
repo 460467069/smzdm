@@ -243,7 +243,6 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     // object为WKScrollView
     CGSize size = [object contentSize];
-
     [self configureWebViewContentSizeWithScrollViewHeight:size.height];
     
 }

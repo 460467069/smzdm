@@ -58,9 +58,6 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         placeHolderLabel.text = "相机"
-//        tableView.backgroundColor = kGlobalLightGrayColor
-//        
-//        view.backgroundColor = kGlobalLightGrayColor
         
         self.tableViewColor = kGlobalLightGrayColor
         tableView.tableHeaderView = collectionView

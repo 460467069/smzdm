@@ -30,6 +30,9 @@ class ZZHaoWuItemThree: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        layer.cornerRadius = 3.0
+        backgroundColor = UIColor.random()
+        clipsToBounds = true
         addSubview(iconView)
     }
     
@@ -62,9 +65,7 @@ class ZZHaoWuCellThree: ZZHaoWuBaseCell {
                     
                 }
             }
-            
 
-            
         }
         
     }

@@ -13,6 +13,8 @@
 
 @property(nonatomic, strong)NSMutableArray *dataSource;
 
+@property (nonatomic, strong) UIColor *tableViewColor;
+
 /** 请求参数页码 */
 @property (nonatomic, assign) NSInteger page;
 

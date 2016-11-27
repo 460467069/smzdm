@@ -1555,7 +1555,7 @@
 				CODE_SIGN_ENTITLEMENTS = "什么值得买/什么值得买.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W34ZLPQLA6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1582,7 +1582,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W34ZLPQLA6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

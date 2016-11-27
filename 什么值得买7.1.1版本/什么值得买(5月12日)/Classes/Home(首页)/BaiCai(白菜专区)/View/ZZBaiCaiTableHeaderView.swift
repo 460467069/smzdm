@@ -23,22 +23,21 @@ class ZZBaiCaiItemOne: UIView {
     
     lazy var titleLabel: YYLabel = {
         let titleLabel = YYLabel()
-        titleLabel.font = baiCaiConstant.titleLabelFont1
         titleLabel.numberOfLines = 2
-        titleLabel.textColor = baiCaiConstant.titleLabelColor1
         titleLabel.width = baiCaiConstant.imageWH1
         titleLabel.left = baiCaiConstant.imageInset1
         titleLabel.height = baiCaiConstant.titleLabelHeight1
+        titleLabel.textVerticalAlignment = .bottom
         return titleLabel
     }()
     
     lazy var priceLabel: YYLabel = {
         let priceLabel = YYLabel()
-        priceLabel.font = baiCaiConstant.priceLabelFont1
-        priceLabel.textColor = baiCaiConstant.priceLabelColor1
+        priceLabel.numberOfLines = 1
         priceLabel.width = baiCaiConstant.imageWH1
         priceLabel.left = baiCaiConstant.imageInset1
         priceLabel.height = baiCaiConstant.priceLabelHeight1
+        priceLabel.textVerticalAlignment = .top
         return priceLabel
     }()
     
@@ -46,6 +45,7 @@ class ZZBaiCaiItemOne: UIView {
         
         super.init(frame: frame)
         backgroundColor = UIColor.white
+        layer.cornerRadius = 3.0
         addSubview(iconView)
         addSubview(titleLabel)
         addSubview(priceLabel)
@@ -59,15 +59,33 @@ class ZZBaiCaiItemOne: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var worthyArticle: ZZWorthyArticle? {
+    var baiCaiItemLayout: ZZBaiCaiItemLayout? {
         didSet {
-            if let worthyArticle = worthyArticle {
-                iconView.zdm_setImage(urlStr: worthyArticle.article_pic!, placeHolder: nil)
-                titleLabel.text = worthyArticle.article_title!
-                priceLabel.text = worthyArticle.subtitle!
+            if let baiCaiItemLayout = baiCaiItemLayout {
+                
+                if let worthyArticle = baiCaiItemLayout.worthyArticle {
+                    iconView.zdm_setImage(urlStr: worthyArticle.article_pic!, placeHolder: nil)
+                }
+                
+                titleLabel.textLayout = baiCaiItemLayout.titleLayout
+                priceLabel.textLayout = baiCaiItemLayout.subTitleLayout
+                
+                titleLabel.lineBreakMode = .byTruncatingTail
+                priceLabel.lineBreakMode = .byTruncatingTail
             }
             
         }
+    }
+    
+    func titleLabelAttributes(articleTitle: String) ->NSAttributedString{
+        var attributes = [String : Any]()
+        attributes[NSForegroundColorAttributeName] = baiCaiConstant.titleLabelColor1
+        attributes[NSFontAttributeName] = baiCaiConstant.titleLabelFont1
+        
+        let titleLabelAttributes = NSMutableAttributedString.init(string: articleTitle, attributes: attributes)
+        titleLabelAttributes.lineSpacing = 5.0
+        
+        return titleLabelAttributes
     }
 }
 
@@ -79,7 +97,7 @@ class ZZBaiCaiJingXuanView: UIView {
     
     lazy var baiCaiBannerView: ZZBaiCaiBannerView = {
         let baiCaiBannerView = Bundle.main.loadNibNamed("ZZBaiCaiBannerView", owner: nil, options: nil)?.last as! ZZBaiCaiBannerView
-
+        baiCaiBannerView.backgroundColor = UIColor.clear
         return baiCaiBannerView
     }()
     
@@ -126,13 +144,13 @@ class ZZBaiCaiJingXuanView: UIView {
         }
     }
     
-    var worthyArticles: [ZZWorthyArticle]? {
+    var jingXuanTextLayouts: [ZZBaiCaiItemLayout]? {
         
         didSet{
             
-            if let worthyArticles = worthyArticles {
+            if let jingXuanTextLayouts = jingXuanTextLayouts {
                 
-                let actualCount = worthyArticles.count
+                let actualCount = jingXuanTextLayouts.count
    
                 for i in 0..<baiCaiConstant.itemMaxCount {
                     
@@ -140,7 +158,7 @@ class ZZBaiCaiJingXuanView: UIView {
                     
                     if i < actualCount {
                         baicaiItemOne.isHidden = false
-                        baicaiItemOne.worthyArticle = worthyArticles[i]
+                        baicaiItemOne.baiCaiItemLayout = jingXuanTextLayouts[i]
                     }else{
                         baicaiItemOne.isHidden = true
                     }
@@ -180,23 +198,23 @@ class ZZBaiCaiTableHeaderView: UIView {
             
             height = (baiCaiLayout?.rowHeight)!
             
-            if let baiCaiJingXuanModel = baiCaiLayout?.baiCaiModel {
-                if let jingxuanList = baiCaiJingXuanModel.jingxuan {
+            if let baiCaiLayout = baiCaiLayout {
+                if baiCaiLayout.jingXuanTextLayouts.count > 0 {
                     jingXuanView.baiCaiBannerView.titleLabel.text = "每日精选"
                     jingXuanView.baiCaiBannerView.accessoryBtn.setTitle("查看更多", for: .normal)
                     
-                    jingXuanView.worthyArticles = jingxuanList
-                    jingXuanView.scrollView.contentSize = (baiCaiLayout?.jingXuanScrollViewContentSize)!
+                    jingXuanView.jingXuanTextLayouts = baiCaiLayout.jingXuanTextLayouts
+                    jingXuanView.scrollView.contentSize = (baiCaiLayout.jingXuanScrollViewContentSize)!
                     
                 }
                 
-                if let topList = baiCaiJingXuanModel.top_list {
+                if baiCaiLayout.touTiaoTextLayouts.count > 0 {
                     
                     touTiaoView.top = jingXuanView.bottom
                     touTiaoView.baiCaiBannerView.titleLabel.text = "白菜头条"
                     touTiaoView.baiCaiBannerView.accessoryBtn.setTitle("", for: .normal)
-                    touTiaoView.worthyArticles = topList
-                    touTiaoView.scrollView.contentSize = (baiCaiLayout?.touTiaoScrollViewContentSize)!
+                    touTiaoView.jingXuanTextLayouts = baiCaiLayout.touTiaoTextLayouts
+                    touTiaoView.scrollView.contentSize = (baiCaiLayout.touTiaoScrollViewContentSize)!
                     
                 }
             }

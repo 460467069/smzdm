@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kcq-n2-ejU">
-                    <rect key="frame" x="5" y="0.0" width="337" height="35"/>
+                    <rect key="frame" x="6" y="0.0" width="336" height="35"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WK4-D3-Nfe">
                             <rect key="frame" x="0.0" y="5" width="2.5" height="25"/>
@@ -26,13 +26,14 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新白菜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w2-Av-zeX">
-                            <rect key="frame" x="12.5" y="8.5" width="61.5" height="18"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <rect key="frame" x="12.5" y="9" width="57.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Jw-8z-IPy">
-                            <rect key="frame" x="275" y="2.5" width="62" height="30"/>
+                            <rect key="frame" x="278" y="3" width="58" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="筛选排序">
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -47,7 +48,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Kcq-n2-ejU" secondAttribute="trailing" constant="10" id="3Rc-7R-PVV"/>
-                <constraint firstItem="Kcq-n2-ejU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="54W-OU-1df"/>
+                <constraint firstItem="Kcq-n2-ejU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="54W-OU-1df"/>
                 <constraint firstItem="Kcq-n2-ejU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FSV-85-jjV"/>
                 <constraint firstAttribute="bottom" secondItem="Kcq-n2-ejU" secondAttribute="bottom" id="X8q-sQ-ffJ"/>
             </constraints>

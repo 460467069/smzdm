@@ -18,10 +18,12 @@ class ZZBaiCaiController: ZZSecondTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "白菜专区"
-
+        
+        self.tableViewColor = kGlobalLightGrayColor
         headerView = ZZBaiCaiTableHeaderView()
         
         tableView.tableHeaderView = headerView
+        tableView.sectionHeaderHeight = 35
     }
     
 
@@ -70,16 +72,15 @@ class ZZBaiCaiController: ZZSecondTableViewController {
             
             if let resopnseObj = responseObj as? [AnyHashable: Any]{
                 
-                if let rows = resopnseObj["data"] as? [AnyHashable: Any]{
+                if let rows = resopnseObj["rows"] as? [[AnyHashable: Any]]{
 
                     let baiCaiRows = NSArray.modelArray(with: ZZWorthyArticle.self, json: rows)
                     
                     self.dataSource.addObjects(from: baiCaiRows!)
-                    
                     self.offset = rows.count
                 }
                 
-                self.tableView.reloadData()
+                //self.tableView.reloadData()
                 self.tableView.mj_header.endRefreshing()
                 
             }
@@ -96,9 +97,6 @@ class ZZBaiCaiController: ZZSecondTableViewController {
         parameters.setObject("\(self.offset)", forKey: "offset" as NSCopying)
         return parameters
     }
-    
-    
-
 }
 
 
@@ -109,12 +107,20 @@ extension ZZBaiCaiController{
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource.count
+        return 0
     }
     
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        
-//        
 //    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+    
+        let bannerView = Bundle.main.loadNibNamed("ZZBaiCaiBannerView", owner: nil, options: nil)?.last as! ZZBaiCaiBannerView
+        
+        return bannerView
+        
+    }
 }
     

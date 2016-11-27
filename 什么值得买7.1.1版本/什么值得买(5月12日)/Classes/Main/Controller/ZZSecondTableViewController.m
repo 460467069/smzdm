@@ -37,7 +37,9 @@
     self.tableView = tableView;
 }
 
-
+- (NSMutableDictionary *)configureParameters{
+    return [NSMutableDictionary dictionary];
+}
 
 /**
  *  上下拉刷新初始化
@@ -82,6 +84,15 @@
         _dataSource = [NSMutableArray array];
     }
     return _dataSource;
+}
+
+- (void)setTableViewColor:(UIColor *)tableViewColor{
+    
+    _tableViewColor = tableViewColor;
+    
+    self.tableView.backgroundColor = tableViewColor;
+    self.tableView.mj_footer.backgroundColor = tableViewColor;
+    self.tableView.mj_header.backgroundColor = tableViewColor;
 }
 
 @end

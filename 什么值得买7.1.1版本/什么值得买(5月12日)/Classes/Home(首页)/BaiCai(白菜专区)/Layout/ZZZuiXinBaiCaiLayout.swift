@@ -26,15 +26,20 @@ struct ZZBaiCaiConstant {
     
     var titleLabelTop1: CGFloat = 5
     let titleLabelColor1 = kGlobalGrayColor     //标题
-    var titleLabelHeight1: CGFloat = 0
+    var titleLabelHeight1: CGFloat = 38
+    let titleLabelLimitHeight1: CGFloat = 40
     let titleLabelFont1 = UIFont.systemFont(ofSize: 14)
+    
     
 
     let priceLabelTop1: CGFloat = 15            //价格
     let priceLabelColor1 = kGlobalRedColor
     let priceLabelFont1 = UIFont.systemFont(ofSize: 14)
-    var priceLabelHeight1: CGFloat = 0
+    var priceLabelHeight1: CGFloat = 15
+    let priceLabelLimitHeight1: CGFloat = 25
 
+    
+    
     
 /**-------------------------最新白菜--------------------------------------*/
     let rowCount: NSInteger = 2
@@ -66,17 +71,14 @@ struct ZZBaiCaiConstant {
         
         imageWH1 = itemWidth1 - 2 * imageInset1
         
-        let titleLabelStr1: NSString = "白菜党: XD海氏海诺医用酒精消毒棉球"
-        titleLabelHeight1 = titleLabelStr1.height(for: titleLabelFont1, width: imageWH1)
+        let titleLabelStr1 = "白菜党: XD海氏海诺医用酒精消毒棉球"
         
-        let priceLabelStr1: NSString = "5元包邮"
-        priceLabelHeight1 = priceLabelStr1.height(for: priceLabelFont1, width: imageWH1)
-        
+        let priceLabelStr1 = "5元包邮"
         itemHeight1 = imageInset1 + imageWH1 + titleLabelTop1 + titleLabelHeight1 + priceLabelTop1 + priceLabelHeight1 + itemBottom
         
         
         rowHeight1 = bannerViewheight + itemHeight1
-        
+    
         /**-------------------------华丽的分割线--------------------------------------*/
         itemWidth2 = kScreenWidth - CGFloat(rowCount + 1) * itemMargin
         imageWH2 = itemWidth2 - 2 * imageInset2
@@ -90,10 +92,77 @@ struct ZZBaiCaiConstant {
         itemHeight2 = imageInset2 + imageWH2 + titleLabelTop2 + titleLabelHeight2 + priceLabelTop2 + priceLabelHeight2 + mallLabelTop2 + mallLabelHeight2 + itemBottom
         
     }
+    
+    func caculateTextHeight(font: UIFont, str: String, lineSpacing: CGFloat, textMaxWidth: CGFloat) ->CGFloat{
+        let text = NSMutableAttributedString()
+        var attributes = [String: Any]()
+        attributes[NSFontAttributeName] = font
+        text.append(NSAttributedString.init(string: str, attributes: attributes))
+        
+        
+        text.lineSpacing = lineSpacing
+        let container = YYTextContainer.init(size: CGSize.init(width: textMaxWidth, height: titleLabelLimitHeight1), insets: UIEdgeInsets.zero)
+        let layout = YYTextLayout.init(container: container, text: text)
+    
+        return (layout?.textBoundingSize.height)!
+    }
 }
 
 let baiCaiConstant = ZZBaiCaiConstant()
 
+
+class ZZBaiCaiItemLayout: NSObject {
+    
+    var worthyArticle: ZZWorthyArticle?
+    
+    var titleLayout: YYTextLayout?
+    
+    var subTitleLayout: YYTextLayout?
+    
+    var titleHeight: CGFloat?
+    
+    init(worthyArticle: ZZWorthyArticle) {
+        
+        self.worthyArticle = worthyArticle
+        super.init()
+        
+        layout()
+    }
+    func layout() {
+        
+        if let worthyArticle = worthyArticle {
+
+            if let articleTitle = worthyArticle.article_title {
+                let text = NSMutableAttributedString()
+                var attributes = [String: Any]()
+                attributes[NSFontAttributeName] = baiCaiConstant.titleLabelFont1
+                attributes[NSForegroundColorAttributeName] = baiCaiConstant.titleLabelColor1
+                text.append(NSAttributedString.init(string: articleTitle, attributes: attributes))
+                
+                text.lineSpacing = 5.0
+                
+                let container = YYTextContainer.init(size: CGSize.init(width: baiCaiConstant.imageWH1, height:999), insets: UIEdgeInsets.zero)
+                container.maximumNumberOfRows = 2
+                titleLayout = YYTextLayout.init(container: container, text: text)
+            }
+            
+            if let subtitle = worthyArticle.subtitle {
+                let text = NSMutableAttributedString()
+                var attributes = [String: Any]()
+                attributes[NSFontAttributeName] = baiCaiConstant.priceLabelFont1
+                attributes[NSForegroundColorAttributeName] = baiCaiConstant.priceLabelColor1
+                
+                text.append(NSAttributedString.init(string: subtitle, attributes: attributes))
+                
+                let container = YYTextContainer.init(size: CGSize.init(width: baiCaiConstant.imageWH1, height: 999), insets: UIEdgeInsets.zero)
+                container.maximumNumberOfRows = 1
+                subTitleLayout = YYTextLayout.init(container: container, text: text)
+            }
+
+        }
+    }
+    
+}
 
 class ZZZuiXinBaiCaiLayout: NSObject {
     
@@ -103,6 +172,8 @@ class ZZZuiXinBaiCaiLayout: NSObject {
     var scrollViewContentSize: CGSize?
     var baiCaiModel: ZZBaiCaiJingXuanModel?
     
+    var jingXuanTextLayouts = [ZZBaiCaiItemLayout]()
+    var touTiaoTextLayouts = [ZZBaiCaiItemLayout]()
     
     init(jingXuanModel: ZZBaiCaiJingXuanModel) {
         
@@ -127,7 +198,17 @@ class ZZZuiXinBaiCaiLayout: NSObject {
                 count += 1
                 let jingXuanWidth = CGFloat(jingXuans.count) * (baiCaiConstant.itemWidth1 + baiCaiConstant.itemMargin) + baiCaiConstant.itemMargin
                 jingXuanScrollViewContentSize = CGSize.init(width: jingXuanWidth, height: baiCaiConstant.itemHeight1)
+                
+                for worthyArticle in jingXuans {
+                    
+                    let baiCaiItemLayout = ZZBaiCaiItemLayout.init(worthyArticle: worthyArticle)
+                    
+                    
+                    jingXuanTextLayouts.append(baiCaiItemLayout)
+                }
+
             }
+            
             
             
             if let topList = baiCaiModel.top_list {
@@ -135,12 +216,44 @@ class ZZZuiXinBaiCaiLayout: NSObject {
                 
                 let touTiaoWidth = CGFloat(topList.count) * (baiCaiConstant.itemWidth1 + baiCaiConstant.itemMargin) + baiCaiConstant.itemMargin
                 touTiaoScrollViewContentSize = CGSize.init(width: touTiaoWidth, height: baiCaiConstant.itemHeight1)
+                
+                for worthyArticle in topList {
+                    
+                    let baiCaiItemLayout = ZZBaiCaiItemLayout.init(worthyArticle: worthyArticle)
+                    
+                    touTiaoTextLayouts.append(baiCaiItemLayout)
+                }
             }
             
             
             rowHeight = baiCaiConstant.rowHeight1 * CGFloat(count)
         }
         
+    }
+    
+    func configureTextLayout(worthyArticle: ZZWorthyArticle) ->YYTextLayout{
+        
+        let text = NSMutableAttributedString()
+        var attributes = [String: Any]()
+        
+        if let articleTitle = worthyArticle.article_title {
+            
+            attributes[NSFontAttributeName] = baiCaiConstant.titleLabelFont1
+            attributes[NSForegroundColorAttributeName] = baiCaiConstant.titleLabelColor1
+            text.append(NSAttributedString.init(string: articleTitle, attributes: attributes))
+        }
+        
+        text.lineSpacing = 5.0
+
+        let container = YYTextContainer.init(size: CGSize.init(width: baiCaiConstant.imageWH1, height: baiCaiConstant.titleLabelLimitHeight1), insets: UIEdgeInsets.zero)
+        
+        let textLayout = YYTextLayout.init(container: container, text: text)
+        
+        let height = textLayout?.textBoundingSize.height
+        
+        print(height!)
+        return  textLayout!
+ 
     }
 
 }

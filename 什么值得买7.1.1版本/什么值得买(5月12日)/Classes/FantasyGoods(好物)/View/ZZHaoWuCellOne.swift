@@ -54,6 +54,8 @@ class ZZHaoWuItemOne: UIView {
         
         super.init(frame: frame)
         backgroundColor = UIColor.white
+        layer.cornerRadius = 3.0
+        
         addSubview(iconView)
         addSubview(titleLabel)
         addSubview(priceLabel)
