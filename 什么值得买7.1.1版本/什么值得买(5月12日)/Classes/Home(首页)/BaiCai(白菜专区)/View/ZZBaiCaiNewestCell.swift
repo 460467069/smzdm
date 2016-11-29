@@ -36,6 +36,9 @@ class ZZBaiCaiNewestCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
+        layer.cornerRadius = 3.0
+        layer.masksToBounds = true
     }
 
 }

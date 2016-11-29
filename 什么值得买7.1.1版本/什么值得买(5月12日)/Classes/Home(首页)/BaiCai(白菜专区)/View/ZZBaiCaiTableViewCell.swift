@@ -17,6 +17,7 @@ class ZZBaiCaiTableViewCell: UITableViewCell {
         flowLayout.minimumLineSpacing = baiCaiConstant.itemMargin
         flowLayout.minimumInteritemSpacing = baiCaiConstant.itemMargin
         flowLayout.itemSize = CGSize.init(width: baiCaiConstant.itemWidth2, height: baiCaiConstant.itemHeight2)
+        flowLayout.sectionInset = UIEdgeInsets.init(top: 0, left: baiCaiConstant.itemMargin, bottom: baiCaiConstant.itemMargin, right: baiCaiConstant.itemMargin)
         let baiCaiCollectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: flowLayout)
         baiCaiCollectionView.backgroundColor = kGlobalLightGrayColor
         baiCaiCollectionView.delegate = self
