@@ -50,9 +50,12 @@ struct ZZBaiCaiConstant {
     var imageWH2: CGFloat = 0     //图片宽高
     let imageInset2: CGFloat = 10   //图片
     
+    let allTitleHeight: CGFloat = 107
+    
+    
     var titleLabelTop2: CGFloat = 15
     let titleLabelColor2 = UIColor.black     //标题
-    var titleLabelHeight2: CGFloat = 0
+    var titleLabelHeight2: CGFloat = 38
     let titleLabelFont2 = UIFont.systemFont(ofSize: 16)
     
     let priceLabelTop2: CGFloat = 5            //价格
@@ -67,29 +70,21 @@ struct ZZBaiCaiConstant {
     var mallLabelHeight2: CGFloat = 0
     
     
+    
+    
     init() {
         
         imageWH1 = itemWidth1 - 2 * imageInset1
-        
-        let titleLabelStr1 = "白菜党: XD海氏海诺医用酒精消毒棉球"
-        
-        let priceLabelStr1 = "5元包邮"
         itemHeight1 = imageInset1 + imageWH1 + titleLabelTop1 + titleLabelHeight1 + priceLabelTop1 + priceLabelHeight1 + itemBottom
         
         
         rowHeight1 = bannerViewheight + itemHeight1
     
         /**-------------------------华丽的分割线--------------------------------------*/
-        itemWidth2 = kScreenWidth - CGFloat(rowCount + 1) * itemMargin
+        itemWidth2 = (kScreenWidth - CGFloat(rowCount + 1) * itemMargin) / CGFloat(rowCount)
         imageWH2 = itemWidth2 - 2 * imageInset2
         
-        titleLabelHeight2 = titleLabelStr1.height(for: titleLabelFont2, width: imageWH2)
-        priceLabelHeight2 = priceLabelStr1.height(for: priceLabelFont2, width: imageWH1)
-        
-        let mallStr = "天猫精选"
-        priceLabelHeight2 = mallStr.height(for: mallLabelFont2, width: mallLabelWidth2)
-        
-        itemHeight2 = imageInset2 + imageWH2 + titleLabelTop2 + titleLabelHeight2 + priceLabelTop2 + priceLabelHeight2 + mallLabelTop2 + mallLabelHeight2 + itemBottom
+        itemHeight2 = imageInset2 + imageWH2 + allTitleHeight
         
     }
     

@@ -15,6 +15,7 @@
 #import "ZZNetworkHandler.h"
 #import <WeiboSDK.h>
 #import "AppDelegate+SDKInit.h"
+#import <sqlite3.h>
 
 
 @interface AppDelegate ()<WeiboSDKDelegate>

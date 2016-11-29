@@ -96,6 +96,8 @@
 		A947CD1A1DE02FCC0047B58F /* ZZTagLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CD041DE02FCC0047B58F /* ZZTagLabel.m */; };
 		A947CD1B1DE02FCC0047B58F /* ZZTuiGuangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CD061DE02FCC0047B58F /* ZZTuiGuangCell.m */; };
 		A947CD1C1DE02FCC0047B58F /* ZZTuiGuangCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A947CD071DE02FCC0047B58F /* ZZTuiGuangCell.xib */; };
+		A94AC31B1DED30E3009D077A /* ZZBaiCaiNewestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94AC3191DED30E3009D077A /* ZZBaiCaiNewestCell.swift */; };
+		A94AC31C1DED30E3009D077A /* ZZBaiCaiNewestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94AC31A1DED30E3009D077A /* ZZBaiCaiNewestCell.xib */; };
 		A95605F61DA87E4C00473B46 /* ZZSwiftCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95605F51DA87E4C00473B46 /* ZZSwiftCommon.swift */; };
 		A96C4C841DC9904400196341 /* ZZPureWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96C4C831DC9904400196341 /* ZZPureWebViewController.m */; };
 		A9758D721D8766EF00FC4B89 /* ZZSecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9758D711D8766EF00FC4B89 /* ZZSecondTableViewController.m */; };
@@ -152,6 +154,8 @@
 		A9DBBAF21DB2183E00089A73 /* UIImageView+ZDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBBAF11DB2183E00089A73 /* UIImageView+ZDM.swift */; };
 		A9DBBAF51DB2282900089A73 /* ZZHaoWuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBBAF41DB2282900089A73 /* ZZHaoWuLayout.swift */; };
 		A9E440AF1DD078B7005D17DB /* ZZAllCommentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E440AE1DD078B7005D17DB /* ZZAllCommentLayout.swift */; };
+		A9EB45911DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB45901DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift */; };
+		A9F387301DEC024D009E77C4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */; };
 		A9F964831DDA2C1700D41EC5 /* ZZCommentFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F964821DDA2C1700D41EC5 /* ZZCommentFooterView.swift */; };
 		A9F964851DDA2D2700D41EC5 /* ZZCommentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F964841DDA2D2700D41EC5 /* ZZCommentHeaderView.swift */; };
 		A9F97BC01DE521E200FB683F /* ZZBaiCaiBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F97BBF1DE521E200FB683F /* ZZBaiCaiBannerView.swift */; };
@@ -311,6 +315,8 @@
 		A947CD051DE02FCC0047B58F /* ZZTuiGuangCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTuiGuangCell.h; sourceTree = "<group>"; };
 		A947CD061DE02FCC0047B58F /* ZZTuiGuangCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZTuiGuangCell.m; sourceTree = "<group>"; };
 		A947CD071DE02FCC0047B58F /* ZZTuiGuangCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZTuiGuangCell.xib; sourceTree = "<group>"; };
+		A94AC3191DED30E3009D077A /* ZZBaiCaiNewestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZBaiCaiNewestCell.swift; sourceTree = "<group>"; };
+		A94AC31A1DED30E3009D077A /* ZZBaiCaiNewestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZBaiCaiNewestCell.xib; sourceTree = "<group>"; };
 		A95605F51DA87E4C00473B46 /* ZZSwiftCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZSwiftCommon.swift; sourceTree = "<group>"; };
 		A96C4C821DC9904400196341 /* ZZPureWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPureWebViewController.h; sourceTree = "<group>"; };
 		A96C4C831DC9904400196341 /* ZZPureWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPureWebViewController.m; sourceTree = "<group>"; };
@@ -406,6 +412,8 @@
 		A9DBBAF11DB2183E00089A73 /* UIImageView+ZDM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ZDM.swift"; sourceTree = "<group>"; };
 		A9DBBAF41DB2282900089A73 /* ZZHaoWuLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHaoWuLayout.swift; sourceTree = "<group>"; };
 		A9E440AE1DD078B7005D17DB /* ZZAllCommentLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAllCommentLayout.swift; sourceTree = "<group>"; };
+		A9EB45901DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZBaiCaiTableViewCell.swift; sourceTree = "<group>"; };
+		A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A9F964821DDA2C1700D41EC5 /* ZZCommentFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentFooterView.swift; sourceTree = "<group>"; };
 		A9F964841DDA2D2700D41EC5 /* ZZCommentHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentHeaderView.swift; sourceTree = "<group>"; };
 		A9F97BBF1DE521E200FB683F /* ZZBaiCaiBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZBaiCaiBannerView.swift; sourceTree = "<group>"; };
@@ -421,6 +429,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F387301DEC024D009E77C4 /* libsqlite3.tbd in Frameworks */,
 				CECD5256DC4CC3E02810228F /* libPods-什么值得买.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -858,6 +867,9 @@
 				A9F97BBF1DE521E200FB683F /* ZZBaiCaiBannerView.swift */,
 				A9F97BC11DE521EB00FB683F /* ZZBaiCaiBannerView.xib */,
 				A922379B1DE57C8500B87A8B /* ZZBaiCaiTableHeaderView.swift */,
+				A94AC3191DED30E3009D077A /* ZZBaiCaiNewestCell.swift */,
+				A94AC31A1DED30E3009D077A /* ZZBaiCaiNewestCell.xib */,
+				A9EB45901DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1170,6 +1182,7 @@
 		BBF84AC801C23E3FA5D0F8BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */,
 				EEA94AC24398409643F76168 /* libPods-什么值得买.a */,
 			);
 			name = Frameworks;
@@ -1272,6 +1285,7 @@
 				A9C8C4EA1D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard in Resources */,
 				A91A834F1D420A87008D229E /* weibo_1.json in Resources */,
 				A947CD0C1DE02FCC0047B58F /* ZZHaoJiaViewController.storyboard in Resources */,
+				A94AC31C1DED30E3009D077A /* ZZBaiCaiNewestCell.xib in Resources */,
 				A93FA9CE1DBDE71F00E3007F /* app_details.css in Resources */,
 				A91A83531D420A87008D229E /* weibo_5.json in Resources */,
 				A9262A821D76B63F0037B1CF /* JingXuan.plist in Resources */,
@@ -1392,6 +1406,7 @@
 				A9B783581D58FB90003C464D /* ZZCircleView.m in Sources */,
 				A9F964851DDA2D2700D41EC5 /* ZZCommentHeaderView.swift in Sources */,
 				A92151D71D83A1D800749413 /* YYTextExampleHelper.m in Sources */,
+				A9EB45911DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift in Sources */,
 				A9C108B81DD15C6D00068A7D /* ZZCommentCell.swift in Sources */,
 				A980A4091CE412E8006E0037 /* ZZTabBarViewController.m in Sources */,
 				A9AF3E361DE464FD0055F522 /* ZZDouYUBannerModel.m in Sources */,
@@ -1413,6 +1428,7 @@
 				A9AF3E1B1DE463E80055F522 /* ZZGoodsHeaderCell.swift in Sources */,
 				A9AF3E1C1DE463E80055F522 /* ZZHaoWuBaseCell.swift in Sources */,
 				A91E0BE21D5D9640007BD117 /* ZZFirstTableViewController.m in Sources */,
+				A94AC31B1DED30E3009D077A /* ZZBaiCaiNewestCell.swift in Sources */,
 				A90E6E3E1D39406B00C213C5 /* YYFPSLabel.m in Sources */,
 				A947CCBE1DE02FA30047B58F /* ZZDetailArticleViewController.m in Sources */,
 				A947CCD61DE02FA30047B58F /* ZZDetailTopicHeaderView.m in Sources */,

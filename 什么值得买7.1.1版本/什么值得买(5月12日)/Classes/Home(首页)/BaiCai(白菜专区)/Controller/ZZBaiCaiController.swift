@@ -8,24 +8,24 @@
 
 import UIKit
 
+
 private let kZuiXinBaiCaiCell = "kZuiXinBaiCaiCell"
 
 class ZZBaiCaiController: ZZSecondTableViewController {
 
     var headerView: ZZBaiCaiTableHeaderView?
     
+    var collectionViewHeight: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "白菜专区"
-        
         self.tableViewColor = kGlobalLightGrayColor
         headerView = ZZBaiCaiTableHeaderView()
         
         tableView.tableHeaderView = headerView
         tableView.sectionHeaderHeight = 35
-        tableView.rowHeight = kScreenWidth / 3.0 + 20 + 2;
-        tableView.register(UINib.init(nibName: "ZZListCell", bundle: nil), forCellReuseIdentifier: "ZZListCell")
+        tableView.register(ZZBaiCaiTableViewCell.self, forCellReuseIdentifier: "ZZBaiCaiTableViewCell")
     }
     
 
@@ -53,7 +53,6 @@ class ZZBaiCaiController: ZZSecondTableViewController {
                 let baiCaiLayout = ZZZuiXinBaiCaiLayout.init(jingXuanModel: baiCaiJingXuanModel!)
                 
                 self.headerView?.baiCaiLayout = baiCaiLayout
-                
                 self.tableView.tableHeaderView = self.headerView
      
             }
@@ -84,13 +83,14 @@ class ZZBaiCaiController: ZZSecondTableViewController {
                 
                 self.tableView.reloadData()
                 self.tableView.mj_footer.endRefreshing()
-                
                 self.offset = self.dataSource.count
+                
+                self.caculateCollectionViewHeight()
+                
             }
             
         }
     }
-    
     
     func requestNewestBaiCaiList(){ //最新白菜数据
         ZZNetworking.get("v1/baicai/list", parameters: configureParameters()) {(responseObj, error) in
@@ -113,6 +113,7 @@ class ZZBaiCaiController: ZZSecondTableViewController {
                 self.tableView.mj_header.endRefreshing()
                 
                 self.offset = self.dataSource.count
+                self.caculateCollectionViewHeight()
             }
             
         }
@@ -127,6 +128,14 @@ class ZZBaiCaiController: ZZSecondTableViewController {
         parameters.setObject("\(self.offset)", forKey: "offset" as NSCopying)
         return parameters
     }
+    
+    func caculateCollectionViewHeight(){
+        let count1 = self.offset / baiCaiConstant.rowCount
+        let count2 = self.offset % baiCaiConstant.rowCount
+        let count = count1 + count2
+        self.collectionViewHeight = baiCaiConstant.itemMargin + (baiCaiConstant.itemMargin + baiCaiConstant.itemHeight2) * CGFloat(count)
+    }
+    
 }
 
 
@@ -137,16 +146,19 @@ extension ZZBaiCaiController{
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource.count
+        
+        if self.dataSource.count > 0 {
+            return 1
+        }
+        
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let listCell = tableView.dequeueReusableCell(withIdentifier: "ZZListCell", for: indexPath) as! ZZListCell
+        let listCell = tableView.dequeueReusableCell(withIdentifier: "ZZBaiCaiTableViewCell", for: indexPath) as! ZZBaiCaiTableViewCell
         
-        let worthyArticle = self.dataSource[indexPath.row] as! ZZWorthyArticle
-        
-        listCell.article = worthyArticle
+        listCell.dataSource = self.dataSource
         
         return listCell
         
@@ -165,6 +177,16 @@ extension ZZBaiCaiController{
         return 0.1
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+
+        if self.dataSource.count > 0 {
+            
+            return self.collectionViewHeight
+        }
+        
+        return 0
+    }
     
 }
     

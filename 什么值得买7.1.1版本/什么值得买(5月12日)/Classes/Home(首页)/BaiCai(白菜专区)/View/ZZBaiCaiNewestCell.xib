@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZZBaiCaiNewestCell" customModule="什么值得买" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="211" height="313"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="211" height="313"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pnD-nK-40w">
+                        <rect key="frame" x="10" y="10" width="191" height="191"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="pnD-nK-40w" secondAttribute="height" multiplier="1:1" id="v4I-4E-Qhq"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gbs-QX-Bkr">
+                        <rect key="frame" x="20" y="216" width="191" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldS-7a-DZk">
+                                <rect key="frame" x="0.0" y="0.0" width="191" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOn-mf-wea">
+                                <rect key="frame" x="0.0" y="32" width="191" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Wgt-6t-AMw">
+                                <rect key="frame" x="0.0" y="64" width="191" height="16"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0Y-lW-cOx">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTq-Hy-LqM">
+                                        <rect key="frame" x="139" y="0.0" width="52" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Button" image="my_article_pinglun">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="Od8-Rg-H1q"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="gbs-QX-Bkr" firstAttribute="leading" secondItem="pnD-nK-40w" secondAttribute="leading" constant="10" id="01P-yJ-3Ze"/>
+                <constraint firstItem="pnD-nK-40w" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="7hM-lv-dlB"/>
+                <constraint firstItem="pnD-nK-40w" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="SGL-XL-rhw"/>
+                <constraint firstItem="gbs-QX-Bkr" firstAttribute="trailing" secondItem="pnD-nK-40w" secondAttribute="trailing" constant="10" id="Tdo-99-jNd"/>
+                <constraint firstItem="gbs-QX-Bkr" firstAttribute="top" secondItem="pnD-nK-40w" secondAttribute="bottom" constant="15" id="eFN-Gx-Crn"/>
+                <constraint firstAttribute="trailing" secondItem="pnD-nK-40w" secondAttribute="trailing" constant="10" id="six-m1-iaz"/>
+            </constraints>
+            <size key="customSize" width="211" height="313"/>
+            <connections>
+                <outlet property="commentBtn" destination="pTq-Hy-LqM" id="W0S-E5-iu8"/>
+                <outlet property="iconView" destination="pnD-nK-40w" id="BUv-q7-ZEg"/>
+                <outlet property="mallLabel" destination="P0Y-lW-cOx" id="a4j-Q7-hX4"/>
+                <outlet property="subTitleLabel" destination="KOn-mf-wea" id="OiO-kG-Gy5"/>
+                <outlet property="titleLabel" destination="ldS-7a-DZk" id="LjM-s6-b39"/>
+            </connections>
+            <point key="canvasLocation" x="-170.5" y="87.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="my_article_pinglun" width="11" height="11"/>
+    </resources>
+</document>
