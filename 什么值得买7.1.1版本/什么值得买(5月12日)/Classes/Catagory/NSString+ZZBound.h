@@ -12,5 +12,6 @@
 
 - (CGSize)sizeWithFont:(UIFont *)font maxW:(CGFloat)maxW;
 - (CGSize)sizeWithFont:(UIFont *)font;
-
+//给出[日期格式为"20161201"], 返回对应星期
+- (NSString *)caculateWeek;
 @end

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ZZBaiCaiItemOne: UIView {
+class ZZBaiCaiItemOne: UIView { //每日精选和白菜头条
     
-    lazy var iconView: UIImageView = {
+    lazy var iconView: UIImageView = { //图片
         let iconView = UIImageView()
         
         iconView.width = baiCaiConstant.imageWH1
@@ -21,7 +21,7 @@ class ZZBaiCaiItemOne: UIView {
         return iconView
     }()
     
-    lazy var titleLabel: YYLabel = {
+    lazy var titleLabel: YYLabel = { //标题
         let titleLabel = YYLabel()
         titleLabel.numberOfLines = 2
         titleLabel.width = baiCaiConstant.imageWH1
@@ -31,27 +31,29 @@ class ZZBaiCaiItemOne: UIView {
         return titleLabel
     }()
     
-    lazy var priceLabel: YYLabel = {
-        let priceLabel = YYLabel()
-        priceLabel.numberOfLines = 1
-        priceLabel.width = baiCaiConstant.imageWH1
-        priceLabel.left = baiCaiConstant.imageInset1
-        priceLabel.height = baiCaiConstant.priceLabelHeight1
-        priceLabel.textVerticalAlignment = .top
-        return priceLabel
+    lazy var subTitleLabel: YYLabel = { //子标题(可能为时间, 可能为价格)
+        let subTitleLabel = YYLabel()
+        subTitleLabel.numberOfLines = 1
+        subTitleLabel.width = baiCaiConstant.imageWH1
+        subTitleLabel.left = baiCaiConstant.imageInset1
+        subTitleLabel.height = baiCaiConstant.priceLabelHeight1
+        subTitleLabel.textVerticalAlignment = .top
+        return subTitleLabel
     }()
     
     override init(frame: CGRect) {
         
         super.init(frame: frame)
         backgroundColor = UIColor.white
+        isUserInteractionEnabled = true
         layer.cornerRadius = 3.0
+        
         addSubview(iconView)
         addSubview(titleLabel)
-        addSubview(priceLabel)
+        addSubview(subTitleLabel)
         
         titleLabel.top = iconView.bottom + baiCaiConstant.titleLabelTop1
-        priceLabel.top = titleLabel.bottom + baiCaiConstant.priceLabelTop1
+        subTitleLabel.top = titleLabel.bottom + baiCaiConstant.priceLabelTop1
         
     }
     
@@ -68,29 +70,14 @@ class ZZBaiCaiItemOne: UIView {
                 }
                 
                 titleLabel.textLayout = baiCaiItemLayout.titleLayout
-                priceLabel.textLayout = baiCaiItemLayout.subTitleLayout
+                subTitleLabel.textLayout = baiCaiItemLayout.subTitleLayout
                 
                 titleLabel.lineBreakMode = .byTruncatingTail
-                priceLabel.lineBreakMode = .byTruncatingTail
+                subTitleLabel.lineBreakMode = .byTruncatingTail
             }
             
         }
     }
-    
-    func titleLabelAttributes(articleTitle: String) ->NSAttributedString{
-        var attributes = [String : Any]()
-        attributes[NSForegroundColorAttributeName] = baiCaiConstant.titleLabelColor1
-        attributes[NSFontAttributeName] = baiCaiConstant.titleLabelFont1
-        
-        let titleLabelAttributes = NSMutableAttributedString.init(string: articleTitle, attributes: attributes)
-        titleLabelAttributes.lineSpacing = 5.0
-        
-        return titleLabelAttributes
-    }
-}
-
-class baiCaiView: UIView {
-    
 }
 
 class ZZBaiCaiJingXuanView: UIView {
@@ -141,8 +128,19 @@ class ZZBaiCaiJingXuanView: UIView {
             scrollView.addSubview(baiCaiItemOne)
             scrollView.haowuItems.append(baiCaiItemOne)
             
+        
+            let tapGestureRecongnizer = UITapGestureRecognizer.init(target: self, action: #selector(itemDidClick(tap:)))
+            baiCaiItemOne.addGestureRecognizer(tapGestureRecongnizer)
+            
         }
     }
+    
+    func itemDidClick(tap:UITapGestureRecognizer){
+        
+        let baiCaiItemOne = tap.view as! ZZBaiCaiItemOne
+        
+    }
+    
     
     var jingXuanTextLayouts: [ZZBaiCaiItemLayout]? {
         

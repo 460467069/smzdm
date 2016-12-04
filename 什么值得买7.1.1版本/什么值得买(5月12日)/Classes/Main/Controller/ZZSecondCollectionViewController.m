@@ -33,7 +33,7 @@
     self.collectionView.delegate = self;
     self.collectionView.scrollsToTop = YES;
     [self.view addSubview:self.collectionView];
-    
+
 }
 
 

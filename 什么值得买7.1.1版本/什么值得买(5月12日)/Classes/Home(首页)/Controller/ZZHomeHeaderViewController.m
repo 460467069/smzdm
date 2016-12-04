@@ -186,7 +186,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     
     if ([redirectdata.link_type isEqualToString:@"baicai"]) {
         
-        ZZBaiCaiController *baiCaiController = [[ZZBaiCaiController alloc] init];
+        ZZBaiCaiController *baiCaiController = [[ZZBaiCaiController alloc] initWithStyle:UITableViewStylePlain];
         
         [self.navigationController pushViewController:baiCaiController animated:YES];
     }

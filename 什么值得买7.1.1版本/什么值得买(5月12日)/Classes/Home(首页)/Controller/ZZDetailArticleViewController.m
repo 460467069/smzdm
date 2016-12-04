@@ -303,7 +303,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 #pragma mark - ZZDetailBaseBottomBarDelegate
 - (void)bottomBarLinkBtnDidClick:(ZZDetailBaseBottomBar *)bottomBar{
     
-    ZZAllCommentController *commentController = [[ZZAllCommentController alloc] init];
+    ZZAllCommentController *commentController = [[ZZAllCommentController alloc] initWithStyle:UITableViewStyleGrouped];
     
     commentController.articleID = self.article_id;
     [self.navigationController pushViewController:commentController animated:YES];

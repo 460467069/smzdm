@@ -8,8 +8,19 @@
 
 import UIKit
 
+@objc protocol ZZJumpToNextControllerDelegate: NSObjectProtocol {//控制器跳转协议
+    
+    @objc optional func jumpToNextController(redirectData: ZZRedirectData)
+}
+
+@objc protocol ZZBaiCaiTableViewCellDelegate: NSObjectProtocol {
+    
+    @objc optional func baiCaiNewestItemDidClick(baiCaiCell: ZZBaiCaiTableViewCell, index: NSInteger)
+}
 
 class ZZBaiCaiTableViewCell: UITableViewCell {
+    
+    weak var delegate: ZZBaiCaiTableViewCellDelegate?
     
     lazy var baiCaiCollectionView: UICollectionView = {
         
@@ -23,7 +34,6 @@ class ZZBaiCaiTableViewCell: UITableViewCell {
         baiCaiCollectionView.delegate = self
         baiCaiCollectionView.dataSource = self
         baiCaiCollectionView.register(UINib.init(nibName: "ZZBaiCaiNewestCell", bundle: nil), forCellWithReuseIdentifier: "ZZBaiCaiNewestCell")
-        baiCaiCollectionView.isScrollEnabled = false
         return baiCaiCollectionView
     }()
 
@@ -65,6 +75,10 @@ class ZZBaiCaiTableViewCell: UITableViewCell {
 
 extension ZZBaiCaiTableViewCell: UICollectionViewDelegate{
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        delegate?.baiCaiNewestItemDidClick?(baiCaiCell: self, index: indexPath.row)
+    }
 }
 
 

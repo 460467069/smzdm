@@ -15,7 +15,8 @@
 #import "ZZNetworkHandler.h"
 #import <WeiboSDK.h>
 #import "AppDelegate+SDKInit.h"
-#import <sqlite3.h>
+#import "NSString+ZZBound.h"
+
 
 
 @interface AppDelegate ()<WeiboSDKDelegate>
@@ -25,9 +26,8 @@
 @implementation AppDelegate
 
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     // 向微博客户端程序注册第三方应用
     [WeiboSDK registerApp:kShareSinaWeiboKey];
     
@@ -46,7 +46,6 @@
     
     [self.window makeKeyAndVisible];
 
-    
     return YES;
 }
 

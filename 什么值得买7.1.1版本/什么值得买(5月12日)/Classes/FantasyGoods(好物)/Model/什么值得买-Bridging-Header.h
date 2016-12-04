@@ -17,4 +17,6 @@
 #import "ZZSecondCollectionViewController.h"
 #import "ZZWorthyArticle.h"
 #import "ZZListCell.h"
-
+#import "ZZJumpToNextModel.h"
+#import "ZZDetailArticleViewController.h"
+#import "ZZPureWebViewController.h"

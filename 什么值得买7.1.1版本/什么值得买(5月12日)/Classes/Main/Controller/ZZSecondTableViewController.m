@@ -16,25 +16,34 @@
 
 @implementation ZZSecondTableViewController
 
+- (instancetype)initWithStyle:(UITableViewStyle)style{
+    if (self = [super init]) {
+        
+        [self tableViewInitialWithStyle:style];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self tableViewInitial];
     
     [self refreshHeaderAndFooterInitial];
 }
 
 /** 初始化tableView */
-- (void)tableViewInitial {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+- (void)tableViewInitialWithStyle:(UITableViewStyle)style {
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:style];
+    self.tableView = tableView;
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.scrollsToTop = YES;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
-    self.tableView = tableView;
+    
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
 }
 
 - (NSMutableDictionary *)configureParameters{

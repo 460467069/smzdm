@@ -49,9 +49,7 @@ class ZZBaiCaiController: ZZSecondTableViewController {
                 
                 
                 let baiCaiJingXuanModel = ZZBaiCaiJingXuanModel.model(with: responseObj)
-                
                 let baiCaiLayout = ZZZuiXinBaiCaiLayout.init(jingXuanModel: baiCaiJingXuanModel!)
-                
                 self.headerView?.baiCaiLayout = baiCaiLayout
                 self.tableView.tableHeaderView = self.headerView
      
@@ -159,7 +157,7 @@ extension ZZBaiCaiController{
         let listCell = tableView.dequeueReusableCell(withIdentifier: "ZZBaiCaiTableViewCell", for: indexPath) as! ZZBaiCaiTableViewCell
         
         listCell.dataSource = self.dataSource
-        
+        listCell.delegate = self
         return listCell
         
     }
@@ -168,7 +166,7 @@ extension ZZBaiCaiController{
         
     
         let bannerView = Bundle.main.loadNibNamed("ZZBaiCaiBannerView", owner: nil, options: nil)?.last as! ZZBaiCaiBannerView
-        
+        bannerView.backgroundColor = kGlobalLightGrayColor
         return bannerView
         
     }
@@ -186,6 +184,20 @@ extension ZZBaiCaiController{
         }
         
         return 0
+    }
+    
+}
+
+extension ZZBaiCaiController: ZZBaiCaiTableViewCellDelegate{
+    
+    func baiCaiNewestItemDidClick(baiCaiCell: ZZBaiCaiTableViewCell, index: NSInteger) {
+        
+        let worthyArticel = self.dataSource[index] as! ZZWorthyArticle
+        
+        if let redictData = worthyArticel.redirect_data {
+            jumpToDetailArticleViewControllerWithRedirectdata(redirectdata: redictData)
+        }
+
     }
     
 }

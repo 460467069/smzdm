@@ -25,6 +25,8 @@
 /** 上拉 */
 - (void)loadMoreData;
 
+- (instancetype)initWithStyle:(UITableViewStyle)style;
+
 - (NSMutableDictionary *)configureParameters;
 
 
