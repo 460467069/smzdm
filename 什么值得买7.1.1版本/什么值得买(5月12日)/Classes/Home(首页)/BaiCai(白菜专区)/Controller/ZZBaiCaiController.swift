@@ -22,6 +22,8 @@ class ZZBaiCaiController: ZZSecondTableViewController {
         title = "白菜专区"
         self.tableViewColor = kGlobalLightGrayColor
         headerView = ZZBaiCaiTableHeaderView()
+        headerView?.jingXuanView.delegete = self
+        headerView?.touTiaoView.delegete = self
         
         tableView.tableHeaderView = headerView
         tableView.sectionHeaderHeight = 35
@@ -200,5 +202,13 @@ extension ZZBaiCaiController: ZZBaiCaiTableViewCellDelegate{
 
     }
     
+}
+
+extension ZZBaiCaiController: ZZJumpToNextControllerDelegate{
+    
+    func jumpToNextController(redirectData: ZZRedirectData) {
+        
+        jumpToDetailArticleViewControllerWithRedirectdata(redirectdata: redirectData)
+    }
 }
     

@@ -95,6 +95,8 @@ class ZZBaiCaiJingXuanView: UIView {
         return scrollView
     }()
     
+    var delegete: ZZJumpToNextControllerDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -125,6 +127,7 @@ class ZZBaiCaiJingXuanView: UIView {
             baiCaiItemOne.width = baiCaiConstant.itemWidth1
             baiCaiItemOne.height = baiCaiConstant.itemHeight1
             baiCaiItemOne.left = baiCaiConstant.itemMargin + (baiCaiConstant.itemMargin + baiCaiConstant.itemWidth1) * CGFloat(i)
+            baiCaiItemOne.tag = i
             scrollView.addSubview(baiCaiItemOne)
             scrollView.haowuItems.append(baiCaiItemOne)
             
@@ -138,6 +141,10 @@ class ZZBaiCaiJingXuanView: UIView {
     func itemDidClick(tap:UITapGestureRecognizer){
         
         let baiCaiItemOne = tap.view as! ZZBaiCaiItemOne
+        
+        let redirectData = jingXuanTextLayouts?[baiCaiItemOne.tag].worthyArticle?.redirect_data
+        
+        delegete?.jumpToNextController?(redirectData: redirectData!)
         
     }
     

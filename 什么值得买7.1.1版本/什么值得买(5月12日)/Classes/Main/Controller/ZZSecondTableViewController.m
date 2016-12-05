@@ -24,6 +24,15 @@
     return self;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self tableViewInitialWithStyle:UITableViewStyleGrouped];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
