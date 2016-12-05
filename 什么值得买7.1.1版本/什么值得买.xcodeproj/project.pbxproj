@@ -116,6 +116,7 @@
 		A99B88041DEEB34A007A6640 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99B88031DEEB34A007A6640 /* TodayViewController.swift */; };
 		A99B88071DEEB34A007A6640 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99B88051DEEB34A007A6640 /* MainInterface.storyboard */; };
 		A99B880B1DEEB34A007A6640 /* ZDM_Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A99B87FF1DEEB349007A6640 /* ZDM_Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A99C54671DF544A600AAFC8D /* JumpToNext1.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99C54661DF544A600AAFC8D /* JumpToNext1.plist */; };
 		A9A03FD81D1A69B100675FA9 /* ZZUserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A03FD71D1A69B100675FA9 /* ZZUserAccount.m */; };
 		A9A03FDE1D1A726200675FA9 /* ZZWeiboTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A03FDD1D1A726200675FA9 /* ZZWeiboTableView.m */; };
 		A9A512021D775A5D00E41407 /* ZZCHannelID.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9A512011D775A5D00E41407 /* ZZCHannelID.plist */; };
@@ -379,6 +380,7 @@
 		A99B88031DEEB34A007A6640 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		A99B88061DEEB34A007A6640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		A99B88081DEEB34A007A6640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A99C54661DF544A600AAFC8D /* JumpToNext1.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = JumpToNext1.plist; sourceTree = "<group>"; };
 		A9A03FD61D1A69B100675FA9 /* ZZUserAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUserAccount.h; sourceTree = "<group>"; };
 		A9A03FD71D1A69B100675FA9 /* ZZUserAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUserAccount.m; sourceTree = "<group>"; };
 		A9A03FDC1D1A726200675FA9 /* ZZWeiboTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZWeiboTableView.h; sourceTree = "<group>"; };
@@ -1029,6 +1031,7 @@
 				A980A3FD1CE41250006E0037 /* UITabBar.plist */,
 				A9A512011D775A5D00E41407 /* ZZCHannelID.plist */,
 				A93DE7BA1DE14D5B004C8332 /* JumpToNext.plist */,
+				A99C54661DF544A600AAFC8D /* JumpToNext1.plist */,
 				A9D9D2221CE40B3E00A83101 /* Assets.xcassets */,
 				A9D9D2171CE40B3E00A83101 /* main.m */,
 				A9D9D2271CE40B3E00A83101 /* Info.plist */,
@@ -1371,6 +1374,7 @@
 				A9A512021D775A5D00E41407 /* ZZCHannelID.plist in Resources */,
 				A9262A801D76B35B0037B1CF /* ZZJingXuanViewController.storyboard in Resources */,
 				A947CCC41DE02FA30047B58F /* ZZHomeHeaderViewController.storyboard in Resources */,
+				A99C54671DF544A600AAFC8D /* JumpToNext1.plist in Resources */,
 				A947CD1C1DE02FCC0047B58F /* ZZTuiGuangCell.xib in Resources */,
 				A947CD191DE02FCC0047B58F /* ZZListCell.xib in Resources */,
 				A980A3FE1CE41250006E0037 /* UITabBar.plist in Resources */,

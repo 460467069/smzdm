@@ -17,6 +17,7 @@
 #import "ZZDetailArticleViewController.h"
 #import "ZZDetailTopicViewController.h"
 #import "ZZPureWebViewController.h"
+#import "什么值得买-Swift.h"
 
 static NSString * const kReuseIdentifierYuanChuangCell = @"ZZYuanChuangCell";
 static NSString * const kReuseIdentifieFirstCell = @"ZZHomeFirstCell";
@@ -243,28 +244,12 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         //资讯 v2/news/articles
 //        https://api.smzdm.com/v2/news/articles/28552?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
         
-        NSInteger channelID = [article.article_channel_id integerValue];
-        
-        NSString *articleId = article.article_id;
-        
 #if 0   //测试话题
         channelID = 14;
         articleId = @"698";
 #endif
         
-        if (channelID == 14) {
-            ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
-            detailTopicVc.channelID = channelID;
-            detailTopicVc.article_id = articleId;
-            [self.navigationController pushViewController:detailTopicVc animated:YES];
-            return;
-        }
-        
-        ZZDetailArticleViewController *vc = [[ZZDetailArticleViewController alloc] init];
-//        vc.article = article;
-        vc.channelID = channelID;
-        vc.article_id = articleId;
-        [self.navigationController pushViewController:vc animated:YES];
+        [self jumpToDetailArticleViewControllerWithArticle:article];
     }
 }
 

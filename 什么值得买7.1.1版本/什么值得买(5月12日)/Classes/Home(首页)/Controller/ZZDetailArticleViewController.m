@@ -44,8 +44,6 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"优惠详情";
     self.view.backgroundColor = [UIColor whiteColor];
     
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]) {

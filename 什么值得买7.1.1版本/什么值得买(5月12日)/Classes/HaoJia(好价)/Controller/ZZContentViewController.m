@@ -188,27 +188,7 @@ static NSString * const kListCell = @"ZZListCell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //https://api.smzdm.com/v2/youhui/articles/6643905?channel_id=5&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.3.3&weixin=1
     ZZWorthyArticle *article = self.dataArrayM[indexPath.row];
-    NSInteger channelID = [article.article_channel_id integerValue];
-    NSString *articleId = article.article_id;
-    if (channelID == 14) {
-        ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
-        detailTopicVc.channelID = channelID;
-        detailTopicVc.article_id = articleId;
-        [self.navigationController pushViewController:detailTopicVc animated:YES];
-        return;
-    }
-    if ([article.tag isEqualToString:@"广告"]) {
-        ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
-        webViewController.redirectdata = article.redirect_data;
-        [self.navigationController pushViewController:webViewController animated:YES];
-        
-        return;
-    }
-    
-    ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];
-    vc.channelID = channelID;
-    vc.article_id = articleId;
-    [self.navigationController pushViewController:vc animated:YES];
+    [self jumpToDetailArticleViewControllerWithArticle:article];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -235,39 +215,13 @@ static NSString * const kListCell = @"ZZListCell";
 #pragma mark - SDCycleScrollViewDelegate
 /** 点击图片回调 */
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
-    ZZRedirectData *redirectdata = self.headerView.contentHeader.rows[index].redirectdata;
     
+    ZZRedirectData *redirectdata = self.headerView.contentHeader.rows[index].redirectdata;
+
     [self jumpToDetailArticleViewControllerWithRedirectdata:redirectdata];
+    
+    
 }
-
-
-#pragma mark - 控制器跳转逻辑
-- (void)jumpToDetailArticleViewControllerWithRedirectdata:(ZZRedirectData *)redirectdata{
-    NSString *linkType = redirectdata.link_type;
-    NSInteger channelID;
-    if ([linkType isEqualToString:@"faxian"] || [linkType isEqualToString:@"youhui"]) {
-        channelID = 2;
-    }else if ([linkType isEqualToString:@"haitao"]){
-        channelID = 5;
-    }else if ([linkType isEqualToString:@"news"]){
-        channelID = 6;
-    }else if ([linkType isEqualToString:@"pingce"]){
-        channelID = 8;
-    }else if ([linkType isEqualToString:@"yuanchuang"]){
-        channelID = 11;
-    }else if ([linkType isEqualToString:@"other"]){
-        ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
-        webViewController.redirectdata = redirectdata;
-        [self.navigationController pushViewController:webViewController animated:YES];
-        
-        return;
-    }
-    ZZDetailArticleViewController *vc = [ZZDetailArticleViewController new];
-    vc.channelID = channelID;
-    vc.article_id = redirectdata.link_val;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
 
 #pragma mark - getter / setter
 - (NSMutableArray *)dataArrayM

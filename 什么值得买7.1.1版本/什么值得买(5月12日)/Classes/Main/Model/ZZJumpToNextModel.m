@@ -12,9 +12,7 @@
 
 + (instancetype)modelWithLinkType:(NSString *)linkType{
     
-    NSArray<ZZJumpToNextModel *> *models = [self mj_objectArrayWithFilename:@"JumpToNext.plist"];
-    
-    for (ZZJumpToNextModel *model in models) {
+    for (ZZJumpToNextModel *model in [self models]) {
         
         if ([model.linkType isEqualToString:linkType]) {
             
@@ -25,6 +23,32 @@
     return nil;
     
     
+}
+
++ (instancetype)modelWithChannelID:(NSInteger)channelID{
+    
+    for (ZZJumpToNextModel *model in [self models]) {
+        
+        if (model.channelID == channelID) {
+            
+            return model;
+        }
+    }
+
+    return nil;
+}
+
+
+
+
++ (NSArray<ZZJumpToNextModel *> *)models{
+//    static NSArray *array;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+      NSArray *array = [self mj_objectArrayWithFilename:@"JumpToNext.plist"];
+//    });
+    
+    return array;
 }
 
 @end

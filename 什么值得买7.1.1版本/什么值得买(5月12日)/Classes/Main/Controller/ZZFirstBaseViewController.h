@@ -14,6 +14,6 @@
 @property (nonatomic, strong) UILabel *placeHolderLabel;
 
 #pragma mark - 控制器跳转逻辑
-- (void)jumpToDetailArticleViewControllerWithRedirectdata:(ZZRedirectData *)redirectdata;
+//- (void)jumpToDetailArticleViewControllerWithRedirectdata:(ZZRedirectData *)redirectdata;
 
 @end

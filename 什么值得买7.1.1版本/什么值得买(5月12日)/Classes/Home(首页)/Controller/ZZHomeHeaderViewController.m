@@ -218,7 +218,6 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
         redirectdata = self.headModel.headlines[index].redirectdata;
     }
     
-    
     [self jumpToDetailArticleViewControllerWithRedirectdata:redirectdata];
 
 }

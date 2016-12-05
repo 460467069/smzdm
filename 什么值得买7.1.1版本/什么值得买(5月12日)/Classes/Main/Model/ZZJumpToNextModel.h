@@ -12,9 +12,14 @@
 
 @property (nonatomic, assign) NSInteger channelID;
 @property (nonatomic, copy) NSString *linkType;
+@property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *destionationController;
 
 
 + (instancetype)modelWithLinkType:(NSString *)linkType;
+
++ (instancetype)modelWithChannelID:(NSInteger)channelID;
+
++ (NSArray<ZZJumpToNextModel *> *)models;
 
 @end

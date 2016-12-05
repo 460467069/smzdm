@@ -196,8 +196,8 @@ extension ZZBaiCaiController: ZZBaiCaiTableViewCellDelegate{
         
         let worthyArticel = self.dataSource[index] as! ZZWorthyArticle
         
-        if let redictData = worthyArticel.redirect_data {
-            jumpToDetailArticleViewControllerWithRedirectdata(redirectdata: redictData)
+        if let redirectData = worthyArticel.redirect_data {
+            jumpToDetailArticleViewController(redirectdata: redirectData)
         }
 
     }
@@ -208,7 +208,8 @@ extension ZZBaiCaiController: ZZJumpToNextControllerDelegate{
     
     func jumpToNextController(redirectData: ZZRedirectData) {
         
-        jumpToDetailArticleViewControllerWithRedirectdata(redirectdata: redirectData)
+    
+        jumpToDetailArticleViewController(redirectdata: redirectData)
     }
 }
     
