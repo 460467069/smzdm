@@ -16,11 +16,10 @@
 #import <WeiboSDK.h>
 #import "AppDelegate+SDKInit.h"
 #import "NSString+ZZBound.h"
-
-
+#import "NSTimer+ZZAdd.h"
+#import <SDWebImage/UIView+WebCacheOperation.h>
 
 @interface AppDelegate ()<WeiboSDKDelegate>
-
 @end
 
 @implementation AppDelegate
@@ -45,9 +44,10 @@
     self.window.rootViewController = tab;
     
     [self.window makeKeyAndVisible];
-
+    
     return YES;
 }
+
 
 /** 初始化融云 */
 - (void)configureRongYun{

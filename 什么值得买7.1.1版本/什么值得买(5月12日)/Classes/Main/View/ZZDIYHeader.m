@@ -35,11 +35,18 @@
     // 添加label
     UILabel *label = [[UILabel alloc] init];
     label.textColor = kGlobalGrayColor;
-    label.font = [UIFont systemFontOfSize:15];
+    label.font = [UIFont systemFontOfSize:13];
     label.textAlignment = NSTextAlignmentCenter;
     [self addSubview:label];
     self.label = label;
     self.label.text = [ZZRefreshTip randomRefreshTip];  //初始值
+    
+    typeof(self) weakSelf = self;
+    self.endRefreshingCompletionBlock = ^{
+        
+        [weakSelf.circleView stopAnimating];
+        
+    };
     
 }
 
@@ -93,6 +100,11 @@
     switch (state) {
         case MJRefreshStateIdle: {
             self.label.text = [ZZRefreshTip randomRefreshTip];
+            LxDBAnyVar(@"MJRefreshStateIdle");
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+//                [self.circleView stopAnimating];
+            });
             break;
         }
         case MJRefreshStatePulling: {
@@ -112,37 +124,49 @@
 
 }
 
-//- (void)endRefreshing{
-//    
-//    //仿值得买实现
+- (void)endRefreshing{
+    
+    //仿值得买实现
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        self.label.text = [ZZRefreshTip randomRefreshTip];
 //    });
-//    
-//    [super endRefreshing];
-//}
+    
+
+    
+    
+    
+    [super endRefreshing];
+    
+//    [self.circleView stopAnimating];
+}
+
+
 
 #pragma mark 监听拖拽比例（控件被拖出来的比例）
 - (void)setPullingPercent:(CGFloat)pullingPercent
 {
     [super setPullingPercent:pullingPercent];
 
-    switch (self.state) {
-        case MJRefreshStateIdle: {
-            if (pullingPercent <= 1) { //过滤掉百分比>1的情况
-                if (self.fullCover) {   //用户下拉触发了刷新
-                    self.circleView.progress = 1;
-                    if (pullingPercent == 0) { // pullingPercent = -0 什么情况
-                        
-                        self.fullCover = NO;    //重置标记 
-                        
-                    }
-                }else{                  //用户下拉没有触发刷新
-                    self.circleView.progress = pullingPercent;
-                }
+    if (pullingPercent <= 1) { //过滤掉百分比>1的情况
+        if (self.fullCover) {   //用户下拉触发了刷新
+            self.circleView.progress = 1;
+            if (pullingPercent == 0) { // pullingPercent = -0 什么情况
                 
+                self.fullCover = NO;    //重置标记
                 
             }
+        }else{                  //用户下拉没有触发刷新
+            self.circleView.progress = pullingPercent;
+        }
+        
+        
+    }else{
+        self.circleView.progress = 1;
+    }
+    
+    switch (self.state) {
+        case MJRefreshStateIdle: {
+
             break;
         }
         case MJRefreshStatePulling: {

@@ -42,11 +42,8 @@
 
 
 + (NSArray<ZZJumpToNextModel *> *)models{
-//    static NSArray *array;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-      NSArray *array = [self mj_objectArrayWithFilename:@"JumpToNext.plist"];
-//    });
+
+    NSArray *array = [self mj_objectArrayWithFilename:@"JumpToNext.plist"];
     
     return array;
 }

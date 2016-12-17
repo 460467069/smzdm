@@ -25,6 +25,7 @@ class ZZGoodsHeaderLayout: UICollectionViewFlowLayout {
     
     override func prepare() {
         super.prepare()
+        
         minimumLineSpacing = 0
         minimumInteritemSpacing = 15
         let itemWidth = ((collectionView?.width)! - (collectionView?.contentInset.left)! - (collectionView?.contentInset.right)! - (goodsHeaderItemCount - 1) * minimumInteritemSpacing ) / goodsHeaderItemCount
@@ -220,7 +221,7 @@ extension ZZFantasticGoodsController{
                     self.tableView.mj_footer.endRefreshing()
                     
                 }else{
-                    self.tableView.mj_footer.endRefreshing()
+                    self.tableView.mj_footer.endRefreshingWithNoMoreData()
                 }
                 
             }

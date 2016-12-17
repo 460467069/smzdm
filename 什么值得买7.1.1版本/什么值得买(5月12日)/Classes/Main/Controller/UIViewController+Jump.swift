@@ -4,7 +4,9 @@
 //
 //  Created by Wang_ruzhou on 2016/12/1.
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
-//
+//  控制器逻辑跳转
+
+
 import UIKit
 
 extension UIViewController{
@@ -40,33 +42,6 @@ extension UIViewController{
             }
         }
     }
-    
-//    ZZWorthyArticle *article = self.dataArrayM[indexPath.row];
-//    NSInteger channelID = [article.article_channel_id integerValue];
-//    NSString *articleId = article.article_id;
-//    
-//    ZZJumpToNextModel *model = [ZZJumpToNextModel modelWithChannelID:channelID];
-//    if (channelID == 14) {
-//    ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
-//    detailTopicVc.channelID = channelID;
-//    detailTopicVc.article_id = articleId;
-//    detailTopicVc.title = model.title;
-//    [self.navigationController pushViewController:detailTopicVc animated:YES];
-//    return;
-//    }
-//    if ([article.tag isEqualToString:@"广告"]) {
-//    ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
-//    webViewController.redirectdata = article.redirect_data;
-//    [self.navigationController pushViewController:webViewController animated:YES];
-//    
-//    return;
-//    }
-//    
-//    ZZDetailArticleViewController *detailArticleVc = [ZZDetailArticleViewController new];
-//    detailArticleVc.channelID = channelID;
-//    detailArticleVc.article_id = articleId;
-//    detailArticleVc.title = model.title;
-//    [self.navigationController pushViewController:detailArticleVc animated:YES];
     
     func jumpToDetailArticleViewController(article: ZZWorthyArticle){
         

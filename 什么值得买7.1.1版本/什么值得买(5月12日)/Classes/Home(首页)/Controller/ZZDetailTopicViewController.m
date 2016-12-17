@@ -37,6 +37,8 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     _headerView = [[ZZDetailTopicHeaderView alloc] initWithOrderStyle:ZZDetailTopicHeaderViewOrderStyleByHot];
     _headerView.delegate = self;
     
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{

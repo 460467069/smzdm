@@ -62,7 +62,7 @@ struct ZZHaoWuConstant {
     let itemWidth: CGFloat = 130.0
     let itemHeight1: CGFloat = 205.0
     let cellHeight1: CGFloat = 252.0 + 5.0
-    let maxCount = 20
+    let maxCount = 30
     
     
     let cellHeight3: CGFloat = 115.0

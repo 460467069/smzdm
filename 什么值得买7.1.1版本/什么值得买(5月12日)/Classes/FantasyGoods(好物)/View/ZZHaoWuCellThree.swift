@@ -25,6 +25,7 @@ class ZZHaoWuItemThree: UIView {
         iconView.width = haoWuConstant.imageWidth
         iconView.height = haoWuConstant.imageHeight3
         iconView.contentMode = .scaleAspectFit
+        
         return iconView
     }()
     

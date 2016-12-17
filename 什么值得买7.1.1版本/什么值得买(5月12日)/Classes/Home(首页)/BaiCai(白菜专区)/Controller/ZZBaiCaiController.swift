@@ -81,10 +81,13 @@ class ZZBaiCaiController: ZZSecondTableViewController {
                     self.offset = rows.count
                 }
                 
-                self.tableView.reloadData()
                 self.tableView.mj_footer.endRefreshing()
-                self.offset = self.dataSource.count
                 
+                self.tableView.reloadData()
+                ;
+                
+                
+                self.offset = self.dataSource.count
                 self.caculateCollectionViewHeight()
                 
             }
@@ -109,8 +112,8 @@ class ZZBaiCaiController: ZZSecondTableViewController {
                     self.offset = rows.count
                 }
                 
-                self.tableView.reloadData()
                 self.tableView.mj_header.endRefreshing()
+                self.tableView.reloadData()
                 
                 self.offset = self.dataSource.count
                 self.caculateCollectionViewHeight()

@@ -39,6 +39,15 @@
     
 }
 
+- (CADisplayLink *)link{
+    if (!_link) {
+        _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(rotateCirclView)];
+        [_link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    }
+    
+    return _link;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (frame.size.width == 0 && frame.size.height == 0) {
@@ -53,9 +62,7 @@
         self.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.zhiView];
         [self addSubview:self.circleView];
-        
-        _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(rotateCirclView)];
-
+    
     }
     return self;
 }
@@ -69,7 +76,7 @@
 - (void)startAnimating {
     self.progress = 0;
     self.circleView.hidden = NO;
-    [self.link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    [self link];
 }
 
 
