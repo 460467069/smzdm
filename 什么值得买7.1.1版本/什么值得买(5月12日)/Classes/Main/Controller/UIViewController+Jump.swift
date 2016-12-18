@@ -75,4 +75,29 @@ extension UIViewController{
         navigationController?.pushViewController(detailArticleVc, animated: true)
 
     }
+    
+    
+    func jumpToShareViewController(){
+        
+        let shareVc = ZZShareViewController()
+        
+        shareVc.modalPresentationStyle = .custom
+        shareVc.transitioningDelegate = self
+        self.present(shareVc, animated: true, completion: nil)
+        
+    }
+}
+
+extension UIViewController: UIViewControllerTransitioningDelegate{
+    
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return ZZPopPresentAnimation()
+    }
+    
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return ZZPopDimissAnimation()
+    }
+    
 }

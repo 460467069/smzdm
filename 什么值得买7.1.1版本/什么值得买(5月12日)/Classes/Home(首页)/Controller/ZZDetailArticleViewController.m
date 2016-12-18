@@ -256,8 +256,15 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 }
 
 
-/** 分享 */
 - (void)detailRightBtnDidClick {
+    
+    [self jumpToShareViewController];
+}
+/** 分享 */
+- (void)detailRightBtnDidClick1 {
+    
+    [self jumpToShareViewController];
+    
     //1、创建分享参数
 
     //（注意：图片必须要在Xcode左边目录里面，名称必须要传正确 (Bundle中的图片)

@@ -257,6 +257,9 @@ extension ZZFantasticGoodsController: ZZHaoWuItemDelegate{
         switch haowuLayout!.itemType!
         {
         case .one:
+//            http://api.smzdm.com/v1/haowu/haowu_pro_detail/
+//            f=iphone&pro_id=2427994&source_id=486C2009-E0C4-4483-9D37-350C278833D6&token=YTM4MjN8MTQ4MDM5MDMyMnw3NzY4MDY2MDk2fDFiNWQ1YzVhYWVmNTQ3NjM2NmQ1NGI2OGVjNzNjNDNh&v=7.4.1&weixin=1
+            
 //            let detailTopicVc = ZZDetailTopicViewController()
 //            detailTopicVc.channelID = 14
 //            detailTopicVc.article_id = subItemModel.redirect_data?.link_val

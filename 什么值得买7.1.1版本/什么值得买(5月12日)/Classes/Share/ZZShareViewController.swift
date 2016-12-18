@@ -14,17 +14,40 @@ class ZZShareViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "懂得分享的人最美"
-        
-        let cloesBtn = UIButton.init()
-        
-        cloesBtn.frame = CGRect.init(x: 20, y: 20, width: 60, height: 40)
-        cloesBtn.setImage(#imageLiteral(resourceName: "ico_close"), for: .normal)
-        cloesBtn.setImage(#imageLiteral(resourceName: "ico_close_press"), for: .highlighted)
-        view.addSubview(cloesBtn)
+        setupUI()
+
         
     }
 
+    
+    func setupUI(){
+        
+        view.backgroundColor = UIColor.white
+        
+        let cloesBtn = UIButton()
+        
+        cloesBtn.frame = CGRect.init(x: 10, y: 10, width: 60, height: 40)
+        cloesBtn.setImage(#imageLiteral(resourceName: "ico_close"), for: .normal)
+        cloesBtn.setImage(#imageLiteral(resourceName: "ico_close_press"), for: .highlighted)
+        view.addSubview(cloesBtn)
+        cloesBtn.addTarget(self, action: #selector(closBtnDidClick), for: .touchUpInside)
+        
+        let titleLabel = UILabel()
+        titleLabel.text = "懂得分享的人最美"
+        titleLabel.textColor = UIColor.black
+        titleLabel.sizeToFit()
+        titleLabel.centerX = kScreenWidth * 0.5
+        titleLabel.centerY = cloesBtn.centerY
+        view.addSubview(titleLabel)
+        
+    }
+    
+    
+    func closBtnDidClick(){
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
