@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YYKit
 
 @objc protocol ZZHaoWuItemDelegate: NSObjectProtocol{
     @objc optional func haoWuItemDidClick(in haoWuCell: ZZHaoWuBaseCell, subItemModel: ZZGoodsSubItemModel)

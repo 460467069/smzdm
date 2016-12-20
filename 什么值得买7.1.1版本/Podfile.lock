@@ -41,6 +41,7 @@ PODS:
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.5.1)
   - ShareSDK3/ShareSDKPlatforms/WeChat (3.5.1)
   - ShareSDK3/ShareSDKUI (3.5.1)
+  - SnapKit (3.0.2)
   - SVProgressHUD (2.0.3)
   - UITableView+FDTemplateLayoutCell (1.4)
   - YYKit (1.0.9):
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo
   - ShareSDK3/ShareSDKPlatforms/WeChat
   - ShareSDK3/ShareSDKUI
+  - SnapKit (~> 3.0.2)
   - SVProgressHUD
   - UITableView+FDTemplateLayoutCell
   - YYKit
@@ -89,11 +91,12 @@ SPEC CHECKSUMS:
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   ShareSDK3: dc051268317cd144acbd7d48d6bc7867ff58bc04
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 2026edc8d652e06554f0741b1f934b802f5541ad
+PODFILE CHECKSUM: 0e16c37c119a2902769da3be497bab25de627988
 
 COCOAPODS: 1.1.1

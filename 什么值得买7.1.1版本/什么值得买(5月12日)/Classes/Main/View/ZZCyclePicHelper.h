@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YYKit.h"
+#import <YYKit/YYKit.h>
 
 @interface ZZCyclePicHelper : NSObject
 /// 圆角头像的 manager

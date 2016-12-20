@@ -5,7 +5,7 @@ project '什么值得买.xcodeproj'
 
 target '什么值得买' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
+  use_frameworks!
 
   # Pods for 什么值得买
   pod 'SDWebImage'
@@ -14,6 +14,7 @@ target '什么值得买' do
   pod 'MJRefresh'
   pod 'MJExtension'
   pod 'Masonry'
+  pod 'SnapKit', '~> 3.0.2'
   pod 'SDCycleScrollView'
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'ZYCornerRadius'

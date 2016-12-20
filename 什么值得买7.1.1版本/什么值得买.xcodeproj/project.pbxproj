@@ -103,6 +103,9 @@
 		A94AC31C1DED30E3009D077A /* ZZBaiCaiNewestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94AC31A1DED30E3009D077A /* ZZBaiCaiNewestCell.xib */; };
 		A95605F61DA87E4C00473B46 /* ZZSwiftCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95605F51DA87E4C00473B46 /* ZZSwiftCommon.swift */; };
 		A95E63691DF04BAA00855369 /* UIViewController+Jump.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E63681DF04BAA00855369 /* UIViewController+Jump.swift */; };
+		A95FEAD01E07D642003DFEA0 /* ZZShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FEACD1E07D642003DFEA0 /* ZZShareViewController.swift */; };
+		A95FEAD31E07D677003DFEA0 /* ZZShareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FEAD11E07D677003DFEA0 /* ZZShareCollectionViewCell.swift */; };
+		A95FEAD41E07D677003DFEA0 /* ZZShareCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95FEAD21E07D677003DFEA0 /* ZZShareCollectionViewCell.xib */; };
 		A96C4C841DC9904400196341 /* ZZPureWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96C4C831DC9904400196341 /* ZZPureWebViewController.m */; };
 		A9758D721D8766EF00FC4B89 /* ZZSecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9758D711D8766EF00FC4B89 /* ZZSecondTableViewController.m */; };
 		A9758D781D878DA800FC4B89 /* NSObject+ZZStarImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A9758D771D878DA800FC4B89 /* NSObject+ZZStarImage.m */; };
@@ -166,14 +169,13 @@
 		A9E5CC0C1DF96CB400C47221 /* NSTimer+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E5CC0B1DF96CB400C47221 /* NSTimer+ZZAdd.m */; };
 		A9E5CC0E1DF982F900C47221 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E5CC0D1DF982F900C47221 /* AVFoundation.framework */; };
 		A9EB45911DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB45901DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift */; };
-		A9EF51E01E043865002E18B0 /* ZZShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF51DF1E043865002E18B0 /* ZZShareViewController.swift */; };
 		A9F387301DEC024D009E77C4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */; };
 		A9F964831DDA2C1700D41EC5 /* ZZCommentFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F964821DDA2C1700D41EC5 /* ZZCommentFooterView.swift */; };
 		A9F964851DDA2D2700D41EC5 /* ZZCommentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F964841DDA2D2700D41EC5 /* ZZCommentHeaderView.swift */; };
 		A9F97BC01DE521E200FB683F /* ZZBaiCaiBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F97BBF1DE521E200FB683F /* ZZBaiCaiBannerView.swift */; };
 		A9F97BC21DE521EB00FB683F /* ZZBaiCaiBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F97BC11DE521EB00FB683F /* ZZBaiCaiBannerView.xib */; };
 		A9FC17AC1D826BB800F16D1E /* ZZSecondBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC17AB1D826BB800F16D1E /* ZZSecondBaseViewController.m */; };
-		CECD5256DC4CC3E02810228F /* libPods-什么值得买.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA94AC24398409643F76168 /* libPods-什么值得买.a */; };
+		BBCEFC72E7FB16B58EBC664E /* Pods______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC44063077F3A4819D95752 /* Pods______.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -358,6 +360,9 @@
 		A94AC31A1DED30E3009D077A /* ZZBaiCaiNewestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZBaiCaiNewestCell.xib; sourceTree = "<group>"; };
 		A95605F51DA87E4C00473B46 /* ZZSwiftCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZSwiftCommon.swift; sourceTree = "<group>"; };
 		A95E63681DF04BAA00855369 /* UIViewController+Jump.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Jump.swift"; sourceTree = "<group>"; };
+		A95FEACD1E07D642003DFEA0 /* ZZShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZShareViewController.swift; sourceTree = "<group>"; };
+		A95FEAD11E07D677003DFEA0 /* ZZShareCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZShareCollectionViewCell.swift; sourceTree = "<group>"; };
+		A95FEAD21E07D677003DFEA0 /* ZZShareCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZShareCollectionViewCell.xib; sourceTree = "<group>"; };
 		A960A2F61DEEB50300A61069 /* ZDM_Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZDM_Today.entitlements; sourceTree = "<group>"; };
 		A96C4C821DC9904400196341 /* ZZPureWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZPureWebViewController.h; sourceTree = "<group>"; };
 		A96C4C831DC9904400196341 /* ZZPureWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZPureWebViewController.m; sourceTree = "<group>"; };
@@ -463,7 +468,6 @@
 		A9E5CC0B1DF96CB400C47221 /* NSTimer+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+ZZAdd.m"; sourceTree = "<group>"; };
 		A9E5CC0D1DF982F900C47221 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A9EB45901DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZBaiCaiTableViewCell.swift; sourceTree = "<group>"; };
-		A9EF51DF1E043865002E18B0 /* ZZShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZShareViewController.swift; sourceTree = "<group>"; };
 		A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A9F964821DDA2C1700D41EC5 /* ZZCommentFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentFooterView.swift; sourceTree = "<group>"; };
 		A9F964841DDA2D2700D41EC5 /* ZZCommentHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentHeaderView.swift; sourceTree = "<group>"; };
@@ -471,8 +475,8 @@
 		A9F97BC11DE521EB00FB683F /* ZZBaiCaiBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZBaiCaiBannerView.xib; sourceTree = "<group>"; };
 		A9FC17AA1D826BB800F16D1E /* ZZSecondBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSecondBaseViewController.h; sourceTree = "<group>"; };
 		A9FC17AB1D826BB800F16D1E /* ZZSecondBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSecondBaseViewController.m; sourceTree = "<group>"; };
-		EEA94AC24398409643F76168 /* libPods-什么值得买.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-什么值得买.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B762794EBD4E6C806C9BD4 /* Pods-什么值得买.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.debug.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.debug.xcconfig"; sourceTree = "<group>"; };
+		FAC44063077F3A4819D95752 /* Pods______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods______.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,7 +494,7 @@
 			files = (
 				A9E5CC0E1DF982F900C47221 /* AVFoundation.framework in Frameworks */,
 				A9F387301DEC024D009E77C4 /* libsqlite3.tbd in Frameworks */,
-				CECD5256DC4CC3E02810228F /* libPods-什么值得买.a in Frameworks */,
+				BBCEFC72E7FB16B58EBC664E /* Pods______.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +780,30 @@
 				A947CD051DE02FCC0047B58F /* ZZTuiGuangCell.h */,
 				A947CD061DE02FCC0047B58F /* ZZTuiGuangCell.m */,
 				A947CD071DE02FCC0047B58F /* ZZTuiGuangCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A95FEACC1E07D642003DFEA0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A95FEACD1E07D642003DFEA0 /* ZZShareViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A95FEACE1E07D642003DFEA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A95FEACF1E07D642003DFEA0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A95FEAD11E07D677003DFEA0 /* ZZShareCollectionViewCell.swift */,
+				A95FEAD21E07D677003DFEA0 /* ZZShareCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1270,8 +1298,10 @@
 		A9EF51DE1E043830002E18B0 /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				A95FEACE1E07D642003DFEA0 /* Model */,
+				A95FEACF1E07D642003DFEA0 /* View */,
+				A95FEACC1E07D642003DFEA0 /* Controller */,
 				A901FCE51E057A2200B973E7 /* Animations */,
-				A9EF51DF1E043865002E18B0 /* ZZShareViewController.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -1281,8 +1311,8 @@
 			children = (
 				A9E5CC0D1DF982F900C47221 /* AVFoundation.framework */,
 				A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */,
-				EEA94AC24398409643F76168 /* libPods-什么值得买.a */,
 				A99B88001DEEB34A007A6640 /* NotificationCenter.framework */,
+				FAC44063077F3A4819D95752 /* Pods______.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1337,7 +1367,7 @@
 			attributes = {
 				CLASSPREFIX = ZZ;
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Wang_ruzhou;
 				TargetAttributes = {
 					A99B87FE1DEEB349007A6640 = {
@@ -1411,6 +1441,7 @@
 				A9A512021D775A5D00E41407 /* ZZCHannelID.plist in Resources */,
 				A9262A801D76B35B0037B1CF /* ZZJingXuanViewController.storyboard in Resources */,
 				A947CCC41DE02FA30047B58F /* ZZHomeHeaderViewController.storyboard in Resources */,
+				A95FEAD41E07D677003DFEA0 /* ZZShareCollectionViewCell.xib in Resources */,
 				A99C54671DF544A600AAFC8D /* Share.plist in Resources */,
 				A947CD1C1DE02FCC0047B58F /* ZZTuiGuangCell.xib in Resources */,
 				A947CD191DE02FCC0047B58F /* ZZListCell.xib in Resources */,
@@ -1518,6 +1549,7 @@
 				A947CD141DE02FCC0047B58F /* ZZTitleBannelOption.m in Sources */,
 				A9AF3E341DE464FD0055F522 /* ZZDouYuController.m in Sources */,
 				A9C8C4E61D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift in Sources */,
+				A95FEAD01E07D642003DFEA0 /* ZZShareViewController.swift in Sources */,
 				A9D9D21B1CE40B3E00A83101 /* AppDelegate.m in Sources */,
 				A947CCD71DE02FA30047B58F /* ZZDetailYouHuiBottomBar.m in Sources */,
 				A927160E1D44C126006EEECA /* WBStatusLayout.m in Sources */,
@@ -1602,7 +1634,6 @@
 				A91A83581D420CFD008D229E /* WBModel.m in Sources */,
 				A947CD0B1DE02FCC0047B58F /* ZZHaoJiaViewController.m in Sources */,
 				A947CD101DE02FCC0047B58F /* ZZHomeCell.m in Sources */,
-				A9EF51E01E043865002E18B0 /* ZZShareViewController.swift in Sources */,
 				A95605F61DA87E4C00473B46 /* ZZSwiftCommon.swift in Sources */,
 				A9AF3E381DE464FD0055F522 /* ZZDouYuBannerCell.m in Sources */,
 				A9AF3E3A1DE464FD0055F522 /* ZZDouYuHomeCollectionViewCell.m in Sources */,
@@ -1616,6 +1647,7 @@
 				A9F964831DDA2C1700D41EC5 /* ZZCommentFooterView.swift in Sources */,
 				A947CCD31DE02FA30047B58F /* ZZDetailHeaderView.m in Sources */,
 				A9FC17AC1D826BB800F16D1E /* ZZSecondBaseViewController.m in Sources */,
+				A95FEAD31E07D677003DFEA0 /* ZZShareCollectionViewCell.swift in Sources */,
 				A947CCBF1DE02FA30047B58F /* ZZDetailBaseViewController.m in Sources */,
 				A9758D721D8766EF00FC4B89 /* ZZSecondTableViewController.m in Sources */,
 				A9A512051D77B07E00E41407 /* ZZChannelID.m in Sources */,

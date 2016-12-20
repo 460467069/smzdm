@@ -18,13 +18,13 @@
 #import <Foundation/Foundation.h>
 
 /** 第三方头文件 */
-    #import "AFNetworking.h"
-    #import "MJExtension.h"
-    #import "UIImageView+WebCache.h"
-    #import "MJRefresh.h"
-    #import "Masonry.h"
-    #import "YYKit.h"
-    #import "SVProgressHUD.h"
+    #import <AFNetworking/AFNetworking.h>
+    #import <MJRefresh/MJRefresh.h>
+    #import <MJExtension/MJExtension.h>
+    #import <SDWebImage/UIImageView+WebCache.h>
+    #import <Masonry/Masonry.h>
+    #import <YYKit/YYKit.h>
+    #import <SVProgressHUD/SVProgressHUD.h>
     #import <MBProgressHUD/MBProgressHUD.h>
 
     #import "LxDBAnything.h"
@@ -34,7 +34,7 @@
     #import "ZZConstants.h"
 
 /** 枚举 */
-#import "ZZEnums.h"
+    #import "ZZEnums.h"
 
 
 /** 用户账号信息保存路径 */
@@ -43,8 +43,6 @@
 /** 分类头文件 */
     #import "UIColor+HEX.h"
     #import "NSString+ZZNumberFormatter.h"
-    #import "UIView+MJExtension.h"
-    #import "UIView+YYAdd.h"
 
 /** 网络请求头文件 */
     #import "ZZNetworking.h"

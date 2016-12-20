@@ -26,10 +26,19 @@ extension ZZPopPresentAnimation: UIViewControllerAnimatedTransitioning{
         let fromVc = transitionContext.viewController(forKey: .from)
         
         toVc?.view.top = kScreenHeight
-        toVc?.view.height = 300
+        toVc?.view.height = 280
         toVc?.view.width = kScreenWidth
         
+
+        let maskBtn = UIButton()
+        maskBtn.backgroundColor = UIColor.clear
+        maskBtn.frame = CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: kScreenWidth, height: kScreenHeight))
+        transitionContext.containerView.addSubview(maskBtn)
+        maskBtn.addTarget(self, action: #selector(maskBtnDidClick), for: .touchUpInside)
+        
         transitionContext.containerView.addSubview((toVc?.view)!)
+        
+        print(transitionContext.containerView)
         
         var t1 = CATransform3DIdentity
         t1.m34 = 1.0 / -900.0;
@@ -61,5 +70,11 @@ extension ZZPopPresentAnimation: UIViewControllerAnimatedTransitioning{
         
         
     }
+    
+    func maskBtnDidClick(){
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "maskBtnDidClick"), object: self)
+    }
+    
     
 }

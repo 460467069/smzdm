@@ -46,6 +46,8 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+
+    
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
@@ -93,6 +95,8 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     
     [self.webView.scrollView removeObserver:self forKeyPath:WKWebViewKeyPathContentSize];
     self.containerScrollView.delegate = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
