@@ -19,32 +19,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="70" height="110"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_friends" translatesAutoresizingMaskIntoConstraints="NO" id="0FF-3u-yQg">
-                        <rect key="frame" x="8" y="0.0" width="54" height="54"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="0FF-3u-yQg" secondAttribute="height" multiplier="1:1" id="hzQ-Fz-1Fq"/>
-                            <constraint firstAttribute="width" constant="54" id="y3M-7k-ECM"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VG1-CC-yuM">
                         <rect key="frame" x="0.0" y="69" width="70" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXp-IT-WEI">
+                        <rect key="frame" x="8" y="0.0" width="54" height="54"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="54" id="ecN-eX-4Uf"/>
+                            <constraint firstAttribute="width" secondItem="eXp-IT-WEI" secondAttribute="height" multiplier="1:1" id="t0f-06-h7T"/>
+                        </constraints>
+                        <state key="normal" image="ico_friends"/>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="VG1-CC-yuM" secondAttribute="trailing" id="5K1-71-JO4"/>
+                <constraint firstItem="VG1-CC-yuM" firstAttribute="top" secondItem="eXp-IT-WEI" secondAttribute="bottom" constant="15" id="5jD-y6-WRf"/>
                 <constraint firstItem="VG1-CC-yuM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7Ma-iF-6DF"/>
                 <constraint firstItem="VG1-CC-yuM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="8CV-TD-pby"/>
-                <constraint firstItem="VG1-CC-yuM" firstAttribute="top" secondItem="0FF-3u-yQg" secondAttribute="bottom" constant="15" id="CLo-Y7-iB1"/>
-                <constraint firstItem="0FF-3u-yQg" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="PNC-sn-anR"/>
-                <constraint firstItem="0FF-3u-yQg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Uoh-2f-RnA"/>
+                <constraint firstItem="eXp-IT-WEI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UNU-YX-p4h"/>
+                <constraint firstItem="eXp-IT-WEI" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="jDu-Sz-Tri"/>
             </constraints>
             <size key="customSize" width="85" height="119"/>
             <connections>
-                <outlet property="iconView" destination="0FF-3u-yQg" id="VL6-Hd-lNf"/>
+                <outlet property="circleBtn" destination="eXp-IT-WEI" id="jPG-OC-Qh0"/>
                 <outlet property="titleLabel" destination="VG1-CC-yuM" id="Rgc-1D-EaS"/>
             </connections>
             <point key="canvasLocation" x="-179" y="-40"/>

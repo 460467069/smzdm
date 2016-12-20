@@ -9,7 +9,8 @@
 import UIKit
 
 class ZZShareCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var iconView: UIImageView!
+    
+    @IBOutlet weak var circleBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
@@ -21,8 +22,9 @@ class ZZShareCollectionViewCell: UICollectionViewCell {
         
         didSet{
             
-            iconView.image = UIImage.init(named: (shareModel?.icon)!)
-            
+            circleBtn.setImage(UIImage.init(named: (shareModel?.icon)!), for: .normal)
+            circleBtn.setImage(UIImage.init(named: (shareModel?.iconPress)!), for: .highlighted)
+        
             titleLabel.text = shareModel?.title
         }
     }
