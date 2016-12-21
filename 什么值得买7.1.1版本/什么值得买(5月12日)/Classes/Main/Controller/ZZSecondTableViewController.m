@@ -9,8 +9,10 @@
 #import "ZZSecondTableViewController.h"
 #import "ZZDIYHeader.h"
 #import "ZZDIYBackFooter.h"
+#import "UIScrollView+EmptyDataSet.h"
 
-@interface ZZSecondTableViewController ()
+
+@interface ZZSecondTableViewController ()<DZNEmptyDataSetSource>
 
 @end
 
@@ -46,6 +48,7 @@
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.dataSource = self;
     tableView.delegate = self;
+    tableView.emptyDataSetSource = self;
     tableView.scrollsToTop = YES;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
@@ -94,6 +97,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     return nil;
+}
+
+
+#pragma mark - DZNEmptyDataSetSource
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+    
+    return [UIImage imageNamed:@"error_default"];
 }
 
 #pragma mark - getter && setter
