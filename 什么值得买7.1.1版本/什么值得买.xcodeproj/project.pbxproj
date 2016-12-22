@@ -44,6 +44,7 @@
 		A93DE7B91DE14D1C004C8332 /* ZZJumpToNextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DE7B81DE14D1C004C8332 /* ZZJumpToNextModel.m */; };
 		A93DE7BB1DE14D5B004C8332 /* JumpToNext.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93DE7BA1DE14D5B004C8332 /* JumpToNext.plist */; };
 		A93FA9CE1DBDE71F00E3007F /* app_details.css in Resources */ = {isa = PBXBuildFile; fileRef = A93FA9CD1DBDE71F00E3007F /* app_details.css */; };
+		A94419C11E0BE77F00DECB06 /* ZZNoDelayBtnCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94419C01E0BE77F00DECB06 /* ZZNoDelayBtnCollectionView.swift */; };
 		A947CCBE1DE02FA30047B58F /* ZZDetailArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC7D1DE02FA30047B58F /* ZZDetailArticleViewController.m */; };
 		A947CCBF1DE02FA30047B58F /* ZZDetailBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC7F1DE02FA30047B58F /* ZZDetailBaseViewController.m */; };
 		A947CCC01DE02FA30047B58F /* ZZDetailTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC811DE02FA30047B58F /* ZZDetailTopicViewController.m */; };
@@ -258,6 +259,7 @@
 		A93DE7B81DE14D1C004C8332 /* ZZJumpToNextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZJumpToNextModel.m; sourceTree = "<group>"; };
 		A93DE7BA1DE14D5B004C8332 /* JumpToNext.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = JumpToNext.plist; sourceTree = "<group>"; };
 		A93FA9CD1DBDE71F00E3007F /* app_details.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = app_details.css; sourceTree = "<group>"; };
+		A94419C01E0BE77F00DECB06 /* ZZNoDelayBtnCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZNoDelayBtnCollectionView.swift; sourceTree = "<group>"; };
 		A947CC7C1DE02FA30047B58F /* ZZDetailArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailArticleViewController.h; sourceTree = "<group>"; };
 		A947CC7D1DE02FA30047B58F /* ZZDetailArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailArticleViewController.m; sourceTree = "<group>"; };
 		A947CC7E1DE02FA30047B58F /* ZZDetailBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailBaseViewController.h; sourceTree = "<group>"; };
@@ -910,6 +912,7 @@
 				A9B2ACA01DDB6EDD00D8F296 /* ZZKeyboardToolBar.m */,
 				A9B2ACA21DDB728200D8F296 /* ZZEmoticonInputView.h */,
 				A9B2ACA31DDB728200D8F296 /* ZZEmoticonInputView.m */,
+				A94419C01E0BE77F00DECB06 /* ZZNoDelayBtnCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1650,6 +1653,7 @@
 				A95FEAD31E07D677003DFEA0 /* ZZShareCollectionViewCell.swift in Sources */,
 				A947CCBF1DE02FA30047B58F /* ZZDetailBaseViewController.m in Sources */,
 				A9758D721D8766EF00FC4B89 /* ZZSecondTableViewController.m in Sources */,
+				A94419C11E0BE77F00DECB06 /* ZZNoDelayBtnCollectionView.swift in Sources */,
 				A9A512051D77B07E00E41407 /* ZZChannelID.m in Sources */,
 				A9262A7E1D76B3530037B1CF /* ZZJingXuanViewController.m in Sources */,
 				A9A746F71DE2ED7800EFB62F /* ZZBaiCaiController.swift in Sources */,

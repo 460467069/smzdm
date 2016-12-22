@@ -57,7 +57,7 @@ class ZZShareViewController: UIViewController {
         cloesBtn.setImage(#imageLiteral(resourceName: "ico_close"), for: .normal)
         cloesBtn.setImage(#imageLiteral(resourceName: "ico_close_press"), for: .highlighted)
         view.addSubview(cloesBtn)
-        cloesBtn.addTarget(self, action: #selector(closBtnDidClick), for: .touchUpInside)
+//        cloesBtn.addTarget(self, action: #selector(closBtnDidClick), for: .touchUpInside)
         
         let titleLabel = UILabel()
         titleLabel.text = "懂得分享的人最美"
@@ -67,8 +67,9 @@ class ZZShareViewController: UIViewController {
         titleLabel.centerY = cloesBtn.centerY
         view.addSubview(titleLabel)
          
-        let collectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: ZZShareFlowLayout())
+        let collectionView = ZZNoDelayBtnCollectionView.init(frame: CGRect.zero, collectionViewLayout: ZZShareFlowLayout())
         collectionView.dataSource = self
+        collectionView.delegate = self
         view.addSubview(collectionView)
         collectionView.backgroundColor = UIColor.white
         collectionView.snp.makeConstraints { (make) in
@@ -121,6 +122,13 @@ extension ZZShareViewController: UICollectionViewDataSource{
         shareCell.shareModel = shareModel
         
         return shareCell
+    }
+}
+
+extension ZZShareViewController: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
 }
 
