@@ -97,6 +97,8 @@
 	<string>访问相机</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>访问相册</string>
+	<key>UIBackgroundModes</key>
+	<array/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

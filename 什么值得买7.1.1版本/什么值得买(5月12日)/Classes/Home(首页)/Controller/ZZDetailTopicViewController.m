@@ -76,7 +76,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     ZZChannelID *channel = [ZZChannelID channelWithID:_channelID];
     
     NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
-    [ZZNetworking Get:URLStr parameters:[NSMutableDictionary dictionary] complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:URLStr parameters:[NSMutableDictionary dictionary] complectionBlock:^(id responseObject, NSError *error) {
         if (error) { return;}
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -100,7 +100,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 - (void)loadContentData{
     // v2/wiki/comments
     
-    [ZZNetworking Get:@"v2/wiki/comments" parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:@"v2/wiki/comments" parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
         
         NSArray *dataArray = responseObject[@"comment_list"];
         if (error || dataArray.count == 0) {
@@ -123,7 +123,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 - (void)loadMoreData{
     self.offset = self.dataSource.count;
     
-    [ZZNetworking Get:@"v2/wiki/comments" parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:@"v2/wiki/comments" parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
         NSArray *dataArray = responseObject[@"comment_list"];
         if (error) {
             [self.tableView.mj_footer endRefreshing];

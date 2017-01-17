@@ -27,6 +27,8 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 
 @property (nonatomic, strong) NSMutableArray<ZZWorthyArticle *> *listArrayM;
 
+@property (nonatomic, strong) NSMutableSet *cells;
+
 @end
 
 @implementation ZZHomeViewController
@@ -34,6 +36,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 //     {{0, 244}, {414, 180}}
+    self.cells = [NSMutableSet set];
     
     self.title = @"首页";
     ZZHomeHeaderViewController *headerVC = [[ZZHomeHeaderViewController alloc] init];
@@ -68,7 +71,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     self.page = 1;
     NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
     [dictM setValue:@"18" forKey:@"channel_id"];
-    [ZZNetworking Get:@"v1/util/floor" parameters:dictM complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:@"v1/util/floor" parameters:dictM complectionBlock:^(id responseObject, NSError *error) {
         
         NSArray *dataArray = responseObject[@"rows"];
         if (error || dataArray.count == 0) {
@@ -99,6 +102,9 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
                 [self.tableView.mj_header endRefreshing];
             });
         });
+        
+        
+        self.page++;
 
     }];
 
@@ -106,7 +112,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     
     NSMutableDictionary *parameters = [self configureParameters];
     
-    [ZZNetworking Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
         NSArray *dataArray = responseObject[@"rows"];
         if (error || dataArray.count == 0) {
             //出错
@@ -126,12 +132,11 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 }
 
 - (void)loadMoreData{
-    self.page++;
     NSMutableDictionary *parameters = [self configureParameters];
     NSString *timeSort = self.listArrayM.lastObject.time_sort;
     [parameters setValue:timeSort forKey:@"time_sort"];
     
-    [ZZNetworking Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
 
         NSArray *dataArray = responseObject[@"rows"];
         if (error) {
@@ -148,6 +153,8 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         [self.listArrayM addObjectsFromArray:temArray];
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
+        
+        self.page++;
     }];
 }
 
@@ -196,7 +203,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
             return cell;
             
         }
-        
+
         ZZListCell *listCell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentiHomeListCell forIndexPath:indexPath];
         listCell.type = kHaojiaJingXuan;
         listCell.article = self.listArrayM[indexPath.row];

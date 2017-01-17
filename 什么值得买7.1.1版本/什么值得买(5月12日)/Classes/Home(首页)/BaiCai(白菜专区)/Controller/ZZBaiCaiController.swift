@@ -39,7 +39,7 @@ class ZZBaiCaiController: ZZSecondTableViewController {
         
         offset = 0
         
-        ZZNetworking.get("v1/baicai/baicai_propagate", parameters: NSMutableDictionary()) {(responseObj, error) in
+        ZZAPPDotNetAPIClient.get("v1/baicai/baicai_propagate", parameters: NSMutableDictionary()) {(responseObj, error) in
             
             if let _ = error {
                 
@@ -65,7 +65,7 @@ class ZZBaiCaiController: ZZSecondTableViewController {
     
     override func loadMoreData() {//https://api.smzdm.com/v1/baicai/list?f=iphone&limit=20&offset=20&tag_name=%E6%AF%8F%E6%97%A5%E7%99%BD%E8%8F%9C&v=7.3.3&weixin=1
         
-        ZZNetworking.get("v1/baicai/list", parameters: configureParameters()) {(responseObj, error) in
+        ZZAPPDotNetAPIClient.get("v1/baicai/list", parameters: configureParameters()) {(responseObj, error) in
             if let _ = error {
                 self.tableView.mj_footer.endRefreshing()
                 return
@@ -96,7 +96,7 @@ class ZZBaiCaiController: ZZSecondTableViewController {
     }
     
     func requestNewestBaiCaiList(){ //最新白菜数据
-        ZZNetworking.get("v1/baicai/list", parameters: configureParameters()) {(responseObj, error) in
+        ZZAPPDotNetAPIClient.get("v1/baicai/list", parameters: configureParameters()) {(responseObj, error) in
             if let _ = error {
                 self.tableView.mj_header.endRefreshing()
                 return

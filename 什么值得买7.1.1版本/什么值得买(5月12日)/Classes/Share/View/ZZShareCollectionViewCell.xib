@@ -32,6 +32,9 @@
                             <constraint firstAttribute="width" secondItem="eXp-IT-WEI" secondAttribute="height" multiplier="1:1" id="t0f-06-h7T"/>
                         </constraints>
                         <state key="normal" image="ico_friends"/>
+                        <connections>
+                            <action selector="btnDidClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="EY8-G6-ElA"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>

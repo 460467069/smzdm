@@ -29,4 +29,8 @@ class ZZShareCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    @IBAction func btnDidClick(_ sender: UIButton) {
+        
+        
+    }
 }

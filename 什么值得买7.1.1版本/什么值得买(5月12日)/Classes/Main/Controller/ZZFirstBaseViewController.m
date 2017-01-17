@@ -13,6 +13,7 @@
 #import "ZZJumpToNextModel.h"
 #import "ZZDetailArticleViewController.h"
 #import "ZZPureWebViewController.h"
+#import "ZZNavigationController.h"
 
 @interface ZZFirstBaseViewController ()
 
@@ -90,6 +91,10 @@
 /** 搜索框点击 */
 - (void)searchBarDidClick{
     
+    ZZSearchViewController *searchVC = [[ZZSearchViewController alloc] init];
+    ZZNavigationController *searchNav = [[ZZNavigationController alloc] initWithRootViewController:searchVC];
+    
+    [self presentViewController:searchNav animated:NO completion:nil];
 }
 
 /** 二维码扫描按钮点击 */

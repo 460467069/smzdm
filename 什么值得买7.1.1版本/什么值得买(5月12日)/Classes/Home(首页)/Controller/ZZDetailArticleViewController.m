@@ -16,6 +16,7 @@
 #import "ZZDetailHeaderView.h"
 #import "UINavigationItem+Margin.h"
 #import "什么值得买-Swift.h"
+#import <WebViewJavascriptBridge/WKWebViewJavascriptBridge.h>
 
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
@@ -35,6 +36,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 @property (nonatomic, strong) ZZDetailHeaderLayout *headerLayout;
 @property (nonatomic, strong) ZZDetailHeaderView *headerView;
 @property (nonatomic, strong) ZZDetailModel *detailModel;
+@property (nonatomic, strong) WKWebViewJavascriptBridge *bridge;
 
 @end
 
@@ -82,6 +84,8 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     [self scrollViewDidScroll:_containerScrollView];
+    
+    [self registerHandler];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -139,6 +143,15 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [_containerScrollView addSubview:_webView];
 }
 
+- (void)registerHandler{
+    
+    _bridge = [WKWebViewJavascriptBridge bridgeForWebView:self.webView];
+    
+    [_bridge registerHandler:@"lianjie" handler:^(id data, WVJBResponseCallback responseCallback) {
+        
+    }];
+}
+
 - (void)initialCustomIndicatorView{
     ZZCircleView *circleView = [[ZZCircleView alloc] init];
     circleView.center = self.view.center;
@@ -176,7 +189,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     ZZChannelID *channel = [ZZChannelID channelWithID:_channelID];
     self.channel = channel;
     NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
-    [ZZNetworking Get:URLStr parameters:[self configureParameters] complectionBlock:^(NSDictionary *responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:URLStr parameters:[self configureParameters] complectionBlock:^(NSDictionary *responseObject, NSError *error) {
         
         if (error) { return;}
         
@@ -261,13 +274,20 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 
 
 - (void)detailRightBtnDidClick {
+    NSArray* imageArray = @[_detailModel.share_pic];
     
-    [self jumpToShareViewController];
+    NSURL *url = [NSURL URLWithString:_detailModel.article_url];
+    NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+    //1、创建分享参数
+    [shareParams SSDKSetupShareParamsByText:nil images:imageArray url:url title:_detailModel.share_title_other type:SSDKContentTypeAuto];
+    
+    [self jumpToShareViewControllerWithParameters:shareParams];
 }
+
 /** 分享 */
 - (void)detailRightBtnDidClick1 {
     
-    [self jumpToShareViewController];
+//    [self jumpToShareViewController];
     
     //1、创建分享参数
 

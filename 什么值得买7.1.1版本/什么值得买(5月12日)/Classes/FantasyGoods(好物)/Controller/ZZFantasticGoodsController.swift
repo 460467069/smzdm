@@ -145,7 +145,7 @@ extension ZZFantasticGoodsController{
         offset = 0
         
         //        http://api.smzdm.com/v1/haowu/haowu_category?f=iphone&v=7.3&weixin=1
-        ZZNetworking.get("v1/haowu/haowu_category", parameters: NSMutableDictionary()) { (responseObj, error) in
+        ZZAPPDotNetAPIClient.get("v1/haowu/haowu_category", parameters: NSMutableDictionary()) { (responseObj, error) in
             if let _ = error {}
             if let response = responseObj{
                 self.headerDataArray = NSArray.modelArray(with: ZZGoodsHeaderModel.self, json: response)! as! [ZZGoodsHeaderModel]
@@ -158,7 +158,7 @@ extension ZZFantasticGoodsController{
         
         
         
-        ZZNetworking.get("v1/haowu/haowu_topic_list/", parameters: configureParameters()) { (responseObj, error) in
+        ZZAPPDotNetAPIClient.get("v1/haowu/haowu_topic_list/", parameters: configureParameters()) { (responseObj, error) in
             
             if let _ = error {
                 
@@ -194,7 +194,7 @@ extension ZZFantasticGoodsController{
         
         self.offset = self.dataSource.count;
         
-        ZZNetworking.get("v1/haowu/haowu_topic_list/", parameters: configureParameters()) { (responseObj, error) in
+        ZZAPPDotNetAPIClient.get("v1/haowu/haowu_topic_list/", parameters: configureParameters()) { (responseObj, error) in
             
             if let _ = error {
                 

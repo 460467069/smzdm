@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 
+
 class ZZShareFlowLayout: UICollectionViewFlowLayout {
     let margin: CGFloat = 30
     let columnCount: CGFloat = 3
@@ -26,6 +27,7 @@ class ZZShareFlowLayout: UICollectionViewFlowLayout {
         itemSize = CGSize.init(width: imageWH, height: itemHeight)
         
     }
+
     
 }
 
@@ -35,6 +37,9 @@ class ZZShareViewController: UIViewController {
 
         return ZZShareModel.models()
     }()
+    
+    var shareParams: NSMutableDictionary?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +52,7 @@ class ZZShareViewController: UIViewController {
         
     }
     
+    
     func setupUI(){
         
         view.backgroundColor = UIColor.white
@@ -57,7 +63,7 @@ class ZZShareViewController: UIViewController {
         cloesBtn.setImage(#imageLiteral(resourceName: "ico_close"), for: .normal)
         cloesBtn.setImage(#imageLiteral(resourceName: "ico_close_press"), for: .highlighted)
         view.addSubview(cloesBtn)
-//        cloesBtn.addTarget(self, action: #selector(closBtnDidClick), for: .touchUpInside)
+        cloesBtn.addTarget(self, action: #selector(closBtnDidClick), for: .touchUpInside)
         
         let titleLabel = UILabel()
         titleLabel.text = "懂得分享的人最美"
@@ -79,6 +85,17 @@ class ZZShareViewController: UIViewController {
         }
         
         collectionView.register(UINib.init(nibName: "ZZShareCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ZZShareCollectionViewCell")
+        
+        
+        let textField = UITextField()
+        textField.backgroundColor = UIColor.lightGray
+        view.addSubview(textField);
+        textField.snp.makeConstraints { (make) in
+            
+            make.right.equalTo(self.view).offset(-10)
+            make.size.equalTo(CGSize.init(width: 100, height: 30))
+        }
+        
     }
     
     
@@ -128,7 +145,14 @@ extension ZZShareViewController: UICollectionViewDataSource{
 extension ZZShareViewController: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let shareModel = dataArray?[indexPath.item]
         
+//        (SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity,  NSError *error);
+
+        
+        ShareSDK.share(shareModel!.type, parameters: shareParams!) { (state, userData, contentEntity, error) in
+            
+        }
     }
 }
 

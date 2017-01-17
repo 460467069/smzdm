@@ -18,16 +18,27 @@
 #import "NSString+ZZBound.h"
 #import "NSTimer+ZZAdd.h"
 #import <SDWebImage/UIView+WebCacheOperation.h>
+#import <IQKeyboardManagerSwift/IQKeyboardManagerSwift-Swift.h>
+
 
 
 @interface AppDelegate ()<WeiboSDKDelegate>
+
+@property (nonatomic, strong) ZZUserAccount *account;
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [IQKeyboardManager sharedManager].enable = YES;
 
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024
+                                                         diskCapacity:20 * 1024 * 1024
+                                                             diskPath:nil];
+    [NSURLCache setSharedURLCache:URLCache];
+    
+    
     // 向微博客户端程序注册第三方应用
     [WeiboSDK registerApp:kShareSinaWeiboKey];
     
@@ -46,9 +57,32 @@
     
     [self.window makeKeyAndVisible];
     
+    
+
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(test) name:@"123" object:nil];
+    });
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"123" object:nil];
+    
     return YES;
 }
 
+- (void)test{
+    
+
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    
+    
+}
+
+- (void)dealloc{
+    
+    [self.account removeObserver:self forKeyPath:@"userID"];
+}
 
 /** 初始化融云 */
 - (void)configureRongYun{

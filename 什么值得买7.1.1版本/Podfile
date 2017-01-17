@@ -26,6 +26,8 @@ target '什么值得买' do
   pod 'JSPatchPlatform'
   pod 'DZNEmptyDataSet'
   pod "CSStickyHeaderFlowLayout"
+  pod 'WebViewJavascriptBridge'
+  pod 'IQKeyboardManagerSwift'
   # 主模块(必须)
   pod 'ShareSDK3'
   # Mob 公共库(必须) 如果同时集成SMSSDK iOS2.0:可看此注意事项：http://bbs.mob.com/thread-20051-1-1.html
@@ -41,4 +43,12 @@ target '什么值得买' do
   pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
   pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
   
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '3.0'
+    end
+  end
 end

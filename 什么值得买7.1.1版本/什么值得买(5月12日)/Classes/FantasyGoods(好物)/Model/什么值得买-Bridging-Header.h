@@ -4,7 +4,7 @@
 
 #import "ZZRedirectData.h"
 #import "ZZFirstTableViewController.h"
-#import "ZZNetworking.h"
+#import "ZZAPPDotNetAPIClient.h"
 #import "ZZDetailTopicViewController.h"
 #import "ZZContentHeader.h"
 #import "ZZCycleScrollView.h"
@@ -16,5 +16,6 @@
 #import "ZZJumpToNextModel.h"
 #import "ZZDetailArticleViewController.h"
 #import "ZZPureWebViewController.h"
+#import <ShareSDK/ShareSDK.h>
 
 #import "PrefixHeader.pch"

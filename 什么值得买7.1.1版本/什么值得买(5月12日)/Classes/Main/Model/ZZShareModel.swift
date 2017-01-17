@@ -13,7 +13,9 @@ class ZZShareModel: NSObject {
     var title: String?
     var icon: String?
     var iconPress: String?
-
+    var platformType: String?      ///分享平台类型, 参考shareSDK中的枚举值 SSDKTypeDefine
+    
+    
     class func models() ->[ZZShareModel]?{
 
         if let mutableArray = self.mj_objectArray(withFilename: "Share.plist") {
@@ -26,6 +28,32 @@ class ZZShareModel: NSObject {
         
         return nil
         
+    }
+    
+    
+    var type: SSDKPlatformType {
+        get {
+            
+            switch Int(platformType!)!{
+            case 1:
+                return .typeSinaWeibo
+            case 22:
+                return .subTypeWechatSession
+            case 23:
+                return .subTypeWechatTimeline
+            case 24:
+                return .subTypeQQFriend
+            case 6:
+                return .subTypeQZone
+            case 21:
+                return .typeCopy
+            default:
+                return .typeSinaWeibo
+            }
+            
+            
+        }
+
     }
 
 }

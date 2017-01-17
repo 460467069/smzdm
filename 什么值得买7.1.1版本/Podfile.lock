@@ -17,6 +17,7 @@ PODS:
   - CSStickyHeaderFlowLayout (0.2.11)
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
+  - IQKeyboardManagerSwift (4.0.7)
   - JSPatchPlatform (1.6.2):
     - JSPatchPlatform/Core (= 1.6.2)
   - JSPatchPlatform/Core (1.6.2)
@@ -44,6 +45,7 @@ PODS:
   - SnapKit (3.0.2)
   - SVProgressHUD (2.0.3)
   - UITableView+FDTemplateLayoutCell (1.4)
+  - WebViewJavascriptBridge (5.0.5)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -54,6 +56,7 @@ DEPENDENCIES:
   - CSStickyHeaderFlowLayout
   - DZNEmptyDataSet
   - FDFullscreenPopGesture
+  - IQKeyboardManagerSwift
   - JSPatchPlatform
   - Masonry
   - MBProgressHUD
@@ -73,6 +76,7 @@ DEPENDENCIES:
   - SnapKit (~> 3.0.2)
   - SVProgressHUD
   - UITableView+FDTemplateLayoutCell
+  - WebViewJavascriptBridge
   - YYKit
   - ZYCornerRadius
 
@@ -81,6 +85,7 @@ SPEC CHECKSUMS:
   CSStickyHeaderFlowLayout: e9bcb1762413f49d7d09e5bd0ae5efd1100116b7
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   JSPatchPlatform: 105e331f1b899a397d2bc0300a9ace9f9d7b8f08
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -94,9 +99,10 @@ SPEC CHECKSUMS:
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
+  WebViewJavascriptBridge: a4d502315f1b8d9a51cd6a9174147ed567ec3bc5
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 0e16c37c119a2902769da3be497bab25de627988
+PODFILE CHECKSUM: 51b467ae171670fee2ebe65ad640edef797382dc
 
 COCOAPODS: 1.1.1

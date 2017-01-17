@@ -15,6 +15,8 @@ class ZZHaoJiaHeaderView: UIView {
     @IBOutlet var imageViews: [UIImageView]!
     @IBOutlet weak var cycleScrollView: ZZCycleScrollView!
     
+    weak var delegate: ZZActionDelegate?
+    
     @objc var contentHeader: ZZContentHeader? {
         
         didSet {
@@ -43,4 +45,35 @@ class ZZHaoJiaHeaderView: UIView {
             
         }
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+        for (index, imageView) in imageViews.enumerated(){
+            imageView.isUserInteractionEnabled = true
+            imageView.tag = index
+            
+            let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(imageViewDidTap(tap:)))
+            imageView.addGestureRecognizer(tapGestureRecognizer)
+        }
+        
+        
+    }
+    
+    
+    @objc fileprivate func imageViewDidTap(tap: UITapGestureRecognizer){
+        
+        let tag = tap.view?.tag
+        
+        let littleBanner = contentHeader?.little_banner[tag!]
+        
+        if let redirectData = littleBanner?.redirectData {
+            
+            delegate?.itemDidClick(redirectData: redirectData)
+        }
+
+    }
+    
+    
 }

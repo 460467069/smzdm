@@ -37,9 +37,6 @@ extension ZZPopPresentAnimation: UIViewControllerAnimatedTransitioning{
         maskBtn.addTarget(self, action: #selector(maskBtnDidClick), for: .touchUpInside)
         
         transitionContext.containerView.addSubview((toVc?.view)!)
-        
-        print(transitionContext.containerView)
-        
         var t1 = CATransform3DIdentity
         t1.m34 = 1.0 / -900.0;
         t1 = CATransform3DScale(t1, 0.95, 0.95, 1)

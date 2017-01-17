@@ -35,6 +35,9 @@ class ZZAllCommentController: ZZSecondTableViewController {
         print(tableView)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
     
     override func configureParameters() -> NSMutableDictionary{
         let parameters = NSMutableDictionary()
@@ -163,7 +166,7 @@ extension ZZAllCommentController{
         offset = 0
 
         //        https://api.smzdm.com/v1/comments?article_id=6520669&atta=0&cate=new&f=iphone&get_total=1&ishot=1&limit=20&offset=0&smiles=0&type=faxian&v=7.3.3&weixin=1
-        ZZNetworking.get("v1/comments", parameters: configureParameters()) { (responseObj, error) in
+        ZZAPPDotNetAPIClient.get("v1/comments", parameters: configureParameters()) { (responseObj, error) in
             
             if let _ = error{
                 self.tableView.mj_header.endRefreshing()
@@ -202,7 +205,7 @@ extension ZZAllCommentController{
     
     override func loadMoreData() {
         
-        ZZNetworking.get("v1/comments", parameters: configureParameters()) { (responseObj, error) in
+        ZZAPPDotNetAPIClient.get("v1/comments", parameters: configureParameters()) { (responseObj, error) in
             if let _ = error{
                 self.tableView.mj_footer.endRefreshing()
                 return

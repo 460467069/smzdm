@@ -77,12 +77,13 @@ extension UIViewController{
     }
     
     
-    func jumpToShareViewController(){
+    func jumpToShareViewController(parameters: NSMutableDictionary){
         
         let shareVc = ZZShareViewController()
         
         shareVc.modalPresentationStyle = .custom
         shareVc.transitioningDelegate = self
+        shareVc.shareParams = parameters
         self.present(shareVc, animated: true, completion: nil)
         
     }

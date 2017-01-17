@@ -25,7 +25,9 @@ let kGlobalLightGrayColor = UIColor.init(red: 234.0/255.0, green: 234.0/255.0, b
 let kLineSpacing: CGFloat = 5
 
 
-
+@objc protocol ZZActionDelegate: NSObjectProtocol{
+    @objc func itemDidClick(redirectData: ZZRedirectData)
+}
 
 
 

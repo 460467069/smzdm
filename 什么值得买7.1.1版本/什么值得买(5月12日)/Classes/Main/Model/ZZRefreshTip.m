@@ -17,8 +17,7 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
     
     NSArray *array = dict[@"fresh_tips"];
-    
-    
+
     return [array randomObject];
     
     

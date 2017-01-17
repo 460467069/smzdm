@@ -22,7 +22,7 @@
 static NSString * const kTuiGuangCell = @"ZZTuiGuangCell";
 static NSString * const kListCell = @"ZZListCell";
 
-@interface ZZContentViewController ()<SDCycleScrollViewDelegate>
+@interface ZZContentViewController ()<SDCycleScrollViewDelegate, ZZActionDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray<UIImageView *> *imageViews;
 /** 数据源 */
@@ -66,6 +66,7 @@ static NSString * const kListCell = @"ZZListCell";
     ZZHaoJiaHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:@"ZZHaoJiaHeaderView" owner:nil options:nil].lastObject;
     headerView.cycleScrollView.delegate = self;
     self.headerView = headerView;
+    headerView.delegate = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         
         self.headerView.height = kScreenW / 320.0 * self.headerView.height;
@@ -81,7 +82,7 @@ static NSString * const kListCell = @"ZZListCell";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
 //    [parameters setValue:@"home" forKey:@"type"];
     [parameters setValue:self.homeChannel.type forKey:@"type"];
-    [ZZNetworking Get:self.homeChannel.headerURLString parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:self.homeChannel.headerURLString parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
         if (error){
             return;
         }
@@ -97,7 +98,7 @@ static NSString * const kListCell = @"ZZListCell";
 {
     self.page = 1;
     self.offset = 0;
-    [ZZNetworking Get:self.homeChannel.URLString parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:self.homeChannel.URLString parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
         
         [self.tableView.mj_header endRefreshing];
         
@@ -130,7 +131,7 @@ static NSString * const kListCell = @"ZZListCell";
         [parameters setValue:artcle.time_sort forKey:@"time_sort"];
     }
     
-    [ZZNetworking Get:self.homeChannel.URLString parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:self.homeChannel.URLString parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
         [self.tableView.mj_footer endRefreshing];
         
         if (error) { return;}
@@ -221,6 +222,12 @@ static NSString * const kListCell = @"ZZListCell";
     [self jumpToDetailArticleViewControllerWithRedirectdata:redirectdata];
     
     
+}
+
+#pragma mark - ZZActionDelegate
+- (void)itemDidClickWithRedirectData:(ZZRedirectData * _Nonnull)redirectData{
+    
+    [self jumpToDetailArticleViewControllerWithRedirectdata:redirectData];
 }
 
 #pragma mark - getter / setter

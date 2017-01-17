@@ -44,4 +44,14 @@ MJCodingImplementation
     
 }
 
+
+- (void)setUserID:(NSString *)userID{
+    
+    
+    [self willChangeValueForKey:NSStringFromSelector(@selector(userID))];
+    _userID = userID;
+    
+    [self didChangeValueForKey:NSStringFromSelector(@selector(userID))];
+}
+
 @end
