@@ -22,9 +22,7 @@
     [navigationBar setTintColor:[UIColor whiteColor]];
     [navigationBar setBarTintColor:ZZColor(234, 48, 57)];
     
-    
     UIBarButtonItem *barButtonItem = [UIBarButtonItem appearance];
-    
     [barButtonItem setTitleTextAttributes:attributes forState:UIControlStateNormal];
     
     
@@ -38,6 +36,9 @@
     
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setMinimumDismissTimeInterval:2.0];
+    
+    SVProgressHUD *hud = [[SVProgressHUD alloc] init];
+    
     
     UITableViewCell *cell = [UITableViewCell appearance];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

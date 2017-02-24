@@ -30,7 +30,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     [IQKeyboardManager sharedManager].enable = YES;
 
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024
@@ -48,36 +48,19 @@
     [self configureRongYun];
     //全局定制
     [ZZGlobalApperance configureGlobalApperance];
-    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
     ZZTabBarViewController *tab = [[ZZTabBarViewController alloc] init];
-    
     self.window.rootViewController = tab;
-    
     [self.window makeKeyAndVisible];
     
-    
-
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(test) name:@"123" object:nil];
-    });
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"123" object:nil];
-    
     return YES;
-}
-
-- (void)test{
-    
-
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     
     
 }
+
 
 - (void)dealloc{
     

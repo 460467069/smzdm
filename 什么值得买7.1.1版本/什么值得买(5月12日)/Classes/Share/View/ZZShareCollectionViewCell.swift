@@ -8,10 +8,15 @@
 
 import UIKit
 
+@objc protocol ZZCellActionDelegate: NSObjectProtocol {
+    @objc func cellDidClick(shareCell: ZZShareCollectionViewCell)
+}
+
 class ZZShareCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var circleBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    var delegate: ZZCellActionDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +36,6 @@ class ZZShareCollectionViewCell: UICollectionViewCell {
 
     @IBAction func btnDidClick(_ sender: UIButton) {
         
-        
+        delegate?.cellDidClick(shareCell: self)
     }
 }

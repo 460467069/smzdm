@@ -107,6 +107,21 @@
     return [UIImage imageNamed:@"error_default"];
 }
 
+- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
+- (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
+{
+    return YES;
+}
+
 #pragma mark - getter && setter
 - (NSMutableArray *)dataSource{
     if (_dataSource == nil) {

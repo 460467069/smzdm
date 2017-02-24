@@ -104,6 +104,12 @@ class ZZShareViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func share(shareModel: ZZShareModel){
+        ShareSDK.share(shareModel.type, parameters: shareParams!) { (state, userData, contentEntity, error) in
+            
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -137,7 +143,7 @@ extension ZZShareViewController: UICollectionViewDataSource{
         let shareModel = dataArray?[indexPath.item]
         
         shareCell.shareModel = shareModel
-        
+        shareCell.delegate = self
         return shareCell
     }
 }
@@ -145,14 +151,23 @@ extension ZZShareViewController: UICollectionViewDataSource{
 extension ZZShareViewController: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let shareModel = dataArray?[indexPath.item]
+        
         
 //        (SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity,  NSError *error);
 
+        let shareModel = dataArray?[indexPath.item]
         
-        ShareSDK.share(shareModel!.type, parameters: shareParams!) { (state, userData, contentEntity, error) in
-            
-        }
+        
+        share(shareModel: shareModel!)
     }
 }
 
+extension ZZShareViewController: ZZCellActionDelegate{
+    
+    func cellDidClick(shareCell: ZZShareCollectionViewCell) {
+        let shareModel = shareCell.shareModel
+        
+        share(shareModel: shareModel!)
+    }
+    
+}

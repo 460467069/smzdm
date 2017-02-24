@@ -20,6 +20,7 @@
     dispatch_once(&onceToken, ^{
         _sharedClient = [[ZZAPPDotNetAPIClient alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL]];
         _sharedClient.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+        _sharedClient.requestSerializer.timeoutInterval = 20;
     });
     
     return _sharedClient;

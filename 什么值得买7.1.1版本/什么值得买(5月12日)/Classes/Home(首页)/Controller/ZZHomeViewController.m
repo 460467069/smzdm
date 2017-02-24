@@ -169,6 +169,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 
 #pragma mark - UITableViewDataSource && UITableViewDelegate
 
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }

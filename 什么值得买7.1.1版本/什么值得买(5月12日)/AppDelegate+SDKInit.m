@@ -87,16 +87,18 @@
     [ShareSDK registerApp:kShareSDKKey activePlatforms:platforms onImport:importHandler onConfiguration:configurationHandler];
     
     
-    
-    // JSPatch
-    [JSPatch startWithAppKey:kJSPatchKey];
-    
     //用来检测回调的状态，是更新或者是执行脚本之类的，相关信息，会打印在你的控制台
     [JSPatch setupCallback:^(JPCallbackType type, NSDictionary *data, NSError *error) {
         
     }];
     
+    // JSPatch
+    [JSPatch startWithAppKey:kJSPatchKey];
+    
+#ifdef DEBUG
     [JSPatch setupDevelopment];
+#endif
+    
     [JSPatch sync];
     
     

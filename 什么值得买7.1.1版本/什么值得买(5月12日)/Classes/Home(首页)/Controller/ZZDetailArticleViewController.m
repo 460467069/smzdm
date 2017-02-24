@@ -143,16 +143,15 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [_containerScrollView addSubview:_webView];
 }
 
-- (void)registerHandler{
+- (void)registerHandler {
     
     _bridge = [WKWebViewJavascriptBridge bridgeForWebView:self.webView];
-    
     [_bridge registerHandler:@"lianjie" handler:^(id data, WVJBResponseCallback responseCallback) {
         
     }];
 }
 
-- (void)initialCustomIndicatorView{
+- (void)initialCustomIndicatorView {
     ZZCircleView *circleView = [[ZZCircleView alloc] init];
     circleView.center = self.view.center;
     circleView.width = 30;
@@ -162,12 +161,12 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     self.circleView = circleView;
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     
     return UIStatusBarStyleDefault;
 }
 
-- (void)configureLeftBarButtonItemWithImage:(UIImage *)leftImage rightBarButtonItemWithImage:(UIImage *)rightImage titleColor:(UIColor *)titleColor{
+- (void)configureLeftBarButtonItemWithImage:(UIImage *)leftImage rightBarButtonItemWithImage:(UIImage *)rightImage titleColor:(UIColor *)titleColor {
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[leftImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
     // 后退按钮距离图片距离左边边距
     self.navigationItem.leftBarButtonItem = backItem;
@@ -184,7 +183,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 }
 
 #pragma mark - loadData
-- (void)loadWebViewData{
+- (void)loadWebViewData {
     
     ZZChannelID *channel = [ZZChannelID channelWithID:_channelID];
     self.channel = channel;
@@ -216,7 +215,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     }];
 }
 
-- (NSMutableDictionary *)configureParameters{
+- (NSMutableDictionary *)configureParameters {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     
     NSInteger channelID = self.channelID;
@@ -255,14 +254,14 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 
 
 #pragma mark - KVO
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     // object为WKScrollView
     CGSize size = [object contentSize];
     [self configureWebViewContentSizeWithScrollViewHeight:size.height];
     
 }
 
-- (void)configureWebViewContentSizeWithScrollViewHeight:(CGFloat)height{
+- (void)configureWebViewContentSizeWithScrollViewHeight:(CGFloat)height {
     self.webView.height = height;
     self.containerScrollView.contentSize = CGSizeMake(self.view.width, height + _headerLayout.height);
 }
@@ -273,7 +272,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 }
 
 
-- (void)detailRightBtnDidClick {
+- (void)detailRightBtnDidClick1 {
     NSArray* imageArray = @[_detailModel.share_pic];
     
     NSURL *url = [NSURL URLWithString:_detailModel.article_url];
@@ -285,7 +284,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 }
 
 /** 分享 */
-- (void)detailRightBtnDidClick1 {
+- (void)detailRightBtnDidClick {
     
 //    [self jumpToShareViewController];
     

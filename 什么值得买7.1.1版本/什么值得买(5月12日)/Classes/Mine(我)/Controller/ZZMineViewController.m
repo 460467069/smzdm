@@ -41,9 +41,7 @@
     }else{
         [self beginRequestWeiboData];
     }
-    
-    
-    
+
     if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
