@@ -7,6 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZZBaseRequest.h"
+
+@interface ZZHomeFirstRequest : ZZBaseRequest
+@property (nonatomic, copy) NSString *channel_id;
+@end
+
+@interface ZZHomeEditorRecommendRequest : ZZHomeFirstRequest
+@property (nonatomic, assign) NSInteger page;
+@property (nonatomic, copy) NSString *limit;
+@property (nonatomic, copy) NSString *time_sort;
+@property (nonatomic, copy) NSString *smzdm_id;
+@property (nonatomic, copy) NSString *device_id;
+@end
 
 @class ZZFloorMulti,ZZRedirectData,ZZFloorYuanchuangMaster,ZZFloorSingle,ZZRedirectData;
 @interface ZZHomeFirstModel : NSObject

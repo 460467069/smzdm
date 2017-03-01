@@ -82,7 +82,7 @@ static NSString * const kListCell = @"ZZListCell";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
 //    [parameters setValue:@"home" forKey:@"type"];
     [parameters setValue:self.homeChannel.type forKey:@"type"];
-    [ZZAPPDotNetAPIClient Get:self.homeChannel.headerURLString parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:self.homeChannel.headerURLString parameters:parameters completionBlock:^(id responseObject, NSError *error) {
         if (error){
             return;
         }
@@ -98,7 +98,7 @@ static NSString * const kListCell = @"ZZListCell";
 {
     self.page = 1;
     self.offset = 0;
-    [ZZAPPDotNetAPIClient Get:self.homeChannel.URLString parameters:[self configureParameters] complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:self.homeChannel.URLString parameters:[self configureParameters] completionBlock:^(id responseObject, NSError *error) {
         
         [self.tableView.mj_header endRefreshing];
         
@@ -131,7 +131,7 @@ static NSString * const kListCell = @"ZZListCell";
         [parameters setValue:artcle.time_sort forKey:@"time_sort"];
     }
     
-    [ZZAPPDotNetAPIClient Get:self.homeChannel.URLString parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:self.homeChannel.URLString parameters:parameters completionBlock:^(id responseObject, NSError *error) {
         [self.tableView.mj_footer endRefreshing];
         
         if (error) { return;}

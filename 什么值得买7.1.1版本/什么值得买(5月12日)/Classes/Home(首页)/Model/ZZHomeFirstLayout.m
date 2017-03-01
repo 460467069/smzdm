@@ -216,8 +216,6 @@
             [text appendAttributedString:[self padding]];
         }
         
-        
-        
         [attributedStrings addObject:text];
         
         YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kHomeFirstCellScrollItemWidth, kHomeFirstCellScrollItemHeight)];

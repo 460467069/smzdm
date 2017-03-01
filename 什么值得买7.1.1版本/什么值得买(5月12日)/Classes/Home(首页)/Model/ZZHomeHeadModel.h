@@ -10,7 +10,13 @@
 #import "ZZTitleBannelOption.h"
 #import "ZZHeadLine.h"
 #import "ZZLittleBanner.h"
+#import "ZZBaseRequest.h"
 
+@interface ZZHomeBannerRequest : ZZBaseRequest
+
+@property (nonatomic, copy) NSString *type;
+
+@end
 
 @interface ZZHomeHeadModel : NSObject
 @property (nonatomic, strong) NSArray<ZZHeadLine *> *rows;

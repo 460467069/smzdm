@@ -188,7 +188,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     ZZChannelID *channel = [ZZChannelID channelWithID:_channelID];
     self.channel = channel;
     NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
-    [ZZAPPDotNetAPIClient Get:URLStr parameters:[self configureParameters] complectionBlock:^(NSDictionary *responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:URLStr parameters:[self configureParameters] completionBlock:^(NSDictionary *responseObject, NSError *error) {
         
         if (error) { return;}
         

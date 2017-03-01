@@ -88,6 +88,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     self.cycleTextView = cycleTextView;
 
 
+    
     //littleBanner
     ZZLittleBannerLayout *layout = [[ZZLittleBannerLayout alloc] init];
 
@@ -104,16 +105,10 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     
     _litterBackgroundView = [[UIImageView alloc] initWithFrame:littleBannerView.bounds];
     littleBannerView.backgroundView = _litterBackgroundView;
-    
-    NSString *urlStr = @"http://api.smzdm.com/v2/util/banner?f=iphone&is_login=1&type=menhu&v=7.3.3&weixin=1";
-    
 
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    manager.securityPolicy.validatesDomainName = NO;
-    
-    [manager GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable responseObject) {
-        
-        ZZHomeHeadModel *headModel = [ZZHomeHeadModel modelWithDictionary:responseObject[@"data"]];
+    ZZHomeBannerRequest *request = [[ZZHomeBannerRequest alloc] init];
+    [[ZZAPPDotNetAPIClient sharedClient] GET:request completionBlock:^(id  _Nullable responseObj, NSError * _Nullable error) {
+        ZZHomeHeadModel *headModel = [ZZHomeHeadModel modelWithDictionary:responseObj];
         self.headModel = headModel;
         NSMutableArray *imageArrayM = [NSMutableArray array];
         NSMutableArray *textArrayM = [NSMutableArray array];
@@ -157,12 +152,9 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
                 subView.bottom = cycleImageView.height - cycleTextContentView.height;
                 break;
             }
-
+            
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
     }];
-    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

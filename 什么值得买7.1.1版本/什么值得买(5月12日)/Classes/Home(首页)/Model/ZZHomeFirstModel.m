@@ -8,6 +8,33 @@
 
 #import "ZZHomeFirstModel.h"
 
+@implementation ZZHomeFirstRequest
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.urlStr = kZDM_Home_UtilFloor;
+        self.channel_id = @"18";
+    }
+    return self;
+}
+@end
+
+@implementation ZZHomeEditorRecommendRequest
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _limit = @"20";
+        _device_id = kDeviceID;
+        _smzdm_id = kSMZDMID;
+        self.urlStr = kZDM_Home_EditorsRecommend;
+    }
+    return self;
+}
+@end
+
 @implementation ZZHomeFirstModel
 
 
@@ -20,15 +47,14 @@
 }
 
 @end
+
 @implementation ZZFloorMulti
 
 @end
 
-
 @implementation ZZFloorYuanchuangMaster
 
 @end
-
 
 @implementation ZZFloorSingle
 

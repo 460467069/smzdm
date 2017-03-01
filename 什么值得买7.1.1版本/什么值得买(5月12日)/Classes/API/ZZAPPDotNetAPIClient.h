@@ -7,14 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZZBaseRequest.h"
 
 @import AFNetworking;
 
-typedef void(^HttpComplectionBlcok)(id _Nullable responseObj,  NSError * _Nullable error);
+typedef void(^HttpCompletionBlcok)(id _Nullable responseObj,  NSError * _Nullable error);
 @interface ZZAPPDotNetAPIClient : AFHTTPSessionManager
 
 + (instancetype _Nonnull)sharedClient;
 
-+ (void)Get:( NSString * _Nonnull )URLString parameters:( NSMutableDictionary * _Nonnull )parameters complectionBlock:(_Nonnull HttpComplectionBlcok)complectionBlock;
+- (void)GET:(ZZBaseRequest * _Nonnull)request completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
+
+- (void)GET:(NSString * _Nonnull)URLString parameters:(NSMutableDictionary * _Nonnull)parameters completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
+
++ (void)Get:( NSString * _Nonnull)URLString parameters:(NSMutableDictionary * _Nonnull)parameters completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
 
 @end

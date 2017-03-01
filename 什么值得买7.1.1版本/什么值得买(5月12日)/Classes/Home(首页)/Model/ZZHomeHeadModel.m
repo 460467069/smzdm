@@ -8,6 +8,17 @@
 
 #import "ZZHomeHeadModel.h"
 
+@implementation ZZHomeBannerRequest
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.type = @"menhu";
+        self.urlStr = kZDM_Home_UtilBanner;
+    }
+    return self;
+}
+@end
 
 @implementation ZZHomeHeadModel
 

@@ -124,8 +124,6 @@
 
 }
 
-
-
 - (void)viewDidLayoutSubviews{
     
     [super viewDidLayoutSubviews];

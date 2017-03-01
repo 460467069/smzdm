@@ -69,7 +69,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     self.page = 1;
     NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
     [dictM setValue:@"18" forKey:@"channel_id"];
-    [ZZAPPDotNetAPIClient Get:@"v1/util/floor" parameters:dictM complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:@"v1/util/floor" parameters:dictM completionBlock:^(id responseObject, NSError *error) {
         
         NSArray *dataArray = responseObject[@"rows"];
         if (error || dataArray.count == 0) {
@@ -105,7 +105,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     
     NSMutableDictionary *parameters = [self configureParameters];
     
-    [ZZAPPDotNetAPIClient Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:@"v1/util/editors_recommend" parameters:parameters completionBlock:^(id responseObject, NSError *error) {
         NSArray *dataArray = responseObject[@"rows"];
         if (error || dataArray.count == 0) {
             //出错
@@ -127,7 +127,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     NSString *timeSort = self.listArrayM.lastObject.time_sort;
     [parameters setValue:timeSort forKey:@"time_sort"];
     
-    [ZZAPPDotNetAPIClient Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
+    [ZZAPPDotNetAPIClient Get:@"v1/util/editors_recommend" parameters:parameters completionBlock:^(id responseObject, NSError *error) {
 
         NSArray *dataArray = responseObject[@"rows"];
         if (error) {

@@ -176,6 +176,7 @@
 		A9E5CC0C1DF96CB400C47221 /* NSTimer+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E5CC0B1DF96CB400C47221 /* NSTimer+ZZAdd.m */; };
 		A9E5CC0E1DF982F900C47221 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E5CC0D1DF982F900C47221 /* AVFoundation.framework */; };
 		A9EB45911DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB45901DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift */; };
+		A9F344BF1E60233E00D835E7 /* ZZBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F344BE1E60233E00D835E7 /* ZZBaseRequest.m */; };
 		A9F387301DEC024D009E77C4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */; };
 		A9F964831DDA2C1700D41EC5 /* ZZCommentFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F964821DDA2C1700D41EC5 /* ZZCommentFooterView.swift */; };
 		A9F964851DDA2D2700D41EC5 /* ZZCommentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F964841DDA2D2700D41EC5 /* ZZCommentHeaderView.swift */; };
@@ -221,6 +222,7 @@
 		A90DBF131DBF740900D857A9 /* UINavigationItem+Margin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+Margin.m"; sourceTree = "<group>"; };
 		A90E6E3C1D39406B00C213C5 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		A90E6E3D1D39406B00C213C5 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		A915138F1E640DFF008F23C8 /* ZDM_RequestURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDM_RequestURL.h; sourceTree = "<group>"; };
 		A91655641DC1EB2400A713A4 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		A91655651DC1EB2400A713A4 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		A91A83461D420A87008D229E /* weibo_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_0.json; sourceTree = "<group>"; };
@@ -483,6 +485,8 @@
 		A9E5CC0B1DF96CB400C47221 /* NSTimer+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+ZZAdd.m"; sourceTree = "<group>"; };
 		A9E5CC0D1DF982F900C47221 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A9EB45901DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZBaiCaiTableViewCell.swift; sourceTree = "<group>"; };
+		A9F344BD1E60233E00D835E7 /* ZZBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBaseRequest.h; sourceTree = "<group>"; };
+		A9F344BE1E60233E00D835E7 /* ZZBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBaseRequest.m; sourceTree = "<group>"; };
 		A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A9F964821DDA2C1700D41EC5 /* ZZCommentFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentFooterView.swift; sourceTree = "<group>"; };
 		A9F964841DDA2D2700D41EC5 /* ZZCommentHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentHeaderView.swift; sourceTree = "<group>"; };
@@ -1218,6 +1222,9 @@
 				A9ADB84D1D64DF5D00330D23 /* ZZAPPDotNetAPIClient.m */,
 				A9ADB84E1D64DF5D00330D23 /* ZZNetworkHandler.h */,
 				A9ADB84F1D64DF5D00330D23 /* ZZNetworkHandler.m */,
+				A9F344BD1E60233E00D835E7 /* ZZBaseRequest.h */,
+				A9F344BE1E60233E00D835E7 /* ZZBaseRequest.m */,
+				A915138F1E640DFF008F23C8 /* ZDM_RequestURL.h */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1674,6 +1681,7 @@
 				A947CD161DE02FCC0047B58F /* ZZHaoJiaHeaderView.swift in Sources */,
 				A96C4C841DC9904400196341 /* ZZPureWebViewController.m in Sources */,
 				A9E5CC0C1DF96CB400C47221 /* NSTimer+ZZAdd.m in Sources */,
+				A9F344BF1E60233E00D835E7 /* ZZBaseRequest.m in Sources */,
 				A93698491DC7A9A000D4B643 /* AppDelegate+SDKInit.m in Sources */,
 				A93B6A7C1D6169780001F777 /* ZZDIYBackFooter.m in Sources */,
 				A980A4081CE412E8006E0037 /* ZZNavigationController.m in Sources */,

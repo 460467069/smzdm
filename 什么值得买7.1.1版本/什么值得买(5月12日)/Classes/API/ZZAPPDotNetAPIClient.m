@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "ZZNetworkHandler.h"
 #import "AFNetworkActivityIndicatorManager.h"
-#define kBaseURL @"https://api.smzdm.com"
+
 
 @implementation ZZAPPDotNetAPIClient
 
@@ -21,59 +21,68 @@
         _sharedClient = [[ZZAPPDotNetAPIClient alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL]];
         _sharedClient.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
         _sharedClient.requestSerializer.timeoutInterval = 20;
+        AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        securityPolicy.allowInvalidCertificates = YES;
+        securityPolicy.validatesDomainName = NO;
+        _sharedClient.securityPolicy = securityPolicy;
     });
     
     return _sharedClient;
 }
 
-- (void)Get:(NSString *)URLString parameters:(NSMutableDictionary *)parameters complectionBlock:(HttpComplectionBlcok)complectionBlock{
+- (void)GET:(NSString *)URLString parameters:(NSMutableDictionary *)parameters completionBlock:(HttpCompletionBlcok)completionBlock{
     
     [self configurePublicParameters:parameters];
     
     [self GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         LxDBAnyVar(task.response.URL.absoluteString);
-        
         if ([responseObject[@"error_code"] isEqualToString:@"0"]) {
-            complectionBlock(responseObject[@"data"], nil);
+            completionBlock(responseObject[@"data"], nil);
             return;
         }
         [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
-        complectionBlock(nil, error);
+        completionBlock(nil, error);
     }];
     
 }
 
-+ (void)Get:(NSString *)URLString parameters:(NSMutableDictionary *)parameters complectionBlock:(HttpComplectionBlcok)complectionBlock{
+- (void)GET:(ZZBaseRequest * _Nonnull)request completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock {
+    [self GET:request.urlStr parameters:[request mj_keyValuesWithIgnoredKeys:@[@"urlStr"]] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        LxDBAnyVar(task.response.URL.absoluteString);
+        if ([responseObject[@"error_code"] isEqualToString:@"0"]) {
+            completionBlock(responseObject[@"data"], nil);
+            return;
+        }
+        [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
+        completionBlock(nil, error);
+    }];
+}
+
++ (void)Get:( NSString * _Nonnull)URLString parameters:(NSMutableDictionary * _Nonnull)parameters completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock {
     
-//    ZZNetworkHandler *handler = [ZZNetworkHandler sharedInstance];
-//    if (handler.networkError) {
-//        [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
-//        return;
-//    }
-    
-    
-//    
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL]];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
     manager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
-    
     [self configurePublicParameters:parameters];
+    
     [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
         
         LxDBAnyVar(task.response.URL.absoluteString);
         
         if ([responseObject[@"error_code"] isEqualToString:@"0"]) {
         
-            complectionBlock(responseObject[@"data"], nil);
+            completionBlock(responseObject[@"data"], nil);
             return;
         }
         [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
-        complectionBlock(nil, error);
+        completionBlock(nil, error);
 //        LxDBAnyVar(task.response.URL.absoluteString);
     }];
     

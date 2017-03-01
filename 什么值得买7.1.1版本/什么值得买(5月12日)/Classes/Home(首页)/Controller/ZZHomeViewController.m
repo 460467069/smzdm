@@ -26,9 +26,9 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 @interface ZZHomeViewController ()<ZZHomeFirstCellDelegete>
 
 @property (nonatomic, strong) NSMutableArray<ZZWorthyArticle *> *listArrayM;
-
 @property (nonatomic, strong) NSMutableSet *cells;
-
+@property (nonatomic, strong) ZZHomeEditorRecommendRequest *recommendRequest;
+@property (nonatomic, strong) ZZHomeFirstRequest *firstRequest;
 @end
 
 @implementation ZZHomeViewController
@@ -67,22 +67,16 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 }
 
 - (void)loadData{
-    
-    self.page = 1;
-    NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
-    [dictM setValue:@"18" forKey:@"channel_id"];
-    [ZZAPPDotNetAPIClient Get:@"v1/util/floor" parameters:dictM complectionBlock:^(id responseObject, NSError *error) {
-        
-        NSArray *dataArray = responseObject[@"rows"];
+    [[ZZAPPDotNetAPIClient sharedClient] GET:self.firstRequest completionBlock:^(id  _Nullable responseObj, NSError * _Nullable error) {
+        NSArray *dataArray = responseObj[@"rows"];
         if (error || dataArray.count == 0) {
             //出错
             [self.tableView.mj_header endRefreshing];
             return;
         }
-
+        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSMutableArray *temArray = [NSMutableArray array];
-            
             [dataArray enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull dict, NSUInteger idx, BOOL * _Nonnull stop) {
                 ZZHomeFirstModel *firstModel = [ZZHomeFirstModel modelWithDictionary:dict];
                 ZZHomeFirstLayout *firstLayout = nil;
@@ -91,29 +85,21 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
                 }else{
                     firstLayout = [[ZZHomeFirstLayout alloc] initWithFirstModel:firstModel isLastOne:NO];
                 }
-                
                 [temArray addObject:firstLayout];
             }];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.dataSource = [temArray copy];
                 [self.tableView reloadData];
-                
                 [self.tableView.mj_header endRefreshing];
             });
         });
-        
-        
-        self.page++;
-
     }];
-
-
     
-    NSMutableDictionary *parameters = [self configureParameters];
-    
-    [ZZAPPDotNetAPIClient Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
-        NSArray *dataArray = responseObject[@"rows"];
+    self.recommendRequest.page = 1;
+    self.recommendRequest.time_sort = @"0";
+    [[ZZAPPDotNetAPIClient sharedClient] GET:self.recommendRequest completionBlock:^(id  _Nullable responseObj, NSError * _Nullable error) {
+        NSArray *dataArray = responseObj[@"rows"];
         if (error || dataArray.count == 0) {
             //出错
             [self.tableView.mj_header endRefreshing];
@@ -124,21 +110,14 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
         
-        
+        self.recommendRequest.page++;
     }];
-
-    
-    
 }
 
 - (void)loadMoreData{
-    NSMutableDictionary *parameters = [self configureParameters];
-    NSString *timeSort = self.listArrayM.lastObject.time_sort;
-    [parameters setValue:timeSort forKey:@"time_sort"];
-    
-    [ZZAPPDotNetAPIClient Get:@"v1/util/editors_recommend" parameters:parameters complectionBlock:^(id responseObject, NSError *error) {
-
-        NSArray *dataArray = responseObject[@"rows"];
+    self.recommendRequest.time_sort = self.listArrayM.lastObject.time_sort;
+    [[ZZAPPDotNetAPIClient sharedClient] GET:self.recommendRequest completionBlock:^(id  _Nullable responseObj, NSError * _Nullable error) {
+        NSArray *dataArray = responseObj[@"rows"];
         if (error) {
             [self.tableView.mj_footer endRefreshing];
             return;
@@ -154,7 +133,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
         
-        self.page++;
+        self.recommendRequest.page++;
     }];
 }
 
@@ -295,6 +274,20 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         _listArrayM = [NSMutableArray array];
 	}
 	return _listArrayM;
+}
+
+- (ZZHomeFirstRequest *)firstRequest {
+    if (!_firstRequest) {
+        _firstRequest = [[ZZHomeFirstRequest alloc] init];
+    }
+    return _firstRequest;
+}
+
+- (ZZHomeEditorRecommendRequest *)recommendRequest {
+    if (!_recommendRequest) {
+        _recommendRequest = [[ZZHomeEditorRecommendRequest alloc] init];
+    }
+    return _recommendRequest;
 }
 
 @end
