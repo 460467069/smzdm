@@ -14,7 +14,7 @@ class ZZHaoWuItemThree: UIView {
  var subItemModel: ZZGoodsSubItemModel? {
         didSet {
             if let urlStr = subItemModel?.pro_pic {
-                iconView.zdm_setImage(urlStr: urlStr, placeHolder: nil)
+                iconView.zdm_setImage(urlStr: urlStr, placeHolder: "haowu_tou")
             }
         }
     }
@@ -61,13 +61,11 @@ class ZZHaoWuCellThree: ZZHaoWuBaseCell {
                     if index < totalCount! {
                         haowuItemThree.isHidden = false
                         haowuItemThree.subItemModel = items![index]
-                    }else{
+                    } else {
                         haowuItemThree.isHidden = true
                     }
-                    
                 }
             }
-
         }
         
     }
@@ -87,6 +85,16 @@ class ZZHaoWuCellThree: ZZHaoWuBaseCell {
 
         // Configure the view for the selected state
     }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let responsder = super.hitTest(point, with: event)
+        
+        if responsder == contentView { //点击右边那张图片还是无法响应...            
+            return scrollView
+        }
+        
+        return responsder
+    }
 
 }
 
@@ -97,6 +105,8 @@ extension ZZHaoWuCellThree {
         super.setupUI()
         
         scrollView.height = haoWuConstant.itemHeight3
+        scrollView.width = kScreenWidth - haoWuConstant.itemRightMargin - haoWuConstant.itemMargin
+        scrollView.clipsToBounds = false
         
         for index in 0..<haoWuConstant.maxCount {
             
@@ -119,10 +129,11 @@ extension ZZHaoWuCellThree {
 extension ZZHaoWuCellThree{
     @objc fileprivate func haowuItemDidClick(tap: UITapGestureRecognizer){
         
-        let haoWuItemThree = tap.view as! ZZHaoWuItemThree
+        let haoWuItemThree = tap.view as? ZZHaoWuItemThree
         
-        delegate?.haoWuItemDidClick!(in: self, subItemModel: haoWuItemThree.subItemModel!)
-        
+        if let subItemModel = haoWuItemThree?.subItemModel {
+            delegate?.haoWuItemDidClick!(in: self, subItemModel: subItemModel)
+        }
     }
 }
 

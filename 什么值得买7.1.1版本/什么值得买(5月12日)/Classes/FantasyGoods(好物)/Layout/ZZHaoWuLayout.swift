@@ -115,7 +115,7 @@ class ZZHaoWuLayout: NSObject {
                 itemType = .three
                 rowHeight = haoWuConstant.cellHeight3
                 itemheight = haoWuConstant.itemHeight3
-                scrollViewContentSize = CGSize(width: CGFloat(items) * kScreenWidth, height: itemheight)
+                scrollViewContentSize = CGSize(width: CGFloat(items) * (haoWuConstant.imageWidth3 + haoWuConstant.itemMargin), height: itemheight)
                 
             }else if type == "1" || type == "2" {
                 itemType = .one
