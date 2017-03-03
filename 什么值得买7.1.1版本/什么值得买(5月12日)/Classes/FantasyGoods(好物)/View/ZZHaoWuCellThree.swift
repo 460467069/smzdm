@@ -13,8 +13,8 @@ class ZZHaoWuItemThree: UIView {
     
  var subItemModel: ZZGoodsSubItemModel? {
         didSet {
-            if let subItemModel = subItemModel {
-                iconView.zdm_setImage(urlStr: subItemModel.pro_pic!, placeHolder: nil)
+            if let urlStr = subItemModel?.pro_pic {
+                iconView.zdm_setImage(urlStr: urlStr, placeHolder: nil)
             }
         }
     }
@@ -22,17 +22,18 @@ class ZZHaoWuItemThree: UIView {
     
     lazy var iconView: UIImageView = {
         let iconView = UIImageView()
-        iconView.width = haoWuConstant.imageWidth
+        iconView.top = haoWuConstant.itemMargin
+        iconView.width = haoWuConstant.imageWidth3
         iconView.height = haoWuConstant.imageHeight3
-        iconView.contentMode = .scaleAspectFit
-        
+        iconView.contentMode = .scaleAspectFill
+        iconView.clipsToBounds = true
         return iconView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = 3.0
-        backgroundColor = UIColor.random()
+        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         clipsToBounds = true
         addSubview(iconView)
     }
@@ -73,6 +74,8 @@ class ZZHaoWuCellThree: ZZHaoWuBaseCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        scrollView.isPagingEnabled = true
+        scrollView.bounces = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -99,9 +102,9 @@ extension ZZHaoWuCellThree {
             
             let haoWuItemThree = ZZHaoWuItemThree()
             haoWuItemThree.isHidden = true
-            haoWuItemThree.width = haoWuConstant.itemWidth
+            haoWuItemThree.width = haoWuConstant.imageWidth3
             haoWuItemThree.height = haoWuConstant.itemHeight3
-            haoWuItemThree.left = CGFloat(index) * (haoWuConstant.itemWidth + haoWuConstant.itemMargin) + haoWuConstant.itemMargin
+            haoWuItemThree.left = CGFloat(index) * (haoWuConstant.imageWidth3 + haoWuConstant.itemMargin) + haoWuConstant.itemMargin
             scrollView.addSubview(haoWuItemThree)
             scrollView.haowuItems.append(haoWuItemThree)
             

@@ -8,6 +8,14 @@
 
 import UIKit
 
+class ZZGoodsHeaderRequest: ZZBaseRequest {
+    
+    override init() {
+        super.init()
+        urlStr = kZDM_HaoWu_Category
+    }
+}
+
 class ZZGoodsHeaderModel: NSObject {
 
     var id: String?

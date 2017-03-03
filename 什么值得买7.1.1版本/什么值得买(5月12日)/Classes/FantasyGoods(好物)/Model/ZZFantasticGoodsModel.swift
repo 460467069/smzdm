@@ -8,6 +8,19 @@
 
 import UIKit
 
+class ZZFantasticGoodsRequest: ZZBaseRequest {
+    var limit: Int
+    var offset: Int
+    
+     override init () {
+        limit = 20
+        offset = 0
+        super.init()
+        urlStr = kZDM_HaoWu_TopicList
+        
+    }
+}
+
 class ZZFantasticGoodsModel: NSObject {
 
     
@@ -18,6 +31,12 @@ class ZZFantasticGoodsModel: NSObject {
     var name: String?
 
     var type: String?
+    
+    var focus_pic: String?
+    
+    var count: Int?
+    
+    var redirect_data: ZZRedirectData?
     
     class func modelContainerPropertyGenericClass()->[String : AnyObject]{        
         return ["data" : ZZGoodsSubItemModel.self]

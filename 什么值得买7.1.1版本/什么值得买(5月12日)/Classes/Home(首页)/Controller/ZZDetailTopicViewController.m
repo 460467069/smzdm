@@ -32,13 +32,10 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     self.title = @"话题详情";
     self.order = kOrderByHot;
 
-    
     [self.tableView registerClass:[ZZDetailTopicCell class] forCellReuseIdentifier:kDetailTopicCell];
     _headerView = [[ZZDetailTopicHeaderView alloc] initWithOrderStyle:ZZDetailTopicHeaderViewOrderStyleByHot];
     _headerView.delegate = self;
-    
-    
-    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -46,8 +43,6 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     
     [self.navigationController.navigationBar lt_setBackgroundColor:kGlobalLightGrayColor];
     [self setupNavigation];
-    
-
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -88,9 +83,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
                 self.tableView.tableHeaderView = _headerView;
             });
         });
-
-
-        
+  
     }];
 
     [self loadContentData];

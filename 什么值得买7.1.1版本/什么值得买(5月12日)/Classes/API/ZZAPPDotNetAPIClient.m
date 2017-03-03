@@ -67,6 +67,11 @@
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL]];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
     manager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+    securityPolicy.allowInvalidCertificates = YES;
+    securityPolicy.validatesDomainName = NO;
+    manager.securityPolicy = securityPolicy;
+    
     [self configurePublicParameters:parameters];
     
     [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {

@@ -53,6 +53,10 @@ class ZZFantasticGoodsController: ZZFirstTableViewController {
         return collectionView
     }()
     
+    lazy var fantasticGoodsRequest: ZZFantasticGoodsRequest = {
+        let fantasticGoodsRequest = ZZFantasticGoodsRequest.init()
+        return fantasticGoodsRequest
+    }()
     
     var optionalValue: String?
     
@@ -142,10 +146,8 @@ extension ZZFantasticGoodsController:UICollectionViewDataSource{
 extension ZZFantasticGoodsController{
     override func loadData() {
         
-        offset = 0
-        
-        //        http://api.smzdm.com/v1/haowu/haowu_category?f=iphone&v=7.3&weixin=1
-        ZZAPPDotNetAPIClient.get("v1/haowu/haowu_category", parameters: NSMutableDictionary()) { (responseObj, error) in
+        fantasticGoodsRequest.offset = 0
+        ZZAPPDotNetAPIClient.shared().get(ZZGoodsHeaderRequest.init()) { (responseObj, error) in
             if let _ = error {}
             if let response = responseObj{
                 self.headerDataArray = NSArray.modelArray(with: ZZGoodsHeaderModel.self, json: response)! as! [ZZGoodsHeaderModel]
@@ -153,15 +155,8 @@ extension ZZFantasticGoodsController{
             }
         }
         
-        //        http://api.smzdm.com/v1/haowu/haowu_topic_list/?f=iphone&limit=20&offset=0&v=7.3&weixin=1
-        
-        
-        
-        
-        ZZAPPDotNetAPIClient.get("v1/haowu/haowu_topic_list/", parameters: configureParameters()) { (responseObj, error) in
-            
+        ZZAPPDotNetAPIClient.shared().get(fantasticGoodsRequest) { (responseObj, error) in
             if let _ = error {
-                
                 self.tableView.mj_header.endRefreshing()
                 return
             }
@@ -171,61 +166,47 @@ extension ZZFantasticGoodsController{
                 for goodsDict in response {
                     if let fantasicGoodsModel = ZZFantasticGoodsModel.model(with: goodsDict) {
                         let haowuLayout = ZZHaoWuLayout.init(fantasicGoodsModel: fantasicGoodsModel)
-                        
                         haoWuLayoutArray.add(haowuLayout)
                     }
-                    
                 }
-                
                 if haoWuLayoutArray.count > 0 {
-                    
                     self.dataSource = haoWuLayoutArray
                     self.tableView.reloadData()
+                    self.fantasticGoodsRequest.offset = self.dataSource.count
                 }
                 self.tableView.mj_header.endRefreshing()
-
+                
             }
         }
-        
     }
     
     
     override func loadMoreData() {
         
-        self.offset = self.dataSource.count;
-        
-        ZZAPPDotNetAPIClient.get("v1/haowu/haowu_topic_list/", parameters: configureParameters()) { (responseObj, error) in
-            
+        ZZAPPDotNetAPIClient.shared().get(fantasticGoodsRequest) { (responseObj, error) in
             if let _ = error {
                 
                 self.tableView.mj_footer.endRefreshing()
                 return
             }
-            if let response = responseObj as? [[AnyHashable: Any]]{
+            if let response = responseObj as? [[AnyHashable: Any]] {
                 let haoWuLayoutArray: NSMutableArray = NSMutableArray()
                 for goodsDict in response {
                     if let fantasicGoodsModel = ZZFantasticGoodsModel.model(with: goodsDict) {
                         let haowuLayout = ZZHaoWuLayout.init(fantasicGoodsModel: fantasicGoodsModel)
-                        
                         haoWuLayoutArray.add(haowuLayout)
                     }
-
                 }
                 if haoWuLayoutArray.count > 0 {
-                    
                     let haoWuLayouts = haoWuLayoutArray.copy() as! [Any]
-                    
                     self.dataSource.addObjects(from: haoWuLayouts)
-                    
                     self.tableView.reloadData()
                     self.tableView.mj_footer.endRefreshing()
-                    
-                }else{
+                    self.fantasticGoodsRequest.offset = self.dataSource.count
+                } else {
                     self.tableView.mj_footer.endRefreshingWithNoMoreData()
                 }
-                
             }
-            
         }
     }
     
@@ -273,5 +254,11 @@ extension ZZFantasticGoodsController: ZZHaoWuItemDelegate{
         }
     }
 
+    func haoWuHeadImageViewDidClick(in haoWuCell: ZZHaoWuBaseCell, fantasticGoodsModel: ZZFantasticGoodsModel) {
+        let detailTopicVc = ZZDetailTopicViewController()
+        detailTopicVc.channelID = 14
+        detailTopicVc.article_id = fantasticGoodsModel.redirect_data?.link_val
+        navigationController?.pushViewController(detailTopicVc, animated: true)
+    }
 }
 

@@ -20,17 +20,6 @@ class ZZHaoWuItemOne: UIView {
         return iconView
     }()
     
-    lazy var tagLabel: YYLabel = {
-        let tagLabel = YYLabel()
-        tagLabel.font = haoWuConstant.tagLabelFont
-        tagLabel.textColor = haoWuConstant.tagLabelColor
-        tagLabel.width = haoWuConstant.imageWidth
-        tagLabel.left = haoWuConstant.tagLabelLeft
-        tagLabel.height = haoWuConstant.tagLabelHeight
-//        tagLabel.layer.contents = 
-        return tagLabel
-    }()
-    
     lazy var titleLabel: YYLabel = {
         let titleLabel = YYLabel()
         titleLabel.font = haoWuConstant.subTitleFont
@@ -38,6 +27,7 @@ class ZZHaoWuItemOne: UIView {
         titleLabel.width = haoWuConstant.imageWidth
         titleLabel.left = haoWuConstant.subTitleLeft
         titleLabel.height = haoWuConstant.subTitleHeight
+//        titleLabel.backgroundColor = UIColor.random()
         return titleLabel
     }()
 
@@ -48,6 +38,7 @@ class ZZHaoWuItemOne: UIView {
         priceLabel.width = haoWuConstant.imageWidth
         priceLabel.left = haoWuConstant.priceLabelLeft
         priceLabel.height = haoWuConstant.priceLabelHeight
+//        priceLabel.backgroundColor = UIColor.random()
         return priceLabel
     }()
     
@@ -60,11 +51,9 @@ class ZZHaoWuItemOne: UIView {
         addSubview(iconView)
         addSubview(titleLabel)
         addSubview(priceLabel)
-        addSubview(tagLabel)
         
         titleLabel.top = iconView.bottom + haoWuConstant.subtitleTop
-        tagLabel.top = titleLabel.bottom + haoWuConstant.tagLabelTop
-        priceLabel.top = tagLabel.bottom + haoWuConstant.priceLabelTop
+        priceLabel.top = titleLabel.bottom + haoWuConstant.priceLabelTop
         
     }
     
@@ -77,17 +66,6 @@ class ZZHaoWuItemOne: UIView {
             if let subItemModel = subItemModel {
                 iconView.zdm_setImage(urlStr: subItemModel.pro_pic!, placeHolder: nil)
                 titleLabel.text = subItemModel.name!
-                
-                if let tag_infos = subItemModel.tag_info{
-                    
-                    if tag_infos.count > 0 {
-                        tagLabel.isHidden = false
-                        tagLabel.text = tag_infos[0].tag_name
-                    }else{
-                        tagLabel.isHidden = true
-                    }
-
-                }
                 priceLabel.text = "¥ \(subItemModel.pro_price!)起"
             }
             
@@ -98,15 +76,26 @@ class ZZHaoWuItemOne: UIView {
 
 class ZZHaoWuCellOne: ZZHaoWuBaseCell {
     
+    lazy var headImageView: UIImageView = {
+        let headImageView = UIImageView.init()
+        headImageView.top = haoWuConstant.headImageViewTop
+        headImageView.height = haoWuConstant.headImageViewHeight
+        headImageView.width = kScreenWidth
+        headImageView.isUserInteractionEnabled = true
+        return headImageView
+    }()
+    
     
     override var haowuLayout: ZZHaoWuLayout? {
         
         didSet{
          
-            if let haowuLayout = haowuLayout {
-                
-                let items = haowuLayout.fantasicGoodsModel?.data
+            if let fantasicGoodsModel = haowuLayout?.fantasicGoodsModel {
+                let items = fantasicGoodsModel.data
                 let totalCount = items?.count
+                if let urlStr = fantasicGoodsModel.focus_pic {
+                    headImageView.zdm_setImage(urlStr: urlStr, placeHolder: nil)
+                }
                 
                 for index in 0..<haoWuConstant.maxCount {
                     
@@ -127,19 +116,6 @@ class ZZHaoWuCellOne: ZZHaoWuBaseCell {
         
     }
 
-    
-    lazy var allBtn: UIButton = {
-        let allBtn = UIButton()
-        allBtn.setTitleColor(haoWuConstant.allBtnColor, for: .normal)
-        allBtn.setTitle("全部", for: .normal)
-        allBtn.titleLabel?.font = haoWuConstant.allBtnFont
-        allBtn.height = haoWuConstant.headTitleHeight
-        allBtn.width = haoWuConstant.allBtnWidth
-        allBtn.right = kScreenWidth - haoWuConstant.allBtnRight
-        allBtn.contentHorizontalAlignment = .right
-        return allBtn
-    }()
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?){
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -157,7 +133,8 @@ extension ZZHaoWuCellOne {
     
     override func setupUI() {
         super.setupUI()
-        contentView.addSubview(allBtn)
+        contentView.addSubview(headImageView)
+        scrollView.top = headImageView.bottom
         scrollView.height = haoWuConstant.itemHeight1
         for index in 0..<haoWuConstant.maxCount {
             
@@ -168,23 +145,34 @@ extension ZZHaoWuCellOne {
             scrollView.haowuItems.append(haoWuItemOne)
             haoWuItemOne.width = haoWuConstant.itemWidth
             haoWuItemOne.height = haoWuConstant.itemHeight1
-            haoWuItemOne.left = CGFloat(index) * (haoWuConstant.itemWidth + haoWuConstant.itemMargin) + haoWuConstant.itemMargin
+            haoWuItemOne.left = CGFloat(index) * haoWuConstant.itemWidth
             
             let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(haowuItemDidClick(tap:)))
             
             haoWuItemOne.addGestureRecognizer(tapGestureRecognizer)
-            
         }
+        
+        let headImageViewTap = UITapGestureRecognizer.init(target: self, action: #selector(headImageViewDidClick(tap:)))
+        
+        headImageView.addGestureRecognizer(headImageViewTap)
     }
 }
 
 
 extension ZZHaoWuCellOne{
-    @objc fileprivate func haowuItemDidClick(tap: UITapGestureRecognizer){
+    @objc fileprivate func haowuItemDidClick(tap: UITapGestureRecognizer) {
         
-        let haoWuItemOne = tap.view as! ZZHaoWuItemOne
+        let haoWuItemOne = tap.view as? ZZHaoWuItemOne
         
-        delegate?.haoWuItemDidClick!(in: self, subItemModel: haoWuItemOne.subItemModel!)
+        if let subItemModel = haoWuItemOne?.subItemModel {
+            delegate?.haoWuItemDidClick!(in: self, subItemModel: subItemModel)
+        }
+    }
+    
+    @objc fileprivate func headImageViewDidClick(tap: UITapGestureRecognizer) {
+        if let fantasicGoodsModel = haowuLayout?.fantasicGoodsModel {
+            delegate?.haoWuHeadImageViewDidClick!(in: self, fantasticGoodsModel: fantasicGoodsModel)
+        }
         
     }
 }

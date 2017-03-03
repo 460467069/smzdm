@@ -11,20 +11,19 @@ import YYKit
 
 @objc protocol ZZHaoWuItemDelegate: NSObjectProtocol{
     @objc optional func haoWuItemDidClick(in haoWuCell: ZZHaoWuBaseCell, subItemModel: ZZGoodsSubItemModel)
+    @objc optional func haoWuHeadImageViewDidClick(in haoWuCell: ZZHaoWuBaseCell, fantasticGoodsModel: ZZFantasticGoodsModel)
 }
 
 
 class ZZHaoWuScrollView: UIScrollView {
 
     var haowuItems: [AnyObject] = []
-    
-    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
-//        backgroundColor = #colorLiteral(red: 0.5791940689, green: 0.1280144453, blue: 0.5726861358, alpha: 1)
+        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,38 +34,19 @@ class ZZHaoWuScrollView: UIScrollView {
 class ZZHaoWuBaseCell: UITableViewCell {
 
     weak var delegate: ZZHaoWuItemDelegate?
-    
     var indexPathRow: NSInteger?
-    
     var haowuLayout: ZZHaoWuLayout? {
         
         didSet {
-            
             scrollView.contentSize = (haowuLayout?.scrollViewContentSize)!
             scrollView.contentOffset = CGPoint.zero
-            if let fantasicGoodsModel = haowuLayout?.fantasicGoodsModel {
-                
-                headLabel.text = fantasicGoodsModel.name
-            }
         }
     }
     
     lazy var scrollView: ZZHaoWuScrollView = {
         let scrollView = ZZHaoWuScrollView()
         scrollView.width = kScreenWidth
-        
         return scrollView
-    }()
-    
-    lazy var headLabel: YYLabel = {
-        let headLabel = YYLabel()
-        headLabel.textColor = haoWuConstant.headTitleColor
-        headLabel.font = haoWuConstant.headTitleFont
-        headLabel.width = kScreenWidth - 100
-        headLabel.height = haoWuConstant.headTitleHeight
-        headLabel.left = haoWuConstant.headTitleLeft
-
-        return headLabel
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?){
@@ -96,9 +76,7 @@ class ZZHaoWuBaseCell: UITableViewCell {
 extension ZZHaoWuBaseCell {
     
     func setupUI() {
-        contentView.addSubview(headLabel)
         contentView.addSubview(scrollView)
-        scrollView.top = headLabel.bottom
     }
     
     

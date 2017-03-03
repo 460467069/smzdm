@@ -29,4 +29,9 @@ static NSString * const kZDM_HaoJia_JingXuan = @"v1/home/articles";             
 static NSString * const kZDM_HaoJia_GuoNei = @"v1/youhui/articles";                         /**< 国内 */
 static NSString * const kZDM_HaoJia_HaiTao = @"v1/haitao/articles";                         /**< 海淘 */
 
+/** 好物 */
+static NSString * const kZDM_HaoWu_Category = @"v1/haowu/haowu_category";                    /**< 分类 */
+static NSString * const kZDM_HaoWu_TopicList = @"v1/haowu/haowu_topic_list";                 /**< 列表 */
+
+
 #endif /* ZDM_RequestURL_h */

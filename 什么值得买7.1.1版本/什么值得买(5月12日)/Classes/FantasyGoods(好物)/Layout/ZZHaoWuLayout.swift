@@ -25,6 +25,7 @@ struct ZZHaoWuConstant {
     let allBtnRight: CGFloat = 15.0
     
     let imageWidth: CGFloat = 130.0
+    var imageWidth3: CGFloat
     var imageHeight3: CGFloat
     
     var imageHeight1: CGFloat = 110.0
@@ -57,27 +58,33 @@ struct ZZHaoWuConstant {
     let allBtnFont = UIFont.systemFont(ofSize: 13)
     let allBtnWidth:CGFloat = 100.0
     
+    let headImageViewTop:CGFloat = 15.0
+    var headImageViewHeight:CGFloat = 0
     
-    let itemMargin: CGFloat = 13.0
+    
+    let itemMargin: CGFloat = 15.0
+    let itemRightMargin: CGFloat = 30.0
     let itemWidth: CGFloat = 130.0
     let itemHeight1: CGFloat = 205.0
-    let cellHeight1: CGFloat = 252.0 + 5.0
+    var cellHeight1: CGFloat = 0
     let maxCount = 30
-    
-    
-    let cellHeight3: CGFloat = 115.0
+
+    var cellHeight3: CGFloat = 0
     var itemHeight3: CGFloat = 0
     
     init() {
-        
-        imageHeight3 = 98.0/188.0 * imageWidth
-        itemHeight3 = imageHeight3
+        imageWidth3 = kScreenWidth - itemMargin * 2.0 - itemRightMargin
+        imageHeight3 = 0.46 * imageWidth3 //0.46是通过原生app的宽高比计算出来的
+        itemHeight3 = imageHeight3 + itemMargin
+        cellHeight3 = itemHeight3
         
         let title: NSString = "在家也要吃爆米花"
         subTitleHeight = title.height(for: subTitleFont, width: CGFloat(MAXFLOAT))
         priceLabelHeight = title.height(for: priceLabelFont, width: CGFloat(MAXFLOAT))
         tagLabelHeight = title.height(for: tagLabelFont, width: CGFloat(MAXFLOAT))
-
+        
+        headImageViewHeight = kScreenWidth * 0.29 //0.46是通过原生app的宽高比计算出来的
+        cellHeight1 = headImageViewTop + headImageViewHeight + itemHeight1
     }
     
 }
@@ -93,37 +100,33 @@ class ZZHaoWuLayout: NSObject {
     var fantasicGoodsModel: ZZFantasticGoodsModel?
     
     init(fantasicGoodsModel: ZZFantasticGoodsModel) {
-        
         self.fantasicGoodsModel = fantasicGoodsModel
-
         super.init()
-        
         layout()
-        
     }
     
     func layout() {
 
-        if let type = fantasicGoodsModel?.type {
-            var itemheight: CGFloat = 0
+        if let type = fantasicGoodsModel?.type, let itemModels = fantasicGoodsModel?.data {
             
+            var itemheight: CGFloat = 0
+            let items = itemModels.count
             if type == "3" {
                 itemType = .three
                 rowHeight = haoWuConstant.cellHeight3
                 itemheight = haoWuConstant.itemHeight3
+                scrollViewContentSize = CGSize(width: CGFloat(items) * kScreenWidth, height: itemheight)
                 
             }else if type == "1" || type == "2" {
                 itemType = .one
                 rowHeight = haoWuConstant.cellHeight1
                 itemheight = haoWuConstant.itemHeight1
+                scrollViewContentSize = CGSize(width: CGFloat(items) * haoWuConstant.itemWidth, height: itemheight)
             }
-            if let itemModels = fantasicGoodsModel?.data {
-                
-                let items = itemModels.count
-                
-                scrollViewContentSize = CGSize(width: CGFloat(items) * haoWuConstant.itemWidth + CGFloat(items + 1) * (haoWuConstant.itemMargin), height: itemheight)
-            }
+            
+            
         }
+        
     }
 
 }
