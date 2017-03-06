@@ -30,7 +30,6 @@
 - (void)awakeFromNib{
     
     [super awakeFromNib];
-    
     [self setupAnimation];
 }
 

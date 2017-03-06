@@ -6,10 +6,11 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
+
+
 #import <Foundation/Foundation.h>
 #import "ZZRedirectData.h"
-
-
+#import "ZZEnums.h"
 
 @interface ZZWorthyArticle : NSObject
 
@@ -58,7 +59,7 @@
 /** article_tag */
 @property (nonatomic, copy, nullable) NSString *article_tag;
 /** 是否推广 */
-@property (nonatomic, copy, nullable) NSString *promotion_type;
+@property (nonatomic, assign) ZDMPromotionType promotion_type;
 /** article_district */
 @property (nonatomic, copy, nullable) NSString *article_district;
 /** 为"资讯" 等 的时候取这个字段 */

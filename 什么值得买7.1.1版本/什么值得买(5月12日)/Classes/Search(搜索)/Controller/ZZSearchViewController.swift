@@ -19,10 +19,13 @@ class ZZSearchViewController: UIViewController {
         
         let textFiled = UITextField()
         textFiled.placeholder = "家用电器"
-        
         let scopeView = UIImageView.init(image: #imageLiteral(resourceName: "homePage_searchIcon"))
-        
         textFiled.leftView = scopeView
+        
+        textFiled.snp.makeConstraints { (make) in
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

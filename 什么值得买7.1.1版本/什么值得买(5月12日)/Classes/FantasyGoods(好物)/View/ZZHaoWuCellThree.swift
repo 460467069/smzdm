@@ -89,7 +89,7 @@ class ZZHaoWuCellThree: ZZHaoWuBaseCell {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let responsder = super.hitTest(point, with: event)
         
-        if responsder == contentView { //点击右边那张图片还是无法响应...            
+        if responsder == contentView { //点击右边那张图片还是无法响应事件...            
             return scrollView
         }
         

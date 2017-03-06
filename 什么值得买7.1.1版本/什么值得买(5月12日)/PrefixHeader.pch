@@ -44,7 +44,7 @@
 /** 分类头文件 */
     #import "UIColor+HEX.h"
     #import "NSString+ZZNumberFormatter.h"
-
+    #import "UITableView+ZZAdd.h"
 /** 网络请求头文件 */
     #import "ZZAPPDotNetAPIClient.h"
 

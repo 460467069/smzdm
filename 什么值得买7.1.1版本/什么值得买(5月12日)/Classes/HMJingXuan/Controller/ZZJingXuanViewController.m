@@ -27,16 +27,16 @@ static NSString *const kHMJingXuanTableViewCell = @"ZZJingXuanTableViewCell";
 
 - (void)loadData{
     self.dataSource = [NSMutableArray arrayWithArray:[ZZJingXuanModel models]];
-//    [self addElement];
+    [self addElement];
     [self.tableView reloadData];
     [self.tableView.mj_header endRefreshing];
 }
 
-//- (void)addElement{
-//    ZZJingXuanModel *model = [[ZZJingXuanModel alloc] init];
-//    model.title = @"JSPtach热修复";
-//    [self.dataSource addObject:model];
-//}
+- (void)addElement{
+    ZZJingXuanModel *model = [[ZZJingXuanModel alloc] init];
+    model.title = @"JSPtach热修复";
+    [self.dataSource addObject:model];
+}
 
 - (void)loadMoreData{
     [self.tableView.mj_footer endRefreshing];

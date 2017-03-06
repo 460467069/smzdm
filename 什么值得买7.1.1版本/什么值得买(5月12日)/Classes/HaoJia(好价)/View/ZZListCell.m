@@ -33,15 +33,12 @@
 - (void)setArticle:(ZZWorthyArticle *)article{
     
     _article = article;
-    
 
-    
     NSString *imageUrlStr = nil;
     NSString *title = nil;
     NSString *priceStr = nil;
-    
-    BOOL isNeedHidden = [article.promotion_type isEqualToString:@"3"];
-    if ([article.promotion_type isEqualToString:@"3"]) {
+    BOOL isNeedHidden = article.promotion_type == ZDMPromotionTypeThree;
+    if (article.promotion_type == ZDMPromotionTypeThree) {
         imageUrlStr = article.img;
         title = article.title;
         priceStr = article.vice_title;
@@ -54,6 +51,7 @@
     self.mallAndTimeLabel.hidden = isNeedHidden;
     self.commentBtn.hidden = isNeedHidden;
     self.zhiBtn.hidden = isNeedHidden;
+    self.waterBtn.hidden = isNeedHidden;
     
     //    第二种样式cell字段选取
     //    图片  article_pic

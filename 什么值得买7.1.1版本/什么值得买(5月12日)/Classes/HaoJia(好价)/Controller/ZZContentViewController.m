@@ -19,9 +19,6 @@
 #import "ZZPureWebViewController.h"
 #import "什么值得买-Swift.h"
 
-static NSString * const kTuiGuangCell = @"ZZTuiGuangCell";
-static NSString * const kListCell = @"ZZListCell";
-
 @interface ZZContentViewController ()<SDCycleScrollViewDelegate, ZZActionDelegate>
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray<UIImageView *> *imageViews;
@@ -45,8 +42,8 @@ static NSString * const kListCell = @"ZZListCell";
     [super viewDidLoad];
     
     self.tableView.scrollsToTop = YES;
-    [self.tableView registerNib:[UINib nibWithNibName:kTuiGuangCell bundle:nil] forCellReuseIdentifier:kTuiGuangCell];
-    [self.tableView registerNib:[UINib nibWithNibName:kListCell bundle:nil] forCellReuseIdentifier:kListCell];
+    [self.tableView registerReuseCellNib:[ZZTuiGuangCell class]];
+    [self.tableView registerReuseCellNib:[ZZListCell class]];
     
     self.tableView.rowHeight = kScreenW / 3 + 20 + 2;
     //请求头部数据
@@ -173,13 +170,13 @@ static NSString * const kListCell = @"ZZListCell";
     
     ZZWorthyArticle *article = self.dataArrayM[indexPath.row];
     
-    if ([article.promotion_type isEqualToString:@"1"]) {
+    if (article.promotion_type == ZDMPromotionTypeOne) {
         
-        ZZTuiGuangCell *tuiGuangCell = [tableView dequeueReusableCellWithIdentifier:kTuiGuangCell forIndexPath:indexPath];
+        ZZTuiGuangCell *tuiGuangCell = [tableView dequeueReusableCellWithIdentifier:[ZZTuiGuangCell reuseIdentifier] forIndexPath:indexPath];
         tuiGuangCell.article = article;
         return tuiGuangCell;
     }
-    ZZListCell *cell = [tableView dequeueReusableCellWithIdentifier:kListCell forIndexPath:indexPath];
+    ZZListCell *cell = [tableView dequeueReusableCellWithIdentifier:[ZZListCell reuseIdentifier] forIndexPath:indexPath];
     cell.homeChannel = self.homeChannel;
     cell.article = article;
     return cell;

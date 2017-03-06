@@ -25,6 +25,8 @@
 		A91A83541D420A87008D229E /* weibo_6.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A834C1D420A87008D229E /* weibo_6.json */; };
 		A91A83551D420A87008D229E /* weibo_7.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A834D1D420A87008D229E /* weibo_7.json */; };
 		A91A83581D420CFD008D229E /* WBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A83571D420CFD008D229E /* WBModel.m */; };
+		A91C4E631E6D494100C307F3 /* NSObject+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A91C4E621E6D494100C307F3 /* NSObject+ZZAdd.m */; };
+		A91C4E661E6D4A6300C307F3 /* UITableView+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A91C4E651E6D4A6300C307F3 /* UITableView+ZZAdd.m */; };
 		A91D9B4E1D855E090073DEB7 /* ZZTextLinePositionModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A91D9B4D1D855E090073DEB7 /* ZZTextLinePositionModifier.m */; };
 		A91E0BE21D5D9640007BD117 /* ZZFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91E0BE11D5D9640007BD117 /* ZZFirstTableViewController.m */; };
 		A91E1B5B1E062F7700E14417 /* ZZShareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E1B5A1E062F7700E14417 /* ZZShareModel.swift */; };
@@ -235,6 +237,10 @@
 		A91A834D1D420A87008D229E /* weibo_7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_7.json; sourceTree = "<group>"; };
 		A91A83561D420CFD008D229E /* WBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBModel.h; sourceTree = "<group>"; };
 		A91A83571D420CFD008D229E /* WBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBModel.m; sourceTree = "<group>"; };
+		A91C4E611E6D494100C307F3 /* NSObject+ZZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZZAdd.h"; sourceTree = "<group>"; };
+		A91C4E621E6D494100C307F3 /* NSObject+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZZAdd.m"; sourceTree = "<group>"; };
+		A91C4E641E6D4A6300C307F3 /* UITableView+ZZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ZZAdd.h"; sourceTree = "<group>"; };
+		A91C4E651E6D4A6300C307F3 /* UITableView+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ZZAdd.m"; sourceTree = "<group>"; };
 		A91D9B4C1D855E090073DEB7 /* ZZTextLinePositionModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTextLinePositionModifier.h; sourceTree = "<group>"; };
 		A91D9B4D1D855E090073DEB7 /* ZZTextLinePositionModifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZTextLinePositionModifier.m; sourceTree = "<group>"; };
 		A91E0BE01D5D9640007BD117 /* ZZFirstTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZFirstTableViewController.h; sourceTree = "<group>"; };
@@ -1244,6 +1250,10 @@
 				A90DBF131DBF740900D857A9 /* UINavigationItem+Margin.m */,
 				A9C2F3761E2DF5F4002C86B6 /* UIButton+EdgeInsets.h */,
 				A9C2F3771E2DF5F4002C86B6 /* UIButton+EdgeInsets.m */,
+				A91C4E641E6D4A6300C307F3 /* UITableView+ZZAdd.h */,
+				A91C4E651E6D4A6300C307F3 /* UITableView+ZZAdd.m */,
+				A91C4E611E6D494100C307F3 /* NSObject+ZZAdd.h */,
+				A91C4E621E6D494100C307F3 /* NSObject+ZZAdd.m */,
 			);
 			path = Catagory;
 			sourceTree = "<group>";
@@ -1638,6 +1648,7 @@
 				A947CD0A1DE02FCC0047B58F /* ZZHaoJiaHeaderViewController.m in Sources */,
 				A980A40F1CE41827006E0037 /* ZZFirstBaseViewController.m in Sources */,
 				A947CD131DE02FCC0047B58F /* ZZRedirectData.m in Sources */,
+				A91C4E661E6D4A6300C307F3 /* UITableView+ZZAdd.m in Sources */,
 				A947CCDA1DE02FA30047B58F /* ZZDiscoveryView.m in Sources */,
 				A947CCCF1DE02FA30047B58F /* ZZHomeFirstModel.m in Sources */,
 				A947CCD51DE02FA30047B58F /* ZZDetailTopicCell.m in Sources */,
@@ -1738,6 +1749,7 @@
 				A9D9D24F1CE40B7C00A83101 /* NSString+ZZBound.m in Sources */,
 				A947CD151DE02FCC0047B58F /* ZZWorthyArticle.m in Sources */,
 				A947CCC91DE02FA30047B58F /* ZZDetailModel.m in Sources */,
+				A91C4E631E6D494100C307F3 /* NSObject+ZZAdd.m in Sources */,
 				A91F3DAE1E1A73160047DCDF /* ZZHomeCell.m in Sources */,
 				A9D9D2181CE40B3E00A83101 /* main.m in Sources */,
 				A947CCCC1DE02FA30047B58F /* ZZDetailTopicHeaderModel.m in Sources */,

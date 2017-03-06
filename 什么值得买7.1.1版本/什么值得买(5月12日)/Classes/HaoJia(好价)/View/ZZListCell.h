@@ -14,8 +14,6 @@
 
 /** 模型 */
 @property (nonatomic, strong) ZZWorthyArticle *article;
-
-
 /** 传入homeChannel模型, 可用作判断是否需要隐藏水印图片 */
 @property (nonatomic, strong) ZZHomeChannel *homeChannel;
 /**

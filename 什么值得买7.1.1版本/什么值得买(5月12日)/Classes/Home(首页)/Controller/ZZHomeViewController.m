@@ -14,14 +14,11 @@
 #import "ZZWorthyArticle.h"
 #import "ZZListCell.h"
 #import "ZZYuanChuangCell.h"
+#import "ZZTuiGuangCell.h"
 #import "ZZDetailArticleViewController.h"
 #import "ZZDetailTopicViewController.h"
 #import "ZZPureWebViewController.h"
 #import "什么值得买-Swift.h"
-
-static NSString * const kReuseIdentifierYuanChuangCell = @"ZZYuanChuangCell";
-static NSString * const kReuseIdentifieFirstCell = @"ZZHomeFirstCell";
-static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 
 @interface ZZHomeViewController ()<ZZHomeFirstCellDelegete>
 
@@ -43,12 +40,13 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     headerVC.view.backgroundColor = [UIColor whiteColor];
     headerVC.view.bounds = CGRectMake(0, 0, kScreenW, 360);
     [self addChildViewController:headerVC];
+    [headerVC didMoveToParentViewController:self];
     self.tableView.tableHeaderView = headerVC.view;
     
-    [self.tableView registerClass:[ZZHomeFirstCell class] forCellReuseIdentifier:kReuseIdentifieFirstCell];
-    [self.tableView registerNib:[UINib nibWithNibName:@"ZZYuanChuangCell" bundle:nil] forCellReuseIdentifier:kReuseIdentifierYuanChuangCell];
-    [self.tableView registerNib:[UINib nibWithNibName:@"ZZListCell" bundle:nil] forCellReuseIdentifier:kReuseIdentiHomeListCell];
-
+    [self.tableView registerReuseCellClass:[ZZHomeFirstCell class]];
+    [self.tableView registerReuseCellNib:[ZZListCell class]];
+    [self.tableView registerReuseCellNib:[ZZTuiGuangCell class]];
+    [self.tableView registerReuseCellNib:[ZZYuanChuangCell class]];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -137,17 +135,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     }];
 }
 
-- (NSMutableDictionary *)configureParameters{
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-
-    [parameters setValue:[NSString stringWithFormat:@"%@", @(self.page)] forKey:@"page"];
-    [parameters setValue:@"18" forKey:@"channel_id"];
-    [parameters setValue:@"GzmoWix39BJ3ZyoK92%252FGIBxoD0aQU0E3Kz%252Buf8lEciVCB5BAUN91UA%253D%253D" forKey:@"device_id"];
-    return parameters;
-}
-
 #pragma mark - UITableViewDataSource && UITableViewDelegate
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -156,7 +144,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
         return self.dataSource.count;
-    }else{
+    } else {
         return self.listArrayM.count;
     }
     
@@ -164,30 +152,50 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        ZZHomeFirstCell *firstCell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentifieFirstCell forIndexPath:indexPath];
+        ZZHomeFirstCell *firstCell = [tableView dequeueReusableCellWithIdentifier:[ZZHomeFirstCell reuseIdentifier] forIndexPath:indexPath];
         firstCell.selectionStyle = UITableViewCellSelectionStyleNone;   //解决cell选中后内容消失的问题
         ZZHomeFirstLayout *layout = self.dataSource[indexPath.row];
         firstCell.layout = layout;
         firstCell.delegate = self;
         return firstCell;
-    }else{
-        
+    } else {
         ZZWorthyArticle *article = self.listArrayM[indexPath.row];
-        NSInteger channelID = [article.article_channel_id integerValue];
-        
-        if (channelID == 8 || channelID == 11 || channelID == 14) {
-            
-            ZZYuanChuangCell *cell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentifierYuanChuangCell forIndexPath:indexPath];
-            
-            cell.article = article;
-            return cell;
-            
+        switch (article.promotion_type) {
+            case ZDMPromotionTypeZero: {
+                NSInteger channelID = [article.article_channel_id integerValue];
+                if (channelID == 8 || channelID == 11 || channelID == 14) {
+                    ZZYuanChuangCell *cell = [tableView dequeueReusableCellWithIdentifier:[ZZYuanChuangCell reuseIdentifier] forIndexPath:indexPath];
+                    cell.article = article;
+                    return cell;
+                }
+                ZZListCell *listCell = [tableView dequeueReusableCellWithIdentifier:[ZZListCell reuseIdentifier] forIndexPath:indexPath];
+                listCell.type = kHaojiaJingXuan;
+                listCell.article = self.listArrayM[indexPath.row];
+                return listCell;
+            }
+                
+                break;
+            case ZDMPromotionTypeOne: {
+                ZZTuiGuangCell *tuiGuangCell = [tableView dequeueReusableCellWithIdentifier:[ZZTuiGuangCell reuseIdentifier] forIndexPath:indexPath];
+                tuiGuangCell.article = article;
+                return tuiGuangCell;
+            }
+                
+                break;
+            case ZDMPromotionTypeTwo:
+                
+                break;
+            case ZDMPromotionTypeThree: {
+                ZZListCell *listCell = [tableView dequeueReusableCellWithIdentifier:[ZZListCell reuseIdentifier] forIndexPath:indexPath];
+                listCell.type = kHaojiaJingXuan;
+                listCell.article = self.listArrayM[indexPath.row];
+                return listCell;
+            }
+                break;
+            default:
+                break;
         }
-
-        ZZListCell *listCell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentiHomeListCell forIndexPath:indexPath];
-        listCell.type = kHaojiaJingXuan;
-        listCell.article = self.listArrayM[indexPath.row];
-        return listCell;
+        return nil;
     }
 
 }
