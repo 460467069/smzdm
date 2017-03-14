@@ -30,11 +30,11 @@
     return _sharedClient;
 }
 
-- (void)GET:(NSString *)URLString parameters:(NSMutableDictionary *)parameters completionBlock:(HttpCompletionBlcok)completionBlock{
+- (NSURLSessionDataTask *)GET:(NSString *)URLString parameters:(NSMutableDictionary *)parameters completionBlock:(HttpCompletionBlcok)completionBlock{
     
     [self configurePublicParameters:parameters];
     
-    [self GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [self GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         LxDBAnyVar(task.response.URL.absoluteString);
         if ([responseObject[@"error_code"] isEqualToString:@"0"]) {
             completionBlock(responseObject[@"data"], nil);
@@ -48,21 +48,21 @@
     
 }
 
-- (void)GET:(ZZBaseRequest * _Nonnull)request completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock {
-    [self GET:request.urlStr parameters:[request mj_keyValuesWithIgnoredKeys:@[@"urlStr"]] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+- (NSURLSessionDataTask *)GET:(ZZBaseRequest *)request completionBlock:(HttpCompletionBlcok)completionBlock {
+    return [self GET:request.urlStr parameters:[request mj_keyValuesWithIgnoredKeys:@[@"urlStr"]] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         LxDBAnyVar(task.response.URL.absoluteString);
         if ([responseObject[@"error_code"] isEqualToString:@"0"]) {
             completionBlock(responseObject[@"data"], nil);
             return;
         }
-        [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
+        [SVProgressHUD showErrorWithStatus:responseObject[@"error_msg"]];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD showErrorWithStatus:@"似乎断开网络连接"];
         completionBlock(nil, error);
     }];
 }
 
-+ (void)Get:( NSString * _Nonnull)URLString parameters:(NSMutableDictionary * _Nonnull)parameters completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock {
++ (NSURLSessionDataTask *)Get:( NSString *)URLString parameters:(NSMutableDictionary *)parameters completionBlock:(HttpCompletionBlcok)completionBlock {
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL]];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
@@ -74,7 +74,7 @@
     
     [self configurePublicParameters:parameters];
     
-    [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
+    return [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
         
         LxDBAnyVar(task.response.URL.absoluteString);
         

@@ -37,9 +37,6 @@
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setMinimumDismissTimeInterval:2.0];
     
-    SVProgressHUD *hud = [[SVProgressHUD alloc] init];
-    
-    
     UITableViewCell *cell = [UITableViewCell appearance];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     

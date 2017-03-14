@@ -38,7 +38,6 @@
                                                              diskPath:nil];
     [NSURLCache setSharedURLCache:URLCache];
     
-    
     // 向微博客户端程序注册第三方应用
     [WeiboSDK registerApp:kShareSinaWeiboKey];
     

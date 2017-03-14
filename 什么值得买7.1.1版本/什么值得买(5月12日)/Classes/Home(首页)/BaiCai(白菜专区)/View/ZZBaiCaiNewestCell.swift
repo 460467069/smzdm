@@ -22,7 +22,7 @@ class ZZBaiCaiNewestCell: UICollectionViewCell {
             
             if let worthyArticle = worthyArticle {
                 
-                iconView.zdm_setImage(urlStr: worthyArticle.article_pic!, placeHolder: nil)
+                iconView.zdm_setImage(urlStr: worthyArticle.article_pic, placeHolder: nil)
                 titleLabel.text = worthyArticle.article_title
                 subTitleLabel.text = worthyArticle.article_price
                 mallLabel.text = worthyArticle.article_mall

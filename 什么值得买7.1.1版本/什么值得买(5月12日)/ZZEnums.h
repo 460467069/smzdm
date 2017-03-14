@@ -21,10 +21,11 @@ typedef NS_ENUM(NSUInteger, DetailBottomBarStyle) {
 };
 
 typedef NS_ENUM(NSUInteger, ZDMPromotionType) {
-    ZDMPromotionTypeZero,   //普通(包含原创类型的)
-    ZDMPromotionTypeOne,    //广告类
-    ZDMPromotionTypeTwo,    //暂时未找到
-    ZDMPromotionTypeThree,  //一张图片, 一个标题, 一句简介的那种
+    ZDMPromotionTypeZero    = 0,    //普通(包含原创类型的)
+    ZDMPromotionTypeOne     = 1,    //广告类
+    ZDMPromotionTypeTwo     = 2,    //暂时未找到
+    ZDMPromotionTypeThree   = 3,    //一张图片, 一个标题, 一句简介的那种
+    ZDMPromotionTypeEight   = 8,    //一张图片, 一个标题, 一句简介的那种
 };
 
 

@@ -61,13 +61,9 @@
 		A947CCC51DE02FA30047B58F /* ZZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC891DE02FA30047B58F /* ZZHomeViewController.m */; };
 		A947CCC61DE02FA30047B58F /* ZZHomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A947CC8A1DE02FA30047B58F /* ZZHomeViewController.storyboard */; };
 		A947CCC71DE02FA30047B58F /* ZZLittleBannerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC8D1DE02FA30047B58F /* ZZLittleBannerLayout.m */; };
-		A947CCC81DE02FA30047B58F /* ZZDetailHeaderLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC901DE02FA30047B58F /* ZZDetailHeaderLayout.m */; };
 		A947CCC91DE02FA30047B58F /* ZZDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC921DE02FA30047B58F /* ZZDetailModel.m */; };
-		A947CCCA1DE02FA30047B58F /* ZZDetailTopicContentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC941DE02FA30047B58F /* ZZDetailTopicContentLayout.m */; };
-		A947CCCB1DE02FA30047B58F /* ZZDetailTopicHeaderLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC961DE02FA30047B58F /* ZZDetailTopicHeaderLayout.m */; };
 		A947CCCC1DE02FA30047B58F /* ZZDetailTopicHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC981DE02FA30047B58F /* ZZDetailTopicHeaderModel.m */; };
 		A947CCCD1DE02FA30047B58F /* ZZDetailTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC9A1DE02FA30047B58F /* ZZDetailTopicModel.m */; };
-		A947CCCE1DE02FA30047B58F /* ZZHomeFirstLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC9C1DE02FA30047B58F /* ZZHomeFirstLayout.m */; };
 		A947CCCF1DE02FA30047B58F /* ZZHomeFirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC9E1DE02FA30047B58F /* ZZHomeFirstModel.m */; };
 		A947CCD01DE02FA30047B58F /* ZZHomeHeadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CCA01DE02FA30047B58F /* ZZHomeHeadModel.m */; };
 		A947CCD11DE02FA30047B58F /* ZZDetailBaseBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CCA31DE02FA30047B58F /* ZZDetailBaseBottomBar.m */; };
@@ -161,6 +157,12 @@
 		A9B783581D58FB90003C464D /* ZZCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B783571D58FB90003C464D /* ZZCircleView.m */; };
 		A9B7835B1D59019D003C464D /* ZZRefreshTip.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7835A1D59019D003C464D /* ZZRefreshTip.m */; };
 		A9B7835D1D5901DF003C464D /* RefreshTips.geojson in Resources */ = {isa = PBXBuildFile; fileRef = A9B7835C1D5901DF003C464D /* RefreshTips.geojson */; };
+		A9C08ABC1E7783E900099C28 /* ZZSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C08ABB1E7783E900099C28 /* ZZSearchModel.swift */; };
+		A9C08AC11E77858A00099C28 /* ZZDetailTopicContentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C08ABE1E77858A00099C28 /* ZZDetailTopicContentLayout.m */; };
+		A9C08AC21E77858A00099C28 /* ZZDetailTopicHeaderLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C08AC01E77858A00099C28 /* ZZDetailTopicHeaderLayout.m */; };
+		A9C08AC71E7785C900099C28 /* ZZDetailHeaderLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C08AC41E7785C900099C28 /* ZZDetailHeaderLayout.m */; };
+		A9C08AC81E7785C900099C28 /* ZZHomeFirstLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C08AC61E7785C900099C28 /* ZZHomeFirstLayout.m */; };
+		A9C08ACA1E7790D600099C28 /* ZZSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C08AC91E7790D600099C28 /* ZZSearchItem.swift */; };
 		A9C108B81DD15C6D00068A7D /* ZZCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C108B71DD15C6D00068A7D /* ZZCommentCell.swift */; };
 		A9C2F3781E2DF5F4002C86B6 /* UIButton+EdgeInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C2F3771E2DF5F4002C86B6 /* UIButton+EdgeInsets.m */; };
 		A9C356A11D2275BC006EE7EC /* ZZMineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C356A01D2275BC006EE7EC /* ZZMineViewController.storyboard */; };
@@ -174,9 +176,11 @@
 		A9D9D2511CE40B7C00A83101 /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D2391CE40B7C00A83101 /* UIColor+HEX.m */; };
 		A9DBBAF21DB2183E00089A73 /* UIImageView+ZDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBBAF11DB2183E00089A73 /* UIImageView+ZDM.swift */; };
 		A9DBBAF51DB2282900089A73 /* ZZHaoWuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBBAF41DB2282900089A73 /* ZZHaoWuLayout.swift */; };
+		A9DD7F621E768C9000CA913A /* UIViewController+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DD7F611E768C9000CA913A /* UIViewController+ZZAdd.m */; };
 		A9E440AF1DD078B7005D17DB /* ZZAllCommentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E440AE1DD078B7005D17DB /* ZZAllCommentLayout.swift */; };
 		A9E5CC0C1DF96CB400C47221 /* NSTimer+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E5CC0B1DF96CB400C47221 /* NSTimer+ZZAdd.m */; };
 		A9E5CC0E1DF982F900C47221 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E5CC0D1DF982F900C47221 /* AVFoundation.framework */; };
+		A9EB333C1E718096008E09A0 /* ZZHomePromotionCellEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB333B1E718096008E09A0 /* ZZHomePromotionCellEight.swift */; };
 		A9EB45911DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB45901DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift */; };
 		A9F344BF1E60233E00D835E7 /* ZZBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F344BE1E60233E00D835E7 /* ZZBaseRequest.m */; };
 		A9F387301DEC024D009E77C4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */; };
@@ -296,20 +300,12 @@
 		A947CC8A1DE02FA30047B58F /* ZZHomeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZHomeViewController.storyboard; sourceTree = "<group>"; };
 		A947CC8C1DE02FA30047B58F /* ZZLittleBannerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZLittleBannerLayout.h; sourceTree = "<group>"; };
 		A947CC8D1DE02FA30047B58F /* ZZLittleBannerLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZLittleBannerLayout.m; sourceTree = "<group>"; };
-		A947CC8F1DE02FA30047B58F /* ZZDetailHeaderLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailHeaderLayout.h; sourceTree = "<group>"; };
-		A947CC901DE02FA30047B58F /* ZZDetailHeaderLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailHeaderLayout.m; sourceTree = "<group>"; };
 		A947CC911DE02FA30047B58F /* ZZDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailModel.h; sourceTree = "<group>"; };
 		A947CC921DE02FA30047B58F /* ZZDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailModel.m; sourceTree = "<group>"; };
-		A947CC931DE02FA30047B58F /* ZZDetailTopicContentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicContentLayout.h; sourceTree = "<group>"; };
-		A947CC941DE02FA30047B58F /* ZZDetailTopicContentLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicContentLayout.m; sourceTree = "<group>"; };
-		A947CC951DE02FA30047B58F /* ZZDetailTopicHeaderLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicHeaderLayout.h; sourceTree = "<group>"; };
-		A947CC961DE02FA30047B58F /* ZZDetailTopicHeaderLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicHeaderLayout.m; sourceTree = "<group>"; };
 		A947CC971DE02FA30047B58F /* ZZDetailTopicHeaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicHeaderModel.h; sourceTree = "<group>"; };
 		A947CC981DE02FA30047B58F /* ZZDetailTopicHeaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicHeaderModel.m; sourceTree = "<group>"; };
 		A947CC991DE02FA30047B58F /* ZZDetailTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicModel.h; sourceTree = "<group>"; };
 		A947CC9A1DE02FA30047B58F /* ZZDetailTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicModel.m; sourceTree = "<group>"; };
-		A947CC9B1DE02FA30047B58F /* ZZHomeFirstLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeFirstLayout.h; sourceTree = "<group>"; };
-		A947CC9C1DE02FA30047B58F /* ZZHomeFirstLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeFirstLayout.m; sourceTree = "<group>"; };
 		A947CC9D1DE02FA30047B58F /* ZZHomeFirstModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeFirstModel.h; sourceTree = "<group>"; };
 		A947CC9E1DE02FA30047B58F /* ZZHomeFirstModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeFirstModel.m; sourceTree = "<group>"; };
 		A947CC9F1DE02FA30047B58F /* ZZHomeHeadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeHeadModel.h; sourceTree = "<group>"; };
@@ -466,6 +462,16 @@
 		A9B783591D59019D003C464D /* ZZRefreshTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZRefreshTip.h; sourceTree = "<group>"; };
 		A9B7835A1D59019D003C464D /* ZZRefreshTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZRefreshTip.m; sourceTree = "<group>"; };
 		A9B7835C1D5901DF003C464D /* RefreshTips.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RefreshTips.geojson; sourceTree = "<group>"; };
+		A9C08ABB1E7783E900099C28 /* ZZSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZSearchModel.swift; sourceTree = "<group>"; };
+		A9C08ABD1E77858A00099C28 /* ZZDetailTopicContentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicContentLayout.h; sourceTree = "<group>"; };
+		A9C08ABE1E77858A00099C28 /* ZZDetailTopicContentLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicContentLayout.m; sourceTree = "<group>"; };
+		A9C08ABF1E77858A00099C28 /* ZZDetailTopicHeaderLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicHeaderLayout.h; sourceTree = "<group>"; };
+		A9C08AC01E77858A00099C28 /* ZZDetailTopicHeaderLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicHeaderLayout.m; sourceTree = "<group>"; };
+		A9C08AC31E7785C900099C28 /* ZZDetailHeaderLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailHeaderLayout.h; sourceTree = "<group>"; };
+		A9C08AC41E7785C900099C28 /* ZZDetailHeaderLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailHeaderLayout.m; sourceTree = "<group>"; };
+		A9C08AC51E7785C900099C28 /* ZZHomeFirstLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeFirstLayout.h; sourceTree = "<group>"; };
+		A9C08AC61E7785C900099C28 /* ZZHomeFirstLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeFirstLayout.m; sourceTree = "<group>"; };
+		A9C08AC91E7790D600099C28 /* ZZSearchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZSearchItem.swift; sourceTree = "<group>"; };
 		A9C108B71DD15C6D00068A7D /* ZZCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentCell.swift; sourceTree = "<group>"; };
 		A9C2F3761E2DF5F4002C86B6 /* UIButton+EdgeInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EdgeInsets.h"; sourceTree = "<group>"; };
 		A9C2F3771E2DF5F4002C86B6 /* UIButton+EdgeInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EdgeInsets.m"; sourceTree = "<group>"; };
@@ -486,10 +492,13 @@
 		A9D9D2391CE40B7C00A83101 /* UIColor+HEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HEX.m"; sourceTree = "<group>"; };
 		A9DBBAF11DB2183E00089A73 /* UIImageView+ZDM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ZDM.swift"; sourceTree = "<group>"; };
 		A9DBBAF41DB2282900089A73 /* ZZHaoWuLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHaoWuLayout.swift; sourceTree = "<group>"; };
+		A9DD7F601E768C9000CA913A /* UIViewController+ZZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZZAdd.h"; sourceTree = "<group>"; };
+		A9DD7F611E768C9000CA913A /* UIViewController+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZZAdd.m"; sourceTree = "<group>"; };
 		A9E440AE1DD078B7005D17DB /* ZZAllCommentLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAllCommentLayout.swift; sourceTree = "<group>"; };
 		A9E5CC0A1DF96CB400C47221 /* NSTimer+ZZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+ZZAdd.h"; sourceTree = "<group>"; };
 		A9E5CC0B1DF96CB400C47221 /* NSTimer+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+ZZAdd.m"; sourceTree = "<group>"; };
 		A9E5CC0D1DF982F900C47221 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A9EB333B1E718096008E09A0 /* ZZHomePromotionCellEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHomePromotionCellEight.swift; sourceTree = "<group>"; };
 		A9EB45901DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZBaiCaiTableViewCell.swift; sourceTree = "<group>"; };
 		A9F344BD1E60233E00D835E7 /* ZZBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBaseRequest.h; sourceTree = "<group>"; };
 		A9F344BE1E60233E00D835E7 /* ZZBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBaseRequest.m; sourceTree = "<group>"; };
@@ -713,6 +722,14 @@
 			children = (
 				A947CC8C1DE02FA30047B58F /* ZZLittleBannerLayout.h */,
 				A947CC8D1DE02FA30047B58F /* ZZLittleBannerLayout.m */,
+				A9C08ABD1E77858A00099C28 /* ZZDetailTopicContentLayout.h */,
+				A9C08ABE1E77858A00099C28 /* ZZDetailTopicContentLayout.m */,
+				A9C08ABF1E77858A00099C28 /* ZZDetailTopicHeaderLayout.h */,
+				A9C08AC01E77858A00099C28 /* ZZDetailTopicHeaderLayout.m */,
+				A9C08AC31E7785C900099C28 /* ZZDetailHeaderLayout.h */,
+				A9C08AC41E7785C900099C28 /* ZZDetailHeaderLayout.m */,
+				A9C08AC51E7785C900099C28 /* ZZHomeFirstLayout.h */,
+				A9C08AC61E7785C900099C28 /* ZZHomeFirstLayout.m */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -720,20 +737,12 @@
 		A947CC8E1DE02FA30047B58F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A947CC8F1DE02FA30047B58F /* ZZDetailHeaderLayout.h */,
-				A947CC901DE02FA30047B58F /* ZZDetailHeaderLayout.m */,
 				A947CC911DE02FA30047B58F /* ZZDetailModel.h */,
 				A947CC921DE02FA30047B58F /* ZZDetailModel.m */,
-				A947CC931DE02FA30047B58F /* ZZDetailTopicContentLayout.h */,
-				A947CC941DE02FA30047B58F /* ZZDetailTopicContentLayout.m */,
-				A947CC951DE02FA30047B58F /* ZZDetailTopicHeaderLayout.h */,
-				A947CC961DE02FA30047B58F /* ZZDetailTopicHeaderLayout.m */,
 				A947CC971DE02FA30047B58F /* ZZDetailTopicHeaderModel.h */,
 				A947CC981DE02FA30047B58F /* ZZDetailTopicHeaderModel.m */,
 				A947CC991DE02FA30047B58F /* ZZDetailTopicModel.h */,
 				A947CC9A1DE02FA30047B58F /* ZZDetailTopicModel.m */,
-				A947CC9B1DE02FA30047B58F /* ZZHomeFirstLayout.h */,
-				A947CC9C1DE02FA30047B58F /* ZZHomeFirstLayout.m */,
 				A947CC9D1DE02FA30047B58F /* ZZHomeFirstModel.h */,
 				A947CC9E1DE02FA30047B58F /* ZZHomeFirstModel.m */,
 				A947CC9F1DE02FA30047B58F /* ZZHomeHeadModel.h */,
@@ -773,6 +782,7 @@
 				A947CCBB1DE02FA30047B58F /* ZZYuanChuangCell.h */,
 				A947CCBC1DE02FA30047B58F /* ZZYuanChuangCell.m */,
 				A947CCBD1DE02FA30047B58F /* ZZYuanChuangCell.xib */,
+				A9EB333B1E718096008E09A0 /* ZZHomePromotionCellEight.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -897,6 +907,7 @@
 		A966E0941E1117450023CFEA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9C08ABB1E7783E900099C28 /* ZZSearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -904,6 +915,7 @@
 		A966E0951E1117450023CFEA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A9C08AC91E7790D600099C28 /* ZZSearchItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1254,6 +1266,8 @@
 				A91C4E651E6D4A6300C307F3 /* UITableView+ZZAdd.m */,
 				A91C4E611E6D494100C307F3 /* NSObject+ZZAdd.h */,
 				A91C4E621E6D494100C307F3 /* NSObject+ZZAdd.m */,
+				A9DD7F601E768C9000CA913A /* UIViewController+ZZAdd.h */,
+				A9DD7F611E768C9000CA913A /* UIViewController+ZZAdd.m */,
 			);
 			path = Catagory;
 			sourceTree = "<group>";
@@ -1644,6 +1658,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9758D781D878DA800FC4B89 /* NSObject+ZZStarImage.m in Sources */,
+				A9C08ACA1E7790D600099C28 /* ZZSearchItem.swift in Sources */,
+				A9C08ABC1E7783E900099C28 /* ZZSearchModel.swift in Sources */,
 				A9F97BC01DE521E200FB683F /* ZZBaiCaiBannerView.swift in Sources */,
 				A947CD0A1DE02FCC0047B58F /* ZZHaoJiaHeaderViewController.m in Sources */,
 				A980A40F1CE41827006E0037 /* ZZFirstBaseViewController.m in Sources */,
@@ -1653,17 +1669,20 @@
 				A947CCCF1DE02FA30047B58F /* ZZHomeFirstModel.m in Sources */,
 				A947CCD51DE02FA30047B58F /* ZZDetailTopicCell.m in Sources */,
 				A980A3F41CE40F76006E0037 /* ZZMineViewController.m in Sources */,
+				A9C08AC21E77858A00099C28 /* ZZDetailTopicHeaderLayout.m in Sources */,
 				A9A746F51DE2EBC200EFB62F /* ZZSecondCollectionViewController.m in Sources */,
 				A9E440AF1DD078B7005D17DB /* ZZAllCommentLayout.swift in Sources */,
 				A9B2ACA11DDB6EDD00D8F296 /* ZZKeyboardToolBar.m in Sources */,
 				A947CCC71DE02FA30047B58F /* ZZLittleBannerLayout.m in Sources */,
 				A947CCD91DE02FA30047B58F /* ZZDetailZiXunBottomBar.m in Sources */,
+				A9EB333C1E718096008E09A0 /* ZZHomePromotionCellEight.swift in Sources */,
 				A90B12E01DAA38990051B237 /* ZZGoodsHeaderModel.swift in Sources */,
 				A9C2F3781E2DF5F4002C86B6 /* UIButton+EdgeInsets.m in Sources */,
 				A947CCD11DE02FA30047B58F /* ZZDetailBaseBottomBar.m in Sources */,
 				A947CCD01DE02FA30047B58F /* ZZHomeHeadModel.m in Sources */,
 				A92237A01DE59E1B00B87A8B /* ZZBaiCaiJingXuanModel.swift in Sources */,
 				A9DBBAF51DB2282900089A73 /* ZZHaoWuLayout.swift in Sources */,
+				A9C08AC71E7785C900099C28 /* ZZDetailHeaderLayout.m in Sources */,
 				A947CD141DE02FCC0047B58F /* ZZTitleBannelOption.m in Sources */,
 				A9AF3E341DE464FD0055F522 /* ZZDouYuController.m in Sources */,
 				A9C8C4E61D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift in Sources */,
@@ -1680,7 +1699,6 @@
 				A9262A851D76B7180037B1CF /* ZZJingXuanModel.m in Sources */,
 				A9A03FD81D1A69B100675FA9 /* ZZUserAccount.m in Sources */,
 				A9ADB8501D64DF5D00330D23 /* ZZAPPDotNetAPIClient.m in Sources */,
-				A947CCCE1DE02FA30047B58F /* ZZHomeFirstLayout.m in Sources */,
 				A947CCD81DE02FA30047B58F /* ZZDetailYuanChuangBottomBar.m in Sources */,
 				A980A40C1CE4130A006E0037 /* ZZTabBarModel.m in Sources */,
 				A9AF3E3C1DE464FD0055F522 /* ZZDouYuHomeTableViewCell.m in Sources */,
@@ -1700,7 +1718,6 @@
 				A927160B1D44571B006EEECA /* ZZGlobalApperance.m in Sources */,
 				A90618E51DBF064A002239CF /* ZZQRcodeController.swift in Sources */,
 				A947CCD21DE02FA30047B58F /* ZZDetailHaowuBottomBar.m in Sources */,
-				A947CCCA1DE02FA30047B58F /* ZZDetailTopicContentLayout.m in Sources */,
 				A947CCC31DE02FA30047B58F /* ZZHomeHeaderViewController.m in Sources */,
 				A947CD0D1DE02FCC0047B58F /* ZZHaoJiaHeaderLayout.swift in Sources */,
 				A9D9D2511CE40B7C00A83101 /* UIColor+HEX.m in Sources */,
@@ -1709,6 +1726,7 @@
 				A92151D71D83A1D800749413 /* YYTextExampleHelper.m in Sources */,
 				A9EB45911DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift in Sources */,
 				A9C108B81DD15C6D00068A7D /* ZZCommentCell.swift in Sources */,
+				A9C08AC81E7785C900099C28 /* ZZHomeFirstLayout.m in Sources */,
 				A980A4091CE412E8006E0037 /* ZZTabBarViewController.m in Sources */,
 				A9AF3E361DE464FD0055F522 /* ZZDouYUBannerModel.m in Sources */,
 				A966E0971E11190B0023CFEA /* ZZSearchViewController.swift in Sources */,
@@ -1723,7 +1741,6 @@
 				A922379C1DE57C8500B87A8B /* ZZBaiCaiTableHeaderView.swift in Sources */,
 				A9AF3E1E1DE463E80055F522 /* ZZHaoWuCellThree.swift in Sources */,
 				A9AF3E371DE464FD0055F522 /* ZZDouYuHomeModel.m in Sources */,
-				A947CCCB1DE02FA30047B58F /* ZZDetailTopicHeaderLayout.m in Sources */,
 				A901FCE71E057D1500B973E7 /* ZZPopPresentAnimation.swift in Sources */,
 				A947CCD41DE02FA30047B58F /* ZZDetailHuaTiBottomBar.m in Sources */,
 				A947CCC51DE02FA30047B58F /* ZZHomeViewController.m in Sources */,
@@ -1735,11 +1752,11 @@
 				A91E0BE21D5D9640007BD117 /* ZZFirstTableViewController.m in Sources */,
 				A94AC31B1DED30E3009D077A /* ZZBaiCaiNewestCell.swift in Sources */,
 				A91E1B5B1E062F7700E14417 /* ZZShareModel.swift in Sources */,
+				A9C08AC11E77858A00099C28 /* ZZDetailTopicContentLayout.m in Sources */,
 				A90E6E3E1D39406B00C213C5 /* YYFPSLabel.m in Sources */,
 				A947CCBE1DE02FA30047B58F /* ZZDetailArticleViewController.m in Sources */,
 				A947CCD61DE02FA30047B58F /* ZZDetailTopicHeaderView.m in Sources */,
 				A947CCDB1DE02FA30047B58F /* ZZHomeFirstCell.m in Sources */,
-				A947CCC81DE02FA30047B58F /* ZZDetailHeaderLayout.m in Sources */,
 				A947CCCD1DE02FA30047B58F /* ZZDetailTopicModel.m in Sources */,
 				A9AEA3261D5F6F17003B8264 /* ZZCycleScrollView.m in Sources */,
 				86C690561DCF21E6003D84A7 /* ZZCommentModel.swift in Sources */,
@@ -1747,6 +1764,7 @@
 				A91F3DB51E1A753C0047DCDF /* ZZMiaoShaViewController.swift in Sources */,
 				A947CD1B1DE02FCC0047B58F /* ZZTuiGuangCell.m in Sources */,
 				A9D9D24F1CE40B7C00A83101 /* NSString+ZZBound.m in Sources */,
+				A9DD7F621E768C9000CA913A /* UIViewController+ZZAdd.m in Sources */,
 				A947CD151DE02FCC0047B58F /* ZZWorthyArticle.m in Sources */,
 				A947CCC91DE02FA30047B58F /* ZZDetailModel.m in Sources */,
 				A91C4E631E6D494100C307F3 /* NSObject+ZZAdd.m in Sources */,
@@ -1930,7 +1948,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F1B762794EBD4E6C806C9BD4 /* Pods-什么值得买.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -1958,7 +1976,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A0A221ED76D299EA45C20125 /* Pods-什么值得买.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;

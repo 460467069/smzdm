@@ -16,10 +16,10 @@ typedef void(^HttpCompletionBlcok)(id _Nullable responseObj,  NSError * _Nullabl
 
 + (instancetype _Nonnull)sharedClient;
 
-- (void)GET:(ZZBaseRequest * _Nonnull)request completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
+- (NSURLSessionDataTask * _Nonnull)GET:(ZZBaseRequest * _Nonnull)request completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
 
-- (void)GET:(NSString * _Nonnull)URLString parameters:(NSMutableDictionary * _Nonnull)parameters completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
+- (NSURLSessionDataTask * _Nonnull)GET:(NSString * _Nonnull)URLString parameters:(NSMutableDictionary * _Nonnull)parameters completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
 
-+ (void)Get:( NSString * _Nonnull)URLString parameters:(NSMutableDictionary * _Nonnull)parameters completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
++ (NSURLSessionDataTask * _Nonnull)Get:( NSString * _Nonnull)URLString parameters:(NSMutableDictionary * _Nonnull)parameters completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
 
 @end

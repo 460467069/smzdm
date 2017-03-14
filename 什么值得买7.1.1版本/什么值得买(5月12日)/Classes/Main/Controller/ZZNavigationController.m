@@ -21,24 +21,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
 }
 
 
-- (UIViewController *)childViewControllerForStatusBarStyle{
+- (UIViewController *)childViewControllerForStatusBarStyle {
     return self.topViewController;
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle{
-    
-    
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
     NSInteger childVcCount = self.childViewControllers.count;
-
+    
     if (childVcCount >= 1) {
         viewController.hidesBottomBarWhenPushed = YES;
     }

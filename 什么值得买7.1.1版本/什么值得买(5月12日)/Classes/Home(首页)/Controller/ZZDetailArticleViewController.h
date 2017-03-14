@@ -13,7 +13,7 @@
 @interface ZZDetailArticleViewController : ZZSecondBaseViewController
 
 @property (nonatomic, strong) ZZWorthyArticle *article;
-@property (nonatomic, assign) NSInteger channelID;
+@property (nonatomic, copy) NSString *channelID;
 @property (nonatomic, copy) NSString *article_id;
 
 //@property (nonatomic, strong) ZZRedirectData *redirectdata;

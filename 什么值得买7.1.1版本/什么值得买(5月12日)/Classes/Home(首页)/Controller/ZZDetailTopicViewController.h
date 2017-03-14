@@ -11,6 +11,6 @@
 
 
 @interface ZZDetailTopicViewController : ZZSecondTableViewController
-@property (nonatomic, assign) NSInteger channelID;
+@property (nonatomic, copy) NSString *channelID;
 @property (nonatomic, copy) NSString *article_id;
 @end

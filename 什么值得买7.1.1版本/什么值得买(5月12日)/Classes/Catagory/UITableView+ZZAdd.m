@@ -33,3 +33,32 @@
 }
 
 @end
+
+@implementation UICollectionView (ZZAdd)
+
+- (void)registerReuseCellClass:(nullable Class)class {
+    [self registerClass:[class class] forCellWithReuseIdentifier:NSStringFromClass([class class])];
+    [self registerClass:[class class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([class class])];
+}
+
+- (void)registerReuseCellNib:(nullable Class)nibClass {
+    [self registerNib:[UINib nibWithNibName:NSStringFromClass([nibClass class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([nibClass class])];
+}
+
+- (void)registerReuseSectionHeaderViewClass:(nullable Class)class {
+    [self registerClass:[class class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([class class])];
+}
+
+- (void)registerReuseSectionHeaderViewNib:(nullable Class)nibClass {
+    [self registerNib:[UINib nibWithNibName:NSStringFromClass([nibClass class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([nibClass class])];
+}
+
+- (void)registerReuseSectionFooterViewClass:(nullable Class)class {
+    [self registerClass:[class class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([class class])];
+}
+
+- (void)registerReuseSectionFooterViewNib:(nullable Class)nibClass {
+    [self registerNib:[UINib nibWithNibName:NSStringFromClass([nibClass class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([nibClass class])];
+}
+
+@end

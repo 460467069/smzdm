@@ -27,3 +27,18 @@
 
 @end
 
+@interface UICollectionView (ZZAdd)
+
+- (void)registerReuseCellClass:(nullable Class)class;
+
+- (void)registerReuseCellNib:(nullable Class)nibClass;
+
+- (void)registerReuseSectionHeaderViewClass:(nullable Class)class;
+
+- (void)registerReuseSectionHeaderViewNib:(nullable Class)nibClass;
+
+- (void)registerReuseSectionFooterViewClass:(nullable Class)class;
+
+- (void)registerReuseSectionFooterViewNib:(nullable Class)nibClass;
+
+@end

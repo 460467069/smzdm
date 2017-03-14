@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 #import "ZZRedirectData.h"
 #import "ZZEnums.h"
+#import "ZZLittleBanner.h"
 
 @interface ZZWorthyArticle : NSObject
 
@@ -146,6 +147,8 @@
 @property (nonatomic, copy, nullable) NSString *position;
 @property (nonatomic, assign) BOOL is_show_tag;
 
+//promotion_type为8的字段
+@property (nonatomic, strong, nullable) NSArray<ZZLittleBanner *> *rows;
 @end
 
 

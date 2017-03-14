@@ -30,7 +30,7 @@ class ZZGoodsHeaderCell: UICollectionViewCell {
         
         didSet {
             titleLabel.text = goodsHeaderModel?.name
-            iconView.zdm_setImage(urlStr: (goodsHeaderModel?.picture)!, placeHolder: nil)
+            iconView.zdm_setImage(urlStr: goodsHeaderModel?.picture, placeHolder: nil)
         }
     }
     

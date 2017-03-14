@@ -25,7 +25,7 @@
     
 }
 
-+ (instancetype)modelWithChannelID:(NSInteger)channelID{
++ (instancetype)modelWithChannelID:(NSString *)channelID{
     
     for (ZZJumpToNextModel *model in [self models]) {
         

@@ -184,7 +184,7 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
             //头像
             let head = commentLayout?.commentModel?.head
             avatarView.setImageWith(URL.init(string: head!),
-                                    placeholder: #imageLiteral(resourceName: "icon_profile_avatar_around"),
+                                    placeholder: #imageLiteral(resourceName: "5_middle_avatar"),
                                     options: .showNetworkActivity,
                                     manager: ZZCyclePicHelper.avatarImageManager(),
                                     progress: nil,

@@ -29,9 +29,7 @@ class ZZGoodsHeaderLayout: UICollectionViewFlowLayout {
         minimumLineSpacing = 0
         minimumInteritemSpacing = 15
         let itemWidth = ((collectionView?.width)! - (collectionView?.contentInset.left)! - (collectionView?.contentInset.right)! - (goodsHeaderItemCount - 1) * minimumInteritemSpacing ) / goodsHeaderItemCount
-        
         let itemHeight = (collectionView?.height)! - (collectionView?.contentInset.top)! - (collectionView?.contentInset.bottom)!
-        
         itemSize = CGSize.init(width: itemWidth, height: itemHeight)
     }
 }
@@ -148,7 +146,9 @@ extension ZZFantasticGoodsController{
         
         fantasticGoodsRequest.offset = 0
         ZZAPPDotNetAPIClient.shared().get(ZZGoodsHeaderRequest.init()) { (responseObj, error) in
-            if let _ = error {}
+            if let _ = error {
+                return
+            }
             if let response = responseObj{
                 self.headerDataArray = NSArray.modelArray(with: ZZGoodsHeaderModel.self, json: response)! as! [ZZGoodsHeaderModel]
                 self.collectionView.reloadData()
@@ -248,7 +248,7 @@ extension ZZFantasticGoodsController: ZZHaoWuItemDelegate{
             break
         case .three:
             let detailTopicVc = ZZDetailTopicViewController()
-            detailTopicVc.channelID = 14
+            detailTopicVc.channelID = "14"
             detailTopicVc.article_id = subItemModel.redirect_data?.link_val
             navigationController?.pushViewController(detailTopicVc, animated: true)
         }
@@ -256,7 +256,7 @@ extension ZZFantasticGoodsController: ZZHaoWuItemDelegate{
 
     func haoWuHeadImageViewDidClick(in haoWuCell: ZZHaoWuBaseCell, fantasticGoodsModel: ZZFantasticGoodsModel) {
         let detailTopicVc = ZZDetailTopicViewController()
-        detailTopicVc.channelID = 14
+        detailTopicVc.channelID = "14"
         detailTopicVc.article_id = fantasticGoodsModel.redirect_data?.link_val
         navigationController?.pushViewController(detailTopicVc, animated: true)
     }

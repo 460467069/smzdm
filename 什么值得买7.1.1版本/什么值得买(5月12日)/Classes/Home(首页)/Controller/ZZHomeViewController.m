@@ -47,6 +47,7 @@
     [self.tableView registerReuseCellNib:[ZZListCell class]];
     [self.tableView registerReuseCellNib:[ZZTuiGuangCell class]];
     [self.tableView registerReuseCellNib:[ZZYuanChuangCell class]];
+    [self.tableView registerReuseCellClass:[ZZHomePromotionCellEight class]];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -192,6 +193,13 @@
                 return listCell;
             }
                 break;
+            case ZDMPromotionTypeEight: {
+                ZZHomePromotionCellEight *cellEight = [tableView dequeueReusableCellWithIdentifier:[ZZHomePromotionCellEight reuseIdentifier] forIndexPath:indexPath];
+                cellEight.article = article;
+                return cellEight;
+            }
+                
+                break;
             default:
                 break;
         }
@@ -244,7 +252,8 @@
         articleId = @"698";
 #endif
         
-        [self jumpToDetailArticleViewControllerWithArticle:article];
+//        [self jumpToDetailArticleViewControllerWithArticle:article];
+        [self jumpToDetailArticleViewControllerWithRedirectdata:article.redirect_data];
     }
 }
 

@@ -64,7 +64,7 @@ class ZZHaoWuItemOne: UIView {
     var subItemModel: ZZGoodsSubItemModel? {
         didSet {
             if let subItemModel = subItemModel {
-                iconView.zdm_setImage(urlStr: subItemModel.pro_pic!, placeHolder: "haowu_goods")
+                iconView.zdm_setImage(urlStr: subItemModel.pro_pic, placeHolder: "haowu_goods")
                 titleLabel.text = subItemModel.name!
                 priceLabel.text = "¥ \(subItemModel.pro_price!)起"
             }

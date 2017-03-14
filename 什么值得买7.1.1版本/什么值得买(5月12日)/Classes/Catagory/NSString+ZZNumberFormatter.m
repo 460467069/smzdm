@@ -12,16 +12,10 @@
 
 
 + (NSString *)stringFromFloat:(CGFloat )value {
-    
     NSNumber *number = [NSNumber numberWithFloat:value];
-    
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    
     formatter.numberStyle = NSNumberFormatterPercentStyle;
-    
     return [formatter stringFromNumber:number];
-    
-    
 }
 
 @end

@@ -185,7 +185,8 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 #pragma mark - loadData
 - (void)loadWebViewData {
     
-    ZZChannelID *channel = [ZZChannelID channelWithID:_channelID];
+    NSInteger ID = self.channelID.integerValue;
+    ZZChannelID *channel = [ZZChannelID channelWithID:ID];
     self.channel = channel;
     NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
     [ZZAPPDotNetAPIClient Get:URLStr parameters:[self configureParameters] completionBlock:^(NSDictionary *responseObject, NSError *error) {
@@ -196,7 +197,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
         _headerLayout = [[ZZDetailHeaderLayout alloc] initWithHeaderDetailModel:_detailModel];
         
         NSString *html5Content = nil;
-        if (_channelID == 6 || _channelID == 11) {
+        if (ID == 6 || ID == 11) {
             html5Content = _detailModel.article_filter_content;
         }else{
             html5Content = _detailModel.html5_content;
@@ -218,7 +219,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 - (NSMutableDictionary *)configureParameters {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     
-    NSInteger channelID = self.channelID;
+    NSInteger channelID = [self.channelID integerValue];
     
     if (channelID != 14) {
         [parameters setValue:@"0" forKey:@"imgmode"];
@@ -232,7 +233,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
         case 1:
         case 2:
         case 5:
-            [parameters setValue:[NSString stringWithFormat:@"%@",@(_channelID)] forKey:@"channel_id"];
+            [parameters setValue:[NSString stringWithFormat:@"%@",self.channelID] forKey:@"channel_id"];
             break;
         case 6:
         case 8:

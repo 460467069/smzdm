@@ -15,10 +15,7 @@ static NSString *ZZ_NSTimerKey = @"ZZ_NSTimerKey";
 
 
 + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti userInfo:(id)userInfo repeats:(BOOL)yesOrNo block:(void(^)(NSTimer *))block{
-    
-    
     NSTimer *timer = [NSTimer timerWithTimeInterval:ti target:self selector:@selector(repeat:) userInfo:userInfo repeats:yesOrNo];
-    
     timer.block = block;
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
     return timer;

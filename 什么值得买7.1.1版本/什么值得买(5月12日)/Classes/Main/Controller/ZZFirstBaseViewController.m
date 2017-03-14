@@ -32,11 +32,14 @@
     [self configureSearchBar];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.view endEditing:YES];
+}
+
 - (void)configureSearchBar{
     
-    
     UIImageView *customSearchBar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homePage_searchBG"]];
-    
     CGFloat offset = 50.0;
     if (kScreenW > 320) {
         offset = 80.0;
@@ -134,7 +137,7 @@
 }
 
 
-- (UIStatusBarStyle)preferredStatusBarStyle{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 

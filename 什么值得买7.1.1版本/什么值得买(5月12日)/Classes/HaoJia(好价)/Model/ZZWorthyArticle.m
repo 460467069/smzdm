@@ -9,7 +9,9 @@
 #import "ZZWorthyArticle.h"
 
 @implementation ZZWorthyArticle
-
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"rows" : [ZZLittleBanner class]};
+}
 
 @end
 

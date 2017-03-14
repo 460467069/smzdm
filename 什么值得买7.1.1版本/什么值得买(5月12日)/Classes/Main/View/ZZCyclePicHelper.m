@@ -21,7 +21,7 @@
         manager = [[YYWebImageManager alloc] initWithCache:cache queue:[YYWebImageManager sharedManager].queue];
         manager.sharedTransformBlock = ^(UIImage *image, NSURL *url) {
             if (!image) return image;
-            return [image imageByRoundCornerRadius:HUGE]; // a large value
+            return [image imageByRoundCornerRadius:100]; // a large value
         };
     });
     return manager;

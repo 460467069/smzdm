@@ -242,7 +242,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         //资讯 v2/news/articles
 //        https://api.smzdm.com/v2/news/articles/28552?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
         
-        NSInteger channelID = [article.article_channel_id integerValue];
+        NSString *channelID = article.article_channel_id;
         NSString *articleId = article.article_id;
         
 #if 0   //测试话题
@@ -252,7 +252,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         
         ZZRedirectData *redirectdata = article.redirect_data;
         
-        if (channelID == 14) {
+        if ([channelID isEqualToString:@"14"]) {
             ZZDetailTopicViewController *detailTopicVc = [[ZZDetailTopicViewController alloc] init];
             detailTopicVc.channelID = channelID;
             detailTopicVc.article_id = articleId;
@@ -277,17 +277,17 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 
 - (void)jumpToDetailArticleViewControllerWithRedirectdata:(ZZRedirectData *)redirectdata{
     NSString *linkType = redirectdata.link_type;
-    NSInteger channelID;
+    NSString *channelID;
     if ([linkType isEqualToString:@"faxian"] || [linkType isEqualToString:@"youhui"]) {
-        channelID = 2;
+        channelID = @"2";
     }else if ([linkType isEqualToString:@"haitao"]){
-        channelID = 5;
+        channelID = @"5";
     }else if ([linkType isEqualToString:@"news"]){
-        channelID = 6;
+        channelID = @"6";
     }else if ([linkType isEqualToString:@"pingce"]){
-        channelID = 8;
+        channelID = @"8";
     }else if ([linkType isEqualToString:@"yuanchuang"]){
-        channelID = 11;
+        channelID = @"11";
     }else if ([linkType isEqualToString:@"other"]){
         ZZPureWebViewController *webViewController = [[ZZPureWebViewController alloc] init];
         webViewController.redirectdata = redirectdata;

@@ -47,9 +47,7 @@ class ZZHaoWuCellThree: ZZHaoWuBaseCell {
 
     
     override var haowuLayout: ZZHaoWuLayout? {
-        
         didSet{
-            
             if let haowuLayout = haowuLayout {
                 let items = haowuLayout.fantasicGoodsModel?.data
                 let totalCount = items?.count

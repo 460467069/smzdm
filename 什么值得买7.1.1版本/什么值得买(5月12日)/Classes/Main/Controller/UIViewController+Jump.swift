@@ -45,21 +45,24 @@ extension UIViewController{
     
     func jumpToDetailArticleViewController(article: ZZWorthyArticle){
         
-        guard let channelID = (Int)(article.article_channel_id!) else { return }
-        
-        let articleId = article.article_id
-
-        guard let model = ZZJumpToNextModel.init(channelID: channelID) else { return }
-        
-        if channelID == 14 {
-            let detailTopicVc = ZZDetailTopicViewController()
-            detailTopicVc.channelID = channelID
-            detailTopicVc.article_id = articleId;
-            detailTopicVc.title = model.title;
-            navigationController?.pushViewController(detailTopicVc, animated: true)
-            return
+        if let channelID = article.article_channel_id {
+            guard let model = ZZJumpToNextModel.init(channelID: channelID) else { return }
+            let articleId = article.article_id
+            if channelID == "14" {
+                let detailTopicVc = ZZDetailTopicViewController()
+                detailTopicVc.channelID = channelID
+                detailTopicVc.article_id = articleId;
+                detailTopicVc.title = model.title;
+                navigationController?.pushViewController(detailTopicVc, animated: true)
+                return
+            }
+            
+            let detailArticleVc = ZZDetailArticleViewController()
+            detailArticleVc.channelID = channelID;
+            detailArticleVc.article_id = articleId;
+            detailArticleVc.title = model.title;
+            navigationController?.pushViewController(detailArticleVc, animated: true)
         }
-    
         
         if article.tag == "广告" {
             let webViewController = ZZPureWebViewController()
@@ -67,13 +70,6 @@ extension UIViewController{
             navigationController?.pushViewController(webViewController, animated: true)
             return
         }
-        
-        let detailArticleVc = ZZDetailArticleViewController()
-        detailArticleVc.channelID = channelID;
-        detailArticleVc.article_id = articleId;
-        detailArticleVc.title = model.title;
-        navigationController?.pushViewController(detailArticleVc, animated: true)
-
     }
     
     

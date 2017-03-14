@@ -33,5 +33,7 @@ static NSString * const kZDM_HaoJia_HaiTao = @"v1/haitao/articles";             
 static NSString * const kZDM_HaoWu_Category = @"v1/haowu/haowu_category";                    /**< 分类 */
 static NSString * const kZDM_HaoWu_TopicList = @"v1/haowu/haowu_topic_list";                 /**< 列表 */
 
+/** 搜索 */
+static NSString * const kZDM_Search_HotTags = @"v2/filter/tags/hot_tags";                   /**< 热门标签 */
 
 #endif /* ZDM_RequestURL_h */

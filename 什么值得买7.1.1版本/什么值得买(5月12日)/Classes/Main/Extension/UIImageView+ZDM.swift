@@ -19,16 +19,16 @@ extension UIImageView{
     
     }
     
-    func zdm_setImage(urlStr: String, placeHolder: String?) {
+    func zdm_setImage(urlStr: String?, placeHolder: String?) {
         
-        let imageURL = URL.init(string: urlStr)
-        
-        if let placeHolder = placeHolder {
-            self.setImageWith(imageURL, placeholder: UIImage.init(named: placeHolder))
-        }else{
-            self.setImageWith(imageURL, placeholder: UIImage.init(named: "placeholder_dropbox"))
+        if let urlStr = urlStr {
+            let imageURL = URL.init(string: urlStr)
+            if let placeHolder = placeHolder {
+                self.setImageWith(imageURL, placeholder: UIImage.init(named: placeHolder))
+            }else{
+                self.setImageWith(imageURL, placeholder: UIImage.init(named: "placeholder_dropbox"))
+            }
         }
-        
     }
     
     
