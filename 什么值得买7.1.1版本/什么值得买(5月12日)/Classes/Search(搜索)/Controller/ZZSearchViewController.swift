@@ -12,18 +12,20 @@ class ZZSearchViewController: ZZSecondBaseViewController {
     
     lazy var collectionView: UICollectionView = {
         let margin: CGFloat = 15
-        let inset: CGFloat = 20
+        let inset = kZDMPadding * 1.0
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = margin
         flowLayout.minimumLineSpacing = margin
-        
+        flowLayout.headerReferenceSize = CGSize.init(width: kScreenWidth, height: 40)
+        flowLayout.sectionInset = UIEdgeInsets.init(top: inset * 0.7, left: 0, bottom: inset * 0.7, right: 0)
         
         let collectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = UIColor.white
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.contentInset = UIEdgeInsets.init(top: inset, left: inset, bottom: inset, right: inset)
+        collectionView.contentInset = UIEdgeInsets.init(top: inset, left: inset, bottom: 0, right: inset)
         collectionView.registerReuseCellClass(ZZSearchItem.self)
+        collectionView.registerReuseSectionHeaderViewClass(ZZSearchHeader.self)
         return collectionView
     }()
     
@@ -72,7 +74,14 @@ class ZZSearchViewController: ZZSecondBaseViewController {
 
 
 extension ZZSearchViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return dataSoucre.count
+        }
         return dataSoucre.count
     }
     
@@ -82,7 +91,24 @@ extension ZZSearchViewController: UICollectionViewDataSource {
         return cell
     }
     
-
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var reuseableView: ZZSearchHeader!
+        
+        if kind == UICollectionElementKindSectionHeader {
+            reuseableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NSStringFromClass(ZZSearchHeader.self), for: indexPath) as! ZZSearchHeader
+            if indexPath.section == 0 {
+                reuseableView.backgroundColor = kGlobalLightGrayColor
+                reuseableView.titleLabel.text = "全站热门搜索"
+                reuseableView.clearBtn.isHidden = true
+            } else {
+                reuseableView.titleLabel.text = "搜索历史"
+                reuseableView.clearBtn.isHidden = false
+            }
+            
+        }
+        
+        return reuseableView
+    }
 }
 
 extension ZZSearchViewController: UICollectionViewDelegateFlowLayout {

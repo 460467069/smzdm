@@ -23,6 +23,7 @@ let kGlobalBlueColor = UIColor.init(hexString: "#1F2F6C")
 let kGlobalLightGrayColor = UIColor.init(red: 234.0/255.0, green: 234.0/255.0, blue: 234.0/255.0, alpha: 1.0)
 
 let kLineSpacing: CGFloat = 5
+let kZDMPadding: CGFloat = 10
 
 
 @objc protocol ZZActionDelegate: NSObjectProtocol{

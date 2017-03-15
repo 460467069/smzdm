@@ -8,12 +8,58 @@
 
 import UIKit
 
+class ZZSearchHeader: UICollectionReusableView {
+    lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.textColor = kGlobalGrayColor
+        titleLabel.font = UIFont.systemFont(ofSize: 18)
+        return titleLabel
+    }()
+    
+    lazy var clearBtn: UIButton = {
+        let clearBtn = UIButton()
+        clearBtn.setTitleColor(kGlobalRedColor, for: .normal)
+        clearBtn.addTarget(self, action: #selector(clearBtnDidClick), for: .touchUpInside)
+        clearBtn.setTitle("清除历史", for: .normal)
+        return clearBtn
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+//        backgroundColor = UIColor.random()
+        setupUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupUI() {
+        addSubview(titleLabel)
+        addSubview(clearBtn)
+        
+        titleLabel.snp.makeConstraints { (make) in
+            make.centerY.left.equalTo(self)
+        }
+        clearBtn.snp.makeConstraints { (make) in
+            make.centerY.equalTo(titleLabel)
+            make.right.equalTo(self)
+        }
+    }
+    
+    func clearBtnDidClick(){
+        
+    }
+}
+
 class ZZSearchItem: UICollectionViewCell {
     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
-        titleLabel.textColor = UIColor.darkGray
         titleLabel.font = UIFont.systemFont(ofSize: 14)
-        titleLabel.backgroundColor = UIColor.white
+        titleLabel.backgroundColor = UIColor.random()
+        titleLabel.textAlignment = .center
+        titleLabel.layer.cornerRadius = 3.0
+        titleLabel.clipsToBounds = true
         return titleLabel
     }()
     
