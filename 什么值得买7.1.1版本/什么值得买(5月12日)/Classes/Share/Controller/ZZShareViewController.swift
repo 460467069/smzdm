@@ -88,7 +88,7 @@ class ZZShareViewController: UIViewController {
         
         
         let textField = UITextField()
-        textField.backgroundColor = UIColor.lightGray
+//        textField.backgroundColor = UIColor.lightGray
         view.addSubview(textField);
         textField.snp.makeConstraints { (make) in
             
