@@ -254,3 +254,9 @@ extension ZZAllCommentController{
     
 }
 
+extension ZZAllCommentController {
+    override func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return #imageLiteral(resourceName: "error_nodata")
+    }
+}
+

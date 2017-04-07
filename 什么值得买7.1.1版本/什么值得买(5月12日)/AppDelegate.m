@@ -51,7 +51,6 @@
     ZZTabBarViewController *tab = [[ZZTabBarViewController alloc] init];
     self.window.rootViewController = tab;
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 

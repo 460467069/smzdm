@@ -9,10 +9,8 @@
 #import "ZZSecondTableViewController.h"
 #import "ZZDIYHeader.h"
 #import "ZZDIYBackFooter.h"
-#import "UIScrollView+EmptyDataSet.h"
 
-
-@interface ZZSecondTableViewController ()<DZNEmptyDataSetSource>
+@interface ZZSecondTableViewController ()
 
 @end
 
@@ -49,6 +47,7 @@
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.emptyDataSetSource = self;
+    tableView.emptyDataSetDelegate = self;
     tableView.scrollsToTop = YES;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];

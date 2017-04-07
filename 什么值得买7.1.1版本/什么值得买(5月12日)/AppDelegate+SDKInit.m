@@ -21,6 +21,8 @@
 
 #import <JSPatchPlatform/JSPatch.h>
 
+#import <Bugly/Bugly.h>
+
 @implementation AppDelegate (SDKInit)
 
 - (void)SDKInit
@@ -101,7 +103,7 @@
     
     [JSPatch sync];
     
-    
+    [Bugly startWithAppId:kBuglyAppID];
     
 }
 

@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 private let collectionViewHeaderReuseID = "collectionViewHeaderReuseID"
 private let collectionViewHeight: CGFloat = 100
 private let goodsHeaderItemCount: CGFloat = 4
@@ -16,7 +15,6 @@ private let collectionViewTop: CGFloat = 19
 private let collectionViewLeft: CGFloat = 10
 private let collectionViewRight: CGFloat = 10
 private let collectionViewBottom: CGFloat = 15
-
 
 private let haowuCellOne = "ZZHaoWuCellOne"
 private let haowuCellThree = "ZZHaoWuCellThree"

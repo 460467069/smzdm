@@ -7,8 +7,10 @@
 //  二级主界面带tableView的控制器--->ZZSecondBaseViewController
 
 #import "ZZSecondBaseViewController.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
-@interface ZZSecondTableViewController : ZZSecondBaseViewController<UITableViewDelegate, UITableViewDataSource>
+
+@interface ZZSecondTableViewController : ZZSecondBaseViewController<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 
 @property(nonatomic, strong)NSMutableArray *dataSource;

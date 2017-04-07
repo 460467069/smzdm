@@ -7,8 +7,6 @@
 //
 
 #import "ZZCycleScrollView.h"
-#import <AVFoundation/AVFoundation.h>
-
 @implementation ZZCycleScrollView
 
 - (instancetype)initWithFrame:(CGRect)frame

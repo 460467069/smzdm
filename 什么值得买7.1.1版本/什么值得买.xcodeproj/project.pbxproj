@@ -16,6 +16,7 @@
 		A90DBF141DBF740900D857A9 /* UINavigationItem+Margin.m in Sources */ = {isa = PBXBuildFile; fileRef = A90DBF131DBF740900D857A9 /* UINavigationItem+Margin.m */; };
 		A90E6E3E1D39406B00C213C5 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E6E3D1D39406B00C213C5 /* YYFPSLabel.m */; };
 		A91655661DC1EB2400A713A4 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A91655651DC1EB2400A713A4 /* UINavigationBar+Awesome.m */; };
+		A918D7471E7EFF0F00FAC8FE /* ZZTest1.m in Sources */ = {isa = PBXBuildFile; fileRef = A918D7461E7EFF0F00FAC8FE /* ZZTest1.m */; };
 		A91A834E1D420A87008D229E /* weibo_0.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83461D420A87008D229E /* weibo_0.json */; };
 		A91A834F1D420A87008D229E /* weibo_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83471D420A87008D229E /* weibo_1.json */; };
 		A91A83501D420A87008D229E /* weibo_2.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83481D420A87008D229E /* weibo_2.json */; };
@@ -231,6 +232,8 @@
 		A915138F1E640DFF008F23C8 /* ZDM_RequestURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDM_RequestURL.h; sourceTree = "<group>"; };
 		A91655641DC1EB2400A713A4 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		A91655651DC1EB2400A713A4 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		A918D7451E7EFF0F00FAC8FE /* ZZTest1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTest1.h; sourceTree = "<group>"; };
+		A918D7461E7EFF0F00FAC8FE /* ZZTest1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZTest1.m; sourceTree = "<group>"; };
 		A91A83461D420A87008D229E /* weibo_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_0.json; sourceTree = "<group>"; };
 		A91A83471D420A87008D229E /* weibo_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_1.json; sourceTree = "<group>"; };
 		A91A83481D420A87008D229E /* weibo_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_2.json; sourceTree = "<group>"; };
@@ -1180,6 +1183,8 @@
 			children = (
 				A9D9D2191CE40B3E00A83101 /* AppDelegate.h */,
 				A9D9D21A1CE40B3E00A83101 /* AppDelegate.m */,
+				A918D7451E7EFF0F00FAC8FE /* ZZTest1.h */,
+				A918D7461E7EFF0F00FAC8FE /* ZZTest1.m */,
 				A96470AF1E49BCAA009198DA /* Person.xcdatamodeld */,
 				A93698471DC7A9A000D4B643 /* AppDelegate+SDKInit.h */,
 				A93698481DC7A9A000D4B643 /* AppDelegate+SDKInit.m */,
@@ -1774,6 +1779,7 @@
 				A9A03FDE1D1A726200675FA9 /* ZZWeiboTableView.m in Sources */,
 				86EA74FA1DCF19A100CD9261 /* ZZAllCommentController.swift in Sources */,
 				A947CCC01DE02FA30047B58F /* ZZDetailTopicViewController.m in Sources */,
+				A918D7471E7EFF0F00FAC8FE /* ZZTest1.m in Sources */,
 				A91A83581D420CFD008D229E /* WBModel.m in Sources */,
 				A947CD0B1DE02FCC0047B58F /* ZZHaoJiaViewController.m in Sources */,
 				A95605F61DA87E4C00473B46 /* ZZSwiftCommon.swift in Sources */,
@@ -1860,6 +1866,7 @@
 		A9D9D2281CE40B3E00A83101 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1906,6 +1913,7 @@
 		A9D9D2291CE40B3E00A83101 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

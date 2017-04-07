@@ -8,8 +8,85 @@
 
 import UIKit
 
-class ZZSearchViewController: ZZSecondBaseViewController {
+private class BGCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
+    var backgroundColor = UIColor.clear
     
+}
+
+class ZZSearchdBgDecorationView: UICollectionReusableView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = kGlobalLightGrayColor
+    }
+    
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+class ZZSearchFlowLayout: UICollectionViewFlowLayout {
+    var decorationViewAttrs = [UICollectionViewLayoutAttributes]()
+    
+    override init() {
+        super.init()
+        let margin: CGFloat = 15
+        let inset = kZDMPadding * 1.0
+        minimumInteritemSpacing = margin
+        minimumLineSpacing = margin
+        headerReferenceSize = CGSize.init(width: kScreenWidth, height: 40)
+        sectionInset = UIEdgeInsets.init(top: inset * 0.7, left: 0, bottom: inset * 0.7, right: 0)
+//        register(<#T##viewClass: AnyClass?##AnyClass?#>, forDecorationViewOfKind: <#T##String#>)
+        
+    }
+    
+    override func prepare() {
+        super.prepare()
+        guard let delegate = collectionView?.delegate as? ZZSearchFlowLayout else {
+            return
+        }
+        decorationViewAttrs.removeAll()
+//        var dictM = [];
+        guard let sectionCount = collectionView?.numberOfSections else {
+            return
+        }
+        var y: CGFloat = 0
+        let availableWidth: CGFloat = collectionViewContentSize.width - (sectionInset.left + sectionInset.right)
+        for section in 0..<sectionCount {
+            y += headerReferenceSize.height
+            y += sectionInset.top
+            
+            guard let itemCount = collectionView?.numberOfItems(inSection: sectionCount) else {
+                return
+            }
+            let firstAttr = layoutAttributesForItem(at: IndexPath.init(item: 0, section: section))
+            let lastAttr = layoutAttributesForItem(at: IndexPath.init(item: itemCount - 1, section: section))
+            let sectionSets = sectionInset
+//            if  {
+//                <#code#>
+//            }
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+        
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class ZZSearchViewController: ZZSecondBaseViewController {
+
     lazy var collectionView: UICollectionView = {
         let margin: CGFloat = 15
         let inset = kZDMPadding * 1.0
@@ -148,8 +225,6 @@ extension ZZSearchViewController {
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalTo(view)
         }
-    
-        
     }
     
     func loadData() {

@@ -48,13 +48,9 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-
-    
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    
-    
     //初始化底部工具栏
     [self initialBottomToolBar];
     
@@ -173,7 +169,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     self.navigationItem.leftMargin = -12;
     
 
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[rightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailRightBtnDidClick)];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[rightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailRightBtnDidClick1)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     self.navigationItem.rightMargin = -12;
 

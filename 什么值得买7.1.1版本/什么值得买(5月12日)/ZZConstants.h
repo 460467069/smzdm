@@ -53,6 +53,7 @@
 // JSPatch
 #define kJSPatchKey                 @"c9cdea7d8f31f8e6"
 
+#define kBuglyAppID                 @"6fe4143c26"
 
 
 #endif /* ZZConstants_h */
