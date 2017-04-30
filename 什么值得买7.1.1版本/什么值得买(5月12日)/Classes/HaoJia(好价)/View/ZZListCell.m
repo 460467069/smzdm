@@ -105,7 +105,7 @@
         }else{
             CGFloat ratio = worthy * 1.0 / (worthy + unWorthy);
             //            LxDBAnyVar(ratio);
-            [self.zhiBtn setTitle:[NSString stringFromFloat:ratio] forState:UIControlStateNormal];
+            [self.zhiBtn setTitle:[NSString zz_stringFromFloat:ratio] forState:UIControlStateNormal];
         }
         
         

@@ -27,14 +27,14 @@ class ZZSearchHeader: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 //        backgroundColor = UIColor.random()
-        setupUI()
+        initUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupUI() {
+    func initUI() {
         addSubview(titleLabel)
         addSubview(clearBtn)
         
@@ -56,7 +56,7 @@ class ZZSearchItem: UICollectionViewCell {
     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 14)
-        titleLabel.backgroundColor = UIColor.random()
+        titleLabel.backgroundColor = UIColor.zz_random()
         titleLabel.textAlignment = .center
         titleLabel.layer.cornerRadius = 3.0
         titleLabel.clipsToBounds = true

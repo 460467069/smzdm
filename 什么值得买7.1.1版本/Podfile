@@ -29,6 +29,7 @@ target '什么值得买' do
   pod 'WebViewJavascriptBridge'
   pod 'IQKeyboardManagerSwift'
   pod 'Bugly'
+  pod 'SDiPhoneVersion'
 #  pod 'SwipeTableView'
   # 主模块(必须)
   pod 'ShareSDK3'

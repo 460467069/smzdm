@@ -98,9 +98,9 @@ class ZZHaoWuCellThree: ZZHaoWuBaseCell {
 
 extension ZZHaoWuCellThree {
     
-    override func setupUI(){
+    override func initUI(){
         
-        super.setupUI()
+        super.initUI()
         
         scrollView.height = haoWuConstant.itemHeight3
         scrollView.width = kScreenWidth - haoWuConstant.itemRightMargin - haoWuConstant.itemMargin

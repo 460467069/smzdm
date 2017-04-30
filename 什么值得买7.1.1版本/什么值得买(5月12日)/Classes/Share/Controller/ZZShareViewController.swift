@@ -45,7 +45,7 @@ class ZZShareViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupUI()
+        initUI()
 
         NotificationCenter.default.addObserver(self, selector: #selector(closBtnDidClick), name: NSNotification.Name(rawValue: "maskBtnDidClick"), object: self)
         
@@ -53,7 +53,7 @@ class ZZShareViewController: UIViewController {
     }
     
     
-    func setupUI(){
+    func initUI(){
         
         view.backgroundColor = UIColor.white
         

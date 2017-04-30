@@ -10,7 +10,7 @@
 
 @interface ZZSecondBaseViewController : UIViewController
 
-- (void)setupUI;
-- (void)setupNav;
+- (void)initUI;
+- (void)initNavBar;
 
 @end

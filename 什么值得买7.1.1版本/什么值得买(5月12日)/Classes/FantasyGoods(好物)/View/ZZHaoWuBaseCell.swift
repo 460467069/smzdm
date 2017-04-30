@@ -55,7 +55,7 @@ class ZZHaoWuBaseCell: UITableViewCell {
         
         contentView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        setupUI()
+        initUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -75,7 +75,7 @@ class ZZHaoWuBaseCell: UITableViewCell {
 
 extension ZZHaoWuBaseCell {
     
-    func setupUI() {
+    func initUI() {
         contentView.addSubview(scrollView)
     }
     

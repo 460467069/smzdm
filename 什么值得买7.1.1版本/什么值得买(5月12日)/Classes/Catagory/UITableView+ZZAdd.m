@@ -14,6 +14,12 @@
 }
 @end
 
+@implementation UICollectionViewCell (ZZAdd)
++ (NSString *_Nonnull)reuseIdentifier {
+    return NSStringFromClass([self class]);
+}
+@end
+
 @implementation UITableView (ZZAdd)
 
 - (void)registerReuseCellClass:(nullable Class)class {

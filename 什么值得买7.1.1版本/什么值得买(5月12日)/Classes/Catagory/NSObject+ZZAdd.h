@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 @interface NSObject (ZZAdd)
 
+- (BOOL)zz_isEmpty;
 
 @end

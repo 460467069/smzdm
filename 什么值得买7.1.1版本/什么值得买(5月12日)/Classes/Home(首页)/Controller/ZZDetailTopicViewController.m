@@ -42,7 +42,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     [super viewWillAppear:animated];
     
     [self.navigationController.navigationBar lt_setBackgroundColor:kGlobalLightGrayColor];
-    [self setupNavigation];
+    [self initNavBarigation];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -51,7 +51,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
     
 }
 
-- (void)setupNavigation{
+- (void)initNavBarigation{
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"SM_Detail_BackSecond"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(detailLeftBtnDidClick)];
     // 后退按钮距离图片距离左边边距
     UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];

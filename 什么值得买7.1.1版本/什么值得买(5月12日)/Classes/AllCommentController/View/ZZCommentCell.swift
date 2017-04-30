@@ -33,7 +33,7 @@ class ZZCommentCell: UITableViewCell {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        setupUI()
+        initUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -64,7 +64,7 @@ class ZZCommentCell: UITableViewCell {
 
 extension ZZCommentCell{
 
-    func setupUI(){
+    func initUI(){
         
         contentView.addSubview(parentCommentLabel)
         contentView.addSubview(separatorLine)

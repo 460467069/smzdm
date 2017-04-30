@@ -135,7 +135,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 //    _webView.scrollView.delegate = self;
     
     _webView.scrollView.scrollEnabled = NO;
-    _webView.backgroundColor = [UIColor randomColor];
+    _webView.backgroundColor = [UIColor zz_randomColor];
     [_containerScrollView addSubview:_webView];
 }
 

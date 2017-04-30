@@ -28,7 +28,7 @@ class ZZCommentFooterView: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         
         super.init(reuseIdentifier: reuseIdentifier)
-        self.setupUI()
+        self.initUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,7 +36,7 @@ class ZZCommentFooterView: UITableViewHeaderFooterView {
     }
     
     
-    func setupUI(){
+    func initUI(){
         
         contentView.addSubview(mainCommentLabel)
         

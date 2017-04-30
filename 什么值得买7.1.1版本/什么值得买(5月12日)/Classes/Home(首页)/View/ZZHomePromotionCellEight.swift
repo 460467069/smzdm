@@ -13,7 +13,7 @@ class ZZHomePromotionItemEight: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.backgroundColor = UIColor.random()
+        imageView.backgroundColor = UIColor.zz_random()
         return imageView
     }()
     
@@ -104,7 +104,7 @@ class ZZHomePromotionCellEight: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupUI()
+        initUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -129,7 +129,7 @@ class ZZHomePromotionCellEight: UITableViewCell {
         }
     }
     
-    func setupUI() {
+    func initUI() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(lineLabel)
         contentView.addSubview(collectionView)

@@ -36,6 +36,7 @@ PODS:
   - RongCloudIM/IMLib (2.8.0)
   - SDCycleScrollView (1.65):
     - SDWebImage (~> 3.7)
+  - SDiPhoneVersion (1.1.2)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - RongCloudIM/IMKit (= 2.8.0)
   - RongCloudIM/IMLib (= 2.8.0)
   - SDCycleScrollView
+  - SDiPhoneVersion
   - SDWebImage
   - ShareSDK3
   - ShareSDK3/ShareSDKExtension
@@ -109,6 +111,7 @@ SPEC CHECKSUMS:
   MOBFoundation: fa12570bb16a7655dca3b3472ce6cd962e7ff5e3
   RongCloudIM: 82a5fcf93027ef2845063e6d5ba77f9f42eb87a5
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDiPhoneVersion: c52245ccaab8142701e2e7fb8f0391ba3f255b76
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   ShareSDK3: 3c531b5e64576e4b947127b9b1f46b685dfa3b37
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
@@ -118,6 +121,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: 63c1fec7fbfa9f57d23ba50c603cce755b7326ee
+PODFILE CHECKSUM: eb785dfd4a4f72ad257a96ef3288feac34f53d56
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

@@ -150,7 +150,7 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         
         super.init(reuseIdentifier: reuseIdentifier)
-        self.setupUI()
+        self.initUI()
     }
 
     
@@ -159,7 +159,7 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
     }
     
     
-    func setupUI(){
+    func initUI(){
         
         floorView.addSubview(floorLabel)
         

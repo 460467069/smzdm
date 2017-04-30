@@ -15,7 +15,7 @@
 #import "ZZNetworkHandler.h"
 #import <WeiboSDK.h>
 #import "AppDelegate+SDKInit.h"
-#import "NSString+ZZBound.h"
+#import "NSString+ZZAdd.h"
 #import "NSTimer+ZZAdd.h"
 #import <SDWebImage/UIView+WebCacheOperation.h>
 #import <IQKeyboardManagerSwift/IQKeyboardManagerSwift-Swift.h>

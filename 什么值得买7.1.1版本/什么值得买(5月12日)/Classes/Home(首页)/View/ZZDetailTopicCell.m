@@ -92,7 +92,7 @@
 
         
         _supportBtn = [[UIButton alloc] init];
-        _supportBtn.backgroundColor = [UIColor randomColor];
+        _supportBtn.backgroundColor = [UIColor zz_randomColor];
 //        [self addSubview:_supportBtn];
         [_supportBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         [_supportBtn setImage:[UIImage imageNamed:@"ico_zan"] forState:UIControlStateNormal];

@@ -17,7 +17,7 @@ class ZZGoodsHeaderCell: UICollectionViewCell {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-        setupUI()
+        initUI()
     
     }
     
@@ -39,7 +39,7 @@ class ZZGoodsHeaderCell: UICollectionViewCell {
 
 extension ZZGoodsHeaderCell{
     
-    func setupUI(){
+    func initUI(){
         addSubview(iconView)
         addSubview(titleLabel)
         

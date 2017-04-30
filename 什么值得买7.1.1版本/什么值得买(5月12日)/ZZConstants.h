@@ -46,7 +46,7 @@
 #define kShareWeChatKey             @"wx428cb93c44cf6e7f"
 #define kShareWeChatSecret          @"9a060eff2d92b3f1b0fbc180fa334957"
 
-//微信
+//QQ
 #define kShareTencentKey            @"fEiiO0nLREbY1Hop"
 #define kShareTencentSecret         @"9a060eff2d92b3f1b0fbc180fa334957"
 
@@ -54,6 +54,52 @@
 #define kJSPatchKey                 @"c9cdea7d8f31f8e6"
 
 #define kBuglyAppID                 @"6fe4143c26"
+
+
+static inline NSString * OPTEncryptKey() {
+    /**
+     *  加密流程:
+     *  1. 将密钥随机插入空格后转换为十六进制
+     *  2. 将转换后的十六进制字符串做 Base64 加密
+     *
+     *  解密流程:
+     *  1. 将密钥做 Base64 解密
+     *  2. 移除随机插入的空格
+     *  3. 将十六进制转为 NSString.
+     *
+     *  https://www.branah.com/ascii-converter
+     */
+    
+    static NSString *returnedKey = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *key = @"MzIyMDM2MjA2NTYyMzgzMzY2MjAzMDM3MzMyMDY2NjUzNDYyMzE2MTYxMjAzNjY1MzEzNTY0MzYzMzIwMzY2NDIwMzU2MjIwMzMzODY0MjA2Ng==";
+        NSData *base64Data = [[NSData alloc] initWithBase64EncodedString:key options:0];
+        NSString *decodedString = [[NSString alloc] initWithData:base64Data encoding:NSUTF8StringEncoding];
+        NSString *hexedString = [decodedString stringByReplacingOccurrencesOfString:@"20" withString:@""];
+        
+        if (([hexedString length] % 2) != 0) {
+            return;
+        }
+        
+        NSMutableString *string = [NSMutableString string];
+        
+        for (NSInteger i = 0; i < [hexedString length]; i += 2) {
+            NSString *hex = [hexedString substringWithRange:NSMakeRange(i, 2)];
+            NSInteger decimalValue = 0;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wformat"
+            sscanf([hex UTF8String], "%x", &decimalValue);
+            [string appendFormat:@"%c", decimalValue];
+#pragma clang diagnostic pop
+        }
+        
+        returnedKey = [string copy];
+    });
+    
+    return returnedKey;
+}
+
 
 
 #endif /* ZZConstants_h */

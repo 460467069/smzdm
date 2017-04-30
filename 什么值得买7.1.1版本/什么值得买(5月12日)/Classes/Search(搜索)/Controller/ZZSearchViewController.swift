@@ -137,8 +137,8 @@ class ZZSearchViewController: ZZSecondBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        setupNav()
+        initUI()
+        initNavBar()
         loadData()
         textFiled.becomeFirstResponder()
     }
@@ -212,14 +212,14 @@ extension ZZSearchViewController {
         }
     }
     
-    override func setupNav() {
+    override func initNavBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "取消", style: .plain, target: self, action: #selector(cancelBtnDidClick))
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: textFiled)
         
         
     }
     
-    override func setupUI() {
+    override func initUI() {
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in

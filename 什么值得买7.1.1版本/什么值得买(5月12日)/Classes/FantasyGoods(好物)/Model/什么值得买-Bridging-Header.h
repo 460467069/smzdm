@@ -8,7 +8,6 @@
 #import "ZZDetailTopicViewController.h"
 #import "ZZContentHeader.h"
 #import "ZZCycleScrollView.h"
-#import "UIColor+HEX.h"
 #import "ZZCyclePicHelper.h"
 #import "ZZSecondCollectionViewController.h"
 #import "ZZWorthyArticle.h"
@@ -17,7 +16,6 @@
 #import "ZZDetailArticleViewController.h"
 #import "ZZPureWebViewController.h"
 #import <ShareSDK/ShareSDK.h>
-#import "UIButton+EdgeInsets.h"
 #import "PrefixHeader.pch"
 #import "ZZBaseRequest.h"
 #import "ZDM_RequestURL.h"

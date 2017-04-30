@@ -103,14 +103,14 @@ class ZZBaiCaiJingXuanView: UIView {
         
         width = kScreenWidth
         height = baiCaiConstant.rowHeight1
-        setupUI()
+        initUI()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupUI(){
+    func initUI(){
         
         addSubview(baiCaiBannerView)
         addSubview(scrollView)
@@ -234,7 +234,7 @@ class ZZBaiCaiTableHeaderView: UIView {
 //        backgroundColor = UIColor.random()
         width = kScreenWidth
         
-        setupUI()
+        initUI()
     }
 
 
@@ -242,7 +242,7 @@ class ZZBaiCaiTableHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupUI(){
+    func initUI(){
         
         
         addSubview(jingXuanView)

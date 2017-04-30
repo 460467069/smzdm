@@ -127,8 +127,8 @@ class ZZHaoWuCellOne: ZZHaoWuBaseCell {
 
 extension ZZHaoWuCellOne {
     
-    override func setupUI() {
-        super.setupUI()
+    override func initUI() {
+        super.initUI()
         contentView.addSubview(headImageView)
         scrollView.top = headImageView.bottom
         scrollView.height = haoWuConstant.itemHeight1

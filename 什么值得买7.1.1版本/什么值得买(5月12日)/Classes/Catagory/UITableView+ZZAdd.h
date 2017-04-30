@@ -15,6 +15,12 @@
 
 @end
 
+@interface UICollectionViewCell (ZZAdd)
+
++ (NSString *_Nonnull)reuseIdentifier;
+
+@end
+
 @interface UITableView (ZZAdd)
 
 - (void)registerReuseCellClass:(nullable Class)class;
