@@ -21,9 +21,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -34,5 +31,9 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setBarTintColor:kGlobalRedColor];
 }
+
+- (void)initUI {}
+- (void)initNavBar {}
+- (void)setupDatasource {}
 
 @end

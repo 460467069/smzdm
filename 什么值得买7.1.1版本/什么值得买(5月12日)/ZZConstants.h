@@ -53,8 +53,8 @@
 // JSPatch
 #define kJSPatchKey                 @"c9cdea7d8f31f8e6"
 
-#define kBuglyAppID                 @"6fe4143c26"
-
+#define kBuglyAppID                 @"c336b9bd5c"
+#define kBuglyAppKey                @"4edefee5-e863-4aec-a7d9-c87174a01e1b"
 
 static inline NSString * OPTEncryptKey() {
     /**

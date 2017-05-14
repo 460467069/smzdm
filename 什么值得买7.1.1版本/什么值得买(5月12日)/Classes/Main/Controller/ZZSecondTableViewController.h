@@ -11,17 +11,16 @@
 
 
 @interface ZZSecondTableViewController : ZZSecondBaseViewController<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
-@property (nonatomic, strong) UITableView *tableView;
 
-@property(nonatomic, strong)NSMutableArray *dataSource;
-
-@property (nonatomic, strong) UIColor *tableViewColor;
-
+@property (nonatomic, strong  ) UITableView      *tableView;
+@property (nonatomic, strong  ) NSMutableArray   *dataSource;
+@property (nonatomic, strong  ) UIColor          *tableViewColor;
+@property (nonatomic, readonly) UITableViewStyle style;
 /** 请求参数页码 */
 @property (nonatomic, assign) NSInteger page;
-
 /** 请求参数offset */
 @property (nonatomic, assign) NSInteger offset;
+
 /** 下拉 */
 - (void)loadData;
 /** 上拉 */

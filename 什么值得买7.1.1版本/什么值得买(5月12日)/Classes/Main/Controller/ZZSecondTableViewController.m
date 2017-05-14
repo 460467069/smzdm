@@ -11,51 +11,27 @@
 #import "ZZDIYBackFooter.h"
 
 @interface ZZSecondTableViewController ()
-
+@property (nonatomic, readwrite) UITableViewStyle style;
 @end
 
 @implementation ZZSecondTableViewController
 
-- (instancetype)initWithStyle:(UITableViewStyle)style{
-    if (self = [super init]) {
-        
-        [self tableViewInitialWithStyle:style];
-    }
-    return self;
+- (instancetype)init {
+    return [self initWithStyle:UITableViewStyleGrouped];
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        [self tableViewInitialWithStyle:UITableViewStyleGrouped];
+- (instancetype)initWithStyle:(UITableViewStyle)style{
+    if (self = [super init]) {
+        _style = style;
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self refreshHeaderAndFooterInitial];
 }
 
-/** 初始化tableView */
-- (void)tableViewInitialWithStyle:(UITableViewStyle)style {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:style];
-    self.tableView = tableView;
-    tableView.backgroundColor = [UIColor whiteColor];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    tableView.emptyDataSetSource = self;
-    tableView.emptyDataSetDelegate = self;
-    tableView.scrollsToTop = YES;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:tableView];
-    
-    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
-    }];
-}
 
 - (NSMutableDictionary *)configureParameters{
     return [NSMutableDictionary dictionary];
@@ -67,11 +43,8 @@
 - (void)refreshHeaderAndFooterInitial {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     self.tableView.mj_header = [ZZDIYHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
-    
-    
     self.tableView.mj_footer = [ZZDIYBackFooter footerWithRefreshingTarget:self
                                                           refreshingAction:@selector(loadMoreData)];
-    
     [self.tableView.mj_header beginRefreshing];
     
 }
@@ -136,6 +109,27 @@
     self.tableView.backgroundColor = tableViewColor;
     self.tableView.mj_footer.backgroundColor = tableViewColor;
     self.tableView.mj_header.backgroundColor = tableViewColor;
+}
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:self.style];
+        tableView.backgroundColor = [UIColor whiteColor];
+        tableView.dataSource = self;
+        tableView.delegate = self;
+        tableView.emptyDataSetSource = self;
+        tableView.emptyDataSetDelegate = self;
+        tableView.scrollsToTop = YES;
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [self.view addSubview:tableView];
+        
+        [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsZero);
+        }];
+        
+        _tableView = tableView;
+    }
+    return _tableView;
 }
 
 @end

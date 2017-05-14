@@ -110,6 +110,7 @@ struct ZZCommentConstant {
         // 用户所获取的勋章
         meadlContentWidth = (medalViewWidth + medalMargin) * CGFloat(maxMedals)
         
+        YYScreenSize()
         //父评论部分
         parentCommentViewLeft = avatarLeft + avatarWH + nickNameLeft
         parentCommentViewWidth = kScreenWidth - parentCommentViewLeft - parentCommentViewRight

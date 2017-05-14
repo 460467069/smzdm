@@ -12,5 +12,5 @@
 
 - (void)initUI;
 - (void)initNavBar;
-
+- (void)setupDatasource;
 @end

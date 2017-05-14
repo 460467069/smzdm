@@ -125,8 +125,8 @@ class ZZSearchViewController: ZZSecondBaseViewController {
         return textFiled
     }()
     
-    lazy var searchRequest: ZZSearchRequest = {
-        let searchRequest = ZZSearchRequest()
+    lazy var searchRequest: ZZSearchHotTagRequest = {
+        let searchRequest = ZZSearchHotTagRequest()
         return searchRequest
     }()
     
@@ -182,8 +182,7 @@ extension ZZSearchViewController: UICollectionViewDataSource {
                 reuseableView.clearBtn.isHidden = false
             }
             
-        }
-        
+        }        
         return reuseableView
     }
 }
@@ -201,7 +200,12 @@ extension ZZSearchViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        weak var weakSelf = self
+        let searchModel = dataSoucre[indexPath.item]
         
+        let searchResultVc = ZZSearchResultController()
+        searchResultVc.searchModel = searchModel
+        weakSelf?.navigationController?.pushViewController(searchResultVc, animated: true)
     }
 }
 

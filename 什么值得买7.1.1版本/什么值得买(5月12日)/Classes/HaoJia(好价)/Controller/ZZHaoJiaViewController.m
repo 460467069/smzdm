@@ -27,7 +27,6 @@
 
 /** 控制器缓存 key 频道名字  value是控制器 */
 @property (nonatomic, strong) NSMutableDictionary *controllerCache;
-
 /** 红色下划线 */
 @property (weak, nonatomic) UIImageView *lineView;
 /** 标记按钮 */
@@ -48,7 +47,6 @@
     [self configureCollectionView];
     
     dispatch_async(dispatch_get_main_queue(), ^{ //默认选中"精选"
-       
         [self titleBtnDidClick:self.titleBtnArray[1]];
     });
 }
@@ -151,9 +149,6 @@
     ZZHomeChannel *channel = self.dataArray[indexPath.item];
     ZZContentViewController *contentVc = [self controllerWithChannel:channel];
     cell.contentController = contentVc;
-    
-    LxDBAnyVar(indexPath.item);
-    
     return cell;
 }
 
@@ -162,16 +157,12 @@
 - (ZZContentViewController *)controllerWithChannel:(ZZHomeChannel *)channel{
     //先判断缓存中有没有, 没有的话就自己创建
     ZZContentViewController *contentController = [self.controllerCache objectForKey:channel.title];
-    
     if (!contentController) {
         contentController = [[UIStoryboard storyboardWithName:@"ZZContentViewController" bundle:nil] instantiateInitialViewController];
-        
         contentController.homeChannel = channel;
         [self.controllerCache setObject:contentController forKey:channel.title];
-        
         [self addChildViewController:contentController];
     }
-    
     return contentController;
     
 }
@@ -179,9 +170,7 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSInteger index = scrollView.contentOffset.x / scrollView.mj_w;
-    
     [self titleBtnDidClick:self.titleBtnArray[index]];
-    
 }
 
 #pragma mark - getter / setter

@@ -286,8 +286,7 @@
 }
 
 #pragma mark - getter && setter
-- (NSMutableArray *)listArrayM
-{
+- (NSMutableArray *)listArrayM {
 	if (!_listArrayM){
         _listArrayM = [NSMutableArray array];
 	}

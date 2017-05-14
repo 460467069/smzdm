@@ -35,5 +35,6 @@ static NSString * const kZDM_HaoWu_TopicList = @"v1/haowu/haowu_topic_list";    
 
 /** 搜索 */
 static NSString * const kZDM_Search_HotTags = @"v2/filter/tags/hot_tags";                   /**< 热门标签 */
+static NSString * const kZDM_Search         = @"/v1/list";                                  /**< 搜索 */
 
 #endif /* ZDM_RequestURL_h */

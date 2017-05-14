@@ -23,7 +23,6 @@ class ZZGoodsHeaderLayout: UICollectionViewFlowLayout {
     
     override func prepare() {
         super.prepare()
-        
         minimumLineSpacing = 0
         minimumInteritemSpacing = 15
         let itemWidth = ((collectionView?.width)! - (collectionView?.contentInset.left)! - (collectionView?.contentInset.right)! - (goodsHeaderItemCount - 1) * minimumInteritemSpacing ) / goodsHeaderItemCount
@@ -126,11 +125,9 @@ extension ZZFantasticGoodsController:UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewHeaderReuseID, for: indexPath) as! ZZGoodsHeaderCell
         
         cell.goodsHeaderModel = headerDataArray[indexPath.item]
-        
         return cell
     }
     

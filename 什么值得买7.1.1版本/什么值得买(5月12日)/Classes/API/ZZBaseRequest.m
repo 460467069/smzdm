@@ -8,13 +8,9 @@
 
 #import "ZZBaseRequest.h"
 
-//[parameters setValue:@"iphone" forKey:@"f"];
-//[parameters setValue:@"7.1.1" forKey:@"v"];
-//[parameters setValue:@"1" forKey:@"weixin"];
 @implementation ZZBaseRequest
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _f = kZDM_Platform;

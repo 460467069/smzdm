@@ -16,8 +16,7 @@ class ZZFantasticGoodsRequest: ZZBaseRequest {
         limit = 20
         offset = 0
         super.init()
-        urlStr = kZDM_HaoWu_TopicList
-        
+        urlStr = kZDM_HaoWu_TopicList 
     }
 }
 

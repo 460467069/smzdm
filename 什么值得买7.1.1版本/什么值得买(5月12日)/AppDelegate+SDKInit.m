@@ -103,7 +103,9 @@
     
     [JSPatch sync];
     
-    [Bugly startWithAppId:kBuglyAppID];
+    BuglyConfig *buglyconfig = [[BuglyConfig alloc] init];
+    buglyconfig.debugMode = YES;
+    [Bugly startWithAppId:kBuglyAppID config:buglyconfig];
     
 }
 

@@ -9,17 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "ZZBaseRequest.h"
 
+
 @import AFNetworking;
 
-typedef void(^HttpCompletionBlcok)(id _Nullable responseObj,  NSError * _Nullable error);
+NS_ASSUME_NONNULL_BEGIN
+
+typedef void(^HttpCompletionBlcok)(id _Nullable responseObj, NSError * _Nullable error);
 @interface ZZAPPDotNetAPIClient : AFHTTPSessionManager
 
 + (instancetype _Nonnull)sharedClient;
 
-- (NSURLSessionDataTask * _Nonnull)GET:(ZZBaseRequest * _Nonnull)request completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
+- (NSURLSessionDataTask *)GET:(ZZBaseRequest *)request completionBlock:(HttpCompletionBlcok)completionBlock;
 
-- (NSURLSessionDataTask * _Nonnull)GET:(NSString * _Nonnull)URLString parameters:(NSMutableDictionary * _Nonnull)parameters completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
+- (NSURLSessionDataTask *)GET:(NSString *)URLString parameters:(NSMutableDictionary * _Nullable)parameters completionBlock:(HttpCompletionBlcok)completionBlock;
 
-+ (NSURLSessionDataTask * _Nonnull)Get:( NSString * _Nonnull)URLString parameters:(NSMutableDictionary * _Nonnull)parameters completionBlock:(_Nonnull HttpCompletionBlcok)completionBlock;
++ (NSURLSessionDataTask *)Get:(NSString *)URLString parameters:(NSMutableDictionary * _Nullable)parameters completionBlock:(HttpCompletionBlcok)completionBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

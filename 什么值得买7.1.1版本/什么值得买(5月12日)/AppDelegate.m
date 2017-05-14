@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ZZTabBarViewController.h"
 #import "ZZUserAccount.h"
-#import<libkern/OSAtomic.h>
+#import <libkern/OSAtomic.h>
 #import <RongIMKit/RongIMKit.h>
 #import "ZZGlobalApperance.h"
 #import "ZZNetworkHandler.h"
@@ -19,8 +19,6 @@
 #import "NSTimer+ZZAdd.h"
 #import <SDWebImage/UIView+WebCacheOperation.h>
 #import <IQKeyboardManagerSwift/IQKeyboardManagerSwift-Swift.h>
-
-
 
 @interface AppDelegate ()<WeiboSDKDelegate>
 
@@ -55,7 +53,6 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    
     
 }
 
@@ -99,17 +96,11 @@
 
 #pragma mark - WeiboSDKDelegate
 - (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
-    
     if ([response isKindOfClass:[WBAuthorizeResponse class]]) {
-        
         WBAuthorizeResponse *authorizeResponse = (WBAuthorizeResponse *)response;
-        
         NSDictionary *dict = authorizeResponse.mj_keyValues;
-        
         ZZUserAccount *userAccount = [ZZUserAccount mj_objectWithKeyValues:dict];
-        
         [NSKeyedArchiver archiveRootObject:userAccount toFile:kAccountPath];
-        
         [[NSNotificationCenter defaultCenter] postNotificationName:ZZUserAccountDidHandleUserDataNotification object:nil];
     }
     
