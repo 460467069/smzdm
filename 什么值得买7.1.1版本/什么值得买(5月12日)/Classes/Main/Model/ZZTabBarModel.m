@@ -12,8 +12,6 @@
 
 
 + (NSArray *)tabBarModels {
-    
-    
     //根据mainBundle下的plist文件名转成模型数组
     return [self mj_objectArrayWithFilename:@"UITabBar.plist"];
     

@@ -86,8 +86,6 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     cycleTextView.delegate = self;
     [cycleTextContentView addSubview:cycleTextView];
     self.cycleTextView = cycleTextView;
-
-
     
     //littleBanner
     ZZLittleBannerLayout *layout = [[ZZLittleBannerLayout alloc] init];

@@ -12,14 +12,9 @@
 
 + (NSString *)randomRefreshTip{
     
-    NSData *data = [NSData dataNamed:@"RefreshTips.geojson"];
-    
+    NSData *data       = [NSData dataNamed:@"RefreshTips.geojson"];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-    
-    NSArray *array = dict[@"fresh_tips"];
-
+    NSArray *array     = dict[@"fresh_tips"];
     return [array randomObject];
-    
-    
 }
 @end

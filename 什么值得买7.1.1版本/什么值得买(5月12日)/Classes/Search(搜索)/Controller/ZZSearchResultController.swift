@@ -26,7 +26,6 @@ class ZZSearchResultController: ZZSecondTableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }
 
 extension ZZSearchResultController {
@@ -74,6 +73,7 @@ extension ZZSearchResultController {
                     weakSelf?.searchRequest.offset = listArray.count
                     weakSelf?.tableView.reloadData()
             }
+            
         }
     }
     

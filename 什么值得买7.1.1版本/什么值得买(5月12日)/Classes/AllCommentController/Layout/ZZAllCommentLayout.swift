@@ -13,7 +13,6 @@ struct ZZCommentConstant {
     
     let footerBottomHeight: CGFloat = 15
     
-    
     //昵称一行相同属性
     let nickNameHeight: CGFloat = 20    //这一行所有控件的高度
     let nickNameTop: CGFloat = 15

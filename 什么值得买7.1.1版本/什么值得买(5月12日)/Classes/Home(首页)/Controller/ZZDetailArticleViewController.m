@@ -336,8 +336,6 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-    
     [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Back"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_Right"] titleColor:[UIColor clearColor]];
     
     CGFloat offsetY = scrollView.contentOffset.y;

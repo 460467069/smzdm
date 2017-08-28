@@ -14,23 +14,19 @@
 {
     self = [super init];
     if (self) {
-        
         self.minimumLineSpacing = kLitterBannerViewInset;
-        self.minimumInteritemSpacing = kLitterBannerViewInset;
+        self.minimumInteritemSpacing = kMinimumInteritemSpacing;
         
     }
     return self;
 }
 
-
 - (void)prepareLayout{
     [super prepareLayout];
     NSInteger count = 5;
-    CGFloat itemWidth = (self.collectionView.width -  self.collectionView.contentInset.left - self.collectionView.contentInset.right - (count - 1) * kLitterBannerViewInset) / count;
+    CGFloat itemWidth = (self.collectionView.width -  self.collectionView.contentInset.left - self.collectionView.contentInset.right - (count - 1) * kMinimumInteritemSpacing) / count;
     CGFloat itemHeight = (self.collectionView.height - self.collectionView.contentInset.bottom - self.collectionView.contentInset.top - kLitterBannerViewInset) * 0.5;
     self.itemSize = CGSizeMake(itemWidth, itemHeight);
-    
-    
 }
 
 

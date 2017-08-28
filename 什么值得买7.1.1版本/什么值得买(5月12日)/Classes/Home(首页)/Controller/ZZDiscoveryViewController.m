@@ -154,7 +154,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 
     [parameters setValue:[NSString stringWithFormat:@"%@", @(self.page)] forKey:@"page"];
     [parameters setValue:@"18" forKey:@"channel_id"];
-    [parameters setValue:@"GzmoWix39BJ3ZyoK92%252FGIBxoD0aQU0E3Kz%252Buf8lEciVCB5BAUN91UA%253D%253D" forKey:@"device_id"];
+    [parameters setValue:kDeviceID forKey:@"device_id"];
     return parameters;
 }
 
@@ -208,7 +208,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
     if (indexPath.section == 0) {
         ZZHomeFirstLayout *layout = self.dataSource[indexPath.row];
         return layout.height;
-    }else{
+    } else {
         ZZWorthyArticle *article = self.listArrayM[indexPath.row];
         NSInteger channelID = [article.article_channel_id integerValue];
         if (channelID == 8 || channelID == 11 || channelID == 14) {

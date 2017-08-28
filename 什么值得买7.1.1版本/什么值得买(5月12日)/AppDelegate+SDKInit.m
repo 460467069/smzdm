@@ -86,8 +86,7 @@
      *  @param connectHandler           导入回调处理，当某个平台的功能需要依赖原平台提供的SDK支持时，需要在此方法中对原平台SDK进行导入操作。具体的导入方式可以参考ShareSDKConnector.framework中所提供的方法。
      *  @param configurationHandler     配置回调处理，在此方法中根据设置的platformType来填充应用配置信息
      */
-    [ShareSDK registerApp:kShareSDKKey activePlatforms:platforms onImport:importHandler onConfiguration:configurationHandler];
-    
+    [ShareSDK registerActivePlatforms:platforms onImport:importHandler onConfiguration:configurationHandler];
     
     //用来检测回调的状态，是更新或者是执行脚本之类的，相关信息，会打印在你的控制台
     [JSPatch setupCallback:^(JPCallbackType type, NSDictionary *data, NSError *error) {

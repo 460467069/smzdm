@@ -10,7 +10,7 @@
 #define ZDM_RequestURL_h
 
 #define kBaseURL        @"https://api.smzdm.com"
-#define kDeviceID       @"TzW%2FVevz7Dp7Azd2VXf5G0oGdaah4U3N4HBRTyQ58I0YInj0WqarAQ%3D%3D"
+#define kDeviceID       @"u2n7E7g8GN614PhgRRMTDF9mLo7nKcI/2MZzQ5N8TCijPn9NXBbmkw=="
 #define kSMZDMID        @"7768066096"
 
 static NSString * const kZDM_Platform = @"iphone";

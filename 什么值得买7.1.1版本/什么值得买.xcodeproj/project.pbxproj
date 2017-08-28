@@ -124,10 +124,6 @@
 		A980A40C1CE4130A006E0037 /* ZZTabBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A40B1CE4130A006E0037 /* ZZTabBarModel.m */; };
 		A980A40F1CE41827006E0037 /* ZZFirstBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A40E1CE41827006E0037 /* ZZFirstBaseViewController.m */; };
 		A985BED11DE3DAE300FF6561 /* ZZZuiXinBaiCaiLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A985BED01DE3DAE300FF6561 /* ZZZuiXinBaiCaiLayout.swift */; };
-		A99B88011DEEB34A007A6640 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99B88001DEEB34A007A6640 /* NotificationCenter.framework */; };
-		A99B88041DEEB34A007A6640 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99B88031DEEB34A007A6640 /* TodayViewController.swift */; };
-		A99B88071DEEB34A007A6640 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99B88051DEEB34A007A6640 /* MainInterface.storyboard */; };
-		A99B880B1DEEB34A007A6640 /* ZDM_Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A99B87FF1DEEB349007A6640 /* ZDM_Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A99C54671DF544A600AAFC8D /* Share.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99C54661DF544A600AAFC8D /* Share.plist */; };
 		A9A03FD81D1A69B100675FA9 /* ZZUserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A03FD71D1A69B100675FA9 /* ZZUserAccount.m */; };
 		A9A03FDE1D1A726200675FA9 /* ZZWeiboTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A03FDD1D1A726200675FA9 /* ZZWeiboTableView.m */; };
@@ -188,6 +184,7 @@
 		A9EDF9A51EB56EA90066E0F4 /* UIColor+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EDF9A41EB56EA90066E0F4 /* UIColor+ZZAdd.m */; };
 		A9F344BF1E60233E00D835E7 /* ZZBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F344BE1E60233E00D835E7 /* ZZBaseRequest.m */; };
 		A9F387301DEC024D009E77C4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */; };
+		A9F92A1A1F1E092F00AB17E2 /* NSDate+ZDTime.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F92A191F1E092F00AB17E2 /* NSDate+ZDTime.m */; };
 		A9F964831DDA2C1700D41EC5 /* ZZCommentFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F964821DDA2C1700D41EC5 /* ZZCommentFooterView.swift */; };
 		A9F964851DDA2D2700D41EC5 /* ZZCommentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F964841DDA2D2700D41EC5 /* ZZCommentHeaderView.swift */; };
 		A9F97BC01DE521E200FB683F /* ZZBaiCaiBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F97BBF1DE521E200FB683F /* ZZBaiCaiBannerView.swift */; };
@@ -196,16 +193,6 @@
 		BBCEFC72E7FB16B58EBC664E /* Pods______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC44063077F3A4819D95752 /* Pods______.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A99B88091DEEB34A007A6640 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A9D9D20B1CE40B3E00A83101 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A99B87FE1DEEB349007A6640;
-			remoteInfo = ZDM_Today;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		A99B880F1DEEB34A007A6640 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -213,7 +200,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A99B880B1DEEB34A007A6640 /* ZDM_Today.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,7 +399,6 @@
 		A985BED01DE3DAE300FF6561 /* ZZZuiXinBaiCaiLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZZuiXinBaiCaiLayout.swift; sourceTree = "<group>"; };
 		A989043B1D8A0AF000D55FF4 /* ZZConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZConstants.h; sourceTree = "<group>"; };
 		A989043D1D8A0EED00D55FF4 /* ZZEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZEnums.h; sourceTree = "<group>"; };
-		A99B87FF1DEEB349007A6640 /* ZDM_Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ZDM_Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99B88001DEEB34A007A6640 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		A99B88031DEEB34A007A6640 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		A99B88061DEEB34A007A6640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -514,6 +499,8 @@
 		A9F344BD1E60233E00D835E7 /* ZZBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBaseRequest.h; sourceTree = "<group>"; };
 		A9F344BE1E60233E00D835E7 /* ZZBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBaseRequest.m; sourceTree = "<group>"; };
 		A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A9F92A181F1E092F00AB17E2 /* NSDate+ZDTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZDTime.h"; sourceTree = "<group>"; };
+		A9F92A191F1E092F00AB17E2 /* NSDate+ZDTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZDTime.m"; sourceTree = "<group>"; };
 		A9F964821DDA2C1700D41EC5 /* ZZCommentFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentFooterView.swift; sourceTree = "<group>"; };
 		A9F964841DDA2D2700D41EC5 /* ZZCommentHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentHeaderView.swift; sourceTree = "<group>"; };
 		A9F97BBF1DE521E200FB683F /* ZZBaiCaiBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZBaiCaiBannerView.swift; sourceTree = "<group>"; };
@@ -525,14 +512,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A99B87FC1DEEB349007A6640 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A99B88011DEEB34A007A6640 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A9D9D2101CE40B3E00A83101 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1182,7 +1161,6 @@
 			isa = PBXGroup;
 			children = (
 				A9D9D2131CE40B3E00A83101 /* 什么值得买.app */,
-				A99B87FF1DEEB349007A6640 /* ZDM_Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1194,6 +1172,8 @@
 				A9D9D21A1CE40B3E00A83101 /* AppDelegate.m */,
 				A918D7451E7EFF0F00FAC8FE /* ZZTest1.h */,
 				A918D7461E7EFF0F00FAC8FE /* ZZTest1.m */,
+				A9F92A181F1E092F00AB17E2 /* NSDate+ZDTime.h */,
+				A9F92A191F1E092F00AB17E2 /* NSDate+ZDTime.m */,
 				A96470AF1E49BCAA009198DA /* Person.xcdatamodeld */,
 				A93698471DC7A9A000D4B643 /* AppDelegate+SDKInit.h */,
 				A93698481DC7A9A000D4B643 /* AppDelegate+SDKInit.m */,
@@ -1464,23 +1444,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A99B87FE1DEEB349007A6640 /* ZDM_Today */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A99B880E1DEEB34A007A6640 /* Build configuration list for PBXNativeTarget "ZDM_Today" */;
-			buildPhases = (
-				A99B87FB1DEEB349007A6640 /* Sources */,
-				A99B87FC1DEEB349007A6640 /* Frameworks */,
-				A99B87FD1DEEB349007A6640 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ZDM_Today;
-			productName = ZDM_Today;
-			productReference = A99B87FF1DEEB349007A6640 /* ZDM_Today.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		A9D9D2121CE40B3E00A83101 /* 什么值得买 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9D9D22A1CE40B3E00A83101 /* Build configuration list for PBXNativeTarget "什么值得买" */;
@@ -1497,7 +1460,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				A99B880A1DEEB34A007A6640 /* PBXTargetDependency */,
 			);
 			name = "什么值得买";
 			productName = "什么值得买(5月12日)";
@@ -1515,19 +1477,9 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Wang_ruzhou;
 				TargetAttributes = {
-					A99B87FE1DEEB349007A6640 = {
-						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = W34ZLPQLA6;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
 					A9D9D2121CE40B3E00A83101 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = W34ZLPQLA6;
+						DevelopmentTeam = RSMMQRSNF6;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1555,20 +1507,11 @@
 			projectRoot = "";
 			targets = (
 				A9D9D2121CE40B3E00A83101 /* 什么值得买 */,
-				A99B87FE1DEEB349007A6640 /* ZDM_Today */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A99B87FD1DEEB349007A6640 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A99B88071DEEB34A007A6640 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A9D9D2111CE40B3E00A83101 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1677,14 +1620,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A99B87FB1DEEB349007A6640 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A99B88041DEEB34A007A6640 /* TodayViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A9D9D20F1CE40B3E00A83101 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1786,6 +1721,7 @@
 				A94AC31B1DED30E3009D077A /* ZZBaiCaiNewestCell.swift in Sources */,
 				A91E1B5B1E062F7700E14417 /* ZZShareModel.swift in Sources */,
 				A9C08AC11E77858A00099C28 /* ZZDetailTopicContentLayout.m in Sources */,
+				A9F92A1A1F1E092F00AB17E2 /* NSDate+ZDTime.m in Sources */,
 				A90E6E3E1D39406B00C213C5 /* YYFPSLabel.m in Sources */,
 				A947CCBE1DE02FA30047B58F /* ZZDetailArticleViewController.m in Sources */,
 				A947CCD61DE02FA30047B58F /* ZZDetailTopicHeaderView.m in Sources */,
@@ -1837,14 +1773,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		A99B880A1DEEB34A007A6640 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A99B87FE1DEEB349007A6640 /* ZDM_Today */;
-			targetProxy = A99B88091DEEB34A007A6640 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		A99B88051DEEB34A007A6640 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -1857,42 +1785,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A99B880C1DEEB34A007A6640 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_ENTITLEMENTS = ZDM_Today/ZDM_Today.entitlements;
-				DEVELOPMENT_TEAM = W34ZLPQLA6;
-				INFOPLIST_FILE = ZDM_Today/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "smzdm20170409.ZDM-Today";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		A99B880D1DEEB34A007A6640 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_ENTITLEMENTS = ZDM_Today/ZDM_Today.entitlements;
-				DEVELOPMENT_TEAM = W34ZLPQLA6;
-				INFOPLIST_FILE = ZDM_Today/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "smzdm20170409.ZDM-Today";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 		A9D9D2281CE40B3E00A83101 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1994,12 +1886,12 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = W34ZLPQLA6;
+				DEVELOPMENT_TEAM = RSMMQRSNF6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = smzdm20170409;
+				PRODUCT_BUNDLE_IDENTIFIER = smzdm20170717;
 				PRODUCT_NAME = "什么值得买";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2022,12 +1914,12 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = W34ZLPQLA6;
+				DEVELOPMENT_TEAM = RSMMQRSNF6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = smzdm20170409;
+				PRODUCT_BUNDLE_IDENTIFIER = smzdm20170717;
 				PRODUCT_NAME = "什么值得买";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2040,15 +1932,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A99B880E1DEEB34A007A6640 /* Build configuration list for PBXNativeTarget "ZDM_Today" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A99B880C1DEEB34A007A6640 /* Debug */,
-				A99B880D1DEEB34A007A6640 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A9D9D20E1CE40B3E00A83101 /* Build configuration list for PBXProject "什么值得买" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -56,6 +56,10 @@
     
 }
 
+- (void)injected {
+    NSLog(@"I've been injected: %@", self);
+}
+
 
 - (void)dealloc{
     

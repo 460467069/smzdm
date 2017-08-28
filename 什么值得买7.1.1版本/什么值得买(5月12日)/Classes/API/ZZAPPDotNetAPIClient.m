@@ -18,13 +18,27 @@
     static ZZAPPDotNetAPIClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedClient = [[ZZAPPDotNetAPIClient alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL]];
-        _sharedClient.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
-        _sharedClient.requestSerializer.timeoutInterval = 20;
+        NSSet *acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
         AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
         securityPolicy.allowInvalidCertificates = YES;
         securityPolicy.validatesDomainName = NO;
+        
+        _sharedClient = [[ZZAPPDotNetAPIClient alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL]];
+        _sharedClient.responseSerializer.acceptableContentTypes = acceptableContentTypes;
+        _sharedClient.requestSerializer.timeoutInterval = 20;
         _sharedClient.securityPolicy = securityPolicy;
+        
+        NSMutableDictionary *cookieDictM = [NSMutableDictionary dictionary];
+        NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+        for (NSHTTPCookie *cookie in cookies) {
+            [cookieDictM setValue:cookie.value forKey:cookie.name];
+        }
+        [cookieDictM setValue:@"u2n7E7g8GN614PhgRRMTDF9mLo7nKcI/2MZzQ5N8TCijPn9NXBbmkw==" forKey:@"device_id"];
+        NSMutableString *cookieStringM = [NSMutableString string];
+        [cookieDictM enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull value, BOOL * _Nonnull stop) {
+            [cookieStringM appendString:[NSString stringWithFormat:@"%@=%@;", key, value]];
+        }];
+        [_sharedClient.requestSerializer setValue:cookieStringM forHTTPHeaderField:@"Cookie"];
     });
     
     return _sharedClient;

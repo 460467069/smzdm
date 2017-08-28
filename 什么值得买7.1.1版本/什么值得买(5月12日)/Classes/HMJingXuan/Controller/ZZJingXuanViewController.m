@@ -34,7 +34,7 @@ static NSString *const kHMJingXuanTableViewCell = @"ZZJingXuanTableViewCell";
 
 - (void)addElement{
     ZZJingXuanModel *model = [[ZZJingXuanModel alloc] init];
-    model.title = @"JSPtach热修复";
+    model.title = @"JSPtach热修复11";
     [self.dataSource addObject:model];
 }
 

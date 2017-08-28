@@ -10,12 +10,8 @@ import UIKit
 
 
 class ZZNoDelayBtnCollectionView: UICollectionView {
-    
-    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        
         super.init(frame: frame, collectionViewLayout: layout)
-        
         delaysContentTouches = false
     }
     
@@ -24,12 +20,9 @@ class ZZNoDelayBtnCollectionView: UICollectionView {
     }
 
     override func touchesShouldCancel(in view: UIView) -> Bool {
-        
         if view.isKind(of: UIButton.self) {
-            
             return true
         }
-        
         return super.touchesShouldCancel(in: view)
     }
 

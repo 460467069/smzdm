@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #define kLitterBannerViewInset 15
+#define kMinimumInteritemSpacing 15
+
 
 @interface ZZLittleBannerLayout : UICollectionViewFlowLayout
 
