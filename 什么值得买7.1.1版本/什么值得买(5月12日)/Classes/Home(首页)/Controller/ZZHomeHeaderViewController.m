@@ -40,7 +40,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     
     
     CGFloat imageHeight = 180;
-    CGRect cycleScrollViewF = CGRectMake(0, 0, kScreenW, imageHeight);
+    CGRect cycleScrollViewF = CGRectMake(0, 0, kScreenWidth, imageHeight);
     ZZCycleScrollView *cycleImageView = [ZZCycleScrollView cycleScrollViewWithFrame:cycleScrollViewF delegate:self placeholderImage:nil];
     cycleImageView.delegate = self;
     cycleImageView.autoScrollTimeInterval = 5.0;
@@ -49,12 +49,12 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     
     CGFloat cycleTextH = 34;
     CGFloat cycleTextY = CGRectGetMaxY(cycleScrollViewF) - cycleTextH;
-    CGRect cycleTextF = CGRectMake(0, cycleTextY, kScreenW, cycleTextH);
+    CGRect cycleTextF = CGRectMake(0, cycleTextY, kScreenWidth, cycleTextH);
     
     CGFloat cycleTextContentViewH = 34;
     CGFloat cycleTextContentViewX = 0;
     CGFloat cycleTextContentViewY = CGRectGetMaxY(cycleScrollViewF) - cycleTextH;
-    CGFloat cycleTextContentViewW = kScreenW;
+    CGFloat cycleTextContentViewW = kScreenWidth;
     UIView *cycleTextContentView = [[UIView alloc] initWithFrame:cycleTextF];
     cycleTextContentView.frame = CGRectMake(cycleTextContentViewX, cycleTextContentViewY, cycleTextContentViewW, cycleTextContentViewH);
     cycleTextContentView.backgroundColor = kCycleTextContentViewColor;
@@ -92,7 +92,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 
     CGFloat littleBannerViewH = 180;
 
-    UICollectionView *littleBannerView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(cycleScrollViewF), kScreenW, littleBannerViewH) collectionViewLayout:layout];
+    UICollectionView *littleBannerView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(cycleScrollViewF), kScreenWidth, littleBannerViewH) collectionViewLayout:layout];
     [self.view addSubview:littleBannerView];
     littleBannerView.delegate = self;
     littleBannerView.dataSource = self;

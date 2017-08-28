@@ -117,7 +117,7 @@ extension ZZFantasticGoodsController{
 }
 
 //MARK: - collectionView数据源
-extension ZZFantasticGoodsController:UICollectionViewDataSource{
+extension ZZFantasticGoodsController:UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -136,7 +136,7 @@ extension ZZFantasticGoodsController:UICollectionViewDataSource{
 
 
 //MARK: - 上下拉
-extension ZZFantasticGoodsController{
+extension ZZFantasticGoodsController {
     override func loadData() {
         
         fantasticGoodsRequest.offset = 0

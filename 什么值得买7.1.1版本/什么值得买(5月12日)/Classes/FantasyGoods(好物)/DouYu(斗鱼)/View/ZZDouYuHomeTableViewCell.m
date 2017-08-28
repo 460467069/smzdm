@@ -45,7 +45,7 @@
     
     layout.minimumInteritemSpacing = margin;
     layout.minimumLineSpacing = 0;
-    CGFloat width = (kScreenW - margin * 3) / 2;
+    CGFloat width = (kScreenWidth - margin * 3) / 2;
     layout.itemSize = CGSizeMake(width, 150);
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     self.collectionView = [[AFIndexedCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];    

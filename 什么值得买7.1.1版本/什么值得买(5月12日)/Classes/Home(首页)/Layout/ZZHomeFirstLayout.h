@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "ZZHomeFirstModel.h"
 
-#define kHomeFirstCellHeadTitleHeight (kScreenW / 750.0 * 50)
-#define kHomeFirstCellBannerPicHeight (kScreenW / 750.0 * 260)
-#define kHomeFirstCellPicPadding (kScreenW / 750.0 * 2)
+#define kHomeFirstCellHeadTitleHeight (kScreenWidth / 750.0 * 50)
+#define kHomeFirstCellBannerPicHeight (kScreenWidth / 750.0 * 260)
+#define kHomeFirstCellPicPadding (kScreenWidth / 750.0 * 2)
 
 #define kHomeFirstCellTitleLabelLeft 20
 
@@ -22,16 +22,15 @@
 #define kHomeHorizontalScrollItemPicTop 25
 #define kHomeHorizontalScrollItemLabelTop 10
 #define kHomeHorizontalScrollItemCount 10   //最大数
-#define kHomeFirstCellBottomPicH (kScreenW / 750.0 * 238)
-#define kHomeFirstCellBottomPicW (kScreenW / 750.0 * 186)
+#define kHomeFirstCellBottomPicH (kScreenWidth / 750.0 * 238)
+#define kHomeFirstCellBottomPicW (kScreenWidth / 750.0 * 186)
 
-#define kHomeFirstCellBottomSeparatorH (kScreenW / 750.0 * 100)
-#define kHomeFirstCellBottomSeparatorLineW (kScreenW / 750.0 * 200)
-#define kHomeFirstCellBottomSeparatorLineH (kScreenW / 750.0 * 3)
-#define kHomeFirstCellBottomSeparatorPadding (kScreenW / 750.0 * 40)
+#define kHomeFirstCellBottomSeparatorH (kScreenWidth / 750.0 * 100)
+#define kHomeFirstCellBottomSeparatorLineW (kScreenWidth / 750.0 * 200)
+#define kHomeFirstCellBottomSeparatorLineH (kScreenWidth / 750.0 * 3)
+#define kHomeFirstCellBottomSeparatorPadding (kScreenWidth / 750.0 * 40)
 
 #define kHomeTitleFont 13
-#define kHomeFirstCellLineColor ZZColor(225, 225, 225)
 
 #define kHomeFragmentMaxCount 8
 
@@ -44,14 +43,10 @@
 // 以下是数据
 @property (nonatomic, strong) ZZHomeFirstModel *firstModel;
 @property (nonatomic, assign, readonly) BOOL isLastOne;
-
 @property (nonatomic, strong) YYTextLayout *titleTextLayout; // 标题栏
-
 @property (nonatomic, assign) CGFloat picBannerHeight; //轮播图片高度，0为没图片
-
 @property (nonatomic, assign) CGFloat picFragmentHeight; //(有分割线的四张)图片高度
 @property (nonatomic, strong) NSArray *fourRectArray;   //四张图片的frame数组
-
 @property (nonatomic, assign) CGFloat horizontalScrollViewH; //scrollView高度
 @property (nonatomic, assign) CGSize horizontalScrollViewContentSize;       //scrollView的contentSize
 @property (nonatomic, strong) NSArray<YYTextLayout *> *ycTextLayouts; // 原创数组

@@ -45,13 +45,9 @@
     
     self.title = @"斗鱼";
     // Do any additional setup after loading the view.
-    
     [self configureCycleScrollView];
-    
     [self loadDouYuHomeListOfflineData];
-    
     [self.tableView registerClass:[ZZDouYuHomeTableViewCell class] forCellReuseIdentifier:kHMDouYuHomeTableViewCell];
-    
     self.fpsLabel = [[YYFPSLabel alloc] init];
     [_fpsLabel sizeToFit];
     _fpsLabel.bottom = self.view.height - 60;
@@ -59,24 +55,20 @@
     _fpsLabel.alpha = 0;
     [[UIApplication sharedApplication].keyWindow addSubview:_fpsLabel];
     
-    self.customHeaderView.mj_h = 0.45 * kScreenH;  //0.45粗略给的比例
+    self.customHeaderView.mj_h = 0.45 * kScreenHeight;  //0.45粗略给的比例
     self.tableView.tableHeaderView = self.customHeaderView;
 
 }
 
-- (void)viewDidLayoutSubviews{
+- (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self configureBannerLayout];
     });
-
 }
 
-- (void)configureBannerLayout{
-    
-
+- (void)configureBannerLayout {
     CGFloat height = self.bannerCollectionView.mj_h - self.bannerCollectionView.contentInset.top - self.bannerCollectionView.contentInset.bottom - 1;
     self.bannerLayout.itemSize = CGSizeMake(height, height);
 
@@ -85,7 +77,7 @@
 #pragma mark - 轮播
 
 /** 配置轮播视图 */
-- (void)configureCycleScrollView{
+- (void)configureCycleScrollView {
     self.cycleScrollView.delegate = self;
     
     self.cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
@@ -98,7 +90,7 @@
 
 
 /** 优先加载头部轮播视图离线数据 */
-- (void)loadBannerOfflineData{
+- (void)loadBannerOfflineData {
 
     NSArray *dataArray = [NSArray arrayWithContentsOfFile:KHMDouYUBannerModelFilePath];
 
@@ -112,7 +104,7 @@
 }
 
 /** 请求轮播数据 */
-- (void)requestDouYuBannelData{
+- (void)requestDouYuBannelData {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     [manager GET:@"http://www.douyutv.com/api/v1/slide/6" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
@@ -131,7 +123,7 @@
 }
 
 /** 处理数据 */
-- (void)handelDouYuBannelData:(NSArray *)dataArray{
+- (void)handelDouYuBannelData:(NSArray *)dataArray {
     
     NSArray *modelArray = [ZZDouYUBannerModel mj_objectArrayWithKeyValuesArray:dataArray];
     NSMutableArray *imageURLStringsGroup = [NSMutableArray array];
@@ -151,7 +143,7 @@
 
 #pragma mark - 首页列表
 /** 请求首页列表数据 */
-- (void)requestDouYuHomeListData{
+- (void)requestDouYuHomeListData {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     [manager GET:@"http://capi.douyucdn.cn/api/v1/getHotCate?aid=ios&client_sys=ios&time=1468225740&token=55360132_864bfe31ed07ac49&auth=063032102391e4e305555bab99e2d45c" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
@@ -170,7 +162,7 @@
 }
 
 /** 优先加载头首页列表离线数据 */
-- (void)loadDouYuHomeListOfflineData{
+- (void)loadDouYuHomeListOfflineData {
     
     NSArray *dataArray = [NSArray arrayWithContentsOfFile:KHMDouYUHomeDataFilePath];
     

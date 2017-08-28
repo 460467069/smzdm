@@ -94,7 +94,7 @@
     }
 
     articleTitle.lineSpacing = 10;
-    CGFloat titleWidth = kScreenW - kDetailTopicProPicWH - kDetailTopicMarginX * 2 - kDetailTopicContentOffsetX;
+    CGFloat titleWidth = kScreenWidth - kDetailTopicProPicWH - kDetailTopicMarginX * 2 - kDetailTopicContentOffsetX;
     container = [YYTextContainer containerWithSize:CGSizeMake(titleWidth, kDetailTopicProPicWH) insets:UIEdgeInsetsMake(0, kDetailTopicTitleLeftMargin, 0, kDetailTopicContentOffsetX)];
     _titleLayout = [YYTextLayout layoutWithContainer:container text:articleTitle];
     

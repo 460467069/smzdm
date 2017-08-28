@@ -35,13 +35,13 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector) {
 - (void)zz_swizzled_viewWillAppear:(BOOL)animated {
     [self zz_swizzled_viewWillAppear:animated];
     NSString *className = NSStringFromClass([self class]);
-    NSLog(@"--Enter: %@", className);
+    LxPrintf(@"----Enter: %@", className);
 }
 
 - (void)zz_swizzled_viewWillDisappear:(BOOL)animated {
     [self zz_swizzled_viewWillDisappear:animated];
     NSString *className = NSStringFromClass([self class]);
-    NSLog(@"--Leave: %@", className);
+    LxPrintf(@"----Leave: %@", className);
 }
 
 

@@ -35,7 +35,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (frame.size.width == 0 && frame.size.height == 0) {
-        frame.size.width = kScreenW;
+        frame.size.width = kScreenWidth;
         frame.size.height = 49;
     }
     self = [super initWithFrame:frame];
@@ -52,7 +52,7 @@
         NSInteger items = 4;
         CGFloat rightBtnW = 120;
         
-        CGFloat itemLabelW = (kScreenW - rightBtnW) / items;
+        CGFloat itemLabelW = (kScreenWidth - rightBtnW) / items;
         
         _firstContainerView = [[UIView alloc] init];
         [self addSubview:_firstContainerView];

@@ -24,14 +24,12 @@
 
 - (void)awakeFromNib{
     [super awakeFromNib];
-    
     self.priceLabel.textColor = kGlobalRedColor;
 }
 
 
 
 - (void)setArticle:(ZZWorthyArticle *)article{
-    
     _article = article;
 
     NSString *imageUrlStr = nil;
@@ -42,7 +40,7 @@
         imageUrlStr = article.img;
         title = article.title;
         priceStr = article.vice_title;
-    }else{
+    } else {
         imageUrlStr = article.article_pic;
         title = article.article_title;
         priceStr = article.article_price;
@@ -73,19 +71,16 @@
     //    时间  取 article_format_date
     
     NSInteger channelID = [article.article_channel_id integerValue];
-    
     NSString *mallStr;
     if (channelID == 1 || channelID == 5 || channelID == 2) {
         mallStr = article.article_mall;
-    }else if (channelID == 11){
+    } else if (channelID == 11) {
         mallStr = article.article_type_name;
-    }else{
+    } else {
         mallStr = article.article_rzlx;
     }
-    
     NSString *dateStr = article.article_format_date;
     self.mallAndTimeLabel.text = [NSString stringWithFormat:@"%@ | %@", mallStr, dateStr];
-    
     [self.commentBtn setTitle:article.article_comment forState:UIControlStateNormal];
     
     //
@@ -102,14 +97,11 @@
         
         if (worthy + unWorthy == 0) {
             [self.zhiBtn setTitle:@"0" forState:UIControlStateNormal];
-        }else{
+        } else {
             CGFloat ratio = worthy * 1.0 / (worthy + unWorthy);
-            //            LxDBAnyVar(ratio);
             [self.zhiBtn setTitle:[NSString zz_stringFromFloat:ratio] forState:UIControlStateNormal];
         }
-        
-        
-    }else{
+    } else {
         [self.zhiBtn setImage:[UIImage imageNamed:@"icon_zan_list"] forState:UIControlStateNormal];
         
         [self.zhiBtn setTitle:article.article_favorite forState:UIControlStateNormal];

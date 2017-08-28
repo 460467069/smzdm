@@ -62,13 +62,13 @@
 - (void)setUpScrollView{
     
     _topScrollView = [[UIScrollView alloc] init];
-    _topScrollView.frame = CGRectMake(0, 64, kScreenW, 40);
-    _topScrollView.contentSize = CGSizeMake(kScreenW, 0);
+    _topScrollView.frame = CGRectMake(0, 64, kScreenWidth, 40);
+    _topScrollView.contentSize = CGSizeMake(kScreenWidth, 0);
     [self.view addSubview:_topScrollView];
     
     //创建顶部Label
     CGFloat tagLabelY = 0;
-    CGFloat tagLabelW = kScreenW / self.dataArray.count;
+    CGFloat tagLabelW = kScreenWidth / self.dataArray.count;
     CGFloat tagLabelH = self.topScrollView.mj_h;
     
     NSMutableArray *temArray = [NSMutableArray array];

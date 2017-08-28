@@ -45,7 +45,7 @@
     [self.tableView registerReuseCellNib:[ZZTuiGuangCell class]];
     [self.tableView registerReuseCellNib:[ZZListCell class]];
     
-    self.tableView.rowHeight = kScreenW / 3 + 20 + 2;
+    self.tableView.rowHeight = kScreenWidth / 3 + 20 + 2;
     //请求头部数据
     [self loadHeaderData];
 
@@ -53,20 +53,17 @@
     self.tableView.mj_header = [ZZDIYHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
     
     self.tableView.mj_footer = [ZZDIYBackFooter footerWithRefreshingTarget:self
-                                                                    refreshingAction:@selector(loadMoreData)];
+                                                          refreshingAction:@selector(loadMoreData)];
     [self.tableView.mj_header beginRefreshing];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    
 
-    
     ZZHaoJiaHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:@"ZZHaoJiaHeaderView" owner:nil options:nil].lastObject;
     headerView.cycleScrollView.delegate = self;
     self.headerView = headerView;
     headerView.delegate = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        self.headerView.height = kScreenW / 320.0 * self.headerView.height;
+        self.headerView.height = kScreenWidth / 320.0 * self.headerView.height;
 
         self.tableView.tableHeaderView = headerView;
 
@@ -143,10 +140,8 @@
     }];
 }
 
-- (NSMutableDictionary *)configureParameters
-{
+- (NSMutableDictionary *)configureParameters {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-
     if ([self.homeChannel.type isEqualToString:kHaojiaJingXuan]) {
         [parameters setValue:@"have_zhuanti"  forKey:@"1"];
     }
@@ -158,20 +153,17 @@
 
 
 #pragma mark - UITableViewDataSource && UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArrayM.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZZWorthyArticle *article = self.dataArrayM[indexPath.row];
-    
     if (article.promotion_type == ZDMPromotionTypeOne) {
-        
         ZZTuiGuangCell *tuiGuangCell = [tableView dequeueReusableCellWithIdentifier:[ZZTuiGuangCell reuseIdentifier] forIndexPath:indexPath];
         tuiGuangCell.article = article;
         return tuiGuangCell;
@@ -182,7 +174,7 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //https://api.smzdm.com/v2/youhui/articles/6643905?channel_id=5&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.3.3&weixin=1
     ZZWorthyArticle *article = self.dataArrayM[indexPath.row];

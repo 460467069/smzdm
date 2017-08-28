@@ -57,7 +57,7 @@
     titleText.font = [UIFont systemFontOfSize:kHomeTitleFont];
     titleText.color = [UIColor colorWithHexString:firstModel.floor_title_color];
     titleText.lineBreakMode = NSLineBreakByCharWrapping;
-    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenW, 9999)];
+    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth, 9999)];
     container.maximumNumberOfRows = 1;
     _titleTextLayout = [YYTextLayout layoutWithContainer:container text:titleText];
 }
@@ -105,7 +105,7 @@
         CGFloat secondImageY = 0;
         CGFloat secondImageW = kHomeFirstCellPicWidth2;
         CGFloat secondImageH = kHomeFirstCellPicHeight2;
-        CGFloat secondImageX = kScreenW - secondImageW;
+        CGFloat secondImageX = kScreenWidth - secondImageW;
         CGRect secondImageF = CGRectMake(secondImageX, secondImageY, secondImageW, secondImageH);
         NSValue *value2 = [NSValue valueWithCGRect:secondImageF];
         

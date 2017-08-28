@@ -14,7 +14,7 @@
 #define kDetailTopicBtnHeight 25
 #define kDetailTopicBtnWidth 60
 #define kDetailTopicBtnMargin 15
-#define kDetailTopicImageHeight (kScreenW / 750.0 * 281)
+#define kDetailTopicImageHeight (kScreenWidth / 750.0 * 281)
 
 
 @interface ZZDetailTopicHeaderLayout : NSObject

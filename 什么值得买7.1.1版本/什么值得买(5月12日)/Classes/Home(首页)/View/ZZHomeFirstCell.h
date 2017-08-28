@@ -14,8 +14,6 @@
 @interface ZZTitleView : UIView
 @property (nonatomic, strong) UIImageView *bgView;
 @property (nonatomic, strong) YYLabel *titleLabel;
-
-
 @end
 
 @interface ZZSeparatorView : UIView
@@ -34,10 +32,7 @@
 @property (nonatomic, weak) id <ZZFourPicViewDelegate>delegate;
 @end
 
-
-
 @interface ZZHorizontalScrollItem : UIView
-
 @property (nonatomic, strong) UIImageView *avatarView;
 @property (nonatomic, strong) YYLabel *contentLabel;
 @end
@@ -46,15 +41,12 @@
 @interface ZZHorizontalScrollView : UIScrollView
 @property (nonatomic, strong) UIImageView *talentShow;
 @property (nonatomic, strong) NSArray<ZZHorizontalScrollItem *> *pics;
-
-
 @end
 
 
 
 @protocol ZZHomeFirstCellDelegete;
 @interface ZZHomeFirstCell : UITableViewCell
-
 @property (nonatomic, strong) ZZHomeFirstLayout *layout;
 @property (nonatomic, strong) ZZTitleView *titleView;
 @property (nonatomic, strong) ZZCycleScrollView *cycleScrollView;
@@ -62,7 +54,6 @@
 @property (nonatomic, strong) ZZHorizontalScrollView *horizontalScrollView;
 @property (nonatomic, strong) ZZSeparatorView *separatorView;
 @property (nonatomic, weak) id<ZZHomeFirstCellDelegete > delegate;
-
 @end
 
 @protocol ZZHomeFirstCellDelegete <NSObject>

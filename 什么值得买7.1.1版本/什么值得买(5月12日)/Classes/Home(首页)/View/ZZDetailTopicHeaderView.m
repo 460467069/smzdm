@@ -32,7 +32,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (frame.size.width == 0 && frame.size.height == 0) {
-        frame.size.width = kScreenW;
+        frame.size.width = kScreenWidth;
     }
     
     self = [super initWithFrame:frame];

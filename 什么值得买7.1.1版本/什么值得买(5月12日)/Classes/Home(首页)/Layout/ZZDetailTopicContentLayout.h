@@ -19,11 +19,11 @@
 #define kDetailTopicUserInfoHeight 50           /**< 用户信息高 */
 #define kDetailTopicUserInfoMarginX 8           /**< 用户信息左右留白 */
 #define kDetailTopicUserInfoMarginY 8           /**< 用户信息上下留白 */
-#define kDetailTopicProPicWH (kScreenW / 750.0 * 200)                /**< 配图大小 */
+#define kDetailTopicProPicWH (kScreenWidth / 750.0 * 200)                /**< 配图大小 */
 #define kDetailTopicTitleLeftMargin  30         /**< 标题左间距 */
 #define kDetailTopicDescTopMargin 15            /**< 文字描述顶部留白 */
 #define kDetailTopicDescHeight 120              /**< 文字描述高度 */
-#define kDetailTopicDescWidth (kScreenW - 2 * kDetailContentOffset) /**< 文字描述宽 */
+#define kDetailTopicDescWidth (kScreenWidth - 2 * kDetailContentOffset) /**< 文字描述宽 */
 #define kDetailTopicUseTimeHeight 50            /**< 使用时长那栏高度 */
 #define kDetailTopicUseTimeWidth 120            /**< 使用时长那栏高度 */
 #define kDetailTopicUseTimeY 15                 /**< 使用时长上下留白 */

@@ -61,7 +61,7 @@
 
     CGFloat labelX = 0;
     CGFloat labelY = 0;
-    CGFloat labelW = kScreenW;
+    CGFloat labelW = kScreenWidth;
     CGFloat labelH = self.mj_h - self.circleView.mj_h;
     self.label.frame = CGRectMake(labelX, labelY, labelW, labelH);
 

@@ -41,10 +41,10 @@
     
     UIImageView *customSearchBar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homePage_searchBG"]];
     CGFloat offset = 50.0;
-    if (kScreenW > 320) {
+    if (kScreenWidth > 320) {
         offset = 80.0;
     }
-    customSearchBar.size = CGSizeMake(kScreenW - offset * 2, 32);
+    customSearchBar.size = CGSizeMake(kScreenWidth - offset * 2, 32);
     customSearchBar.userInteractionEnabled = YES;
     
     UIImageView *scopeView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homePage_searchIcon"]];

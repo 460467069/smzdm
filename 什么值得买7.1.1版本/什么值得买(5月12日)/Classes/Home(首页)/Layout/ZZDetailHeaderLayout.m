@@ -86,7 +86,7 @@
     
     text.lineSpacing = kTitleLineSpacing;
     
-    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenW, HUGE) insets:UIEdgeInsetsMake(kDetailContentOffset, kDetailContentOffset, 0, kDetailContentOffset)];
+    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth, HUGE) insets:UIEdgeInsetsMake(kDetailContentOffset, kDetailContentOffset, 0, kDetailContentOffset)];
     
     _titleTextLayout = [YYTextLayout layoutWithContainer:container text:text];
     if (!_titleTextLayout) return;
@@ -100,7 +100,7 @@
         [attributes setObject:kGlobalGrayColor forKey:NSForegroundColorAttributeName];
         [attributes setObject:[UIFont systemFontOfSize:12] forKey:NSFontAttributeName];
         NSAttributedString *text = [[NSAttributedString alloc] initWithString:title attributes:attributes];
-        YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenW, 50)];
+        YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth, 50)];
         _referralTextLayout = [YYTextLayout layoutWithContainer:container text:text];
     }
     

@@ -8,9 +8,6 @@
 
 #ifndef ZZConstants_h
 #define ZZConstants_h
-
-#define kScreenW [UIScreen mainScreen].bounds.size.width
-#define kScreenH [UIScreen mainScreen].bounds.size.height
 #define ZZColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 
 #define kStatusH                    20                      //  状态栏高度
@@ -19,15 +16,15 @@
 
 #define kGlobalRedColor [UIColor colorWithHexString:@"#F04848"]
 #define kGlobalGrayColor [UIColor colorWithHexString:@"#666666"]
-#define kGlobalLightGrayColor ZZColor(234, 234, 234)
+#define kGlobalLightGrayColor ZZColor(247, 247, 247)
 
 
-#define kHomeFirstCellPicHeight1 (kScreenW / 750.0 * 326)
-#define kHomeFirstCellPicWidth1 (kScreenW / 750.0 * 284)
-#define kHomeFirstCellPicHeight2 (kScreenW / 750.0 * 154)
-#define kHomeFirstCellPicWidth2 (kScreenW / 750.0 * 464)
-#define kHomeFirstCellPicHeight3 (kScreenW / 750.0 * 170)
-#define kHomeFirstCellPicWidth3 (kScreenW / 750.0 * 231)
+#define kHomeFirstCellPicHeight1 (kScreenWidth / 750.0 * 326)
+#define kHomeFirstCellPicWidth1 (kScreenWidth / 750.0 * 284)
+#define kHomeFirstCellPicHeight2 (kScreenWidth / 750.0 * 154)
+#define kHomeFirstCellPicWidth2 (kScreenWidth / 750.0 * 464)
+#define kHomeFirstCellPicHeight3 (kScreenWidth / 750.0 * 170)
+#define kHomeFirstCellPicWidth3 (kScreenWidth / 750.0 * 231)
 
 #define kDetailContentOffset 15
 

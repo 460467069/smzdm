@@ -32,13 +32,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//     {{0, 244}, {414, 180}}
     self.cells = [NSMutableSet set];
-    
     self.title = @"首页";
     ZZHomeHeaderViewController *headerVC = [[ZZHomeHeaderViewController alloc] init];
     headerVC.view.backgroundColor = [UIColor whiteColor];
-    headerVC.view.bounds = CGRectMake(0, 0, kScreenW, 360);
+    headerVC.view.bounds = CGRectMake(0, 0, kScreenWidth, 360);
     [self addChildViewController:headerVC];
     [headerVC didMoveToParentViewController:self];
     self.tableView.tableHeaderView = headerVC.view;
@@ -50,23 +48,12 @@
     [self.tableView registerReuseCellClass:[ZZHomePromotionCellEight class]];
 }
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    
-//    LxDBAnyVar(self.tableView.frame);
-    
-//    LxDBAnyVar(self.tableView.contentOffset);
-    
-    
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    //    LxDBAnyVar(self.tableView.contentOffset);
+    //    LxDBAnyVar(self.tableView.contentInset);
 }
 
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    LxDBAnyVar(self.tableView.contentOffset);
-//    LxDBAnyVar(self.tableView.contentInset);
-}
-
-- (void)loadData{
+- (void)loadData {
     [[ZZAPPDotNetAPIClient sharedClient] GET:self.firstRequest completionBlock:^(id  _Nullable responseObj, NSError * _Nullable error) {
         NSArray *dataArray = responseObj[@"rows"];
         if (error || dataArray.count == 0) {
@@ -114,7 +101,7 @@
     }];
 }
 
-- (void)loadMoreData{
+- (void)loadMoreData {
     self.recommendRequest.time_sort = self.listArrayM.lastObject.time_sort;
     [[ZZAPPDotNetAPIClient sharedClient] GET:self.recommendRequest completionBlock:^(id  _Nullable responseObj, NSError * _Nullable error) {
         NSArray *dataArray = responseObj[@"rows"];
@@ -139,11 +126,11 @@
 
 #pragma mark - UITableViewDataSource && UITableViewDelegate
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return self.dataSource.count;
     } else {
@@ -152,7 +139,7 @@
     
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         ZZHomeFirstCell *firstCell = [tableView dequeueReusableCellWithIdentifier:[ZZHomeFirstCell reuseIdentifier] forIndexPath:indexPath];
         firstCell.selectionStyle = UITableViewCellSelectionStyleNone;   //解决cell选中后内容消失的问题
@@ -160,56 +147,54 @@
         firstCell.layout = layout;
         firstCell.delegate = self;
         return firstCell;
-    } else {
-        ZZWorthyArticle *article = self.listArrayM[indexPath.row];
-        switch (article.promotion_type) {
-            case ZDMPromotionTypeZero: {
-                NSInteger channelID = [article.article_channel_id integerValue];
-                if (channelID == 8 || channelID == 11 || channelID == 14) {
-                    ZZYuanChuangCell *cell = [tableView dequeueReusableCellWithIdentifier:[ZZYuanChuangCell reuseIdentifier] forIndexPath:indexPath];
-                    cell.article = article;
-                    return cell;
-                }
-                ZZListCell *listCell = [tableView dequeueReusableCellWithIdentifier:[ZZListCell reuseIdentifier] forIndexPath:indexPath];
-                listCell.type = kHaojiaJingXuan;
-                listCell.article = self.listArrayM[indexPath.row];
-                return listCell;
-            }
-                
-                break;
-            case ZDMPromotionTypeOne: {
-                ZZTuiGuangCell *tuiGuangCell = [tableView dequeueReusableCellWithIdentifier:[ZZTuiGuangCell reuseIdentifier] forIndexPath:indexPath];
-                tuiGuangCell.article = article;
-                return tuiGuangCell;
-            }
-                
-                break;
-            case ZDMPromotionTypeTwo:
-                
-                break;
-            case ZDMPromotionTypeThree: {
-                ZZListCell *listCell = [tableView dequeueReusableCellWithIdentifier:[ZZListCell reuseIdentifier] forIndexPath:indexPath];
-                listCell.type = kHaojiaJingXuan;
-                listCell.article = self.listArrayM[indexPath.row];
-                return listCell;
-            }
-                break;
-            case ZDMPromotionTypeEight: {
-                ZZHomePromotionCellEight *cellEight = [tableView dequeueReusableCellWithIdentifier:[ZZHomePromotionCellEight reuseIdentifier] forIndexPath:indexPath];
-                cellEight.article = article;
-                return cellEight;
-            }
-                
-                break;
-            default:
-                break;
-        }
-        return nil;
     }
-
+    ZZWorthyArticle *article = self.listArrayM[indexPath.row];
+    switch (article.promotion_type) {
+        case ZDMPromotionTypeZero: {
+            NSInteger channelID = [article.article_channel_id integerValue];
+            if (channelID == 8 || channelID == 11 || channelID == 14) {
+                ZZYuanChuangCell *cell = [tableView dequeueReusableCellWithIdentifier:[ZZYuanChuangCell reuseIdentifier] forIndexPath:indexPath];
+                cell.article = article;
+                return cell;
+            }
+            ZZListCell *listCell = [tableView dequeueReusableCellWithIdentifier:[ZZListCell reuseIdentifier] forIndexPath:indexPath];
+            listCell.type = kHaojiaJingXuan;
+            listCell.article = self.listArrayM[indexPath.row];
+            return listCell;
+        }
+            
+            break;
+        case ZDMPromotionTypeOne: {
+            ZZTuiGuangCell *tuiGuangCell = [tableView dequeueReusableCellWithIdentifier:[ZZTuiGuangCell reuseIdentifier] forIndexPath:indexPath];
+            tuiGuangCell.article = article;
+            return tuiGuangCell;
+        }
+            
+            break;
+        case ZDMPromotionTypeTwo:
+            
+            break;
+        case ZDMPromotionTypeThree: {
+            ZZListCell *listCell = [tableView dequeueReusableCellWithIdentifier:[ZZListCell reuseIdentifier] forIndexPath:indexPath];
+            listCell.type = kHaojiaJingXuan;
+            listCell.article = self.listArrayM[indexPath.row];
+            return listCell;
+        }
+            break;
+        case ZDMPromotionTypeEight: {
+            ZZHomePromotionCellEight *cellEight = [tableView dequeueReusableCellWithIdentifier:[ZZHomePromotionCellEight reuseIdentifier] forIndexPath:indexPath];
+            cellEight.article = article;
+            return cellEight;
+        }
+            
+            break;
+        default:
+            break;
+    }
+    return nil;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
         ZZHomeFirstLayout *layout = self.dataSource[indexPath.row];
@@ -220,40 +205,40 @@
         if (channelID == 8 || channelID == 11 || channelID == 14) {
             return 284;
         }
-        return kScreenW / 3 + 20 + 2;
+        return kScreenWidth / 3 + 20 + 2;
     }
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section == 1) {
         ZZWorthyArticle *article = self.listArrayM[indexPath.row];
         
-//        https://api.smzdm.com/v2/youhui/articles/6380214?channel_id=1&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
+        //        https://api.smzdm.com/v2/youhui/articles/6380214?channel_id=1&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
         //国内 v2/youhui/articles
         //海淘 v2/youhui/articles
-//        https://api.smzdm.com/v2/youhui/articles/6322999?channel_id=5&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
+        //        https://api.smzdm.com/v2/youhui/articles/6322999?channel_id=5&f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
         //众测 v2/pingce/articles
-//        https://api.smzdm.com/v2/pingce/articles/32743?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
+        //        https://api.smzdm.com/v2/pingce/articles/32743?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
         //原创 v2/yuanchuang/articles
-//        https://api.smzdm.com/v2/yuanchuang/articles/484134?f=iphone&filtervideo=1&imgmode=0&no_html_series=1&show_dingyue=1&show_share=1&show_wiki=1&v=7.2&weixin=1
+        //        https://api.smzdm.com/v2/yuanchuang/articles/484134?f=iphone&filtervideo=1&imgmode=0&no_html_series=1&show_dingyue=1&show_share=1&show_wiki=1&v=7.2&weixin=1
         
         
         //话题 v2/wiki/topic_detail(如果为话题, 就不是跳转网页了, 要自己写控制器跳转)
-//        http://api.smzdm.com/v2/wiki/topic_detail/698?f=iphone&v=7.2&weixin=1
-//        http://api.smzdm.com/v2/wiki/comments?f=iphone&limit=20&offset=0&order=byhot&topic_id=698&v=7.2.1&weixin=1
+        //        http://api.smzdm.com/v2/wiki/topic_detail/698?f=iphone&v=7.2&weixin=1
+        //        http://api.smzdm.com/v2/wiki/comments?f=iphone&limit=20&offset=0&order=byhot&topic_id=698&v=7.2.1&weixin=1
         
         //资讯 v2/news/articles
-//        https://api.smzdm.com/v2/news/articles/28552?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
+        //        https://api.smzdm.com/v2/news/articles/28552?f=iphone&filtervideo=1&imgmode=0&show_dingyue=1&show_wiki=1&v=7.2&weixin=1
         
 #if 0   //测试话题
         channelID = 14;
         articleId = @"698";
 #endif
         
-//        [self jumpToDetailArticleViewControllerWithArticle:article];
+        //        [self jumpToDetailArticleViewControllerWithArticle:article];
         [self jumpToDetailArticleViewControllerWithRedirectdata:article.redirect_data];
     }
 }
@@ -261,7 +246,7 @@
 #pragma mark - ZZHomeFirstCellDelegete
 
 /** 点击了轮播图片 */
-- (void)cellDidClickCycleScrollView:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index{
+- (void)cellDidClickCycleScrollView:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index {
     
     ZZRedirectData *redirectdata = cell.layout.firstModel.floor_multi[index].redirect_data;
     
@@ -269,7 +254,7 @@
     
 }
 /** 点击了四张图片中的一张 */
-- (void)cellDidClickOneOfFourPic:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index{
+- (void)cellDidClickOneOfFourPic:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index {
     
     ZZRedirectData *redirectdata = cell.layout.firstModel.floor_single[index].redirect_data;
     
@@ -277,20 +262,20 @@
     
 }
 /** 点击了原创Item */
-- (void)cellDidClickYuanChuangItem:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index{
+- (void)cellDidClickYuanChuangItem:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index {
     
 }
 /** 点击了福利Item */
-- (void)cellDidClickFuliItem:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index{
+- (void)cellDidClickFuliItem:(ZZHomeFirstCell *)cell atIndex:(NSInteger)index {
     
 }
 
 #pragma mark - getter && setter
 - (NSMutableArray *)listArrayM {
-	if (!_listArrayM){
+    if (!_listArrayM){
         _listArrayM = [NSMutableArray array];
-	}
-	return _listArrayM;
+    }
+    return _listArrayM;
 }
 
 - (ZZHomeFirstRequest *)firstRequest {

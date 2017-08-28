@@ -64,7 +64,7 @@
     modifier.paddingTop = kDetailContentOffset;
     modifier.paddingBottom = kDetailContentOffset;
     
-    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenW, HUGE) insets:UIEdgeInsetsMake(20, kDetailContentOffset, kDetailContentOffset, kDetailContentOffset)];
+    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth, HUGE) insets:UIEdgeInsetsMake(20, kDetailContentOffset, kDetailContentOffset, kDetailContentOffset)];
     _articleLayout = [YYTextLayout layoutWithContainer:container text:articleText];
     _articleHeight = [modifier heightForLineCount:_articleLayout.lines.count];
     

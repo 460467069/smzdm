@@ -35,7 +35,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
 //     {{0, 244}, {414, 180}}
     ZZHomeHeaderViewController *headerVC = [[ZZHomeHeaderViewController alloc] init];
 //    headerVC.view.backgroundColor = [UIColor redColor];
-    headerVC.view.bounds = CGRectMake(0, 0, kScreenW, 360);
+    headerVC.view.bounds = CGRectMake(0, 0, kScreenWidth, 360);
     [self addChildViewController:headerVC];
     [headerVC didMoveToParentViewController:self];
     
@@ -214,7 +214,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
         if (channelID == 8 || channelID == 11 || channelID == 14) {
             return 284;
         }
-        return kScreenW / 3 + 20 + 2;
+        return kScreenWidth / 3 + 20 + 2;
     }
     
 }

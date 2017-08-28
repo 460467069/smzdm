@@ -29,7 +29,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (frame.size.width == 0 && frame.size.height == 0) {
-        frame.size.width = kScreenW - 2 * kDetailTopicMarginX;
+        frame.size.width = kScreenWidth - 2 * kDetailTopicMarginX;
     }
     self = [super initWithFrame:frame];
     if (self) {
@@ -38,7 +38,7 @@
         self.backgroundColor = kGlobalLightGrayColor;
         
         _userInfoLabel = [[YYLabel alloc] init];
-//        _userInfoLabel.backgroundColor = [UIColor randomColor];
+        //        _userInfoLabel.backgroundColor = [UIColor randomColor];
         [self addSubview:_userInfoLabel];
         _userInfoLabel.height = kDetailTopicUserInfoHeight;
         
@@ -48,7 +48,7 @@
         _starLabel.right = self.width - kDetailTopicContentOffsetX;;
         _starLabel.centerY = _userInfoLabel.centerY;
         _starLabel.hidden = YES;
-//        _starLabel.backgroundColor = [UIColor randomColor];
+        //        _starLabel.backgroundColor = [UIColor randomColor];
         
         
         
@@ -88,12 +88,12 @@
         [self addSubview:_supportLabel];
         _supportLabel.size = CGSizeMake(60, kDetailTopicUseTimeHeight);
         _supportLabel.right = self.width - kDetailTopicContentOffsetX;
-//        _supportLabel.backgroundColor = [UIColor randomColor];
-
+        //        _supportLabel.backgroundColor = [UIColor randomColor];
+        
         
         _supportBtn = [[UIButton alloc] init];
         _supportBtn.backgroundColor = [UIColor zz_randomColor];
-//        [self addSubview:_supportBtn];
+        //        [self addSubview:_supportBtn];
         [_supportBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         [_supportBtn setImage:[UIImage imageNamed:@"ico_zan"] forState:UIControlStateNormal];
         [_supportBtn setImage:[UIImage imageNamed:@"community_like_icon"] forState:UIControlStateSelected];
@@ -130,15 +130,12 @@
         _picCountLabel.textLayout = layout.picCountLayout;
         _picCountLabel.top = _descLabel.bottom;
         _picCountLabel.left =  kDetailTopicContentOffsetX;
-        
         _commentCountLabel.left = _picCountLabel.right + kDetailTopicSmallBtnMargin;
-        
-
-    }else{
+    } else {
         _picCountLabel.hidden = YES;
         _commentCountLabel.left = kDetailTopicContentOffsetX;
     }
-
+    
     _useTimeLabel.textLayout = layout.useTimeLayout;
     _useTimeLabel.left = _commentCountLabel.right + kDetailTopicSmallBtnMargin;
     _useTimeLabel.centerY = _commentCountLabel.centerY;

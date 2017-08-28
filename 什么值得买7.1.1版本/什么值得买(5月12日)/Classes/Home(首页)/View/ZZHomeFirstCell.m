@@ -22,7 +22,7 @@
         [self.contentView addSubview:_titleView];
         
         _cycleScrollView = [ZZCycleScrollView new];
-        _cycleScrollView.width = kScreenW;
+        _cycleScrollView.width = kScreenWidth;
         _cycleScrollView.left = 0;
         _cycleScrollView.delegate = self;
         [self.contentView addSubview:_cycleScrollView];
@@ -37,13 +37,13 @@
         _separatorView = [ZZSeparatorView new];
         [self.contentView addSubview:_separatorView];
         
-        self.contentView.backgroundColor = kHomeFirstCellLineColor;
+        self.contentView.backgroundColor = kGlobalLightGrayColor;
     }
     
     return self;
 }
 
-- (void)setLayout:(ZZHomeFirstLayout *)layout{
+- (void)setLayout:(ZZHomeFirstLayout *)layout {
     _layout = layout;
     
     CGFloat top = 0;
@@ -67,7 +67,7 @@
 //    self.contentView.height = layout.height;
 }
 
-- (void)_setTitleViewWithTop:(CGFloat)top{
+- (void)_setTitleViewWithTop:(CGFloat)top {
     
     _titleView.titleLabel.textLayout = _layout.titleTextLayout;
     [_titleView.bgView.layer setImageURL:[NSURL URLWithString:_layout.firstModel.floor_head_pic_url]];
@@ -75,7 +75,7 @@
 }
 
 /** 轮播图片 */
-- (void)_setBannerCycleScrollViewWithTop:(CGFloat)top{
+- (void)_setBannerCycleScrollViewWithTop:(CGFloat)top {
     if (_layout.picBannerHeight > 0) {
         
         NSMutableArray *imageURLStringsGroup = [NSMutableArray array];
@@ -95,8 +95,7 @@
 }
 
 /** 四张图片 */
-- (void)_setFourPicsWithTop:(CGFloat)top{
-    
+- (void)_setFourPicsWithTop:(CGFloat)top {
     _fourPicView.top = top;
     _fourPicView.height = _layout.picFragmentHeight;
 //    _fourPicView.backgroundColor = [UIColor greenColor];
@@ -112,16 +111,13 @@
                 ZZFloorSingle *floorSingle = _layout.firstModel.floor_single[i];
                 [imageView.layer setImageWithURL:[NSURL URLWithString:floorSingle.pic_url] placeholder:nil];
                 imageView.frame = [_layout.fourRectArray[i] CGRectValue];
-            }else{
+            } else {
                 imageView.hidden = YES;
             }
-            
         }
-
-    }else{
-        _fourPicView.hidden = YES;
+        return;
     }
-
+    _fourPicView.hidden = YES;
 }
 
 /** 水平滚动的scrollView */
@@ -156,7 +152,7 @@
             
         }
         
-    }else{
+    } else {
         _horizontalScrollView.hidden = YES;
         _horizontalScrollView.talentShow.hidden = YES;
     }
@@ -168,7 +164,7 @@
     _horizontalScrollView.height = _layout.horizontalScrollViewH;
 }
 
-- (void)_setSeparatorBottomViewWithTop:(CGFloat)top{
+- (void)_setSeparatorBottomViewWithTop:(CGFloat)top {
     if (_layout.isLastOne) {
         _separatorView.hidden = NO;
         _separatorView.top = top;
@@ -187,7 +183,7 @@
 
 #pragma mark - SDCycleScrollViewDelegate
 /** 点击图片回调 */
-- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     if ([self.delegate respondsToSelector:@selector(cellDidClickCycleScrollView:atIndex:)]) {
         [self.delegate cellDidClickCycleScrollView:self atIndex:index];
     }
@@ -195,10 +191,8 @@
 
 #pragma mark - ZZFourPicViewDelegate
 
-- (void)fourPicView:(ZZFourPicView *)fourPicView didSelectItemAtIndex:(NSInteger)index{
-    
+- (void)fourPicView:(ZZFourPicView *)fourPicView didSelectItemAtIndex:(NSInteger)index {
     if ([self.delegate respondsToSelector:@selector(cellDidClickFuliItem:atIndex:)]) {
-        
         [self.delegate cellDidClickOneOfFourPic:self atIndex:index];
     }
 }
@@ -208,10 +202,9 @@
 
 @implementation ZZTitleView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     if (frame.size.width == 0 && frame.size.height == 0) {
-        frame.size.width = kScreenW;
+        frame.size.width = kScreenWidth;
         frame.size.height = kHomeFirstCellHeadTitleHeight;
     }
     self = [super initWithFrame:frame];
@@ -235,12 +228,10 @@
 
 @implementation ZZFourPicView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     if (self.frame.size.width == 0 && self.frame.size.height == 0) {
-        frame.size.width = kScreenW;
+        frame.size.width = kScreenWidth;
     }
-    
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
@@ -260,14 +251,10 @@
     return self;
 }
 
-- (void)imageViewDidTap:(UITapGestureRecognizer *)tap{
-    
+- (void)imageViewDidTap:(UITapGestureRecognizer *)tap {
     UIImageView *imageView = (UIImageView *)tap.view;
-
     NSInteger index = [_fourPics indexOfObject:imageView];
-    
     if ([self.delegate respondsToSelector:@selector(fourPicView:didSelectItemAtIndex:)]) {
-        
         [self.delegate fourPicView:self didSelectItemAtIndex:index];
     }
 }
@@ -277,10 +264,9 @@
 @implementation ZZSeparatorView
 
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     if (self.frame.size.width == 0 && self.frame.size.height == 0) {
-        frame.size.width = kScreenW;
+        frame.size.width = kScreenWidth;
         frame.size.height = kHomeFirstCellBottomSeparatorH;
     }
     self = [super initWithFrame:frame];
@@ -321,13 +307,10 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self.frame.size.width == 0 && self.frame.size.height == 0) {
-        frame.size.width = kScreenW;
+        frame.size.width = kScreenWidth;
         frame.size.height = kHomeFirstCellScrollItemHeight;
     }
     self = [super initWithFrame:frame];
-    
-
-    
     if (self) {
         self.showsHorizontalScrollIndicator = NO;
         NSMutableArray *pics = [NSMutableArray array];
@@ -346,9 +329,7 @@
             [pics addObject:item];
         }
         _pics = [pics copy];
-        
         self.backgroundColor = [UIColor whiteColor];
-        
     }
     return self;
 }
@@ -357,13 +338,11 @@
 
 @implementation ZZHorizontalScrollItem
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     if (frame.size.width == 0 && frame.size.height == 0) {
         frame.size.width = kHomeFirstCellScrollItemWidth;
         frame.size.height = kHomeFirstCellScrollItemHeight;
     }
-    
     self = [super initWithFrame:frame];
     if (self) {
         _avatarView = [UIImageView new];

@@ -33,7 +33,7 @@
     
     // 添加label
     UILabel *label = [[UILabel alloc] init];
-    label.width = kScreenW;
+    label.width = kScreenWidth;
     label.height = 20;
     label.textColor = kGlobalGrayColor;
     label.font = [UIFont systemFontOfSize:13];
