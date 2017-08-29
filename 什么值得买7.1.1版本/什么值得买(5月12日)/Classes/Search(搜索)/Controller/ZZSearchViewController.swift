@@ -69,15 +69,7 @@ class ZZSearchFlowLayout: UICollectionViewFlowLayout {
 //                <#code#>
 //            }
             
-            
-            
-            
-            
-            
-            
         }
-        
-        
         
     }
     required init?(coder aDecoder: NSCoder) {
@@ -141,6 +133,11 @@ class ZZSearchViewController: ZZSecondBaseViewController {
         initNavBar()
         loadData()
         textFiled.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        textFiled.resignFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {

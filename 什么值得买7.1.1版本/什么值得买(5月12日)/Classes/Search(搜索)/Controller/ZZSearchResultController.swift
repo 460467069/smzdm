@@ -77,7 +77,6 @@ extension ZZSearchResultController {
         }
     }
     
-    
     override func loadMoreData() {
         weak var weakSelf = self
         ZZAPPDotNetAPIClient.shared().get(searchRequest) { (responseObj, error) in

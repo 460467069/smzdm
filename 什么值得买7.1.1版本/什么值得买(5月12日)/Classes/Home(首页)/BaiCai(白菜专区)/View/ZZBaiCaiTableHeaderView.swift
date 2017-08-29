@@ -69,7 +69,6 @@ class ZZBaiCaiItemOne: UIView { //每日精选和白菜头条
                 if let worthyArticle = baiCaiItemLayout.worthyArticle {
                     iconView.zdm_setImage(urlStr: worthyArticle.article_pic, placeHolder: nil)
                 }
-                
                 titleLabel.textLayout = baiCaiItemLayout.titleLayout
                 subTitleLabel.textLayout = baiCaiItemLayout.subTitleLayout
                 
@@ -90,9 +89,7 @@ class ZZBaiCaiJingXuanView: UIView {
     }()
     
     lazy var scrollView: ZZHaoWuScrollView = {
-        
         let scrollView = ZZHaoWuScrollView()
-        
         return scrollView
     }()
     
@@ -110,7 +107,7 @@ class ZZBaiCaiJingXuanView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func initUI(){
+    func initUI() {
         
         addSubview(baiCaiBannerView)
         addSubview(scrollView)
@@ -131,44 +128,30 @@ class ZZBaiCaiJingXuanView: UIView {
             baiCaiItemOne.tag = i
             scrollView.addSubview(baiCaiItemOne)
             scrollView.haowuItems.append(baiCaiItemOne)
-            
-        
             let tapGestureRecongnizer = UITapGestureRecognizer.init(target: self, action: #selector(itemDidClick(tap:)))
             baiCaiItemOne.addGestureRecognizer(tapGestureRecongnizer)
-            
         }
     }
     
-    func itemDidClick(tap:UITapGestureRecognizer){
-        
+    func itemDidClick(tap:UITapGestureRecognizer) {
         let baiCaiItemOne = tap.view as! ZZBaiCaiItemOne
-        
         let redirectData = jingXuanTextLayouts?[baiCaiItemOne.tag].worthyArticle?.redirect_data
-        
         delegete?.jumpToNextController?(redirectData: redirectData!)
-        
     }
     
     
     var jingXuanTextLayouts: [ZZBaiCaiItemLayout]? {
         
-        didSet{
-            
-            if let jingXuanTextLayouts = jingXuanTextLayouts {
-                
-                let actualCount = jingXuanTextLayouts.count
-   
-                for i in 0..<baiCaiConstant.itemMaxCount {
-                    
-                    let baicaiItemOne = scrollView.haowuItems[i] as! ZZBaiCaiItemOne
-                    
-                    if i < actualCount {
-                        baicaiItemOne.isHidden = false
-                        baicaiItemOne.baiCaiItemLayout = jingXuanTextLayouts[i]
-                    }else{
-                        baicaiItemOne.isHidden = true
-                    }
-                    
+        didSet {
+            guard let jingXuanTextLayouts = jingXuanTextLayouts else { return }
+            let actualCount = jingXuanTextLayouts.count
+            for i in 0..<baiCaiConstant.itemMaxCount {
+                let baicaiItemOne = scrollView.haowuItems[i] as! ZZBaiCaiItemOne
+                if i < actualCount {
+                    baicaiItemOne.isHidden = false
+                    baicaiItemOne.baiCaiItemLayout = jingXuanTextLayouts[i]
+                } else {
+                    baicaiItemOne.isHidden = true
                 }
             }
         }
@@ -200,56 +183,42 @@ class ZZBaiCaiTableHeaderView: UIView {
     
     var baiCaiLayout: ZZZuiXinBaiCaiLayout?{
         
-        didSet{
-            
+        didSet {
             height = (baiCaiLayout?.rowHeight)!
-            
-            if let baiCaiLayout = baiCaiLayout {
-                if baiCaiLayout.jingXuanTextLayouts.count > 0 {
-                    jingXuanView.baiCaiBannerView.titleLabel.text = "每日精选"
-                    jingXuanView.baiCaiBannerView.accessoryBtn.setTitle("查看更多", for: .normal)
-                    
-                    jingXuanView.jingXuanTextLayouts = baiCaiLayout.jingXuanTextLayouts
-                    jingXuanView.scrollView.contentSize = (baiCaiLayout.jingXuanScrollViewContentSize)!
-                    
-                }
+            guard let baiCaiLayout = baiCaiLayout else { return }
+            if baiCaiLayout.jingXuanTextLayouts.count > 0 {
+                jingXuanView.baiCaiBannerView.titleLabel.text = "每日精选"
+                jingXuanView.baiCaiBannerView.accessoryBtn.setTitle("查看更多", for: .normal)
                 
-                if baiCaiLayout.touTiaoTextLayouts.count > 0 {
-                    
-                    touTiaoView.top = jingXuanView.bottom
-                    touTiaoView.baiCaiBannerView.titleLabel.text = "白菜头条"
-                    touTiaoView.baiCaiBannerView.accessoryBtn.setTitle("", for: .normal)
-                    touTiaoView.jingXuanTextLayouts = baiCaiLayout.touTiaoTextLayouts
-                    touTiaoView.scrollView.contentSize = (baiCaiLayout.touTiaoScrollViewContentSize)!
-                    
-                }
+                jingXuanView.jingXuanTextLayouts = baiCaiLayout.jingXuanTextLayouts
+                jingXuanView.scrollView.contentSize = (baiCaiLayout.jingXuanScrollViewContentSize)!
+                
             }
             
+            if baiCaiLayout.touTiaoTextLayouts.count > 0 {
+                touTiaoView.top = jingXuanView.bottom
+                touTiaoView.baiCaiBannerView.titleLabel.text = "白菜头条"
+                touTiaoView.baiCaiBannerView.accessoryBtn.setTitle("", for: .normal)
+                touTiaoView.jingXuanTextLayouts = baiCaiLayout.touTiaoTextLayouts
+                touTiaoView.scrollView.contentSize = (baiCaiLayout.touTiaoScrollViewContentSize)!
+            }
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-//        backgroundColor = UIColor.random()
         width = kScreenWidth
-        
         initUI()
     }
-
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func initUI(){
-        
-        
+    func initUI() {
         addSubview(jingXuanView)
         addSubview(touTiaoView)
-        
         touTiaoView.top = jingXuanView.bottom
-        
     }
 
 }

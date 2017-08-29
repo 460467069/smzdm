@@ -14,7 +14,6 @@
 #import "ZZLittleBanner.h"
 
 @interface ZZWorthyArticle : NSObject
-
 /** 5 */
 @property (nonatomic, copy, nullable) NSString *article_channel_id;
 /** 海淘 */
@@ -146,7 +145,7 @@
 @property (nonatomic, copy, nullable) NSString *vice_title;
 @property (nonatomic, copy, nullable) NSString *position;
 @property (nonatomic, assign) BOOL is_show_tag;
-
+@property (nonatomic, copy, nullable) NSString *cell_type;
 //promotion_type为8的字段
 @property (nonatomic, strong, nullable) NSArray<ZZLittleBanner *> *rows;
 @end

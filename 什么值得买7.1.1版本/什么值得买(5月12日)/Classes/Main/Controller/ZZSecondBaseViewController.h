@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZZSecondBaseViewController : UIViewController
+@class ZZSecondBaseViewController;
+@protocol ZDBaseViewControllerDelegate <NSObject>
+@optional
+- (void)baseViewControllerBackBtnDidClick:(ZZSecondBaseViewController *)vc;
+@end
+
+@interface ZZSecondBaseViewController : UIViewController<ZDBaseViewControllerDelegate>
+
+@property (nonatomic, weak) id<ZDBaseViewControllerDelegate> delegate;
 
 - (void)initUI;
 - (void)initNavBar;
 - (void)setupDatasource;
+
 @end

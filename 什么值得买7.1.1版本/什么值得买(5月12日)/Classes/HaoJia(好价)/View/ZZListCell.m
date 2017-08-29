@@ -8,15 +8,17 @@
 
 #import "ZZListCell.h"
 #import "ZZChannelID.h"
+#import <YYKit/NSString+YYAdd.h>
 
 @interface ZZListCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *mallAndTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mallLabel;
 @property (weak, nonatomic) IBOutlet UIButton *commentBtn;
 @property (weak, nonatomic) IBOutlet UIButton *zhiBtn;
 @property (weak, nonatomic) IBOutlet UIButton *waterBtn;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
@@ -27,9 +29,7 @@
     self.priceLabel.textColor = kGlobalRedColor;
 }
 
-
-
-- (void)setArticle:(ZZWorthyArticle *)article{
+- (void)setArticle:(ZZWorthyArticle *)article {
     _article = article;
 
     NSString *imageUrlStr = nil;
@@ -46,7 +46,8 @@
         priceStr = article.article_price;
     }
     
-    self.mallAndTimeLabel.hidden = isNeedHidden;
+    self.mallLabel.hidden = isNeedHidden;
+    self.timeLabel.hidden = isNeedHidden;
     self.commentBtn.hidden = isNeedHidden;
     self.zhiBtn.hidden = isNeedHidden;
     self.waterBtn.hidden = isNeedHidden;
@@ -79,8 +80,10 @@
     } else {
         mallStr = article.article_rzlx;
     }
+    
     NSString *dateStr = article.article_format_date;
-    self.mallAndTimeLabel.text = [NSString stringWithFormat:@"%@ | %@", mallStr, dateStr];
+    self.mallLabel.text = mallStr;
+    self.timeLabel.text = [NSString stringWithFormat:@"| %@", dateStr];;
     [self.commentBtn setTitle:article.article_comment forState:UIControlStateNormal];
     
     //
@@ -121,11 +124,9 @@
     if ([self.homeChannel.type isEqualToString:kHaojiaJingXuan] || [self.type isEqualToString:kHaojiaJingXuan]) {
         ZZChannelID *channel = [ZZChannelID channelWithID:channelID];
         [self.waterBtn setImage:[UIImage imageNamed:channel.waterImageName] forState:UIControlStateNormal];
-    }else{
+    } else {
         [self.waterBtn setImage:nil forState:UIControlStateNormal];
     }
-    
-    
 }
 
 

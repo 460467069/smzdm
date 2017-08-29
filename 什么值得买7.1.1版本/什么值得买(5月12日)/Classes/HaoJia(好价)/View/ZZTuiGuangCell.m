@@ -29,7 +29,6 @@
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:article.img]];
     self.titleLabel.text = article.title;
     self.tagLabel.text = article.tag;
-    
 }
 
 @end
