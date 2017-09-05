@@ -23,10 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  椭圆形的按钮
  */
-+ (UIButton *)opt_buttonWithFrame:(CGRect)rect target:(id)target action:(SEL)action title:(NSString *)title;
++ (instancetype)opt_buttonWithFrame:(CGRect)rect target:(id)target action:(SEL)action title:(NSString *)title;
 
 
-+ (UIButton *)opt_titleButtonWithTarget:(id)target action:(SEL)action title:(NSString *)title;
++ (instancetype)opt_titleButtonWithTarget:(id)target action:(SEL)action title:(NSString *)title;
 
 /**
  *  创建button
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return button对象
  */
 
-+ (UIButton *)yj_createButton:(CGRect)frame
++ (instancetype)yj_createButton:(CGRect)frame
                     buttonTag:(NSInteger)bTag
                   buttonTitle:(nullable NSString *)title
              buttonTitleColor:(UIColor *)tColor
@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
                        target:(nullable id)target
                      selector:(nullable SEL)action;
 
-+ (UIButton *)yj_createButton:(CGRect)frame
++ (instancetype)yj_createButton:(CGRect)frame
                     buttonTag:(NSInteger)bTag
                   buttonImage:(nullable UIImage *)buttonImage
        buttonHighlightedImage:(nullable UIImage *)buttonHighlightedImage

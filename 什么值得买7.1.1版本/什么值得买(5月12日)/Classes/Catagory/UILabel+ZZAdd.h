@@ -25,12 +25,12 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return label对象
  */
-+ (UILabel *)yj_createLable:(CGRect)frame
-                       text:(nullable NSString *)aText
-                textAliType:(NSTextAlignment)aTextAliType
-                       font:(UIFont *)font
-                      color:(UIColor *)aColor
-                  backColor:(UIColor *)bColor;
++ (instancetype)yj_createLable:(CGRect)frame
+                          text:(nullable NSString *)aText
+                   textAliType:(NSTextAlignment)aTextAliType
+                          font:(UIFont *)font
+                         color:(UIColor *)aColor
+                     backColor:(UIColor *)bColor;
 
 /**
  *  创建label
@@ -45,13 +45,13 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return label对象
  */
-+ (UILabel *)yj_createLable:(CGRect)frame
-                       text:(nullable NSString *)aText
-                textAliType:(NSTextAlignment)aTextAliType
-                       font:(UIFont *)font
-                      color:(UIColor *)aColor
-                  backColor:(UIColor *)bColor
-  adjustsFontSizeToFitWidth:(BOOL)bAdjust;
++ (instancetype)yj_createLable:(CGRect)frame
+                          text:(nullable NSString *)aText
+                   textAliType:(NSTextAlignment)aTextAliType
+                          font:(UIFont *)font
+                         color:(UIColor *)aColor
+                     backColor:(UIColor *)bColor
+     adjustsFontSizeToFitWidth:(BOOL)bAdjust;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -33,9 +32,5 @@
     [self.navigationController.navigationBar setBarTintColor:kGlobalRedColor];
     [self.view endEditing:YES];
 }
-
-- (void)initUI {}
-- (void)initNavBar {}
-- (void)setupDatasource {}
 
 @end

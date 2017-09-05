@@ -10,7 +10,7 @@
 
 
 @implementation UIButton (ZZAdd)
-+ (UIButton *)opt_buttonWithFrame:(CGRect)rect target:(id)target action:(SEL)action title:(NSString *)title{
++ (instancetype)opt_buttonWithFrame:(CGRect)rect target:(id)target action:(SEL)action title:(NSString *)title{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:rect];
     [button setTitle:title forState:UIControlStateNormal];
@@ -25,23 +25,23 @@
     return button;
 }
 
-+ (UIButton *)opt_titleButtonWithTarget:(id)target action:(SEL)action title:(NSString *)title {
++ (instancetype)opt_titleButtonWithTarget:(id)target action:(SEL)action title:(NSString *)title {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [button setTitleColor:[UIColor opt_tintColor] forState:UIControlStateNormal];
-//    [button setTitleColor:[UIColor opt_grayColor] forState:UIControlStateHighlighted];
+    //    [button setTitleColor:[UIColor opt_tintColor] forState:UIControlStateNormal];
+    //    [button setTitleColor:[UIColor opt_grayColor] forState:UIControlStateHighlighted];
     [[button titleLabel] setFont:[UIFont systemFontOfSize:16]];
     [button setTitle:title forState:UIControlStateNormal];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return button;
 }
 
-+ (UIButton *)yj_createButton:(CGRect)frame
-                    buttonTag:(NSInteger)bTag
-                  buttonTitle:(NSString *)title
-             buttonTitleColor:(UIColor *)tColor
-              buttonTitleFont:(UIFont *)aFont
-                       target:(id)target
-                     selector:(SEL)action {
++ (instancetype)yj_createButton:(CGRect)frame
+                      buttonTag:(NSInteger)bTag
+                    buttonTitle:(NSString *)title
+               buttonTitleColor:(UIColor *)tColor
+                buttonTitleFont:(UIFont *)aFont
+                         target:(id)target
+                       selector:(SEL)action {
     UIButton *button = [self yj_createButton:frame
                                    buttonTag:bTag
                                       target:target
@@ -53,10 +53,10 @@
     return button;
 }
 
-+ (UIButton *)yj_createButton:(CGRect)frame
-                    buttonTag:(NSInteger)bTag
-                       target:(id)target
-                     selector:(SEL)action {
++ (instancetype)yj_createButton:(CGRect)frame
+                      buttonTag:(NSInteger)bTag
+                         target:(id)target
+                       selector:(SEL)action {
     UIButton *button = [self buttonWithType:UIButtonTypeCustom];
     button.frame = frame;
     button.tag = bTag;
@@ -66,10 +66,10 @@
 }
 
 /*  设置按钮的标题、标题颜色、标题字体 */
-+ (UIButton *)yj_button:(UIButton *)button
-            buttonTitle:(NSString *)title
-       buttonTitleColor:(UIColor *)tColor
-        buttonTitleFont:(UIFont *)aFont {
++ (instancetype)yj_button:(UIButton *)button
+              buttonTitle:(NSString *)title
+         buttonTitleColor:(UIColor *)tColor
+          buttonTitleFont:(UIFont *)aFont {
     [button setTitle:title forState:UIControlStateNormal];
     if (tColor) {
         [button setTitleColor:tColor forState:UIControlStateNormal];
@@ -80,12 +80,12 @@
     return button;
 }
 
-+ (UIButton *)yj_createButton:(CGRect)frame
-                    buttonTag:(NSInteger)bTag
-                  buttonImage:(UIImage *)buttonImage
-       buttonHighlightedImage:(nullable UIImage *)buttonHighlightedImage
-                       target:(id)target
-                     selector:(SEL)action {
++ (instancetype)yj_createButton:(CGRect)frame
+                      buttonTag:(NSInteger)bTag
+                    buttonImage:(UIImage *)buttonImage
+         buttonHighlightedImage:(nullable UIImage *)buttonHighlightedImage
+                         target:(id)target
+                       selector:(SEL)action {
     UIButton *button = [self yj_createButton:frame
                                    buttonTag:bTag
                                       target:target

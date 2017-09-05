@@ -31,6 +31,9 @@ target '什么值得买' do
   pod 'Bugly'
   pod 'SDiPhoneVersion'
   pod 'JPush'
+  pod 'IGListKit'
+  pod 'SwiftyJSON'
+  
 #  pod 'SwipeTableView'
   # 主模块(必须)
   pod 'ShareSDK3'

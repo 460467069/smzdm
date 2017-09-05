@@ -25,6 +25,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6Z-Ga-4a6">
                                 <rect key="frame" x="10" y="118" width="31" height="15"/>
+                                <color key="backgroundColor" red="0.81973002630000003" green="0.9341614842" blue="0.9083688942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -61,7 +62,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhQ-d7-BGh">
-                                <rect key="frame" x="46" y="118" width="31" height="15"/>
+                                <rect key="frame" x="44" y="118" width="31" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -79,7 +80,7 @@
                             <constraint firstItem="DhQ-d7-BGh" firstAttribute="centerY" secondItem="Soa-Aa-eJA" secondAttribute="centerY" id="MHk-cD-kgR"/>
                             <constraint firstAttribute="bottom" secondItem="j6Z-Ga-4a6" secondAttribute="bottom" constant="5" id="XAv-7a-cLj"/>
                             <constraint firstItem="K3e-wy-nX8" firstAttribute="centerY" secondItem="j6Z-Ga-4a6" secondAttribute="centerY" id="XER-tC-OPV"/>
-                            <constraint firstItem="DhQ-d7-BGh" firstAttribute="leading" secondItem="j6Z-Ga-4a6" secondAttribute="trailing" constant="5" id="deC-wB-paS"/>
+                            <constraint firstItem="DhQ-d7-BGh" firstAttribute="leading" secondItem="j6Z-Ga-4a6" secondAttribute="trailing" constant="3" id="deC-wB-paS"/>
                             <constraint firstItem="K3e-wy-nX8" firstAttribute="leading" secondItem="Soa-Aa-eJA" secondAttribute="trailing" constant="15" id="htE-QR-ScH"/>
                             <constraint firstItem="j6Z-Ga-4a6" firstAttribute="top" secondItem="DIJ-HJ-gRw" secondAttribute="bottom" constant="15" id="i2r-s1-xgf"/>
                             <constraint firstItem="j6Z-Ga-4a6" firstAttribute="top" secondItem="DIJ-HJ-gRw" secondAttribute="bottom" constant="15" id="nge-jN-bWc"/>

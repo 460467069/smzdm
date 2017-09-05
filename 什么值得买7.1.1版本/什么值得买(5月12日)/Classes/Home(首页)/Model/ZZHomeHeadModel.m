@@ -7,6 +7,9 @@
 //
 
 #import "ZZHomeHeadModel.h"
+#import "ZZTitleBannelOption.h"
+#import "ZZHeadLine.h"
+#import "ZZLittleBanner.h"
 
 @implementation ZZHomeBannerRequest
 - (instancetype)init
@@ -14,7 +17,7 @@
     self = [super init];
     if (self) {
         self.type = @"menhu";
-        self.urlStr = kZDM_Home_UtilBanner;
+        self.urlStr = kZDM_UtilBanner;
     }
     return self;
 }

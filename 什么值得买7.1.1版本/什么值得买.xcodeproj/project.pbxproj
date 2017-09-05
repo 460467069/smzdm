@@ -46,6 +46,8 @@
 		A927160B1D44571B006EEECA /* ZZGlobalApperance.m in Sources */ = {isa = PBXBuildFile; fileRef = A927160A1D44571B006EEECA /* ZZGlobalApperance.m */; };
 		A927160E1D44C126006EEECA /* WBStatusLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A927160D1D44C126006EEECA /* WBStatusLayout.m */; };
 		A92BEE9A1EC4B47A009F1018 /* ZZSearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92BEE991EC4B47A009F1018 /* ZZSearchResultController.swift */; };
+		A930F0781F5AECBB0066621E /* ZZChoicenessListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A930F0761F5AECBB0066621E /* ZZChoicenessListCell.swift */; };
+		A930F0791F5AECBB0066621E /* ZZChoicenessListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A930F0771F5AECBB0066621E /* ZZChoicenessListCell.xib */; };
 		A93698491DC7A9A000D4B643 /* AppDelegate+SDKInit.m in Sources */ = {isa = PBXBuildFile; fileRef = A93698481DC7A9A000D4B643 /* AppDelegate+SDKInit.m */; };
 		A93B6A7C1D6169780001F777 /* ZZDIYBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B6A7B1D6169780001F777 /* ZZDIYBackFooter.m */; };
 		A93DE7B91DE14D1C004C8332 /* ZZJumpToNextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DE7B81DE14D1C004C8332 /* ZZJumpToNextModel.m */; };
@@ -58,7 +60,6 @@
 		A947CCC11DE02FA30047B58F /* ZZDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC831DE02FA30047B58F /* ZZDiscoveryViewController.m */; };
 		A947CCC21DE02FA30047B58F /* ZZDiscoveryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A947CC841DE02FA30047B58F /* ZZDiscoveryViewController.storyboard */; };
 		A947CCC31DE02FA30047B58F /* ZZHomeHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC861DE02FA30047B58F /* ZZHomeHeaderViewController.m */; };
-		A947CCC41DE02FA30047B58F /* ZZHomeHeaderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A947CC871DE02FA30047B58F /* ZZHomeHeaderViewController.storyboard */; };
 		A947CCC51DE02FA30047B58F /* ZZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC891DE02FA30047B58F /* ZZHomeViewController.m */; };
 		A947CCC61DE02FA30047B58F /* ZZHomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A947CC8A1DE02FA30047B58F /* ZZHomeViewController.storyboard */; };
 		A947CCC71DE02FA30047B58F /* ZZLittleBannerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC8D1DE02FA30047B58F /* ZZLittleBannerLayout.m */; };
@@ -106,6 +107,7 @@
 		A94AC31C1DED30E3009D077A /* ZZBaiCaiNewestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94AC31A1DED30E3009D077A /* ZZBaiCaiNewestCell.xib */; };
 		A953BB651EA8F91F0035553D /* NSString+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A953BB641EA8F91F0035553D /* NSString+ZZAdd.m */; };
 		A95605F61DA87E4C00473B46 /* ZZSwiftCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95605F51DA87E4C00473B46 /* ZZSwiftCommon.swift */; };
+		A95ACA5D1F5D31BE000446C1 /* ZZGoodArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95ACA5C1F5D31BE000446C1 /* ZZGoodArticleModel.swift */; };
 		A95E63691DF04BAA00855369 /* UIViewController+Jump.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95E63681DF04BAA00855369 /* UIViewController+Jump.swift */; };
 		A95FEAD01E07D642003DFEA0 /* ZZShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FEACD1E07D642003DFEA0 /* ZZShareViewController.swift */; };
 		A95FEAD31E07D677003DFEA0 /* ZZShareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95FEAD11E07D677003DFEA0 /* ZZShareCollectionViewCell.swift */; };
@@ -151,6 +153,9 @@
 		A9AF3E3D1DE464FD0055F522 /* ZZDouYuTitileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AF3E331DE464FD0055F522 /* ZZDouYuTitileView.xib */; };
 		A9B2ACA11DDB6EDD00D8F296 /* ZZKeyboardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2ACA01DDB6EDD00D8F296 /* ZZKeyboardToolBar.m */; };
 		A9B2ACA41DDB728200D8F296 /* ZZEmoticonInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2ACA31DDB728200D8F296 /* ZZEmoticonInputView.m */; };
+		A9B5FAF11F56A22A00765562 /* ZZTopicListSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B5FAF01F56A22A00765562 /* ZZTopicListSectionController.swift */; };
+		A9B5FAF41F56A34500765562 /* ZZTopicListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B5FAF21F56A34500765562 /* ZZTopicListCell.swift */; };
+		A9B5FAF51F56A34500765562 /* ZZTopicListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9B5FAF31F56A34500765562 /* ZZTopicListCell.xib */; };
 		A9B783551D58FB5F003C464D /* ZZDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B783541D58FB5F003C464D /* ZZDIYHeader.m */; };
 		A9B783581D58FB90003C464D /* ZZCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B783571D58FB90003C464D /* ZZCircleView.m */; };
 		A9B7835B1D59019D003C464D /* ZZRefreshTip.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7835A1D59019D003C464D /* ZZRefreshTip.m */; };
@@ -163,6 +168,8 @@
 		A9C08ACA1E7790D600099C28 /* ZZSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C08AC91E7790D600099C28 /* ZZSearchItem.swift */; };
 		A9C108B81DD15C6D00068A7D /* ZZCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C108B71DD15C6D00068A7D /* ZZCommentCell.swift */; };
 		A9C356A11D2275BC006EE7EC /* ZZMineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C356A01D2275BC006EE7EC /* ZZMineViewController.storyboard */; };
+		A9C631F11F5669B50033D0B6 /* ZZGoodArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C631F01F5669B50033D0B6 /* ZZGoodArticleViewController.swift */; };
+		A9C631F51F566C8A0033D0B6 /* ZZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C631F41F566C8A0033D0B6 /* ZZBaseViewController.m */; };
 		A9C8C4E61D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8C4E51D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift */; };
 		A9C8C4E81D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8C4E71D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift */; };
 		A9C8C4EA1D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C8C4E91D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard */; };
@@ -264,6 +271,8 @@
 		A927160C1D44C126006EEECA /* WBStatusLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBStatusLayout.h; sourceTree = "<group>"; };
 		A927160D1D44C126006EEECA /* WBStatusLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBStatusLayout.m; sourceTree = "<group>"; };
 		A92BEE991EC4B47A009F1018 /* ZZSearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZSearchResultController.swift; sourceTree = "<group>"; };
+		A930F0761F5AECBB0066621E /* ZZChoicenessListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZChoicenessListCell.swift; sourceTree = "<group>"; };
+		A930F0771F5AECBB0066621E /* ZZChoicenessListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZChoicenessListCell.xib; sourceTree = "<group>"; };
 		A93698471DC7A9A000D4B643 /* AppDelegate+SDKInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+SDKInit.h"; sourceTree = "<group>"; };
 		A93698481DC7A9A000D4B643 /* AppDelegate+SDKInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+SDKInit.m"; sourceTree = "<group>"; };
 		A93B6A7A1D6169780001F777 /* ZZDIYBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDIYBackFooter.h; sourceTree = "<group>"; };
@@ -285,7 +294,6 @@
 		A947CC841DE02FA30047B58F /* ZZDiscoveryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZDiscoveryViewController.storyboard; sourceTree = "<group>"; };
 		A947CC851DE02FA30047B58F /* ZZHomeHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeHeaderViewController.h; sourceTree = "<group>"; };
 		A947CC861DE02FA30047B58F /* ZZHomeHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeHeaderViewController.m; sourceTree = "<group>"; };
-		A947CC871DE02FA30047B58F /* ZZHomeHeaderViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZHomeHeaderViewController.storyboard; sourceTree = "<group>"; };
 		A947CC881DE02FA30047B58F /* ZZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHomeViewController.h; sourceTree = "<group>"; };
 		A947CC891DE02FA30047B58F /* ZZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeViewController.m; sourceTree = "<group>"; };
 		A947CC8A1DE02FA30047B58F /* ZZHomeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZHomeViewController.storyboard; sourceTree = "<group>"; };
@@ -367,6 +375,7 @@
 		A953BB631EA8F91F0035553D /* NSString+ZZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZZAdd.h"; sourceTree = "<group>"; };
 		A953BB641EA8F91F0035553D /* NSString+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZZAdd.m"; sourceTree = "<group>"; };
 		A95605F51DA87E4C00473B46 /* ZZSwiftCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZSwiftCommon.swift; sourceTree = "<group>"; };
+		A95ACA5C1F5D31BE000446C1 /* ZZGoodArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZGoodArticleModel.swift; sourceTree = "<group>"; };
 		A95E63681DF04BAA00855369 /* UIViewController+Jump.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Jump.swift"; sourceTree = "<group>"; };
 		A95FEACD1E07D642003DFEA0 /* ZZShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZShareViewController.swift; sourceTree = "<group>"; };
 		A95FEAD11E07D677003DFEA0 /* ZZShareCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZShareCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -447,6 +456,9 @@
 		A9B2ACA01DDB6EDD00D8F296 /* ZZKeyboardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZKeyboardToolBar.m; sourceTree = "<group>"; };
 		A9B2ACA21DDB728200D8F296 /* ZZEmoticonInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZEmoticonInputView.h; sourceTree = "<group>"; };
 		A9B2ACA31DDB728200D8F296 /* ZZEmoticonInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZEmoticonInputView.m; sourceTree = "<group>"; };
+		A9B5FAF01F56A22A00765562 /* ZZTopicListSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZTopicListSectionController.swift; sourceTree = "<group>"; };
+		A9B5FAF21F56A34500765562 /* ZZTopicListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZTopicListCell.swift; sourceTree = "<group>"; };
+		A9B5FAF31F56A34500765562 /* ZZTopicListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZTopicListCell.xib; sourceTree = "<group>"; };
 		A9B783531D58FB5F003C464D /* ZZDIYHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDIYHeader.h; sourceTree = "<group>"; };
 		A9B783541D58FB5F003C464D /* ZZDIYHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDIYHeader.m; sourceTree = "<group>"; };
 		A9B783561D58FB90003C464D /* ZZCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCircleView.h; sourceTree = "<group>"; };
@@ -466,6 +478,9 @@
 		A9C08AC91E7790D600099C28 /* ZZSearchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZSearchItem.swift; sourceTree = "<group>"; };
 		A9C108B71DD15C6D00068A7D /* ZZCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentCell.swift; sourceTree = "<group>"; };
 		A9C356A01D2275BC006EE7EC /* ZZMineViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZMineViewController.storyboard; sourceTree = "<group>"; };
+		A9C631F01F5669B50033D0B6 /* ZZGoodArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZGoodArticleViewController.swift; sourceTree = "<group>"; };
+		A9C631F31F566C8A0033D0B6 /* ZZBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBaseViewController.h; sourceTree = "<group>"; };
+		A9C631F41F566C8A0033D0B6 /* ZZBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBaseViewController.m; sourceTree = "<group>"; };
 		A9C8C4E41D8F58EB00B8BFA7 /* 什么值得买-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "什么值得买-Bridging-Header.h"; path = "Classes/FantasyGoods(好物)/Model/什么值得买-Bridging-Header.h"; sourceTree = "<group>"; };
 		A9C8C4E51D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZFantasticGoodsModel.swift; sourceTree = "<group>"; };
 		A9C8C4E71D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZFantasticGoodsController.swift; sourceTree = "<group>"; };
@@ -508,7 +523,7 @@
 		A9FC17AA1D826BB800F16D1E /* ZZSecondBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSecondBaseViewController.h; sourceTree = "<group>"; };
 		A9FC17AB1D826BB800F16D1E /* ZZSecondBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSecondBaseViewController.m; sourceTree = "<group>"; };
 		F1B762794EBD4E6C806C9BD4 /* Pods-什么值得买.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.debug.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.debug.xcconfig"; sourceTree = "<group>"; };
-		FAC44063077F3A4819D95752 /* Pods______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods______.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC44063077F3A4819D95752 /* Pods______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods______.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -696,7 +711,6 @@
 				A947CC841DE02FA30047B58F /* ZZDiscoveryViewController.storyboard */,
 				A947CC851DE02FA30047B58F /* ZZHomeHeaderViewController.h */,
 				A947CC861DE02FA30047B58F /* ZZHomeHeaderViewController.m */,
-				A947CC871DE02FA30047B58F /* ZZHomeHeaderViewController.storyboard */,
 				A947CC7C1DE02FA30047B58F /* ZZDetailArticleViewController.h */,
 				A947CC7D1DE02FA30047B58F /* ZZDetailArticleViewController.m */,
 				A947CC7E1DE02FA30047B58F /* ZZDetailBaseViewController.h */,
@@ -960,6 +974,8 @@
 				A980A4031CE412E8006E0037 /* ZZNavigationController.m */,
 				A980A4041CE412E8006E0037 /* ZZTabBarViewController.h */,
 				A980A4051CE412E8006E0037 /* ZZTabBarViewController.m */,
+				A9C631F31F566C8A0033D0B6 /* ZZBaseViewController.h */,
+				A9C631F41F566C8A0033D0B6 /* ZZBaseViewController.m */,
 				A980A40D1CE41827006E0037 /* ZZFirstBaseViewController.h */,
 				A980A40E1CE41827006E0037 /* ZZFirstBaseViewController.m */,
 				A91E0BE01D5D9640007BD117 /* ZZFirstTableViewController.h */,
@@ -1145,6 +1161,52 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A9C631E91F5669790033D0B6 /* GoodArticle(好文) */ = {
+			isa = PBXGroup;
+			children = (
+				A9C631F21F566C300033D0B6 /* SectionController */,
+				A9C631EA1F5669790033D0B6 /* Controller */,
+				A9C631EB1F5669790033D0B6 /* Model */,
+				A9C631EC1F5669790033D0B6 /* View */,
+			);
+			path = "GoodArticle(好文)";
+			sourceTree = "<group>";
+		};
+		A9C631EA1F5669790033D0B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9C631F01F5669B50033D0B6 /* ZZGoodArticleViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A9C631EB1F5669790033D0B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A95ACA5C1F5D31BE000446C1 /* ZZGoodArticleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C631EC1F5669790033D0B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9B5FAF21F56A34500765562 /* ZZTopicListCell.swift */,
+				A9B5FAF31F56A34500765562 /* ZZTopicListCell.xib */,
+				A930F0761F5AECBB0066621E /* ZZChoicenessListCell.swift */,
+				A930F0771F5AECBB0066621E /* ZZChoicenessListCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9C631F21F566C300033D0B6 /* SectionController */ = {
+			isa = PBXGroup;
+			children = (
+				A9B5FAF01F56A22A00765562 /* ZZTopicListSectionController.swift */,
+			);
+			path = SectionController;
+			sourceTree = "<group>";
+		};
 		A9D9D20A1CE40B3E00A83101 = {
 			isa = PBXGroup;
 			children = (
@@ -1219,6 +1281,7 @@
 				A947CC7A1DE02FA30047B58F /* Home(首页) */,
 				A947CCE01DE02FCC0047B58F /* HaoJia(好价) */,
 				A9D9D23E1CE40B7C00A83101 /* FantasyGoods(好物) */,
+				A9C631E91F5669790033D0B6 /* GoodArticle(好文) */,
 				A9D9D2431CE40B7C00A83101 /* Mine(我) */,
 				A9262A781D76B3290037B1CF /* HMJingXuan */,
 				A9D9D2471CE40B7C00A83101 /* Other */,
@@ -1455,7 +1518,6 @@
 				5D974218DADD9E7F965A44FE /* [CP] Embed Pods Frameworks */,
 				FCD7C8BBA938F9CB3A721E1B /* [CP] Copy Pods Resources */,
 				A99B880F1DEEB34A007A6640 /* Embed App Extensions */,
-				A9E185CC1EC8803E00CDEAF0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1532,7 +1594,6 @@
 				A93DE7BB1DE14D5B004C8332 /* JumpToNext.plist in Resources */,
 				A9A512021D775A5D00E41407 /* ZZCHannelID.plist in Resources */,
 				A9262A801D76B35B0037B1CF /* ZZJingXuanViewController.storyboard in Resources */,
-				A947CCC41DE02FA30047B58F /* ZZHomeHeaderViewController.storyboard in Resources */,
 				A95FEAD41E07D677003DFEA0 /* ZZShareCollectionViewCell.xib in Resources */,
 				A99C54671DF544A600AAFC8D /* Share.plist in Resources */,
 				A947CD1C1DE02FCC0047B58F /* ZZTuiGuangCell.xib in Resources */,
@@ -1542,6 +1603,7 @@
 				A91A83521D420A87008D229E /* weibo_4.json in Resources */,
 				A91A83511D420A87008D229E /* weibo_3.json in Resources */,
 				A947CD091DE02FCC0047B58F /* ZZContentViewController.storyboard in Resources */,
+				A930F0791F5AECBB0066621E /* ZZChoicenessListCell.xib in Resources */,
 				A947CCC61DE02FA30047B58F /* ZZHomeViewController.storyboard in Resources */,
 				A947CCDF1DE02FA30047B58F /* ZZYuanChuangCell.xib in Resources */,
 				A9C8C4EA1D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard in Resources */,
@@ -1553,6 +1615,7 @@
 				A9262A821D76B63F0037B1CF /* JingXuan.plist in Resources */,
 				A91A83551D420A87008D229E /* weibo_7.json in Resources */,
 				A947CD171DE02FCC0047B58F /* ZZHaoJiaHeaderView.xib in Resources */,
+				A9B5FAF51F56A34500765562 /* ZZTopicListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1565,9 +1628,52 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CSStickyHeaderFlowLayout/CSStickyHeaderFlowLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/JSPatch/JSPatch.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SDiPhoneVersion/SDiPhoneVersion.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
+				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ZYCornerRadius/ZYCornerRadius.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSStickyHeaderFlowLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSPatch.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDiPhoneVersion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZYCornerRadius.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1580,27 +1686,17 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-什么值得买-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		A9E185CC1EC8803E00CDEAF0 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n#\n# Copyright 2016 Bugly, Tencent. All rights reserved.\n#\n# V1.4.0\n#\n# 2016.08.03\n#\n#\n#\n######################################################\n# 1. 脚本集成到Xcode工程的Target\n######################################################\n#\n# --- Copy the SCRIPT to the Run Script of Build Phases in the Xcode project ---\n#\n# #\nBUGLY_APP_ID=\"c336b9bd5c\"\n# #\nBUGLY_APP_KEY=\"4edefee5-e863-4aec-a7d9-c87174a01e1b\"\n# #\nBUNDLE_IDENTIFIER=\"smzdm20170409\"\n# #\nUPLOAD_DSYM_ONLY=1\n#\n# # 脚本默认配置的版本格式为CFBundleShortVersionString(CFBundleVersion),  如果你修改默认的版本格式, 请设置此变量, 如果不想修改, 请忽略此设置\n# CUSTOMIZED_APP_VERSION=\"\"\n#\n# # Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\nUPLOAD_DEBUG_SYMBOLS=1\n#\n# # 模拟器编译是否上传，1=上传 0=不上传，默认不上传\nUPLOAD_SIMULATOR_SYMBOLS=1\n#\n# #只有Archive操作时上传, 1=支持Archive上传 0=所有Release模式编译都上传\nUPLOAD_ARCHIVE_ONLY=0\n#\n# #\n# source dSYMUpload.sh\n#\n# --- END OF SCRIPT ---\n#\n#\n#\n#\n#######################################################\n# 2. 脚本根据输入参数处理\n#######################################################\n#\n# #命令行下输入应用基本信息, .dSYM文件的父目录路径, 输出文件目录即可\n#\n# sh dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir>\n#\n# #\n#\n# #注意:\n# # 1. dSYMUpload.sh会调用buglySymboliOS.jar进行.dSYM解析，所以依赖Java运行时环境\n# # 2. dSYMUpload.sh和buglySymboliOS.jar的文件路径需一致\n#\n#\n\n#\n# --- CONTENT OF SCRIPT ---\n#\n\n# Bugly服务域名\nBUGLY_DSYM_UPLOAD_DOMAIN=\"api.bugly.qq.com\"\n\n# 注意jar工具的路径跟dSYMUpload.sh脚本路径一致, 请务必保证jar路径的正确性\nBUGLY_SYMBOL_JAR_PATH=\"dsymtool/buglySymboliOS.jar\"\n# 查找添加到系统目录的jar工具\nif [ ! -f \"${BUGLY_SYMBOL_JAR_PATH}\" ]; then\nBUGLY_SYMBOL_JAR_PATH=\"$HOME/bin/buglySymboliOS.jar\"\nfi\n\n# 打印错误信息\nfunction exitWithMessage(){\n    echo \"--------------------------------\"\n    echo \"${1}\"\n    echo \"--------------------------------\"\n    exit ${2}\n}\n\n# 上传bSYMBOL文件\nfunction dSYMUpload() {\n    P_APP_ID=\"$1\"\n    P_APP_KEY=\"$2\"\n    P_APP_BUNDLE_ID=\"$3\"\n    P_APP_VERSION=\"$4\"\n    P_BSYMBOL_ZIP_FILE=\"$5\"\n    \n    #\n    P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE##*/}\n        P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE_NAME//&/_}\n            P_BSYMBOL_ZIP_FILE_NAME=\"${P_BSYMBOL_ZIP_FILE_NAME// /_}\"\n            \n            DSYM_UPLOAD_URL=\"https://${BUGLY_DSYM_UPLOAD_DOMAIN}/openapi/file/upload/symbol?app_id=${P_APP_ID}&app_key=${P_APP_KEY}\"\n            echo \"dSYM upload url: ${DSYM_UPLOAD_URL}\"\n            \n            echo \"-----------------------------\"\n            STATUS=$(/usr/bin/curl -k \"${DSYM_UPLOAD_URL}\" --form \"api_version=1\" --form \"app_id=${P_APP_ID}\" --form \"app_key=${P_APP_KEY}\" --form \"symbolType=2\"  --form \"bundleId=${BUNDLE_IDENTIFIER}\" --form \"productVersion=${BUGLY_APP_VERSION}\" --form \"fileName=${P_BSYMBOL_ZIP_FILE_NAME}\" --form \"file=@${P_BSYMBOL_ZIP_FILE}\" --verbose)\n            echo \"-----------------------------\"\n            \n            UPLOAD_RESULT=\"FAILTURE\"\n            echo \"Bugly server response: ${STATUS}\"\n            if [ ! \"${STATUS}\" ]; then\n            echo \"Error: Failed to upload the zip archive file.\"\n            elif [[ \"${STATUS}\" == *\"{\\\"reponseCode\\\":\\\"0\\\"}\"* ]]; then\n            echo \"Success to upload the dSYM for the app [${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION}]\"\n            UPLOAD_RESULT=\"SUCCESS\"\n            else\n            echo \"Error: Failed to upload the zip archive file to Bugly.\"\n            fi\n            \n            #Remove temp dSYM archive\n            #echo \"Remove temporary zip archive: ${DSYM_ZIP_FPATH}\"\n            #/bin/rm -f \"${DSYM_ZIP_FPATH}\"\n            \n            if [ \"$?\" -ne 0 ]; then\n            exitWithMessage \"Error: Failed to remove temporary zip archive.\" 0\n            fi\n            \n            echo \"--------------------------------\"\n            echo \"${UPLOAD_RESULT} - dSYM upload complete.\"\n            \n            if [[ \"${UPLOAD_RESULT}\" == \"FAILTURE\" ]]; then\n            echo \"--------------------------------\"\n            echo \"Failed to upload the dSYM\"\n            echo \"Please check the script and try it again.\"\n            fi\n        }\n        \n        # .dSYM解析为bSYMBOL文件\n        function dSYMParse() {\n            DSYM_FILE=\"$1\"\n            DSYM_SYMBOL_FILE=\"$2\"\n            \n            echo \"--------------------------------\"\n            echo \"Extract symbol info from .dSYM file. to ${DSYM_SYMBOL_FILE}\"\n            (/usr/bin/java -Xms512m -Xmx1024m -Dfile.encoding=UTF8 -jar \"${BUGLY_SYMBOL_JAR_PATH}\" -i \"${DSYM_FILE}\" -o \"${DSYM_SYMBOL_FILE}\" ) || exitWithMessage \"Error: Failed to extract symbols.\" 1\n            echo \"--------------------------------\"\n            \n        }\n        \n        # 执行\n        function run() {\n            \n            CONFIG_BUGLY_APP_ID=\"$1\"\n            CONFIG_BUGLY_APP_KEY=\"$2\"\n            \n            CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER=\"$3\"\n            CONFIG_BUGLY_APP_VERSION=\"$4\"\n            CONFIG_DSYM_SOURCE_DIR=\"$5\"\n            CONFIG_DSYM_DEST_DIR=\"$6\"\n            CONFIG_UPLOAD_DSYM_ONLY=\"$7\"\n            \n            # 检查必须参数是否设置\n            if [ ! \"${CONFIG_BUGLY_APP_ID}\" ]; then\n            exitWithMessage \"Error: Bugly App ID not defined. Please set 'BUGLY_APP_ID' \" 0\n            fi\n            \n            if [[ \"${CONFIG_BUGLY_APP_ID}\" == *\"App ID\"* ]]; then\n            exitWithMessage \"Error: Bugly App ID not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_KEY}\" ]; then\n            exitWithMessage \"Error: Bugly App Key not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER}\" ]; then\n            exitWithMessage \"Error: Bundle Identifier not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_VERSION}\" ]; then\n            exitWithMessage \"Error: App Version not defined.\" 0\n            fi\n            \n            if [ ! -e \"${CONFIG_DSYM_SOURCE_DIR}\" ]; then\n            exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_SOURCE_DIR}\" 0\n            fi\n            \n            if [ ! \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n            exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_DEST_DIR}\" 0\n            fi\n            \n            if [ ! -e \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n            mkdir ${CONFIG_DSYM_DEST_DIR}\n            fi\n            \n            DSYM_FOLDER=\"${CONFIG_DSYM_SOURCE_DIR}\"\n            IFS=$'\\n'\n            \n            echo \"Scaning dSYM FOLDER: ${DSYM_FOLDER} ...\"\n            RET=\"F\"\n            \n            #\n            for dsymFile in $(find \"$DSYM_FOLDER\" -name '*.dSYM'); do\n            RET=\"T\"\n            echo \"Found dSYM file: $dsymFile\"\n            \n            DSYM_FILE_NAME=${dsymFile##*/}\n                DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_FILE_NAME}.zip\"\n                DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_SYMBOL_ZIP_FILE_NAME// /_}\"\n                DSYM_SYMBOL_ZIP_FILE=${CONFIG_DSYM_DEST_DIR}/${DSYM_SYMBOL_ZIP_FILE_NAME}\n                \n                if [ $CONFIG_UPLOAD_DSYM_ONLY -eq 1 ]; then\n                if [ -e $DSYM_SYMBOL_ZIP_FILE ]; then\n                rm -f $DSYM_SYMBOL_ZIP_FILE\n                fi\n                # 如果只上传dSYM，直接压缩dSYM目录\n                zip -r -j $DSYM_SYMBOL_ZIP_FILE $dsymFile -x *.plist\n                else\n                # 使用符号表工具来生成Symbol文件\n                dSYMParse $dsymFile $DSYM_SYMBOL_ZIP_FILE\n                fi\n                \n                # 上传\n                dSYMUpload $CONFIG_BUGLY_APP_ID $CONFIG_BUGLY_APP_KEY $CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER $CONFIG_BUGLY_APP_VERSION $DSYM_SYMBOL_ZIP_FILE\n                done\n                \n                if [ $RET = \"F\" ]; then\n                exitWithMessage \"No .dSYM found in ${DSYM_FOLDER}\" 0\n                fi\n            }\n            \n            # 在Xcode工程中执行\n            function runInXcode(){\n                echo \"Uploading dSYM to Bugly in Xcode ...\"\n                \n                echo \"Info.Plist : ${INFOPLIST_FILE}\"\n                \n                BUNDLE_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' \"${INFOPLIST_FILE}\")\n                BUNDLE_SHORT_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' \"${INFOPLIST_FILE}\")\n                \n                # 组装Bugly默认识别的版本信息(格式为CFBundleShortVersionString(CFBundleVersion), 例如: 1.0(1))\n                if [ ! \"${CUSTOMIZED_APP_VERSION}\" ]; then\n                BUGLY_APP_VERSION=\"${BUNDLE_SHORT_VERSION}(${BUNDLE_VERSION})\"\n                else\n                BUGLY_APP_VERSION=\"${CUSTOMIZED_APP_VERSION}\"\n                fi\n                \n                echo \"--------------------------------\"\n                echo \"Prepare application information.\"\n                echo \"--------------------------------\"\n                \n                echo \"Product Name: ${PRODUCT_NAME}\"\n                echo \"Bundle Identifier: ${BUNDLE_IDENTIFIER}\"\n                echo \"Version: ${BUNDLE_SHORT_VERSION}\"\n                echo \"Build: ${BUNDLE_VERSION}\"\n                \n                echo \"Bugly App ID: ${BUGLY_APP_ID}\"\n                echo \"Bugly App key: ${BUGLY_APP_KEY}\"\n                echo \"Bugly App Version: ${BUGLY_APP_VERSION}\"\n                \n                echo \"--------------------------------\"\n                echo \"Check the arguments ...\"\n                \n                ##检查模拟器编译是否允许上传符号\n                if [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\n                if [ $UPLOAD_SIMULATOR_SYMBOLS -eq 0 ]; then\n                exitWithMessage \"Warning: Build for simulator and skipping to upload. \\nYou can modify 'UPLOAD_SIMULATOR_SYMBOLS' to 1 in the script.\" 0\n                fi\n                fi\n                \n                ##检查是否是Release模式编译\n                if [ \"${CONFIGURATION=}\" == \"Debug\" ]; then\n                if [ $UPLOAD_DEBUG_SYMBOLS -eq 0 ]; then\n                exitWithMessage \"Warning: Build for debug mode and skipping to upload. \\nYou can modify 'UPLOAD_DEBUG_SYMBOLS' to 1 in the script.\" 0\n                fi\n                fi\n                \n                ##检查是否Archive操作\n                if [ $UPLOAD_ARCHIVE_ONLY -eq 1 ]; then\n                if [[ \"$TARGET_BUILD_DIR\" == *\"/Archive\"* ]]; then\n                echo \"Archive the package\"\n                else\n                exitWithMessage \"Warning: Build for NOT Archive mode and skipping to upload. \\nYou can modify 'UPLOAD_ARCHIVE_ONLY' to 0 in the script.\" 0\n                fi\n                fi\n                \n                #\n                run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${BUILD_DIR}/BuglySymbolTemp ${UPLOAD_DSYM_ONLY}\n            }\n            \n            # 根据Xcode的环境变量判断是否处于Xcode环境\n            INFO_PLIST_FILE=\"${INFOPLIST_FILE}\"\n            \n            BuildInXcode=\"F\"\n            if [ -f \"${INFO_PLIST_FILE}\" ]; then\n            BuildInXcode=\"T\"\n            fi\n            \n            if [ $BuildInXcode = \"T\" ]; then\n            runInXcode\n            else\n            echo \"\\nUsage: dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir> [upload_dsym_only]\\n\"\n            # 你可以在此处直接设置BuglyAppID和BuglyAppKey，排除不常变参数的输入\n            BUGLY_APP_ID=\"$1\"\n            BUGLY_APP_KEY=\"$2\"\n            BUNDLE_IDENTIFIER=\"$3\"\n            BUGLY_APP_VERSION=\"$4\"\n            DWARF_DSYM_FOLDER_PATH=\"$5\"\n            SYMBOL_OUTPUT_PATH=\"$6\"\n            UPLOAD_DSYM_ONLY=$7\n            run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${SYMBOL_OUTPUT_PATH} ${UPLOAD_DSYM_ONLY}\n            fi\n";
 		};
 		FCD7C8BBA938F9CB3A721E1B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1608,9 +1704,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买-resources.sh",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1627,6 +1734,7 @@
 				A9758D781D878DA800FC4B89 /* NSObject+ZZStarImage.m in Sources */,
 				A9C08ACA1E7790D600099C28 /* ZZSearchItem.swift in Sources */,
 				A9C08ABC1E7783E900099C28 /* ZZSearchModel.swift in Sources */,
+				A9B5FAF41F56A34500765562 /* ZZTopicListCell.swift in Sources */,
 				A9F97BC01DE521E200FB683F /* ZZBaiCaiBannerView.swift in Sources */,
 				A947CD0A1DE02FCC0047B58F /* ZZHaoJiaHeaderViewController.m in Sources */,
 				A980A40F1CE41827006E0037 /* ZZFirstBaseViewController.m in Sources */,
@@ -1639,6 +1747,7 @@
 				A9C08AC21E77858A00099C28 /* ZZDetailTopicHeaderLayout.m in Sources */,
 				A9A746F51DE2EBC200EFB62F /* ZZSecondCollectionViewController.m in Sources */,
 				A9E440AF1DD078B7005D17DB /* ZZAllCommentLayout.swift in Sources */,
+				A9C631F51F566C8A0033D0B6 /* ZZBaseViewController.m in Sources */,
 				A9B2ACA11DDB6EDD00D8F296 /* ZZKeyboardToolBar.m in Sources */,
 				A947CCC71DE02FA30047B58F /* ZZLittleBannerLayout.m in Sources */,
 				A947CCD91DE02FA30047B58F /* ZZDetailZiXunBottomBar.m in Sources */,
@@ -1692,6 +1801,7 @@
 				A92151D71D83A1D800749413 /* YYTextExampleHelper.m in Sources */,
 				A9EB45911DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift in Sources */,
 				A9C108B81DD15C6D00068A7D /* ZZCommentCell.swift in Sources */,
+				A9B5FAF11F56A22A00765562 /* ZZTopicListSectionController.swift in Sources */,
 				A9C08AC81E7785C900099C28 /* ZZHomeFirstLayout.m in Sources */,
 				A980A4091CE412E8006E0037 /* ZZTabBarViewController.m in Sources */,
 				A9AF3E361DE464FD0055F522 /* ZZDouYUBannerModel.m in Sources */,
@@ -1704,10 +1814,12 @@
 				A9EDF99F1EB56D510066E0F4 /* UILabel+ZZAdd.m in Sources */,
 				A9EDF9A21EB56E360066E0F4 /* UIButton+ZZAdd.m in Sources */,
 				A925E6DB1D60BE2D009A9E6F /* ZZCyclePicHelper.m in Sources */,
+				A930F0781F5AECBB0066621E /* ZZChoicenessListCell.swift in Sources */,
 				A95E63691DF04BAA00855369 /* UIViewController+Jump.swift in Sources */,
 				A947CCDC1DE02FA30047B58F /* ZZLittleBannerCell.m in Sources */,
 				A922379C1DE57C8500B87A8B /* ZZBaiCaiTableHeaderView.swift in Sources */,
 				A9AF3E1E1DE463E80055F522 /* ZZHaoWuCellThree.swift in Sources */,
+				A9C631F11F5669B50033D0B6 /* ZZGoodArticleViewController.swift in Sources */,
 				A9AF3E371DE464FD0055F522 /* ZZDouYuHomeModel.m in Sources */,
 				A901FCE71E057D1500B973E7 /* ZZPopPresentAnimation.swift in Sources */,
 				A947CCD41DE02FA30047B58F /* ZZDetailHuaTiBottomBar.m in Sources */,
@@ -1752,6 +1864,7 @@
 				A9AF3E381DE464FD0055F522 /* ZZDouYuBannerCell.m in Sources */,
 				A9AF3E3A1DE464FD0055F522 /* ZZDouYuHomeCollectionViewCell.m in Sources */,
 				A9AF3E1D1DE463E80055F522 /* ZZHaoWuCellOne.swift in Sources */,
+				A95ACA5D1F5D31BE000446C1 /* ZZGoodArticleModel.swift in Sources */,
 				A947CCDE1DE02FA30047B58F /* ZZYuanChuangCell.m in Sources */,
 				A91D9B4E1D855E090073DEB7 /* ZZTextLinePositionModifier.m in Sources */,
 				A9B2ACA41DDB728200D8F296 /* ZZEmoticonInputView.m in Sources */,

@@ -27,16 +27,16 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return textfield对象
  */
-+ (UITextField *)yj_createTextFiled:(CGRect)frame
-                           textFont:(UIFont *)font
-                          textColor:(UIColor *)tColor
-                        textAliType:(NSTextAlignment)aTextAliType
-                        borderStyle:(UITextBorderStyle)style
-                      leftViewWidth:(CGFloat)leftViewWidth
-                  backgroundImgName:(nullable NSString *)imgName
-                    clearButtonMode:(UITextFieldViewMode)clearButtonMode
-                       keyBoardType:(UIKeyboardType)keyBoardType
-                           delegate:(nullable id)delegate;
++ (instancetype)yj_createTextFiled:(CGRect)frame
+                          textFont:(UIFont *)font
+                         textColor:(UIColor *)tColor
+                       textAliType:(NSTextAlignment)aTextAliType
+                       borderStyle:(UITextBorderStyle)style
+                     leftViewWidth:(CGFloat)leftViewWidth
+                 backgroundImgName:(nullable NSString *)imgName
+                   clearButtonMode:(UITextFieldViewMode)clearButtonMode
+                      keyBoardType:(UIKeyboardType)keyBoardType
+                          delegate:(nullable id)delegate;
 
 @end
 NS_ASSUME_NONNULL_END

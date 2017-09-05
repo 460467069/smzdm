@@ -11,8 +11,6 @@ import YYKit
 
 
 class ZZCommentCell: UITableViewCell {
-
-
     lazy var parentCommentLabel: YYLabel = {
         let parentCommentLabel = YYLabel()
         parentCommentLabel.width = commentConstant.parentCommentViewWidth
@@ -21,7 +19,6 @@ class ZZCommentCell: UITableViewCell {
     }()
     
     lazy var separatorLine: UIImageView = {
-        
         let separatorLine = UIImageView.init(image: #imageLiteral(resourceName: "line_640x1"))
         separatorLine.width = commentConstant.parentCommentViewWidth
         separatorLine.left = commentConstant.parentCommentViewLeft
@@ -30,49 +27,33 @@ class ZZCommentCell: UITableViewCell {
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
         initUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
     
     var commentLayout: ZZParentCommentLayout? {
         
-        didSet{
-
-            if let commentLayout = commentLayout {
-                parentCommentLabel.textLayout = commentLayout.textLayout
-                parentCommentLabel.height = commentLayout.height!
-                separatorLine.bottom = parentCommentLabel.bottom
- 
-                parentCommentLabel.backgroundColor = commentLayout.bgColor
-            }
- 
+        didSet {
+            guard let commentLayout = commentLayout else { return  }
+            parentCommentLabel.textLayout = commentLayout.textLayout
+            parentCommentLabel.height = commentLayout.height!
+            separatorLine.bottom = parentCommentLabel.bottom
+            
+            parentCommentLabel.backgroundColor = commentLayout.bgColor
         }
-        
     }
-    
-
 }
 
-
-
 extension ZZCommentCell{
-
+    
     func initUI(){
-        
         contentView.addSubview(parentCommentLabel)
         contentView.addSubview(separatorLine)
-        
     }
-    
-
-
 }
 
 /// 事件监听

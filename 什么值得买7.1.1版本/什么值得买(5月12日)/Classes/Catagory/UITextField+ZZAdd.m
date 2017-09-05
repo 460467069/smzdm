@@ -9,17 +9,17 @@
 #import "UITextField+ZZAdd.h"
 
 @implementation UITextField (ZZAdd)
-+ (UITextField *)yj_createTextFiled:(CGRect)frame
-                           textFont:(UIFont *)font
-                          textColor:(UIColor *)tColor
-                        textAliType:(NSTextAlignment)aTextAliType
-                        borderStyle:(UITextBorderStyle)style
-                      leftViewWidth:(CGFloat)leftViewWidth
-                  backgroundImgName:(NSString *)imgName
-                    clearButtonMode:(UITextFieldViewMode)clearButtonMode
-                       keyBoardType:(UIKeyboardType)keyBoardType
-                           delegate:(id)delegate {
-    UITextField *textField = [[UITextField alloc] initWithFrame:frame];
++ (instancetype)yj_createTextFiled:(CGRect)frame
+                          textFont:(UIFont *)font
+                         textColor:(UIColor *)tColor
+                       textAliType:(NSTextAlignment)aTextAliType
+                       borderStyle:(UITextBorderStyle)style
+                     leftViewWidth:(CGFloat)leftViewWidth
+                 backgroundImgName:(NSString *)imgName
+                   clearButtonMode:(UITextFieldViewMode)clearButtonMode
+                      keyBoardType:(UIKeyboardType)keyBoardType
+                          delegate:(id)delegate {
+    UITextField *textField = [[self alloc] initWithFrame:frame];
     if (font) {
         textField.font = font;
     }

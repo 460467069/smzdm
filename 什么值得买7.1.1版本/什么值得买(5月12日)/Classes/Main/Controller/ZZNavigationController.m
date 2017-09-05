@@ -7,10 +7,10 @@
 //
 
 #import "ZZNavigationController.h"
-#import "ZZSecondBaseViewController.h"
+#import "ZZBaseViewController.h"
 
 @interface ZZNavigationController ()
-@property (nonatomic, weak) ZZSecondBaseViewController *markViewController;
+@property (nonatomic, weak) ZZBaseViewController *markViewController;
 @end
 
 @implementation ZZNavigationController
@@ -48,7 +48,7 @@
 
 - (void)back {
     //不一定是基类控制器
-    if ([self.markViewController isKindOfClass:[ZZSecondBaseViewController class]]) {
+    if ([self.markViewController isKindOfClass:[ZZBaseViewController class]]) {
         //子类可能需要返回到指定控制器
         if ([self.markViewController.delegate respondsToSelector:@selector(baseViewControllerBackBtnDidClick:)]) {
             [self.markViewController.delegate baseViewControllerBackBtnDidClick:self.markViewController];

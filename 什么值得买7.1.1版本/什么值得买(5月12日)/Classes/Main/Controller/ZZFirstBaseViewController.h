@@ -7,13 +7,15 @@
 //  (一级界面) 几个主界面的父控制器
 
 #import <UIKit/UIKit.h>
+#import "ZZBaseViewController.h"
 #import "ZZRedirectData.h"
 
-@interface ZZFirstBaseViewController : UIViewController
+@interface ZZFirstBaseViewController : ZZBaseViewController
 
 @property (nonatomic, strong) UILabel *placeHolderLabel;
 
 #pragma mark - 控制器跳转逻辑
 //- (void)jumpToDetailArticleViewControllerWithRedirectdata:(ZZRedirectData *)redirectdata;
+
 
 @end

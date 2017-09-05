@@ -17,5 +17,5 @@
 #import "ZZPureWebViewController.h"
 #import <ShareSDK/ShareSDK.h>
 #import "PrefixHeader.pch"
-#import "ZZBaseRequest.h"
 #import "ZDM_RequestURL.h"
+#import "ZZHomeHeadModel.h"

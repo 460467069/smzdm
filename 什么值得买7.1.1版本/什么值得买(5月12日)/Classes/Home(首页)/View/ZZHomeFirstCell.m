@@ -68,7 +68,6 @@
 }
 
 - (void)_setTitleViewWithTop:(CGFloat)top {
-    
     _titleView.titleLabel.textLayout = _layout.titleTextLayout;
     [_titleView.bgView.layer setImageURL:[NSURL URLWithString:_layout.firstModel.floor_head_pic_url]];
     
@@ -86,11 +85,10 @@
         _cycleScrollView.imageURLStringsGroup = imageURLStringsGroup.copy;
         _cycleScrollView.top = top;
         
-    }else{
+    } else {
         _cycleScrollView.hidden = YES;
         
     }
-    
     _cycleScrollView.height = _layout.picBannerHeight;
 }
 
@@ -144,8 +142,7 @@
 //                item.contentLabel.attributedText = _layout.attributedStrings[i]; //也可以这么做
                 item.contentLabel.textAlignment = NSTextAlignmentCenter; //必须加这句
                 
-                
-            }else{
+            } else {
                 item.hidden = YES;
                 item.contentLabel.textLayout = nil;
             }

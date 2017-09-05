@@ -7,15 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ZZTitleBannelOption.h"
-#import "ZZHeadLine.h"
-#import "ZZLittleBanner.h"
 #import "ZZBaseRequest.h"
 
+@class ZZHeadLine, ZZLittleBanner, ZZTitleBannelOption;
 @interface ZZHomeBannerRequest : ZZBaseRequest
-
 @property (nonatomic, copy) NSString *type;
-
 @end
 
 @interface ZZHomeHeadModel : NSObject
@@ -23,5 +19,4 @@
 @property (nonatomic, strong) NSArray<ZZLittleBanner *> *littleBanner;
 @property (nonatomic, strong) NSArray<ZZHeadLine *> *headlines;
 @property (nonatomic, strong) ZZTitleBannelOption *littleBannerOptions;
-
 @end

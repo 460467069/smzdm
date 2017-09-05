@@ -47,6 +47,10 @@ extension ZZSearchResultController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return kScreenWidth / 3.0 + 20 + 2
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
+    }
 }
 
 extension ZZSearchResultController {
@@ -73,7 +77,6 @@ extension ZZSearchResultController {
                     weakSelf?.searchRequest.offset = listArray.count
                     weakSelf?.tableView.reloadData()
             }
-            
         }
     }
     

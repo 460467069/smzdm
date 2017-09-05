@@ -23,13 +23,13 @@
     return contentSize;
 }
 
-+ (UILabel *)yj_createLable:(CGRect)frame
-                       text:(NSString *)aText
-                textAliType:(NSTextAlignment)aTextAliType
-                       font:(UIFont *)font
-                      color:(UIColor *)aColor
-                  backColor:(UIColor *)bColor {
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
++ (instancetype)yj_createLable:(CGRect)frame
+                          text:(NSString *)aText
+                   textAliType:(NSTextAlignment)aTextAliType
+                          font:(UIFont *)font
+                         color:(UIColor *)aColor
+                     backColor:(UIColor *)bColor {
+    UILabel *label = [[self alloc] initWithFrame:frame];
     [label setBackgroundColor:(bColor ? bColor:[UIColor clearColor])];
     [label setText:aText];
     [label setTextAlignment:aTextAliType];
@@ -44,13 +44,13 @@
     return label;
 }
 
-+ (UILabel *)yj_createLable:(CGRect)frame
-                       text:(NSString *)aText
-                textAliType:(NSTextAlignment)aTextAliType
-                       font:(UIFont *)font
-                      color:(UIColor *)aColor
-                  backColor:(UIColor *)bColor
-  adjustsFontSizeToFitWidth:(BOOL)bAdjust {
++ (instancetype)yj_createLable:(CGRect)frame
+                          text:(NSString *)aText
+                   textAliType:(NSTextAlignment)aTextAliType
+                          font:(UIFont *)font
+                         color:(UIColor *)aColor
+                     backColor:(UIColor *)bColor
+     adjustsFontSizeToFitWidth:(BOOL)bAdjust {
     UILabel *label = [self yj_createLable:frame
                                      text:aText
                               textAliType:aTextAliType
