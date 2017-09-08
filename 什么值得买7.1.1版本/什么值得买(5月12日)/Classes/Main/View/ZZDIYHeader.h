@@ -6,10 +6,8 @@
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
 //
 
-#import "MJRefresh.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface ZZDIYHeader : MJRefreshHeader
-
-
 
 @end

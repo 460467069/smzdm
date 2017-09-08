@@ -49,7 +49,7 @@
     CGFloat top = 0;
     
     [self _setTitleViewWithTop:top];
-    top += kHomeFirstCellHeadTitleHeight;
+    top += layout.titleHeight;
     
     [self _setBannerCycleScrollViewWithTop:top];
     top += layout.picBannerHeight;
@@ -68,9 +68,11 @@
 }
 
 - (void)_setTitleViewWithTop:(CGFloat)top {
+    if (!_layout.titleTextLayout) {
+        return;
+    }
     _titleView.titleLabel.textLayout = _layout.titleTextLayout;
     [_titleView.bgView.layer setImageURL:[NSURL URLWithString:_layout.firstModel.floor_head_pic_url]];
-    
 }
 
 /** 轮播图片 */
@@ -166,7 +168,7 @@
         _separatorView.hidden = NO;
         _separatorView.top = top;
 
-    }else{
+    } else {
         _separatorView.hidden = YES;
         _separatorView.top = 0;
     }
@@ -215,6 +217,7 @@
         _titleLabel.height = frame.size.height;
         _titleLabel.left = kHomeFirstCellTitleLabelLeft;
         _titleLabel.width = self.width - kHomeFirstCellTitleLabelLeft;
+        _titleLabel.hidden = YES;
     }
     return self;
 }

@@ -115,8 +115,6 @@
             break;
         }
     }
-    
-
 }
 
 - (void)endRefreshing{
@@ -125,11 +123,6 @@
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        self.label.text = [ZZRefreshTip randomRefreshTip];
 //    });
-    
-
-    
-    
-    
     [super endRefreshing];
     
 //    [self.circleView stopAnimating];
@@ -192,7 +185,7 @@
 }
 
 #pragma mark - getter && setter
-- (void)setBackgroundColor:(UIColor *)backgroundColor{
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
     [super setBackgroundColor:backgroundColor];
     
     self.circleView.backgroundColor = backgroundColor;

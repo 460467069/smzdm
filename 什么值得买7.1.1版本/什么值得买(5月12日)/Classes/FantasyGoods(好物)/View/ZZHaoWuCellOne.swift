@@ -27,10 +27,10 @@ class ZZHaoWuItemOne: UIView {
         titleLabel.width = haoWuConstant.imageWidth
         titleLabel.left = haoWuConstant.subTitleLeft
         titleLabel.height = haoWuConstant.subTitleHeight
-//        titleLabel.backgroundColor = UIColor.random()
+        //        titleLabel.backgroundColor = UIColor.random()
         return titleLabel
     }()
-
+    
     lazy var priceLabel: YYLabel = {
         let priceLabel = YYLabel()
         priceLabel.font = haoWuConstant.priceLabelFont
@@ -38,7 +38,7 @@ class ZZHaoWuItemOne: UIView {
         priceLabel.width = haoWuConstant.imageWidth
         priceLabel.left = haoWuConstant.priceLabelLeft
         priceLabel.height = haoWuConstant.priceLabelHeight
-//        priceLabel.backgroundColor = UIColor.random()
+        //        priceLabel.backgroundColor = UIColor.random()
         return priceLabel
     }()
     
@@ -63,12 +63,10 @@ class ZZHaoWuItemOne: UIView {
     
     var subItemModel: ZZGoodsSubItemModel? {
         didSet {
-            if let subItemModel = subItemModel {
-                iconView.zdm_setImage(urlStr: subItemModel.pro_pic, placeHolder: "haowu_goods")
-                titleLabel.text = subItemModel.name!
-                priceLabel.text = "¥ \(subItemModel.pro_price!)起"
-            }
-            
+            guard let subItemModel = subItemModel else { return }
+            iconView.zdm_setImage(urlStr: subItemModel.pro_pic, placeHolder: "haowu_goods")
+            titleLabel.text = subItemModel.name!
+            priceLabel.text = "¥ \(subItemModel.pro_price!)起"
         }
     }
 }
@@ -88,31 +86,24 @@ class ZZHaoWuCellOne: ZZHaoWuBaseCell {
     
     override var haowuLayout: ZZHaoWuLayout? {
         
-        didSet{
-         
-            if let fantasicGoodsModel = haowuLayout?.fantasicGoodsModel {
-                let items = fantasicGoodsModel.data
-                let totalCount = items?.count
-                if let urlStr = fantasicGoodsModel.focus_pic {
-                    headImageView.zdm_setImage(urlStr: urlStr, placeHolder: "haowu_banner")
-                }
-                
-                for index in 0..<haoWuConstant.maxCount {
-                    
-                    let haowuItemOne = scrollView.haowuItems[index] as! ZZHaoWuItemOne
-                    
-                    if index < totalCount! {
-                        haowuItemOne.isHidden = false
-                        haowuItemOne.subItemModel = items![index]
-                    } else {
-                        haowuItemOne.isHidden = true
-                    }
+        didSet {
+            guard let fantasicGoodsModel = haowuLayout?.fantasicGoodsModel else { return }
+            let items = fantasicGoodsModel.data
+            let totalCount = items?.count
+            headImageView.zdm_setImage(urlStr: fantasicGoodsModel.focus_pic, placeHolder: "haowu_banner")
+            
+            for index in 0..<haoWuConstant.maxCount {
+                let haowuItemOne = scrollView.haowuItems[index] as! ZZHaoWuItemOne
+                if index < totalCount! {
+                    haowuItemOne.isHidden = false
+                    haowuItemOne.subItemModel = items![index]
+                } else {
+                    haowuItemOne.isHidden = true
                 }
             }
         }
-        
     }
-
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = kGlobalLightGrayColor
@@ -122,7 +113,7 @@ class ZZHaoWuCellOne: ZZHaoWuBaseCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    
 }
 
 extension ZZHaoWuCellOne {

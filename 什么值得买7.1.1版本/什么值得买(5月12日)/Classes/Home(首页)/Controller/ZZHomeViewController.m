@@ -69,7 +69,7 @@
                 ZZHomeFirstLayout *firstLayout = nil;
                 if (idx == dataArray.count - 1) {
                     firstLayout = [[ZZHomeFirstLayout alloc] initWithFirstModel:firstModel isLastOne:YES];
-                }else{
+                } else {
                     firstLayout = [[ZZHomeFirstLayout alloc] initWithFirstModel:firstModel isLastOne:NO];
                 }
                 [temArray addObject:firstLayout];
@@ -96,7 +96,6 @@
         self.listArrayM = [NSMutableArray arrayWithArray:temArray];
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
-        
         self.recommendRequest.page++;
     }];
 }
@@ -136,7 +135,6 @@
     } else {
         return self.listArrayM.count;
     }
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

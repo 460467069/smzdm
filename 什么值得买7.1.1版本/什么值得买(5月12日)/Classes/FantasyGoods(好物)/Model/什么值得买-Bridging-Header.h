@@ -19,3 +19,8 @@
 #import "PrefixHeader.pch"
 #import "ZDM_RequestURL.h"
 #import "ZZHomeHeadModel.h"
+#import "NSObject+SectionController.h"
+#import "ZZListModel.h"
+#import "ZZDIYHeader.h"
+#import "ZZDIYBackFooter.h"
+#import "ZZCyclePicHelper.h"

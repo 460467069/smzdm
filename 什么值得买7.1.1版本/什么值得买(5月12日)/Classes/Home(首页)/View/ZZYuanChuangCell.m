@@ -54,7 +54,7 @@
         self.avatarView.hidden = YES;
         self.replyBtn.hidden = YES;
         self.praiseBtn.hidden = YES;
-    }else{
+    } else {
         self.coverView.hidden = NO;
         self.contentLabel.text = article.article_filter_content;
         self.nickNameLabel.text = article.article_referrals;

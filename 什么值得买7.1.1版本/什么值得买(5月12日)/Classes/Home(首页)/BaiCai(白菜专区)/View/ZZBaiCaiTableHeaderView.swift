@@ -64,18 +64,13 @@ class ZZBaiCaiItemOne: UIView { //每日精选和白菜头条
     
     var baiCaiItemLayout: ZZBaiCaiItemLayout? {
         didSet {
-            if let baiCaiItemLayout = baiCaiItemLayout {
-                
-                if let worthyArticle = baiCaiItemLayout.worthyArticle {
-                    iconView.zdm_setImage(urlStr: worthyArticle.article_pic, placeHolder: nil)
-                }
-                titleLabel.textLayout = baiCaiItemLayout.titleLayout
-                subTitleLabel.textLayout = baiCaiItemLayout.subTitleLayout
-                
-                titleLabel.lineBreakMode = .byTruncatingTail
-                subTitleLabel.lineBreakMode = .byTruncatingTail
-            }
+            guard let baiCaiItemLayout = baiCaiItemLayout else { return }
+            iconView.zdm_setImage(urlStr: baiCaiItemLayout.worthyArticle?.article_pic, placeHolder: nil)
+            titleLabel.textLayout = baiCaiItemLayout.titleLayout
+            subTitleLabel.textLayout = baiCaiItemLayout.subTitleLayout
             
+            titleLabel.lineBreakMode = .byTruncatingTail
+            subTitleLabel.lineBreakMode = .byTruncatingTail
         }
     }
 }
@@ -102,7 +97,7 @@ class ZZBaiCaiJingXuanView: UIView {
         height = baiCaiConstant.rowHeight1
         initUI()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -174,15 +169,14 @@ class ZZBaiCaiTableHeaderView: UIView {
         let jingXuanView = ZZBaiCaiJingXuanView()
         return jingXuanView
     }()
-
+    
     lazy var touTiaoView: ZZBaiCaiJingXuanView = {
         
         let touTiaoView = ZZBaiCaiJingXuanView()
         return touTiaoView
     }()
     
-    var baiCaiLayout: ZZZuiXinBaiCaiLayout?{
-        
+    var baiCaiLayout: ZZZuiXinBaiCaiLayout? {
         didSet {
             height = (baiCaiLayout?.rowHeight)!
             guard let baiCaiLayout = baiCaiLayout else { return }
@@ -192,7 +186,6 @@ class ZZBaiCaiTableHeaderView: UIView {
                 
                 jingXuanView.jingXuanTextLayouts = baiCaiLayout.jingXuanTextLayouts
                 jingXuanView.scrollView.contentSize = (baiCaiLayout.jingXuanScrollViewContentSize)!
-                
             }
             
             if baiCaiLayout.touTiaoTextLayouts.count > 0 {
@@ -220,7 +213,7 @@ class ZZBaiCaiTableHeaderView: UIView {
         addSubview(touTiaoView)
         touTiaoView.top = jingXuanView.bottom
     }
-
+    
 }
 
 

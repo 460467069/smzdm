@@ -26,18 +26,14 @@ static NSString *ZZ_NSTimerKey = @"ZZ_NSTimerKey";
     if (timer.block) {
         timer.block(timer);
     }
-    
 }
 
-- (ZZTimerBlock)block{
-    
-    
+- (ZZTimerBlock)block {
     return objc_getAssociatedObject(self, &ZZ_NSTimerKey);
 }
 
 
-- (void)setBlock:(ZZTimerBlock)block{
-    
+- (void)setBlock:(ZZTimerBlock)block {
     objc_setAssociatedObject(self, &ZZ_NSTimerKey, block, OBJC_ASSOCIATION_COPY);
 }
 

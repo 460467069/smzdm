@@ -34,6 +34,16 @@
 	</dict>
 	<dict>
 		<key>title</key>
+		<string>好文</string>
+		<key>normalImage</key>
+		<string>dingyueItemNormal</string>
+		<key>nibName</key>
+		<string>ZZGoodArticleViewController</string>
+		<key>selectedImage</key>
+		<string>dingyueItemSelected</string>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>我的</string>
 		<key>nibName</key>
 		<string>ZZJingXuanViewController</string>

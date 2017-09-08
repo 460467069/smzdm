@@ -20,24 +20,20 @@
         _isLastOne = isLastOne;
         [self layout];
     }
-    
     return self;
 }
 
 - (void)layout {
-	
     [self _layout];
-    
     _height = 0;
-    _height += kHomeFirstCellHeadTitleHeight;
+    _height += _titleHeight;
     _height += _picBannerHeight;
     _height += _picFragmentHeight;
     _height += _horizontalScrollViewH;
     _height += _bottomSeparatorHeight;
 }
 
-- (void)_layout{
-    
+- (void)_layout {
     [self _layoutTitle];
     [self _layoutBanner];
     [self _layoutFourPic];
@@ -45,11 +41,12 @@
     [self _layoutSeparatorBottomView];
 }
 
-- (void)_layoutTitle{
+- (void)_layoutTitle {
     ZZHomeFirstModel *firstModel = self.firstModel;
     NSString *title = firstModel.floor_title;
-    if (title.length == 0) {
+    if (title.length == 0 || [firstModel.cell_type isEqualToString:@"21"]) {
         _titleTextLayout = nil;
+        _titleHeight = 0;
         return;
     }
     NSMutableAttributedString *titleText = [[NSMutableAttributedString alloc] initWithString:title];
@@ -60,19 +57,19 @@
     YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth, 9999)];
     container.maximumNumberOfRows = 1;
     _titleTextLayout = [YYTextLayout layoutWithContainer:container text:titleText];
+    _titleHeight = kHomeFirstCellHeadTitleHeight;
 }
 
-- (void)_layoutBanner{
+- (void)_layoutBanner {
     if (self.firstModel.floor_multi.count == 0) {
         _picBannerHeight = 0;
-        
         return;
     }
     
     _picBannerHeight = kHomeFirstCellBannerPicHeight;
 }
 
-- (void)_layoutSeparatorBottomView{
+- (void)_layoutSeparatorBottomView {
     if (self.isLastOne) {
         _bottomSeparatorHeight = kHomeFirstCellBottomSeparatorH;
     }else{
@@ -81,17 +78,17 @@
     }
 }
 
-- (void)_layoutFourPic{
+- (void)_layoutFourPic {
     NSInteger totalCount = self.firstModel.floor_single.count;
     if (totalCount == 0) {
         _picFragmentHeight = 0;
         return;
     }
-//    根据floor_model_id 来判断
-//    1   四种小图片(大小统一)
-//    6   图片轮播 + 四种小图片 + 水平滚动的scrollView(如原创达人榜)
-//    10  四种图片(大小不一. 如值友福利)
-//    4   轮播图片
+    //    根据floor_model_id 来判断
+    //    1   四种小图片(大小统一)
+    //    6   图片轮播 + 四种小图片 + 水平滚动的scrollView(如原创达人榜)
+    //    10  四种图片(大小不一. 如值友福利)
+    //    4   轮播图片
     
     NSMutableArray *temArray = [NSMutableArray array];
     if (![self.firstModel.floor_model_id isEqualToString:@"10"]) {
@@ -127,7 +124,7 @@
         [temArray addObject:value2];
         [temArray addObject:value3];
         [temArray addObject:value4];
-    
+        
         _picFragmentHeight = kHomeFirstCellPicHeight1;
         
         if (totalCount == kHomeFragmentMaxCount) {  //额外处理8张图片的布局
@@ -144,7 +141,7 @@
             _picFragmentHeight = kHomeFirstCellPicHeight1 + kHomeFirstCellBottomPicH + 1;
         }
         
-    }else{
+    } else {
         for (NSInteger i = 0; i < totalCount; i++) {
             CGFloat imageViewX = (kHomeFirstCellPicPadding + kHomeFirstCellBottomPicW) * i;
             CGFloat imageViewY = 0;
@@ -156,13 +153,13 @@
         }
         
         _picFragmentHeight = kHomeFirstCellBottomPicH;
-
+        
     }
     
     _fourRectArray = [temArray copy];
 }
 
-- (void)_layoutScroll{
+- (void)_layoutScroll {
     NSInteger totalCount = self.firstModel.floor_yuanchuang_master.count;
     if (totalCount == 0) {
         _horizontalScrollViewH = 0;
@@ -235,11 +232,10 @@
     
 }
 
-- (NSAttributedString *)padding{
+- (NSAttributedString *)padding {
     NSMutableAttributedString *padding = [[NSMutableAttributedString alloc] initWithString:@"\n\n"];
     padding.font = [UIFont systemFontOfSize:4];
     return padding;
-    
 }
 
 @end

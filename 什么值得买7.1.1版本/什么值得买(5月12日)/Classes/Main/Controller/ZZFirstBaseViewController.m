@@ -84,8 +84,6 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchBarDidClick)];
     [customSearchBar addGestureRecognizer:tap];
-    
-    
 }
 
 

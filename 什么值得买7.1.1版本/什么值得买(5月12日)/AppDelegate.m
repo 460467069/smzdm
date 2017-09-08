@@ -61,8 +61,7 @@
 }
 
 
-- (void)dealloc{
-    
+- (void)dealloc {
     [self.account removeObserver:self forKeyPath:@"userID"];
 }
 

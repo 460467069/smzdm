@@ -18,8 +18,10 @@
     [super viewDidLoad];
     self.delegate = self;
     // Do any additional setup after loading the view.
+    [self initUI];
+    [self initNavBar];
+    [self setupDatasource];
 }
-
 
 - (void)initUI {}
 - (void)initNavBar {}

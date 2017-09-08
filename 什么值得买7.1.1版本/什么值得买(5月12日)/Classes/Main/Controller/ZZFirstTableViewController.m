@@ -17,18 +17,11 @@
 
 @implementation ZZFirstTableViewController
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self tableViewInitial];
-    
-    [self refreshHeaderAndFooterInitial];
 }
 
-/** 初始化tableView */
-- (void)tableViewInitial {
+- (void)initUI {
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.dataSource = self;
@@ -37,25 +30,14 @@
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
     self.tableView = tableView;
-}
-
-
-
-/**
- *  上下拉刷新初始化
- */
-- (void)refreshHeaderAndFooterInitial {
+    
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
-    self.tableView.mj_header = [ZZDIYHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
-    
-    
+    self.tableView.mj_header = [ZZDIYHeader headerWithRefreshingTarget:self
+                                                      refreshingAction:@selector(loadData)];
     self.tableView.mj_footer = [ZZDIYBackFooter footerWithRefreshingTarget:self
-                                                                    refreshingAction:@selector(loadMoreData)];
-    
+                                                          refreshingAction:@selector(loadMoreData)];
     [self.tableView.mj_header beginRefreshing];
-    
 }
-
 
 - (void)loadData {}
 

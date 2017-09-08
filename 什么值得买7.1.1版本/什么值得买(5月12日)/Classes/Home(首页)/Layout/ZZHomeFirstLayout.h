@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ZZHomeFirstModel.h"
 
-#define kHomeFirstCellHeadTitleHeight (kScreenWidth / 750.0 * 50)
+#define kHomeFirstCellHeadTitleHeight (kScreenWidth / 750.0 * 70)
 #define kHomeFirstCellBannerPicHeight (kScreenWidth / 750.0 * 260)
 #define kHomeFirstCellPicPadding (kScreenWidth / 750.0 * 2)
 
@@ -44,6 +44,7 @@
 @property (nonatomic, strong) ZZHomeFirstModel *firstModel;
 @property (nonatomic, assign, readonly) BOOL isLastOne;
 @property (nonatomic, strong) YYTextLayout *titleTextLayout; // 标题栏
+@property (nonatomic, assign) CGFloat titleHeight;      //标题栏高度
 @property (nonatomic, assign) CGFloat picBannerHeight; //轮播图片高度，0为没图片
 @property (nonatomic, assign) CGFloat picFragmentHeight; //(有分割线的四张)图片高度
 @property (nonatomic, strong) NSArray *fourRectArray;   //四张图片的frame数组

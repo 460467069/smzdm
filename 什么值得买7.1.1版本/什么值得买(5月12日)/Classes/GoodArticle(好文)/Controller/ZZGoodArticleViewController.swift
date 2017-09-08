@@ -8,44 +8,57 @@
 
 import UIKit
 import IGListKit
+import SwiftyJSON
 
-class ZZGoodArticleViewController: ZZFirstBaseViewController {
-
-    lazy var adapter: ListAdapter = {
-        return ListAdapter.init(updater: ListAdapterUpdater(), viewController: self)
+class ZZGoodArticleViewController: ZZBasecollectionViewController {
+    lazy var listRequest: ZZGoodArticleListRequest = {
+        let request = ZZGoodArticleListRequest()
+        return request
     }()
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
+        collectionView.mj_header.beginRefreshing()
     }
 }
 
 
 extension ZZGoodArticleViewController {
+
     override func initUI() {
-        view.addSubview(collectionView)
-        adapter.collectionView = collectionView
-        adapter.dataSource = self
+        super.initUI()
+        weak var weakSelf = self
+        collectionView.mj_header = ZZDIYHeader.init(refreshingBlock: { 
+            weakSelf?.loadData(loadMoreData: false)
+        })
     }
+    
+    override func loadData(loadMoreData: Bool) {
+        dataSource.removeAll()
+        weak var weakSelf = self
+        ZZAPPDotNetAPIClient.shared().get(listRequest) { (responseObj, error) in
+            weakSelf?.collectionView.mj_header.endRefreshing()
+            guard error == nil else { return }
+            let json = JSON.init(responseObj!)
+            if let topicList = json["topic_list"].arrayObject as? [[String : Any]] {
+                for dict in topicList {
+                    let model = ZZHaoWenTopicListModel.model(with: dict)
+                    model?.sectionController = ZZTopicListSectionController()
+                    weakSelf?.dataSource.append(model!)
+                }
+            }
+            if let choicenessList = json["sns_choiceness_list"]["rows"].arrayObject {
+                if let choicenessListArray = NSArray.modelArray(with: ZZChoicenessListModel.self, json: choicenessList) {
+                    let model = ZZListModel.init(subItems: choicenessListArray, sectionController: ZZChoicenessListSectionController())
+                    weakSelf?.dataSource.append(model!)
+                }
+            }
+            weakSelf?.adapter.performUpdates(animated: true, completion: nil)
+        }
+    }
+    
 }
 
-extension ZZGoodArticleViewController: ListAdapterDataSource {
+extension ZZGoodArticleViewController {
     
-    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return [1, 2] as [ListDiffable]
-    }
-    
-    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return ZZTopicListSectionController()
-    }
-    
-    func emptyView(for listAdapter: ListAdapter) -> UIView? {
-        return nil
-    }
 }

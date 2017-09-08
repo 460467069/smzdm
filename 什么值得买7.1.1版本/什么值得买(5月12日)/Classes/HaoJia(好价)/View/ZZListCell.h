@@ -4,7 +4,7 @@
 //
 //  Created by Wang_ruzhou on 16/5/12.
 //  Copyright © 2016年 Wang_ruzhou. All rights reserved.
-//
+//  cell_type 30
 
 #import <UIKit/UIKit.h>
 #import "ZZWorthyArticle.h"

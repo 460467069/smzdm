@@ -13,9 +13,7 @@ class ZZHaoWuItemThree: UIView {
     
  var subItemModel: ZZGoodsSubItemModel? {
         didSet {
-            if let urlStr = subItemModel?.pro_pic {
-                iconView.zdm_setImage(urlStr: urlStr, placeHolder: "haowu_tou")
-            }
+            iconView.zdm_setImage(urlStr: subItemModel?.pro_pic, placeHolder: "haowu_tou")
         }
     }
     

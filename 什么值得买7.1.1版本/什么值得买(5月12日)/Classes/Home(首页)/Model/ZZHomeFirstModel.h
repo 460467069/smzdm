@@ -38,6 +38,8 @@
 
 @property (nonatomic, copy) NSString *floor_head_pic_url;
 
+@property (nonatomic, copy) NSString *cell_type;
+
 @end
 @interface ZZFloorMulti : NSObject
 

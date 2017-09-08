@@ -7,29 +7,41 @@
 //
 
 import UIKit
+import YYKit
 
 extension UIImageView{
     
     convenience init(zdm_imageNamed: String) {
         self.init()
-        
         self.image = UIImage.init(named: zdm_imageNamed)
-        
-        
-    
     }
     
     func zdm_setImage(urlStr: String?, placeHolder: String?) {
-        
-        if let urlStr = urlStr {
-            let imageURL = URL.init(string: urlStr)
-            if let placeHolder = placeHolder {
-                self.setImageWith(imageURL, placeholder: UIImage.init(named: placeHolder))
-            }else{
-                self.setImageWith(imageURL, placeholder: UIImage.init(named: "placeholder_dropbox"))
-            }
+        guard let urlStr = urlStr else { return }
+        let imageURL = URL.init(string: urlStr)
+        var placeHolderImageStr = "placeholder_dropbox"
+        if let placeHolder = placeHolder {
+            placeHolderImageStr = placeHolder;
         }
+        setImageWith(imageURL, placeholder: UIImage.init(named: placeHolderImageStr))
+    }
+    
+    func zdm_setAavatarImage(urlStr: String?) {
+        guard let urlStr = urlStr else { return }
+        let imageURL = URL.init(string: urlStr)
+        zdm_setImage(placeholder: #imageLiteral(resourceName: "5_middle_avatar"),
+                     imageURL: imageURL,
+                     manager: ZZCyclePicHelper.avatarImageManager())
     }
     
     
+    private func zdm_setImage(placeholder: UIImage?, imageURL: URL?, manager: YYWebImageManager?) {
+        setImageWith(imageURL,
+                     placeholder: placeholder,
+                     options: .showNetworkActivity,
+                     manager: manager,
+                     progress: nil,
+                     transform: nil,
+                     completion: nil)
+    }
 }
