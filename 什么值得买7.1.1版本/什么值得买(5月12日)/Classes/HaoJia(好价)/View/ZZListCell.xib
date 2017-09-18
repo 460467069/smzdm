@@ -20,6 +20,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="226"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageYouHui" translatesAutoresizingMaskIntoConstraints="NO" id="rWv-1d-6dz">
+                        <rect key="frame" x="0.0" y="42" width="138" height="138"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="rWv-1d-6dz" secondAttribute="height" multiplier="1:1" id="AZ7-TU-log"/>
+                        </constraints>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJN-3P-cFm">
                         <rect key="frame" x="138" y="42" width="276" height="138"/>
                         <subviews>
@@ -98,12 +104,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_homePageYouHui" translatesAutoresizingMaskIntoConstraints="NO" id="rWv-1d-6dz">
-                        <rect key="frame" x="0.0" y="42" width="138" height="138"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="rWv-1d-6dz" secondAttribute="height" multiplier="1:1" id="AZ7-TU-log"/>
-                        </constraints>
-                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVf-RP-xZ2">
                         <rect key="frame" x="0.0" y="47" width="45" height="15"/>
                         <constraints>

@@ -31,3 +31,12 @@ let kZDMPadding: CGFloat = 10
 @objc protocol ZZActionDelegate: NSObjectProtocol{
     @objc func itemDidClick(redirectData: ZZRedirectData)
 }
+
+extension String {
+    static func zz_string(floatValue: Float) -> String? {
+        let number = NSNumber.init(value: floatValue)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .percent
+        return formatter.string(from: number)
+    }
+}

@@ -14,7 +14,7 @@ class ZZGoodArticleListRequest: ZZBaseRequest {
     var size: Int
     
     override init () {
-        refresh_time = 1
+        refresh_time = 4
         size = 5
         super.init()
         urlStr = kZDM_HaoWen

@@ -71,7 +71,7 @@
     //
     //    时间  取 article_format_date
     
-    NSInteger channelID = [article.article_channel_id integerValue];
+    NSInteger channelID = article.article_channel_id;
     NSString *mallStr;
     if (channelID == 1 || channelID == 5 || channelID == 2) {
         mallStr = article.article_mall;

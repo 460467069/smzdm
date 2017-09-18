@@ -47,6 +47,10 @@
 		A927160E1D44C126006EEECA /* WBStatusLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A927160D1D44C126006EEECA /* WBStatusLayout.m */; };
 		A928A4C21F5E9B650099E3D8 /* NSObject+SectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A928A4C11F5E9B650099E3D8 /* NSObject+SectionController.m */; };
 		A928A4CB1F5EAA0E0099E3D8 /* ZZGoodArticleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A928A4CA1F5EAA0E0099E3D8 /* ZZGoodArticleViewController.storyboard */; };
+		A929E3061F6277D900756E42 /* ZZType41Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929E3051F6277D900756E42 /* ZZType41Cell.swift */; };
+		A929E3081F62785D00756E42 /* ZZImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929E3071F62785D00756E42 /* ZZImageView.swift */; };
+		A929E30B1F627D2300756E42 /* ZZType30Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929E3091F627D2300756E42 /* ZZType30Cell.swift */; };
+		A929E30C1F627D2300756E42 /* ZZType30Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A929E30A1F627D2300756E42 /* ZZType30Cell.xib */; };
 		A92BEE9A1EC4B47A009F1018 /* ZZSearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92BEE991EC4B47A009F1018 /* ZZSearchResultController.swift */; };
 		A930F0781F5AECBB0066621E /* ZZChoicenessListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A930F0761F5AECBB0066621E /* ZZChoicenessListCell.swift */; };
 		A930F0791F5AECBB0066621E /* ZZChoicenessListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A930F0771F5AECBB0066621E /* ZZChoicenessListCell.xib */; };
@@ -133,7 +137,6 @@
 		A985BED11DE3DAE300FF6561 /* ZZZuiXinBaiCaiLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A985BED01DE3DAE300FF6561 /* ZZZuiXinBaiCaiLayout.swift */; };
 		A99C54671DF544A600AAFC8D /* Share.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99C54661DF544A600AAFC8D /* Share.plist */; };
 		A99DAD141F5E4726005E4ADC /* UIScrollView+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A99DAD131F5E4725005E4ADC /* UIScrollView+ZZAdd.m */; };
-		A99DAD1D1F5E4CDA005E4ADC /* ZZType41Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A99DAD1B1F5E4CDA005E4ADC /* ZZType41Cell.m */; };
 		A99DAD1E1F5E4CDA005E4ADC /* ZZType41Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99DAD1C1F5E4CDA005E4ADC /* ZZType41Cell.xib */; };
 		A9A03FD81D1A69B100675FA9 /* ZZUserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A03FD71D1A69B100675FA9 /* ZZUserAccount.m */; };
 		A9A03FDE1D1A726200675FA9 /* ZZWeiboTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A03FDD1D1A726200675FA9 /* ZZWeiboTableView.m */; };
@@ -187,6 +190,8 @@
 		A9D9D2511CE40B7C00A83101 /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9D2391CE40B7C00A83101 /* UIColor+HEX.m */; };
 		A9DBBAF21DB2183E00089A73 /* UIImageView+ZDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBBAF11DB2183E00089A73 /* UIImageView+ZDM.swift */; };
 		A9DBBAF51DB2282900089A73 /* ZZHaoWuLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBBAF41DB2282900089A73 /* ZZHaoWuLayout.swift */; };
+		A9DD5D281F6F773C00C799D6 /* ZZType38Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD5D261F6F773C00C799D6 /* ZZType38Cell.swift */; };
+		A9DD5D291F6F773C00C799D6 /* ZZType38Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9DD5D271F6F773C00C799D6 /* ZZType38Cell.xib */; };
 		A9DD7F621E768C9000CA913A /* UIViewController+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DD7F611E768C9000CA913A /* UIViewController+ZZAdd.m */; };
 		A9E440AF1DD078B7005D17DB /* ZZAllCommentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E440AE1DD078B7005D17DB /* ZZAllCommentLayout.swift */; };
 		A9E5CC0C1DF96CB400C47221 /* NSTimer+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E5CC0B1DF96CB400C47221 /* NSTimer+ZZAdd.m */; };
@@ -281,6 +286,10 @@
 		A928A4C01F5E9B650099E3D8 /* NSObject+SectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SectionController.h"; sourceTree = "<group>"; };
 		A928A4C11F5E9B650099E3D8 /* NSObject+SectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SectionController.m"; sourceTree = "<group>"; };
 		A928A4CA1F5EAA0E0099E3D8 /* ZZGoodArticleViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZGoodArticleViewController.storyboard; sourceTree = "<group>"; };
+		A929E3051F6277D900756E42 /* ZZType41Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZType41Cell.swift; sourceTree = "<group>"; };
+		A929E3071F62785D00756E42 /* ZZImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZImageView.swift; sourceTree = "<group>"; };
+		A929E3091F627D2300756E42 /* ZZType30Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZType30Cell.swift; sourceTree = "<group>"; };
+		A929E30A1F627D2300756E42 /* ZZType30Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZType30Cell.xib; sourceTree = "<group>"; };
 		A92BEE991EC4B47A009F1018 /* ZZSearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZSearchResultController.swift; sourceTree = "<group>"; };
 		A930F0761F5AECBB0066621E /* ZZChoicenessListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZChoicenessListCell.swift; sourceTree = "<group>"; };
 		A930F0771F5AECBB0066621E /* ZZChoicenessListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZChoicenessListCell.xib; sourceTree = "<group>"; };
@@ -430,8 +439,6 @@
 		A99C54661DF544A600AAFC8D /* Share.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Share.plist; sourceTree = "<group>"; };
 		A99DAD121F5E4725005E4ADC /* UIScrollView+ZZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZZAdd.h"; sourceTree = "<group>"; };
 		A99DAD131F5E4725005E4ADC /* UIScrollView+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZZAdd.m"; sourceTree = "<group>"; };
-		A99DAD1A1F5E4CDA005E4ADC /* ZZType41Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZType41Cell.h; sourceTree = "<group>"; };
-		A99DAD1B1F5E4CDA005E4ADC /* ZZType41Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZType41Cell.m; sourceTree = "<group>"; };
 		A99DAD1C1F5E4CDA005E4ADC /* ZZType41Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZType41Cell.xib; sourceTree = "<group>"; };
 		A9A03FD61D1A69B100675FA9 /* ZZUserAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZUserAccount.h; sourceTree = "<group>"; };
 		A9A03FD71D1A69B100675FA9 /* ZZUserAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUserAccount.m; sourceTree = "<group>"; };
@@ -515,6 +522,8 @@
 		A9D9D2391CE40B7C00A83101 /* UIColor+HEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HEX.m"; sourceTree = "<group>"; };
 		A9DBBAF11DB2183E00089A73 /* UIImageView+ZDM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ZDM.swift"; sourceTree = "<group>"; };
 		A9DBBAF41DB2282900089A73 /* ZZHaoWuLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHaoWuLayout.swift; sourceTree = "<group>"; };
+		A9DD5D261F6F773C00C799D6 /* ZZType38Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZType38Cell.swift; sourceTree = "<group>"; };
+		A9DD5D271F6F773C00C799D6 /* ZZType38Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZType38Cell.xib; sourceTree = "<group>"; };
 		A9DD7F601E768C9000CA913A /* UIViewController+ZZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZZAdd.h"; sourceTree = "<group>"; };
 		A9DD7F611E768C9000CA913A /* UIViewController+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZZAdd.m"; sourceTree = "<group>"; };
 		A9E440AE1DD078B7005D17DB /* ZZAllCommentLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAllCommentLayout.swift; sourceTree = "<group>"; };
@@ -1053,6 +1062,7 @@
 				A9B2ACA21DDB728200D8F296 /* ZZEmoticonInputView.h */,
 				A9B2ACA31DDB728200D8F296 /* ZZEmoticonInputView.m */,
 				A94419C01E0BE77F00DECB06 /* ZZNoDelayBtnCollectionView.swift */,
+				A929E3071F62785D00756E42 /* ZZImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1219,9 +1229,12 @@
 				A9B5FAF31F56A34500765562 /* ZZTopicListCell.xib */,
 				A930F0761F5AECBB0066621E /* ZZChoicenessListCell.swift */,
 				A930F0771F5AECBB0066621E /* ZZChoicenessListCell.xib */,
-				A99DAD1A1F5E4CDA005E4ADC /* ZZType41Cell.h */,
-				A99DAD1B1F5E4CDA005E4ADC /* ZZType41Cell.m */,
+				A929E3051F6277D900756E42 /* ZZType41Cell.swift */,
 				A99DAD1C1F5E4CDA005E4ADC /* ZZType41Cell.xib */,
+				A929E3091F627D2300756E42 /* ZZType30Cell.swift */,
+				A929E30A1F627D2300756E42 /* ZZType30Cell.xib */,
+				A9DD5D261F6F773C00C799D6 /* ZZType38Cell.swift */,
+				A9DD5D271F6F773C00C799D6 /* ZZType38Cell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1617,6 +1630,7 @@
 				A947CCDD1DE02FA30047B58F /* ZZLittleBannerCell.xib in Resources */,
 				A928A4CB1F5EAA0E0099E3D8 /* ZZGoodArticleViewController.storyboard in Resources */,
 				A9F97BC21DE521EB00FB683F /* ZZBaiCaiBannerView.xib in Resources */,
+				A929E30C1F627D2300756E42 /* ZZType30Cell.xib in Resources */,
 				A9AF3E3D1DE464FD0055F522 /* ZZDouYuTitileView.xib in Resources */,
 				A9B7835D1D5901DF003C464D /* RefreshTips.geojson in Resources */,
 				A91A834E1D420A87008D229E /* weibo_0.json in Resources */,
@@ -1647,6 +1661,7 @@
 				A93FA9CE1DBDE71F00E3007F /* app_details.css in Resources */,
 				A91A83531D420A87008D229E /* weibo_5.json in Resources */,
 				A9262A821D76B63F0037B1CF /* JingXuan.plist in Resources */,
+				A9DD5D291F6F773C00C799D6 /* ZZType38Cell.xib in Resources */,
 				A91A83551D420A87008D229E /* weibo_7.json in Resources */,
 				A947CD171DE02FCC0047B58F /* ZZHaoJiaHeaderView.xib in Resources */,
 				A9B5FAF51F56A34500765562 /* ZZTopicListCell.xib in Resources */,
@@ -1809,11 +1824,11 @@
 				A9A03FD81D1A69B100675FA9 /* ZZUserAccount.m in Sources */,
 				A9ADB8501D64DF5D00330D23 /* ZZAPPDotNetAPIClient.m in Sources */,
 				A947CCD81DE02FA30047B58F /* ZZDetailYuanChuangBottomBar.m in Sources */,
-				A99DAD1D1F5E4CDA005E4ADC /* ZZType41Cell.m in Sources */,
 				A980A40C1CE4130A006E0037 /* ZZTabBarModel.m in Sources */,
 				A9AF3E3C1DE464FD0055F522 /* ZZDouYuHomeTableViewCell.m in Sources */,
 				A947CD181DE02FCC0047B58F /* ZZListCell.m in Sources */,
 				A947CD0F1DE02FCC0047B58F /* ZZHeadLine.m in Sources */,
+				A9DD5D281F6F773C00C799D6 /* ZZType38Cell.swift in Sources */,
 				A90DBF141DBF740900D857A9 /* UINavigationItem+Margin.m in Sources */,
 				A9B7835B1D59019D003C464D /* ZZRefreshTip.m in Sources */,
 				A901FCE91E057D3400B973E7 /* ZZPopDimissAnimation.swift in Sources */,
@@ -1836,6 +1851,7 @@
 				A92151D71D83A1D800749413 /* YYTextExampleHelper.m in Sources */,
 				A9EB45911DED60E2008D5C97 /* ZZBaiCaiTableViewCell.swift in Sources */,
 				A9C108B81DD15C6D00068A7D /* ZZCommentCell.swift in Sources */,
+				A929E3081F62785D00756E42 /* ZZImageView.swift in Sources */,
 				A95B41591F6001460028CBD2 /* ZZListModel.m in Sources */,
 				A9B5FAF11F56A22A00765562 /* ZZTopicListSectionController.swift in Sources */,
 				A9C08AC81E7785C900099C28 /* ZZHomeFirstLayout.m in Sources */,
@@ -1858,6 +1874,7 @@
 				A9C631F11F5669B50033D0B6 /* ZZGoodArticleViewController.swift in Sources */,
 				A9AF3E371DE464FD0055F522 /* ZZDouYuHomeModel.m in Sources */,
 				A901FCE71E057D1500B973E7 /* ZZPopPresentAnimation.swift in Sources */,
+				A929E3061F6277D900756E42 /* ZZType41Cell.swift in Sources */,
 				A947CCD41DE02FA30047B58F /* ZZDetailHuaTiBottomBar.m in Sources */,
 				A947CCC51DE02FA30047B58F /* ZZHomeViewController.m in Sources */,
 				A93DE7B91DE14D1C004C8332 /* ZZJumpToNextModel.m in Sources */,
@@ -1918,6 +1935,7 @@
 				A947CCBF1DE02FA30047B58F /* ZZDetailBaseViewController.m in Sources */,
 				A9758D721D8766EF00FC4B89 /* ZZSecondTableViewController.m in Sources */,
 				A94419C11E0BE77F00DECB06 /* ZZNoDelayBtnCollectionView.swift in Sources */,
+				A929E30B1F627D2300756E42 /* ZZType30Cell.swift in Sources */,
 				A9A512051D77B07E00E41407 /* ZZChannelID.m in Sources */,
 				A9262A7E1D76B3530037B1CF /* ZZJingXuanViewController.m in Sources */,
 				A9A746F71DE2ED7800EFB62F /* ZZBaiCaiController.swift in Sources */,

@@ -36,6 +36,6 @@ static NSString * const kZDM_Search_HotTags  = @"v2/filter/tags/hot_tags";      
 static NSString * const kZDM_Search          = @"v1/list";                                  /**< 搜索 */
 
 /** 好文 */
-static NSString * const kZDM_HaoWen          = @"v1/sns/home?";                            /**< 列表 */
+static NSString * const kZDM_HaoWen          = @"v1/sns/home";                            /**< 列表 */
 
 #endif /* ZDM_RequestURL_h */

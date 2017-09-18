@@ -38,7 +38,7 @@
         [self SendSSOAuthorize];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beginRequestWeiboData) name:ZZUserAccountDidHandleUserDataNotification object:nil];
-    }else{
+    } else {
         [self beginRequestWeiboData];
     }
 
@@ -61,10 +61,8 @@
         for (NSInteger i = 0; i <= 7; i++) {
             NSData *data = [NSData dataNamed:[NSString stringWithFormat:@"weibo_%@.json", @(i)]];
             
-            
         }
     });
-
 }
 
 

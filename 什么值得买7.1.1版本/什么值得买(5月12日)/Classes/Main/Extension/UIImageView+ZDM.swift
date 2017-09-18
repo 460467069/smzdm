@@ -23,7 +23,7 @@ extension UIImageView{
         if let placeHolder = placeHolder {
             placeHolderImageStr = placeHolder;
         }
-        setImageWith(imageURL, placeholder: UIImage.init(named: placeHolderImageStr))
+        sd_setImage(with: imageURL, placeholderImage: UIImage.init(named: placeHolderImageStr))
     }
     
     func zdm_setAavatarImage(urlStr: String?) {

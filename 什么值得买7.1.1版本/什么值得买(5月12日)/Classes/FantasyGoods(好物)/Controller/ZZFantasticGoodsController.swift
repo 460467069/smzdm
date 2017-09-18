@@ -243,7 +243,7 @@ extension ZZFantasticGoodsController: ZZHaoWuItemDelegate{
             break
         case .three:
             let detailTopicVc = ZZDetailTopicViewController()
-            detailTopicVc.channelID = "14"
+            detailTopicVc.channelID = 14
             detailTopicVc.article_id = subItemModel.redirect_data?.link_val
             navigationController?.pushViewController(detailTopicVc, animated: true)
         }
@@ -251,7 +251,7 @@ extension ZZFantasticGoodsController: ZZHaoWuItemDelegate{
 
     func haoWuHeadImageViewDidClick(in haoWuCell: ZZHaoWuBaseCell, fantasticGoodsModel: ZZFantasticGoodsModel) {
         let detailTopicVc = ZZDetailTopicViewController()
-        detailTopicVc.channelID = "14"
+        detailTopicVc.channelID = 14
         detailTopicVc.article_id = fantasticGoodsModel.redirect_data?.link_val
         navigationController?.pushViewController(detailTopicVc, animated: true)
     }

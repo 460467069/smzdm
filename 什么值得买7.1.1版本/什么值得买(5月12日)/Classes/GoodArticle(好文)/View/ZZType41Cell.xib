@@ -11,36 +11,69 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZZType41Cell">
-            <rect key="frame" x="0.0" y="0.0" width="366" height="209"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZZType41Cell" customModule="什么值得买" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="366" height="199"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="366" height="209"/>
+                <rect key="frame" x="0.0" y="0.0" width="366" height="199"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nsf-H8-SNQ">
-                        <rect key="frame" x="10" y="0.0" width="346" height="150"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9j-lA-RYb">
+                        <rect key="frame" x="10" y="8" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFR-U0-yKr">
+                        <rect key="frame" x="0.0" y="32" width="366" height="0.5"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="150" id="6Ai-it-LhD"/>
+                            <constraint firstAttribute="height" constant="0.29999999999999999" id="TXD-Pq-k24"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nsf-H8-SNQ" customClass="ZZImageView" customModule="什么值得买" customModuleProvider="target">
+                        <rect key="frame" x="10" y="47.5" width="346" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="6Ai-it-LhD"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4h-Rj-USG">
-                        <rect key="frame" x="10" y="170" width="40.5" height="19.5"/>
+                        <rect key="frame" x="10" y="167.5" width="40.5" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYo-rL-12P">
+                        <rect key="frame" x="0.0" y="191" width="366" height="8"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="jT3-0y-fmJ"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="NYo-rL-12P" secondAttribute="trailing" id="2D9-Va-DT7"/>
                 <constraint firstAttribute="trailing" secondItem="nsf-H8-SNQ" secondAttribute="trailing" constant="10" id="31h-Qw-ljB"/>
                 <constraint firstItem="b4h-Rj-USG" firstAttribute="leading" secondItem="nsf-H8-SNQ" secondAttribute="leading" id="71Q-eg-Zot"/>
+                <constraint firstItem="NYo-rL-12P" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ADY-j9-RYC"/>
+                <constraint firstItem="wFR-U0-yKr" firstAttribute="top" secondItem="C9j-lA-RYb" secondAttribute="bottom" constant="8" id="CMO-Ma-RR9"/>
+                <constraint firstAttribute="trailing" secondItem="wFR-U0-yKr" secondAttribute="trailing" id="D6O-3Y-Qf5"/>
                 <constraint firstItem="nsf-H8-SNQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Iaz-SF-uav"/>
+                <constraint firstAttribute="bottom" secondItem="NYo-rL-12P" secondAttribute="bottom" id="IeY-t0-sqX"/>
+                <constraint firstItem="C9j-lA-RYb" firstAttribute="leading" secondItem="nsf-H8-SNQ" secondAttribute="leading" id="MdE-gf-rj8"/>
                 <constraint firstItem="b4h-Rj-USG" firstAttribute="top" secondItem="nsf-H8-SNQ" secondAttribute="bottom" constant="20" id="O9D-RJ-hf9"/>
-                <constraint firstItem="nsf-H8-SNQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Zkr-80-e87"/>
+                <constraint firstItem="C9j-lA-RYb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="PBt-sZ-GfQ"/>
+                <constraint firstItem="wFR-U0-yKr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="U7Y-ou-5gu"/>
+                <constraint firstItem="nsf-H8-SNQ" firstAttribute="top" secondItem="wFR-U0-yKr" secondAttribute="bottom" constant="15" id="ema-eE-AXX"/>
             </constraints>
-            <size key="customSize" width="366" height="209"/>
-            <point key="canvasLocation" x="-82" y="-42.5"/>
+            <size key="customSize" width="366" height="199"/>
+            <connections>
+                <outlet property="contentLabel" destination="b4h-Rj-USG" id="llM-mW-dst"/>
+                <outlet property="iconView" destination="nsf-H8-SNQ" id="WmV-Hc-siH"/>
+                <outlet property="tagLabel" destination="C9j-lA-RYb" id="il5-jL-XWY"/>
+            </connections>
+            <point key="canvasLocation" x="-82" y="-47.5"/>
         </collectionViewCell>
     </objects>
 </document>

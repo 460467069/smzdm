@@ -64,8 +64,6 @@
 
 @property (nonatomic, copy) NSString *logo;
 
-@property (nonatomic, copy) NSString *description;
-
 @end
 
 @interface Progerss : NSObject

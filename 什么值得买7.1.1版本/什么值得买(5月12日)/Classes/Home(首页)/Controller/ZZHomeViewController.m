@@ -149,7 +149,7 @@
     ZZWorthyArticle *article = self.listArrayM[indexPath.row];
     switch (article.promotion_type) {
         case ZDMPromotionTypeZero: {
-            NSInteger channelID = [article.article_channel_id integerValue];
+            NSInteger channelID = article.article_channel_id;
             if (channelID == 8 || channelID == 11 || channelID == 14) {
                 ZZYuanChuangCell *cell = [tableView dequeueReusableCellWithIdentifier:[ZZYuanChuangCell reuseIdentifier] forIndexPath:indexPath];
                 cell.article = article;
@@ -199,7 +199,7 @@
         return layout.height;
     }else{
         ZZWorthyArticle *article = self.listArrayM[indexPath.row];
-        NSInteger channelID = [article.article_channel_id integerValue];
+        NSInteger channelID = article.article_channel_id;
         if (channelID == 8 || channelID == 11 || channelID == 14) {
             return 284;
         }

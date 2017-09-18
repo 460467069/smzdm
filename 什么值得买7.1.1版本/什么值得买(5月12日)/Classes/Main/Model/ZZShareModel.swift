@@ -25,9 +25,7 @@ class ZZShareModel: NSObject {
             return array as? [ZZShareModel]
             
         }
-        
         return nil
-        
     }
     
     
@@ -50,10 +48,6 @@ class ZZShareModel: NSObject {
             default:
                 return .typeSinaWeibo
             }
-            
-            
         }
-
     }
-
 }

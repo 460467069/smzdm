@@ -10,15 +10,15 @@
 
 @interface ZZJumpToNextModel : NSObject
 
-@property (nonatomic, copy) NSString *channelID;
-@property (nonatomic, copy) NSString *linkType;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *destionationController;
+@property (nonatomic, assign) NSInteger channelID;
+@property (nonatomic,   copy) NSString *linkType;
+@property (nonatomic,   copy) NSString *title;
+@property (nonatomic,   copy) NSString *destionationController;
 
 
 + (instancetype)modelWithLinkType:(NSString *)linkType;
 
-+ (instancetype)modelWithChannelID:(NSString *)channelID;
++ (instancetype)modelWithChannelID:(NSInteger)channelID;
 
 + (NSArray<ZZJumpToNextModel *> *)models;
 

@@ -15,7 +15,7 @@
 
 @interface ZZWorthyArticle : NSObject
 /** 5 */
-@property (nonatomic, copy, nullable) NSString *article_channel_id;
+@property (nonatomic, assign) NSInteger article_channel_id;
 /** 海淘 */
 @property (nonatomic, copy, nullable) NSString *article_channel_name;
 /** 5 */

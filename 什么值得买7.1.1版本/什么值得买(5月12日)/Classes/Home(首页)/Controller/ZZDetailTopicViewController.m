@@ -68,7 +68,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 - (void)loadData{
     self.offset = 0;
     
-    ZZChannelID *channel = [ZZChannelID channelWithID:self.channelID.integerValue];
+    ZZChannelID *channel = [ZZChannelID channelWithID:self.channelID];
     
     NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
     [ZZAPPDotNetAPIClient Get:URLStr parameters:[NSMutableDictionary dictionary] completionBlock:^(id responseObject, NSError *error) {

@@ -21,19 +21,62 @@ class ZZChoicenessListSectionController: ListSectionController {
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
-        return CGSize(width: collectionContext!.containerSize.width, height: 270)
+        let list = listModel?.subItems as! [ZZChoicenessListModel]
+        let choicenessModel = list[index]
+        let cellType = choicenessModel.cell_type
+        var height:CGFloat = 270
+        if cellType == "41" {
+            height = 200
+        } else if cellType == "30" {
+            height = 150
+        } else if cellType == "38" {
+            height = 150
+        }
+        return CGSize(width: collectionContext!.containerSize.width, height: height)
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
+        let list = listModel?.subItems as! [ZZChoicenessListModel]
+        let choicenessModel = list[index]
+        let cellType = choicenessModel.cell_type
+        if cellType == "41" {
+            guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ZZType41Cell",
+                                                                    bundle: nil,
+                                                                    for: self,
+                                                                    at: index) as? ZZType41Cell else {
+                                                                        fatalError()
+            }
+            
+            cell.choicenessModel = choicenessModel
+            return cell
+            
+        } else if cellType == "30" {
+            guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ZZType30Cell",
+                                                                    bundle: nil,
+                                                                    for: self,
+                                                                    at: index) as? ZZType30Cell else {
+                                                                        fatalError()
+            }
+            cell.article = choicenessModel.article?.first
+            return cell
+        } else if cellType == "38" {
+            guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ZZType38Cell",
+                                                                    bundle: nil,
+                                                                    for: self,
+                                                                    at: index) as? ZZType38Cell else {
+                                                                        fatalError()
+            }
+            cell.choicenessModel = choicenessModel
+            return cell
+        }
+        
         guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ZZChoicenessListCell",
                                                                 bundle: nil,
                                                                 for: self,
                                                                 at: index) as? ZZChoicenessListCell else {
                                                                     fatalError()
         }
-        if let list = listModel?.subItems as? [ZZChoicenessListModel] {
-            cell.article = list[index].article?.first
-        }
+        cell.article = choicenessModel.article?.first
         return cell
     }
     

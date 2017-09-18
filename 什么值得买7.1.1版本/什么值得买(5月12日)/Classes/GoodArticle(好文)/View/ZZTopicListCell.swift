@@ -15,19 +15,15 @@ class ZZTopicListCell: UICollectionViewCell {
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var commentBtn: UIButton!
     @IBOutlet weak var favoriteBtn: UIButton!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        iconView.layer.cornerRadius = 3
-        iconView.layer.masksToBounds = true
-    }
-    
+        
     var article: ZZWorthyArticle? {
         didSet {
             guard let model = article else { return }
             
-            titleLabel.text = model.article_title
+            let text = NSMutableAttributedString.init(string: model.article_title!)
+            text.lineSpacing = 10
+            titleLabel.attributedText = text
+            
             iconView.zdm_setImage(urlStr: model.article_pic, placeHolder: nil)
             headerView.zdm_setAavatarImage(urlStr: model.article_avatar)
             nicknameLabel.text = model.article_referrals

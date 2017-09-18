@@ -181,7 +181,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 #pragma mark - loadData
 - (void)loadWebViewData {
     
-    NSInteger ID = self.channelID.integerValue;
+    NSInteger ID = self.channelID;
     ZZChannelID *channel = [ZZChannelID channelWithID:ID];
     self.channel = channel;
     NSString *URLStr = [NSString stringWithFormat:@"%@/%@", channel.URLString, _article_id];
@@ -215,7 +215,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 - (NSMutableDictionary *)configureParameters {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     
-    NSInteger channelID = [self.channelID integerValue];
+    NSInteger channelID = self.channelID;
     
     if (channelID != 14) {
         [parameters setValue:@"0" forKey:@"imgmode"];
@@ -229,7 +229,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
         case 1:
         case 2:
         case 5:
-            [parameters setValue:[NSString stringWithFormat:@"%@",self.channelID] forKey:@"channel_id"];
+            [parameters setValue:[NSString stringWithFormat:@"%@",@(self.channelID)] forKey:@"channel_id"];
             break;
         case 6:
         case 8:

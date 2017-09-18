@@ -10,7 +10,7 @@
 
 @implementation ZZJumpToNextModel
 
-+ (instancetype)modelWithLinkType:(NSString *)linkType{
++ (instancetype)modelWithLinkType:(NSString *)linkType {
     
     for (ZZJumpToNextModel *model in [self models]) {
         
@@ -21,11 +21,9 @@
     }
     
     return nil;
-    
-    
 }
 
-+ (instancetype)modelWithChannelID:(NSString *)channelID{
++ (instancetype)modelWithChannelID:(NSInteger)channelID {
     
     for (ZZJumpToNextModel *model in [self models]) {
         
@@ -34,7 +32,7 @@
             return model;
         }
     }
-
+    
     return nil;
 }
 
@@ -42,7 +40,7 @@
 
 
 + (NSArray<ZZJumpToNextModel *> *)models{
-
+    
     NSArray *array = [self mj_objectArrayWithFilename:@"JumpToNext.plist"];
     
     return array;

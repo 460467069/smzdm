@@ -29,4 +29,16 @@ typedef NS_ENUM(NSUInteger, ZDMPromotionType) {
 };
 
 
+typedef NS_ENUM(NSUInteger, ZDMChannelId) {
+    ZDMChannelIdOne         = 1,    //国内
+    ZDMChannelIdTwo         = 2,    //
+    ZDMChannelIdFive        = 5,    //海淘
+    ZDMChannelIdSix         = 6,    //资讯
+    ZDMChannelIdEight       = 8,    //众测
+    ZDMChannelIdEleven      = 11,   //原创
+    ZDMChannelIdFourteen    = 14,   //话题
+};
+
+
+
 #endif /* ZZEnums_h */

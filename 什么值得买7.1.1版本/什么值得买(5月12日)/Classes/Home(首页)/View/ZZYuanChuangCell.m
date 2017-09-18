@@ -45,7 +45,7 @@
                            transform:nil
                           completion:nil];
     
-    if ([article.article_channel_id isEqualToString:@"14"]) {
+    if (article.article_channel_id == 14) {
         self.coverView.hidden = YES;
         self.contentLabel.text = article.article_brief;
         NSString *totalStr = [NSString stringWithFormat:@"共 %@ 篇", article.article_product_count];
@@ -68,7 +68,7 @@
     }
     
     UIImage *tagImage;
-    switch ([article.article_channel_id integerValue]) {
+    switch (article.article_channel_id) {
         case 1: //国内
             tagImage = [UIImage imageNamed:@"homePage_channelGuoNei"];
             break;
