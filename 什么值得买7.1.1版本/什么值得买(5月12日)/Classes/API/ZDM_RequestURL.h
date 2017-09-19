@@ -37,5 +37,6 @@ static NSString * const kZDM_Search          = @"v1/list";                      
 
 /** 好文 */
 static NSString * const kZDM_HaoWen          = @"v1/sns/home";                            /**< 列表 */
+static NSString * const kZDM_HaoWenMore      = @"v1/sns/articles";                        /**< 列表上啦加载更多 */
 
 #endif /* ZDM_RequestURL_h */

@@ -22,6 +22,7 @@ class ZZTopicListCell: UICollectionViewCell {
             
             let text = NSMutableAttributedString.init(string: model.article_title!)
             text.lineSpacing = 10
+            text.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)
             titleLabel.attributedText = text
             
             iconView.zdm_setImage(urlStr: model.article_pic, placeHolder: nil)

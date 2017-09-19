@@ -21,11 +21,6 @@ class ZZType30Cell: UICollectionViewCell {
     var article: ZZWorthyArticle? {
         didSet {
             guard let article = article else { return }
-            
-            let text = NSMutableAttributedString.init(string: article.article_title!)
-            text.lineSpacing = 10
-            titleLabel.attributedText = text
-            
             var imageUrlStr: String?
             var title: String?
             var priceStr: String?
@@ -38,9 +33,13 @@ class ZZType30Cell: UICollectionViewCell {
                 title = article.article_title
                 priceStr = article.article_price
             }
+            let text = NSMutableAttributedString.init(string: title!)
+            text.lineSpacing = 10
+            text.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)
+            text.lineBreakMode = .byTruncatingTail
+            titleLabel.attributedText = text
             
             iconView.zdm_setImage(urlStr: imageUrlStr, placeHolder: nil)
-            titleLabel.text = title
             priceLabel.text = priceStr
             
             

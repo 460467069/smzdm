@@ -19,6 +19,7 @@ class ZZBasecollectionViewController: ZZFirstBaseViewController {
     }()
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.scrollsToTop = true
         collectionView.backgroundColor = UIColor.white
         return collectionView
     }()

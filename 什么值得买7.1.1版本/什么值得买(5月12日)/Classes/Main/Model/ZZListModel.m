@@ -12,7 +12,7 @@
 
 - (instancetype)initWithSubItems:(NSArray *)subItems sectionController:(IGListSectionController *)sectionController {
     if (self = [super init]) {
-        _subItems = subItems;
+        _subItems = [NSMutableArray arrayWithArray:subItems];
         _sectionController = sectionController;
     }
     return self;

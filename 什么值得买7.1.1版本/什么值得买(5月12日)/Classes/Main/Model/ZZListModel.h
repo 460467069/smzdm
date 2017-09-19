@@ -11,7 +11,7 @@
 
 @interface ZZListModel : NSObject<IGListDiffable>
 
-@property (nonatomic, strong) NSArray *subItems;
+@property (nonatomic, strong) NSMutableArray *subItems;
 @property (nonatomic, strong) IGListSectionController *sectionController;
 
 - (instancetype)initWithSubItems:(NSArray *)subItems sectionController:(IGListSectionController *)sectionController;

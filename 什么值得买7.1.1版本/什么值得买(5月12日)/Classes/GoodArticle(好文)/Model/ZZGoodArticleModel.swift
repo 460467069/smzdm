@@ -21,6 +21,21 @@ class ZZGoodArticleListRequest: ZZBaseRequest {
     }
 }
 
+class ZZGoodArticleListMoreRequest: ZZBaseRequest {
+    var limit: Int
+    var size: Int
+    var time_sort: String?
+    var page: Int
+
+    override init () {
+        size = 5
+        limit = 20
+        page = 2
+        super.init()
+        urlStr = kZDM_HaoWenMore
+    }
+}
+
 class ZZGoodArticleBannerRequest: ZZHomeBannerRequest {
     override init() {
         super.init()
