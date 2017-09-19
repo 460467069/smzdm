@@ -56,7 +56,11 @@
     //    图片  article_pic
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:imageUrlStr]];
     //    标题  article_title
-    self.titleLabel.text = title;
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:title];
+    text.lineSpacing = 10;
+    text.lineBreakMode = NSLineBreakByTruncatingTail;
+    text.font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
+    self.titleLabel.attributedText = text;
     //    价格  article_price
     self.priceLabel.text = priceStr;
     //

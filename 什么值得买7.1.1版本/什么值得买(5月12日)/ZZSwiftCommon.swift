@@ -40,3 +40,13 @@ extension String {
         return formatter.string(from: number)
     }
 }
+
+extension NSAttributedString {
+    static func commonAttributedText(title: String) -> NSAttributedString {
+        let text = NSMutableAttributedString.init(string: title)
+        text.lineSpacing = 10
+        text.lineBreakMode = .byTruncatingTail
+        text.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
+        return text
+    }
+}

@@ -33,12 +33,9 @@ class ZZType30Cell: UICollectionViewCell {
                 title = article.article_title
                 priceStr = article.article_price
             }
-            let text = NSMutableAttributedString.init(string: title!)
-            text.lineSpacing = 10
-            text.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)
-            text.lineBreakMode = .byTruncatingTail
-            titleLabel.attributedText = text
-            
+            if let title = title {
+                titleLabel.attributedText = NSAttributedString.commonAttributedText(title: title)
+            }
             iconView.zdm_setImage(urlStr: imageUrlStr, placeHolder: nil)
             priceLabel.text = priceStr
             

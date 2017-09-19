@@ -19,12 +19,9 @@ class ZZTopicListCell: UICollectionViewCell {
     var article: ZZWorthyArticle? {
         didSet {
             guard let model = article else { return }
-            
-            let text = NSMutableAttributedString.init(string: model.article_title!)
-            text.lineSpacing = 10
-            text.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)
-            titleLabel.attributedText = text
-            
+            if let title = model.article_title {
+                titleLabel.attributedText = NSAttributedString.commonAttributedText(title: title)
+            }
             iconView.zdm_setImage(urlStr: model.article_pic, placeHolder: nil)
             headerView.zdm_setAavatarImage(urlStr: model.article_avatar)
             nicknameLabel.text = model.article_referrals
