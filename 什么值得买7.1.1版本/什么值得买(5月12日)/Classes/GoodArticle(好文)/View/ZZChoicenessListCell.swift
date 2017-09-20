@@ -17,6 +17,18 @@ class ZZChoicenessListCell: UICollectionViewCell {
     @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var commentBtn: UIButton!
     @IBOutlet weak var favoriteBtn: UIButton!
+    
+    var colorLayer: CAGradientLayer?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        colorLayer = CAGradientLayer()
+        iconView.layer.insertSublayer(colorLayer!, at: 0)
+        colorLayer?.startPoint = CGPoint.init(x: 0, y: 0)
+        colorLayer?.endPoint = CGPoint.init(x: 0, y: 1)
+        let color = UIColor.lightGray.withAlphaComponent(0.2)
+        colorLayer?.colors = [UIColor.clear.cgColor, color.cgColor]
+    }
 
     var article: ZZWorthyArticle? {
         didSet {
@@ -32,5 +44,12 @@ class ZZChoicenessListCell: UICollectionViewCell {
             timeLabel.text = model.article_format_date
             tagLabel.text = model.tag_category
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        colorLayer?.width = iconView.width
+        colorLayer?.height = iconView.height * 0.5
+        colorLayer?.bottom = iconView.height
     }
 }

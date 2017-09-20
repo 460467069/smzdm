@@ -10,9 +10,16 @@ import UIKit
 import IGListKit
 
 class ZZChoicenessListSectionController: ListSectionController {
-    
+    lazy var adapter: ListAdapter = {
+        let adapter = ListAdapter.init(updater: ListAdapterUpdater(), viewController: self.viewController)
+        adapter.dataSource = self
+        return adapter
+    }()
     var listModel: ZZListModel?
-    
+    lazy var dataSource: [ZZListModel] =  {
+        let dataSource = [ZZListModel]()
+        return dataSource
+    }()
     override func numberOfItems() -> Int {
         if let count = listModel?.subItems.count {
             return count
@@ -25,12 +32,17 @@ class ZZChoicenessListSectionController: ListSectionController {
         let choicenessModel = list[index]
         let cellType = choicenessModel.cell_type
         var height:CGFloat = 270
-        if cellType == "41" {
-            height = 200
-        } else if cellType == "30" {
-            height = 150
-        } else if cellType == "38" {
-            height = 150
+        let promotion_type = choicenessModel.promotion_type
+        if promotion_type == "6" {
+            height = 225
+        } else {
+            if cellType == "41" {
+                height = 200
+            } else if cellType == "30" {
+                height = 150
+            } else if cellType == "38" {
+                height = 150
+            }
         }
         return CGSize(width: collectionContext!.containerSize.width, height: height)
     }
@@ -39,6 +51,25 @@ class ZZChoicenessListSectionController: ListSectionController {
         let list = listModel?.subItems as! [ZZChoicenessListModel]
         let choicenessModel = list[index]
         let cellType = choicenessModel.cell_type
+        let promotion_type = choicenessModel.promotion_type
+        if promotion_type == "6" {
+            guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ZZPromotionType6Cell",
+                                                                    bundle: nil,
+                                                                    for: self,
+                                                                    at: index) as? ZZPromotionType6Cell else {
+                                                                        fatalError()
+            }
+            
+            let promotionType6Model = ZZListModel.init(subItems: choicenessModel.yc_rows,
+                                                       sectionController: ZZPromotionType6SectionController())
+            dataSource.removeAll()
+            dataSource.append(promotionType6Model!)
+            cell.choicenessModel = choicenessModel
+            adapter.collectionView = cell.collectionView
+            adapter.performUpdates(animated: false, completion: nil)
+            return cell
+        }
+        
         if cellType == "41" {
             guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ZZType41Cell",
                                                                     bundle: nil,
@@ -84,5 +115,19 @@ class ZZChoicenessListSectionController: ListSectionController {
         if let model = object as? ZZListModel {
             listModel = model
         }
+    }
+}
+
+extension ZZChoicenessListSectionController: ListAdapterDataSource {
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        return dataSource
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        guard let listModel = object as? ZZListModel else { fatalError() }
+        return listModel.sectionController
+    }
+    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+        return nil
     }
 }

@@ -12,10 +12,13 @@ import YYKit
 class ZZGoodArticleListRequest: ZZBaseRequest {
     var refresh_time: Int
     var size: Int
-    
+    var limit: Int
+    var page: Int
     override init () {
         refresh_time = 4
         size = 5
+        limit = 20
+        page = 1
         super.init()
         urlStr = kZDM_HaoWen
     }

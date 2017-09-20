@@ -135,6 +135,11 @@
 		A980A40C1CE4130A006E0037 /* ZZTabBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A40B1CE4130A006E0037 /* ZZTabBarModel.m */; };
 		A980A40F1CE41827006E0037 /* ZZFirstBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A40E1CE41827006E0037 /* ZZFirstBaseViewController.m */; };
 		A985BED11DE3DAE300FF6561 /* ZZZuiXinBaiCaiLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A985BED01DE3DAE300FF6561 /* ZZZuiXinBaiCaiLayout.swift */; };
+		A99709CC1F72494B0091EF22 /* ZZPromotionType6Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99709CA1F72494B0091EF22 /* ZZPromotionType6Cell.swift */; };
+		A99709CD1F72494B0091EF22 /* ZZPromotionType6Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99709CB1F72494B0091EF22 /* ZZPromotionType6Cell.xib */; };
+		A99709D01F72526E0091EF22 /* ZZPromotionSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99709CE1F72526E0091EF22 /* ZZPromotionSubCell.swift */; };
+		A99709D11F72526E0091EF22 /* ZZPromotionSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99709CF1F72526E0091EF22 /* ZZPromotionSubCell.xib */; };
+		A99709D31F7256760091EF22 /* ZZPromotionType6SectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99709D21F7256760091EF22 /* ZZPromotionType6SectionController.swift */; };
 		A99C54671DF544A600AAFC8D /* Share.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99C54661DF544A600AAFC8D /* Share.plist */; };
 		A99DAD141F5E4726005E4ADC /* UIScrollView+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A99DAD131F5E4725005E4ADC /* UIScrollView+ZZAdd.m */; };
 		A99DAD1E1F5E4CDA005E4ADC /* ZZType41Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99DAD1C1F5E4CDA005E4ADC /* ZZType41Cell.xib */; };
@@ -432,6 +437,11 @@
 		A985BED01DE3DAE300FF6561 /* ZZZuiXinBaiCaiLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZZuiXinBaiCaiLayout.swift; sourceTree = "<group>"; };
 		A989043B1D8A0AF000D55FF4 /* ZZConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZConstants.h; sourceTree = "<group>"; };
 		A989043D1D8A0EED00D55FF4 /* ZZEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZEnums.h; sourceTree = "<group>"; };
+		A99709CA1F72494B0091EF22 /* ZZPromotionType6Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPromotionType6Cell.swift; sourceTree = "<group>"; };
+		A99709CB1F72494B0091EF22 /* ZZPromotionType6Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPromotionType6Cell.xib; sourceTree = "<group>"; };
+		A99709CE1F72526E0091EF22 /* ZZPromotionSubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPromotionSubCell.swift; sourceTree = "<group>"; };
+		A99709CF1F72526E0091EF22 /* ZZPromotionSubCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPromotionSubCell.xib; sourceTree = "<group>"; };
+		A99709D21F7256760091EF22 /* ZZPromotionType6SectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPromotionType6SectionController.swift; sourceTree = "<group>"; };
 		A99B88001DEEB34A007A6640 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		A99B88031DEEB34A007A6640 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		A99B88061DEEB34A007A6640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -1235,6 +1245,10 @@
 				A929E30A1F627D2300756E42 /* ZZType30Cell.xib */,
 				A9DD5D261F6F773C00C799D6 /* ZZType38Cell.swift */,
 				A9DD5D271F6F773C00C799D6 /* ZZType38Cell.xib */,
+				A99709CA1F72494B0091EF22 /* ZZPromotionType6Cell.swift */,
+				A99709CB1F72494B0091EF22 /* ZZPromotionType6Cell.xib */,
+				A99709CE1F72526E0091EF22 /* ZZPromotionSubCell.swift */,
+				A99709CF1F72526E0091EF22 /* ZZPromotionSubCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1244,6 +1258,7 @@
 			children = (
 				A9B5FAF01F56A22A00765562 /* ZZTopicListSectionController.swift */,
 				A95B99861F6242EA00B4DEBE /* ZZChoicenessListSectionController.swift */,
+				A99709D21F7256760091EF22 /* ZZPromotionType6SectionController.swift */,
 			);
 			path = SectionController;
 			sourceTree = "<group>";
@@ -1642,10 +1657,12 @@
 				A93DE7BB1DE14D5B004C8332 /* JumpToNext.plist in Resources */,
 				A9A512021D775A5D00E41407 /* ZZCHannelID.plist in Resources */,
 				A9262A801D76B35B0037B1CF /* ZZJingXuanViewController.storyboard in Resources */,
+				A99709CD1F72494B0091EF22 /* ZZPromotionType6Cell.xib in Resources */,
 				A95FEAD41E07D677003DFEA0 /* ZZShareCollectionViewCell.xib in Resources */,
 				A99C54671DF544A600AAFC8D /* Share.plist in Resources */,
 				A947CD1C1DE02FCC0047B58F /* ZZTuiGuangCell.xib in Resources */,
 				A947CD191DE02FCC0047B58F /* ZZListCell.xib in Resources */,
+				A99709D11F72526E0091EF22 /* ZZPromotionSubCell.xib in Resources */,
 				A980A3FE1CE41250006E0037 /* UITabBar.plist in Resources */,
 				A980A4001CE41286006E0037 /* ZDMHome.plist in Resources */,
 				A91A83521D420A87008D229E /* weibo_4.json in Resources */,
@@ -1820,6 +1837,7 @@
 				A947CCC11DE02FA30047B58F /* ZZDiscoveryViewController.m in Sources */,
 				A947CD1A1DE02FCC0047B58F /* ZZTagLabel.m in Sources */,
 				A91655661DC1EB2400A713A4 /* UINavigationBar+Awesome.m in Sources */,
+				A99709CC1F72494B0091EF22 /* ZZPromotionType6Cell.swift in Sources */,
 				A9262A851D76B7180037B1CF /* ZZJingXuanModel.m in Sources */,
 				A9A03FD81D1A69B100675FA9 /* ZZUserAccount.m in Sources */,
 				A9ADB8501D64DF5D00330D23 /* ZZAPPDotNetAPIClient.m in Sources */,
@@ -1868,6 +1886,7 @@
 				A925E6DB1D60BE2D009A9E6F /* ZZCyclePicHelper.m in Sources */,
 				A930F0781F5AECBB0066621E /* ZZChoicenessListCell.swift in Sources */,
 				A95E63691DF04BAA00855369 /* UIViewController+Jump.swift in Sources */,
+				A99709D01F72526E0091EF22 /* ZZPromotionSubCell.swift in Sources */,
 				A947CCDC1DE02FA30047B58F /* ZZLittleBannerCell.m in Sources */,
 				A922379C1DE57C8500B87A8B /* ZZBaiCaiTableHeaderView.swift in Sources */,
 				A9AF3E1E1DE463E80055F522 /* ZZHaoWuCellThree.swift in Sources */,
@@ -1910,6 +1929,7 @@
 				A9A03FDE1D1A726200675FA9 /* ZZWeiboTableView.m in Sources */,
 				86EA74FA1DCF19A100CD9261 /* ZZAllCommentController.swift in Sources */,
 				A947CCC01DE02FA30047B58F /* ZZDetailTopicViewController.m in Sources */,
+				A99709D31F7256760091EF22 /* ZZPromotionType6SectionController.swift in Sources */,
 				A9EDF9A51EB56EA90066E0F4 /* UIColor+ZZAdd.m in Sources */,
 				A918D7471E7EFF0F00FAC8FE /* ZZTest1.m in Sources */,
 				A91A83581D420CFD008D229E /* WBModel.m in Sources */,
