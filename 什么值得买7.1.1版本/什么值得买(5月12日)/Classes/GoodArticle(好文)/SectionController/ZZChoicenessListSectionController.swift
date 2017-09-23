@@ -20,6 +20,10 @@ class ZZChoicenessListSectionController: ListSectionController {
         let dataSource = [ZZListModel]()
         return dataSource
     }()
+    override init() {
+        super.init()
+        supplementaryViewSource = self
+    }
     override func numberOfItems() -> Int {
         if let count = listModel?.subItems.count {
             return count
@@ -115,6 +119,29 @@ class ZZChoicenessListSectionController: ListSectionController {
         if let model = object as? ZZListModel {
             listModel = model
         }
+    }
+}
+
+extension ZZChoicenessListSectionController: ListSupplementaryViewSource{
+    func supportedElementKinds() -> [String] {
+        return [UICollectionElementKindSectionHeader]
+    }
+    
+    func viewForSupplementaryElement(ofKind elementKind: String, at index: Int) -> UICollectionReusableView {
+        guard let view = collectionContext?.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
+                                                                             for: self,
+                                                                             nibName: "ZZTopicHeaderView",
+                                                                             bundle: nil,
+                                                                             at: index) as? ZZTopicHeaderView else {
+                                                                                fatalError()
+        }
+        view.titleLabel.text = "好文推荐"
+        view.moreBtn.isHidden = true
+        return view
+    }
+    
+    func sizeForSupplementaryView(ofKind elementKind: String, at index: Int) -> CGSize {
+        return CGSize(width: collectionContext!.containerSize.width, height: 60)
     }
 }
 

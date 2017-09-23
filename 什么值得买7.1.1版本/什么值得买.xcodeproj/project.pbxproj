@@ -27,7 +27,6 @@
 		A91A83551D420A87008D229E /* weibo_7.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A834D1D420A87008D229E /* weibo_7.json */; };
 		A91A83581D420CFD008D229E /* WBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A91A83571D420CFD008D229E /* WBModel.m */; };
 		A91C4E631E6D494100C307F3 /* NSObject+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A91C4E621E6D494100C307F3 /* NSObject+ZZAdd.m */; };
-		A91C4E661E6D4A6300C307F3 /* UITableView+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A91C4E651E6D4A6300C307F3 /* UITableView+ZZAdd.m */; };
 		A91D9B4E1D855E090073DEB7 /* ZZTextLinePositionModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A91D9B4D1D855E090073DEB7 /* ZZTextLinePositionModifier.m */; };
 		A91E0BE21D5D9640007BD117 /* ZZFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A91E0BE11D5D9640007BD117 /* ZZFirstTableViewController.m */; };
 		A91E1B5B1E062F7700E14417 /* ZZShareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E1B5A1E062F7700E14417 /* ZZShareModel.swift */; };
@@ -60,6 +59,8 @@
 		A93DE7BB1DE14D5B004C8332 /* JumpToNext.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93DE7BA1DE14D5B004C8332 /* JumpToNext.plist */; };
 		A93FA9CE1DBDE71F00E3007F /* app_details.css in Resources */ = {isa = PBXBuildFile; fileRef = A93FA9CD1DBDE71F00E3007F /* app_details.css */; };
 		A94419C11E0BE77F00DECB06 /* ZZNoDelayBtnCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94419C01E0BE77F00DECB06 /* ZZNoDelayBtnCollectionView.swift */; };
+		A945ADDC1F76B5A600EBBA2A /* UITableView+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A945ADDA1F76B5A500EBBA2A /* UITableView+ZZAdd.m */; };
+		A945ADDE1F76B6EC00EBBA2A /* ZZConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A945ADDD1F76B6EC00EBBA2A /* ZZConstants.m */; };
 		A947CCBE1DE02FA30047B58F /* ZZDetailArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC7D1DE02FA30047B58F /* ZZDetailArticleViewController.m */; };
 		A947CCBF1DE02FA30047B58F /* ZZDetailBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC7F1DE02FA30047B58F /* ZZDetailBaseViewController.m */; };
 		A947CCC01DE02FA30047B58F /* ZZDetailTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CC811DE02FA30047B58F /* ZZDetailTopicViewController.m */; };
@@ -137,8 +138,8 @@
 		A985BED11DE3DAE300FF6561 /* ZZZuiXinBaiCaiLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A985BED01DE3DAE300FF6561 /* ZZZuiXinBaiCaiLayout.swift */; };
 		A99709CC1F72494B0091EF22 /* ZZPromotionType6Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99709CA1F72494B0091EF22 /* ZZPromotionType6Cell.swift */; };
 		A99709CD1F72494B0091EF22 /* ZZPromotionType6Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99709CB1F72494B0091EF22 /* ZZPromotionType6Cell.xib */; };
-		A99709D01F72526E0091EF22 /* ZZPromotionSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99709CE1F72526E0091EF22 /* ZZPromotionSubCell.swift */; };
-		A99709D11F72526E0091EF22 /* ZZPromotionSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99709CF1F72526E0091EF22 /* ZZPromotionSubCell.xib */; };
+		A99709D01F72526E0091EF22 /* ZZPromotionType6SubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99709CE1F72526E0091EF22 /* ZZPromotionType6SubCell.swift */; };
+		A99709D11F72526E0091EF22 /* ZZPromotionType6SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99709CF1F72526E0091EF22 /* ZZPromotionType6SubCell.xib */; };
 		A99709D31F7256760091EF22 /* ZZPromotionType6SectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99709D21F7256760091EF22 /* ZZPromotionType6SectionController.swift */; };
 		A99C54671DF544A600AAFC8D /* Share.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99C54661DF544A600AAFC8D /* Share.plist */; };
 		A99DAD141F5E4726005E4ADC /* UIScrollView+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A99DAD131F5E4725005E4ADC /* UIScrollView+ZZAdd.m */; };
@@ -150,6 +151,10 @@
 		A9A746F51DE2EBC200EFB62F /* ZZSecondCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A746F41DE2EBC200EFB62F /* ZZSecondCollectionViewController.m */; };
 		A9A746F71DE2ED7800EFB62F /* ZZBaiCaiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A746F61DE2ED7800EFB62F /* ZZBaiCaiController.swift */; };
 		A9A7AC3B1D8BF1B400814CDD /* LEOStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A7AC3A1D8BF1B400814CDD /* LEOStarView.m */; };
+		A9ACF0DC1F7277890004AB2E /* ZZTopicHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACF0DA1F7277890004AB2E /* ZZTopicHeaderView.swift */; };
+		A9ACF0DD1F7277890004AB2E /* ZZTopicHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9ACF0DB1F7277890004AB2E /* ZZTopicHeaderView.xib */; };
+		A9ACF0E01F72812B0004AB2E /* ZZPromotionType9SubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ACF0DE1F72812B0004AB2E /* ZZPromotionType9SubCell.swift */; };
+		A9ACF0E11F72812B0004AB2E /* ZZPromotionType9SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9ACF0DF1F72812B0004AB2E /* ZZPromotionType9SubCell.xib */; };
 		A9ADB8501D64DF5D00330D23 /* ZZAPPDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ADB84D1D64DF5D00330D23 /* ZZAPPDotNetAPIClient.m */; };
 		A9ADB8511D64DF5D00330D23 /* ZZNetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ADB84F1D64DF5D00330D23 /* ZZNetworkHandler.m */; };
 		A9AEA3261D5F6F17003B8264 /* ZZCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AEA3251D5F6F17003B8264 /* ZZCycleScrollView.m */; };
@@ -260,8 +265,6 @@
 		A91A83571D420CFD008D229E /* WBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBModel.m; sourceTree = "<group>"; };
 		A91C4E611E6D494100C307F3 /* NSObject+ZZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZZAdd.h"; sourceTree = "<group>"; };
 		A91C4E621E6D494100C307F3 /* NSObject+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZZAdd.m"; sourceTree = "<group>"; };
-		A91C4E641E6D4A6300C307F3 /* UITableView+ZZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ZZAdd.h"; sourceTree = "<group>"; };
-		A91C4E651E6D4A6300C307F3 /* UITableView+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ZZAdd.m"; sourceTree = "<group>"; };
 		A91D9B4C1D855E090073DEB7 /* ZZTextLinePositionModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTextLinePositionModifier.h; sourceTree = "<group>"; };
 		A91D9B4D1D855E090073DEB7 /* ZZTextLinePositionModifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZTextLinePositionModifier.m; sourceTree = "<group>"; };
 		A91E0BE01D5D9640007BD117 /* ZZFirstTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZFirstTableViewController.h; sourceTree = "<group>"; };
@@ -308,6 +311,9 @@
 		A93DE7BA1DE14D5B004C8332 /* JumpToNext.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = JumpToNext.plist; sourceTree = "<group>"; };
 		A93FA9CD1DBDE71F00E3007F /* app_details.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = app_details.css; sourceTree = "<group>"; };
 		A94419C01E0BE77F00DECB06 /* ZZNoDelayBtnCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZNoDelayBtnCollectionView.swift; sourceTree = "<group>"; };
+		A945ADDA1F76B5A500EBBA2A /* UITableView+ZZAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ZZAdd.m"; sourceTree = "<group>"; };
+		A945ADDB1F76B5A500EBBA2A /* UITableView+ZZAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+ZZAdd.h"; sourceTree = "<group>"; };
+		A945ADDD1F76B6EC00EBBA2A /* ZZConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZConstants.m; sourceTree = "<group>"; };
 		A947CC7C1DE02FA30047B58F /* ZZDetailArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailArticleViewController.h; sourceTree = "<group>"; };
 		A947CC7D1DE02FA30047B58F /* ZZDetailArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailArticleViewController.m; sourceTree = "<group>"; };
 		A947CC7E1DE02FA30047B58F /* ZZDetailBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailBaseViewController.h; sourceTree = "<group>"; };
@@ -439,8 +445,8 @@
 		A989043D1D8A0EED00D55FF4 /* ZZEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZEnums.h; sourceTree = "<group>"; };
 		A99709CA1F72494B0091EF22 /* ZZPromotionType6Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPromotionType6Cell.swift; sourceTree = "<group>"; };
 		A99709CB1F72494B0091EF22 /* ZZPromotionType6Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPromotionType6Cell.xib; sourceTree = "<group>"; };
-		A99709CE1F72526E0091EF22 /* ZZPromotionSubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPromotionSubCell.swift; sourceTree = "<group>"; };
-		A99709CF1F72526E0091EF22 /* ZZPromotionSubCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPromotionSubCell.xib; sourceTree = "<group>"; };
+		A99709CE1F72526E0091EF22 /* ZZPromotionType6SubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPromotionType6SubCell.swift; sourceTree = "<group>"; };
+		A99709CF1F72526E0091EF22 /* ZZPromotionType6SubCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZPromotionType6SubCell.xib; sourceTree = "<group>"; };
 		A99709D21F7256760091EF22 /* ZZPromotionType6SectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPromotionType6SectionController.swift; sourceTree = "<group>"; };
 		A99B88001DEEB34A007A6640 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		A99B88031DEEB34A007A6640 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -462,6 +468,10 @@
 		A9A746F61DE2ED7800EFB62F /* ZZBaiCaiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZBaiCaiController.swift; sourceTree = "<group>"; };
 		A9A7AC391D8BF1B400814CDD /* LEOStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEOStarView.h; sourceTree = "<group>"; };
 		A9A7AC3A1D8BF1B400814CDD /* LEOStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEOStarView.m; sourceTree = "<group>"; };
+		A9ACF0DA1F7277890004AB2E /* ZZTopicHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZTopicHeaderView.swift; sourceTree = "<group>"; };
+		A9ACF0DB1F7277890004AB2E /* ZZTopicHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZZTopicHeaderView.xib; sourceTree = "<group>"; };
+		A9ACF0DE1F72812B0004AB2E /* ZZPromotionType9SubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZPromotionType9SubCell.swift; sourceTree = "<group>"; };
+		A9ACF0DF1F72812B0004AB2E /* ZZPromotionType9SubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZZPromotionType9SubCell.xib; sourceTree = "<group>"; };
 		A9ADB84C1D64DF5D00330D23 /* ZZAPPDotNetAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAPPDotNetAPIClient.h; sourceTree = "<group>"; };
 		A9ADB84D1D64DF5D00330D23 /* ZZAPPDotNetAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAPPDotNetAPIClient.m; sourceTree = "<group>"; };
 		A9ADB84E1D64DF5D00330D23 /* ZZNetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNetworkHandler.h; sourceTree = "<group>"; };
@@ -1247,8 +1257,12 @@
 				A9DD5D271F6F773C00C799D6 /* ZZType38Cell.xib */,
 				A99709CA1F72494B0091EF22 /* ZZPromotionType6Cell.swift */,
 				A99709CB1F72494B0091EF22 /* ZZPromotionType6Cell.xib */,
-				A99709CE1F72526E0091EF22 /* ZZPromotionSubCell.swift */,
-				A99709CF1F72526E0091EF22 /* ZZPromotionSubCell.xib */,
+				A99709CE1F72526E0091EF22 /* ZZPromotionType6SubCell.swift */,
+				A99709CF1F72526E0091EF22 /* ZZPromotionType6SubCell.xib */,
+				A9ACF0DE1F72812B0004AB2E /* ZZPromotionType9SubCell.swift */,
+				A9ACF0DF1F72812B0004AB2E /* ZZPromotionType9SubCell.xib */,
+				A9ACF0DA1F7277890004AB2E /* ZZTopicHeaderView.swift */,
+				A9ACF0DB1F7277890004AB2E /* ZZTopicHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1317,6 +1331,7 @@
 				A95605F51DA87E4C00473B46 /* ZZSwiftCommon.swift */,
 				A9C8C4E41D8F58EB00B8BFA7 /* 什么值得买-Bridging-Header.h */,
 				A989043B1D8A0AF000D55FF4 /* ZZConstants.h */,
+				A945ADDD1F76B6EC00EBBA2A /* ZZConstants.m */,
 				A989043D1D8A0EED00D55FF4 /* ZZEnums.h */,
 			);
 			name = "Supporting Files";
@@ -1371,12 +1386,12 @@
 				A9758D771D878DA800FC4B89 /* NSObject+ZZStarImage.m */,
 				A90DBF121DBF740900D857A9 /* UINavigationItem+Margin.h */,
 				A90DBF131DBF740900D857A9 /* UINavigationItem+Margin.m */,
-				A91C4E641E6D4A6300C307F3 /* UITableView+ZZAdd.h */,
-				A91C4E651E6D4A6300C307F3 /* UITableView+ZZAdd.m */,
 				A91C4E611E6D494100C307F3 /* NSObject+ZZAdd.h */,
 				A91C4E621E6D494100C307F3 /* NSObject+ZZAdd.m */,
 				A9DD7F601E768C9000CA913A /* UIViewController+ZZAdd.h */,
 				A9DD7F611E768C9000CA913A /* UIViewController+ZZAdd.m */,
+				A945ADDB1F76B5A500EBBA2A /* UITableView+ZZAdd.h */,
+				A945ADDA1F76B5A500EBBA2A /* UITableView+ZZAdd.m */,
 				A9EDF99A1EB56C010066E0F4 /* UITextField+ZZAdd.h */,
 				A9EDF99B1EB56C010066E0F4 /* UITextField+ZZAdd.m */,
 				A9EDF99D1EB56D510066E0F4 /* UILabel+ZZAdd.h */,
@@ -1656,13 +1671,14 @@
 				A9C356A11D2275BC006EE7EC /* ZZMineViewController.storyboard in Resources */,
 				A93DE7BB1DE14D5B004C8332 /* JumpToNext.plist in Resources */,
 				A9A512021D775A5D00E41407 /* ZZCHannelID.plist in Resources */,
+				A9ACF0E11F72812B0004AB2E /* ZZPromotionType9SubCell.xib in Resources */,
 				A9262A801D76B35B0037B1CF /* ZZJingXuanViewController.storyboard in Resources */,
 				A99709CD1F72494B0091EF22 /* ZZPromotionType6Cell.xib in Resources */,
 				A95FEAD41E07D677003DFEA0 /* ZZShareCollectionViewCell.xib in Resources */,
 				A99C54671DF544A600AAFC8D /* Share.plist in Resources */,
 				A947CD1C1DE02FCC0047B58F /* ZZTuiGuangCell.xib in Resources */,
 				A947CD191DE02FCC0047B58F /* ZZListCell.xib in Resources */,
-				A99709D11F72526E0091EF22 /* ZZPromotionSubCell.xib in Resources */,
+				A99709D11F72526E0091EF22 /* ZZPromotionType6SubCell.xib in Resources */,
 				A980A3FE1CE41250006E0037 /* UITabBar.plist in Resources */,
 				A980A4001CE41286006E0037 /* ZDMHome.plist in Resources */,
 				A91A83521D420A87008D229E /* weibo_4.json in Resources */,
@@ -1676,6 +1692,7 @@
 				A947CD0C1DE02FCC0047B58F /* ZZHaoJiaViewController.storyboard in Resources */,
 				A94AC31C1DED30E3009D077A /* ZZBaiCaiNewestCell.xib in Resources */,
 				A93FA9CE1DBDE71F00E3007F /* app_details.css in Resources */,
+				A9ACF0DD1F7277890004AB2E /* ZZTopicHeaderView.xib in Resources */,
 				A91A83531D420A87008D229E /* weibo_5.json in Resources */,
 				A9262A821D76B63F0037B1CF /* JingXuan.plist in Resources */,
 				A9DD5D291F6F773C00C799D6 /* ZZType38Cell.xib in Resources */,
@@ -1801,13 +1818,14 @@
 				A9C08ACA1E7790D600099C28 /* ZZSearchItem.swift in Sources */,
 				A9C08ABC1E7783E900099C28 /* ZZSearchModel.swift in Sources */,
 				A9B5FAF41F56A34500765562 /* ZZTopicListCell.swift in Sources */,
+				A9ACF0DC1F7277890004AB2E /* ZZTopicHeaderView.swift in Sources */,
 				A9F97BC01DE521E200FB683F /* ZZBaiCaiBannerView.swift in Sources */,
 				A947CD0A1DE02FCC0047B58F /* ZZHaoJiaHeaderViewController.m in Sources */,
 				A980A40F1CE41827006E0037 /* ZZFirstBaseViewController.m in Sources */,
 				A947CD131DE02FCC0047B58F /* ZZRedirectData.m in Sources */,
-				A91C4E661E6D4A6300C307F3 /* UITableView+ZZAdd.m in Sources */,
 				A947CCDA1DE02FA30047B58F /* ZZDiscoveryView.m in Sources */,
 				A947CCCF1DE02FA30047B58F /* ZZHomeFirstModel.m in Sources */,
+				A945ADDC1F76B5A600EBBA2A /* UITableView+ZZAdd.m in Sources */,
 				A947CCD51DE02FA30047B58F /* ZZDetailTopicCell.m in Sources */,
 				A980A3F41CE40F76006E0037 /* ZZMineViewController.m in Sources */,
 				A9C08AC21E77858A00099C28 /* ZZDetailTopicHeaderLayout.m in Sources */,
@@ -1864,6 +1882,7 @@
 				A947CCC31DE02FA30047B58F /* ZZHomeHeaderViewController.m in Sources */,
 				A947CD0D1DE02FCC0047B58F /* ZZHaoJiaHeaderLayout.swift in Sources */,
 				A9D9D2511CE40B7C00A83101 /* UIColor+HEX.m in Sources */,
+				A9ACF0E01F72812B0004AB2E /* ZZPromotionType9SubCell.swift in Sources */,
 				A9B783581D58FB90003C464D /* ZZCircleView.m in Sources */,
 				A9F964851DDA2D2700D41EC5 /* ZZCommentHeaderView.swift in Sources */,
 				A92151D71D83A1D800749413 /* YYTextExampleHelper.m in Sources */,
@@ -1878,6 +1897,7 @@
 				A966E0971E11190B0023CFEA /* ZZSearchViewController.swift in Sources */,
 				A9C8C4E81D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift in Sources */,
 				A947CD081DE02FCC0047B58F /* ZZContentViewController.m in Sources */,
+				A945ADDE1F76B6EC00EBBA2A /* ZZConstants.m in Sources */,
 				A9B783551D58FB5F003C464D /* ZZDIYHeader.m in Sources */,
 				A96470B11E49BCAA009198DA /* Person.xcdatamodeld in Sources */,
 				A9ADB8511D64DF5D00330D23 /* ZZNetworkHandler.m in Sources */,
@@ -1886,7 +1906,7 @@
 				A925E6DB1D60BE2D009A9E6F /* ZZCyclePicHelper.m in Sources */,
 				A930F0781F5AECBB0066621E /* ZZChoicenessListCell.swift in Sources */,
 				A95E63691DF04BAA00855369 /* UIViewController+Jump.swift in Sources */,
-				A99709D01F72526E0091EF22 /* ZZPromotionSubCell.swift in Sources */,
+				A99709D01F72526E0091EF22 /* ZZPromotionType6SubCell.swift in Sources */,
 				A947CCDC1DE02FA30047B58F /* ZZLittleBannerCell.m in Sources */,
 				A922379C1DE57C8500B87A8B /* ZZBaiCaiTableHeaderView.swift in Sources */,
 				A9AF3E1E1DE463E80055F522 /* ZZHaoWuCellThree.swift in Sources */,

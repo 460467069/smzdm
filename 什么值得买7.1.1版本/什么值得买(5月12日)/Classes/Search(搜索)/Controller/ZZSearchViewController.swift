@@ -130,7 +130,6 @@ class ZZSearchViewController: ZZSecondBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        initNavBar()
         loadData()
         textFiled.becomeFirstResponder()
     }
@@ -139,10 +138,11 @@ class ZZSearchViewController: ZZSecondBaseViewController {
         super.viewWillDisappear(animated)
         textFiled.resignFirstResponder()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = view.bounds
+        collectionView.top = kZZStatusH + kZZNavH;
     }
 }
 
@@ -166,20 +166,15 @@ extension ZZSearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        var reuseableView: ZZSearchHeader!
-        
-        if kind == UICollectionElementKindSectionHeader {
-            reuseableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NSStringFromClass(ZZSearchHeader.self), for: indexPath) as! ZZSearchHeader
-            if indexPath.section == 0 {
-                reuseableView.backgroundColor = kGlobalLightGrayColor
-                reuseableView.titleLabel.text = "全站热门搜索"
-                reuseableView.clearBtn.isHidden = true
-            } else {
-                reuseableView.titleLabel.text = "搜索历史"
-                reuseableView.clearBtn.isHidden = false
-            }
-            
-        }        
+        let reuseableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NSStringFromClass(ZZSearchHeader.self), for: indexPath) as! ZZSearchHeader
+        if indexPath.section == 0 {
+            reuseableView.backgroundColor = kGlobalLightGrayColor
+            reuseableView.titleLabel.text = "全站热门搜索"
+            reuseableView.clearBtn.isHidden = true
+        } else {
+            reuseableView.titleLabel.text = "搜索历史"
+            reuseableView.clearBtn.isHidden = false
+        }
         return reuseableView
     }
 }
@@ -216,16 +211,11 @@ extension ZZSearchViewController {
     override func initNavBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "取消", style: .plain, target: self, action: #selector(cancelBtnDidClick))
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: textFiled)
-        
-        
     }
     
     override func initUI() {
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
-        collectionView.snp.makeConstraints { (make) in
-            make.edges.equalTo(view)
-        }
     }
     
     func loadData() {

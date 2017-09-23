@@ -10,9 +10,9 @@
 #define ZZConstants_h
 #define ZZColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 
-#define kStatusH                    20                      //  状态栏高度
-#define kNavBarH                    44                      //  导航栏高度
-#define kTabBarH                    49                      //  标签栏高度
+UIKIT_EXTERN CGFloat kZZStatusH;                //  状态栏高度
+UIKIT_EXTERN CGFloat kZZTabBarH;                //  导航栏高度
+UIKIT_EXTERN CGFloat const kZZNavH;             //  导航栏高度
 
 #define kGlobalRedColor [UIColor colorWithHexString:@"#F04848"]
 #define kGlobalGrayColor [UIColor colorWithHexString:@"#666666"]
@@ -95,6 +95,17 @@ static inline NSString * OPTEncryptKey() {
     });
     
     return returnedKey;
+}
+
+static inline NSString *ZZStringFromClass(id aClass) {
+    NSString *str = NSStringFromClass([aClass class]);
+    //处理swift下, 命名空间的问题
+    NSString *nameSpace = [NSBundle mainBundle].infoDictionary[@"CFBundleExecutable"];
+    NSString *prefixStr = [NSString stringWithFormat:@"%@.", nameSpace];
+    if ([str containsString:prefixStr]){
+        str = [str stringByReplacingOccurrencesOfString:prefixStr withString:@""];
+    }
+    return str;
 }
 
 static inline void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector) {

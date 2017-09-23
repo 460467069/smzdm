@@ -14,7 +14,7 @@ target '什么值得买' do
   pod 'MJRefresh'
   pod 'MJExtension'
   pod 'Masonry'
-  pod 'SnapKit'
+  pod 'SnapKit', '3.2.0'
   pod 'SDCycleScrollView'
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'ZYCornerRadius'

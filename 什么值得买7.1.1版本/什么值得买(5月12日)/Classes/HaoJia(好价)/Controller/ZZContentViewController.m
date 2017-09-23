@@ -24,12 +24,9 @@
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray<UIImageView *> *imageViews;
 /** 数据源 */
 @property (nonatomic, strong) NSMutableArray <ZZWorthyArticle *> *dataArrayM;
-//@property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (nonatomic, strong) ZZHaoJiaHeaderView *headerView;
-
 /** 请求参数页码 */
 @property (nonatomic, assign) NSInteger page;
-
 /** 请求参数offset */
 @property (nonatomic, assign) NSInteger offset;
 
@@ -40,15 +37,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.tableView.scrollsToTop = YES;
     [self.tableView registerReuseCellNib:[ZZTuiGuangCell class]];
     [self.tableView registerReuseCellNib:[ZZListCell class]];
-    
     self.tableView.rowHeight = kScreenWidth / 3 + 20 + 2;
     //请求头部数据
     [self loadHeaderData];
-
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     self.tableView.mj_header = [ZZDIYHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
     
@@ -62,11 +56,8 @@
     self.headerView = headerView;
     headerView.delegate = self;
     dispatch_async(dispatch_get_main_queue(), ^{
-        
         self.headerView.height = kScreenWidth / 320.0 * self.headerView.height;
-
         self.tableView.tableHeaderView = headerView;
-
     });
 }
 
@@ -83,7 +74,6 @@
         //设置轮播图片
         ZZContentHeader *headerModel = [ZZContentHeader modelWithJSON:responseObject];
         self.headerView.contentHeader = headerModel;
-        
     }];
 }
 
@@ -93,13 +83,9 @@
     self.page = 1;
     self.offset = 0;
     [ZZAPPDotNetAPIClient Get:self.homeChannel.URLString parameters:[self configureParameters] completionBlock:^(id responseObject, NSError *error) {
-        
         [self.tableView.mj_header endRefreshing];
-        
         if (error) { return;}
-        
         NSArray *rows = responseObject[@"rows"];
-        
         NSArray *temArray = [NSArray modelArrayWithClass:[ZZWorthyArticle class] json:rows];
         self.dataArrayM = [NSMutableArray arrayWithArray:temArray];
         [self.tableView reloadData];
@@ -196,7 +182,6 @@
 }
 
 - (void)setNavigationBarTransformProgress:(CGFloat)progress{
-    
     if (self.offsetBlock) {
         self.offsetBlock(progress);
     }

@@ -19,21 +19,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
     [self collectionViewInitial];
-    
     [self refreshHeaderAndFooterInitial];
 }
 
 /** 初始化collectionView */
 - (void)collectionViewInitial {
-
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.collectionView.scrollsToTop = YES;
     [self.view addSubview:self.collectionView];
-
 }
 
 
@@ -43,17 +39,13 @@
 - (void)refreshHeaderAndFooterInitial {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     self.collectionView.mj_header = [ZZDIYHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
-    
-    
     self.collectionView.mj_footer = [ZZDIYBackFooter footerWithRefreshingTarget:self
                                                           refreshingAction:@selector(loadMoreData)];
-    
     [self.collectionView.mj_header beginRefreshing];
     
 }
 
-- (NSMutableDictionary *)configureParameters{
-    
+- (NSMutableDictionary *)configureParameters {
     return [NSMutableDictionary dictionary];
 }
 

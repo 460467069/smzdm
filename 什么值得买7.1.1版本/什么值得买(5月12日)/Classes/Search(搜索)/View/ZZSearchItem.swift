@@ -12,13 +12,14 @@ class ZZSearchHeader: UICollectionReusableView {
     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textColor = kGlobalGrayColor
-        titleLabel.font = UIFont.systemFont(ofSize: 18)
+        titleLabel.font = UIFont.systemFont(ofSize: 15)
         return titleLabel
     }()
     
     lazy var clearBtn: UIButton = {
         let clearBtn = UIButton()
         clearBtn.setTitleColor(kGlobalRedColor, for: .normal)
+        clearBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         clearBtn.addTarget(self, action: #selector(clearBtnDidClick), for: .touchUpInside)
         clearBtn.setTitle("清除历史", for: .normal)
         return clearBtn

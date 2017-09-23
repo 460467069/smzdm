@@ -8,21 +8,14 @@
 
 import UIKit
 import AVFoundation
-
-
 class ZZQRcodeController: UIViewController {
-
-    
     let headTitle = "对准二维码/条形码到框内即可扫描"
     
     lazy var device: AVCaptureDevice = {
         let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         return device!
     }()
-    lazy var input: AVCaptureDeviceInput = {
-        let input = AVCaptureDeviceInput()
-        return input
-    }()
+    var input: AVCaptureDeviceInput?
     lazy var output: AVCaptureMetadataOutput = {
         let output = AVCaptureMetadataOutput()
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)

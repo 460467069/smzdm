@@ -12,12 +12,9 @@
 
 /** collectionView须由子类实例化 */
 @property (nonatomic, strong) UICollectionView *collectionView;
-
 @property(nonatomic, strong)NSMutableArray *dataSource;
-
 /** 请求参数页码 */
 @property (nonatomic, assign) NSInteger page;
-
 /** 请求参数offset */
 @property (nonatomic, assign) NSInteger offset;
 /** 下拉 */

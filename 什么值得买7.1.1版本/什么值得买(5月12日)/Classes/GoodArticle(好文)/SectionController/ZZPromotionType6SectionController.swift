@@ -29,10 +29,10 @@ class ZZPromotionType6SectionController: ListSectionController {
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ZZPromotionSubCell",
+        guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ZZPromotionType6SubCell",
                                                                 bundle: nil,
                                                                 for: self,
-                                                                at: index) as? ZZPromotionSubCell else {
+                                                                at: index) as? ZZPromotionType6SubCell else {
                                                                     fatalError()
         }
         let list = listModel?.subItems as! [ZZWorthyArticle]

@@ -11,6 +11,4 @@
 
 @interface ZZSecondBaseViewController : ZZBaseViewController
 
-
-
 @end

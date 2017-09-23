@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZZPromotionSubCell: UICollectionViewCell {
+class ZZPromotionType6SubCell: UICollectionViewCell {
 
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!

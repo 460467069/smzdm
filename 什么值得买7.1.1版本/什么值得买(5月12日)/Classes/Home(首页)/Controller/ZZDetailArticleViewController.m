@@ -58,7 +58,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     _containerScrollView.delegate = self;
     _containerScrollView.scrollsToTop = YES;
     [self.view addSubview:_containerScrollView];
-    _containerScrollView.frame = CGRectMake(0, kStatusH, self.view.width, self.view.height - kStatusH - kTabBarH);
+    _containerScrollView.frame = CGRectMake(0, kZZStatusH, self.view.width, self.view.height - kZZStatusH - kZZTabBarH);
     _containerScrollView.decelerationRate = UIScrollViewDecelerationRateFast;
 
     
@@ -108,7 +108,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [self.view addSubview:bottomToolBar];
     [bottomToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.offset(0);
-        make.height.mas_equalTo(kTabBarH);
+        make.height.mas_equalTo(kZZTabBarH);
     }];
     self.bottomToolBar = bottomToolBar;
 }

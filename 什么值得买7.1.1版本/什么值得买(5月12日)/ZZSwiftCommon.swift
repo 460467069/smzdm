@@ -9,15 +9,10 @@
 import Foundation
 import YYKit
 
-
 let kScreenBounds = UIScreen.main.bounds
 let kScreenWidth  = YYScreenSize().width
 let kScreenHeight = YYScreenSize().height
 let kScreenScale  = YYScreenScale()
-
-let kStatusHeight = 20
-let kNavHeight    = 44.0
-let kNabBarHeight = 49.0
 
 let kGlobalGrayColor      = UIColor.init(hexString: "#666666")
 let kGlobalRedColor       = UIColor.init(hexString: "#F04848")

@@ -461,7 +461,7 @@
     return [nicknameMatches evaluateWithObject:self];
 }
 
-+ (NSString *)networkingStatesFromStatebar {
++ (NSString *)zz_networkingStatesFromStatebar {
     // 状态栏是由当前app控制的，首先获取当前app
     UIApplication *app = [UIApplication sharedApplication];
     

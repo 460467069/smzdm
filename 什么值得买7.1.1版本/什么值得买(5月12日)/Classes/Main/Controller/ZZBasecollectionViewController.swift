@@ -31,6 +31,7 @@ class ZZBasecollectionViewController: ZZFirstBaseViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
+        collectionView.top = kZZStatusH + kZZNavH
     }
 }
 

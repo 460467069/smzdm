@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="ZZTopicHeaderView" customModule="什么值得买" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taBg_user" translatesAutoresizingMaskIntoConstraints="NO" id="LaM-hX-EwX">
+                    <rect key="frame" x="15" y="33.5" width="6" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="5K5-Ne-1Ey"/>
+                        <constraint firstAttribute="width" constant="6" id="zAe-Sk-50X"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Joc-Wb-bPF">
+                    <rect key="frame" x="31" y="33" width="38.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20392156859999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wo-f6-voN">
+                    <rect key="frame" x="288" y="32" width="50" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Gtc-tV-9YO"/>
+                        <constraint firstAttribute="width" constant="50" id="N4f-kC-oQg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="更多">
+                        <color key="titleColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Joc-Wb-bPF" firstAttribute="leading" secondItem="LaM-hX-EwX" secondAttribute="trailing" constant="10" id="KUc-kx-wcq"/>
+                <constraint firstItem="LaM-hX-EwX" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="15" id="Mym-Ty-Zro"/>
+                <constraint firstItem="2wo-f6-voN" firstAttribute="centerY" secondItem="Joc-Wb-bPF" secondAttribute="centerY" id="N9h-Fw-5hX"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="2wo-f6-voN" secondAttribute="trailing" constant="15" id="Y5J-Lw-GFO"/>
+                <constraint firstItem="LaM-hX-EwX" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" constant="10" id="ddO-3d-uKW"/>
+                <constraint firstItem="Joc-Wb-bPF" firstAttribute="centerY" secondItem="LaM-hX-EwX" secondAttribute="centerY" id="shs-XX-Fih"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="moreBtn" destination="2wo-f6-voN" id="uzG-rx-epc"/>
+                <outlet property="moreBtnDidClick" destination="2wo-f6-voN" id="U6G-RT-L6P"/>
+                <outlet property="titleLabel" destination="Joc-Wb-bPF" id="yM5-rE-i03"/>
+            </connections>
+            <point key="canvasLocation" x="-109.5" y="-14"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="taBg_user" width="375" height="200"/>
+    </resources>
+</document>

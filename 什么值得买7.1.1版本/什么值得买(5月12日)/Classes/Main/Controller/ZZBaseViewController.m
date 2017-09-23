@@ -18,6 +18,12 @@
     [super viewDidLoad];
     self.delegate = self;
     // Do any additional setup after loading the view.
+    if (@available(iOS 11.0, *)) {
+    } else {
+        if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]) {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+    }
     [self initUI];
     [self initNavBar];
     [self setupDatasource];

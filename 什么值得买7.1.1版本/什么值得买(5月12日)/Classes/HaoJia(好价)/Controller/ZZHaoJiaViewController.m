@@ -16,15 +16,11 @@
 
 /** 头部的ScrollView */
 @property (strong, nonatomic) IBOutlet UIScrollView *topScrollView;
-
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewTopConstraint;
-
 /** collectionView数据源 */
 @property (nonatomic, strong) NSArray <ZZHomeChannel *> *dataArray;
-
 /** 控制器缓存 key 频道名字  value是控制器 */
 @property (nonatomic, strong) NSMutableDictionary *controllerCache;
 /** 红色下划线 */
@@ -40,18 +36,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = NO;
     [self setUpScrollView];
-    [self.navigationController addObserver:self forKeyPath:@"navigationBar.frame" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
-    
+//    [self.navigationController addObserver:self forKeyPath:@"navigationBar.frame" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     [self configureCollectionView];
-    
     dispatch_async(dispatch_get_main_queue(), ^{ //默认选中"精选"
         [self titleBtnDidClick:self.titleBtnArray[1]];
     });
 }
 
-- (void)configureCollectionView{
+- (void)configureCollectionView {
     self.flowLayout.minimumLineSpacing = 0;
     self.flowLayout.minimumInteritemSpacing = 0;
     self.flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -59,8 +52,7 @@
     self.collectionView.bounces = NO;
 }
 
-- (void)setUpScrollView{
-    
+- (void)setUpScrollView {
     _topScrollView = [[UIScrollView alloc] init];
     _topScrollView.frame = CGRectMake(0, 64, kScreenWidth, 40);
     _topScrollView.contentSize = CGSizeMake(kScreenWidth, 0);
@@ -73,7 +65,6 @@
     
     NSMutableArray *temArray = [NSMutableArray array];
     [self.dataArray enumerateObjectsUsingBlock:^(ZZHomeChannel * _Nonnull channel, NSUInteger idx, BOOL * _Nonnull stop) {
-        
         UIButton *titleBtn = [[UIButton alloc] init];
         [titleBtn addTarget:self action:@selector(titleBtnDidClick:) forControlEvents:UIControlEventTouchUpInside];
         [titleBtn setTitle:channel.title forState:UIControlStateNormal];
@@ -92,7 +83,6 @@
     }];
     
     self.titleBtnArray = [temArray copy];
-    
     //红色下划线
     UIImage *lineImage = [UIImage imageNamed:@"bkTx"];
     UIImageView *lineView = [[UIImageView alloc] initWithImage:lineImage];
@@ -104,48 +94,36 @@
 }
 
 - (void)titleBtnDidClick:(UIButton *)btn {
-    
     if ([self.markBtn isEqual:btn]) {
         return;
     }
-    
     self.markBtn.selected = NO;
     btn.selected = YES;
     self.markBtn = btn;
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:btn.tag inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:btn.tag inSection:0]
+                                atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     [UIView animateWithDuration:0.3 animations:^{
-
         self.lineView.centerX = btn.centerX;
-
     }];
 
 }
 
-- (void)viewDidLayoutSubviews{
-    
+- (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-
     self.flowLayout.itemSize = self.collectionView.bounds.size;
-
 }
 
 #pragma mark - UICollectionViewDelegate, UICollectionViewDataSource
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
-    
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.dataArray.count;
 }
 
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ZZHomeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ZZHomeCell" forIndexPath:indexPath];
-    
     //防止cell.contentView重复添加控制器的View
 //    [cell.contentController.view removeFromSuperview];
-    
     ZZHomeChannel *channel = self.dataArray[indexPath.item];
     ZZContentViewController *contentVc = [self controllerWithChannel:channel];
     cell.contentController = contentVc;
@@ -154,7 +132,7 @@
 
 
 
-- (ZZContentViewController *)controllerWithChannel:(ZZHomeChannel *)channel{
+- (ZZContentViewController *)controllerWithChannel:(ZZHomeChannel *)channel {
     //先判断缓存中有没有, 没有的话就自己创建
     ZZContentViewController *contentController = [self.controllerCache objectForKey:channel.title];
     if (!contentController) {
@@ -168,7 +146,7 @@
 }
 
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger index = scrollView.contentOffset.x / scrollView.mj_w;
     [self titleBtnDidClick:self.titleBtnArray[index]];
 }

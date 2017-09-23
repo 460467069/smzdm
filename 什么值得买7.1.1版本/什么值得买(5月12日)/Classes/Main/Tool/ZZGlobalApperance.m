@@ -12,8 +12,7 @@
 @implementation ZZGlobalApperance
 
 /** 全局定制 */
-+ (void)configureGlobalApperance{
-    
++ (void)configureGlobalApperance {
     UINavigationBar *navigationBar = [UINavigationBar appearance];
     
     NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor],
@@ -34,7 +33,11 @@
     
     UIScrollView *scrollView = [UIScrollView appearance];
     scrollView.scrollsToTop = NO;
-    
+    BOOL isIphoneX = [UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO;
+    kZZStatusH = [UIApplication sharedApplication].statusBarFrame.size.height;
+    if (isIphoneX) {
+        kZZTabBarH = 83;
+    }
     //启用网络加载菊花, 网路差时能看到效果(可用networkLinkConditioner模拟)
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 }

@@ -23,10 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemDidClick)];
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关注" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemDidClick)];
     
     [self configureSearchBar];
@@ -37,8 +34,7 @@
     [self.view endEditing:YES];
 }
 
-- (void)configureSearchBar{
-    
+- (void)configureSearchBar {
     UIImageView *customSearchBar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homePage_searchBG"]];
     CGFloat offset = 50.0;
     if (kScreenWidth > 320) {
@@ -79,9 +75,12 @@
     scanBtn.centerY = customSearchBar.centerY;
     
     [scanBtn addTarget:self action:@selector(scanBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
-    
+
     self.navigationItem.titleView = customSearchBar;
-    
+    if (@available(iOS 9, *)) {
+        [customSearchBar.widthAnchor constraintEqualToConstant: customSearchBar.width].active = YES;
+        [customSearchBar.heightAnchor constraintEqualToConstant: customSearchBar.height].active = YES;
+    }
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchBarDidClick)];
     [customSearchBar addGestureRecognizer:tap];
 }

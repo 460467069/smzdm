@@ -20,7 +20,7 @@
     return [self initWithStyle:UITableViewStyleGrouped];
 }
 
-- (instancetype)initWithStyle:(UITableViewStyle)style{
+- (instancetype)initWithStyle:(UITableViewStyle)style {
     if (self = [super init]) {
         _style = style;
     }
@@ -33,7 +33,7 @@
 }
 
 
-- (NSMutableDictionary *)configureParameters{
+- (NSMutableDictionary *)configureParameters {
     return [NSMutableDictionary dictionary];
 }
 
@@ -67,7 +67,7 @@
     return self.dataSource.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
 }
 
@@ -95,17 +95,15 @@
 }
 
 #pragma mark - getter && setter
-- (NSMutableArray *)dataSource{
+- (NSMutableArray *)dataSource {
     if (_dataSource == nil) {
         _dataSource = [NSMutableArray array];
     }
     return _dataSource;
 }
 
-- (void)setTableViewColor:(UIColor *)tableViewColor{
-    
+- (void)setTableViewColor:(UIColor *)tableViewColor {
     _tableViewColor = tableViewColor;
-    
     self.tableView.backgroundColor = tableViewColor;
     self.tableView.mj_footer.backgroundColor = tableViewColor;
     self.tableView.mj_header.backgroundColor = tableViewColor;
@@ -113,7 +111,8 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:self.style];
+        UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:self.style];
+        tableView.top = kZZStatusH + kZZNavH;
         tableView.backgroundColor = [UIColor whiteColor];
         tableView.dataSource = self;
         tableView.delegate = self;
@@ -122,11 +121,6 @@
         tableView.scrollsToTop = YES;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.view addSubview:tableView];
-        
-        [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsZero);
-        }];
-        
         _tableView = tableView;
     }
     return _tableView;

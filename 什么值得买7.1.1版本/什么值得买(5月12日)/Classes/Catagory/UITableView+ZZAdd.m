@@ -31,20 +31,33 @@
 }
 
 - (void)registerReuseCellNib:(nullable Class)nibClass {
-    [self registerNib:[UINib nibWithNibName:NSStringFromClass([nibClass class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([nibClass class])];
+    [self registerNib:[UINib nibWithNibName:ZZStringFromClass([nibClass class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([nibClass class])];
 }
 
 - (void)registerReuseHeaderFooterViewNib:(nullable Class)nibClass {
-    [self registerNib:[UINib nibWithNibName:NSStringFromClass([nibClass class]) bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([nibClass class])];
+    [self registerNib:[UINib nibWithNibName:ZZStringFromClass([nibClass class]) bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([nibClass class])];
 }
 
++ (void)load {
+    swizzleMethod([self class], @selector(initWithFrame:style:), @selector(zz_initWithFrame:style:));
+}
+
+- (instancetype)zz_initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
+    UITableView *tableView = [self zz_initWithFrame:frame style:style];
+    if (@available(iOS 11.0, *)) {
+        tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        tableView.estimatedRowHeight = 0;
+        tableView.estimatedSectionHeaderHeight = 0;
+        tableView.estimatedSectionFooterHeight = 0;
+    }
+    return tableView;
+}
 @end
 
 @implementation UICollectionView (ZZAdd)
 
 - (void)registerReuseCellClass:(nullable Class)class {
     [self registerClass:[class class] forCellWithReuseIdentifier:NSStringFromClass([class class])];
-    [self registerClass:[class class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([class class])];
 }
 
 - (void)registerReuseCellNib:(nullable Class)nibClass {
@@ -65,6 +78,18 @@
 
 - (void)registerReuseSectionFooterViewNib:(nullable Class)nibClass {
     [self registerNib:[UINib nibWithNibName:NSStringFromClass([nibClass class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([nibClass class])];
+}
+
++ (void)load {
+    swizzleMethod([self class], @selector(initWithFrame:collectionViewLayout:), @selector(zz_initWithFrame:collectionViewLayout:));
+}
+
+- (instancetype)zz_initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
+    UICollectionView *collectionView = [self zz_initWithFrame:frame collectionViewLayout:layout];
+    if (@available(iOS 11.0, *)) {
+        collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    return collectionView;
 }
 
 @end

@@ -9,10 +9,12 @@
 import UIKit
 import IGListKit
 
-class ZZTopicListSectionController: ListSectionController {
-
+class ZZTopicListSectionController: ListSectionController, ListSupplementaryViewSource {
     var topicListModel: ZZHaoWenTopicListModel?
-    
+    override init() {
+        super.init()
+        supplementaryViewSource = self
+    }
     override func numberOfItems() -> Int {
         if let count = topicListModel?.rows?.count {
             return count
@@ -34,6 +36,26 @@ class ZZTopicListSectionController: ListSectionController {
         cell.article = topicListModel?.rows?[index]
         return cell
         
+    }
+    
+    func supportedElementKinds() -> [String] {
+        return [UICollectionElementKindSectionHeader]
+    }
+    
+    func viewForSupplementaryElement(ofKind elementKind: String, at index: Int) -> UICollectionReusableView {
+        guard let view = collectionContext?.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
+                                                                             for: self,
+                                                                             nibName: "ZZTopicHeaderView",
+                                                                             bundle: nil,
+                                                                             at: index) as? ZZTopicHeaderView else {
+                                                                                fatalError()
+        }
+        view.titleLabel.text = topicListModel?.title
+        return view
+    }
+    
+    func sizeForSupplementaryView(ofKind elementKind: String, at index: Int) -> CGSize {
+        return CGSize(width: collectionContext!.containerSize.width, height: 60)
     }
     
     override func didUpdate(to object: Any) {
