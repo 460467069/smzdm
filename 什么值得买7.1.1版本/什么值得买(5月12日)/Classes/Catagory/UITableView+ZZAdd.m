@@ -40,17 +40,28 @@
 
 + (void)load {
     swizzleMethod([self class], @selector(initWithFrame:style:), @selector(zz_initWithFrame:style:));
+    swizzleMethod([self class], @selector(initWithCoder:), @selector(zz_initWithCoder:));
+}
+
+- (instancetype)zz_initWithCoder:(NSCoder *)aDecoder {
+    UITableView *tableView = [self zz_initWithCoder:aDecoder];
+    [self adapterIOS11];
+    return tableView;
 }
 
 - (instancetype)zz_initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     UITableView *tableView = [self zz_initWithFrame:frame style:style];
-    if (@available(iOS 11.0, *)) {
-        tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        tableView.estimatedRowHeight = 0;
-        tableView.estimatedSectionHeaderHeight = 0;
-        tableView.estimatedSectionFooterHeight = 0;
-    }
+    [self adapterIOS11];
     return tableView;
+}
+
+- (void)adapterIOS11 {
+    if (@available(iOS 11.0, *)) {
+        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.estimatedRowHeight = 0;
+        self.estimatedSectionHeaderHeight = 0;
+        self.estimatedSectionFooterHeight = 0;
+    }
 }
 @end
 

@@ -22,8 +22,7 @@
 }
 
 - (void)initUI {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    tableView.top = kZZStatusH + kZZNavH;
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.dataSource = self;
     tableView.delegate = self;
@@ -31,13 +30,22 @@
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
     self.tableView = tableView;
-    
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     self.tableView.mj_header = [ZZDIYHeader headerWithRefreshingTarget:self
                                                       refreshingAction:@selector(loadData)];
     self.tableView.mj_footer = [ZZDIYBackFooter footerWithRefreshingTarget:self
                                                           refreshingAction:@selector(loadMoreData)];
     [self.tableView.mj_header beginRefreshing];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    CGFloat tableVieX = 0;
+    CGFloat tableViewY = kZZStatusH + kZZNavH;
+    CGFloat tableViewW = self.view.width;
+    CGFloat tableViewH = self.view.height - tableViewY;
+    self.tableView.frame = CGRectMake(tableVieX, tableViewY, tableViewW, tableViewH);
+    LxDBAnyVar(self.tableView.frame);
 }
 
 - (void)loadData {}

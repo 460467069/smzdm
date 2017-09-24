@@ -142,6 +142,9 @@
 		A99709D11F72526E0091EF22 /* ZZPromotionType6SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99709CF1F72526E0091EF22 /* ZZPromotionType6SubCell.xib */; };
 		A99709D31F7256760091EF22 /* ZZPromotionType6SectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99709D21F7256760091EF22 /* ZZPromotionType6SectionController.swift */; };
 		A99C54671DF544A600AAFC8D /* Share.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99C54661DF544A600AAFC8D /* Share.plist */; };
+		A99D0B051F775A4300BE5BE1 /* ZZPromotionType9Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D0B031F775A4300BE5BE1 /* ZZPromotionType9Cell.swift */; };
+		A99D0B061F775A4300BE5BE1 /* ZZPromotionType9Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99D0B041F775A4300BE5BE1 /* ZZPromotionType9Cell.xib */; };
+		A99D0B081F775E3100BE5BE1 /* ZZPromotionType9SectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D0B071F775E3100BE5BE1 /* ZZPromotionType9SectionController.swift */; };
 		A99DAD141F5E4726005E4ADC /* UIScrollView+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A99DAD131F5E4725005E4ADC /* UIScrollView+ZZAdd.m */; };
 		A99DAD1E1F5E4CDA005E4ADC /* ZZType41Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99DAD1C1F5E4CDA005E4ADC /* ZZType41Cell.xib */; };
 		A9A03FD81D1A69B100675FA9 /* ZZUserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A03FD71D1A69B100675FA9 /* ZZUserAccount.m */; };
@@ -214,6 +217,7 @@
 		A9EDF9A51EB56EA90066E0F4 /* UIColor+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EDF9A41EB56EA90066E0F4 /* UIColor+ZZAdd.m */; };
 		A9F344BF1E60233E00D835E7 /* ZZBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F344BE1E60233E00D835E7 /* ZZBaseRequest.m */; };
 		A9F387301DEC024D009E77C4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */; };
+		A9F85DC61F7760D000A47364 /* ZZTopicArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F85DC51F7760D000A47364 /* ZZTopicArticleModel.swift */; };
 		A9F92A1A1F1E092F00AB17E2 /* NSDate+ZDTime.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F92A191F1E092F00AB17E2 /* NSDate+ZDTime.m */; };
 		A9F964831DDA2C1700D41EC5 /* ZZCommentFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F964821DDA2C1700D41EC5 /* ZZCommentFooterView.swift */; };
 		A9F964851DDA2D2700D41EC5 /* ZZCommentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F964841DDA2D2700D41EC5 /* ZZCommentHeaderView.swift */; };
@@ -453,6 +457,9 @@
 		A99B88061DEEB34A007A6640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		A99B88081DEEB34A007A6640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99C54661DF544A600AAFC8D /* Share.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Share.plist; sourceTree = "<group>"; };
+		A99D0B031F775A4300BE5BE1 /* ZZPromotionType9Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZPromotionType9Cell.swift; sourceTree = "<group>"; };
+		A99D0B041F775A4300BE5BE1 /* ZZPromotionType9Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZZPromotionType9Cell.xib; sourceTree = "<group>"; };
+		A99D0B071F775E3100BE5BE1 /* ZZPromotionType9SectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZPromotionType9SectionController.swift; sourceTree = "<group>"; };
 		A99DAD121F5E4725005E4ADC /* UIScrollView+ZZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZZAdd.h"; sourceTree = "<group>"; };
 		A99DAD131F5E4725005E4ADC /* UIScrollView+ZZAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZZAdd.m"; sourceTree = "<group>"; };
 		A99DAD1C1F5E4CDA005E4ADC /* ZZType41Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZType41Cell.xib; sourceTree = "<group>"; };
@@ -563,6 +570,7 @@
 		A9F344BD1E60233E00D835E7 /* ZZBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBaseRequest.h; sourceTree = "<group>"; };
 		A9F344BE1E60233E00D835E7 /* ZZBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBaseRequest.m; sourceTree = "<group>"; };
 		A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A9F85DC51F7760D000A47364 /* ZZTopicArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZTopicArticleModel.swift; sourceTree = "<group>"; };
 		A9F92A181F1E092F00AB17E2 /* NSDate+ZDTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZDTime.h"; sourceTree = "<group>"; };
 		A9F92A191F1E092F00AB17E2 /* NSDate+ZDTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZDTime.m"; sourceTree = "<group>"; };
 		A9F964821DDA2C1700D41EC5 /* ZZCommentFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentFooterView.swift; sourceTree = "<group>"; };
@@ -1238,6 +1246,7 @@
 			isa = PBXGroup;
 			children = (
 				A95ACA5C1F5D31BE000446C1 /* ZZGoodArticleModel.swift */,
+				A9F85DC51F7760D000A47364 /* ZZTopicArticleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1259,6 +1268,8 @@
 				A99709CB1F72494B0091EF22 /* ZZPromotionType6Cell.xib */,
 				A99709CE1F72526E0091EF22 /* ZZPromotionType6SubCell.swift */,
 				A99709CF1F72526E0091EF22 /* ZZPromotionType6SubCell.xib */,
+				A99D0B031F775A4300BE5BE1 /* ZZPromotionType9Cell.swift */,
+				A99D0B041F775A4300BE5BE1 /* ZZPromotionType9Cell.xib */,
 				A9ACF0DE1F72812B0004AB2E /* ZZPromotionType9SubCell.swift */,
 				A9ACF0DF1F72812B0004AB2E /* ZZPromotionType9SubCell.xib */,
 				A9ACF0DA1F7277890004AB2E /* ZZTopicHeaderView.swift */,
@@ -1273,6 +1284,7 @@
 				A9B5FAF01F56A22A00765562 /* ZZTopicListSectionController.swift */,
 				A95B99861F6242EA00B4DEBE /* ZZChoicenessListSectionController.swift */,
 				A99709D21F7256760091EF22 /* ZZPromotionType6SectionController.swift */,
+				A99D0B071F775E3100BE5BE1 /* ZZPromotionType9SectionController.swift */,
 			);
 			path = SectionController;
 			sourceTree = "<group>";
@@ -1665,6 +1677,7 @@
 				A9B7835D1D5901DF003C464D /* RefreshTips.geojson in Resources */,
 				A91A834E1D420A87008D229E /* weibo_0.json in Resources */,
 				A91A83541D420A87008D229E /* weibo_6.json in Resources */,
+				A99D0B061F775A4300BE5BE1 /* ZZPromotionType9Cell.xib in Resources */,
 				A91F3DB91E1A781C0047DCDF /* ZZMiaoShaCell.xib in Resources */,
 				A99DAD1E1F5E4CDA005E4ADC /* ZZType41Cell.xib in Resources */,
 				A9D9D2231CE40B3E00A83101 /* Assets.xcassets in Resources */,
@@ -1933,6 +1946,7 @@
 				A947CCCD1DE02FA30047B58F /* ZZDetailTopicModel.m in Sources */,
 				A953BB651EA8F91F0035553D /* NSString+ZZAdd.m in Sources */,
 				A9AEA3261D5F6F17003B8264 /* ZZCycleScrollView.m in Sources */,
+				A99D0B051F775A4300BE5BE1 /* ZZPromotionType9Cell.swift in Sources */,
 				86C690561DCF21E6003D84A7 /* ZZCommentModel.swift in Sources */,
 				A947CD121DE02FCC0047B58F /* ZZLittleBanner.m in Sources */,
 				A91F3DB51E1A753C0047DCDF /* ZZMiaoShaViewController.swift in Sources */,
@@ -1956,10 +1970,12 @@
 				A947CD0B1DE02FCC0047B58F /* ZZHaoJiaViewController.m in Sources */,
 				A95605F61DA87E4C00473B46 /* ZZSwiftCommon.swift in Sources */,
 				A92BEE9A1EC4B47A009F1018 /* ZZSearchResultController.swift in Sources */,
+				A99D0B081F775E3100BE5BE1 /* ZZPromotionType9SectionController.swift in Sources */,
 				A9AF3E381DE464FD0055F522 /* ZZDouYuBannerCell.m in Sources */,
 				A9AF3E3A1DE464FD0055F522 /* ZZDouYuHomeCollectionViewCell.m in Sources */,
 				A9AF3E1D1DE463E80055F522 /* ZZHaoWuCellOne.swift in Sources */,
 				A95ACA5D1F5D31BE000446C1 /* ZZGoodArticleModel.swift in Sources */,
+				A9F85DC61F7760D000A47364 /* ZZTopicArticleModel.swift in Sources */,
 				A947CCDE1DE02FA30047B58F /* ZZYuanChuangCell.m in Sources */,
 				A91D9B4E1D855E090073DEB7 /* ZZTextLinePositionModifier.m in Sources */,
 				A9B2ACA41DDB728200D8F296 /* ZZEmoticonInputView.m in Sources */,

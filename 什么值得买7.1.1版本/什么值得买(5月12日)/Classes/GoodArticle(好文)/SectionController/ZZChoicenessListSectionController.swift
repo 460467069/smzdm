@@ -72,6 +72,21 @@ class ZZChoicenessListSectionController: ListSectionController {
             adapter.collectionView = cell.collectionView
             adapter.performUpdates(animated: false, completion: nil)
             return cell
+        } else if promotion_type == "9" {
+            guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ZZPromotionType9Cell",
+                                                                    bundle: nil,
+                                                                    for: self,
+                                                                    at: index) as? ZZPromotionType9Cell else {
+                                                                        fatalError()
+            }
+            
+            let promotionType6Model = ZZListModel.init(subItems: choicenessModel.yc_rows,
+                                                       sectionController: ZZPromotionType6SectionController())
+            dataSource.removeAll()
+            dataSource.append(promotionType6Model!)
+            adapter.collectionView = cell.collectionView
+            adapter.performUpdates(animated: false, completion: nil)
+            return cell
         }
         
         if cellType == "41" {

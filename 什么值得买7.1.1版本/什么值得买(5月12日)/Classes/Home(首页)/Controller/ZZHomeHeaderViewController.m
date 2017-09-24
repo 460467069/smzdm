@@ -38,7 +38,6 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     CGFloat imageHeight = 180;
     CGRect cycleScrollViewF = CGRectMake(0, 0, kScreenWidth, imageHeight);
     ZZCycleScrollView *cycleImageView = [ZZCycleScrollView cycleScrollViewWithFrame:cycleScrollViewF delegate:self placeholderImage:nil];
@@ -168,19 +167,12 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
-    
-    
     ZZRedirectData *redirectdata = self.litterBannerArray[indexPath.item].redirectData;
-    
     if ([redirectdata.link_type isEqualToString:@"baicai"]) {
-        
         ZZBaiCaiController *baiCaiController = [[ZZBaiCaiController alloc] initWithStyle:UITableViewStylePlain];
-        
         [self.navigationController pushViewController:baiCaiController animated:YES];
     }
-    
 }
 
 #pragma mark - SDCycleScrollViewDelegate
@@ -204,7 +196,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     if ([cycleScrollView isEqual:self.cycleImageView]) {
         redirectdata = self.headModel.rows[index].redirectdata;
 
-    }else if ([cycleScrollView isEqual:self.cycleTextView]){
+    }else if ([cycleScrollView isEqual:self.cycleTextView]) {
         redirectdata = self.headModel.headlines[index].redirectdata;
     }
     

@@ -23,7 +23,6 @@
 @interface ZZHomeViewController ()<ZZHomeFirstCellDelegete>
 
 @property (nonatomic, strong) NSMutableArray<ZZWorthyArticle *> *listArrayM;
-@property (nonatomic, strong) NSMutableSet *cells;
 @property (nonatomic, strong) ZZHomeEditorRecommendRequest *recommendRequest;
 @property (nonatomic, strong) ZZHomeFirstRequest *firstRequest;
 @end
@@ -32,11 +31,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.cells = [NSMutableSet set];
     self.title = @"首页";
     ZZHomeHeaderViewController *headerVC = [[ZZHomeHeaderViewController alloc] init];
     headerVC.view.backgroundColor = [UIColor whiteColor];
-    headerVC.view.bounds = CGRectMake(0, 0, kScreenWidth, 360);
     [self addChildViewController:headerVC];
     [headerVC didMoveToParentViewController:self];
     self.tableView.tableHeaderView = headerVC.view;
@@ -46,6 +43,12 @@
     [self.tableView registerReuseCellNib:[ZZTuiGuangCell class]];
     [self.tableView registerReuseCellNib:[ZZYuanChuangCell class]];
     [self.tableView registerReuseCellClass:[ZZHomePromotionCellEight class]];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    self.tableView.tableHeaderView.bounds = CGRectMake(0, 0, kScreenWidth, 360);
+    LxDBAnyVar(self.tableView.tableHeaderView.frame);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
