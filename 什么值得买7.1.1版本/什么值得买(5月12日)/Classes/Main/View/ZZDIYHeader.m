@@ -24,7 +24,6 @@
 {
     [super prepare];
     self.backgroundColor = [UIColor whiteColor];
-    
     ZZCircleView *cirleView = [[ZZCircleView alloc] init];
     [self addSubview:cirleView];
     self.circleView = cirleView;
@@ -43,19 +42,14 @@
     
     typeof(self) weakSelf = self;
     self.endRefreshingCompletionBlock = ^{
-        
         [weakSelf.circleView stopAnimating];
-        
     };
-    
 }
 
 #pragma mark 在这里设置子控件的位置和尺寸
 - (void)placeSubviews
 {
     [super placeSubviews];
-    
-
     self.circleView.mj_y = self.mj_h - self.circleView.mj_h - 3;
     self.circleView.mj_x = (self.mj_w - self.circleView.mj_w) * 0.5;
 
@@ -64,23 +58,18 @@
     CGFloat labelW = kScreenWidth;
     CGFloat labelH = self.mj_h - self.circleView.mj_h;
     self.label.frame = CGRectMake(labelX, labelY, labelW, labelH);
-
-
-    
 }
 
 #pragma mark 监听scrollView的contentOffset改变
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change
 {
     [super scrollViewContentOffsetDidChange:change];
-
 }
 
 #pragma mark 监听scrollView的contentSize改变
 - (void)scrollViewContentSizeDidChange:(NSDictionary *)change
 {
     [super scrollViewContentSizeDidChange:change];
-    
 }
 
 #pragma mark 监听scrollView的拖拽状态改变
@@ -89,13 +78,11 @@
         self.changeLabelText = YES;
     }
     [super scrollViewPanStateDidChange:change];
-
 }
 
 #pragma mark 监听控件的刷新状态
 - (void)setState:(MJRefreshState)state
 {
-    
     MJRefreshCheckState;
     switch (state) {
         case MJRefreshStateIdle: {
@@ -118,7 +105,6 @@
 }
 
 - (void)endRefreshing{
-    
     //仿值得买实现
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        self.label.text = [ZZRefreshTip randomRefreshTip];
@@ -128,27 +114,20 @@
 //    [self.circleView stopAnimating];
 }
 
-
-
 #pragma mark 监听拖拽比例（控件被拖出来的比例）
 - (void)setPullingPercent:(CGFloat)pullingPercent
 {
     [super setPullingPercent:pullingPercent];
-
     if (pullingPercent <= 1) { //过滤掉百分比>1的情况
         if (self.fullCover) {   //用户下拉触发了刷新
             self.circleView.progress = 1;
             if (pullingPercent == 0) { // pullingPercent = -0 什么情况
-                
                 self.fullCover = NO;    //重置标记
-                
             }
-        }else{                  //用户下拉没有触发刷新
+        } else {                  //用户下拉没有触发刷新
             self.circleView.progress = pullingPercent;
         }
-        
-        
-    }else{
+    } else {
         self.circleView.progress = 1;
     }
     
@@ -175,19 +154,11 @@
             break;
         }
     }
-    
-    // 1.0 0.5 0.0
-    // 0.5 0.0 0.5
-//    CGFloat red = 1.0 - pullingPercent * 0.5;
-//    CGFloat green = 0.5 - 0.5 * pullingPercent;
-//    CGFloat blue = 0.5 * pullingPercent;
-//    self.label.textColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
 
 #pragma mark - getter && setter
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
     [super setBackgroundColor:backgroundColor];
-    
     self.circleView.backgroundColor = backgroundColor;
 }
 

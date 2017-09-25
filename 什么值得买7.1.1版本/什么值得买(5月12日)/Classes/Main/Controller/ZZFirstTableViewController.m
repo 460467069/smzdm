@@ -29,6 +29,11 @@
     tableView.scrollsToTop = YES;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.top.offset(kZZStatusH + kZZNavH);
+        make.bottom.offset(-kZZTabBarH);
+    }];
     self.tableView = tableView;
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     self.tableView.mj_header = [ZZDIYHeader headerWithRefreshingTarget:self
@@ -36,16 +41,6 @@
     self.tableView.mj_footer = [ZZDIYBackFooter footerWithRefreshingTarget:self
                                                           refreshingAction:@selector(loadMoreData)];
     [self.tableView.mj_header beginRefreshing];
-}
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    CGFloat tableVieX = 0;
-    CGFloat tableViewY = kZZStatusH + kZZNavH;
-    CGFloat tableViewW = self.view.width;
-    CGFloat tableViewH = self.view.height - tableViewY;
-    self.tableView.frame = CGRectMake(tableVieX, tableViewY, tableViewW, tableViewH);
-    LxDBAnyVar(self.tableView.frame);
 }
 
 - (void)loadData {}

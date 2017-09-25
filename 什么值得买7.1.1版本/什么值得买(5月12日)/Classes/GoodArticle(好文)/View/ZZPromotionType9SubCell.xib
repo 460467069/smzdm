@@ -14,44 +14,45 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NAo-wA-Z1H" customClass="ZZPromotionType9SubCell" customModule="什么值得买" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="214" height="220"/>
+            <rect key="frame" x="0.0" y="0.0" width="125" height="184"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="214" height="220"/>
+                <rect key="frame" x="0.0" y="0.0" width="125" height="184"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPq-KJ-Rhf">
-                        <rect key="frame" x="89" y="83" width="37.5" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="44" y="89" width="38.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQz-Xe-vzS">
-                        <rect key="frame" x="91" y="111" width="33" height="16"/>
+                        <rect key="frame" x="46.5" y="117" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FEx-ZU-YkM">
-                        <rect key="frame" x="77" y="20" width="60" height="53"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FEx-ZU-YkM" customClass="ZZImageView" customModule="什么值得买" customModuleProvider="target">
+                        <rect key="frame" x="32.5" y="20" width="60" height="59"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="FEx-ZU-YkM" secondAttribute="height" multiplier="88:79" constant="1" id="89X-cW-kp5"/>
+                            <constraint firstAttribute="width" secondItem="FEx-ZU-YkM" secondAttribute="height" constant="1" id="89X-cW-kp5"/>
                             <constraint firstAttribute="width" constant="60" id="jbq-Nn-Uk7"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPf-tj-TZJ">
-                        <rect key="frame" x="64" y="135" width="88" height="25"/>
+                        <rect key="frame" x="19" y="141" width="88" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="Epa-jN-RSU"/>
                             <constraint firstAttribute="width" constant="88" id="lQg-wQ-CB2"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="+ 关注">
-                            <color key="titleColor" red="1" green="0.1764705882" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="+ 关注" backgroundImage="level_bg_view">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="QPf-tj-TZJ" firstAttribute="top" secondItem="gQz-Xe-vzS" secondAttribute="bottom" constant="8" id="6YL-sc-9qj"/>
                 <constraint firstItem="FEx-ZU-YkM" firstAttribute="centerX" secondItem="NAo-wA-Z1H" secondAttribute="centerX" id="Dvk-r8-CUJ"/>
@@ -63,14 +64,17 @@
                 <constraint firstItem="gQz-Xe-vzS" firstAttribute="top" secondItem="pPq-KJ-Rhf" secondAttribute="bottom" constant="10" id="oRT-Fx-xjS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="7va-YH-jTU"/>
-            <size key="customSize" width="214" height="220"/>
+            <size key="customSize" width="125" height="184"/>
             <connections>
                 <outlet property="articlesCountLabel" destination="gQz-Xe-vzS" id="PI8-H9-erO"/>
                 <outlet property="followBtn" destination="QPf-tj-TZJ" id="DdR-19-eYu"/>
                 <outlet property="iconView" destination="FEx-ZU-YkM" id="svD-rn-p28"/>
                 <outlet property="titleLabel" destination="pPq-KJ-Rhf" id="bRc-hx-dXX"/>
             </connections>
-            <point key="canvasLocation" x="-288" y="-212"/>
+            <point key="canvasLocation" x="-336.5" y="-230"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="level_bg_view" width="30" height="15"/>
+    </resources>
 </document>

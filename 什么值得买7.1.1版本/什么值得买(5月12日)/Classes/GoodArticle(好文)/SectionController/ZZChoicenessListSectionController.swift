@@ -39,6 +39,8 @@ class ZZChoicenessListSectionController: ListSectionController {
         let promotion_type = choicenessModel.promotion_type
         if promotion_type == "6" {
             height = 225
+        } else if promotion_type == "9" {
+            height = 205
         } else {
             if cellType == "41" {
                 height = 200
@@ -80,8 +82,8 @@ class ZZChoicenessListSectionController: ListSectionController {
                                                                         fatalError()
             }
             
-            let promotionType6Model = ZZListModel.init(subItems: choicenessModel.yc_rows,
-                                                       sectionController: ZZPromotionType6SectionController())
+            let promotionType6Model = ZZListModel.init(subItems: choicenessModel.rows,
+                                                       sectionController: ZZPromotionType9SectionController())
             dataSource.removeAll()
             dataSource.append(promotionType6Model!)
             adapter.collectionView = cell.collectionView

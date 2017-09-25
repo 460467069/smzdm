@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *zhiBtn;
 @property (weak, nonatomic) IBOutlet UIButton *waterBtn;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentBtnWidthConstraint;
+
 
 @end
 
@@ -27,6 +29,9 @@
 - (void)awakeFromNib{
     [super awakeFromNib];
     self.priceLabel.textColor = kGlobalRedColor;
+    if (kScreenWidth == 320) {
+        self.commentBtnWidthConstraint.constant = 38;
+    }
 }
 
 - (void)setArticle:(ZZWorthyArticle *)article {
@@ -98,7 +103,7 @@
     //    其他   为点赞, 赞数取article_favorite字段
     //
     if (channelID == 1 || channelID == 5) {
-        [self.zhiBtn setImage:[UIImage imageNamed:@"icon_zhi_list"] forState:UIControlStateNormal];
+        [self.zhiBtn setImage:[UIImage imageNamed:@"homePage_channelZhi"] forState:UIControlStateNormal];
         NSInteger worthy = [article.article_worthy integerValue];
         NSInteger unWorthy = [article.article_unworthy integerValue];
         
@@ -109,7 +114,7 @@
             [self.zhiBtn setTitle:[NSString zz_stringFromFloat:ratio] forState:UIControlStateNormal];
         }
     } else {
-        [self.zhiBtn setImage:[UIImage imageNamed:@"icon_zan_list"] forState:UIControlStateNormal];
+        [self.zhiBtn setImage:[UIImage imageNamed:@"homePage_channelZhi"] forState:UIControlStateNormal];
         
         [self.zhiBtn setTitle:article.article_favorite forState:UIControlStateNormal];
     }

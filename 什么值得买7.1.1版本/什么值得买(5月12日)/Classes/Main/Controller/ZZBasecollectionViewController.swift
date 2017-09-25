@@ -27,18 +27,16 @@ class ZZBasecollectionViewController: ZZFirstBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
-        collectionView.top = kZZStatusH + kZZNavH
-    }
 }
 
 
 extension ZZBasecollectionViewController {
     override func initUI() {
         view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(kZZStatusH + kZZNavH)
+        }
         adapter.collectionView = collectionView
         adapter.dataSource = self
     }

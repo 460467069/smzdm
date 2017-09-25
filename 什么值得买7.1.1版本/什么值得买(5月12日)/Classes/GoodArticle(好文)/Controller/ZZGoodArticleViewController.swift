@@ -22,6 +22,9 @@ class ZZGoodArticleViewController: ZZBasecollectionViewController {
     var goodArticleRecommendModel:ZZListModel?
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.snp.updateConstraints { (make) in
+            make.bottom.equalToSuperview().offset(-kZZTabBarH)
+        }
         collectionView.mj_header.beginRefreshing()
     }
 }

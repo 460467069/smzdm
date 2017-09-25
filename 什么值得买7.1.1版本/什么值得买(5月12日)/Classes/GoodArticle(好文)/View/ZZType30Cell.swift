@@ -17,6 +17,14 @@ class ZZType30Cell: UICollectionViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var commentBtn: UIButton!
     @IBOutlet weak var favoriteBtn: UIButton!
+    @IBOutlet weak var commentBtnWidthConstraint: NSLayoutConstraint!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        if kScreenWidth == 320 {
+            commentBtnWidthConstraint.constant = 38
+        }
+    }
     
     var article: ZZWorthyArticle? {
         didSet {
@@ -59,7 +67,7 @@ class ZZType30Cell: UICollectionViewCell {
             commentBtn.setTitle(article.article_comment, for: .normal)
             
             if channelID == 1 || channelID == 5 {
-                favoriteBtn.setImage(#imageLiteral(resourceName: "icon_zhi_list"), for: .normal)
+                favoriteBtn.setImage(#imageLiteral(resourceName: "homePage_channelZhi"), for: .normal)
                 let worthy = (Float(article.article_worthy!))!
                 let unWorthy = (Float(article.article_unworthy!))!
                 
@@ -72,7 +80,7 @@ class ZZType30Cell: UICollectionViewCell {
                 }
                 
             } else {
-                favoriteBtn.setImage(#imageLiteral(resourceName: "icon_zan_list"), for: .normal)
+                favoriteBtn.setImage(#imageLiteral(resourceName: "homePage_channelZan"), for: .normal)
                 favoriteBtn.setTitle(article.article_favorite, for: .normal)
             }
             

@@ -23,7 +23,7 @@ PODS:
   - IGListKit/Default (3.1.1):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.1.1)
-  - IQKeyboardManagerSwift (5.0.0)
+  - IQKeyboardManagerSwift (5.0.2)
   - JCore (1.1.5)
   - JPush (3.0.6):
     - JCore (~> 1.1.1)
@@ -114,7 +114,7 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IGListKit: cb97f405ae43e59fe1da74271e19427ec20d3c07
-  IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
+  IQKeyboardManagerSwift: e580da046d804d2836ee84668cc17e43a850a35d
   JCore: 9bd9c770c877c583d98b90a68792b8361974c231
   JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
   JSPatch: 02cfed591cb907bbfe80a346666e5a35fc2d349d

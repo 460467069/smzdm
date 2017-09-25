@@ -37,7 +37,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpScrollView];
-//    [self.navigationController addObserver:self forKeyPath:@"navigationBar.frame" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     [self configureCollectionView];
     dispatch_async(dispatch_get_main_queue(), ^{ //默认选中"精选"
         [self titleBtnDidClick:self.titleBtnArray[1]];
@@ -54,10 +53,9 @@
 
 - (void)setUpScrollView {
     _topScrollView = [[UIScrollView alloc] init];
-    _topScrollView.frame = CGRectMake(0, 64, kScreenWidth, 40);
+    _topScrollView.frame = CGRectMake(0, kZZStatusH + kZZNavH, kScreenWidth, 40);
     _topScrollView.contentSize = CGSizeMake(kScreenWidth, 0);
     [self.view addSubview:_topScrollView];
-    
     //创建顶部Label
     CGFloat tagLabelY = 0;
     CGFloat tagLabelW = kScreenWidth / self.dataArray.count;

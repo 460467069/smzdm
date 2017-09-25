@@ -12,7 +12,7 @@ import YYKit
 ///点赞
 class ZZSupportView: UIView {
     
-    let imageView = UIImageView.init(image: #imageLiteral(resourceName: "icon_zan_list"))
+    let imageView = UIImageView.init(image: #imageLiteral(resourceName: "homePage_channelZan"))
     lazy var zanLabel: UILabel = {
         
         let zanLabel = UILabel()

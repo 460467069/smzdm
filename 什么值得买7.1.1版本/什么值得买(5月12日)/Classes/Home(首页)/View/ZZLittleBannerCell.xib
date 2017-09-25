@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,20 +13,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZZLittleBannerCell">
-            <rect key="frame" x="0.0" y="0.0" width="198" height="251"/>
+            <rect key="frame" x="0.0" y="0.0" width="96" height="110"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="198" height="251"/>
+                <rect key="frame" x="0.0" y="0.0" width="96" height="110"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMn-1H-UbI">
-                        <rect key="frame" x="0.0" y="132" width="198" height="119"/>
+                        <rect key="frame" x="0.0" y="64" width="96" height="46"/>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
                                     <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                    <font key="NSFont" size="13" name="HelveticaNeue"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -34,7 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homePage_littleBanner" translatesAutoresizingMaskIntoConstraints="NO" id="sgV-gb-sWV">
-                        <rect key="frame" x="0.0" y="0.0" width="198" height="132"/>
+                        <rect key="frame" x="0.0" y="0.0" width="96" height="64"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="sgV-gb-sWV" secondAttribute="height" multiplier="1.5" id="60r-RT-Hem"/>
                         </constraints>
@@ -50,12 +50,12 @@
                 <constraint firstAttribute="trailing" secondItem="bMn-1H-UbI" secondAttribute="trailing" id="ifL-08-0XX"/>
                 <constraint firstItem="bMn-1H-UbI" firstAttribute="top" secondItem="sgV-gb-sWV" secondAttribute="bottom" id="paZ-LP-nuC"/>
             </constraints>
-            <size key="customSize" width="198" height="251"/>
+            <size key="customSize" width="96" height="110"/>
             <connections>
                 <outlet property="iconView" destination="sgV-gb-sWV" id="kmf-n3-7CR"/>
                 <outlet property="nameLabel" destination="bMn-1H-UbI" id="lmU-gw-vau"/>
             </connections>
-            <point key="canvasLocation" x="569" y="503.5"/>
+            <point key="canvasLocation" x="518" y="433"/>
         </collectionViewCell>
     </objects>
     <resources>

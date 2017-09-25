@@ -120,10 +120,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
         [self.littleBannerView reloadData];
         //设置背景
         [_litterBackgroundView setImageWithURL:[NSURL URLWithString:headModel.littleBannerOptions.img] placeholder:nil];
-        
-        
         if (headModel.headlines.count == 0) {
-            
             cycleTextContentView.hidden = YES;
             return;
         }
@@ -149,7 +146,6 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
                 subView.bottom = cycleImageView.height - cycleTextContentView.height;
                 break;
             }
-            
         }
     }];
 }

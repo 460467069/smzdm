@@ -27,13 +27,11 @@ class ZZGoodsHeaderCell: UICollectionViewCell {
     
     
     var goodsHeaderModel: ZZGoodsHeaderModel?{
-        
         didSet {
             titleLabel.text = goodsHeaderModel?.name
             iconView.zdm_setImage(urlStr: goodsHeaderModel?.picture, placeHolder: nil)
         }
     }
-    
 }
 
 
@@ -52,11 +50,8 @@ extension ZZGoodsHeaderCell{
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         let iconViewHeight: CGFloat = 45
-        
         iconView.frame = CGRect(x: 0, y: 0, width: self.width, height: iconViewHeight)
-        
         titleLabel.width = self.width
         titleLabel.height = self.height - iconViewHeight - 6
         titleLabel.bottom = self.height
