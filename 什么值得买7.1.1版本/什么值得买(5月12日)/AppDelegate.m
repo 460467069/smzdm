@@ -34,7 +34,7 @@
                                                              diskPath:nil];
     [NSURLCache setSharedURLCache:URLCache];
     // 向微博客户端程序注册第三方应用
-    [WeiboSDK registerApp:kShareSinaWeiboKey];
+//    [WeiboSDK registerApp:kShareSinaWeiboKey];
     [self SDKInit];
     //初始化融云
     [self configureRongYun];

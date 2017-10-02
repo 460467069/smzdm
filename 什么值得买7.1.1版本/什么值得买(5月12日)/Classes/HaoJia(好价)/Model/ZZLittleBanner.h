@@ -10,6 +10,9 @@
 #import "ZZRedirectData.h"
 
 @interface ZZLittleBanner : NSObject
+
+@property (nonatomic, copy) NSString *id;
+
 @property (nonatomic, copy) NSString *flag;
 
 @property (nonatomic, copy) NSString *img;
@@ -21,4 +24,8 @@
 @property (nonatomic, strong) ZZRedirectData *redirectData;
 
 @property (nonatomic, copy) NSString *link;
+
+@property (nonatomic, copy) NSString *channel;
+
+
 @end

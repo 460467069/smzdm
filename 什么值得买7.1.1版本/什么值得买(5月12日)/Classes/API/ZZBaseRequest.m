@@ -24,6 +24,4 @@
 
 @implementation ZZBaseTableRequest
 
-
-
 @end

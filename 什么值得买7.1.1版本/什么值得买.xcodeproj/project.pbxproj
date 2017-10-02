@@ -145,6 +145,10 @@
 		A99709D11F72526E0091EF22 /* ZZPromotionType6SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99709CF1F72526E0091EF22 /* ZZPromotionType6SubCell.xib */; };
 		A99709D31F7256760091EF22 /* ZZPromotionType6SectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99709D21F7256760091EF22 /* ZZPromotionType6SectionController.swift */; };
 		A99C54671DF544A600AAFC8D /* Share.plist in Resources */ = {isa = PBXBuildFile; fileRef = A99C54661DF544A600AAFC8D /* Share.plist */; };
+		A99C76841F82F8900077CBCF /* ZZAdSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99C76831F82F8900077CBCF /* ZZAdSectionController.swift */; };
+		A99C76871F82F91F0077CBCF /* ZZADCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99C76851F82F91F0077CBCF /* ZZADCollectionViewCell.swift */; };
+		A99C76881F82F91F0077CBCF /* ZZADCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99C76861F82F91F0077CBCF /* ZZADCollectionViewCell.xib */; };
+		A99C768A1F82FB1C0077CBCF /* ZZLittleBannerSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99C76891F82FB1C0077CBCF /* ZZLittleBannerSectionController.swift */; };
 		A99D0B051F775A4300BE5BE1 /* ZZPromotionType9Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D0B031F775A4300BE5BE1 /* ZZPromotionType9Cell.swift */; };
 		A99D0B061F775A4300BE5BE1 /* ZZPromotionType9Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99D0B041F775A4300BE5BE1 /* ZZPromotionType9Cell.xib */; };
 		A99D0B081F775E3100BE5BE1 /* ZZPromotionType9SectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D0B071F775E3100BE5BE1 /* ZZPromotionType9SectionController.swift */; };
@@ -464,6 +468,10 @@
 		A99B88061DEEB34A007A6640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		A99B88081DEEB34A007A6640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99C54661DF544A600AAFC8D /* Share.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Share.plist; sourceTree = "<group>"; };
+		A99C76831F82F8900077CBCF /* ZZAdSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZAdSectionController.swift; sourceTree = "<group>"; };
+		A99C76851F82F91F0077CBCF /* ZZADCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZADCollectionViewCell.swift; sourceTree = "<group>"; };
+		A99C76861F82F91F0077CBCF /* ZZADCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZZADCollectionViewCell.xib; sourceTree = "<group>"; };
+		A99C76891F82FB1C0077CBCF /* ZZLittleBannerSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZLittleBannerSectionController.swift; sourceTree = "<group>"; };
 		A99D0B031F775A4300BE5BE1 /* ZZPromotionType9Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZPromotionType9Cell.swift; sourceTree = "<group>"; };
 		A99D0B041F775A4300BE5BE1 /* ZZPromotionType9Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZZPromotionType9Cell.xib; sourceTree = "<group>"; };
 		A99D0B071F775E3100BE5BE1 /* ZZPromotionType9SectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZPromotionType9SectionController.swift; sourceTree = "<group>"; };
@@ -1283,6 +1291,8 @@
 				A9ACF0DF1F72812B0004AB2E /* ZZPromotionType9SubCell.xib */,
 				A9ACF0DA1F7277890004AB2E /* ZZTopicHeaderView.swift */,
 				A9ACF0DB1F7277890004AB2E /* ZZTopicHeaderView.xib */,
+				A99C76851F82F91F0077CBCF /* ZZADCollectionViewCell.swift */,
+				A99C76861F82F91F0077CBCF /* ZZADCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1294,6 +1304,8 @@
 				A95B99861F6242EA00B4DEBE /* ZZChoicenessListSectionController.swift */,
 				A99709D21F7256760091EF22 /* ZZPromotionType6SectionController.swift */,
 				A99D0B071F775E3100BE5BE1 /* ZZPromotionType9SectionController.swift */,
+				A99C76831F82F8900077CBCF /* ZZAdSectionController.swift */,
+				A99C76891F82FB1C0077CBCF /* ZZLittleBannerSectionController.swift */,
 			);
 			path = SectionController;
 			sourceTree = "<group>";
@@ -1694,6 +1706,7 @@
 				A9D9D2231CE40B3E00A83101 /* Assets.xcassets in Resources */,
 				A9C356A11D2275BC006EE7EC /* ZZMineViewController.storyboard in Resources */,
 				A93DE7BB1DE14D5B004C8332 /* JumpToNext.plist in Resources */,
+				A99C76881F82F91F0077CBCF /* ZZADCollectionViewCell.xib in Resources */,
 				A9A512021D775A5D00E41407 /* ZZCHannelID.plist in Resources */,
 				A9ACF0E11F72812B0004AB2E /* ZZPromotionType9SubCell.xib in Resources */,
 				A9262A801D76B35B0037B1CF /* ZZJingXuanViewController.storyboard in Resources */,
@@ -1966,6 +1979,7 @@
 				A9DD7F621E768C9000CA913A /* UIViewController+ZZAdd.m in Sources */,
 				A947CD151DE02FCC0047B58F /* ZZWorthyArticle.m in Sources */,
 				A947CCC91DE02FA30047B58F /* ZZDetailModel.m in Sources */,
+				A99C76841F82F8900077CBCF /* ZZAdSectionController.swift in Sources */,
 				A95B99871F6242EA00B4DEBE /* ZZChoicenessListSectionController.swift in Sources */,
 				A91C4E631E6D494100C307F3 /* NSObject+ZZAdd.m in Sources */,
 				A91F3DAE1E1A73160047DCDF /* ZZHomeCell.m in Sources */,
@@ -1995,12 +2009,14 @@
 				A9B2ACA41DDB728200D8F296 /* ZZEmoticonInputView.m in Sources */,
 				A9DBBAF21DB2183E00089A73 /* UIImageView+ZDM.swift in Sources */,
 				A9AF3E391DE464FD0055F522 /* ZZDouYuFlowLayout.m in Sources */,
+				A99C768A1F82FB1C0077CBCF /* ZZLittleBannerSectionController.swift in Sources */,
 				A99DAD141F5E4726005E4ADC /* UIScrollView+ZZAdd.m in Sources */,
 				A97EC6C31D794E06006AABAB /* ZZInPurchaseViewController.m in Sources */,
 				A9F964831DDA2C1700D41EC5 /* ZZCommentFooterView.swift in Sources */,
 				A947CCD31DE02FA30047B58F /* ZZDetailHeaderView.m in Sources */,
 				A9FC17AC1D826BB800F16D1E /* ZZSecondBaseViewController.m in Sources */,
 				A928A4C21F5E9B650099E3D8 /* NSObject+SectionController.m in Sources */,
+				A99C76871F82F91F0077CBCF /* ZZADCollectionViewCell.swift in Sources */,
 				A95FEAD31E07D677003DFEA0 /* ZZShareCollectionViewCell.swift in Sources */,
 				A947CCBF1DE02FA30047B58F /* ZZDetailBaseViewController.m in Sources */,
 				A9758D721D8766EF00FC4B89 /* ZZSecondTableViewController.m in Sources */,

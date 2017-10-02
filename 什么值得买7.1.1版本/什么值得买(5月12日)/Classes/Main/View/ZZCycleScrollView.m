@@ -19,7 +19,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
     [self setup];
 }
 
@@ -28,6 +27,7 @@
     self.pageDotColor = [UIColor whiteColor];
     self.currentPageDotColor = [UIColor redColor];
     self.placeholderImage = [UIImage imageNamed:@"banner_bg"];
+    self.autoScrollTimeInterval = 5.0;
 }
 
 @end

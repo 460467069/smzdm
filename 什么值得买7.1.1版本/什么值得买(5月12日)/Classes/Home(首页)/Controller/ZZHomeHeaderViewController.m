@@ -41,8 +41,6 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     CGFloat imageHeight = 180;
     CGRect cycleScrollViewF = CGRectMake(0, 0, kScreenWidth, imageHeight);
     ZZCycleScrollView *cycleImageView = [ZZCycleScrollView cycleScrollViewWithFrame:cycleScrollViewF delegate:self placeholderImage:nil];
-    cycleImageView.delegate = self;
-    cycleImageView.autoScrollTimeInterval = 5.0;
     [self.view addSubview:cycleImageView];
     self.cycleImageView = cycleImageView;
     
@@ -88,9 +86,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
     
     //littleBanner
     ZZLittleBannerLayout *layout = [[ZZLittleBannerLayout alloc] init];
-
     CGFloat littleBannerViewH = 180;
-
     UICollectionView *littleBannerView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(cycleScrollViewF), kScreenWidth, littleBannerViewH) collectionViewLayout:layout];
     [self.view addSubview:littleBannerView];
     littleBannerView.delegate = self;

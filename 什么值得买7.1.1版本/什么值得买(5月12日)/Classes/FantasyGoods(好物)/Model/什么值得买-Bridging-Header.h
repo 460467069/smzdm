@@ -26,3 +26,4 @@
 #import "ZZCyclePicHelper.h"
 #import "UIView+Xib.h"
 #import "ZZTextLinePositionModifier.h"
+#import "ZZLittleBannerCell.h"

@@ -21,16 +21,14 @@
     // Initialization code
 }
 
-- (void)setLittleBanner:(ZZLittleBanner *)littleBanner{
-    
+- (void)setLittleBanner:(ZZLittleBanner *)littleBanner {
     _littleBanner = littleBanner;
-    
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:littleBanner.img] placeholderImage:[UIImage imageNamed:@"placeholder_dropbox"]];
-    
     self.nameLabel.text = littleBanner.title;
-    
-    self.nameLabel.textColor = [UIColor colorWithHexString:self.littleBannerOptions.color_card];
-    
+    NSString *hexStr = self.littleBannerOptions.color_card;
+    if (hexStr.length) {
+        self.nameLabel.textColor = [UIColor colorWithHexString:hexStr];
+    }
 }
 
 @end

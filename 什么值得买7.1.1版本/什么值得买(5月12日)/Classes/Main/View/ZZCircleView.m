@@ -89,7 +89,6 @@
 	self.circleView.transform = CGAffineTransformRotate(self.circleView.transform, M_PI_4 / 5);
 }
 
-
 - (void)setProgress:(float)progress {
     _progress = progress;
     
@@ -113,7 +112,5 @@
         [bezierPath stroke];
     }
 }
-    
-
 
 @end

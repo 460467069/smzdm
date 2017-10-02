@@ -10,46 +10,38 @@
 #import <objc/runtime.h>
 
 @implementation UIView (Xib)
-- (void)setupSelfNameXibOnSelf
-{
+- (void)setupSelfNameXibOnSelf {
     [self setupSelfNameXibOnSelfWithSerialNumber:0];
 }
 
-- (void)setupSelfNameXibOnSelfWithSerialNumber:(NSInteger)number
-{
+- (void)setupSelfNameXibOnSelfWithSerialNumber:(NSInteger)number {
     UIView *containerView = [self loadSelfXibWithFileOwner:self serialNumber:number];
     [self addSubview:containerView];
 }
 
-- (instancetype)loadSelfXibWithFileOwner:(id)fileOwner
-{
+- (instancetype)loadSelfXibWithFileOwner:(id)fileOwner {
    return [self loadSelfXibWithFileOwner:fileOwner serialNumber:0];
 }
 
-- (instancetype)loadSelfXibWithFileOwner:(id)fileOwner serialNumber:(NSInteger)number
-{
+- (instancetype)loadSelfXibWithFileOwner:(id)fileOwner serialNumber:(NSInteger)number {
     UIView *containerView = [self loadXibWithName:ZZStringFromClass([self class]) FileOwner:self serialNumber:0];
     return containerView;
 }
 
-- (void)setupXibWithName:(NSString *)name
-{
+- (void)setupXibWithName:(NSString *)name {
     UIView *contianerView = [self loadXibWithName:name];
     [self addSubview:contianerView];
 }
 
-- (instancetype)loadXibWithName:(NSString *)name
-{
+- (instancetype)loadXibWithName:(NSString *)name {
     return [self loadXibWithName:name serialNumber:0];
 }
 
-- (instancetype)loadXibWithName:(NSString *)name serialNumber:(NSInteger)number
-{
+- (instancetype)loadXibWithName:(NSString *)name serialNumber:(NSInteger)number {
     return [self loadXibWithName:name FileOwner:self serialNumber:number];
 }
 
-- (instancetype)loadXibWithName:(NSString *)name  FileOwner:(id)fileOwner serialNumber:(NSInteger)number
-{
+- (instancetype)loadXibWithName:(NSString *)name  FileOwner:(id)fileOwner serialNumber:(NSInteger)number {
     UIView *containerView = [[NSBundle mainBundle] loadNibNamed:name owner:fileOwner options:nil][number];
     containerView.frame = self.bounds;
     containerView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
@@ -58,8 +50,7 @@
 }
 
 #pragma mark - ========= Setter & Getter =========
-- (id)containerView
-{
+- (id)containerView {
     return objc_getAssociatedObject(self, @selector(containerView));
 }
 @end
