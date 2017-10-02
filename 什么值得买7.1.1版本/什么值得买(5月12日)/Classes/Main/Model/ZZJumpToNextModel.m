@@ -24,25 +24,19 @@
 }
 
 + (instancetype)modelWithChannelID:(NSInteger)channelID {
-    
     for (ZZJumpToNextModel *model in [self models]) {
-        
         if (model.channelID == channelID) {
-            
             return model;
         }
-    }
-    
+    }    
     return nil;
 }
 
 
 
 
-+ (NSArray<ZZJumpToNextModel *> *)models{
-    
++ (NSArray<ZZJumpToNextModel *> *)models {
     NSArray *array = [self mj_objectArrayWithFilename:@"JumpToNext.plist"];
-    
     return array;
 }
 

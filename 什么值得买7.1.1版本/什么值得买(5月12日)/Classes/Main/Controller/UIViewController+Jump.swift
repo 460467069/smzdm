@@ -9,9 +9,9 @@
 
 import UIKit
 
-extension UIViewController{
+extension UIViewController {
     
-    func jumpToDetailArticleViewController(redirectdata: ZZRedirectData){
+    func jumpToDetailArticleViewController(redirectdata: ZZRedirectData) {
         let linkType = redirectdata.link_type;
         
         guard let model = ZZJumpToNextModel.init(linkType: linkType) else { return }
@@ -42,7 +42,7 @@ extension UIViewController{
         }
     }
     
-    func jumpToDetailArticleViewController(article: ZZWorthyArticle){
+    func jumpToDetailArticleViewController(article: ZZWorthyArticle) {
         
         let channelID = article.article_channel_id
         guard let model = ZZJumpToNextModel.init(channelID: channelID) else { return }
@@ -72,7 +72,7 @@ extension UIViewController{
     }
     
     
-    func jumpToShareViewController(parameters: NSMutableDictionary){
+    func jumpToShareViewController(parameters: NSMutableDictionary) {
         
         let shareVc = ZZShareViewController()
         
@@ -84,7 +84,7 @@ extension UIViewController{
     }
 }
 
-extension UIViewController: UIViewControllerTransitioningDelegate{
+extension UIViewController: UIViewControllerTransitioningDelegate {
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         

@@ -148,6 +148,11 @@
 @property (nonatomic, copy, nullable) NSString *cell_type;
 //promotion_type为8的字段
 @property (nonatomic, strong, nullable) NSArray<ZZLittleBanner *> *rows;
+
+@property (nonatomic, copy, nullable) NSString *article_first_channel_name;
+@property (nonatomic, copy, nullable) NSString *article_second_channel_name;
+@property (nonatomic, copy, nullable) NSString *article_third_channel_name;
+
 @end
 
 

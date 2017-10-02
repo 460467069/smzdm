@@ -36,18 +36,13 @@ class ZZCommentFooterView: UITableViewHeaderFooterView {
     }
     
     
-    func initUI(){
-        
+    func initUI() {
         contentView.addSubview(mainCommentLabel)
-        
         contentView.addSubview(separatorLine)
-        
     }
     
     var commentLayout: ZZAllCommentLayout? {
-        
-        didSet{
-            
+        didSet {
             if let commentLayout = commentLayout {
                 mainCommentLabel.textLayout = commentLayout.mainCommentLayout
                 mainCommentLabel.height = commentLayout.mainCommentLabelHeight
@@ -55,11 +50,7 @@ class ZZCommentFooterView: UITableViewHeaderFooterView {
                 
                 separatorLine.bottom = mainCommentLabel.bottom + commentConstant.footerBottomHeight
             }
-            
-
-            
         }
-        
     }
     
     

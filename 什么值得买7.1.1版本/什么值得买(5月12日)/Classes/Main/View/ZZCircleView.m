@@ -20,7 +20,7 @@
 @implementation ZZCircleView
 
 
-- (UIImageView *)zhiView{
+- (UIImageView *)zhiView {
     if (!_zhiView) {
         _zhiView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zhi"]];
     }
@@ -29,7 +29,7 @@
     
 }
 
-- (UIImageView *)circleView{
+- (UIImageView *)circleView {
     if (!_circleView) {
         _circleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"circle"]];
         _circleView.hidden = YES;
@@ -39,7 +39,7 @@
     
 }
 
-- (CADisplayLink *)link{
+- (CADisplayLink *)link {
     if (!_link) {
         _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(rotateCirclView)];
         [_link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
@@ -48,8 +48,7 @@
     return _link;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     if (frame.size.width == 0 && frame.size.height == 0) {
         frame.size.width = kCircleViewWH;
         frame.size.height = kCircleViewWH;
@@ -80,8 +79,7 @@
 }
 
 
-- (void)dealloc{
-    
+- (void)dealloc {
     [self stopAnimating];
 //    [self.link invalidate];
 //    self.link = nil;
@@ -92,7 +90,7 @@
 }
 
 
-- (void)setProgress:(float)progress{
+- (void)setProgress:(float)progress {
     _progress = progress;
     
     self.circleView.hidden = YES;
@@ -100,22 +98,15 @@
     [self setNeedsDisplay];
 }
 
-- (void)drawRect:(CGRect)rect{
+- (void)drawRect:(CGRect)rect {
     if (self.progress >= 0) {
-        
         UIBezierPath *bezierPath = [UIBezierPath bezierPath];
         CGPoint center = CGPointMake(rect.size.width * 0.5, rect.size.height * 0.5);
-        
         CGFloat lineWidth = 1;
-        
         CGFloat radius = MIN(center.x, center.y) - lineWidth;
-        
         CGFloat startAngle = - M_PI_2;
-        
         CGFloat endAngle = 2 * M_PI * self.progress + startAngle;
-        
         [bezierPath addArcWithCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
-        
         bezierPath.lineWidth = lineWidth;
         bezierPath.lineCapStyle = kCGLineCapRound;
         [[UIColor redColor] setStroke];

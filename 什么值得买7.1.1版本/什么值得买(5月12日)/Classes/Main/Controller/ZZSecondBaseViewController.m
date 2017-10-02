@@ -19,11 +19,11 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     NSDictionary *attributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
     

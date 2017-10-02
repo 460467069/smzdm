@@ -10,7 +10,7 @@
 
 @implementation ZZRefreshTip
 
-+ (NSString *)randomRefreshTip{
++ (NSString *)randomRefreshTip {
     
     NSData *data       = [NSData dataNamed:@"RefreshTips.geojson"];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];

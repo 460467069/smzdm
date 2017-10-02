@@ -16,14 +16,10 @@ class ZZShareModel: NSObject {
     var platformType: String?      ///分享平台类型, 参考shareSDK中的枚举值 SSDKTypeDefine
     
     
-    class func models() ->[ZZShareModel]?{
-
+    class func models() ->[ZZShareModel]? {
         if let mutableArray = self.mj_objectArray(withFilename: "Share.plist") {
-            
             let array = NSArray.init(array: mutableArray)
-            
             return array as? [ZZShareModel]
-            
         }
         return nil
     }
@@ -31,7 +27,6 @@ class ZZShareModel: NSObject {
     
     var type: SSDKPlatformType {
         get {
-            
             switch Int(platformType!)!{
             case 1:
                 return .typeSinaWeibo

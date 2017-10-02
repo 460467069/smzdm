@@ -22,8 +22,7 @@
 
 @implementation ZZTextLinePositionModifier
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         if (kiOS9Later) {
@@ -35,7 +34,7 @@
     return self;
 }
 
-- (void)modifyLines:(NSArray<YYTextLine *> *)lines fromText:(NSAttributedString *)text inContainer:(YYTextContainer *)container{
+- (void)modifyLines:(NSArray<YYTextLine *> *)lines fromText:(NSAttributedString *)text inContainer:(YYTextContainer *)container {
     CGFloat ascent = _font.pointSize * 0.86;
     
     CGFloat lineHeght = _font.pointSize * _lineHeightMultiple;
@@ -46,9 +45,8 @@
     }
 }
 
-- (id)copyWithZone:(NSZone *)zone{
+- (id)copyWithZone:(NSZone *)zone {
     ZZTextLinePositionModifier *one = [self.class new];
-    
     one->_font = _font;
     one->_paddingTop = _paddingTop;
     one->_paddingBottom = _paddingBottom;
@@ -56,7 +54,7 @@
     return one;
 }
 
-- (CGFloat)heightForLineCount:(NSUInteger)lineCount{
+- (CGFloat)heightForLineCount:(NSUInteger)lineCount {
     
     if (lineCount == 0) {
         return 0;

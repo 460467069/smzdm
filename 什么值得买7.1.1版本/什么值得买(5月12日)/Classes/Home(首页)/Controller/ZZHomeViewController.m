@@ -196,19 +196,19 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (indexPath.section == 0) {
         ZZHomeFirstLayout *layout = self.dataSource[indexPath.row];
         return layout.height;
-    }else{
-        ZZWorthyArticle *article = self.listArrayM[indexPath.row];
-        NSInteger channelID = article.article_channel_id;
-        if (channelID == 8 || channelID == 11 || channelID == 14) {
-            return 284;
-        }
-        return kScreenWidth / 3 + 20 + 2;
     }
-    
+    ZZWorthyArticle *article = self.listArrayM[indexPath.row];
+    if (article.promotion_type == ZDMPromotionTypeOne) {
+        return 150;
+    }
+    NSInteger channelID = article.article_channel_id;
+    if (channelID == 8 || channelID == 11 || channelID == 14) {
+        return 284;
+    }
+    return 172;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

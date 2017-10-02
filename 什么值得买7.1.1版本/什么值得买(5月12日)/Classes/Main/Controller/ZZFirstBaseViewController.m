@@ -100,12 +100,10 @@
 /** 二维码扫描按钮点击 */
 - (void)scanBtnDidClick{
     if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
-        
         ZZQRcodeController *QRcodeController = [[ZZQRcodeController alloc] init];
-        
         [self.navigationController pushViewController:QRcodeController animated:YES];
         
-    }else{
+    } else {
         [SVProgressHUD showErrorWithStatus:@"相机不可用"];
     }
 }
@@ -132,7 +130,6 @@
 //    
 //    [self.navigationController pushViewController:conversationVC animated:YES];
 }
-
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;

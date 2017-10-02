@@ -17,8 +17,7 @@
 
 @implementation ZZKeyboardToolBar
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     if (frame.size.width == 0 && frame.size.height == 0) {
         frame.size.width = kScreenWidth;
         frame.size.height = 56;
@@ -31,25 +30,20 @@
 }
 
 - (void)emotionBtnDidClicked: (UIButton *)emotionBtn{
-    
     [self.preSendTextView resignFirstResponder];
-    
     if (emotionBtn.selected) {
-        
         self.preSendTextView.inputView = nil;
         [self.preSendTextView becomeFirstResponder];
         
-    }else{
+    } else {
 //        WBEmoticonInputView *inputView = [WBEmoticonInputView sharedView];
 //        
 //        inputView.delegate = self;
 //        self.preSendTextView.inputView = inputView;
         [self.preSendTextView becomeFirstResponder];
-        
     }
     
     emotionBtn.selected = !emotionBtn.selected;
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 弹出键盘
         [self.preSendTextView becomeFirstResponder];

@@ -14,7 +14,7 @@
 
 @implementation ZZAPPDotNetAPIClient
 
-+ (instancetype _Nonnull)sharedClient{
++ (instancetype _Nonnull)sharedClient {
     static ZZAPPDotNetAPIClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -44,7 +44,7 @@
     return _sharedClient;
 }
 
-- (NSURLSessionDataTask *)GET:(NSString *)URLString parameters:(NSMutableDictionary *)parameters completionBlock:(HttpCompletionBlcok)completionBlock{
+- (NSURLSessionDataTask *)GET:(NSString *)URLString parameters:(NSMutableDictionary *)parameters completionBlock:(HttpCompletionBlcok)completionBlock {
     
     [self configurePublicParameters:parameters];
     
@@ -77,7 +77,6 @@
 }
 
 + (NSURLSessionDataTask *)Get:( NSString *)URLString parameters:(NSMutableDictionary *)parameters completionBlock:(HttpCompletionBlcok)completionBlock {
-    
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL]];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
     manager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
@@ -85,15 +84,10 @@
     securityPolicy.allowInvalidCertificates = YES;
     securityPolicy.validatesDomainName = NO;
     manager.securityPolicy = securityPolicy;
-    
     [self configurePublicParameters:parameters];
-    
     return [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
-        
         LxDBAnyVar(task.response.URL.absoluteString);
-        
         if ([responseObject[@"error_code"] isEqualToString:@"0"]) {
-        
             completionBlock(responseObject[@"data"], nil);
             return;
         }
@@ -108,7 +102,7 @@
 }
 
 /** 配置公共参数7.1.1版本 */
-+ (void)configurePublicParameters:(NSMutableDictionary *)parameters{
++ (void)configurePublicParameters:(NSMutableDictionary *)parameters {
     
     [parameters setValue:@"iphone" forKey:@"f"];
     [parameters setValue:@"7.1.1" forKey:@"v"];
@@ -116,7 +110,7 @@
     
 }
 
-- (void)configurePublicParameters:(NSMutableDictionary *)parameters{
+- (void)configurePublicParameters:(NSMutableDictionary *)parameters {
     
     [parameters setValue:@"iphone" forKey:@"f"];
     [parameters setValue:@"7.1.1" forKey:@"v"];

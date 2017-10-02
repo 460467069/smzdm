@@ -8,6 +8,8 @@
 
 #import "ZZListCell.h"
 #import "ZZChannelID.h"
+#import "UIView+Xib.h"
+#import "什么值得买-Swift.h"
 #import <YYKit/NSString+YYAdd.h>
 
 @interface ZZListCell ()
@@ -20,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *waterBtn;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentBtnWidthConstraint;
+@property (weak, nonatomic) IBOutlet ZZHomePageCellHeaderView *tagView;
 
 
 @end
@@ -36,7 +39,8 @@
 
 - (void)setArticle:(ZZWorthyArticle *)article {
     _article = article;
-
+    
+    self.tagView.worthyArticle = article;
     NSString *imageUrlStr = nil;
     NSString *title = nil;
     NSString *priceStr = nil;

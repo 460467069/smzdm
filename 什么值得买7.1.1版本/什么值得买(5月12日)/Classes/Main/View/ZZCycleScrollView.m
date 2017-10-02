@@ -9,8 +9,7 @@
 #import "ZZCycleScrollView.h"
 @implementation ZZCycleScrollView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self setup];
@@ -18,13 +17,13 @@
     return self;
 }
 
-- (void)awakeFromNib{
+- (void)awakeFromNib {
     [super awakeFromNib];
     
     [self setup];
 }
 
-- (void)setup{
+- (void)setup {
     self.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     self.pageDotColor = [UIColor whiteColor];
     self.currentPageDotColor = [UIColor redColor];

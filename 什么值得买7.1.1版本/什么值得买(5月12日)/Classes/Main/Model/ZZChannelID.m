@@ -11,7 +11,7 @@
 @implementation ZZChannelID
 
 
-+ (instancetype)channelWithID:(NSInteger)index{
++ (instancetype)channelWithID:(NSInteger)index {
     
     NSArray<ZZChannelID *> *channelIDs = [self mj_objectArrayWithFilename:@"ZZCHannelID.plist"];
     

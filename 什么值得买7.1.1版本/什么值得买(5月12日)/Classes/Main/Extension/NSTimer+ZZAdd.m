@@ -14,14 +14,14 @@ static NSString *ZZ_NSTimerKey = @"ZZ_NSTimerKey";
 @implementation NSTimer (ZZAdd)
 
 
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti userInfo:(id)userInfo repeats:(BOOL)yesOrNo block:(void(^)(NSTimer *))block{
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti userInfo:(id)userInfo repeats:(BOOL)yesOrNo block:(void(^)(NSTimer *))block {
     NSTimer *timer = [NSTimer timerWithTimeInterval:ti target:self selector:@selector(repeat:) userInfo:userInfo repeats:yesOrNo];
     timer.block = block;
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
     return timer;
 }
 
-+ (void)repeat:(NSTimer *)timer{
++ (void)repeat:(NSTimer *)timer {
     
     if (timer.block) {
         timer.block(timer);

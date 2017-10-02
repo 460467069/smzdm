@@ -17,8 +17,7 @@ static bool isFirstAccess = YES;
 
 #pragma mark - Public Method
 
-+ (id)sharedInstance
-{
++ (id)sharedInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         isFirstAccess = NO;
@@ -31,8 +30,6 @@ static bool isFirstAccess = YES;
 + (void)startMonitoring {
     // 1.获得网络监控的管理者
     AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
-    
-    
     // 2.设置网络状态改变后的处理
     [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         ZZNetworkHandler *handler = [ZZNetworkHandler sharedInstance];
@@ -54,41 +51,32 @@ static bool isFirstAccess = YES;
         
     }];
     [mgr startMonitoring];
-    
 }
-
-
 
 #pragma mark - Life Cycle
 
-+ (id) allocWithZone:(NSZone *)zone
-{
++ (id) allocWithZone:(NSZone *)zone {
     return [self sharedInstance];
 }
 
-+ (id)copyWithZone:(struct _NSZone *)zone
-{
++ (id)copyWithZone:(struct _NSZone *)zone {
     return [self sharedInstance];
 }
 
-+ (id)mutableCopyWithZone:(struct _NSZone *)zone
-{
++ (id)mutableCopyWithZone:(struct _NSZone *)zone {
     return [self sharedInstance];
 }
 
-- (id)copy
-{
+- (id)copy {
     return [[ZZNetworkHandler alloc] init];
 }
 
-- (id)mutableCopy
-{
+- (id)mutableCopy {
     return [[ZZNetworkHandler alloc] init];
 }
 
-- (id) init
-{
-    if(SINGLETON){
+- (id)init {
+    if(SINGLETON) {
         return SINGLETON;
     }
     if (isFirstAccess) {
@@ -97,7 +85,5 @@ static bool isFirstAccess = YES;
     self = [super init];
     return self;
 }
-
-
 
 @end

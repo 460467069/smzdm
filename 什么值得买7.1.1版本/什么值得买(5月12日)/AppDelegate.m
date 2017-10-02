@@ -28,19 +28,14 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
     [IQKeyboardManager sharedManager].enable = YES;
-
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024
                                                          diskCapacity:20 * 1024 * 1024
                                                              diskPath:nil];
     [NSURLCache setSharedURLCache:URLCache];
-    
     // 向微博客户端程序注册第三方应用
     [WeiboSDK registerApp:kShareSinaWeiboKey];
-    
     [self SDKInit];
-    
     //初始化融云
     [self configureRongYun];
     //全局定制
@@ -66,10 +61,8 @@
 }
 
 /** 初始化融云 */
-- (void)configureRongYun{
-    
+- (void)configureRongYun {
     [[RCIM sharedRCIM] initWithAppKey:@"pvxdm17jxjazr"];
-    
     [[RCIM sharedRCIM] connectWithToken:@"tzKb9I9fsboKoVsC2rn/yy8nIw4YEFm9bQo6U/nEZBnKYvSfMlN988HcEIWtnyo3JLfnwco2cWYfLmrYxTxSPvHCblTYo0wq" success:^(NSString *userId) {
         NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
     } error:^(RCConnectErrorCode status) {
@@ -84,21 +77,18 @@
 
 
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    
-    
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+
     return [WeiboSDK handleOpenURL:url delegate:self];
-    
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    
+
     return [WeiboSDK handleOpenURL:url delegate:self];
 }
 
-
 #pragma mark - WeiboSDKDelegate
-- (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
     if ([response isKindOfClass:[WBAuthorizeResponse class]]) {
         WBAuthorizeResponse *authorizeResponse = (WBAuthorizeResponse *)response;
         NSDictionary *dict = authorizeResponse.mj_keyValues;
@@ -112,7 +102,5 @@
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
     
 }
-
-
 
 @end

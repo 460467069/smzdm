@@ -11,7 +11,7 @@ import UIKit
 class ZZPromotionType9SectionController: ZZPromotionType6SectionController {
     override init() {
         super.init()
-        self.inset = UIEdgeInsetsMake(5, 10, 20, 10)
+        self.inset = UIEdgeInsets.init(top: 30, left: 10, bottom: 20, right: 10)
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {

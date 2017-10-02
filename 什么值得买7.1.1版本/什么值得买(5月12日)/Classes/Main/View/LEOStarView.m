@@ -14,7 +14,7 @@ static CGFloat kMargin = 2.0;
 
 @implementation LEOStarView
 
-- (instancetype)initWithStarImage:(UIImage *)starImage{
+- (instancetype)initWithStarImage:(UIImage *)starImage {
     
     LEOStarView *starView = [[LEOStarView alloc] init];
     starView.starImage = starImage;
@@ -24,26 +24,23 @@ static CGFloat kMargin = 2.0;
     return starView;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setup];
     }
     return self;
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     [self setup];
 }
 
-- (void)setup{
+- (void)setup {
     self.backgroundColor = [UIColor clearColor];
 }
 
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     
     CGFloat width = self.starImage.size.width;
@@ -69,8 +66,7 @@ static CGFloat kMargin = 2.0;
 
 #pragma mark - touch
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGFloat width = self.starImage.size.width;
     
     CGFloat xPoint = [[touches anyObject] locationInView:self].x;
@@ -85,8 +81,7 @@ static CGFloat kMargin = 2.0;
     }
 }
 
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGFloat width = self.starImage.size.width;
     
     CGFloat xPoint = [[touches anyObject] locationInView:self].x;
@@ -102,8 +97,7 @@ static CGFloat kMargin = 2.0;
     [self setNeedsDisplay];
 }
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if (self.markComplete) {
         if (self.markType == EMarkTypeInteger) {
             if (self.currentIndex > self.starCount) {
@@ -122,24 +116,21 @@ static CGFloat kMargin = 2.0;
 
 #pragma mark - lazy
 
-- (NSUInteger)starCount
-{
+- (NSUInteger)starCount {
     if (_starCount <= 0) {
         _starCount = kDefaultCount;
     }
     return _starCount;
 }
 
-- (CGFloat)totalScore
-{
+- (CGFloat)totalScore {
     if (_totalScore <= 0.001) {
         _totalScore = kTotalScore;
     }
     return _totalScore;
 }
 
-- (UIImage *)starImage
-{
+- (UIImage *)starImage {
     if(!_starImage)
     {
         _starImage = [UIImage imageNamed:@"star_red"];
@@ -147,19 +138,15 @@ static CGFloat kMargin = 2.0;
     return _starImage;
 }
 
-- (UIColor *)starBackgroundColor
-{
-    if(!_starBackgroundColor)
-    {
+- (UIColor *)starBackgroundColor {
+    if(!_starBackgroundColor) {
         _starBackgroundColor = [UIColor whiteColor];
     }
     return _starBackgroundColor;
 }
 
-- (UIColor *)starFrontColor
-{
-    if(!_starFrontColor)
-    {
+- (UIColor *)starFrontColor {
+    if(!_starFrontColor) {
         _starFrontColor = [UIColor orangeColor];
     }
     return _starFrontColor;
