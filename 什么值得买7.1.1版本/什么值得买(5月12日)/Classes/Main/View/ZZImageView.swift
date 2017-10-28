@@ -29,6 +29,4 @@ class ZZImageView: UIImageView {
         layer.cornerRadius = 3
         layer.masksToBounds = true
     }
-    
-
 }
