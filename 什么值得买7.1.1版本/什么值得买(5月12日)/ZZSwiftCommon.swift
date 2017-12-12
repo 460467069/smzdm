@@ -41,7 +41,7 @@ extension NSAttributedString {
         let text = NSMutableAttributedString.init(string: title)
         text.lineSpacing = 10
         text.lineBreakMode = .byTruncatingTail
-        text.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
+        text.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
         return text
     }
 }

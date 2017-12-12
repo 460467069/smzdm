@@ -76,8 +76,8 @@ struct ZZBaiCaiConstant {
     
     func caculateTextHeight(font: UIFont, str: String, lineSpacing: CGFloat, textMaxWidth: CGFloat) ->CGFloat {
         let text = NSMutableAttributedString()
-        var attributes = [String: Any]()
-        attributes[NSFontAttributeName] = font
+        var attributes = [NSAttributedStringKey: Any]()
+        attributes[NSAttributedStringKey.font] = font
         text.append(NSAttributedString.init(string: str, attributes: attributes))
         text.lineSpacing = lineSpacing
         let container = YYTextContainer.init(size: CGSize.init(width: textMaxWidth, height: titleLabelLimitHeight1), insets: UIEdgeInsets.zero)
@@ -103,9 +103,9 @@ class ZZBaiCaiItemLayout: NSObject {
         guard let worthyArticle = worthyArticle else { return }
         if let articleTitle = worthyArticle.article_title {
             let text = NSMutableAttributedString()
-            var attributes = [String: Any]()
-            attributes[NSFontAttributeName] = baiCaiConstant.titleLabelFont1
-            attributes[NSForegroundColorAttributeName] = baiCaiConstant.titleLabelColor1
+            var attributes = [NSAttributedStringKey: Any]()
+            attributes[NSAttributedStringKey.font] = baiCaiConstant.titleLabelFont1
+            attributes[NSAttributedStringKey.foregroundColor] = baiCaiConstant.titleLabelColor1
             text.append(NSAttributedString.init(string: articleTitle, attributes: attributes))
             text.lineSpacing = 5.0
             let container = YYTextContainer.init(size: CGSize.init(width: baiCaiConstant.imageWH1, height:999), insets: UIEdgeInsets.zero)
@@ -115,9 +115,9 @@ class ZZBaiCaiItemLayout: NSObject {
         
         if let subtitle = worthyArticle.subtitle {
             let text = NSMutableAttributedString()
-            var attributes = [String: Any]()
-            attributes[NSFontAttributeName] = baiCaiConstant.priceLabelFont1
-            attributes[NSForegroundColorAttributeName] = baiCaiConstant.priceLabelColor1
+            var attributes = [NSAttributedStringKey: Any]()
+            attributes[NSAttributedStringKey.font] = baiCaiConstant.priceLabelFont1
+            attributes[NSAttributedStringKey.foregroundColor] = baiCaiConstant.priceLabelColor1
             text.append(NSAttributedString.init(string: subtitle, attributes: attributes))
             let container = YYTextContainer.init(size: CGSize.init(width: baiCaiConstant.imageWH1, height: 999), insets: UIEdgeInsets.zero)
             container.maximumNumberOfRows = 1
@@ -169,10 +169,10 @@ class ZZZuiXinBaiCaiLayout: NSObject {
     
     func configureTextLayout(worthyArticle: ZZWorthyArticle) ->YYTextLayout {
         let text = NSMutableAttributedString()
-        var attributes = [String: Any]()
+        var attributes = [NSAttributedStringKey: Any]()
         if let articleTitle = worthyArticle.article_title {
-            attributes[NSFontAttributeName] = baiCaiConstant.titleLabelFont1
-            attributes[NSForegroundColorAttributeName] = baiCaiConstant.titleLabelColor1
+            attributes[NSAttributedStringKey.font] = baiCaiConstant.titleLabelFont1
+            attributes[NSAttributedStringKey.foregroundColor] = baiCaiConstant.titleLabelColor1
             text.append(NSAttributedString.init(string: articleTitle, attributes: attributes))
         }
         text.lineSpacing = 5.0

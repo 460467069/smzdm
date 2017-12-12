@@ -25,7 +25,7 @@ class ZZPromotionType6SubCell: UICollectionViewCell {
                 let text = NSMutableAttributedString.init(string: title)
                 text.lineSpacing = 5
                 text.lineBreakMode = .byTruncatingTail
-                text.font = UIFont.systemFont(ofSize: 13, weight: UIFontWeightMedium)
+                text.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.medium)
                 titleLabel.attributedText = text
             }
             iconView.zdm_setImage(urlStr: model.article_pic, placeHolder: nil)

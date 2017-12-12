@@ -128,7 +128,7 @@ class ZZBaiCaiJingXuanView: UIView {
         }
     }
     
-    func itemDidClick(tap:UITapGestureRecognizer) {
+    @objc func itemDidClick(tap:UITapGestureRecognizer) {
         let baiCaiItemOne = tap.view as! ZZBaiCaiItemOne
         let redirectData = jingXuanTextLayouts?[baiCaiItemOne.tag].worthyArticle?.redirect_data
         delegete?.jumpToNextController?(redirectData: redirectData!)

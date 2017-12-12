@@ -43,13 +43,9 @@ class ZZShareViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         initUI()
-
         NotificationCenter.default.addObserver(self, selector: #selector(closBtnDidClick), name: NSNotification.Name(rawValue: "maskBtnDidClick"), object: self)
-        
-        
     }
     
     
@@ -86,7 +82,6 @@ class ZZShareViewController: UIViewController {
         
         collectionView.register(UINib.init(nibName: "ZZShareCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ZZShareCollectionViewCell")
         
-        
         let textField = UITextField()
 //        textField.backgroundColor = UIColor.lightGray
         view.addSubview(textField);
@@ -99,8 +94,7 @@ class ZZShareViewController: UIViewController {
     }
     
     
-    func closBtnDidClick(){
-        
+    @objc func closBtnDidClick(){
         self.dismiss(animated: true, completion: nil)
     }
     

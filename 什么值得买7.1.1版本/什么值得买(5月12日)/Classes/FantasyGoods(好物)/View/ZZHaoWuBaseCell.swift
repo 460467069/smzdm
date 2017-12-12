@@ -52,32 +52,23 @@ class ZZHaoWuBaseCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?){
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         contentView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
         initUI()
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
-}
-
-
-extension ZZHaoWuBaseCell {
     
     func initUI() {
         contentView.addSubview(scrollView)
     }
     
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        // Configure the view for the selected state
+    }
+
 }
+

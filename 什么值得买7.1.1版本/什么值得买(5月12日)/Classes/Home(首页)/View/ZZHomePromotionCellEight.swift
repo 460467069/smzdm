@@ -73,7 +73,7 @@ class ZZHomePromotionCollectionCellEight: UICollectionViewCell {
     }
 }
 
-class ZZHomePromotionCellEight: UITableViewCell {
+@objcMembers class ZZHomePromotionCellEight: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ZZHaoJiaHeaderView: UIView {
+@objcMembers class ZZHaoJiaHeaderView: UIView {
 
     
     @IBOutlet var imageViews: [UIImageView]!
@@ -18,38 +18,25 @@ class ZZHaoJiaHeaderView: UIView {
     weak var delegate: ZZActionDelegate?
     
     @objc var contentHeader: ZZContentHeader? {
-        
         didSet {
-
             var picArray = [Any]()
-            
-            if let contentHeader = contentHeader {
-                for headLine in contentHeader.rows {
-                    
-                    picArray.append(headLine.img)
-                }
-                cycleScrollView.imageURLStringsGroup = picArray
-                
-                
-                for (key1, littleBanner) in contentHeader.little_banner.enumerated() {
-                    
-                    for (key2, imageView) in imageViews.enumerated() {
-                        if key1 == key2 {
-                            
-                            imageView.setImageWith(URL.init(string: littleBanner.img), options: .showNetworkActivity)
-                        }
+            guard let contentHeader = contentHeader else { return }
+            for headLine in contentHeader.rows {
+                picArray.append(headLine.img)
+            }
+            cycleScrollView.imageURLStringsGroup = picArray
+            for (key1, littleBanner) in contentHeader.little_banner.enumerated() {
+                for (key2, imageView) in imageViews.enumerated() {
+                    if key1 == key2 {
+                        imageView.setImageWith(URL.init(string: littleBanner.img), options: .showNetworkActivity)
                     }
                 }
             }
-            
-            
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
         for (index, imageView) in imageViews.enumerated(){
             imageView.isUserInteractionEnabled = true
             imageView.tag = index
@@ -63,13 +50,9 @@ class ZZHaoJiaHeaderView: UIView {
     
     
     @objc fileprivate func imageViewDidTap(tap: UITapGestureRecognizer){
-        
         let tag = tap.view?.tag
-        
         let littleBanner = contentHeader?.little_banner[tag!]
-        
         if let redirectData = littleBanner?.redirectData {
-            
             delegate?.itemDidClick(redirectData: redirectData)
         }
 

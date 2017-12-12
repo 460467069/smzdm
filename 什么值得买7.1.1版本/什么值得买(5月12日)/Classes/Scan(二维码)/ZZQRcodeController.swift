@@ -12,7 +12,7 @@ class ZZQRcodeController: UIViewController {
     let headTitle = "对准二维码/条形码到框内即可扫描"
     
     lazy var device: AVCaptureDevice = {
-        let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        let device = AVCaptureDevice.default(for: AVMediaType.video)
         return device!
     }()
     var input: AVCaptureDeviceInput?
@@ -39,9 +39,8 @@ class ZZQRcodeController: UIViewController {
             print("AVCaptureDeviceInput(): \(error)")
         }
         
-        
-        if qrCodeSession.canAddInput(input) {
-            qrCodeSession.addInput(input)
+        if qrCodeSession.canAddInput(input!) {
+            qrCodeSession.addInput(input!)
         }
 
         for type in output.availableMetadataObjectTypes {
@@ -51,16 +50,12 @@ class ZZQRcodeController: UIViewController {
         if qrCodeSession.canAddOutput(output) {
             qrCodeSession.addOutput(output)
         }
-        output.metadataObjectTypes = ["org.iso.QRCode"]
+        output.metadataObjectTypes = [AVMetadataObject.ObjectType(rawValue: "org.iso.QRCode")]
 
         let previewLayer = AVCaptureVideoPreviewLayer.init(session: qrCodeSession)
-        
-        previewLayer?.frame = view.bounds
-        view.layer.addSublayer(previewLayer!)
-        
+        previewLayer.frame = view.bounds
+        view.layer.addSublayer(previewLayer)
         qrCodeSession.startRunning()
-        
-        
         // Do any additional setup after loading the view.
     }
 

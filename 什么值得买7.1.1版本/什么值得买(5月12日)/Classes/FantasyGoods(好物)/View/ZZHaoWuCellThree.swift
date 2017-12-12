@@ -76,26 +76,6 @@ class ZZHaoWuCellThree: ZZHaoWuBaseCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let responsder = super.hitTest(point, with: event)
-        
-        if responsder == contentView { //点击右边那张图片还是无法响应事件...            
-            return scrollView
-        }
-        
-        return responsder
-    }
-
-}
-
-extension ZZHaoWuCellThree {
-    
     override func initUI(){
         
         super.initUI()
@@ -105,7 +85,6 @@ extension ZZHaoWuCellThree {
         scrollView.clipsToBounds = false
         
         for index in 0..<haoWuConstant.maxCount {
-            
             let haoWuItemThree = ZZHaoWuItemThree()
             haoWuItemThree.isHidden = true
             haoWuItemThree.width = haoWuConstant.imageWidth3
@@ -113,14 +92,26 @@ extension ZZHaoWuCellThree {
             haoWuItemThree.left = CGFloat(index) * (haoWuConstant.imageWidth3 + haoWuConstant.itemMargin) + haoWuConstant.itemMargin
             scrollView.addSubview(haoWuItemThree)
             scrollView.haowuItems.append(haoWuItemThree)
-            
             let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(haowuItemDidClick(tap:)))
-            
             haoWuItemThree.addGestureRecognizer(tapGestureRecognizer)
-            
         }
     }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let responsder = super.hitTest(point, with: event)
+        if responsder == contentView { //点击右边那张图片还是无法响应事件...            
+            return scrollView
+        }
+        return responsder
+    }
+
 }
+
 
 extension ZZHaoWuCellThree{
     @objc fileprivate func haowuItemDidClick(tap: UITapGestureRecognizer){

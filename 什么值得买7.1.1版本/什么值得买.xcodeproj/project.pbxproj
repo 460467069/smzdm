@@ -1651,7 +1651,7 @@
 				TargetAttributes = {
 					A9D9D2121CE40B3E00A83101 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = RSMMQRSNF6;
+						DevelopmentTeam = MS8YPNK5H3;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1832,7 +1832,6 @@
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
-				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
 			);
@@ -2143,18 +2142,18 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = RSMMQRSNF6;
+				DEVELOPMENT_TEAM = MS8YPNK5H3;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = smzdm20170717;
+				PRODUCT_BUNDLE_IDENTIFIER = com.join51.juhuixia;
 				PRODUCT_NAME = "什么值得买";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "什么值得买(5月12日)/Classes/FantasyGoods(好物)/Model/什么值得买-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2171,17 +2170,17 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = RSMMQRSNF6;
+				DEVELOPMENT_TEAM = MS8YPNK5H3;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = smzdm20170717;
+				PRODUCT_BUNDLE_IDENTIFIER = com.join51.juhuixia;
 				PRODUCT_NAME = "什么值得买";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "什么值得买(5月12日)/Classes/FantasyGoods(好物)/Model/什么值得买-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

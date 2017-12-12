@@ -9,7 +9,7 @@
 import UIKit
 import YYKit
 
-class ZZGoodArticleListRequest: ZZBaseRequest {
+@objcMembers class ZZGoodArticleListRequest: ZZBaseRequest {
     var refresh_time: Int
     var size: Int
     var limit: Int
@@ -24,7 +24,7 @@ class ZZGoodArticleListRequest: ZZBaseRequest {
     }
 }
 
-class ZZGoodArticleListMoreRequest: ZZBaseRequest {
+@objcMembers class ZZGoodArticleListMoreRequest: ZZBaseRequest {
     var limit: Int
     var size: Int
     var time_sort: String?
@@ -39,14 +39,14 @@ class ZZGoodArticleListMoreRequest: ZZBaseRequest {
     }
 }
 
-class ZZGoodArticleBannerRequest: ZZHomeBannerRequest {
+@objcMembers class ZZGoodArticleBannerRequest: ZZHomeBannerRequest {
     override init() {
         super.init()
         type = "shequ"
     }
 }
 
-class ZZHaoWenTopicListModel: ZZListModel, YYModel {
+@objcMembers class ZZHaoWenTopicListModel: ZZListModel, YYModel {
     
     var id: String?
     
@@ -83,7 +83,7 @@ class ZZHaoWenTopicListModel: ZZListModel, YYModel {
     }
 }
 
-class ZZChoicenessListModel: ZZListModel, YYModel {
+@objcMembers class ZZChoicenessListModel: ZZListModel, YYModel {
     
     var id: String?
     

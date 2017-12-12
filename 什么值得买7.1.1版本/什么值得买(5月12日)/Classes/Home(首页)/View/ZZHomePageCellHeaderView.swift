@@ -9,7 +9,7 @@
 import UIKit
 import YYKit
 
-class ZZHomePageCellHeaderView: UIView {
+@objcMembers class ZZHomePageCellHeaderView: UIView {
     @IBOutlet weak var tagLabel: YYLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,7 +36,7 @@ class ZZHomePageCellHeaderView: UIView {
     
     func configureTagLabelAttributedString(tag: String?, text: NSMutableAttributedString, isFirst: Bool) {
         guard let tagStr = tag else { return }
-        if tagStr.characters.count == 0 {
+        if tagStr.count == 0 {
             return
         }
         if isFirst {

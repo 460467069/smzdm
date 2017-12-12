@@ -11,7 +11,7 @@ import UIKit
 
 extension UIViewController {
     
-    func jumpToDetailArticleViewController(redirectdata: ZZRedirectData) {
+    @objc func jumpToDetailArticleViewController(redirectdata: ZZRedirectData) {
         let linkType = redirectdata.link_type;
         
         guard let model = ZZJumpToNextModel.init(linkType: linkType) else { return }
@@ -42,7 +42,7 @@ extension UIViewController {
         }
     }
     
-    func jumpToDetailArticleViewController(article: ZZWorthyArticle) {
+    @objc func jumpToDetailArticleViewController(article: ZZWorthyArticle) {
         
         let channelID = article.article_channel_id
         guard let model = ZZJumpToNextModel.init(channelID: channelID) else { return }
@@ -72,7 +72,7 @@ extension UIViewController {
     }
     
     
-    func jumpToShareViewController(parameters: NSMutableDictionary) {
+   @objc func jumpToShareViewController(parameters: NSMutableDictionary) {
         
         let shareVc = ZZShareViewController()
         

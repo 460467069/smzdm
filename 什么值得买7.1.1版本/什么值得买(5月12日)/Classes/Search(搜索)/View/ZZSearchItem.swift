@@ -48,7 +48,7 @@ class ZZSearchHeader: UICollectionReusableView {
         }
     }
     
-    func clearBtnDidClick(){
+    @objc func clearBtnDidClick(){
         
     }
 }

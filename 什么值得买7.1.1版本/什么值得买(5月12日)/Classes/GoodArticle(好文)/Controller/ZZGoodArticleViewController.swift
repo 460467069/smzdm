@@ -23,18 +23,14 @@ class ZZGoodArticleViewController: ZZBasecollectionViewController {
         }
         collectionView.mj_header.beginRefreshing()
     }
-}
-
-
-extension ZZGoodArticleViewController {
-
+    
     override func initUI() {
         super.initUI()
         weak var weakSelf = self
-        collectionView.mj_header = ZZDIYHeader.init(refreshingBlock: { 
+        collectionView.mj_header = ZZDIYHeader.init(refreshingBlock: {
             weakSelf?.loadData(loadMoreData: false)
         })
-        collectionView.mj_footer = ZZDIYBackFooter.init(refreshingBlock: { 
+        collectionView.mj_footer = ZZDIYBackFooter.init(refreshingBlock: {
             weakSelf?.loadData(loadMoreData: true)
         })
     }
@@ -55,7 +51,7 @@ extension ZZGoodArticleViewController {
                 if let rows = json["little_banner"].arrayObject {
                     if let datas = NSArray.modelArray(with: ZZLittleBanner.self, json: rows) {
                         let listModel = ZZListModel.init(subItems: datas, sectionController: ZZLittleBannerSectionController())
-                        weakSelf?.dataSource.append(listModel!)    
+                        weakSelf?.dataSource.append(listModel!)
                     }
                 }
                 
@@ -98,9 +94,4 @@ extension ZZGoodArticleViewController {
             }
         }
     }
-    
-}
-
-extension ZZGoodArticleViewController {
-    
 }

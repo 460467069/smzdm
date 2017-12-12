@@ -58,7 +58,7 @@ extension ZZPopPresentAnimation: UIViewControllerAnimatedTransitioning{
         }
     }
     
-    func maskBtnDidClick(){
+    @objc func maskBtnDidClick(){
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "maskBtnDidClick"), object: self)
     }
     

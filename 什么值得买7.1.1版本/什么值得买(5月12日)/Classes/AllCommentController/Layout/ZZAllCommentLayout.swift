@@ -124,9 +124,10 @@ struct ZZCommentConstant {
         let leftInset = (parentCommentViewWidth - hideCommentWidth) * 0.5
         hideLabelInset = UIEdgeInsets.init(top: topInset, left: leftInset, bottom: topInset, right: leftInset)
         
-        var attributes = [String: Any]()
-        attributes[NSFontAttributeName] = hideLabelFont
-        attributes[NSForegroundColorAttributeName] = hideLabelTextColor
+        var attributes = [NSAttributedStringKey: Any]()
+        
+        attributes[NSAttributedStringKey.font] = hideLabelFont
+        attributes[NSAttributedStringKey.foregroundColor] = hideLabelTextColor
         let text = (NSAttributedString.init(string: hideStr, attributes: attributes))
         let container = YYTextContainer.init(size: CGSize.init(width: mainCommentLableWidth, height: hideCommentH), insets: hideLabelInset)
         
@@ -186,9 +187,9 @@ class ZZAllCommentLayout: NSObject {
             //昵称
             if let commentAuthor = commentModel.comment_author
             {
-                var attributes = [String: Any]()
-                attributes[NSForegroundColorAttributeName] = UIColor.black
-                attributes[NSFontAttributeName] = UIFont.systemFont(ofSize: 14)
+                var attributes = [NSAttributedStringKey: Any]()
+                attributes[NSAttributedStringKey.foregroundColor] = UIColor.black
+                attributes[NSAttributedStringKey.font] = UIFont.systemFont(ofSize: 14)
                 let text = NSAttributedString.init(string: commentAuthor, attributes: attributes)
                 
                 let container = YYTextContainer.init(size: CGSize.init(width: commentConstant.nameLabelMaxWidth, height: commentConstant.nickNameHeight), insets: UIEdgeInsets.zero)
@@ -200,7 +201,7 @@ class ZZAllCommentLayout: NSObject {
             if let floor = commentModel.floor
             {
                 
-                var attributes = [String: Any]()
+                var attributes = [NSAttributedStringKey: Any]()
                 var color = UIColor.lightGray
                 var font = commentConstant.timeLabelFont
                 if isHotComent
@@ -208,8 +209,8 @@ class ZZAllCommentLayout: NSObject {
                     color = UIColor.white
                     font = UIFont.systemFont(ofSize: 15)
                 }
-                attributes[NSForegroundColorAttributeName] = color
-                attributes[NSFontAttributeName] = font
+                attributes[NSAttributedStringKey.foregroundColor] = color
+                attributes[NSAttributedStringKey.font] = font
                 
                 floorAttributeStr = NSAttributedString.init(string: floor, attributes: attributes)
             }
@@ -217,9 +218,9 @@ class ZZAllCommentLayout: NSObject {
             //时间
             if let formatDate = commentModel.format_date
             {
-                var attributes = [String: Any]()
-                attributes[NSForegroundColorAttributeName] = UIColor.lightGray
-                attributes[NSFontAttributeName] = commentConstant.timeLabelFont
+                var attributes = [NSAttributedStringKey: Any]()
+                attributes[NSAttributedStringKey.foregroundColor] = UIColor.lightGray
+                attributes[NSAttributedStringKey.font] = commentConstant.timeLabelFont
                 let text = NSAttributedString.init(string: formatDate, attributes: attributes)
                 
                 let container = YYTextContainer.init(size: CGSize.init(width: commentConstant.timeLabelWidth, height: commentConstant.nickNameHeight), insets: UIEdgeInsets.zero)
@@ -230,11 +231,8 @@ class ZZAllCommentLayout: NSObject {
             if let parentData = commentModel.parent_data
             {
                 let parentDataCount = parentData.count
-                
                 var layouts = [ZZParentCommentLayout]()
-                
                 var limitLayouts = [ZZParentCommentLayout]()
-         
                 for (key, value) in parentData.enumerated()
                 {
                     let textLayout = configureParentTextLayout(comment: value)
@@ -261,11 +259,8 @@ class ZZAllCommentLayout: NSObject {
                 
                 allCommentLayouts = layouts
                 limitCommentLayouts = limitLayouts
-               
                 isShouldHidden = parentDataCount <= 3
-
                 mainCommentViewHeight += commentConstant.mainCommentLabelTop
-                
                 mainCommentLabelTop = commentConstant.mainCommentLabelTop
             }
         
@@ -276,9 +271,7 @@ class ZZAllCommentLayout: NSObject {
                 let attributeStr = configureTextAttributes(content: commentContent)
                 text.append(attributeStr)
                 text.lineSpacing = kLineSpacing
-                
                 let container = YYTextContainer.init(size: CGSize.init(width: commentConstant.mainCommentLableWidth, height: 999.0), insets: commentConstant.mainCommentInset)
-                
                 mainCommentLayout = YYTextLayout.init(container: container, text: text)
                 mainCommentLabelHeight = (mainCommentLayout?.textBoundingSize.height)!
                 mainCommentViewHeight += (mainCommentLabelHeight + commentConstant.footerBottomHeight)
@@ -311,9 +304,9 @@ class ZZAllCommentLayout: NSObject {
             
             userName = "\(userName): "
             
-            var attributes = [String: Any]()
-            attributes[NSFontAttributeName] = UIFont.boldSystemFont(ofSize: 14)
-            attributes[NSForegroundColorAttributeName] = UIColor.darkGray
+            var attributes = [NSAttributedStringKey: Any]()
+            attributes[NSAttributedStringKey.font] = UIFont.boldSystemFont(ofSize: 14)
+            attributes[NSAttributedStringKey.foregroundColor] = UIColor.darkGray
             text.append(NSAttributedString.init(string: userName, attributes: attributes))
         }
        
@@ -335,14 +328,10 @@ class ZZAllCommentLayout: NSObject {
     
     func configureTextAttributes(content: String) ->(NSAttributedString){
         
-        var attributes = [String: Any]()
-        
-        attributes[NSForegroundColorAttributeName] = kGlobalGrayColor
-        
-        attributes[NSFontAttributeName] = UIFont.systemFont(ofSize: 14)
-        
+        var attributes = [NSAttributedStringKey: Any]()
+        attributes[NSAttributedStringKey.foregroundColor] = kGlobalGrayColor
+        attributes[NSAttributedStringKey.font] = UIFont.systemFont(ofSize: 14)
         return  NSAttributedString.init(string: content, attributes: attributes)
-        
     }
     
     

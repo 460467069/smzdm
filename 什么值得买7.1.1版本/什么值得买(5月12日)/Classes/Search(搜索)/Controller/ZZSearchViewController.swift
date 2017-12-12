@@ -233,7 +233,7 @@ extension ZZSearchViewController {
 
 extension ZZSearchViewController {
     
-    func cancelBtnDidClick() {
+    @objc func cancelBtnDidClick() {
         
         dismiss(animated: false, completion: nil)
     }

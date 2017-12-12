@@ -27,10 +27,7 @@ class ZZBasecollectionViewController: ZZFirstBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-}
-
-
-extension ZZBasecollectionViewController {
+    
     override func initUI() {
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
@@ -40,6 +37,7 @@ extension ZZBasecollectionViewController {
         adapter.collectionView = collectionView
         adapter.dataSource = self
     }
+    
     func loadData(loadMoreData: Bool) {
         
     }

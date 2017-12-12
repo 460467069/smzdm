@@ -236,7 +236,7 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
 
 extension ZZCommentHeaderView{
     
-    func praiseViewDidClick(){
+    @objc func praiseViewDidClick(){
         
     }
     

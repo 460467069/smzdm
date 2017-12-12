@@ -83,9 +83,30 @@ class ZZHaoWuCellOne: ZZHaoWuBaseCell {
         return headImageView
     }()
     
+    override func initUI() {
+        super.initUI()
+        contentView.addSubview(headImageView)
+        scrollView.top = headImageView.bottom
+        scrollView.height = haoWuConstant.itemHeight1
+        for index in 0..<haoWuConstant.maxCount {
+            
+            let haoWuItemOne = ZZHaoWuItemOne()
+            haoWuItemOne.isHidden = true
+            haoWuItemOne.tag = index
+            scrollView.addSubview(haoWuItemOne)
+            scrollView.haowuItems.append(haoWuItemOne)
+            haoWuItemOne.width = haoWuConstant.itemWidth
+            haoWuItemOne.height = haoWuConstant.itemHeight1
+            haoWuItemOne.left = CGFloat(index) * haoWuConstant.itemWidth
+            let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(haowuItemDidClick(tap:)))
+            haoWuItemOne.addGestureRecognizer(tapGestureRecognizer)
+        }
+        
+        let headImageViewTap = UITapGestureRecognizer.init(target: self, action: #selector(headImageViewDidClick(tap:)))
+        headImageView.addGestureRecognizer(headImageViewTap)
+    }
     
     override var haowuLayout: ZZHaoWuLayout? {
-        
         didSet {
             guard let fantasicGoodsModel = haowuLayout?.fantasicGoodsModel else { return }
             let items = fantasicGoodsModel.data
@@ -115,36 +136,6 @@ class ZZHaoWuCellOne: ZZHaoWuBaseCell {
     
     
 }
-
-extension ZZHaoWuCellOne {
-    
-    override func initUI() {
-        super.initUI()
-        contentView.addSubview(headImageView)
-        scrollView.top = headImageView.bottom
-        scrollView.height = haoWuConstant.itemHeight1
-        for index in 0..<haoWuConstant.maxCount {
-            
-            let haoWuItemOne = ZZHaoWuItemOne()
-            haoWuItemOne.isHidden = true
-            haoWuItemOne.tag = index
-            scrollView.addSubview(haoWuItemOne)
-            scrollView.haowuItems.append(haoWuItemOne)
-            haoWuItemOne.width = haoWuConstant.itemWidth
-            haoWuItemOne.height = haoWuConstant.itemHeight1
-            haoWuItemOne.left = CGFloat(index) * haoWuConstant.itemWidth
-            
-            let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(haowuItemDidClick(tap:)))
-            
-            haoWuItemOne.addGestureRecognizer(tapGestureRecognizer)
-        }
-        
-        let headImageViewTap = UITapGestureRecognizer.init(target: self, action: #selector(headImageViewDidClick(tap:)))
-        
-        headImageView.addGestureRecognizer(headImageViewTap)
-    }
-}
-
 
 extension ZZHaoWuCellOne{
     @objc fileprivate func haowuItemDidClick(tap: UITapGestureRecognizer) {
