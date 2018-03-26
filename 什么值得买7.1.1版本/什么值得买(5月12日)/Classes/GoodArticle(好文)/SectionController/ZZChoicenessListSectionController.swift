@@ -69,6 +69,7 @@ class ZZChoicenessListSectionController: ListSectionController {
             let promotionType6Model = ZZListModel.init(subItems: choicenessModel.yc_rows,
                                                        sectionController: ZZPromotionType6SectionController())
             dataSource.removeAll()
+            
             dataSource.append(promotionType6Model!)
             cell.choicenessModel = choicenessModel
             adapter.collectionView = cell.collectionView

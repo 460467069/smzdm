@@ -143,9 +143,18 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
                 break;
             }
         }
+        
+        [self.view layoutIfNeeded];
     }];
 }
 
+- (CGSize)preferredContentSize {
+    NSInteger count = self.litterBannerArray.count;
+    NSInteger rows = count / kLimitCount + count % kLimitCount;
+    return CGSizeMake(kScreenWidth, rows * kItemHeight);
+}
+
+#pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.litterBannerArray.count;
 }

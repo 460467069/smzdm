@@ -23,10 +23,10 @@
 
 - (void)prepareLayout{
     [super prepareLayout];
-    NSInteger count = 5;
+    NSInteger count = kLimitCount;
     CGFloat itemWidth = (self.collectionView.width -  self.collectionView.contentInset.left - self.collectionView.contentInset.right - (count - 1) * kMinimumInteritemSpacing) / count;
-    CGFloat itemHeight = (self.collectionView.height - self.collectionView.contentInset.bottom - self.collectionView.contentInset.top - kLitterBannerViewInset) * 0.5;
-    self.itemSize = CGSizeMake(itemWidth, itemHeight);
+    
+    self.itemSize = CGSizeMake(itemWidth, kItemHeight);
 }
 
 

@@ -103,8 +103,6 @@ struct ZZCommentConstant {
     
     
     init() {
-
-        
         headerViewHeight = avatarTop + avatarWH + avatarBottom
         // 用户所获取的勋章
         meadlContentWidth = (medalViewWidth + medalMargin) * CGFloat(maxMedals)
@@ -125,13 +123,12 @@ struct ZZCommentConstant {
         hideLabelInset = UIEdgeInsets.init(top: topInset, left: leftInset, bottom: topInset, right: leftInset)
         
         var attributes = [NSAttributedStringKey: Any]()
-        
         attributes[NSAttributedStringKey.font] = hideLabelFont
         attributes[NSAttributedStringKey.foregroundColor] = hideLabelTextColor
         let text = (NSAttributedString.init(string: hideStr, attributes: attributes))
         let container = YYTextContainer.init(size: CGSize.init(width: mainCommentLableWidth, height: hideCommentH), insets: hideLabelInset)
-        
         hideLabelLayout = YYTextLayout.init(container: container, text: text)
+        
     }
 }
 
@@ -178,8 +175,6 @@ class ZZAllCommentLayout: NSObject {
 
     
     func layout(){
-        
-        
         //父评论逻辑: 如果大于三条, 第二条和第三条之间嵌入一个"展开隐藏"的按钮, 小于等于三条完整显示
         
         if let commentModel = self.commentModel
@@ -227,6 +222,8 @@ class ZZAllCommentLayout: NSObject {
                 timeLabelLayout = YYTextLayout.init(container: container, text: text)
             }
             
+            let hideLabelLayout = configureParentCommentTextlayout(textLayout: commentConstant.hideLabelLayout!, bgColor: commentConstant.hideLabelBgColor!)
+            hideLabelLayout.height = commentConstant.hideCommentH
             //父评论
             if let parentData = commentModel.parent_data
             {
@@ -245,14 +242,15 @@ class ZZAllCommentLayout: NSObject {
                         if key < 2
                         {//前两条
                             limitLayouts.append(parentCommentLayout)
-                        }else if key == parentDataCount - 1
+                        }
+                        else if key == parentDataCount - 1
                         {//最后一条
-                            let hideLabelLayout = configureParentCommentTextlayout(textLayout: commentConstant.hideLabelLayout!, bgColor: commentConstant.hideLabelBgColor!)
-                            
+                            //先加隐藏的那行
                             limitLayouts.append(hideLabelLayout)
+                            //最后一条
                             limitLayouts.append(parentCommentLayout)
                         }
-                    }else{
+                    } else {
                         limitLayouts.append(parentCommentLayout)
                     }
                 }
@@ -275,23 +273,18 @@ class ZZAllCommentLayout: NSObject {
                 mainCommentLayout = YYTextLayout.init(container: container, text: text)
                 mainCommentLabelHeight = (mainCommentLayout?.textBoundingSize.height)!
                 mainCommentViewHeight += (mainCommentLabelHeight + commentConstant.footerBottomHeight)
-                
             }
-            
-
         }
 
     }
     
-    func configureParentCommentTextlayout(textLayout: YYTextLayout, bgColor: UIColor) ->ZZParentCommentLayout{
-        
+    func configureParentCommentTextlayout(textLayout: YYTextLayout, bgColor: UIColor) -> ZZParentCommentLayout{
         let parentComment = ZZParentCommentLayout()
         parentComment.textLayout = textLayout
         parentComment.height = textLayout.textBoundingSize.height
         parentComment.bgColor = bgColor
-        
+        let height = textLayout.textBoundingSize.height
         return parentComment
-        
     }
     
     

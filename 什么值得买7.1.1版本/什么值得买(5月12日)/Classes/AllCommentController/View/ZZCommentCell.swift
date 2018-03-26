@@ -23,6 +23,7 @@ class ZZCommentCell: UITableViewCell {
         separatorLine.width = commentConstant.parentCommentViewWidth
         separatorLine.left = commentConstant.parentCommentViewLeft
         separatorLine.alpha = 0.3
+        separatorLine.height = 0.3
         return separatorLine
     }()
     

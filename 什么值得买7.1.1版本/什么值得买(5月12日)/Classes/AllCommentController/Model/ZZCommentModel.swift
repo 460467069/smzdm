@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class ZZCommentModel: NSObject {
 
     var comment_date: String?
@@ -74,6 +75,7 @@ class ZZCommentModel: NSObject {
     
 }
 
+@objcMembers
 class ZZMedal: NSObject {
 
     var img: String?

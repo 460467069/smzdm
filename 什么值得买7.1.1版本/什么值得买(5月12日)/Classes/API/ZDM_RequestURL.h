@@ -14,7 +14,7 @@
 #define kSMZDMID        @"7768066096"
 
 static NSString * const kZDM_Platform = @"iphone";
-static NSString * const kZDM_Vesion   = @"8.2";
+static NSString * const kZDM_Vesion   = @"8.5";
 
 /** 首页 */
 static NSString * const kZDM_UtilBanner            = @"v2/util/banner";             /**< 广告, 及下面的九宫格 */

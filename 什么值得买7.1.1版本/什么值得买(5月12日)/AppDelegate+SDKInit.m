@@ -29,7 +29,6 @@
 {
     /*================= 调用registerApp方法来初始化ShareSDK并且初始化第三方平台 =================*/
     
-    
     // 要使用的分享平台的集合, 所提供的分享方式
     NSArray *platforms = @[
                            @(SSDKPlatformTypeSinaWeibo),

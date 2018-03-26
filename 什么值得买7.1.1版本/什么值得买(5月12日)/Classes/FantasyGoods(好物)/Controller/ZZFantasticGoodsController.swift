@@ -138,7 +138,6 @@ extension ZZFantasticGoodsController:UICollectionViewDataSource {
 //MARK: - 上下拉
 extension ZZFantasticGoodsController {
     override func loadData() {
-        
         fantasticGoodsRequest.offset = 0
         ZZAPPDotNetAPIClient.shared().get(ZZGoodsHeaderRequest.init()) { (responseObj, error) in
             if let _ = error {
@@ -155,8 +154,7 @@ extension ZZFantasticGoodsController {
                 self.tableView.mj_header.endRefreshing()
                 return
             }
-            if let response = responseObj as? [[AnyHashable: Any]]{
-                
+            if let response = responseObj as? [[AnyHashable: Any]] {
                 let haoWuLayoutArray: NSMutableArray = NSMutableArray()
                 for goodsDict in response {
                     if let fantasicGoodsModel = ZZFantasticGoodsModel.model(with: goodsDict) {
@@ -170,7 +168,6 @@ extension ZZFantasticGoodsController {
                     self.fantasticGoodsRequest.offset = self.dataSource.count
                 }
                 self.tableView.mj_header.endRefreshing()
-                
             }
         }
     }
@@ -180,7 +177,6 @@ extension ZZFantasticGoodsController {
         
         ZZAPPDotNetAPIClient.shared().get(fantasticGoodsRequest) { (responseObj, error) in
             if let _ = error {
-                
                 self.tableView.mj_footer.endRefreshing()
                 return
             }

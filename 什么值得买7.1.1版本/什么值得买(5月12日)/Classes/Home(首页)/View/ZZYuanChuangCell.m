@@ -93,9 +93,6 @@
     }
     
     [self.tagBtn setImage:tagImage forState:UIControlStateNormal];
-    
-    
-
 }
 
 

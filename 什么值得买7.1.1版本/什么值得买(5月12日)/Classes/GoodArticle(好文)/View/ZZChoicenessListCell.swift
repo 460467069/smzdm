@@ -26,7 +26,7 @@ class ZZChoicenessListCell: UICollectionViewCell {
         iconView.layer.insertSublayer(colorLayer!, at: 0)
         colorLayer?.startPoint = CGPoint.init(x: 0, y: 0)
         colorLayer?.endPoint = CGPoint.init(x: 0, y: 1)
-        let color = UIColor.lightGray.withAlphaComponent(0.2)
+        let color = UIColor.red.withAlphaComponent(0.2)
         colorLayer?.colors = [UIColor.clear.cgColor, color.cgColor]
     }
 

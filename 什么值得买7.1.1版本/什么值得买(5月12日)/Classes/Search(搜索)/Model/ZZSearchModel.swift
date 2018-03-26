@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class ZZSearchRequest: ZZBaseRequest {
     var channelName: String?
     var keyword: String?
@@ -24,6 +25,7 @@ class ZZSearchRequest: ZZBaseRequest {
     }
 }
 
+@objcMembers
 class ZZSearchHotTagRequest: ZZBaseRequest {
     override init() {
         super.init()
@@ -31,6 +33,7 @@ class ZZSearchHotTagRequest: ZZBaseRequest {
     }
 }
 
+@objcMembers
 class ZZSearchModel: NSObject {
     var title: String?
     var name: String?
@@ -38,8 +41,9 @@ class ZZSearchModel: NSObject {
     var obviously: String?
 }
 
+
+@objcMembers
 class ZZSearchResultModel: NSObject {
-    
     var category: [ZZCategory]?
     
     var channel: ZZChannel?
@@ -61,6 +65,7 @@ class Data: NSObject {
 
 }
 
+@objcMembers
 class ZZChannel: NSObject {
 
     var second_hand: String?
@@ -99,6 +104,7 @@ class ZZChannel: NSObject {
 
 }
 
+@objcMembers
 class ZZMall: NSObject {
 
     var haiwai: [ZZResultCount]?
@@ -109,6 +115,7 @@ class ZZMall: NSObject {
 
 }
 
+@objcMembers
 class ZZResultCount: NSObject {
 
     var id: String?
@@ -119,6 +126,7 @@ class ZZResultCount: NSObject {
 
 }
 
+@objcMembers
 class ZZRecommend_Users: NSObject {
 
     var prestige: String?
@@ -145,6 +153,7 @@ class ZZRecommend_Users: NSObject {
 
 }
 
+@objcMembers
 class ZZCategory: NSObject {
 
     var id: String?

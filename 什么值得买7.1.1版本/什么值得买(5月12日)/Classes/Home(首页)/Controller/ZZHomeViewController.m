@@ -47,7 +47,7 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.tableView.tableHeaderView.bounds = CGRectMake(0, 0, kScreenWidth, 360);
+    self.tableView.tableHeaderView.bounds = CGRectMake(0, 0, kScreenWidth, 300);
     LxDBAnyVar(self.tableView.tableHeaderView.frame);
 }
 
@@ -151,6 +151,7 @@
     }
     ZZWorthyArticle *article = self.listArrayM[indexPath.row];
     switch (article.promotion_type) {
+        case ZDMPromotionTypeSeventeen:
         case ZDMPromotionTypeZero: {
             NSInteger channelID = article.article_channel_id;
             if (channelID == 8 || channelID == 11 || channelID == 14) {

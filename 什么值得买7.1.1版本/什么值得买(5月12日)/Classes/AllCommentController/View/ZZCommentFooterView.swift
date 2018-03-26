@@ -22,6 +22,7 @@ class ZZCommentFooterView: UITableViewHeaderFooterView {
         
         let separatorLine = UIImageView.init(image: #imageLiteral(resourceName: "line_640x1"))
         separatorLine.width = kScreenWidth
+        separatorLine.height = 0.3
         return separatorLine
     }()
     

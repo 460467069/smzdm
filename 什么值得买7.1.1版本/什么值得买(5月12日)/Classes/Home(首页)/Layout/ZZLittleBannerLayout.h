@@ -10,6 +10,8 @@
 
 #define kLitterBannerViewInset 15
 #define kMinimumInteritemSpacing 0
+static NSInteger kLimitCount = 5;
+static CGFloat kItemHeight = 80;
 
 @interface ZZLittleBannerLayout : UICollectionViewFlowLayout
 

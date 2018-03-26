@@ -9,15 +9,13 @@
 import UIKit
 
 class ZZGoodsHeaderRequest: ZZBaseRequest {
-    
     override init() {
         super.init()
         urlStr = kZDM_HaoWu_Category
     }
 }
 
-class ZZGoodsHeaderModel: NSObject {
-
+@objcMembers class ZZGoodsHeaderModel: NSObject {
     var id: String?
     var name: String?
     var picture: String?
@@ -27,5 +25,4 @@ class ZZGoodsHeaderModel: NSObject {
     var wiki_category: String?
     var sort: String?
     var url: String?
-    
 }

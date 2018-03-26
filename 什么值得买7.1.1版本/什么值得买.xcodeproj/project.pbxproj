@@ -1651,7 +1651,7 @@
 				TargetAttributes = {
 					A9D9D2121CE40B3E00A83101 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = MS8YPNK5H3;
+						DevelopmentTeam = 595BKWX2W4;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -2142,12 +2142,12 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = MS8YPNK5H3;
+				DEVELOPMENT_TEAM = 595BKWX2W4;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.join51.juhuixia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qhjy.ZeroDistance;
 				PRODUCT_NAME = "什么值得买";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2170,12 +2170,12 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = MS8YPNK5H3;
+				DEVELOPMENT_TEAM = 595BKWX2W4;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.join51.juhuixia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qhjy.ZeroDistance;
 				PRODUCT_NAME = "什么值得买";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
