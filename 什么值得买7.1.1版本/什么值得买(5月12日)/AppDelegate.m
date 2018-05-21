@@ -19,6 +19,8 @@
 #import "NSTimer+ZZAdd.h"
 #import <SDWebImage/UIView+WebCacheOperation.h>
 #import <IQKeyboardManagerSwift/IQKeyboardManagerSwift-Swift.h>
+#import <PromiseKit/PMKCoreLocation.h>
+
 
 @interface AppDelegate ()<WeiboSDKDelegate>
 
@@ -44,6 +46,9 @@
     self.window.rootViewController = tab;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)test {
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{

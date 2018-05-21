@@ -10,7 +10,7 @@ target '什么值得买' do
   # Pods for 什么值得买
   pod 'SDWebImage'
   pod 'MBProgressHUD'
-  pod "AFNetworking"
+  pod 'AFNetworking'
   pod 'MJRefresh'
   pod 'MJExtension'
   pod 'Masonry'
@@ -25,7 +25,7 @@ target '什么值得买' do
   pod 'FDFullscreenPopGesture'
   pod 'JSPatchPlatform'
   pod 'DZNEmptyDataSet'
-  pod "CSStickyHeaderFlowLayout"
+  pod 'CSStickyHeaderFlowLayout'
   pod 'WebViewJavascriptBridge'
   pod 'IQKeyboardManagerSwift'
   pod 'Bugly'
@@ -33,6 +33,7 @@ target '什么值得买' do
   pod 'JPush'
   pod 'IGListKit'
   pod 'SwiftyJSON'
+  pod 'PromiseKit/CoreLocation'
   
 #  pod 'SwipeTableView'
   # 主模块(必须)
