@@ -69,7 +69,7 @@ PODS:
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.2)
   - SwiftyJSON (4.0.0)
-  - UITableView+FDTemplateLayoutCell (1.6)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
   - WebViewJavascriptBridge (6.0.3)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -106,10 +106,42 @@ DEPENDENCIES:
   - SnapKit
   - SVProgressHUD
   - SwiftyJSON
-  - UITableView+FDTemplateLayoutCell
+  - "UITableView+FDTemplateLayoutCell"
   - WebViewJavascriptBridge
   - YYKit
   - ZYCornerRadius
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Bugly
+    - CSStickyHeaderFlowLayout
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - IGListKit
+    - IQKeyboardManagerSwift
+    - JCore
+    - JPush
+    - JSPatch
+    - JSPatchPlatform
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJRefresh
+    - MOBFoundation
+    - PromiseKit
+    - RongCloudIM
+    - SDCycleScrollView
+    - SDiPhoneVersion
+    - SDWebImage
+    - ShareSDK3
+    - SnapKit
+    - SVProgressHUD
+    - SwiftyJSON
+    - "UITableView+FDTemplateLayoutCell"
+    - WebViewJavascriptBridge
+    - YYKit
+    - ZYCornerRadius
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -137,11 +169,11 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: c2f2b64412c5d1c1b6a994e999226ab36b3d98ec
+PODFILE CHECKSUM: c88f127d601cbe14a8f512bc5ac99df11483a5aa
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

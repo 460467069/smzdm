@@ -11,6 +11,7 @@
 		86EA74FA1DCF19A100CD9261 /* ZZAllCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA74F61DCF19A100CD9261 /* ZZAllCommentController.swift */; };
 		A901FCE71E057D1500B973E7 /* ZZPopPresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901FCE61E057D1500B973E7 /* ZZPopPresentAnimation.swift */; };
 		A901FCE91E057D3400B973E7 /* ZZPopDimissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901FCE81E057D3400B973E7 /* ZZPopDimissAnimation.swift */; };
+		A90514DE20BBEA25003851CF /* Pods_什么值得买.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90514DD20BBEA25003851CF /* Pods_什么值得买.framework */; };
 		A90618E51DBF064A002239CF /* ZZQRcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90618E41DBF064A002239CF /* ZZQRcodeController.swift */; };
 		A90B12E01DAA38990051B237 /* ZZGoodsHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */; };
 		A90D05D11F79EDE9008B9B0B /* ZZHomePageCellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D05D01F79EDE9008B9B0B /* ZZHomePageCellHeaderView.swift */; };
@@ -230,7 +231,6 @@
 		A9F97BC01DE521E200FB683F /* ZZBaiCaiBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F97BBF1DE521E200FB683F /* ZZBaiCaiBannerView.swift */; };
 		A9F97BC21DE521EB00FB683F /* ZZBaiCaiBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F97BC11DE521EB00FB683F /* ZZBaiCaiBannerView.xib */; };
 		A9FC17AC1D826BB800F16D1E /* ZZSecondBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC17AB1D826BB800F16D1E /* ZZSecondBaseViewController.m */; };
-		BBCEFC72E7FB16B58EBC664E /* Pods______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC44063077F3A4819D95752 /* Pods______.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -252,6 +252,8 @@
 		A0A221ED76D299EA45C20125 /* Pods-什么值得买.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.release.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.release.xcconfig"; sourceTree = "<group>"; };
 		A901FCE61E057D1500B973E7 /* ZZPopPresentAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPopPresentAnimation.swift; sourceTree = "<group>"; };
 		A901FCE81E057D3400B973E7 /* ZZPopDimissAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPopDimissAnimation.swift; sourceTree = "<group>"; };
+		A90514DB20BBEA06003851CF /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A90514DD20BBEA25003851CF /* Pods_什么值得买.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_什么值得买.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90618E41DBF064A002239CF /* ZZQRcodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZQRcodeController.swift; sourceTree = "<group>"; };
 		A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZGoodsHeaderModel.swift; sourceTree = "<group>"; };
 		A90D05D01F79EDE9008B9B0B /* ZZHomePageCellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZHomePageCellHeaderView.swift; sourceTree = "<group>"; };
@@ -600,9 +602,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90514DE20BBEA25003851CF /* Pods_什么值得买.framework in Frameworks */,
 				A9E5CC0E1DF982F900C47221 /* AVFoundation.framework in Frameworks */,
 				A9F387301DEC024D009E77C4 /* libsqlite3.tbd in Frameworks */,
-				BBCEFC72E7FB16B58EBC664E /* Pods______.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1601,6 +1603,8 @@
 		BBF84AC801C23E3FA5D0F8BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A90514DD20BBEA25003851CF /* Pods_什么值得买.framework */,
+				A90514DB20BBEA06003851CF /* AFNetworking.framework */,
 				A9E5CC0D1DF982F900C47221 /* AVFoundation.framework */,
 				A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */,
 				A99B88001DEEB34A007A6640 /* NotificationCenter.framework */,
