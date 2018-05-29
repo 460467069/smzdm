@@ -23,9 +23,9 @@
         securityPolicy.allowInvalidCertificates = YES;
         securityPolicy.validatesDomainName = NO;
         
-        _sharedClient = [[ZZAPPDotNetAPIClient alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL]];
+        _sharedClient = [[ZZAPPDotNetAPIClient alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL1]];
         _sharedClient.responseSerializer.acceptableContentTypes = acceptableContentTypes;
-        _sharedClient.requestSerializer.timeoutInterval = 20;
+        _sharedClient.requestSerializer.timeoutInterval = 30;
         _sharedClient.securityPolicy = securityPolicy;
         
         NSMutableDictionary *cookieDictM = [NSMutableDictionary dictionary];
@@ -77,7 +77,7 @@
 }
 
 + (NSURLSessionDataTask *)Get:( NSString *)URLString parameters:(NSMutableDictionary *)parameters completionBlock:(HttpCompletionBlcok)completionBlock {
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL]];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseURL1]];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
     manager.requestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
     AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];

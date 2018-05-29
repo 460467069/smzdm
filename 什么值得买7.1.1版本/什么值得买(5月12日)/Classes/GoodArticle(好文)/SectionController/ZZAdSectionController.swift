@@ -21,7 +21,7 @@ class ZZAdSectionController: ListSectionController {
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
-        return CGSize(width: collectionContext!.containerSize.width, height: 180)
+        return CGSize(width: collectionContext!.containerSize.width, height: screenAdaptation(fromPixelValue: 306))
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {

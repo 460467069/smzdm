@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZZType2103Cell" customModule="什么值得买" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="324"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="356" height="324"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9j-lA-RYb">
+                        <rect key="frame" x="12" y="8" width="40.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrN-1d-k9O">
+                        <rect key="frame" x="12" y="37.5" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多  &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rll-QY-8wX">
+                        <rect key="frame" x="304.5" y="10.5" width="39.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="xGS-pd-ezw">
+                        <rect key="frame" x="12" y="76" width="332" height="126"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nsf-H8-SNQ" customClass="ZZImageView" customModule="什么值得买" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="124" height="126"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="wK1-Nw-TuO">
+                                <rect key="frame" x="124" y="0.0" width="208" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZN-gr-viC" customClass="ZZImageView" customModule="什么值得买" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="50"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Il-C4-OpL" customClass="ZZImageView" customModule="什么值得买" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="88" height="50"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYo-rL-12P">
+                        <rect key="frame" x="0.0" y="316" width="356" height="8"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="jT3-0y-fmJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NYo-rL-12P" secondAttribute="trailing" id="2D9-Va-DT7"/>
+                <constraint firstItem="xGS-pd-ezw" firstAttribute="leading" secondItem="C9j-lA-RYb" secondAttribute="leading" id="4VA-Vq-g06"/>
+                <constraint firstItem="xGS-pd-ezw" firstAttribute="trailing" secondItem="Rll-QY-8wX" secondAttribute="trailing" id="4xx-S5-6Vi"/>
+                <constraint firstItem="NYo-rL-12P" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ADY-j9-RYC"/>
+                <constraint firstItem="Rll-QY-8wX" firstAttribute="centerY" secondItem="C9j-lA-RYb" secondAttribute="centerY" id="D0w-YT-4Oa"/>
+                <constraint firstAttribute="bottom" secondItem="NYo-rL-12P" secondAttribute="bottom" id="IeY-t0-sqX"/>
+                <constraint firstItem="C9j-lA-RYb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="PBt-sZ-GfQ"/>
+                <constraint firstItem="C9j-lA-RYb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="PHa-qJ-7Uu"/>
+                <constraint firstItem="lrN-1d-k9O" firstAttribute="leading" secondItem="C9j-lA-RYb" secondAttribute="leading" id="VdN-Fk-Dr5"/>
+                <constraint firstItem="lrN-1d-k9O" firstAttribute="top" secondItem="C9j-lA-RYb" secondAttribute="bottom" constant="10" id="ZCS-Tx-Nf1"/>
+                <constraint firstAttribute="trailing" secondItem="Rll-QY-8wX" secondAttribute="trailing" constant="12" id="ky7-ww-bJ1"/>
+            </constraints>
+            <size key="customSize" width="356" height="324"/>
+            <connections>
+                <outlet property="iconView" destination="nsf-H8-SNQ" id="WmV-Hc-siH"/>
+                <outlet property="tagLabel" destination="C9j-lA-RYb" id="il5-jL-XWY"/>
+            </connections>
+            <point key="canvasLocation" x="-87" y="15"/>
+        </collectionViewCell>
+    </objects>
+</document>

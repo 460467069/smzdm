@@ -28,6 +28,7 @@
     self.currentPageDotColor = [UIColor redColor];
     self.placeholderImage = [UIImage imageNamed:@"banner_bg"];
     self.autoScrollTimeInterval = 5.0;
+//    self.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
 }
 
 @end

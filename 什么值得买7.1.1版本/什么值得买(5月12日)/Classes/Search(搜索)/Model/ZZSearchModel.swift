@@ -59,12 +59,6 @@ class ZZSearchResultModel: NSObject {
     var users_more: Bool = false
 }
 
-class Data: NSObject {
-
-
-
-}
-
 @objcMembers
 class ZZChannel: NSObject {
 

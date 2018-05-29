@@ -36,6 +36,10 @@ extension String {
     }
 }
 
+func screenAdaptation(fromPixelValue: CGFloat) -> CGFloat {
+    return kScreenWidth / 750.0 * fromPixelValue
+}
+
 extension NSAttributedString {
     static func commonAttributedText(title: String) -> NSAttributedString {
         let text = NSMutableAttributedString.init(string: title)

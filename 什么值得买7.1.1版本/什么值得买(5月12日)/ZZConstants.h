@@ -18,13 +18,14 @@ UIKIT_EXTERN CGFloat const kZZNavH;             //  导航栏高度
 #define kGlobalGrayColor [UIColor colorWithHexString:@"#666666"]
 #define kGlobalLightGrayColor ZZColor(247, 247, 247)
 
+#define kScreenAdaptation(X) (kScreenWidth / 750.0 * X)
 
-#define kHomeFirstCellPicHeight1 (kScreenWidth / 750.0 * 326)
-#define kHomeFirstCellPicWidth1 (kScreenWidth / 750.0 * 284)
-#define kHomeFirstCellPicHeight2 (kScreenWidth / 750.0 * 154)
-#define kHomeFirstCellPicWidth2 (kScreenWidth / 750.0 * 464)
-#define kHomeFirstCellPicHeight3 (kScreenWidth / 750.0 * 170)
-#define kHomeFirstCellPicWidth3 (kScreenWidth / 750.0 * 231)
+#define kHomeFirstCellPicHeight1 kScreenAdaptation(326)
+#define kHomeFirstCellPicWidth1 kScreenAdaptation(284)
+#define kHomeFirstCellPicHeight2 kScreenAdaptation(154)
+#define kHomeFirstCellPicWidth2 kScreenAdaptation(464)
+#define kHomeFirstCellPicHeight3 kScreenAdaptation(170)
+#define kHomeFirstCellPicWidth3 kScreenAdaptation(231)
 
 #define kDetailContentOffset 15
 

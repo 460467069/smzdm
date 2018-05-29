@@ -11,7 +11,6 @@
 		86EA74FA1DCF19A100CD9261 /* ZZAllCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA74F61DCF19A100CD9261 /* ZZAllCommentController.swift */; };
 		A901FCE71E057D1500B973E7 /* ZZPopPresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901FCE61E057D1500B973E7 /* ZZPopPresentAnimation.swift */; };
 		A901FCE91E057D3400B973E7 /* ZZPopDimissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901FCE81E057D3400B973E7 /* ZZPopDimissAnimation.swift */; };
-		A90514DE20BBEA25003851CF /* Pods_什么值得买.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90514DD20BBEA25003851CF /* Pods_什么值得买.framework */; };
 		A90618E51DBF064A002239CF /* ZZQRcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90618E41DBF064A002239CF /* ZZQRcodeController.swift */; };
 		A90B12E01DAA38990051B237 /* ZZGoodsHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */; };
 		A90D05D11F79EDE9008B9B0B /* ZZHomePageCellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D05D01F79EDE9008B9B0B /* ZZHomePageCellHeaderView.swift */; };
@@ -156,6 +155,15 @@
 		A99DAD1E1F5E4CDA005E4ADC /* ZZType41Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99DAD1C1F5E4CDA005E4ADC /* ZZType41Cell.xib */; };
 		A9A03FD81D1A69B100675FA9 /* ZZUserAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A03FD71D1A69B100675FA9 /* ZZUserAccount.m */; };
 		A9A03FDE1D1A726200675FA9 /* ZZWeiboTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A03FDD1D1A726200675FA9 /* ZZWeiboTableView.m */; };
+		A9A0BBE020BD587A00987F48 /* ZZType2103Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A0BBDE20BD587900987F48 /* ZZType2103Cell.xib */; };
+		A9A0BBE120BD587A00987F48 /* ZZType2103Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0BBDF20BD587900987F48 /* ZZType2103Cell.swift */; };
+		A9A0BBE620BD6C9200987F48 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0BBE520BD6C9200987F48 /* NetworkRequest.swift */; };
+		A9A0BBE820BD6CA500987F48 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0BBE720BD6CA500987F48 /* NetworkResponse.swift */; };
+		A9A0BBEA20BD6CC200987F48 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0BBE920BD6CC200987F48 /* ApiManager.swift */; };
+		A9A0BBED20BD6CE400987F48 /* RequestPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0BBEC20BD6CE400987F48 /* RequestPlugin.swift */; };
+		A9A0BBEF20BD6CF600987F48 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0BBEE20BD6CF600987F48 /* ResponseModel.swift */; };
+		A9A0BBF120BD6D0100987F48 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0BBF020BD6D0100987F48 /* ViewModel.swift */; };
+		A9A0BBF220BD77E600987F48 /* Pods_什么值得买.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90514DD20BBEA25003851CF /* Pods_什么值得买.framework */; };
 		A9A512021D775A5D00E41407 /* ZZCHannelID.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9A512011D775A5D00E41407 /* ZZCHannelID.plist */; };
 		A9A512051D77B07E00E41407 /* ZZChannelID.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A512041D77B07E00E41407 /* ZZChannelID.m */; };
 		A9A746F51DE2EBC200EFB62F /* ZZSecondCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A746F41DE2EBC200EFB62F /* ZZSecondCollectionViewController.m */; };
@@ -481,6 +489,14 @@
 		A9A03FD71D1A69B100675FA9 /* ZZUserAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUserAccount.m; sourceTree = "<group>"; };
 		A9A03FDC1D1A726200675FA9 /* ZZWeiboTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZWeiboTableView.h; sourceTree = "<group>"; };
 		A9A03FDD1D1A726200675FA9 /* ZZWeiboTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZWeiboTableView.m; sourceTree = "<group>"; };
+		A9A0BBDE20BD587900987F48 /* ZZType2103Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZType2103Cell.xib; sourceTree = "<group>"; };
+		A9A0BBDF20BD587900987F48 /* ZZType2103Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZType2103Cell.swift; sourceTree = "<group>"; };
+		A9A0BBE520BD6C9200987F48 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		A9A0BBE720BD6CA500987F48 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		A9A0BBE920BD6CC200987F48 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		A9A0BBEC20BD6CE400987F48 /* RequestPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPlugin.swift; sourceTree = "<group>"; };
+		A9A0BBEE20BD6CF600987F48 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		A9A0BBF020BD6D0100987F48 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A9A512011D775A5D00E41407 /* ZZCHannelID.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ZZCHannelID.plist; sourceTree = "<group>"; };
 		A9A512031D77B07E00E41407 /* ZZChannelID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZChannelID.h; sourceTree = "<group>"; };
 		A9A512041D77B07E00E41407 /* ZZChannelID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZChannelID.m; sourceTree = "<group>"; };
@@ -602,7 +618,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A90514DE20BBEA25003851CF /* Pods_什么值得买.framework in Frameworks */,
+				A9A0BBF220BD77E600987F48 /* Pods_什么值得买.framework in Frameworks */,
 				A9E5CC0E1DF982F900C47221 /* AVFoundation.framework in Frameworks */,
 				A9F387301DEC024D009E77C4 /* libsqlite3.tbd in Frameworks */,
 			);
@@ -1133,6 +1149,35 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		A9A0BBE220BD6C1000987F48 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		A9A0BBE320BD6C1C00987F48 /* Utills */ = {
+			isa = PBXGroup;
+			children = (
+				A9A0BBE420BD6C5100987F48 /* SwiftNetwork */,
+				A9D9D22E1CE40B7C00A83101 /* API */,
+			);
+			path = Utills;
+			sourceTree = "<group>";
+		};
+		A9A0BBE420BD6C5100987F48 /* SwiftNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				A9A0BBE520BD6C9200987F48 /* NetworkRequest.swift */,
+				A9A0BBE720BD6CA500987F48 /* NetworkResponse.swift */,
+				A9A0BBE920BD6CC200987F48 /* ApiManager.swift */,
+				A9A0BBEC20BD6CE400987F48 /* RequestPlugin.swift */,
+				A9A0BBEE20BD6CF600987F48 /* ResponseModel.swift */,
+				A9A0BBF020BD6D0100987F48 /* ViewModel.swift */,
+			);
+			path = SwiftNetwork;
+			sourceTree = "<group>";
+		};
 		A9A746EE1DE2EA8000EFB62F /* BaiCai(白菜专区) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1280,6 +1325,8 @@
 				A929E30A1F627D2300756E42 /* ZZType30Cell.xib */,
 				A9DD5D261F6F773C00C799D6 /* ZZType38Cell.swift */,
 				A9DD5D271F6F773C00C799D6 /* ZZType38Cell.xib */,
+				A9A0BBDF20BD587900987F48 /* ZZType2103Cell.swift */,
+				A9A0BBDE20BD587900987F48 /* ZZType2103Cell.xib */,
 				A99709CA1F72494B0091EF22 /* ZZPromotionType6Cell.swift */,
 				A99709CB1F72494B0091EF22 /* ZZPromotionType6Cell.xib */,
 				A99709CE1F72526E0091EF22 /* ZZPromotionType6SubCell.swift */,
@@ -1370,9 +1417,10 @@
 		A9D9D22D1CE40B7C00A83101 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A9A0BBE320BD6C1C00987F48 /* Utills */,
+				A9A0BBE220BD6C1000987F48 /* Module */,
 				A9AC1A2F1CEC007500F56C42 /* Lib */,
 				A9D9D2421CE40B7C00A83101 /* Main */,
-				A9D9D22E1CE40B7C00A83101 /* API */,
 				A9D9D2331CE40B7C00A83101 /* Catagory */,
 				A966E0921E1117450023CFEA /* Search(搜索) */,
 				A90618E31DBF05B6002239CF /* Scan(二维码) */,
@@ -1726,6 +1774,7 @@
 				A947CCDF1DE02FA30047B58F /* ZZYuanChuangCell.xib in Resources */,
 				A9C8C4EA1D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard in Resources */,
 				A91A834F1D420A87008D229E /* weibo_1.json in Resources */,
+				A9A0BBE020BD587A00987F48 /* ZZType2103Cell.xib in Resources */,
 				A947CD0C1DE02FCC0047B58F /* ZZHaoJiaViewController.storyboard in Resources */,
 				A94AC31C1DED30E3009D077A /* ZZBaiCaiNewestCell.xib in Resources */,
 				A93FA9CE1DBDE71F00E3007F /* app_details.css in Resources */,
@@ -1750,9 +1799,11 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CSStickyHeaderFlowLayout/CSStickyHeaderFlowLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSPatch/JSPatch.framework",
@@ -1760,7 +1811,10 @@
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SDiPhoneVersion/SDiPhoneVersion.framework",
@@ -1775,9 +1829,11 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSStickyHeaderFlowLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSPatch.framework",
@@ -1785,7 +1841,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDiPhoneVersion.framework",
@@ -1875,6 +1934,7 @@
 				A980A3F41CE40F76006E0037 /* ZZMineViewController.m in Sources */,
 				A9C08AC21E77858A00099C28 /* ZZDetailTopicHeaderLayout.m in Sources */,
 				A9A746F51DE2EBC200EFB62F /* ZZSecondCollectionViewController.m in Sources */,
+				A9A0BBE820BD6CA500987F48 /* NetworkResponse.swift in Sources */,
 				A9E440AF1DD078B7005D17DB /* ZZAllCommentLayout.swift in Sources */,
 				A9C631F51F566C8A0033D0B6 /* ZZBaseViewController.m in Sources */,
 				A9B2ACA11DDB6EDD00D8F296 /* ZZKeyboardToolBar.m in Sources */,
@@ -1887,7 +1947,9 @@
 				A92237A01DE59E1B00B87A8B /* ZZBaiCaiJingXuanModel.swift in Sources */,
 				A9DBBAF51DB2282900089A73 /* ZZHaoWuLayout.swift in Sources */,
 				A9C08AC71E7785C900099C28 /* ZZDetailHeaderLayout.m in Sources */,
+				A9A0BBE620BD6C9200987F48 /* NetworkRequest.swift in Sources */,
 				A947CD141DE02FCC0047B58F /* ZZTitleBannelOption.m in Sources */,
+				A9A0BBED20BD6CE400987F48 /* RequestPlugin.swift in Sources */,
 				A9AF3E341DE464FD0055F522 /* ZZDouYuController.m in Sources */,
 				A9C8C4E61D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift in Sources */,
 				A9EDF99C1EB56C010066E0F4 /* UITextField+ZZAdd.m in Sources */,
@@ -1912,6 +1974,7 @@
 				A9DD5D281F6F773C00C799D6 /* ZZType38Cell.swift in Sources */,
 				A90DBF141DBF740900D857A9 /* UINavigationItem+Margin.m in Sources */,
 				A9B7835B1D59019D003C464D /* ZZRefreshTip.m in Sources */,
+				A9A0BBE120BD587A00987F48 /* ZZType2103Cell.swift in Sources */,
 				A901FCE91E057D3400B973E7 /* ZZPopDimissAnimation.swift in Sources */,
 				A947CD161DE02FCC0047B58F /* ZZHaoJiaHeaderView.swift in Sources */,
 				A96C4C841DC9904400196341 /* ZZPureWebViewController.m in Sources */,
@@ -1921,6 +1984,7 @@
 				A93B6A7C1D6169780001F777 /* ZZDIYBackFooter.m in Sources */,
 				A980A4081CE412E8006E0037 /* ZZNavigationController.m in Sources */,
 				A947CD111DE02FCC0047B58F /* ZZHomeChannel.m in Sources */,
+				A9A0BBF120BD6D0100987F48 /* ViewModel.swift in Sources */,
 				A927160B1D44571B006EEECA /* ZZGlobalApperance.m in Sources */,
 				A90618E51DBF064A002239CF /* ZZQRcodeController.swift in Sources */,
 				A947CCD21DE02FA30047B58F /* ZZDetailHaowuBottomBar.m in Sources */,
@@ -2009,6 +2073,7 @@
 				A9AF3E3A1DE464FD0055F522 /* ZZDouYuHomeCollectionViewCell.m in Sources */,
 				A9AF3E1D1DE463E80055F522 /* ZZHaoWuCellOne.swift in Sources */,
 				A95ACA5D1F5D31BE000446C1 /* ZZGoodArticleModel.swift in Sources */,
+				A9A0BBEF20BD6CF600987F48 /* ResponseModel.swift in Sources */,
 				A9F85DC61F7760D000A47364 /* ZZTopicArticleModel.swift in Sources */,
 				A947CCDE1DE02FA30047B58F /* ZZYuanChuangCell.m in Sources */,
 				A91D9B4E1D855E090073DEB7 /* ZZTextLinePositionModifier.m in Sources */,
@@ -2016,6 +2081,7 @@
 				A9DBBAF21DB2183E00089A73 /* UIImageView+ZDM.swift in Sources */,
 				A9AF3E391DE464FD0055F522 /* ZZDouYuFlowLayout.m in Sources */,
 				A99C768A1F82FB1C0077CBCF /* ZZLittleBannerSectionController.swift in Sources */,
+				A9A0BBEA20BD6CC200987F48 /* ApiManager.swift in Sources */,
 				A99DAD141F5E4726005E4ADC /* UIScrollView+ZZAdd.m in Sources */,
 				A97EC6C31D794E06006AABAB /* ZZInPurchaseViewController.m in Sources */,
 				A9F964831DDA2C1700D41EC5 /* ZZCommentFooterView.swift in Sources */,
@@ -2141,7 +2207,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F1B762794EBD4E6C806C9BD4 /* Pods-什么值得买.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -2169,7 +2235,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A0A221ED76D299EA45C20125 /* Pods-什么值得买.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;

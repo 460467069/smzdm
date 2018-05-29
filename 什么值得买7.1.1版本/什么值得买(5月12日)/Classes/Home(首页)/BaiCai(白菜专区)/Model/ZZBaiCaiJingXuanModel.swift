@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class ZZBaiCaiJingXuanModel: NSObject {
     var top_list: [ZZWorthyArticle]?
     

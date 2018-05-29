@@ -9,12 +9,14 @@
 #ifndef ZDM_RequestURL_h
 #define ZDM_RequestURL_h
 
-#define kBaseURL        @"https://api.smzdm.com"
-#define kDeviceID       @"u2n7E7g8GN614PhgRRMTDF9mLo7nKcI/2MZzQ5N8TCijPn9NXBbmkw=="
-#define kSMZDMID        @"7768066096"
+#define kBaseURL1        @"https://api.smzdm.com"
+#define kBaseURL2        @"https://post-api.smzdm.com"
+
+#define kDeviceID        @"u2n7E7g8GN614PhgRRMTDF9mLo7nKcI/2MZzQ5N8TCijPn9NXBbmkw=="
+#define kSMZDMID         @"7768066096"
 
 static NSString * const kZDM_Platform = @"iphone";
-static NSString * const kZDM_Vesion   = @"8.5";
+static NSString * const kZDM_Vesion   = @"8.7.7";
 
 /** 首页 */
 static NSString * const kZDM_UtilBanner            = @"v2/util/banner";             /**< 广告, 及下面的九宫格 */

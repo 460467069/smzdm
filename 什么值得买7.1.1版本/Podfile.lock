@@ -14,10 +14,12 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Alamofire (4.7.2)
   - Bugly (2.5.0)
   - CSStickyHeaderFlowLayout (0.2.11)
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
+  - Hero (1.2.0)
   - IGListKit (3.1.1):
     - IGListKit/Default (= 3.1.1)
   - IGListKit/Default (3.1.1):
@@ -39,12 +41,22 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15.1)
   - MOBFoundation (3.0.6)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
   - PromiseKit/CoreLocation (6.2.4):
     - PromiseKit/CorePromise
   - PromiseKit/CorePromise (6.2.4)
+  - Result (3.2.4)
   - RongCloudIM/IMKit (2.8.22):
     - RongCloudIM/IMLib
   - RongCloudIM/IMLib (2.8.22)
+  - RxSwift (4.1.2)
   - SDCycleScrollView (1.74):
     - SDWebImage (>= 4.0.0)
   - SDiPhoneVersion (1.1.2)
@@ -78,10 +90,12 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - Alamofire
   - Bugly
   - CSStickyHeaderFlowLayout
   - DZNEmptyDataSet
   - FDFullscreenPopGesture
+  - Hero
   - IGListKit
   - IQKeyboardManagerSwift
   - JPush
@@ -91,9 +105,12 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - MOBFoundation
+  - Moya
+  - Moya/RxSwift
   - PromiseKit/CoreLocation
   - RongCloudIM/IMKit
   - RongCloudIM/IMLib
+  - RxSwift
   - SDCycleScrollView
   - SDiPhoneVersion
   - SDWebImage
@@ -114,10 +131,12 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - Alamofire
     - Bugly
     - CSStickyHeaderFlowLayout
     - DZNEmptyDataSet
     - FDFullscreenPopGesture
+    - Hero
     - IGListKit
     - IQKeyboardManagerSwift
     - JCore
@@ -129,8 +148,11 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - MOBFoundation
+    - Moya
     - PromiseKit
+    - Result
     - RongCloudIM
+    - RxSwift
     - SDCycleScrollView
     - SDiPhoneVersion
     - SDWebImage
@@ -145,10 +167,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   CSStickyHeaderFlowLayout: e9bcb1762413f49d7d09e5bd0ae5efd1100116b7
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
   IGListKit: cb97f405ae43e59fe1da74271e19427ec20d3c07
   IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
   JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
@@ -160,8 +184,11 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   MOBFoundation: 6f6ec1c2513278551f1a808b5692e983d99e5069
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
   PromiseKit: 625b1fc69944fc839503748101c5968cf54b527b
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RongCloudIM: 9dc4c5c3e215261f610ed294f8c854a1a1f521ee
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
   SDCycleScrollView: f821215226f6146a35470721a9d6e83ec5cfb04b
   SDiPhoneVersion: c52245ccaab8142701e2e7fb8f0391ba3f255b76
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
@@ -174,6 +201,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: c88f127d601cbe14a8f512bc5ac99df11483a5aa
+PODFILE CHECKSUM: 336ec0fb247c4716cc7149f46ce3ba121e12c383
 
 COCOAPODS: 1.5.3

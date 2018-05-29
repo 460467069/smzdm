@@ -38,7 +38,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    CGFloat imageHeight = 180;
+    CGFloat imageHeight = kScreenAdaptation(306);
     CGRect cycleScrollViewF = CGRectMake(0, 0, kScreenWidth, imageHeight);
     ZZCycleScrollView *cycleImageView = [ZZCycleScrollView cycleScrollViewWithFrame:cycleScrollViewF delegate:self placeholderImage:nil];
     [self.view addSubview:cycleImageView];
