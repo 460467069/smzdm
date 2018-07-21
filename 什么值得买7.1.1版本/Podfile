@@ -12,6 +12,11 @@ target '什么值得买' do
   pod 'Moya'
   pod 'Moya/RxSwift'
   pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxOptional'
+  pod 'NSObject+Rx'
+  pod 'Action'
+
   pod 'SwiftyJSON'
   pod 'SnapKit'
   pod 'IQKeyboardManagerSwift'

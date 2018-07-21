@@ -40,7 +40,6 @@ class ZZSearchFlowLayout: UICollectionViewFlowLayout {
         headerReferenceSize = CGSize.init(width: kScreenWidth, height: 40)
         sectionInset = UIEdgeInsets.init(top: inset * 0.7, left: 0, bottom: inset * 0.7, right: 0)
 //        register(<#T##viewClass: AnyClass?##AnyClass?#>, forDecorationViewOfKind: <#T##String#>)
-        
     }
     
     override func prepare() {

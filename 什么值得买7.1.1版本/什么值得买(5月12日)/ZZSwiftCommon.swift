@@ -22,7 +22,6 @@ let kGlobalLightGrayColor = UIColor.init(red: 247.0/255.0, green: 247.0/255.0, b
 let kLineSpacing: CGFloat = 5
 let kZDMPadding: CGFloat = 10
 
-
 @objc protocol ZZActionDelegate: NSObjectProtocol{
     @objc func itemDidClick(redirectData: ZZRedirectData)
 }
@@ -48,4 +47,13 @@ extension NSAttributedString {
         text.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
         return text
     }
+}
+
+func bindingErrorToInterface(_ error: Swift.Error) {
+    let error = "Binding error to UI: \(error)"
+    #if DEBUG
+        fatalError()
+    #else
+        print(error)
+    #endif
 }

@@ -23,7 +23,8 @@
 
 - (void)setLittleBanner:(ZZLittleBanner *)littleBanner {
     _littleBanner = littleBanner;
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:littleBanner.img] placeholderImage:[UIImage imageNamed:@"placeholder_dropbox"]];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:littleBanner.img]
+                     placeholderImage:[UIImage imageNamed:@"placeholder_dropbox"]];
     self.nameLabel.text = littleBanner.title;
     NSString *hexStr = self.littleBannerOptions.color_card;
     if (hexStr.length) {
