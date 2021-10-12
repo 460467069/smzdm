@@ -24,7 +24,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>好物</string>
+		<string>社区</string>
 		<key>normalImage</key>
 		<string>dingyueItemNormal</string>
 		<key>nibName</key>
@@ -34,7 +34,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>好文</string>
+		<string>百科</string>
 		<key>normalImage</key>
 		<string>dingyueItemNormal</string>
 		<key>nibName</key>
@@ -45,12 +45,12 @@
 	<dict>
 		<key>title</key>
 		<string>我的</string>
-		<key>nibName</key>
-		<string>ZZJingXuanViewController</string>
 		<key>normalImage</key>
-		<string>personNormal</string>
+		<string>dingyueItemNormal</string>
+		<key>nibName</key>
+		<string>ZZGoodArticleViewController</string>
 		<key>selectedImage</key>
-		<string>personSeleted</string>
+		<string>dingyueItemSelected</string>
 	</dict>
 </array>
 </plist>

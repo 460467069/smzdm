@@ -1,5 +1,5 @@
 //
-//  ZZBaseViewController.h
+//  YYBBBaseViewController.h
 //  什么值得买(5月12日)
 //
 //  Created by Wang_ruzhou on 16/5/12.
@@ -7,10 +7,10 @@
 //  (一级界面) 几个主界面的父控制器
 
 #import <UIKit/UIKit.h>
-#import "ZZBaseViewController.h"
+#import "YYBBBaseViewController.h"
 #import "ZZRedirectData.h"
 
-@interface ZZFirstBaseViewController : ZZBaseViewController
+@interface ZZFirstBaseViewController : YYBBBaseViewController
 
 @property (nonatomic, strong) UILabel *placeHolderLabel;
 

@@ -9,8 +9,9 @@
 #ifndef ZDM_RequestURL_h
 #define ZDM_RequestURL_h
 
-#define kBaseURL1        @"https://api.smzdm.com"
-#define kBaseURL2        @"https://post-api.smzdm.com"
+#define kBaseURL1               @"https://api.smzdm.com"
+#define kBaseURL2               @"https://post-api.smzdm.com"
+#define kHomeBaseURL2           @"https://homepage-api.smzdm.com"
 
 #define kDeviceID        @"u2n7E7g8GN614PhgRRMTDF9mLo7nKcI/2MZzQ5N8TCijPn9NXBbmkw=="
 #define kSMZDMID         @"7768066096"
@@ -40,5 +41,11 @@ static NSString * const kZDM_Search          = @"v1/list";                      
 /** 好文 */
 static NSString * const kZDM_HaoWen          = @"v1/sns/home";                            /**< 列表 */
 static NSString * const kZDM_HaoWenMore      = @"v1/sns/articles";                        /**< 列表上啦加载更多 */
+
+/********************************************* New ***********************************************************************/
+static NSString * const kZDM_HomeReconmend   = @"v1/home";                               /** 首页推荐 */
+
+
+
 
 #endif /* ZDM_RequestURL_h */

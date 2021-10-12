@@ -221,7 +221,7 @@ extension ZZSearchViewController {
         ZZAPPDotNetAPIClient.shared().get(searchRequest) { (responseObj, error) in
             if let responseObj = responseObj as? [AnyHashable: Any]{
                 if let rows = responseObj["rows"] as? [Any]{
-                    self.dataSoucre = NSArray.modelArray(with: ZZSearchModel.self, json: rows) as! [ZZSearchModel]
+                    self.dataSoucre = NSArray.yy_modelArray(with: ZZSearchModel.self, json: rows) as! [ZZSearchModel]
                     self.collectionView.reloadData()
                 }
             }

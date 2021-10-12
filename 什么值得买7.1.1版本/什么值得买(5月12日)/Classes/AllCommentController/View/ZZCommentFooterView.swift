@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YYKit
+import YYText
 
 class ZZCommentFooterView: UITableViewHeaderFooterView {
 

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import YYKit
+import YYText
 
 let kScreenBounds = UIScreen.main.bounds
 let kScreenWidth  = YYScreenSize().width
@@ -42,9 +42,9 @@ func screenAdaptation(fromPixelValue: CGFloat) -> CGFloat {
 extension NSAttributedString {
     static func commonAttributedText(title: String) -> NSAttributedString {
         let text = NSMutableAttributedString.init(string: title)
-        text.lineSpacing = 10
-        text.lineBreakMode = .byTruncatingTail
-        text.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
+        text.yy_lineSpacing = 10
+        text.yy_lineBreakMode = .byTruncatingTail
+        text.yy_font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
         return text
     }
 }

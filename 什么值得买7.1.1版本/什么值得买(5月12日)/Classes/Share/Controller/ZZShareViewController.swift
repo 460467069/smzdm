@@ -19,7 +19,7 @@ class ZZShareFlowLayout: UICollectionViewFlowLayout {
     override func prepare() {
         super.prepare()
         
-        collectionView?.contentInset = UIEdgeInsetsMake(0, margin, 0, margin)
+        collectionView?.contentInset = UIEdgeInsets(top: 0, left: margin, bottom: 0, right: margin)
         minimumInteritemSpacing = ((collectionView?.width)! - margin - margin  - columnCount * imageWH) / (columnCount - 1.0)
         minimumLineSpacing = 0
         

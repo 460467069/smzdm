@@ -72,9 +72,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     [self loadWebViewData];
     //初始化预加载动画, 有顺序要求
     [self initialCustomIndicatorView];
-
 }
-
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -87,7 +85,6 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     self.containerScrollView.delegate = nil;
-    [self.navigationController.navigationBar lt_reset];
     
 }
 
@@ -189,7 +186,7 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
         
         if (error) { return;}
         
-        _detailModel = [ZZDetailModel modelWithDictionary:responseObject];
+        _detailModel = [ZZDetailModel yy_modelWithDictionary:responseObject];
         _headerLayout = [[ZZDetailHeaderLayout alloc] initWithHeaderDetailModel:_detailModel];
         
         NSString *html5Content = nil;
@@ -344,14 +341,13 @@ NSString *const WKWebViewKeyPathContentSize = @"contentSize";
     if (offsetY > NAVBAR_CHANGE_POINT) {
         CGFloat alpha = MIN(1, 1 - (NAVBAR_CHANGE_POINT + 64 - offsetY) / 64);
         
-        [self.navigationController.navigationBar lt_setBackgroundColor:[kGlobalLightGrayColor colorWithAlphaComponent:alpha]];
         
         if (alpha == 1) {
             [self configureLeftBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_BackSecond"] rightBarButtonItemWithImage:[UIImage imageNamed:@"SM_Detail_RightSecond"] titleColor:[UIColor blackColor]];
         }
         
-    }else{
-        [self.navigationController.navigationBar lt_setBackgroundColor:[kGlobalLightGrayColor colorWithAlphaComponent:0]];
+    } else {
+        
     }
     
 }

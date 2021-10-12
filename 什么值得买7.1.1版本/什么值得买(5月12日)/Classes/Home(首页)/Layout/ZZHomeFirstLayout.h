@@ -7,6 +7,7 @@
 //  首页第一组cell详细布局
 
 #import <Foundation/Foundation.h>
+#import <YYText/YYText.h>
 #import "ZZHomeFirstModel.h"
 
 #define kHomeFirstCellHeadTitleHeight (kScreenWidth / 750.0 * 70)

@@ -1,0 +1,20 @@
+[
+    {
+        "title": "首页",
+        "nibName": "YYBBBookshelfViewController",
+        "normalImage": "shujia_weixuanzhong",
+        "selectedImage": "shujia_xuanz"
+    },
+    {
+        "title": "订单",
+        "nibName": "YYBBRecommendViewController",
+        "normalImage": "jingxuan_weixuanzhong",
+        "selectedImage": "jingxuan_xuanz"
+    },
+    {
+        "title": "我的",
+        "nibName": "YYBBMeViewController",
+        "normalImage": "wode_weixuanzong",
+        "selectedImage": "wod_xunz"
+    }
+]

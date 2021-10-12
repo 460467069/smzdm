@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f5q-Ol-mm5">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Real Login View Controller-->
+        <scene sceneID="Imp-Xy-xuK">
+            <objects>
+                <viewController id="Z1U-QS-lss" customClass="RealLoginViewController" customModule="ShopingFeel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qc7-Vb-HuW"/>
+                        <viewControllerLayoutGuide type="bottom" id="BC6-R2-RzC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="frZ-ok-Cz4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="real_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="dhv-5n-aDd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="real_login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="COU-v0-ww9">
+                                <rect key="frame" x="91.666666666666686" y="208" width="192" height="154"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITa-uR-1sn" customClass="RadiusButton" customModule="ShopingFeel" customModuleProvider="target">
+                                <rect key="frame" x="35" y="412" width="305" height="45"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="0.69411764705882351" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="3KM-cH-Kg4"/>
+                                </constraints>
+                                <state key="normal" title="微信登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="connerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="wechatBtnDidClick:" destination="Z1U-QS-lss" eventType="touchUpInside" id="qDQ-PP-tf7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dhv-5n-aDd" secondAttribute="trailing" id="4cV-1o-Nt2"/>
+                            <constraint firstItem="ITa-uR-1sn" firstAttribute="leading" secondItem="frZ-ok-Cz4" secondAttribute="leading" constant="35" id="A03-Ib-WCW"/>
+                            <constraint firstItem="ITa-uR-1sn" firstAttribute="centerX" secondItem="frZ-ok-Cz4" secondAttribute="centerX" id="FiQ-EX-ToV"/>
+                            <constraint firstAttribute="bottom" secondItem="dhv-5n-aDd" secondAttribute="bottom" id="JQ4-JK-T2i"/>
+                            <constraint firstItem="dhv-5n-aDd" firstAttribute="top" secondItem="frZ-ok-Cz4" secondAttribute="top" id="O0w-WA-Zlv"/>
+                            <constraint firstItem="dhv-5n-aDd" firstAttribute="leading" secondItem="frZ-ok-Cz4" secondAttribute="leading" id="QIG-EX-P25"/>
+                            <constraint firstItem="COU-v0-ww9" firstAttribute="centerX" secondItem="frZ-ok-Cz4" secondAttribute="centerX" id="W5x-M1-mMc"/>
+                            <constraint firstItem="ITa-uR-1sn" firstAttribute="top" secondItem="COU-v0-ww9" secondAttribute="bottom" constant="50" id="bam-Yq-vJu"/>
+                            <constraint firstItem="COU-v0-ww9" firstAttribute="top" secondItem="Qc7-Vb-HuW" secondAttribute="bottom" constant="120" id="qjx-ic-JBL">
+                                <variation key="heightClass=regular-widthClass=compact" constant="120"/>
+                            </constraint>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SwA-Si-drS">
+                        <barButtonItem key="leftBarButtonItem" image="web_back" id="u8t-ny-uJw">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cancelBtnDidClick:" destination="Z1U-QS-lss" id="PeM-Qy-IA9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="logoTopConstraint" destination="qjx-ic-JBL" id="A8G-lF-YQT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m3E-4x-96O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="559.20000000000005" y="62.518740629685162"/>
+        </scene>
+        <!--Base Navigation Controller-->
+        <scene sceneID="IQD-0A-b11">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f5q-Ol-mm5" customClass="BaseNavigationController" customModule="ShopingFeel" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OgP-E7-h00">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Z1U-QS-lss" kind="relationship" relationship="rootViewController" id="KkS-HN-gaB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ebj-co-vhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-174" y="63"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="real_login_bg" width="375" height="667"/>
+        <image name="real_login_logo" width="192" height="154"/>
+        <image name="web_back" width="10" height="18"/>
+    </resources>
+</document>

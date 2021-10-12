@@ -112,8 +112,6 @@ extension ZZFantasticGoodsController{
         
         return haowuLayout.rowHeight!
     }
-    
-    
 }
 
 //MARK: - collectionView数据源
@@ -144,20 +142,20 @@ extension ZZFantasticGoodsController {
                 return
             }
             if let response = responseObj{
-                self.headerDataArray = NSArray.modelArray(with: ZZGoodsHeaderModel.self, json: response)! as! [ZZGoodsHeaderModel]
+                self.headerDataArray = NSArray.yy_modelArray(with: ZZGoodsHeaderModel.self, json: response)! as! [ZZGoodsHeaderModel]
                 self.collectionView.reloadData()
             }
         }
         
         ZZAPPDotNetAPIClient.shared().get(fantasticGoodsRequest) { (responseObj, error) in
             if let _ = error {
-                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_header?.endRefreshing()
                 return
             }
             if let response = responseObj as? [[AnyHashable: Any]] {
                 let haoWuLayoutArray: NSMutableArray = NSMutableArray()
                 for goodsDict in response {
-                    if let fantasicGoodsModel = ZZFantasticGoodsModel.model(with: goodsDict) {
+                    if let fantasicGoodsModel = ZZFantasticGoodsModel.yy_model(with: goodsDict) {
                         let haowuLayout = ZZHaoWuLayout.init(fantasicGoodsModel: fantasicGoodsModel)
                         haoWuLayoutArray.add(haowuLayout)
                     }
@@ -167,7 +165,7 @@ extension ZZFantasticGoodsController {
                     self.tableView.reloadData()
                     self.fantasticGoodsRequest.offset = self.dataSource.count
                 }
-                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_header?.endRefreshing()
             }
         }
     }
@@ -177,13 +175,13 @@ extension ZZFantasticGoodsController {
         
         ZZAPPDotNetAPIClient.shared().get(fantasticGoodsRequest) { (responseObj, error) in
             if let _ = error {
-                self.tableView.mj_footer.endRefreshing()
+                self.tableView.mj_footer?.endRefreshing()
                 return
             }
             if let response = responseObj as? [[AnyHashable: Any]] {
                 let haoWuLayoutArray: NSMutableArray = NSMutableArray()
                 for goodsDict in response {
-                    if let fantasicGoodsModel = ZZFantasticGoodsModel.model(with: goodsDict) {
+                    if let fantasicGoodsModel = ZZFantasticGoodsModel.yy_model(with: goodsDict) {
                         let haowuLayout = ZZHaoWuLayout.init(fantasicGoodsModel: fantasicGoodsModel)
                         haoWuLayoutArray.add(haowuLayout)
                     }
@@ -192,10 +190,10 @@ extension ZZFantasticGoodsController {
                     let haoWuLayouts = haoWuLayoutArray.copy() as! [Any]
                     self.dataSource.addObjects(from: haoWuLayouts)
                     self.tableView.reloadData()
-                    self.tableView.mj_footer.endRefreshing()
+                    self.tableView.mj_footer?.endRefreshing()
                     self.fantasticGoodsRequest.offset = self.dataSource.count
                 } else {
-                    self.tableView.mj_footer.endRefreshingWithNoMoreData()
+                    self.tableView.mj_footer?.endRefreshingWithNoMoreData()
                 }
             }
         }

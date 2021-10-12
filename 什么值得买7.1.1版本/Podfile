@@ -16,39 +16,31 @@ target '什么值得买' do
   pod 'RxOptional'
   pod 'NSObject+Rx'
   pod 'Action'
+  
+  pod 'YYBBSDK', :path => '../CWSDK/'
 
   pod 'SwiftyJSON'
   pod 'SnapKit'
   pod 'IQKeyboardManagerSwift'
-  pod 'SwiftyJSON'
   pod 'PromiseKit/CoreLocation'
   pod 'Hero'
   
-  pod 'SDWebImage'
-  pod 'MBProgressHUD'
-  pod 'AFNetworking'
-  pod 'MJRefresh'
   pod 'MJExtension'
-  pod 'Masonry'
-  pod 'SDCycleScrollView'
+  pod 'MBProgressHUD'
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'ZYCornerRadius'
-  pod 'YYKit'
-  pod 'RongCloudIM/IMLib'
-  pod 'RongCloudIM/IMKit'
-  pod 'SVProgressHUD'
-  pod 'FDFullscreenPopGesture'
-  pod 'JSPatchPlatform'
-  pod 'DZNEmptyDataSet'
+
   pod 'CSStickyHeaderFlowLayout'
   pod 'WebViewJavascriptBridge'
   
   pod 'Bugly'
   pod 'SDiPhoneVersion'
   pod 'JPush'
-  pod 'IGListKit'
   
 #  pod 'SwipeTableView'
+#  pod 'RongCloudIM/IMLib'
+#  pod 'RongCloudIM/IMKit'
+
   # 主模块(必须)
   pod 'ShareSDK3'
   # Mob 公共库(必须) 如果同时集成SMSSDK iOS2.0:可看此注意事项：http://bbs.mob.com/thread-20051-1-1.html

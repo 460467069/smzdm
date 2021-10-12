@@ -1,0 +1,50 @@
+//
+//  PrefixHeader.pch
+//  什么值得买(5月12日)
+//
+//  Created by Wang_ruzhou on 16/5/12.
+//  Copyright © 2016年 Wang_ruzhou. All rights reserved.
+//
+
+#ifndef YYBBSDKPrefixHeader_pch
+#define YYBBSDKPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+/** 第三方头文件 */
+    #import <Masonry/Masonry.h>
+    #import <YYKit/YYKitMacro.h>
+    #import <YYKit/NSObject+YYModel.h>
+    #import <YYKit/NSString+YYAdd.h>
+    #import <YYKit/YYCGUtilities.h>
+    #import <SVProgressHUD/SVProgressHUD.h>
+    #import <MBProgressHUD/MBProgressHUD.h>
+    #import <SDWebImage/UIImageView+WebCache.h>
+/** 通用宏 */
+    #import "YYBBUtilsMacro.h"
+    #import "LxDBAnything.h"
+    #import "YYBBSDK.h"
+/** 枚举 */
+
+/** API */
+
+/** 分类头文件 */
+    #import "UIDevice+YYBBAdd.h"
+    #import "NSDictionary+YYBBAdd.h"
+    #import "NSArray+YYBBAdd.h"
+    #import "UIDevice+YYBBAdd.h"
+    #import "NSString+YYBBAdd.h"
+    #import "UIViewController+Jump.h"
+/** 网络请求头文件 */
+    #import "YYBBAPPDotNetAPIClient.h"
+
+#endif
+
+
+#endif /* YYBBSDKPrefixHeader_pch */

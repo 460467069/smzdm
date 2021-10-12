@@ -1,5 +1,5 @@
 //
-//  ZZBaseViewController.h
+//  YYBBBaseViewController.h
 //  什么值得买
 //
 //  Created by Wang_ruzhou on 16/9/9.
@@ -7,8 +7,8 @@
 //  (二级界面) 几个主界面的父控制器--->UIViewController
 
 #import <UIKit/UIKit.h>
-#import "ZZBaseViewController.h"
+#import "YYBBBaseViewController.h"
 
-@interface ZZSecondBaseViewController : ZZBaseViewController
+@interface ZZSecondBaseViewController : YYBBBaseViewController
 
 @end

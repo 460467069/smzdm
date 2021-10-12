@@ -7,6 +7,7 @@
 //  话题详情cell详细布局
 
 #import <Foundation/Foundation.h>
+#import <YYText/YYText.h>
 #import "ZZDetailTopicModel.h"
 
 #define kDetailTopicMarginX  15                    /**< 整个内容, 左右间距 */

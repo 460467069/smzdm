@@ -10,7 +10,6 @@
 #import "ZZTabBarViewController.h"
 #import "ZZUserAccount.h"
 #import <libkern/OSAtomic.h>
-#import <RongIMKit/RongIMKit.h>
 #import "ZZGlobalApperance.h"
 #import "ZZNetworkHandler.h"
 #import <WeiboSDK.h>
@@ -20,7 +19,7 @@
 #import <SDWebImage/UIView+WebCacheOperation.h>
 #import <IQKeyboardManagerSwift/IQKeyboardManagerSwift-Swift.h>
 #import <PromiseKit/PMKCoreLocation.h>
-
+//#import <RongIMKit/RongIMKit.h>
 
 @interface AppDelegate ()<WeiboSDKDelegate>
 
@@ -35,7 +34,7 @@
                                                              diskPath:nil];
     [NSURLCache setSharedURLCache:URLCache];
     // 向微博客户端程序注册第三方应用
-//    [WeiboSDK registerApp:kShareSinaWeiboKey];
+    //    [WeiboSDK registerApp:kShareSinaWeiboKey];
     [self SDKInit];
     //初始化融云
     [self configureRongYun];
@@ -48,8 +47,6 @@
     return YES;
 }
 
-- (void)test {
-}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     
@@ -66,6 +63,7 @@
 
 /** 初始化融云 */
 - (void)configureRongYun {
+#if 0
     [[RCIM sharedRCIM] initWithAppKey:@"pvxdm17jxjazr"];
     [[RCIM sharedRCIM] connectWithToken:@"tzKb9I9fsboKoVsC2rn/yy8nIw4YEFm9bQo6U/nEZBnKYvSfMlN988HcEIWtnyo3JLfnwco2cWYfLmrYxTxSPvHCblTYo0wq" success:^(NSString *userId) {
         NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
@@ -77,17 +75,16 @@
         //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
         NSLog(@"token错误");
     }];
+#endif
 }
 
-
-
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-
+    
     return [WeiboSDK handleOpenURL:url delegate:self];
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-
+    
     return [WeiboSDK handleOpenURL:url delegate:self];
 }
 

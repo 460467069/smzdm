@@ -8,7 +8,7 @@
 
 #import "ZZTabBarViewController.h"
 #import "ZZTabBarModel.h"
-#import "ZZNavigationController.h"
+#import "YYBBBaseNavigationController.h"
 
 @interface ZZTabBarViewController ()
 
@@ -21,7 +21,7 @@
     
     [[ZZTabBarModel tabBarModels] enumerateObjectsUsingBlock:^(ZZTabBarModel *  _Nonnull tabBarModel, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        ZZNavigationController *vc = [[UIStoryboard storyboardWithName:tabBarModel.nibName bundle:nil] instantiateInitialViewController];
+        YYBBBaseNavigationController *vc = [[UIStoryboard storyboardWithName:tabBarModel.nibName bundle:nil] instantiateInitialViewController];
         vc.tabBarItem.title = tabBarModel.title;
         vc.tabBarItem.image = [[UIImage imageNamed:tabBarModel.normalImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         vc.tabBarItem.selectedImage = [[UIImage imageNamed:tabBarModel.selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

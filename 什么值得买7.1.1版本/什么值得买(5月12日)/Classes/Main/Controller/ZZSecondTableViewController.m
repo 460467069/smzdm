@@ -49,12 +49,6 @@
     
 }
 
-
-- (void)loadData {}
-
-- (void)loadMoreData {}
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -113,6 +107,7 @@
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:self.style];
         tableView.top = kZZStatusH + kZZNavH;
+        tableView.height = kScreenHeight - tableView.top;
         tableView.backgroundColor = [UIColor whiteColor];
         tableView.dataSource = self;
         tableView.delegate = self;

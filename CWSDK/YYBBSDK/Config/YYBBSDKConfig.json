@@ -1,0 +1,23 @@
+{
+    "appSecret": "",
+    "appKey": "",
+    "orderWay": 1,
+    "appId": "",
+    "channelId": "melive-ios",
+    "headerDomainURL": "https://devgblw.ininin.com",
+    "baseURL": "",
+    "url":{
+        "afActivate":"user/af/activate",
+        "firebaseInitialize":"firebase/initialize"
+    },
+    "appsFlyerAppId":"",
+    "appsFlyerDevKey":"",
+    "iaps": [
+        "iap_14",
+        "iap_2",
+        "iap_12",
+        "iap_3",
+        "iap_4",
+        "iap_22",
+    ]
+}

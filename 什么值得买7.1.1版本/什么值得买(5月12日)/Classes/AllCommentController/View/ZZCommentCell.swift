@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YYKit
+import YYText
 
 
 class ZZCommentCell: UITableViewCell {
@@ -27,7 +27,7 @@ class ZZCommentCell: UITableViewCell {
         return separatorLine
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         initUI()
     }

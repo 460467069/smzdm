@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ZZDetailModel.h"
+#import <YYText/YYText.h>
 
 #define kDetailHeaderContentOffset 20     //文字内容偏移(分割线左间距)
 #define kTitleLineSpacing 15        //文字行间距
@@ -31,7 +32,7 @@
 
 - (instancetype)initWithHeaderDetailModel:(ZZDetailModel *)detailModel;
 //计算布局
-- (void)layout;
+//- (void)layout;
 @end
 
 

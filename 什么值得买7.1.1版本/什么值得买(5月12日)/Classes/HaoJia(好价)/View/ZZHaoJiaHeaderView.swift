@@ -28,7 +28,7 @@ import UIKit
             for (key1, littleBanner) in contentHeader.little_banner.enumerated() {
                 for (key2, imageView) in imageViews.enumerated() {
                     if key1 == key2 {
-                        imageView.setImageWith(URL.init(string: littleBanner.img), options: .showNetworkActivity)
+                        imageView.yy_setImage(with: URL.init(string: littleBanner.img), options: .showNetworkActivity)
                     }
                 }
             }

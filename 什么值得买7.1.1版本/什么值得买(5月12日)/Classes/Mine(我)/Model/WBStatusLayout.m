@@ -92,7 +92,7 @@
     //这里改成YYAnimatedImageView, 就能支持GIF /APNG/WebP动画了
     _imageView = [UIImageView new];
     _imageView.size = _size;
-    [_imageView setImageWithURL:_imageURL placeholder:nil];
+    [_imageView yy_setImageWithURL:_imageURL placeholder:nil];
     return _imageView;
 }
 

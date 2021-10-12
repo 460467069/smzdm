@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YYKit
+import YYText
 
 class ZZBaiCaiItemOne: UIView { //每日精选和白菜头条
     

@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ZZBaseRequest.h"
-
+#import <AFNetworking/AFNetworking.h>
+#import <Bugly/Bugly.h>
 
 @import AFNetworking;
 

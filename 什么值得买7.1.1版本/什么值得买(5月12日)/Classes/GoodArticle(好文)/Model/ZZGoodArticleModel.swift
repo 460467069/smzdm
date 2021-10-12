@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YYKit
+import YYText
 
 @objcMembers class ZZGoodArticleListRequest: ZZBaseRequest {
     var refresh_time: Int

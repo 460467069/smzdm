@@ -7,6 +7,7 @@
 //
 
 #import "ZZCyclePicHelper.h"
+#import <YYWebImage/YYWebImage.h>
 
 @implementation ZZCyclePicHelper
 

@@ -17,7 +17,6 @@
 		A90D05D31F79EDF0008B9B0B /* ZZHomePageCellHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90D05D21F79EDF0008B9B0B /* ZZHomePageCellHeaderView.xib */; };
 		A90DBF141DBF740900D857A9 /* UINavigationItem+Margin.m in Sources */ = {isa = PBXBuildFile; fileRef = A90DBF131DBF740900D857A9 /* UINavigationItem+Margin.m */; };
 		A90E6E3E1D39406B00C213C5 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A90E6E3D1D39406B00C213C5 /* YYFPSLabel.m */; };
-		A91655661DC1EB2400A713A4 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A91655651DC1EB2400A713A4 /* UINavigationBar+Awesome.m */; };
 		A91A834E1D420A87008D229E /* weibo_0.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83461D420A87008D229E /* weibo_0.json */; };
 		A91A834F1D420A87008D229E /* weibo_1.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83471D420A87008D229E /* weibo_1.json */; };
 		A91A83501D420A87008D229E /* weibo_2.json in Resources */ = {isa = PBXBuildFile; fileRef = A91A83481D420A87008D229E /* weibo_2.json */; };
@@ -111,6 +110,7 @@
 		A947CD1A1DE02FCC0047B58F /* ZZTagLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CD041DE02FCC0047B58F /* ZZTagLabel.m */; };
 		A947CD1B1DE02FCC0047B58F /* ZZTuiGuangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A947CD061DE02FCC0047B58F /* ZZTuiGuangCell.m */; };
 		A947CD1C1DE02FCC0047B58F /* ZZTuiGuangCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A947CD071DE02FCC0047B58F /* ZZTuiGuangCell.xib */; };
+		A9485894218FE14600F4C602 /* ZZHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9485893218FE14600F4C602 /* ZZHomeModel.m */; };
 		A94AC31B1DED30E3009D077A /* ZZBaiCaiNewestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94AC3191DED30E3009D077A /* ZZBaiCaiNewestCell.swift */; };
 		A94AC31C1DED30E3009D077A /* ZZBaiCaiNewestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94AC31A1DED30E3009D077A /* ZZBaiCaiNewestCell.xib */; };
 		A953BB651EA8F91F0035553D /* NSString+ZZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A953BB641EA8F91F0035553D /* NSString+ZZAdd.m */; };
@@ -133,7 +133,6 @@
 		A980A3F41CE40F76006E0037 /* ZZMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A3F31CE40F76006E0037 /* ZZMineViewController.m */; };
 		A980A3FE1CE41250006E0037 /* UITabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = A980A3FD1CE41250006E0037 /* UITabBar.plist */; };
 		A980A4001CE41286006E0037 /* ZDMHome.plist in Resources */ = {isa = PBXBuildFile; fileRef = A980A3FF1CE41286006E0037 /* ZDMHome.plist */; };
-		A980A4081CE412E8006E0037 /* ZZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A4031CE412E8006E0037 /* ZZNavigationController.m */; };
 		A980A4091CE412E8006E0037 /* ZZTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A4051CE412E8006E0037 /* ZZTabBarViewController.m */; };
 		A980A40C1CE4130A006E0037 /* ZZTabBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A40B1CE4130A006E0037 /* ZZTabBarModel.m */; };
 		A980A40F1CE41827006E0037 /* ZZFirstBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A980A40E1CE41827006E0037 /* ZZFirstBaseViewController.m */; };
@@ -198,7 +197,7 @@
 		A9B783551D58FB5F003C464D /* ZZDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B783541D58FB5F003C464D /* ZZDIYHeader.m */; };
 		A9B783581D58FB90003C464D /* ZZCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B783571D58FB90003C464D /* ZZCircleView.m */; };
 		A9B7835B1D59019D003C464D /* ZZRefreshTip.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7835A1D59019D003C464D /* ZZRefreshTip.m */; };
-		A9B7835D1D5901DF003C464D /* RefreshTips.geojson in Resources */ = {isa = PBXBuildFile; fileRef = A9B7835C1D5901DF003C464D /* RefreshTips.geojson */; };
+		A9B7835D1D5901DF003C464D /* SMZDMRefreshTips.geojson in Resources */ = {isa = PBXBuildFile; fileRef = A9B7835C1D5901DF003C464D /* SMZDMRefreshTips.geojson */; };
 		A9C08ABC1E7783E900099C28 /* ZZSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C08ABB1E7783E900099C28 /* ZZSearchModel.swift */; };
 		A9C08AC11E77858A00099C28 /* ZZDetailTopicContentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C08ABE1E77858A00099C28 /* ZZDetailTopicContentLayout.m */; };
 		A9C08AC21E77858A00099C28 /* ZZDetailTopicHeaderLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C08AC01E77858A00099C28 /* ZZDetailTopicHeaderLayout.m */; };
@@ -206,9 +205,7 @@
 		A9C08AC81E7785C900099C28 /* ZZHomeFirstLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C08AC61E7785C900099C28 /* ZZHomeFirstLayout.m */; };
 		A9C08ACA1E7790D600099C28 /* ZZSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C08AC91E7790D600099C28 /* ZZSearchItem.swift */; };
 		A9C108B81DD15C6D00068A7D /* ZZCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C108B71DD15C6D00068A7D /* ZZCommentCell.swift */; };
-		A9C356A11D2275BC006EE7EC /* ZZMineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C356A01D2275BC006EE7EC /* ZZMineViewController.storyboard */; };
 		A9C631F11F5669B50033D0B6 /* ZZGoodArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C631F01F5669B50033D0B6 /* ZZGoodArticleViewController.swift */; };
-		A9C631F51F566C8A0033D0B6 /* ZZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C631F41F566C8A0033D0B6 /* ZZBaseViewController.m */; };
 		A9C8C4E61D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8C4E51D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift */; };
 		A9C8C4E81D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8C4E71D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift */; };
 		A9C8C4EA1D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C8C4E91D8F8DD700B8BFA7 /* ZZFantasticGoodsController.storyboard */; };
@@ -239,7 +236,7 @@
 		A9F97BC01DE521E200FB683F /* ZZBaiCaiBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F97BBF1DE521E200FB683F /* ZZBaiCaiBannerView.swift */; };
 		A9F97BC21DE521EB00FB683F /* ZZBaiCaiBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F97BC11DE521EB00FB683F /* ZZBaiCaiBannerView.xib */; };
 		A9FC17AC1D826BB800F16D1E /* ZZSecondBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FC17AB1D826BB800F16D1E /* ZZSecondBaseViewController.m */; };
-		AF574677416DCD7E4A23E470 /* Pods______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC44063077F3A4819D95752 /* Pods______.framework */; };
+		EA7F5BEC2715666E0035FBE8 /* ZZMineViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA7F5BEB2715666E0035FBE8 /* ZZMineViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -256,13 +253,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		56D9AF9B6A7CF1CDEBC58BB2 /* Pods______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods______.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C690551DCF21E6003D84A7 /* ZZCommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentModel.swift; sourceTree = "<group>"; };
 		86EA74F61DCF19A100CD9261 /* ZZAllCommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAllCommentController.swift; sourceTree = "<group>"; };
-		A0A221ED76D299EA45C20125 /* Pods-什么值得买.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.release.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.release.xcconfig"; sourceTree = "<group>"; };
 		A901FCE61E057D1500B973E7 /* ZZPopPresentAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPopPresentAnimation.swift; sourceTree = "<group>"; };
 		A901FCE81E057D3400B973E7 /* ZZPopDimissAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPopDimissAnimation.swift; sourceTree = "<group>"; };
 		A90514DB20BBEA06003851CF /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A90514DD20BBEA25003851CF /* Pods_什么值得买.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = "Pods_什么值得买.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90618E41DBF064A002239CF /* ZZQRcodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZQRcodeController.swift; sourceTree = "<group>"; };
 		A90B12DF1DAA38990051B237 /* ZZGoodsHeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZGoodsHeaderModel.swift; sourceTree = "<group>"; };
 		A90D05D01F79EDE9008B9B0B /* ZZHomePageCellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZHomePageCellHeaderView.swift; sourceTree = "<group>"; };
@@ -272,8 +268,6 @@
 		A90E6E3C1D39406B00C213C5 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		A90E6E3D1D39406B00C213C5 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		A915138F1E640DFF008F23C8 /* ZDM_RequestURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDM_RequestURL.h; sourceTree = "<group>"; };
-		A91655641DC1EB2400A713A4 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
-		A91655651DC1EB2400A713A4 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		A91A83461D420A87008D229E /* weibo_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_0.json; sourceTree = "<group>"; };
 		A91A83471D420A87008D229E /* weibo_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_1.json; sourceTree = "<group>"; };
 		A91A83481D420A87008D229E /* weibo_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weibo_2.json; sourceTree = "<group>"; };
@@ -422,6 +416,8 @@
 		A947CD051DE02FCC0047B58F /* ZZTuiGuangCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTuiGuangCell.h; sourceTree = "<group>"; };
 		A947CD061DE02FCC0047B58F /* ZZTuiGuangCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZTuiGuangCell.m; sourceTree = "<group>"; };
 		A947CD071DE02FCC0047B58F /* ZZTuiGuangCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZTuiGuangCell.xib; sourceTree = "<group>"; };
+		A9485892218FE14600F4C602 /* ZZHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZHomeModel.h; sourceTree = "<group>"; };
+		A9485893218FE14600F4C602 /* ZZHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZHomeModel.m; sourceTree = "<group>"; };
 		A94AC3191DED30E3009D077A /* ZZBaiCaiNewestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZBaiCaiNewestCell.swift; sourceTree = "<group>"; };
 		A94AC31A1DED30E3009D077A /* ZZBaiCaiNewestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZBaiCaiNewestCell.xib; sourceTree = "<group>"; };
 		A953BB631EA8F91F0035553D /* NSString+ZZAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZZAdd.h"; sourceTree = "<group>"; };
@@ -455,8 +451,6 @@
 		A980A3F31CE40F76006E0037 /* ZZMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMineViewController.m; sourceTree = "<group>"; };
 		A980A3FD1CE41250006E0037 /* UITabBar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UITabBar.plist; sourceTree = "<group>"; };
 		A980A3FF1CE41286006E0037 /* ZDMHome.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ZDMHome.plist; sourceTree = "<group>"; };
-		A980A4021CE412E8006E0037 /* ZZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNavigationController.h; sourceTree = "<group>"; };
-		A980A4031CE412E8006E0037 /* ZZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNavigationController.m; sourceTree = "<group>"; };
 		A980A4041CE412E8006E0037 /* ZZTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTabBarViewController.h; sourceTree = "<group>"; };
 		A980A4051CE412E8006E0037 /* ZZTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZTabBarViewController.m; sourceTree = "<group>"; };
 		A980A40A1CE4130A006E0037 /* ZZTabBarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZTabBarModel.h; sourceTree = "<group>"; };
@@ -551,7 +545,7 @@
 		A9B783571D58FB90003C464D /* ZZCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCircleView.m; sourceTree = "<group>"; };
 		A9B783591D59019D003C464D /* ZZRefreshTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZRefreshTip.h; sourceTree = "<group>"; };
 		A9B7835A1D59019D003C464D /* ZZRefreshTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZRefreshTip.m; sourceTree = "<group>"; };
-		A9B7835C1D5901DF003C464D /* RefreshTips.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RefreshTips.geojson; sourceTree = "<group>"; };
+		A9B7835C1D5901DF003C464D /* SMZDMRefreshTips.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SMZDMRefreshTips.geojson; sourceTree = "<group>"; };
 		A9C08ABB1E7783E900099C28 /* ZZSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZSearchModel.swift; sourceTree = "<group>"; };
 		A9C08ABD1E77858A00099C28 /* ZZDetailTopicContentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDetailTopicContentLayout.h; sourceTree = "<group>"; };
 		A9C08ABE1E77858A00099C28 /* ZZDetailTopicContentLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDetailTopicContentLayout.m; sourceTree = "<group>"; };
@@ -563,10 +557,7 @@
 		A9C08AC61E7785C900099C28 /* ZZHomeFirstLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZHomeFirstLayout.m; sourceTree = "<group>"; };
 		A9C08AC91E7790D600099C28 /* ZZSearchItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZSearchItem.swift; sourceTree = "<group>"; };
 		A9C108B71DD15C6D00068A7D /* ZZCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCommentCell.swift; sourceTree = "<group>"; };
-		A9C356A01D2275BC006EE7EC /* ZZMineViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZMineViewController.storyboard; sourceTree = "<group>"; };
 		A9C631F01F5669B50033D0B6 /* ZZGoodArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZGoodArticleViewController.swift; sourceTree = "<group>"; };
-		A9C631F31F566C8A0033D0B6 /* ZZBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBaseViewController.h; sourceTree = "<group>"; };
-		A9C631F41F566C8A0033D0B6 /* ZZBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBaseViewController.m; sourceTree = "<group>"; };
 		A9C8C4E41D8F58EB00B8BFA7 /* 什么值得买-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "什么值得买-Bridging-Header.h"; path = "Classes/FantasyGoods(好物)/Model/什么值得买-Bridging-Header.h"; sourceTree = "<group>"; };
 		A9C8C4E51D8F58EB00B8BFA7 /* ZZFantasticGoodsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZFantasticGoodsModel.swift; sourceTree = "<group>"; };
 		A9C8C4E71D8F8DBD00B8BFA7 /* ZZFantasticGoodsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZFantasticGoodsController.swift; sourceTree = "<group>"; };
@@ -611,8 +602,9 @@
 		A9F97BC11DE521EB00FB683F /* ZZBaiCaiBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZZBaiCaiBannerView.xib; sourceTree = "<group>"; };
 		A9FC17AA1D826BB800F16D1E /* ZZSecondBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSecondBaseViewController.h; sourceTree = "<group>"; };
 		A9FC17AB1D826BB800F16D1E /* ZZSecondBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSecondBaseViewController.m; sourceTree = "<group>"; };
-		F1B762794EBD4E6C806C9BD4 /* Pods-什么值得买.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.debug.xcconfig"; path = "Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买.debug.xcconfig"; sourceTree = "<group>"; };
-		FAC44063077F3A4819D95752 /* Pods______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods______.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF9BFAA71342CF9DFEEB30EA /* Pods-什么值得买.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.release.xcconfig"; path = "Target Support Files/Pods-什么值得买/Pods-什么值得买.release.xcconfig"; sourceTree = "<group>"; };
+		EA7F5BEB2715666E0035FBE8 /* ZZMineViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ZZMineViewController.storyboard; sourceTree = "<group>"; };
+		EE793EE4580A63022CBE6502 /* Pods-什么值得买.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-什么值得买.debug.xcconfig"; path = "Target Support Files/Pods-什么值得买/Pods-什么值得买.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -622,20 +614,19 @@
 			files = (
 				A9E5CC0E1DF982F900C47221 /* AVFoundation.framework in Frameworks */,
 				A9F387301DEC024D009E77C4 /* libsqlite3.tbd in Frameworks */,
-				AF574677416DCD7E4A23E470 /* Pods______.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		76008503771AF819ECCDE4DE /* Pods */ = {
+		10E6C10EA742592E13D98080 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F1B762794EBD4E6C806C9BD4 /* Pods-什么值得买.debug.xcconfig */,
-				A0A221ED76D299EA45C20125 /* Pods-什么值得买.release.xcconfig */,
+				EE793EE4580A63022CBE6502 /* Pods-什么值得买.debug.xcconfig */,
+				DF9BFAA71342CF9DFEEB30EA /* Pods-什么值得买.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		86EA74F51DCF19A100CD9261 /* Controller */ = {
@@ -840,6 +831,8 @@
 				A947CC9E1DE02FA30047B58F /* ZZHomeFirstModel.m */,
 				A947CC9F1DE02FA30047B58F /* ZZHomeHeadModel.h */,
 				A947CCA01DE02FA30047B58F /* ZZHomeHeadModel.m */,
+				A9485892218FE14600F4C602 /* ZZHomeModel.h */,
+				A9485893218FE14600F4C602 /* ZZHomeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1061,12 +1054,8 @@
 		A980A4011CE412E8006E0037 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A980A4021CE412E8006E0037 /* ZZNavigationController.h */,
-				A980A4031CE412E8006E0037 /* ZZNavigationController.m */,
 				A980A4041CE412E8006E0037 /* ZZTabBarViewController.h */,
 				A980A4051CE412E8006E0037 /* ZZTabBarViewController.m */,
-				A9C631F31F566C8A0033D0B6 /* ZZBaseViewController.h */,
-				A9C631F41F566C8A0033D0B6 /* ZZBaseViewController.m */,
 				A980A40D1CE41827006E0037 /* ZZFirstBaseViewController.h */,
 				A980A40E1CE41827006E0037 /* ZZFirstBaseViewController.m */,
 				A91E0BE01D5D9640007BD117 /* ZZFirstTableViewController.h */,
@@ -1090,7 +1079,7 @@
 				A980A40B1CE4130A006E0037 /* ZZTabBarModel.m */,
 				A9B783591D59019D003C464D /* ZZRefreshTip.h */,
 				A9B7835A1D59019D003C464D /* ZZRefreshTip.m */,
-				A9B7835C1D5901DF003C464D /* RefreshTips.geojson */,
+				A9B7835C1D5901DF003C464D /* SMZDMRefreshTips.geojson */,
 				A9A512031D77B07E00E41407 /* ZZChannelID.h */,
 				A9A512041D77B07E00E41407 /* ZZChannelID.m */,
 				A91D9B4C1D855E090073DEB7 /* ZZTextLinePositionModifier.h */,
@@ -1231,8 +1220,6 @@
 		A9AC1A2F1CEC007500F56C42 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				A91655641DC1EB2400A713A4 /* UINavigationBar+Awesome.h */,
-				A91655651DC1EB2400A713A4 /* UINavigationBar+Awesome.m */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -1373,8 +1360,8 @@
 				A9D9D2151CE40B3E00A83101 /* 什么值得买(5月12日) */,
 				A99B88021DEEB34A007A6640 /* ZDM_Today */,
 				A9D9D2141CE40B3E00A83101 /* Products */,
-				76008503771AF819ECCDE4DE /* Pods */,
 				BBF84AC801C23E3FA5D0F8BD /* Frameworks */,
+				10E6C10EA742592E13D98080 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1567,7 +1554,7 @@
 			children = (
 				A980A3F21CE40F76006E0037 /* ZZMineViewController.h */,
 				A980A3F31CE40F76006E0037 /* ZZMineViewController.m */,
-				A9C356A01D2275BC006EE7EC /* ZZMineViewController.storyboard */,
+				EA7F5BEB2715666E0035FBE8 /* ZZMineViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1662,12 +1649,11 @@
 		BBF84AC801C23E3FA5D0F8BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A90514DD20BBEA25003851CF /* Pods_什么值得买.framework */,
 				A90514DB20BBEA06003851CF /* AFNetworking.framework */,
 				A9E5CC0D1DF982F900C47221 /* AVFoundation.framework */,
 				A9F3872F1DEC024D009E77C4 /* libsqlite3.tbd */,
 				A99B88001DEEB34A007A6640 /* NotificationCenter.framework */,
-				FAC44063077F3A4819D95752 /* Pods______.framework */,
+				56D9AF9B6A7CF1CDEBC58BB2 /* Pods______.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1679,13 +1665,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9D9D22A1CE40B3E00A83101 /* Build configuration list for PBXNativeTarget "什么值得买" */;
 			buildPhases = (
-				82010F41430B1F22F3547B03 /* [CP] Check Pods Manifest.lock */,
+				D0E3E5912B9969DC91EB39EB /* [CP] Check Pods Manifest.lock */,
 				A9D9D20F1CE40B3E00A83101 /* Sources */,
 				A9D9D2101CE40B3E00A83101 /* Frameworks */,
 				A9D9D2111CE40B3E00A83101 /* Resources */,
-				5D974218DADD9E7F965A44FE /* [CP] Embed Pods Frameworks */,
-				FCD7C8BBA938F9CB3A721E1B /* [CP] Copy Pods Resources */,
 				A99B880F1DEEB34A007A6640 /* Embed App Extensions */,
+				95B3D443348BDC43CCCF69B7 /* [CP] Embed Pods Frameworks */,
+				A90ECB22ABBC9612D08DC06F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1709,9 +1695,9 @@
 				TargetAttributes = {
 					A9D9D2121CE40B3E00A83101 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = MS8YPNK5H3;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = TVR7N2D594;
+						LastSwiftMigration = 1020;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1728,6 +1714,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1755,20 +1742,20 @@
 				A9F97BC21DE521EB00FB683F /* ZZBaiCaiBannerView.xib in Resources */,
 				A929E30C1F627D2300756E42 /* ZZType30Cell.xib in Resources */,
 				A9AF3E3D1DE464FD0055F522 /* ZZDouYuTitileView.xib in Resources */,
-				A9B7835D1D5901DF003C464D /* RefreshTips.geojson in Resources */,
+				A9B7835D1D5901DF003C464D /* SMZDMRefreshTips.geojson in Resources */,
 				A91A834E1D420A87008D229E /* weibo_0.json in Resources */,
 				A91A83541D420A87008D229E /* weibo_6.json in Resources */,
 				A99D0B061F775A4300BE5BE1 /* ZZPromotionType9Cell.xib in Resources */,
 				A91F3DB91E1A781C0047DCDF /* ZZMiaoShaCell.xib in Resources */,
 				A99DAD1E1F5E4CDA005E4ADC /* ZZType41Cell.xib in Resources */,
 				A9D9D2231CE40B3E00A83101 /* Assets.xcassets in Resources */,
-				A9C356A11D2275BC006EE7EC /* ZZMineViewController.storyboard in Resources */,
 				A93DE7BB1DE14D5B004C8332 /* JumpToNext.plist in Resources */,
 				A99C76881F82F91F0077CBCF /* ZZADCollectionViewCell.xib in Resources */,
 				A9A512021D775A5D00E41407 /* ZZCHannelID.plist in Resources */,
 				A9ACF0E11F72812B0004AB2E /* ZZPromotionType9SubCell.xib in Resources */,
 				A9262A801D76B35B0037B1CF /* ZZJingXuanViewController.storyboard in Resources */,
 				A99709CD1F72494B0091EF22 /* ZZPromotionType6Cell.xib in Resources */,
+				EA7F5BEC2715666E0035FBE8 /* ZZMineViewController.storyboard in Resources */,
 				A95FEAD41E07D677003DFEA0 /* ZZShareCollectionViewCell.xib in Resources */,
 				A99C54671DF544A600AAFC8D /* Share.plist in Resources */,
 				A947CD1C1DE02FCC0047B58F /* ZZTuiGuangCell.xib in Resources */,
@@ -1802,125 +1789,188 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5D974218DADD9E7F965A44FE /* [CP] Embed Pods Frameworks */ = {
+		95B3D443348BDC43CCCF69B7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-什么值得买/Pods-什么值得买-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
+				"${BUILT_PRODUCTS_DIR}/Adjust/Adjust.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CSStickyHeaderFlowLayout/CSStickyHeaderFlowLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/DBPrivacyHelper/DBPrivacyHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/HBDNavigationBar/HBDNavigationBar.framework",
+				"${BUILT_PRODUCTS_DIR}/HappyDNS/HappyDNS.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
+				"${BUILT_PRODUCTS_DIR}/IQDropDownTextField/IQDropDownTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/JSPatch/JSPatch.framework",
+				"${BUILT_PRODUCTS_DIR}/JLPermissions/JLPermissions.framework",
+				"${BUILT_PRODUCTS_DIR}/JXCategoryView/JXCategoryView.framework",
+				"${BUILT_PRODUCTS_DIR}/JXPagingView/JXPagingView.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MFSCache/MFSCache.framework",
+				"${BUILT_PRODUCTS_DIR}/MFSIdentifier/MFSIdentifier.framework",
+				"${BUILT_PRODUCTS_DIR}/MFSJSONEntity/MFSJSONEntity.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageThrottle/MessageThrottle.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Qiniu/Qiniu.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SDiPhoneVersion/SDiPhoneVersion.framework",
+				"${BUILT_PRODUCTS_DIR}/SHSPhoneComponent/SHSPhoneComponent.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
+				"${BUILT_PRODUCTS_DIR}/WHC_ModelSqliteKit/WHC_ModelSqliteKit.framework",
 				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
-				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YCShadowView/YCShadowView.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
+				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/ZYCornerRadius/ZYCornerRadius.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Adjust.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSStickyHeaderFlowLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DBPrivacyHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HBDNavigationBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HappyDNS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQDropDownTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSPatch.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JLPermissions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXCategoryView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXPagingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSIdentifier.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MFSJSONEntity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageThrottle.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Qiniu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDiPhoneVersion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SHSPhoneComponent.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WHC_ModelSqliteKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YCShadowView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZYCornerRadius.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-什么值得买/Pods-什么值得买-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		82010F41430B1F22F3547B03 /* [CP] Check Pods Manifest.lock */ = {
+		A90ECB22ABBC9612D08DC06F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-什么值得买/Pods-什么值得买-resources.sh",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
+				"${PODS_ROOT}/../../CWSDK/YYBBSDK/Assets/app_rigntArrow@2x.png",
+				"${PODS_ROOT}/../../CWSDK/YYBBSDK/Assets/app_rigntArrow@3x.png",
+				"${PODS_ROOT}/../../CWSDK/YYBBSDK/Assets/Localizable.strings",
+				"${PODS_ROOT}/../../CWSDK/YYBBSDK/Assets/RefreshTips.geojson",
+				"${BUILT_PRODUCTS_DIR}/YYBBSDK/YYBBSDK.framework/YYBBEnvironmentSwitchController.storyboardc",
+				"${PODS_ROOT}/../../CWSDK/YYBBSDK/Config/YYBBSDKConfig.json",
+				"${PODS_ROOT}/../../CWSDK/YYBBSDK/Required/JXBWebKit/JSResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDKUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app_rigntArrow@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app_rigntArrow@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Localizable.strings",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RefreshTips.geojson",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YYBBEnvironmentSwitchController.storyboardc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YYBBSDKConfig.json",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JSResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-什么值得买/Pods-什么值得买-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0E3E5912B9969DC91EB39EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-什么值得买-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FCD7C8BBA938F9CB3A721E1B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买-resources.sh",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
-				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
-				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
-				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
-				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-什么值得买/Pods-什么值得买-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1948,7 +1998,6 @@
 				A9A746F51DE2EBC200EFB62F /* ZZSecondCollectionViewController.m in Sources */,
 				A9A0BBE820BD6CA500987F48 /* NetworkResponse.swift in Sources */,
 				A9E440AF1DD078B7005D17DB /* ZZAllCommentLayout.swift in Sources */,
-				A9C631F51F566C8A0033D0B6 /* ZZBaseViewController.m in Sources */,
 				A9B2ACA11DDB6EDD00D8F296 /* ZZKeyboardToolBar.m in Sources */,
 				A947CCC71DE02FA30047B58F /* ZZLittleBannerLayout.m in Sources */,
 				A947CCD91DE02FA30047B58F /* ZZDetailZiXunBottomBar.m in Sources */,
@@ -1973,7 +2022,6 @@
 				A947CD0E1DE02FCC0047B58F /* ZZContentHeader.m in Sources */,
 				A947CCC11DE02FA30047B58F /* ZZDiscoveryViewController.m in Sources */,
 				A947CD1A1DE02FCC0047B58F /* ZZTagLabel.m in Sources */,
-				A91655661DC1EB2400A713A4 /* UINavigationBar+Awesome.m in Sources */,
 				A99709CC1F72494B0091EF22 /* ZZPromotionType6Cell.swift in Sources */,
 				A9262A851D76B7180037B1CF /* ZZJingXuanModel.m in Sources */,
 				A9A03FD81D1A69B100675FA9 /* ZZUserAccount.m in Sources */,
@@ -1994,7 +2042,6 @@
 				A9F344BF1E60233E00D835E7 /* ZZBaseRequest.m in Sources */,
 				A93698491DC7A9A000D4B643 /* AppDelegate+SDKInit.m in Sources */,
 				A93B6A7C1D6169780001F777 /* ZZDIYBackFooter.m in Sources */,
-				A980A4081CE412E8006E0037 /* ZZNavigationController.m in Sources */,
 				A947CD111DE02FCC0047B58F /* ZZHomeChannel.m in Sources */,
 				A9A0BBF120BD6D0100987F48 /* ViewModel.swift in Sources */,
 				A927160B1D44571B006EEECA /* ZZGlobalApperance.m in Sources */,
@@ -2066,6 +2113,7 @@
 				A99C76841F82F8900077CBCF /* ZZAdSectionController.swift in Sources */,
 				A95B99871F6242EA00B4DEBE /* ZZChoicenessListSectionController.swift in Sources */,
 				A91C4E631E6D494100C307F3 /* NSObject+ZZAdd.m in Sources */,
+				A9485894218FE14600F4C602 /* ZZHomeModel.m in Sources */,
 				A91F3DAE1E1A73160047DCDF /* ZZHomeCell.m in Sources */,
 				A9D9D2181CE40B3E00A83101 /* main.m in Sources */,
 				A947CCCC1DE02FA30047B58F /* ZZDetailTopicHeaderModel.m in Sources */,
@@ -2218,55 +2266,57 @@
 		};
 		A9D9D22B1CE40B3E00A83101 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1B762794EBD4E6C806C9BD4 /* Pods-什么值得买.debug.xcconfig */;
+			baseConfigurationReference = EE793EE4580A63022CBE6502 /* Pods-什么值得买.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "什么值得买/什么值得买.entitlements";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = MS8YPNK5H3;
+				DEVELOPMENT_TEAM = TVR7N2D594;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.join51.juhuixia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youduwen.www;
 				PRODUCT_NAME = "什么值得买";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.youduwen.www";
 				SWIFT_OBJC_BRIDGING_HEADER = "什么值得买(5月12日)/Classes/FantasyGoods(好物)/Model/什么值得买-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A9D9D22C1CE40B3E00A83101 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0A221ED76D299EA45C20125 /* Pods-什么值得买.release.xcconfig */;
+			baseConfigurationReference = DF9BFAA71342CF9DFEEB30EA /* Pods-什么值得买.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "什么值得买/什么值得买.entitlements";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = MS8YPNK5H3;
+				DEVELOPMENT_TEAM = TVR7N2D594;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/什么值得买(5月12日)/PrefixHeader.pch";
 				INFOPLIST_FILE = "什么值得买(5月12日)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.join51.juhuixia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youduwen.www;
 				PRODUCT_NAME = "什么值得买";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.youduwen.www";
 				SWIFT_OBJC_BRIDGING_HEADER = "什么值得买(5月12日)/Classes/FantasyGoods(好物)/Model/什么值得买-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

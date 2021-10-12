@@ -84,7 +84,7 @@
         [text appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
     }
     
-    text.lineSpacing = kTitleLineSpacing;
+    text.yy_lineSpacing = kTitleLineSpacing;
     
     YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth, HUGE) insets:UIEdgeInsetsMake(kDetailContentOffset, kDetailContentOffset, 0, kDetailContentOffset)];
     

@@ -7,7 +7,7 @@
 //
 
 #import "YYTextExampleHelper.h"
-#import "YYKit.h"
+#import <YYText/YYText.h>
 
 static BOOL DebugEnabled = NO;
 

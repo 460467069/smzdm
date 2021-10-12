@@ -26,9 +26,10 @@ class ZZBasecollectionViewController: ZZFirstBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        _initUI()
     }
     
-    override func initUI() {
+    func _initUI() {
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()

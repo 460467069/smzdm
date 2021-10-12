@@ -48,7 +48,7 @@
     
     [self configurePublicParameters:parameters];
     
-    return [self GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [self GET:URLString parameters:parameters headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         LxDBAnyVar(task.response.URL.absoluteString);
         if ([responseObject[@"error_code"] isEqualToString:@"0"]) {
             completionBlock(responseObject[@"data"], nil);
@@ -63,7 +63,7 @@
 }
 
 - (NSURLSessionDataTask *)GET:(ZZBaseRequest *)request completionBlock:(HttpCompletionBlcok)completionBlock {
-    return [self GET:request.urlStr parameters:[request mj_keyValuesWithIgnoredKeys:@[@"urlStr"]] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [self GET:request.urlStr parameters:[request mj_keyValuesWithIgnoredKeys:@[@"urlStr"]] headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         LxDBAnyVar(task.response.URL.absoluteString);
         if ([responseObject[@"error_code"] isEqualToString:@"0"]) {
             completionBlock(responseObject[@"data"], nil);
@@ -85,7 +85,7 @@
     securityPolicy.validatesDomainName = NO;
     manager.securityPolicy = securityPolicy;
     [self configurePublicParameters:parameters];
-    return [manager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
+    return [manager GET:URLString parameters:parameters headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
         LxDBAnyVar(task.response.URL.absoluteString);
         if ([responseObject[@"error_code"] isEqualToString:@"0"]) {
             completionBlock(responseObject[@"data"], nil);

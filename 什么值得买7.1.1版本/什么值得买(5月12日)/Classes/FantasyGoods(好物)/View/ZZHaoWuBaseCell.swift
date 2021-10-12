@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YYKit
+import YYText
 
 @objc protocol ZZHaoWuItemDelegate: NSObjectProtocol{
     @objc optional func haoWuItemDidClick(in haoWuCell: ZZHaoWuBaseCell, subItemModel: ZZGoodsSubItemModel)
@@ -49,7 +49,7 @@ class ZZHaoWuBaseCell: UITableViewCell {
         return scrollView
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?){
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)

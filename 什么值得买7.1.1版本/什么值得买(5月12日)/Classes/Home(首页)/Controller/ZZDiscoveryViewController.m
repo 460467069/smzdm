@@ -82,7 +82,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
             NSMutableArray *temArray = [NSMutableArray array];
             
             [dataArray enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull dict, NSUInteger idx, BOOL * _Nonnull stop) {
-                ZZHomeFirstModel *firstModel = [ZZHomeFirstModel modelWithDictionary:dict];
+                ZZHomeFirstModel *firstModel = [ZZHomeFirstModel yy_modelWithDictionary:dict];
                 ZZHomeFirstLayout *firstLayout = nil;
                 if (idx == dataArray.count - 1) {
                     firstLayout = [[ZZHomeFirstLayout alloc] initWithFirstModel:firstModel isLastOne:YES];
@@ -112,7 +112,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
             [self.tableView.mj_header endRefreshing];
             return;
         }
-        NSArray *temArray = [NSArray modelArrayWithClass:[ZZWorthyArticle class] json:dataArray];
+        NSArray *temArray = [NSArray yy_modelArrayWithClass:[ZZWorthyArticle class] json:dataArray];
         self.listArrayM = [NSMutableArray arrayWithArray:temArray];
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
@@ -135,7 +135,7 @@ static NSString * const kReuseIdentiHomeListCell = @"ZZListCell";
             return;
         }
         
-        NSArray *temArray = [NSArray modelArrayWithClass:[ZZWorthyArticle class] json:dataArray];
+        NSArray *temArray = [NSArray yy_modelArrayWithClass:[ZZWorthyArticle class] json:dataArray];
         if (dataArray.count == 0) {
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
             return;

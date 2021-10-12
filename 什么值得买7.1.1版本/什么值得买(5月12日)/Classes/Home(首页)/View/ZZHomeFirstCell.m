@@ -8,6 +8,7 @@
 
 #import "ZZHomeFirstCell.h"
 #import "ZZCyclePicHelper.h"
+#import <YYWebImage/CALayer+YYWebImage.h>
 
 @interface ZZHomeFirstCell ()<SDCycleScrollViewDelegate, ZZFourPicViewDelegate>
 
@@ -72,7 +73,7 @@
         return;
     }
     _titleView.titleLabel.textLayout = _layout.titleTextLayout;
-    [_titleView.bgView.layer setImageURL:[NSURL URLWithString:_layout.firstModel.floor_head_pic_url]];
+    [_titleView.bgView.layer yy_setImageWithURL:[NSURL URLWithString:_layout.firstModel.floor_head_pic_url] placeholder:nil];
 }
 
 /** 轮播图片 */
@@ -109,7 +110,7 @@
             if (i < actualFragmentCount) {
                 imageView.hidden = NO;
                 ZZFloorSingle *floorSingle = _layout.firstModel.floor_single[i];
-                [imageView.layer setImageWithURL:[NSURL URLWithString:floorSingle.pic_url] placeholder:nil];
+                [imageView.layer yy_setImageWithURL:[NSURL URLWithString:floorSingle.pic_url] placeholder:nil];
                 imageView.frame = [_layout.fourRectArray[i] CGRectValue];
             } else {
                 imageView.hidden = YES;
@@ -133,7 +134,7 @@
             if (i < totalCount) {
                 item.hidden = NO;
                 ZZFloorYuanchuangMaster *master = floor_yuanchuang_master[i];
-                [item.avatarView setImageWithURL:[NSURL URLWithString:master.avatar] //profileImageURL
+                [item.avatarView yy_setImageWithURL:[NSURL URLWithString:master.avatar] //profileImageURL
                                              placeholder:[UIImage imageNamed:@"icon_profile_avatar_around"]
                                                  options:kNilOptions
                                                  manager:[ZZCyclePicHelper avatarImageManager] //< 圆角头像manager，内置圆角处理

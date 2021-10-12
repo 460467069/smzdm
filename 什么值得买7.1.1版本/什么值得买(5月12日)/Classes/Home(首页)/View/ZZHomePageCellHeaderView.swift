@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YYKit
+import YYText
 
 @objcMembers class ZZHomePageCellHeaderView: UIView {
     @IBOutlet weak var tagLabel: YYLabel!
@@ -44,22 +44,22 @@ import YYKit
         }
         
         let one = NSMutableAttributedString.init(string: tagStr)
-        one.insertString("  ", at: 0)
-        one.appendString("  ")
+        one.yy_insertString("  ", at: 0)
+        one.yy_appendString("  ")
 
         if isFirst {
-            one.font = UIFont.systemFont(ofSize: 12)
-            one.color = UIColor.zz_color(withRed: 170, green: 170, blue: 170)
+            one.yy_font = UIFont.systemFont(ofSize: 12)
+            one.yy_color = UIColor.zz_color(withRed: 170, green: 170, blue: 170)
         } else {
-            one.font = UIFont.systemFont(ofSize: 12)
-            one.color = UIColor.zz_color(withRed: 170, green: 170, blue: 170)
+            one.yy_font = UIFont.systemFont(ofSize: 12)
+            one.yy_color = UIColor.zz_color(withRed: 170, green: 170, blue: 170)
             let border = YYTextBorder()
             border.strokeWidth = 0.5
-            border.strokeColor = one.color
-            border.insets = UIEdgeInsetsMake(-1.5, -3, -1.5, -3)
+            border.strokeColor = one.yy_color
+            border.insets = UIEdgeInsets(top: -1.5, left: -3, bottom: -1.5, right: -3)
             border.cornerRadius = 2.0
             let oneStr = one.string as NSString
-            one.setTextBackgroundBorder(border, range: oneStr.range(of: tagStr))
+            one.yy_setTextBackgroundBorder(border, range: oneStr.range(of: tagStr))
         }
         text.append(one)
     }

@@ -20,7 +20,7 @@ private let kCommentFooterView = "kCommentFooterView"
         tableView.register(ZZCommentCell.self, forCellReuseIdentifier: kTableViewHeaderReuseID)
         tableView.register(ZZCommentHeaderView.self, forHeaderFooterViewReuseIdentifier: kCommentHeaderView)
         tableView.register(ZZCommentFooterView.self, forHeaderFooterViewReuseIdentifier: kCommentFooterView)
-        tableView.mj_header.beginRefreshing()
+        tableView.mj_header?.beginRefreshing()
     }
     
     override func viewDidLayoutSubviews() {
@@ -132,7 +132,7 @@ extension ZZAllCommentController{
         //        https://api.smzdm.com/v1/comments?article_id=6520669&atta=0&cate=new&f=iphone&get_total=1&ishot=1&limit=20&offset=0&smiles=0&type=faxian&v=7.3.3&weixin=1
         ZZAPPDotNetAPIClient.get("v1/comments", parameters: configureParameters()) { (responseObj, error) in
             if let _ = error{
-                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_header?.endRefreshing()
                 return
             }
             if let responseObj = responseObj as? [AnyHashable : Any]
@@ -148,7 +148,7 @@ extension ZZAllCommentController{
                 }
                 self.dataSource = allComments
                 self.tableView.reloadData()
-                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_header?.endRefreshing()
                 self.offset = self.dataSource.count
             }
         }
@@ -158,7 +158,7 @@ extension ZZAllCommentController{
     override func loadMoreData() {
         ZZAPPDotNetAPIClient.get("v1/comments", parameters: configureParameters()) { (responseObj, error) in
             if let _ = error{
-                self.tableView.mj_footer.endRefreshing()
+                self.tableView.mj_footer?.endRefreshing()
                 return
             }
             if let responseObj = responseObj as? [AnyHashable : Any]
@@ -171,7 +171,7 @@ extension ZZAllCommentController{
                 }
                 self.dataSource.addObjects(from: allComments.copy() as! [Any])
                 self.tableView.reloadData()
-                self.tableView.mj_footer.endRefreshing()
+                self.tableView.mj_footer?.endRefreshing()
                 self.offset = self.dataSource.count
             }
         }
@@ -180,7 +180,7 @@ extension ZZAllCommentController{
     func handleCommentLayouts(commentDicts: [[AnyHashable : Any]], isHotComment: Bool) -> NSArray {
         let commentLayouts = NSMutableArray()
         for commentDict in commentDicts {
-            if let commentModel = ZZCommentModel.model(with: commentDict) {
+            if let commentModel = ZZCommentModel.yy_model(with: commentDict) {
                 let commentLayout = ZZAllCommentLayout.init(commentModel: commentModel, isHotComment: isHotComment)
                 commentLayouts.add(commentLayout)
             }

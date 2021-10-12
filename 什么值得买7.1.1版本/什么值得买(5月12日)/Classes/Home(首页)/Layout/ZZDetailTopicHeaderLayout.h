@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ZZDetailTopicHeaderModel.h"
+#import <YYText/YYText.h>
 
 #define kDetailTopicBtnTop 0
 #define kDetailTopicBtnBottom 15

@@ -51,9 +51,9 @@
     }
     NSMutableAttributedString *titleText = [[NSMutableAttributedString alloc] initWithString:title];
     
-    titleText.font = [UIFont systemFontOfSize:kHomeTitleFont];
-    titleText.color = [UIColor colorWithHexString:firstModel.floor_title_color];
-    titleText.lineBreakMode = NSLineBreakByCharWrapping;
+    titleText.yy_font = [UIFont systemFontOfSize:kHomeTitleFont];
+    titleText.yy_color = [UIColor colorWithHexString:firstModel.floor_title_color];
+    titleText.yy_lineBreakMode = NSLineBreakByCharWrapping;
     YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kScreenWidth, 9999)];
     container.maximumNumberOfRows = 1;
     _titleTextLayout = [YYTextLayout layoutWithContainer:container text:titleText];
@@ -125,6 +125,7 @@
         [temArray addObject:value3];
         [temArray addObject:value4];
         
+        
         _picFragmentHeight = kHomeFirstCellPicHeight1;
         
         if (totalCount == kHomeFragmentMaxCount) {  //额外处理8张图片的布局
@@ -176,8 +177,8 @@
         {
             //戏画
             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:master.nickname];
-            one.font = [UIFont systemFontOfSize:15];
-            one.color = [UIColor blackColor];
+            one.yy_font = [UIFont systemFontOfSize:15];
+            one.yy_color = [UIColor blackColor];
             
             [text appendAttributedString:one];
             [text appendAttributedString:[self padding]];
@@ -187,8 +188,8 @@
             //119人关注
             NSString *title = [NSString stringWithFormat:@"%@人关注", master.fans_num];
             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:title];
-            one.font = [UIFont systemFontOfSize:13];
-            one.color = [UIColor lightGrayColor];
+            one.yy_font = [UIFont systemFontOfSize:13];
+            one.yy_color = [UIColor lightGrayColor];
             
             [text appendAttributedString:one];
             [text appendAttributedString:[self padding]];
@@ -198,16 +199,16 @@
         {
             //去关注
             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:@"去关注"];
-            one.color = [UIColor whiteColor];
-            one.font = [UIFont systemFontOfSize:16];
+            one.yy_color = [UIColor whiteColor];
+            one.yy_font = [UIFont systemFontOfSize:16];
             
             YYTextBorder *border = [YYTextBorder new];
             border.fillColor = [UIColor redColor];
-            border.strokeColor = one.color;
+            border.strokeColor = one.yy_color;
             border.strokeWidth = 1;
             border.cornerRadius = 50;
             border.insets = UIEdgeInsetsMake(-5, -20, -5, -20);
-            one.textBackgroundBorder = border;
+            one.yy_textBackgroundBorder = border;
             
             [text appendAttributedString:one];
             [text appendAttributedString:[self padding]];
@@ -234,7 +235,7 @@
 
 - (NSAttributedString *)padding {
     NSMutableAttributedString *padding = [[NSMutableAttributedString alloc] initWithString:@"\n\n"];
-    padding.font = [UIFont systemFontOfSize:4];
+    padding.yy_font = [UIFont systemFontOfSize:4];
     return padding;
 }
 

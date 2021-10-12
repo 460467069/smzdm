@@ -37,13 +37,13 @@
     [self.themeIconView sd_setImageWithURL:[NSURL URLWithString:article.article_pic]];
     self.titleLabel.text = article.article_title;
     
-    [self.avatarView setImageWithURL:[NSURL URLWithString:article.article_avatar] //profileImageURL
-                         placeholder:[UIImage imageNamed:@"icon_profile_avatar_around"]
-                             options:kNilOptions
-                             manager:[ZZCyclePicHelper avatarImageManager] //< 圆角头像manager，内置圆角处理
-                            progress:nil
-                           transform:nil
-                          completion:nil];
+    [self.avatarView yy_setImageWithURL:[NSURL URLWithString:article.article_avatar] //profileImageURL
+                            placeholder:[UIImage imageNamed:@"icon_profile_avatar_around"]
+                                options:kNilOptions
+                                manager:[ZZCyclePicHelper avatarImageManager] //< 圆角头像manager，内置圆角处理
+                               progress:nil
+                              transform:nil
+                             completion:nil];
     
     if (article.article_channel_id == 14) {
         self.coverView.hidden = YES;

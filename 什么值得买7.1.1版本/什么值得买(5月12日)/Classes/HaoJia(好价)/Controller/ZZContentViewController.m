@@ -72,7 +72,7 @@
             return;
         }
         //设置轮播图片
-        ZZContentHeader *headerModel = [ZZContentHeader modelWithJSON:responseObject];
+        ZZContentHeader *headerModel = [ZZContentHeader yy_modelWithJSON:responseObject];
         self.headerView.contentHeader = headerModel;
     }];
 }
@@ -86,7 +86,7 @@
         [self.tableView.mj_header endRefreshing];
         if (error) { return;}
         NSArray *rows = responseObject[@"rows"];
-        NSArray *temArray = [NSArray modelArrayWithClass:[ZZWorthyArticle class] json:rows];
+        NSArray *temArray = [NSArray yy_modelArrayWithClass:[ZZWorthyArticle class] json:rows];
         self.dataArrayM = [NSMutableArray arrayWithArray:temArray];
         [self.tableView reloadData];
         
@@ -117,7 +117,7 @@
         if (error) { return;}
         
         NSArray *rows = responseObject[@"rows"];
-        NSArray *temArray = [NSArray modelArrayWithClass:[ZZWorthyArticle class] json:rows];
+        NSArray *temArray = [NSArray yy_modelArrayWithClass:[ZZWorthyArticle class] json:rows];
         [self.dataArrayM addObjectsFromArray:temArray];
         [self.tableView reloadData];
         

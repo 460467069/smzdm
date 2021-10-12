@@ -1,78 +1,103 @@
 PODS:
-  - Action (3.5.0):
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - Action (5.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - Adjust (4.29.6):
+    - Adjust/Core (= 4.29.6)
+  - Adjust/Core (4.29.6)
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - Alamofire (4.7.2)
-  - Bugly (2.5.0)
+  - Alamofire (5.4.4)
+  - Bugly (2.5.90)
   - CSStickyHeaderFlowLayout (0.2.11)
+  - DBPrivacyHelper (0.6.3)
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
-  - Hero (1.2.0)
-  - IGListKit (3.1.1):
-    - IGListKit/Default (= 3.1.1)
-  - IGListKit/Default (3.1.1):
-    - IGListKit/Diffing
-  - IGListKit/Diffing (3.1.1)
-  - IQKeyboardManagerSwift (5.0.6)
-  - JCore (1.1.6)
-  - JPush (3.0.7):
-    - JCore (~> 1.1.6)
-  - JSPatch (1.1.3):
-    - JSPatch/Core (= 1.1.3)
-  - JSPatch/Core (1.1.3)
-  - JSPatchPlatform (1.6.6):
-    - JSPatchPlatform/Core (= 1.6.6)
-  - JSPatchPlatform/Core (1.6.6):
-    - JSPatch
+  - HappyDNS (0.3.17)
+  - HBDNavigationBar (1.8.1)
+  - Hero (1.6.1)
+  - IGListDiffKit (4.0.0)
+  - IGListKit (4.0.0):
+    - IGListDiffKit (= 4.0.0)
+  - IQDropDownTextField (3.0.0)
+  - IQKeyboardManager (6.5.6)
+  - IQKeyboardManagerSwift (6.5.6)
+  - JCore (3.0.0)
+  - JLPermissions/Camera (2.2.10):
+    - DBPrivacyHelper (= 0.6.3)
+    - JLPermissions/Core
+  - JLPermissions/Contacts (2.2.10):
+    - DBPrivacyHelper (= 0.6.3)
+    - JLPermissions/Core
+  - JLPermissions/Core (2.2.10):
+    - DBPrivacyHelper (= 0.6.3)
+  - JLPermissions/Location (2.2.10):
+    - DBPrivacyHelper (= 0.6.3)
+    - JLPermissions/Core
+  - JLPermissions/Notification (2.2.10):
+    - DBPrivacyHelper (= 0.6.3)
+    - JLPermissions/Core
+  - JLPermissions/Photos (2.2.10):
+    - DBPrivacyHelper (= 0.6.3)
+    - JLPermissions/Core
+  - JPush (4.3.6):
+    - JCore (>= 2.0.0)
+  - JXCategoryView (1.5.9)
+  - JXPagingView/Pager (2.1.1)
   - Masonry (1.1.0)
-  - MBProgressHUD (1.1.0)
-  - MJExtension (3.0.13)
-  - MJRefresh (3.1.15.1)
-  - MOBFoundation (3.0.6)
-  - Moya (11.0.2):
-    - Moya/Core (= 11.0.2)
-  - Moya/Core (11.0.2):
-    - Alamofire (~> 4.1)
-    - Result (~> 3.0)
-  - Moya/RxSwift (11.0.2):
+  - MBProgressHUD (1.2.0)
+  - MessageThrottle (1.4.0)
+  - MFSCache (2.0.1):
+    - MFSJSONEntity
+  - MFSIdentifier (1.0.2):
+    - MFSCache
+  - MFSJSONEntity (1.0.6)
+  - MJExtension (3.3.0)
+  - MJRefresh (3.7.2)
+  - MOBFoundation (3.2.27)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
     - Moya/Core
-    - RxSwift (~> 4.0)
-  - NSObject+Rx (4.3.0):
-    - RxSwift (~> 4.0)
-  - PromiseKit/CoreLocation (6.2.4):
+    - RxSwift (~> 6.0)
+  - "NSObject+Rx (5.2.2)":
+    - RxSwift (~> 6.2)
+  - PromiseKit/CoreLocation (6.15.3):
     - PromiseKit/CorePromise
-  - PromiseKit/CorePromise (6.2.4)
-  - Result (3.2.4)
-  - RongCloudIM/IMKit (2.8.22):
-    - RongCloudIM/IMLib
-  - RongCloudIM/IMLib (2.8.22)
-  - RxCocoa (4.2.0):
-    - RxSwift (~> 4.0)
-  - RxOptional (3.5.0):
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
-  - RxSwift (4.1.2)
-  - SDCycleScrollView (1.74):
-    - SDWebImage (>= 4.0.0)
+  - PromiseKit/CorePromise (6.15.3)
+  - Qiniu (8.3.2):
+    - HappyDNS (~> 0.3.17)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxOptional (5.0.2):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
+  - SAMKeychain (1.5.3)
+  - SDCycleScrollView (1.82):
+    - SDWebImage (>= 5.0.0)
   - SDiPhoneVersion (1.1.2)
-  - SDWebImage (4.2.2):
-    - SDWebImage/Core (= 4.2.2)
-  - SDWebImage/Core (4.2.2)
+  - SDWebImage (5.12.0):
+    - SDWebImage/Core (= 5.12.0)
+  - SDWebImage/Core (5.12.0)
   - ShareSDK3 (4.0.4):
     - MOBFoundation
     - ShareSDK3/ShareSDK (= 4.0.4)
@@ -88,46 +113,395 @@ PODS:
     - MOBFoundation
   - ShareSDK3/ShareSDKUI (4.0.4):
     - MOBFoundation
-  - SnapKit (4.0.0)
-  - SVProgressHUD (2.2.2)
-  - SwiftyJSON (4.0.0)
-  - UITableView+FDTemplateLayoutCell (1.6)
+  - SHSPhoneComponent (2.32)
+  - SnapKit (5.0.1)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.1)
+  - TZImagePickerController (3.6.6)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
   - WebViewJavascriptBridge (6.0.3)
-  - YYKit (1.0.9):
-    - YYKit/no-arc (= 1.0.9)
-  - YYKit/no-arc (1.0.9)
+  - WHC_ModelSqliteKit (1.3.0):
+    - WHC_ModelSqliteKit/standard (= 1.3.0)
+  - WHC_ModelSqliteKit/standard (1.3.0)
+  - YCShadowView (1.2.0)
+  - YYBBSDK (0.1.0):
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - HBDNavigationBar
+    - IGListKit
+    - IQDropDownTextField
+    - IQKeyboardManager
+    - JLPermissions/Camera
+    - JLPermissions/Contacts
+    - JLPermissions/Location
+    - JLPermissions/Notification
+    - JLPermissions/Photos
+    - JXCategoryView
+    - JXPagingView/Pager
+    - Masonry
+    - MessageThrottle
+    - MFSIdentifier
+    - MJRefresh
+    - Qiniu
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SHSPhoneComponent
+    - SVProgressHUD
+    - TZImagePickerController
+    - WHC_ModelSqliteKit
+    - YCShadowView
+    - YYBBSDK/Analysis (= 0.1.0)
+    - YYBBSDK/Core (= 0.1.0)
+    - YYBBSDK/Pay (= 0.1.0)
+    - YYBBSDK/ThirdLib (= 0.1.0)
+    - YYCache
+    - YYCategories
+    - YYModel
+    - YYText
+    - YYWebImage
+  - YYBBSDK/Analysis (0.1.0):
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - HBDNavigationBar
+    - IGListKit
+    - IQDropDownTextField
+    - IQKeyboardManager
+    - JLPermissions/Camera
+    - JLPermissions/Contacts
+    - JLPermissions/Location
+    - JLPermissions/Notification
+    - JLPermissions/Photos
+    - JXCategoryView
+    - JXPagingView/Pager
+    - Masonry
+    - MessageThrottle
+    - MFSIdentifier
+    - MJRefresh
+    - Qiniu
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SHSPhoneComponent
+    - SVProgressHUD
+    - TZImagePickerController
+    - WHC_ModelSqliteKit
+    - YCShadowView
+    - YYBBSDK/Analysis/Adjust (= 0.1.0)
+    - YYCache
+    - YYCategories
+    - YYModel
+    - YYText
+    - YYWebImage
+  - YYBBSDK/Analysis/Adjust (0.1.0):
+    - Adjust
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - HBDNavigationBar
+    - IGListKit
+    - IQDropDownTextField
+    - IQKeyboardManager
+    - JLPermissions/Camera
+    - JLPermissions/Contacts
+    - JLPermissions/Location
+    - JLPermissions/Notification
+    - JLPermissions/Photos
+    - JXCategoryView
+    - JXPagingView/Pager
+    - Masonry
+    - MessageThrottle
+    - MFSIdentifier
+    - MJRefresh
+    - Qiniu
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SHSPhoneComponent
+    - SVProgressHUD
+    - TZImagePickerController
+    - WHC_ModelSqliteKit
+    - YCShadowView
+    - YYBBSDK/Core
+    - YYCache
+    - YYCategories
+    - YYModel
+    - YYText
+    - YYWebImage
+  - YYBBSDK/Core (0.1.0):
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - HBDNavigationBar
+    - IGListKit
+    - IQDropDownTextField
+    - IQKeyboardManager
+    - JLPermissions/Camera
+    - JLPermissions/Contacts
+    - JLPermissions/Location
+    - JLPermissions/Notification
+    - JLPermissions/Photos
+    - JXCategoryView
+    - JXPagingView/Pager
+    - Masonry
+    - MessageThrottle
+    - MFSIdentifier
+    - MJRefresh
+    - Qiniu
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SHSPhoneComponent
+    - SVProgressHUD
+    - TZImagePickerController
+    - WHC_ModelSqliteKit
+    - YCShadowView
+    - YYCache
+    - YYCategories
+    - YYModel
+    - YYText
+    - YYWebImage
+  - YYBBSDK/Pay (0.1.0):
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - HBDNavigationBar
+    - IGListKit
+    - IQDropDownTextField
+    - IQKeyboardManager
+    - JLPermissions/Camera
+    - JLPermissions/Contacts
+    - JLPermissions/Location
+    - JLPermissions/Notification
+    - JLPermissions/Photos
+    - JXCategoryView
+    - JXPagingView/Pager
+    - Masonry
+    - MessageThrottle
+    - MFSIdentifier
+    - MJRefresh
+    - Qiniu
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SHSPhoneComponent
+    - SVProgressHUD
+    - TZImagePickerController
+    - WHC_ModelSqliteKit
+    - YCShadowView
+    - YYBBSDK/Pay/AppStore (= 0.1.0)
+    - YYBBSDK/Pay/H5 (= 0.1.0)
+    - YYBBSDK/Pay/PaymentUI (= 0.1.0)
+    - YYCache
+    - YYCategories
+    - YYModel
+    - YYText
+    - YYWebImage
+  - YYBBSDK/Pay/AppStore (0.1.0):
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - HBDNavigationBar
+    - IGListKit
+    - IQDropDownTextField
+    - IQKeyboardManager
+    - JLPermissions/Camera
+    - JLPermissions/Contacts
+    - JLPermissions/Location
+    - JLPermissions/Notification
+    - JLPermissions/Photos
+    - JXCategoryView
+    - JXPagingView/Pager
+    - Masonry
+    - MessageThrottle
+    - MFSIdentifier
+    - MJRefresh
+    - Qiniu
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SHSPhoneComponent
+    - SVProgressHUD
+    - TZImagePickerController
+    - WHC_ModelSqliteKit
+    - YCShadowView
+    - YYBBSDK/Core
+    - YYCache
+    - YYCategories
+    - YYModel
+    - YYText
+    - YYWebImage
+  - YYBBSDK/Pay/H5 (0.1.0):
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - HBDNavigationBar
+    - IGListKit
+    - IQDropDownTextField
+    - IQKeyboardManager
+    - JLPermissions/Camera
+    - JLPermissions/Contacts
+    - JLPermissions/Location
+    - JLPermissions/Notification
+    - JLPermissions/Photos
+    - JXCategoryView
+    - JXPagingView/Pager
+    - Masonry
+    - MessageThrottle
+    - MFSIdentifier
+    - MJRefresh
+    - Qiniu
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SHSPhoneComponent
+    - SVProgressHUD
+    - TZImagePickerController
+    - WHC_ModelSqliteKit
+    - YCShadowView
+    - YYBBSDK/Core
+    - YYCache
+    - YYCategories
+    - YYModel
+    - YYText
+    - YYWebImage
+  - YYBBSDK/Pay/PaymentUI (0.1.0):
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - HBDNavigationBar
+    - IGListKit
+    - IQDropDownTextField
+    - IQKeyboardManager
+    - JLPermissions/Camera
+    - JLPermissions/Contacts
+    - JLPermissions/Location
+    - JLPermissions/Notification
+    - JLPermissions/Photos
+    - JXCategoryView
+    - JXPagingView/Pager
+    - Masonry
+    - MessageThrottle
+    - MFSIdentifier
+    - MJRefresh
+    - Qiniu
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SHSPhoneComponent
+    - SVProgressHUD
+    - TZImagePickerController
+    - WHC_ModelSqliteKit
+    - YCShadowView
+    - YYBBSDK/Core
+    - YYCache
+    - YYCategories
+    - YYModel
+    - YYText
+    - YYWebImage
+  - YYBBSDK/ThirdLib (0.1.0):
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - HBDNavigationBar
+    - IGListKit
+    - IQDropDownTextField
+    - IQKeyboardManager
+    - JLPermissions/Camera
+    - JLPermissions/Contacts
+    - JLPermissions/Location
+    - JLPermissions/Notification
+    - JLPermissions/Photos
+    - JXCategoryView
+    - JXPagingView/Pager
+    - Masonry
+    - MessageThrottle
+    - MFSIdentifier
+    - MJRefresh
+    - Qiniu
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SHSPhoneComponent
+    - SVProgressHUD
+    - TZImagePickerController
+    - WHC_ModelSqliteKit
+    - YCShadowView
+    - YYBBSDK/ThirdLib/Other (= 0.1.0)
+    - YYCache
+    - YYCategories
+    - YYModel
+    - YYText
+    - YYWebImage
+  - YYBBSDK/ThirdLib/Other (0.1.0):
+    - AFNetworking
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - HBDNavigationBar
+    - IGListKit
+    - IQDropDownTextField
+    - IQKeyboardManager
+    - JLPermissions/Camera
+    - JLPermissions/Contacts
+    - JLPermissions/Location
+    - JLPermissions/Notification
+    - JLPermissions/Photos
+    - JXCategoryView
+    - JXPagingView/Pager
+    - Masonry
+    - MessageThrottle
+    - MFSIdentifier
+    - MJRefresh
+    - Qiniu
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SHSPhoneComponent
+    - SVProgressHUD
+    - TZImagePickerController
+    - WHC_ModelSqliteKit
+    - YCShadowView
+    - YYBBSDK/Core
+    - YYCache
+    - YYCategories
+    - YYModel
+    - YYText
+    - YYWebImage
+  - YYCache (1.0.4)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYModel (1.0.4)
+  - YYText (1.0.7)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
   - ZYCornerRadius (1.0.2)
 
 DEPENDENCIES:
   - Action
-  - AFNetworking
   - Alamofire
   - Bugly
   - CSStickyHeaderFlowLayout
-  - DZNEmptyDataSet
-  - FDFullscreenPopGesture
   - Hero
-  - IGListKit
   - IQKeyboardManagerSwift
   - JPush
-  - JSPatchPlatform
-  - Masonry
   - MBProgressHUD
   - MJExtension
-  - MJRefresh
   - MOBFoundation
   - Moya
   - Moya/RxSwift
-  - NSObject+Rx
+  - "NSObject+Rx"
   - PromiseKit/CoreLocation
-  - RongCloudIM/IMKit
-  - RongCloudIM/IMLib
   - RxCocoa
   - RxOptional
   - RxSwift
-  - SDCycleScrollView
   - SDiPhoneVersion
-  - SDWebImage
   - ShareSDK3
   - ShareSDK3/ShareSDKExtension
   - ShareSDK3/ShareSDKPlatforms/QQ
@@ -135,53 +509,142 @@ DEPENDENCIES:
   - ShareSDK3/ShareSDKPlatforms/WeChat
   - ShareSDK3/ShareSDKUI
   - SnapKit
-  - SVProgressHUD
   - SwiftyJSON
-  - UITableView+FDTemplateLayoutCell
+  - "UITableView+FDTemplateLayoutCell"
   - WebViewJavascriptBridge
-  - YYKit
+  - YYBBSDK (from `../CWSDK/`)
   - ZYCornerRadius
 
+SPEC REPOS:
+  trunk:
+    - Action
+    - Adjust
+    - AFNetworking
+    - Alamofire
+    - Bugly
+    - CSStickyHeaderFlowLayout
+    - DBPrivacyHelper
+    - DZNEmptyDataSet
+    - FDFullscreenPopGesture
+    - HappyDNS
+    - HBDNavigationBar
+    - Hero
+    - IGListDiffKit
+    - IGListKit
+    - IQDropDownTextField
+    - IQKeyboardManager
+    - IQKeyboardManagerSwift
+    - JCore
+    - JLPermissions
+    - JPush
+    - JXCategoryView
+    - JXPagingView
+    - Masonry
+    - MBProgressHUD
+    - MessageThrottle
+    - MFSCache
+    - MFSIdentifier
+    - MFSJSONEntity
+    - MJExtension
+    - MJRefresh
+    - MOBFoundation
+    - Moya
+    - "NSObject+Rx"
+    - PromiseKit
+    - Qiniu
+    - RxCocoa
+    - RxOptional
+    - RxRelay
+    - RxSwift
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDiPhoneVersion
+    - SDWebImage
+    - ShareSDK3
+    - SHSPhoneComponent
+    - SnapKit
+    - SVProgressHUD
+    - SwiftyJSON
+    - TZImagePickerController
+    - "UITableView+FDTemplateLayoutCell"
+    - WebViewJavascriptBridge
+    - WHC_ModelSqliteKit
+    - YCShadowView
+    - YYCache
+    - YYCategories
+    - YYImage
+    - YYModel
+    - YYText
+    - YYWebImage
+    - ZYCornerRadius
+
+EXTERNAL SOURCES:
+  YYBBSDK:
+    :path: "../CWSDK/"
+
 SPEC CHECKSUMS:
-  Action: d60087ebce41b969d1afdad01e2fa1372a82f26e
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
+  Action: 47f1825511907b4fcd79dd7a7db9526c20f78018
+  Adjust: 94f1c99429fb2a7ebe530294fd66a88d63a54922
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Bugly: 88bc32c0acc6fef7b74d610f0319ee7560d6b9fe
   CSStickyHeaderFlowLayout: e9bcb1762413f49d7d09e5bd0ae5efd1100116b7
+  DBPrivacyHelper: c1e033776454dd3e16e8dcedf2e92d4d0a5e56df
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
-  IGListKit: cb97f405ae43e59fe1da74271e19427ec20d3c07
-  IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
-  JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
-  JPush: 111b79b8a0169ab8fd4c486dac3ed166ed69293e
-  JSPatch: 02cfed591cb907bbfe80a346666e5a35fc2d349d
-  JSPatchPlatform: 8cc9aaebe21109d5fdfb4500384ddf38ed0990e9
+  HappyDNS: 848ef73e24f2b0e2752064223ce2dc0dd88900ea
+  HBDNavigationBar: d6157315fff2b297ec73c5cfd86d0b7f0a19bc8b
+  Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
+  IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
+  IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
+  IQDropDownTextField: 77916c18f518ee9f3c62735775f1ba061d92fc58
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  JCore: bcd22f442118a5a98f9f50dd3bfee52aa38ad483
+  JLPermissions: 6349b9330a843f8520588aa66b964b8bf62e264a
+  JPush: 33807f0f612ffb21a84621f5429b21c17808a6ce
+  JXCategoryView: 2ef9ecfd3735158d009ce02d1f29811aa822da65
+  JXPagingView: 99140c6f7f64abec35bc2dfc87c17ca049cafe76
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
-  MOBFoundation: 6f6ec1c2513278551f1a808b5692e983d99e5069
-  Moya: a725035953bc1c0eb1be505ab903984501d82440
-  NSObject+Rx: 9a5eeff5e08156f849fa973514456f28eef08742
-  PromiseKit: 625b1fc69944fc839503748101c5968cf54b527b
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  RongCloudIM: 9dc4c5c3e215261f610ed294f8c854a1a1f521ee
-  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
-  RxOptional: bd32ff8ca9df4177683d56ffeb618a9d4d5d5cad
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
-  SDCycleScrollView: f821215226f6146a35470721a9d6e83ec5cfb04b
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MessageThrottle: e1b7c60f93c0b94f3ec5e417807aedd032b4cf24
+  MFSCache: 76baaca48f2283669709771967caedb8d0edb4c7
+  MFSIdentifier: abc345c0ae150e00856f3e3bcedcafb257e26c4b
+  MFSJSONEntity: 87c9404c87cb499de26b061f3c985eb7808bef73
+  MJExtension: 01704cca2b60a214c10761b6491eab74069d68a9
+  MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
+  MOBFoundation: efdc3ce6b843fbc10ae8c1c6122a02b0d845b39b
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  "NSObject+Rx": 61cf1f7306a73dcef8b36649198af0813ec18dfd
+  PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
+  Qiniu: 61f1e2fdfb35b37f98c8f03a718faf12652f9994
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxOptional: 3664964c96b69dd20c9cf78bdfe546615e26eca8
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
   SDiPhoneVersion: c52245ccaab8142701e2e7fb8f0391ba3f255b76
-  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  SDWebImage: 4ea20cca2986adc5aacde07aa686742fd4c67a37
   ShareSDK3: 75b57bab0cbe3119e281c7668eaad9d48adf3fde
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  SHSPhoneComponent: c491cf87a0d5c3fb11b8f54100d05fd2706cb401
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  TZImagePickerController: edf61b8e87f26e3e445aa50eb66254bd7f4859db
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
-  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  WHC_ModelSqliteKit: dfafef3ee872dedd9823395291fc80bf37eac46d
+  YCShadowView: cbd3215cefcd2a985ce3827e9f32152609968480
+  YYBBSDK: 808722186b792cf2cc993a1d5854170c4279f425
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
   ZYCornerRadius: f0af817be7805b5c63d793042ca7a03f81e14069
 
-PODFILE CHECKSUM: e323222897346c76a6a5f26a2c1a87b203ed7094
+PODFILE CHECKSUM: ac5225ef93f3c53e7d415934dd494e206b80909a
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.10.1

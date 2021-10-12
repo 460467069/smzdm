@@ -10,9 +10,11 @@
 #import "ZZCircleView.h"
 
 @interface ZZDIYBackFooter()
+
 @property (weak, nonatomic) UILabel *label;
 @property (nonatomic, weak) ZZCircleView *circleView;
 @property (nonatomic, assign, getter=isFullCover) BOOL fullCover;   //标记在回复的时候, 下拉是否画完整圆
+
 @end
 @implementation ZZDIYBackFooter
 #pragma mark - 重写方法

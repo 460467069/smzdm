@@ -61,6 +61,14 @@ extension ZZSearchResultController {
     override func initNavBar() {
         
     }
+    func setupDatasource() {
+        searchRequest.channelName = "综合"
+        searchRequest.keyword = searchModel?.title
+        searchRequest.localtype = "home"
+        searchRequest.order = "score"
+        searchRequest.type = "home"
+    }
+
 }
 
 extension ZZSearchResultController {
@@ -68,10 +76,10 @@ extension ZZSearchResultController {
         weak var weakSelf = self
         searchRequest.offset = 0
         ZZAPPDotNetAPIClient.shared().get(searchRequest) { (responseObj, error) in
-            weakSelf?.tableView.mj_header.endRefreshing()
+            weakSelf?.tableView.mj_header?.endRefreshing()
             if let responseObj = responseObj as? [AnyHashable: Any],
                 let rows = responseObj["rows"],
-                let listArray = NSArray.modelArray(with: ZZWorthyArticle.self, json: rows) {
+                let listArray = NSArray.yy_modelArray(with: ZZWorthyArticle.self, json: rows) {
                     weakSelf?.dataSource.removeAllObjects()
                     weakSelf?.dataSource.addObjects(from: listArray)
                     weakSelf?.searchRequest.offset = listArray.count
@@ -83,10 +91,10 @@ extension ZZSearchResultController {
     override func loadMoreData() {
         weak var weakSelf = self
         ZZAPPDotNetAPIClient.shared().get(searchRequest) { (responseObj, error) in
-            weakSelf?.tableView.mj_footer.endRefreshing()
+            weakSelf?.tableView.mj_footer?.endRefreshing()
             if let responseObj = responseObj as? [AnyHashable: Any],
                 let rows = responseObj["rows"],
-                let listArray = NSArray.modelArray(with: ZZWorthyArticle.self, json: rows) {
+                let listArray = NSArray.yy_modelArray(with: ZZWorthyArticle.self, json: rows) {
                     weakSelf?.dataSource.addObjects(from: listArray)
                     weakSelf?.searchRequest.offset = listArray.count + (weakSelf?.searchRequest.offset)!
                     weakSelf?.tableView.reloadData()
@@ -94,13 +102,5 @@ extension ZZSearchResultController {
         }
     }
     
-    override func setupDatasource() {
-        searchRequest.channelName = "综合"
-        searchRequest.keyword = searchModel?.title
-        searchRequest.localtype = "home"
-        searchRequest.order = "score"
-        searchRequest.type = "home"
-
-    }
 
 }

@@ -97,7 +97,7 @@
         _referralLabel.hidden = NO;
         
         _avatarView.top = _headTitleLabel.bottom + kTitleLineSpacing;
-        [_avatarView setImageWithURL:[NSURL URLWithString:headerLayout.detailModel.article_avatar] //profileImageURL
+        [_avatarView yy_setImageWithURL:[NSURL URLWithString:headerLayout.detailModel.article_avatar] //profileImageURL
                                      placeholder:nil
                                          options:kNilOptions
                                          manager:[ZZCyclePicHelper avatarImageManager] //< 圆角头像manager，内置圆角处理

@@ -18,21 +18,26 @@ class ZZGoodArticleViewController: ZZBasecollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.snp.updateConstraints { (make) in
-            make.bottom.equalToSuperview().offset(-kZZTabBarH)
-        }
-        collectionView.mj_header.beginRefreshing()
+        initUI()
+        initNavBar()
+        setupDataSource()
     }
     
     override func initUI() {
-        super.initUI()
         weak var weakSelf = self
+        collectionView.snp.updateConstraints { (make) in
+            make.bottom.equalToSuperview().offset(-kZZTabBarH)
+        }
         collectionView.mj_header = ZZDIYHeader.init(refreshingBlock: {
             weakSelf?.loadData(loadMoreData: false)
         })
         collectionView.mj_footer = ZZDIYBackFooter.init(refreshingBlock: {
             weakSelf?.loadData(loadMoreData: true)
         })
+    }
+    
+    override func setupDataSource() {
+        collectionView.mj_header?.beginRefreshing()
     }
     
     override func loadData(loadMoreData: Bool) {
@@ -43,13 +48,13 @@ class ZZGoodArticleViewController: ZZBasecollectionViewController {
                 guard error == nil else { return }
                 let json = JSON.init(responseObj!)
                 if let rows = json["rows"].arrayObject {
-                    if let datas = NSArray.modelArray(with: ZZLittleBanner.self, json: rows) {
+                    if let datas = NSArray.yy_modelArray(with: ZZLittleBanner.self, json: rows) {
                         let listModel = ZZListModel.init(subItems: datas, sectionController: ZZAdSectionController())
                         weakSelf?.dataSource.append(listModel!)
                     }
                 }
                 if let rows = json["little_banner"].arrayObject {
-                    if let datas = NSArray.modelArray(with: ZZLittleBanner.self, json: rows) {
+                    if let datas = NSArray.yy_modelArray(with: ZZLittleBanner.self, json: rows) {
                         let listModel = ZZListModel.init(subItems: datas, sectionController: ZZLittleBannerSectionController())
                         weakSelf?.dataSource.append(listModel!)
                     }
@@ -57,18 +62,18 @@ class ZZGoodArticleViewController: ZZBasecollectionViewController {
                 
             })
             ZZAPPDotNetAPIClient.shared().get(listRequest) { (responseObj, error) in
-                weakSelf?.collectionView.mj_header.endRefreshing()
+                weakSelf?.collectionView.mj_header?.endRefreshing()
                 guard error == nil else { return }
                 let json = JSON.init(responseObj!)
                 if let topicList = json["topic_list"].arrayObject as? [[String : Any]] {
                     for dict in topicList {
-                        let model = ZZHaoWenTopicListModel.model(with: dict)
+                        let model = ZZHaoWenTopicListModel.yy_model(with: dict)
                         model?.sectionController = ZZTopicListSectionController()
                         weakSelf?.dataSource.append(model!)
                     }
                 }
                 if let choicenessList = json["sns_choiceness_list"]["rows"].arrayObject {
-                    if let choicenessListArray = NSArray.modelArray(with: ZZChoicenessListModel.self, json: choicenessList) {
+                    if let choicenessListArray = NSArray.yy_modelArray(with: ZZChoicenessListModel.self, json: choicenessList) {
                         let listModel =  ZZListModel.init(subItems: choicenessListArray, sectionController: ZZChoicenessListSectionController())
                         weakSelf?.goodArticleRecommendModel = listModel
                         weakSelf?.dataSource.append(listModel!)
@@ -82,11 +87,11 @@ class ZZGoodArticleViewController: ZZBasecollectionViewController {
             listMoreRequest.time_sort = choicenessListModel.time_sort
         }
         ZZAPPDotNetAPIClient.shared().get(listMoreRequest) { (responseObj, error) in
-            weakSelf?.collectionView.mj_footer.endRefreshing()
+            weakSelf?.collectionView.mj_footer?.endRefreshing()
             guard error == nil else { return }
             let json = JSON.init(responseObj!)
             if let rows = json["rows"].arrayObject {
-                if let listArray = NSArray.modelArray(with: ZZChoicenessListModel.self, json: rows) {
+                if let listArray = NSArray.yy_modelArray(with: ZZChoicenessListModel.self, json: rows) {
                     weakSelf?.goodArticleRecommendModel?.subItems.addObjects(from: listArray)
                     weakSelf?.collectionView.reloadData()
                     weakSelf?.listMoreRequest.page += 1

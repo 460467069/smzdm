@@ -41,13 +41,11 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self.navigationController.navigationBar lt_setBackgroundColor:kGlobalLightGrayColor];
     [self initNavBarigation];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar lt_reset];
     
 }
 
@@ -75,7 +73,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
         if (error) { return;}
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            ZZDetailTopicHeaderModel *detailModel = [ZZDetailTopicHeaderModel modelWithDictionary:responseObject];
+            ZZDetailTopicHeaderModel *detailModel = [ZZDetailTopicHeaderModel yy_modelWithDictionary:responseObject];
             _detailTopicHeaderLayout = [[ZZDetailTopicHeaderLayout alloc] initWithHeaderDetailModel:detailModel];
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -143,7 +141,7 @@ static NSString *const kDetailTopicCell = @"detailTopicCell";
 
 /** 处理数据 */
 - (NSMutableArray *)generateDataWithArray:(NSArray *)dataArray{
-    NSArray *datas = [NSArray modelArrayWithClass:[ZZDetailTopicModel class] json:dataArray];
+    NSArray *datas = [NSArray yy_modelArrayWithClass:[ZZDetailTopicModel class] json:dataArray];
     NSMutableArray *temArray = [NSMutableArray array];
     for (ZZDetailTopicModel *detailTopicModel in datas) {
         ZZDetailTopicContentLayout *layout = [[ZZDetailTopicContentLayout alloc] initWithContentDetailModel:detailTopicModel];

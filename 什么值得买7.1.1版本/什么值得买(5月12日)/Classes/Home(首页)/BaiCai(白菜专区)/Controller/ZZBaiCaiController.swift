@@ -39,11 +39,11 @@ class ZZBaiCaiController: ZZSecondTableViewController {
         offset = 0
         ZZAPPDotNetAPIClient.get("v1/baicai/baicai_propagate", parameters: NSMutableDictionary()) {(responseObj, error) in
             if let _ = error {
-                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_header?.endRefreshing()
                 return
             }
             if let responseObj = responseObj as? [AnyHashable: Any] {
-                let baiCaiJingXuanModel = ZZBaiCaiJingXuanModel.model(with: responseObj)
+                let baiCaiJingXuanModel = ZZBaiCaiJingXuanModel.yy_model(with: responseObj)
                 let baiCaiLayout = ZZZuiXinBaiCaiLayout.init(jingXuanModel: baiCaiJingXuanModel!)
                 self.headerView?.baiCaiLayout = baiCaiLayout
                 self.tableView.tableHeaderView = self.headerView
@@ -56,18 +56,18 @@ class ZZBaiCaiController: ZZSecondTableViewController {
     override func loadMoreData() {
         ZZAPPDotNetAPIClient.get("v1/baicai/list", parameters: configureParameters()) {(responseObj, error) in
             if let _ = error {
-                self.tableView.mj_footer.endRefreshing()
+                self.tableView.mj_footer?.endRefreshing()
                 return
             }
             
             if let resopnseObj = responseObj as? [AnyHashable: Any] {
                 if let rows = resopnseObj["rows"] as? [[AnyHashable: Any]] {
-                    let baiCaiRows = NSArray.modelArray(with: ZZWorthyArticle.self, json: rows)
+                    let baiCaiRows = NSArray.yy_modelArray(with: ZZWorthyArticle.self, json: rows)
                     self.dataSource.addObjects(from: baiCaiRows!)
                     self.offset = rows.count
                 }
                 
-                self.tableView.mj_footer.endRefreshing()
+                self.tableView.mj_footer?.endRefreshing()
                 self.tableView.reloadData()
                 self.offset = self.dataSource.count
                 self.caculateCollectionViewHeight()
@@ -78,17 +78,17 @@ class ZZBaiCaiController: ZZSecondTableViewController {
     func requestNewestBaiCaiList(){ //最新白菜数据
         ZZAPPDotNetAPIClient.get("v1/baicai/list", parameters: configureParameters()) {(responseObj, error) in
             if let _ = error {
-                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_header?.endRefreshing()
                 return
             }
             
             if let resopnseObj = responseObj as? [AnyHashable: Any] {
                 if let rows = resopnseObj["rows"] as? [[AnyHashable: Any]] {
-                    let baiCaiRows = NSArray.modelArray(with: ZZWorthyArticle.self, json: rows)
+                    let baiCaiRows = NSArray.yy_modelArray(with: ZZWorthyArticle.self, json: rows)
                     self.dataSource = NSMutableArray.init(array: baiCaiRows!)
                     self.offset = rows.count
                 }
-                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_header?.endRefreshing()
                 self.tableView.reloadData()
                 self.offset = self.dataSource.count
                 self.caculateCollectionViewHeight()

@@ -7,7 +7,9 @@
 //
 
 import UIKit
-import YYKit
+import YYWebImage
+import SDWebImage
+
 
 extension UIImageView{
     
@@ -36,12 +38,12 @@ extension UIImageView{
     
     
     private func zdm_setImage(placeholder: UIImage?, imageURL: URL?, manager: YYWebImageManager?) {
-        setImageWith(imageURL,
-                     placeholder: placeholder,
-                     options: .showNetworkActivity,
-                     manager: manager,
-                     progress: nil,
-                     transform: nil,
-                     completion: nil)
+        yy_setImage(with: imageURL,
+                    placeholder: placeholder,
+                    options: .showNetworkActivity,
+                    manager: manager,
+                    progress: nil,
+                    transform: nil,
+                    completion: nil)
     }
 }

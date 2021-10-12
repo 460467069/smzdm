@@ -58,7 +58,7 @@
         [articleText appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:nil]];
     }
     
-    articleText.lineSpacing = 10;
+    articleText.yy_lineSpacing = 10;
     ZZTextLinePositionModifier *modifier = [[ZZTextLinePositionModifier alloc] init];
     modifier.font = [UIFont systemFontOfSize:20];
     modifier.paddingTop = kDetailContentOffset;

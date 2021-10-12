@@ -19,9 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self _initUI];
 }
 
-- (void)initUI {
+- (void)_initUI {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.dataSource = self;
@@ -42,11 +43,6 @@
                                                           refreshingAction:@selector(loadMoreData)];
     [self.tableView.mj_header beginRefreshing];
 }
-
-- (void)loadData {}
-
-- (void)loadMoreData {}
-
 
 #pragma mark - Table view data source
 

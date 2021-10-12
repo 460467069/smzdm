@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import YYKit
+import YYText
 
 ///点赞
 class ZZSupportView: UIView {
@@ -82,7 +82,7 @@ class ZZMedalContentView: UIView {
 }
 
 class ZZCommentHeaderView: UITableViewHeaderFooterView {
-
+    
     lazy var avatarView: UIImageView = {    //头像
         let avatarView = UIImageView()
         avatarView.size = CGSize.init(width: commentConstant.avatarWH, height: commentConstant.avatarWH)
@@ -104,7 +104,7 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
     lazy var medalContentView: ZZMedalContentView = {
         
         let medalContentView = ZZMedalContentView()
-//        medalContentView.backgroundColor = UIColor.random()
+        //        medalContentView.backgroundColor = UIColor.random()
         medalContentView.top = commentConstant.nickNameTop
         return medalContentView
     }()
@@ -152,7 +152,7 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         self.initUI()
     }
-
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -169,27 +169,27 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
         contentView.addSubview(praiseView)
         contentView.addSubview(floorView)
         contentView.addSubview(timeLabel)
-
+        
         
         floorView.top = nickNameLabel.bottom + commentConstant.floorTop
         
         timeLabel.left = floorView.right + commentConstant.timeLabelLeft
         timeLabel.top = floorView.top
-
+        
     }
-
+    
     var commentLayout: ZZAllCommentLayout? {
         
         didSet{
             //头像
             let head = commentLayout?.commentModel?.head
-            avatarView.setImageWith(URL.init(string: head!),
-                                    placeholder: #imageLiteral(resourceName: "5_middle_avatar"),
-                                    options: .showNetworkActivity,
-                                    manager: ZZCyclePicHelper.avatarImageManager(),
-                                    progress: nil,
-                                    transform: nil,
-                                    completion: nil)
+            avatarView.yy_setImage(with: URL.init(string: head!),
+                                   placeholder: #imageLiteral(resourceName: "5_middle_avatar"),
+                                   options: .showNetworkActivity,
+                                   manager: ZZCyclePicHelper.avatarImageManager(),
+                                   progress: nil,
+                                   transform: nil,
+                                   completion: nil)
             //昵称
             nickNameLabel.textLayout = commentLayout?.nickNameLayout
             nickNameLabel.width = (commentLayout?.nickNameLayout?.textBoundingSize.width)!
@@ -209,7 +209,7 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
                     let imageView = medalContentView.medals[key]
                     imageView.isHidden = false
                     imageView.left = (commentConstant.medalViewWidth + commentConstant.medalMargin) * CGFloat(key)
-                    imageView.setImageWith(URL.init(string: medal.img!), options: .showNetworkActivity)
+                    imageView.yy_setImage(with: URL.init(string: medal.img!), options: .showNetworkActivity)
                 }
                 
             }
@@ -231,7 +231,7 @@ class ZZCommentHeaderView: UITableViewHeaderFooterView {
             
         }
     }
-
+    
 }
 
 extension ZZCommentHeaderView{

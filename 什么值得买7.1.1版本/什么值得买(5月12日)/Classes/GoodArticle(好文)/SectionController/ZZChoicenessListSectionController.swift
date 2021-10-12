@@ -142,11 +142,11 @@ class ZZChoicenessListSectionController: ListSectionController {
 
 extension ZZChoicenessListSectionController: ListSupplementaryViewSource{
     func supportedElementKinds() -> [String] {
-        return [UICollectionElementKindSectionHeader]
+        return [UICollectionView.elementKindSectionHeader]
     }
     
     func viewForSupplementaryElement(ofKind elementKind: String, at index: Int) -> UICollectionReusableView {
-        guard let view = collectionContext?.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
+        guard let view = collectionContext?.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
                                                                              for: self,
                                                                              nibName: "ZZTopicHeaderView",
                                                                              bundle: nil,

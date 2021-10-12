@@ -67,7 +67,7 @@
         [attributes setObject:kGlobalRedColor forKey:NSForegroundColorAttributeName];
         [attributes setObject:[UIFont systemFontOfSize:20] forKey:NSFontAttributeName];
         [articleTitle appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
-    }else{
+    } else {
         {
             NSString *title = @"￥";
             NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
@@ -93,7 +93,7 @@
         }
     }
 
-    articleTitle.lineSpacing = 10;
+    articleTitle.yy_lineSpacing = 10;
     CGFloat titleWidth = kScreenWidth - kDetailTopicProPicWH - kDetailTopicMarginX * 2 - kDetailTopicContentOffsetX;
     container = [YYTextContainer containerWithSize:CGSizeMake(titleWidth, kDetailTopicProPicWH) insets:UIEdgeInsetsMake(0, kDetailTopicTitleLeftMargin, 0, kDetailTopicContentOffsetX)];
     _titleLayout = [YYTextLayout layoutWithContainer:container text:articleTitle];
@@ -115,15 +115,15 @@
         [attributes setObject:[UIFont systemFontOfSize:13] forKey:NSFontAttributeName];
         [descText appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
     }
-    descText.lineSpacing = 10;
-    [descText setLineSpacing:15 range:NSMakeRange(0, 1)];
+    descText.yy_lineSpacing = 10;
+    [descText yy_setLineSpacing:15 range:NSMakeRange(0, 1)];
     container = [YYTextContainer containerWithSize:CGSizeMake(kDetailTopicDescWidth, kDetailTopicDescHeight) insets:UIEdgeInsetsMake(kDetailTopicDescTopMargin, kDetailTopicContentOffsetX, 0, kDetailTopicContentOffsetX)];
     container.truncationType = YYTextTruncationTypeEnd;
     _descriptionLayout = [YYTextLayout layoutWithContainer:container text:descText];
     
     if (_descriptionLayout.textBoundingSize.height > kDetailTopicDescHeight) {
         _descriptionHeight = _descriptionLayout.textBoundingSize.height;
-    }else{
+    } else {
         _descriptionHeight = kDetailTopicDescHeight;
     }
     
@@ -146,7 +146,7 @@
         [useTime appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:attributes]];
     }
     
-    useTime.font = font;
+    useTime.yy_font = font;
     container = [YYTextContainer containerWithSize:CGSizeMake(kDetailTopicUseTimeWidth, kDetailTopicUseTimeHeight) insets:UIEdgeInsetsMake(kDetailTopicUseTimeY, 0, kDetailTopicUseTimeY, 0)];
     _useTimeLayout = [YYTextLayout layoutWithContainer:container text:useTime];
     
@@ -169,7 +169,11 @@
     NSMutableAttributedString *text = [NSMutableAttributedString new];
     UIFont *font = [UIFont systemFontOfSize:12];
     {
-        NSMutableAttributedString *attachText = [NSMutableAttributedString attachmentStringWithContent:image contentMode:UIViewContentModeCenter attachmentSize:image.size alignToFont:font alignment:alignment];
+        NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:image
+                                                                                              contentMode:UIViewContentModeCenter
+                                                                                           attachmentSize:image.size
+                                                                                              alignToFont:font
+                                                                                                alignment:alignment];
         [text appendAttributedString:attachText];
     }
     
@@ -209,13 +213,21 @@
     UIFont *font = [UIFont systemFontOfSize:12];
     for (NSInteger i = 0; i < starcount; i++) {
         {
-            NSMutableAttributedString *attachText = [NSMutableAttributedString attachmentStringWithContent:starImage contentMode:UIViewContentModeCenter attachmentSize:starImage.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
+            NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:starImage
+                                                                                                  contentMode:UIViewContentModeCenter
+                                                                                               attachmentSize:starImage.size
+                                                                                                  alignToFont:font
+                                                                                                    alignment:YYTextVerticalAlignmentCenter];
             [text appendAttributedString:attachText];
         }
         {
             CALayer *whiteLayer = [CALayer layer];
             whiteLayer.backgroundColor = [UIColor whiteColor].CGColor;
-            NSMutableAttributedString *marginText = [NSMutableAttributedString attachmentStringWithContent:whiteLayer contentMode:UIViewContentModeCenter attachmentSize:CGSizeMake(kDetailTopicStarMargin, kDetailTopicStarHeight) alignToFont:font alignment:YYTextVerticalAlignmentCenter];
+            NSMutableAttributedString *marginText = [NSMutableAttributedString yy_attachmentStringWithContent:whiteLayer
+                                                                                                  contentMode:UIViewContentModeCenter
+                                                                                               attachmentSize:CGSizeMake(kDetailTopicStarMargin, kDetailTopicStarHeight)
+                                                                                                  alignToFont:font
+                                                                                                    alignment:YYTextVerticalAlignmentCenter];
             [text appendAttributedString:marginText];
         }
     }

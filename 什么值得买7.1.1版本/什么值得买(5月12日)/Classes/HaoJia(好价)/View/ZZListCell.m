@@ -10,7 +10,7 @@
 #import "ZZChannelID.h"
 #import "UIView+Xib.h"
 #import "什么值得买-Swift.h"
-#import <YYKit/NSString+YYAdd.h>
+#import <YYCategories/NSString+YYAdd.h>
 
 @interface ZZListCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
@@ -66,9 +66,9 @@
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:imageUrlStr]];
     //    标题  article_title
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:title];
-    text.lineSpacing = 10;
-    text.lineBreakMode = NSLineBreakByTruncatingTail;
-    text.font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
+    text.yy_lineSpacing = 10;
+    text.yy_lineBreakMode = NSLineBreakByTruncatingTail;
+    text.yy_font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
     self.titleLabel.attributedText = text;
     //    价格  article_price
     self.priceLabel.text = priceStr;

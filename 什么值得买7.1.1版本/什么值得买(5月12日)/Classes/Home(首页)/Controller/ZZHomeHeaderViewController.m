@@ -101,7 +101,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
 
     ZZHomeBannerRequest *request = [[ZZHomeBannerRequest alloc] init];
     [[ZZAPPDotNetAPIClient sharedClient] GET:request completionBlock:^(id  _Nullable responseObj, NSError * _Nullable error) {
-        ZZHomeHeadModel *headModel = [ZZHomeHeadModel modelWithDictionary:responseObj];
+        ZZHomeHeadModel *headModel = [ZZHomeHeadModel yy_modelWithDictionary:responseObj];
         self.headModel = headModel;
         NSMutableArray *imageArrayM = [NSMutableArray array];
         NSMutableArray *textArrayM = [NSMutableArray array];
@@ -115,7 +115,7 @@ NSString *const kLittleBannerViewReuseIdentifier = @"ZZLittleBannerCell";
         self.litterBannerArray = headModel.littleBanner;
         [self.littleBannerView reloadData];
         //设置背景
-        [_litterBackgroundView setImageWithURL:[NSURL URLWithString:headModel.littleBannerOptions.img] placeholder:nil];
+        [_litterBackgroundView yy_setImageWithURL:[NSURL URLWithString:headModel.littleBannerOptions.img] placeholder:nil];
         if (headModel.headlines.count == 0) {
             cycleTextContentView.hidden = YES;
             return;

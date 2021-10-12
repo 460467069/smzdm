@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <YYText/YYText.h>
 
 /**
  文本line位置修改

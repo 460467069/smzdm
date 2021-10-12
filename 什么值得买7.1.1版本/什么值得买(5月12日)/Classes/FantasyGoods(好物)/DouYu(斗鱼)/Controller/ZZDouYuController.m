@@ -107,7 +107,7 @@
 - (void)requestDouYuBannelData {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    [manager GET:@"http://www.douyutv.com/api/v1/slide/6" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
+    [manager GET:@"http://www.douyutv.com/api/v1/slide/6" parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
         
         NSArray *dataArray = responseObject[@"data"];
         [self handelDouYuBannelData:dataArray];
@@ -146,7 +146,7 @@
 - (void)requestDouYuHomeListData {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    [manager GET:@"http://capi.douyucdn.cn/api/v1/getHotCate?aid=ios&client_sys=ios&time=1468225740&token=55360132_864bfe31ed07ac49&auth=063032102391e4e305555bab99e2d45c" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
+    [manager GET:@"http://capi.douyucdn.cn/api/v1/getHotCate?aid=ios&client_sys=ios&time=1468225740&token=55360132_864bfe31ed07ac49&auth=063032102391e4e305555bab99e2d45c" parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *_Nullable responseObject) {
         
         NSArray *dataArray = responseObject[@"data"];
         [self handelDouYuHomeData:dataArray];

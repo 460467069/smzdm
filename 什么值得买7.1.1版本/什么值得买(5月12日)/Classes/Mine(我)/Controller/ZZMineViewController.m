@@ -9,18 +9,16 @@
 #import "ZZMineViewController.h"
 #import "ZZUserAccount.h"
 #import "ZZWeiboTableView.h"
-#import "YYKit.h"
+#import <YYText/YYText.h>
 #import <WeiboSDK.h>
 
 @interface ZZMineViewController ()<UITabBarDelegate, UITableViewDataSource, UITableViewDelegate>
 /** tableView */
 @property (nonatomic, strong) ZZWeiboTableView  *tableView;
 @property (nonatomic, strong) NSMutableArray *layouts;
-
 @property (assign, readwrite, nonatomic) IBInspectable CGSize contentViewStoryboardID;
 /** 菊花指示器 */
 @property (weak, nonatomic) UIActivityIndicatorView  *indicatorView;
-
 @property (nonatomic, strong) NSMutableArray *data;
 
 @end
@@ -92,18 +90,15 @@
         
         [parameters setValue:userAccount.accessToken forKey:@"access_token"];
         
-        [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:parameters headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             
             
-            
-            
+    
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             
         }];
         
     }
-    
-    
 }
 
 #pragma mark - getter && setter

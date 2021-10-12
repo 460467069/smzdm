@@ -12,7 +12,7 @@ import IGListKit
 class ZZPromotionType6SectionController: ListSectionController {
     override init() {
         super.init()
-        self.inset = UIEdgeInsetsMake(0, 10, 0, 10)
+        self.inset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         self.minimumInteritemSpacing = 10
         self.minimumLineSpacing = 10
     }

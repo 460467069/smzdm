@@ -7,6 +7,7 @@
 //
 
 #import "ZZKeyboardToolBar.h"
+#import <YYText/YYText.h>
 
 @interface ZZKeyboardToolBar ()<YYTextViewDelegate>
 

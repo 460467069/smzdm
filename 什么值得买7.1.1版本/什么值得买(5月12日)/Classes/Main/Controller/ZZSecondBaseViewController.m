@@ -1,5 +1,5 @@
 //
-//  ZZBaseViewController.m
+//  YYBBBaseViewController.m
 //  什么值得买
 //
 //  Created by Wang_ruzhou on 16/9/9.

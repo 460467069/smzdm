@@ -7,6 +7,7 @@
 //
 
 #import "ZZDetailTopicCell.h"
+#import <YYText/YYText.h>
 #import "ZZCyclePicHelper.h"
 #import "LEOStarView.h"
 
@@ -189,13 +190,13 @@
     
     _layout = layout;
     
-    [_avatarView setImageWithURL:[NSURL URLWithString:layout.detailTopicModel.user_pic] //profileImageURL
-                     placeholder:[UIImage imageNamed:@"5_middle_avatar"]
-                         options:kNilOptions
-                         manager:[ZZCyclePicHelper avatarImageManager] //< 圆角头像manager，内置圆角处理
-                        progress:nil
-                       transform:nil
-                      completion:nil];
+    [_avatarView yy_setImageWithURL:[NSURL URLWithString:layout.detailTopicModel.user_pic] //profileImageURL
+                        placeholder:[UIImage imageNamed:@"5_middle_avatar"]
+                            options:kNilOptions
+                            manager:[ZZCyclePicHelper avatarImageManager] //< 圆角头像manager，内置圆角处理
+                           progress:nil
+                          transform:nil
+                         completion:nil];
     
     self.height = layout.height;
     _detailContentView.layout = layout;

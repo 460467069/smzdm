@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <YYText/YYText.h>
 #import "WBModel.h"
 
 // 宽高

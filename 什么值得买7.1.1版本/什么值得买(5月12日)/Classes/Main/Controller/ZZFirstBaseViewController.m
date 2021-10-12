@@ -1,5 +1,5 @@
 //
-//  ZZBaseViewController.m
+//  YYBBBaseViewController.m
 //  什么值得买(5月12日)
 //
 //  Created by Wang_ruzhou on 16/5/12.
@@ -7,13 +7,13 @@
 //
 
 #import "ZZFirstBaseViewController.h"
-#import <RongIMKit/RongIMKit.h>
 #import "什么值得买-Swift.h"
 #import "UINavigationItem+Margin.h"
 #import "ZZJumpToNextModel.h"
 #import "ZZDetailArticleViewController.h"
 #import "ZZPureWebViewController.h"
-#import "ZZNavigationController.h"
+#import "YYBBBaseNavigationController.h"
+//#import <RongIMKit/RongIMKit.h>
 
 @interface ZZFirstBaseViewController ()
 
@@ -92,7 +92,7 @@
 - (void)searchBarDidClick{
     
     ZZSearchViewController *searchVC = [[ZZSearchViewController alloc] init];
-    ZZNavigationController *searchNav = [[ZZNavigationController alloc] initWithRootViewController:searchVC];
+    YYBBBaseNavigationController *searchNav = [[YYBBBaseNavigationController alloc] initWithRootViewController:searchVC];
     
     [self presentViewController:searchNav animated:NO completion:nil];
 }
@@ -115,6 +115,7 @@
 
 /** 关注按钮点击 */
 - (void)rightBarButtonItemDidClick {
+#if 0
 //    //新建一个聊天会话View Controller对象
     RCConversationViewController *chat = [[RCConversationViewController alloc]init];
     //设置会话的类型，如单聊、讨论组、群聊、聊天室、客服、公众服务会话等
@@ -129,6 +130,7 @@
 //    conversationVC.title = @"色魔张大妈";
 //    
 //    [self.navigationController pushViewController:conversationVC animated:YES];
+#endif
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

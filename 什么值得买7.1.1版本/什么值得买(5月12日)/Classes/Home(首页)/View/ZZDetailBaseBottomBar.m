@@ -7,11 +7,14 @@
 //
 
 #import "ZZDetailBaseBottomBar.h"
+#import <YYText/YYText.h>
 
 @interface ZZDetailBaseBottomBar ()
+
 @property (nonatomic, weak) CALayer *topLineLayer;
 @property (nonatomic, strong) UIView *firstContainerView;
 @property (nonatomic, strong) UIView *secondContainerView;
+
 @end
 
 @implementation ZZDetailBaseBottomBar
@@ -67,7 +70,11 @@
             UIFont *font = [UIFont systemFontOfSize:10];
 
             UIImage *image = [UIImage imageNamed:@"IMG_BKDetail_Zhi"];
-            NSMutableAttributedString *attachText = [NSMutableAttributedString attachmentStringWithContent:image contentMode:UIViewContentModeCenter attachmentSize:image.size alignToFont:font alignment:YYTextVerticalAlignmentBottom];
+            NSMutableAttributedString *attachText = [NSMutableAttributedString yy_attachmentStringWithContent:image
+                                                                                                  contentMode:UIViewContentModeCenter
+                                                                                               attachmentSize:image.size
+                                                                                                  alignToFont:font
+                                                                                                    alignment:YYTextVerticalAlignmentBottom];
             [text appendAttributedString:attachText];
             
             NSString *title = @" 76%";

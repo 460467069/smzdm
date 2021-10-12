@@ -10,4 +10,4 @@
 
 CGFloat kZZStatusH = 20;
 CGFloat kZZTabBarH = 49;
-const CGFloat kZZNavH    = 44;
+const CGFloat kZZNavH = 44;

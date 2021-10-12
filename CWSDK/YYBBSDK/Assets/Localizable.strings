@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  DaDongMen
+
+  Created by WangRuzhou on 3/4/15.
+  Copyright (c) 2015 Optimus Prime Information Technology Co., Ltd. All rights reserved.
+*/
+
+"JLContactsPermission.title" = "“销售助手”需要获取您的联系人信息";
+"JLContactsPermission.message" = "此功能需要访问您的联系人信息，我们会根据您的联系人信息关联您的朋友关系，我们绝对不会泄露您的任何个人信息。";
+"JLContactsPermission.deny.title" = "无法访问您的联系人信息";
+"JLContactsPermission.deny.message" = "请在您设备的“设置-隐私-通讯录”选项中，允许“销售助手”访问您的通讯录。";
+"JLContactsPermission.deny.openSettingsApp" = "设置";
+"JLContactsPermission.deny.iKnownIt" = "知道了";
+
+"JLPhotosPermission.title" = "“销售助手”需要获取您的相册";
+"JLPhotosPermission.message" = "此功能需要访问您的相册";
+"JLPhotosPermission.deny.title" = "无法访问您的相册";
+"JLPhotosPermission.deny.message" = "请在您设备的“设置-隐私-照片”选项中，允许“销售助手”访问您的相册。";
+"JLPhotosPermission.deny.openSettingsApp" = "设置";
+"JLPhotosPermission.deny.iKnownIt" = "知道了";
+
+"JLCameraPermission.title" = "“销售助手”需要获取您的相机";
+"JLCameraPermission.message" = "此功能需要访问您的相机";
+"JLCameraPermission.deny.title" = "无法访问您的相机";
+"JLCameraPermission.deny.message" = "请在您设备的“设置-隐私-相机”选项中，允许“销售助手”访问您的相机。";
+"JLCameraPermission.deny.openSettingsApp" = "设置";
+"JLCameraPermission.deny.iKnownIt" = "知道了";
+
+"JLLocationPermission.title" = "“销售助手”需要获取您的地理位置信息";
+"JLLocationPermission.message" = "“销售助手”的许多功能都需要访问您的地理位置信息，我们会根据您的地理位置信息为您推荐附近的朋友、商家等，我们绝对不会泄露您的地理位置信息。";
+"JLLocationPermission.deny.title" = "无法访问您的地理位置信息";
+"JLLocationPermission.deny.message" = "请在您设备的“设置-隐私-定位服务”选项中，允许“销售助手”访问您的定位服务。";
+"JLLocationPermission.deny.openSettingsApp" = "设置";
+"JLLocationPermission.deny.iKnownIt" = "知道了";
+
+"JLNotificationPermission.title" = "“销售助手”想给您发送推送通知";
+"JLNotificationPermission.message" = "当应用进入后台或者关闭时，为确保您沟通顺畅，我们将为您推送未读消息。";
+"JLNotificationPermission.deny.title" = "无法给您发送推送通知";
+"JLNotificationPermission.deny.message" = "请在您设备的“设置-通知”所列出的应用中，找到“销售助手”并打开“允许通知”选项。";
+"JLNotificationPermission.deny.openSettingsApp" = "设置";
+"JLNotificationPermission.deny.iKnownIt" = "知道了";
